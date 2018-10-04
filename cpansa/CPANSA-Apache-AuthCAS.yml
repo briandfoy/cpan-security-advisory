@@ -1,0 +1,15 @@
+---
+- id: CPANSA-Apache-AuthCAS-2007-01
+  distribution: Apache-AuthCAS
+  reported: 2007-12-13
+  severity: high
+  description: >
+    A tainted cookie could be sent by a malicious user and it would be used in an SQL query without protection against
+    SQL injection.
+  references:
+    - https://metacpan.org/changes/distribution/Apache-AuthCAS
+    - https://cxsecurity.com/issue/WLB-2007120031
+  cves:
+    - CVE-2007-6342
+  affected_versions: "<0.5"
+  fixed_versions: ">=0.5"

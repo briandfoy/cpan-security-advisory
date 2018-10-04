@@ -1,0 +1,39 @@
+---
+- id: CPANSA-libwww-perl-2011-01
+  distribution: libwww-perl
+  reported: 2011-01-20
+  description: >
+    The Net::HTTPS module in libwww-perl (LWP) before 6.00, as used in WWW::Mechanize, LWP::UserAgent, and other
+    products, when running in environments that do not set the If-SSL-Cert-Subject header, does not enable full
+    validation of SSL certificates by default, which allows remote attackers to spoof servers via man-in-the-middle
+    (MITM) attacks involving hostnames that are not properly validated.
+  cves:
+    - CVE-2011-0633
+  references:
+    - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
+    - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
+  affected_versions: "<6.00"
+  fixed_versions: ">=6.00"
+- id: CPANSA-libwww-perl-2010-01
+  distribution: libwww-perl
+  reported: 2010-07-06
+  description: >
+    lwp-download in libwww-perl before 5.835 does not reject downloads to filenames that begin with a . (dot) character,
+    which allows remote servers to create or overwrite files via (1) a 3xx redirect to a URL with a crafted filename or
+    (2) a Content-Disposition header that suggests a crafted filename, and possibly execute arbitrary code as
+    a consequence of writing to a dotfile in a home directory.
+  cves:
+    - CVE-2010-2253
+  references:
+    - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
+    - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
+  affected_versions: "<5.835"
+  fixed_versions: ">=5.835"
+- id: CPANSA-libwww-perl-2001-01
+  distribution: libwww-perl
+  reported: 2001-03-14
+  description: >
+    If LWP::UserAgent::env_proxy is called in a CGI environment, the case-insensitivity when looking for "http_proxy"
+    permits "HTTP_PROXY" to be found, but this can be trivially set by the web client using the "Proxy:" header.
+  affected_versions: "<5.51"
+  fixed_versions: ">=5.51"

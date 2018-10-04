@@ -1,0 +1,15 @@
+---
+- id: CPANSA-Archive-Tar-2018-01
+  distribution: Archive-Tar
+  reported: 2018-06-12
+  severity: medium
+  description: >
+    In Perl through 5.26.2, the Archive::Tar module allows remote attackers to bypass a directory-traversal protection
+    mechanism, and overwrite arbitrary files, via an archive file containing a symlink and a regular file with the same
+    name.
+  cves:
+    - CVE-2018-12015
+  references:
+    - https://security-tracker.debian.org/tracker/CVE-2018-12015
+    - https://github.com/jib/archive-tar-new/commit/ae65651eab053fc6dc4590dbb863a268215c1fc5
+  affected_versions: "<2.28"

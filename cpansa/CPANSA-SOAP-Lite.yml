@@ -1,0 +1,39 @@
+---
+- id: CPANSA-SOAP-Lite-2015-01
+  distribution: SOAP-Lite
+  reported: 2015-07-21
+  description: >
+    An example attack consists of defining 10 or more XML entities, each defined as consisting of 10 of the previous
+    entity, with the document consisting of a single instance of the largest entity, which expands to one billion
+    copies of the first entity. The amount of computer memory used for handling an external SOAP call would likely
+    exceed that available to the process parsing the XML.
+  cves:
+    - CVE-2015-8978
+  affected_versions: "<1.15"
+  fixed_versions: ">=1.15"
+  references:
+    - https://metacpan.org/changes/distribution/SOAP-Lite
+    - https://www.securityfocus.com/bid/94487
+    - https://github.com/redhotpenguin/perl-soaplite/commit/6942fe0d281be1c32c5117605f9c4e8d44f51124
+- id: CPANSA-SOAP-Lite-2002-01
+  distribution: SOAP-Lite
+  reported: 2002-04-08
+  severity: high
+  description: >
+    Allows remote attackers to load arbitrary Perl functions by suppling a non-existent function in a script using
+    a SOAP::Lite module, which causes the AUTOLOAD subroutine to trigger.
+  cves:
+    - CVE-2002-1742
+  references:
+    - https://metacpan.org/changes/distribution/SOAP-Lite
+  affected_versions: "<0.55"
+  fixed_versions: ">=0.55"
+- id: CPANSA-SOAP-Lite-2000-01
+  distribution: SOAP-Lite
+  reported: 2000-10-05
+  description: >
+    Security problem on server side (no more details).
+  references:
+    - https://metacpan.org/changes/distribution/SOAP-Lite
+  affected_versions: "<0.38"
+  fixed_versions: ">=0.38"

@@ -1,0 +1,87 @@
+---
+- id: CPANSA-Mojolicious-2018-04
+  reported: 2018-08-09
+  severity: critical
+  description: >
+    This release reverts the addition of stream classes (added in 7.83), which
+    have unfortunately resulted in many Mojolicious applications becoming
+    unstable. While there are no known exploits yet, we've chosen to err on the
+    side of cautiousness and will classify this as a security issue.
+  affected_versions: ">7.83, <7.92"
+  references:
+    - https://github.com/mojolicious/mojo/commit/61f6cbf22c7bf8eb4787bd1014d91ee2416c73e7
+- id: CPANSA-Mojolicious-2018-03
+  distribution: Mojolicious
+  reported: 2018-05-19
+  severity: high
+  description: >
+    Mojo::UserAgent was not checking peer SSL certificates by default.
+  affected_versions: "<7.80"
+  references:
+    - https://github.com/mojolicious/mojo/pull/1226
+    - https://github.com/mojolicious/mojo/commit/d3cbbad890673612fdbdea63fdd522b516f6104c
+- id: CPANSA-Mojolicious-2018-02
+  distribution: Mojolicious
+  reported: 2018-05-11
+  severity: critical
+  description: >
+    GET requests with embedded backslashes can be used to access local files on Windows hosts
+  affected_versions: "<7.78"
+  references:
+    - https://github.com/mojolicious/mojo/pull/1217
+    - https://github.com/mojolicious/mojo/commit/23ebe051d9378f0f122e3c908845fc0c2cae0106
+- id: CPANSA-Mojolicious-2018-01
+  distribution: Mojolicious
+  reported: 2018-02-13
+  severity: minor
+  description: >
+    Mojo::UserAgent::CookieJar leaks old cookies because of the missing host_only flag on empty domain.
+  affected_versions: "<7.66"
+  references:
+    - https://github.com/mojolicious/mojo/pull/1192
+    - https://github.com/mojolicious/mojo/issues/1185
+    - https://github.com/mojolicious/mojo/commit/c16a56a9d6575ddc53d15e76d58f0ebcb0eeb149
+- id: CPANSA-Mojolicious-2015-01
+  distribution: Mojolicious
+  reported: 2015-02-02
+  severity: critical
+  description: >
+    Directory traversal on Windows
+  references:
+    - https://github.com/mojolicious/mojo/issues/738
+    - https://github.com/mojolicious/mojo/commit/9ffa38fca73a9ddee91cbc70e0696268d500edde
+  affected_versions: "<5.76"
+- id: CPANSA-Mojolicious-2014-01
+  distribution: Mojolicious
+  reported: 2014-10-07
+  severity: high
+  description: >
+    Context sensitivity of method param could lead to parameter injection attacks.
+  references:
+    - https://github.com/mojolicious/mojo/commit/a815d4797145f872ef6e9f1270841eda1d410afb
+  affected_versions: "<5.48"
+- id: CPANSA-Mojolicious-2011-02
+  distribution: Mojolicious
+  reported: 2011-04-05
+  severity: critical
+  description: >
+    Directory traversal vulnerability in Path.pm in Mojolicious before 1.16 allows remote attackers to read arbitrary
+    files via a %2f..%2f (encoded slash dot dot slash) in a URI.
+  references:
+    - https://github.com/mojolicious/mojo/commit/b09854988c5b5b6a2ba53cc8661c4b2677da3818
+    - https://www.cvedetails.com/cve/CVE-2011-1589/
+  affected_versions: "<1.16"
+- id: CPANSA-Mojolicious-2011-01
+  distribution: Mojolicious
+  reported: 2011-03-10
+  severity: high
+  description: >
+    Mojolicious is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by link_to
+    helper. A remote attacker could exploit this vulnerability using a specially-crafted URL to execute script in
+    a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker
+    could use this vulnerability to steal the victim's cookie-based authentication credentials.
+  references:
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
+    - https://www.debian.org/security/2011/dsa-2239
+    - https://github.com/mojolicious/mojo/commit/f6801ef7be8c78092e38f870b19fae3da0899d60
+  affected_versions: "<1.12"
