@@ -10,7 +10,7 @@ issue, check out <https://kritika.io>.
 For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) package.
 
 ```
-$ cpan-audit Catalyst '>7.0'
+$ cpan-audit module Catalyst '>7.0'
 ```
 
 ## Database format
