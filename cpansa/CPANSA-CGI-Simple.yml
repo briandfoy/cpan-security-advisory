@@ -1,0 +1,19 @@
+---
+- id: CPANSA-CGI-Simple-2010-02
+  distribution: CGI-Simple
+  reported: 2010-12-27
+  description: >
+    Newlines in headers, which could lead to header injection attacks.
+  references:
+    - https://metacpan.org/changes/distribution/CGI-Simple
+  affected_versions: "<1.113"
+  fixed_versions: ">=1.113"
+- id: CPANSA-CGI-Simple-2010-01
+  distribution: CGI-Simple
+  reported: 2010-12-27
+  description: >
+    Non-random multipart boundary.
+  references:
+    - https://metacpan.org/changes/distribution/CGI-Simple
+  affected_versions: "<1.113"
+  fixed_versions: ">=1.113"

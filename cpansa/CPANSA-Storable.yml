@@ -1,0 +1,11 @@
+---
+- id: CPANSA-Storable-2017-01
+  distribution: Storable
+  reported: 2017-01-29
+  description: >
+    Malcrafted storable files or buffers.
+  references:
+    - https://metacpan.org/changes/distribution/Storable
+    - https://cxsecurity.com/issue/WLB-2007120031
+  affected_versions: "<3.05"
+  fixed_versions: ">=3.05"

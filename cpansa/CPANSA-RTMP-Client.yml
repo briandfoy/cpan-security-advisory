@@ -1,0 +1,10 @@
+---
+- id: CPANSA-RTMP-Client-2011-01
+  distribution: RTMP-Client
+  reported: 2011-12-01
+  description: >
+    TBD
+  references:
+    - https://metacpan.org/changes/distribution/RTMP-Client
+  affected_versions: "<0.04"
+  fixed_versions: ">=0.04"

@@ -1,0 +1,12 @@
+---
+- id: CPANSA-DBD-mysqlPP-2011-01
+  distribution: DBD-mysqlPP
+  reported: 2011-10-14
+  severity: high
+  description: >
+    SQL injection.
+  references:
+    - https://metacpan.org/changes/distribution/DBD-mysqlPP
+    - https://jvn.jp/en/jp/JVN51216285/index.html
+  affected_versions: "<0.93"
+  fixed_versions: ">=0.03"

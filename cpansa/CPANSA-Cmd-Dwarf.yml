@@ -1,0 +1,11 @@
+---
+- id: CPANSA-Cmd-Dwarf-2014-01
+  distribution: Cmd-Dwarf
+  reported: 2014-12-03
+  description: >
+    JSON highjacking possibility.
+  references:
+    - https://github.com/seagirl/dwarf/commit/14cf7a1d55db635a07f4838e16f3d9a28e63f529
+    - https://metacpan.org/changes/distribution/Cmd-Dwarf
+  affected_versions: "<1.20"
+  fixed_versions: ">=1.20"

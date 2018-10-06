@@ -1,0 +1,11 @@
+---
+- id: CPANSA-SVG-Sparkline-2017-01
+  distribution: SVG-Sparkline
+  reported: 2017-05-15
+  description: >
+    Invalid data input validation makes it possible to pass arbitrary strings to module loading eval.
+  references:
+    - https://metacpan.org/changes/distribution/SVG-Sparkline
+    - https://github.com/gwadej/svg-sparkline/commit/ca83d6eb56aa86f3ca735866ffa9aa97acc2e708
+  affected_versions: "<1.12"
+  fixed_versions: ">=1.12"

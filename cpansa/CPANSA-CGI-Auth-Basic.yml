@@ -1,0 +1,10 @@
+---
+- id: CPANSA-CGI-Auth-Basic-2007-01
+  distribution: CGI-Auth-Basic
+  reported: 2007-12-30
+  description: >
+      TBD
+  references:
+    - https://metacpan.org/changes/distribution/CGI-Auth-Basic
+  affected_versions: "<1.11"
+  fixed_versions: ">=1.11"

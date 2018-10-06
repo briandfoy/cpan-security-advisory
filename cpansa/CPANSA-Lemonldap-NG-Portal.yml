@@ -1,0 +1,10 @@
+---
+- id: CPANSA-Lemonldap-NG-Portal-2009-01
+  distribution: Lemonldap-NG-Portal
+  reported: 2009-02-08
+  description: >
+    When running on Apache with thread support setMacros and setGroups were not launched with the good datas.
+  references:
+    - https://metacpan.org/changes/distribution/Lemonldap-NG-Portal
+  affected_versions: "<0.87"
+  fixed_versions: ">=0.87"

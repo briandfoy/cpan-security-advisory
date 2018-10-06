@@ -1,0 +1,12 @@
+---
+- id: CPANSA-DBIx-Custom-2011-01
+  distribution: DBIx-Custom
+  reported: 2011-01-27
+  severity: high
+  description: >
+    SQL injection when passing special column names.
+  references:
+    - https://metacpan.org/changes/distribution/DBIx-Custom
+    - https://github.com/yuki-kimoto/DBIx-Custom/commit/5b00b9f9a966e7abecabd91710c8fa893784d919
+  affected_versions: "<0.1641"
+  fixed_versions: ">=0.1641"

@@ -1,0 +1,23 @@
+---
+- id: CPANSA-DBI-2014-01
+  distribution: DBI
+  reported: 2014-10-15
+  severity: high
+  description: >
+    DBD::File drivers open files from folders other than specifically passed using the f_dir attribute.
+  references:
+    - https://metacpan.org/changes/distribution/DBI
+    - https://rt.cpan.org/Public/Bug/Display.html?id=99508
+  affected_versions: "<1.632"
+  fixed_versions: ">=1.632"
+- id: CPANSA-DBI-2005-01
+  distribution: DBI
+  reported: 2005-05-02
+  description: >
+    Allows local users to overwrite arbitrary files via a symlink attack on a temporary PID file.
+  references:
+    - https://metacpan.org/changes/distribution/DBI
+  cves:
+    - CVE-2005-0077
+  affected_versions: "<1.47"
+  fixed_versions: ">=1.47"

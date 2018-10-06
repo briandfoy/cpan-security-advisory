@@ -1,0 +1,10 @@
+---
+- id: CPANSA-CGI-Application-Plugin-AutoRunmode-2005-01
+  distribution: CGI-Application-Plugin-AutoRunmode
+  reported: 2005-03-04
+  description: >
+    Non-word characters are allowed in runmode name.
+  references:
+    - https://metacpan.org/changes/distribution/CGI-Application-Plugin-AutoRunmode
+  affected_versions: "<0.04"
+  fixed_versions: ">=0.04"

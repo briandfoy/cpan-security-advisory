@@ -1,0 +1,11 @@
+---
+- id: CPANSA-Compress-LZ4-2014-01
+  distribution: Compress-LZ4
+  reported: 2014-07-07
+  description: >
+      Outdated LZ4 source code with security issue on 32bit systems.
+  references:
+    - https://metacpan.org/changes/distribution/Compress-LZ4
+    - https://github.com/gray/compress-lz4/commit/fc503812b4cbba16429658e1dfe20ad8bbfd77a0
+  affected_versions: "<0.20"
+  fixed_versions: ">=0.20"

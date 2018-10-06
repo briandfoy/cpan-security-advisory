@@ -1,0 +1,12 @@
+---
+- id: CPANSA-Crypt-CBC-2006-01
+  distribution: Crypt-CBC
+  reported: 2006-01-09
+  severity: high
+  description: >
+    Incorrect use of using 8 byte IVs when generating the old-style RandomIV style header. This affects data encrypted
+    using the Rijndael algorithm, which has a 16 byte blocksize, and is a significant security issue.
+  references:
+    - https://metacpan.org/changes/distribution/Crypt-CBC
+  affected_versions: "<2.17"
+  fixed_versions: ">=2.17"

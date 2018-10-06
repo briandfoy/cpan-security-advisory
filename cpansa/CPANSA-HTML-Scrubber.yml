@@ -1,0 +1,10 @@
+---
+- id: CPANSA-HTML-Scrubber-2015-01
+  distribution: HTML-Scrubber
+  reported: 2015-10-10
+  description: >
+    Cross-site scripting vulnerability.
+  references:
+    - https://jvn.jp/en/jp/JVN53973084/index.html
+  affected_versions: "<0.15"
+  fixed_versions: ">=0.15"

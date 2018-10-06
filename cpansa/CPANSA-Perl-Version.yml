@@ -1,0 +1,11 @@
+---
+- id: CPANSA-Perl-Version-2014-01
+  distribution: Perl-Version
+  reported: 2014-02-12
+  description: >
+    Insecure dependency File::Slurp is used.
+  references:
+    - https://metacpan.org/changes/distribution/Perl-Version
+    - https://rt.cpan.org/Public/Bug/Display.html?id=92974
+  affected_versions: "<1.013"
+  fixed_versions: ">=1.013"

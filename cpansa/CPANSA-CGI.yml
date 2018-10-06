@@ -1,0 +1,34 @@
+---
+- id: CPANSA-CGI-2012-01
+  distribution: CGI
+  reported: 2012-11-12
+  description: >
+    CR escaping for Set-Cookie and P3P headers, a potential for newline injection.
+  affected_versions: "<3.63"
+  fixed_versions: ">=3.63"
+- id: CPANSA-CGI-2011-01
+  distribution: CGI
+  reported: 2011-11-08
+  description: >
+    Usage of deprecated FCGI.pm API.
+  references:
+    - https://rt.cpan.org/Public/Bug/Display.html?id=68380
+      http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2766
+  cves:
+    - CVE-2011-2766
+  affected_versions: "<3.56"
+  fixed_versions: ">=3.56"
+- id: CPANSA-CGI-2010-02
+  distribution: CGI
+  reported: 2010-11-08
+  description: >
+    Non-random MIME boundary.
+  affected_versions: "<3.50"
+  fixed_versions: ">=3.50"
+- id: CPANSA-CGI-2010-01
+  distribution: CGI
+  reported: 2010-02-05
+  description: >
+    Newlines in headers.
+  affected_versions: "<3.49"
+  fixed_versions: ">=3.49"

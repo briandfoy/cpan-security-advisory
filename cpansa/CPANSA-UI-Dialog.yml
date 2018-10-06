@@ -1,0 +1,10 @@
+---
+- id: CPANSA-UI-Dialog-2004-01
+  distribution: UI-Dialog
+  reported: 2004-02-18
+  description: >
+    CDialog and Whiptail backends usage of the temp files.
+  references:
+    - https://metacpan.org/changes/distribution/UI-Dialog
+  affected_versions: "<1.03"
+  fixed_versions: ">=1.03"

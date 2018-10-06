@@ -1,0 +1,10 @@
+---
+- id: CPANSA-CGI-Application-Plugin-RunmodeDeclare-2008-01
+  distribution: CGI-Application-Plugin-RunmodeDeclare
+  reported: 2008-10-20
+  description: >
+    Wrong order of arguments.
+  references:
+    - https://metacpan.org/changes/distribution/CGI-Application-Plugin-RunmodeDeclare
+  affected_versions: "<0.03"
+  fixed_versions: ">=0.03"

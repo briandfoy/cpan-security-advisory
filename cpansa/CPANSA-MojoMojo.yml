@@ -1,0 +1,11 @@
+---
+- id: CPANSA-MojoMojo-2009-01
+  distribution: MojoMojo
+  reported: 2009-08-14
+  description: >
+    Anonymous users can delete attachments.
+  references:
+    - https://metacpan.org/changes/distribution/MojoMojo
+    - https://github.com/mojomojo/mojomojo/commit/a9b9fd4f4f037627d30f3cbaa10abe42a3439637
+  affected_versions: "<0.999033"
+  fixed_versions: ">=0.999033"

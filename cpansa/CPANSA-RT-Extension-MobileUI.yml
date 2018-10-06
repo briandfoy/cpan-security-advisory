@@ -1,0 +1,12 @@
+---
+- id: CPANSA-RT-Extension-MobileUI-2012-01
+  distribution: RT-Extension-MobileUI
+  reported: 2012-05-18
+  description: >
+    Multiple cross-site scripting (XSS) vulnerabilities in the topic administration page.
+  references:
+    - https://metacpan.org/changes/distribution/RT-Extension-MobileUI
+  cves:
+    - CVE-2012-2769
+  affected_versions: "<1.02"
+  fixed_versions: ">=1.02"

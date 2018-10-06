@@ -1,0 +1,11 @@
+---
+- id: CPANSA-SVN-Look-2014-01
+  distribution: SVN-Look
+  reported: 2014-05-31
+  description: >
+    Two-arg open with a possibility of running arbitrary commands.
+  references:
+    - https://metacpan.org/changes/distribution/SVN-Look
+    - https://github.com/gnustavo/SVN-Look/commit/b413ac1c397dfc6b2d164fede693f7ff9a94c83c
+  affected_versions: "<0.40"
+  fixed_versions: ">=0.40"

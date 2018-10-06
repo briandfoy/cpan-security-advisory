@@ -1,0 +1,26 @@
+---
+- id: CPANSA-Imager-2008-01
+  distribution: Imager
+  reported: 2008-04-23
+  description: >
+    Buffer overflow in the floating point sample path for image based fills.
+  references:
+    - https://rt.cpan.org/Ticket/Display.html?id=68910
+    - https://metacpan.org/changes/distribution/Imager
+  cves:
+    - CVE-2008-1928
+  affected_versions: "<0.64"
+  fixed_versions: ">=0.64"
+- id: CPANSA-Imager-2007-01
+  distribution: Imager
+  reported: 2008-04-30
+  description: >
+    A specially crafted compressed BMP file can cause a buffer overflow in malloced memory.
+  references:
+    - https://rt.cpan.org/Public/Bug/Display.html?id=26811
+    - https://metacpan.org/changes/distribution/Imager
+  cves:
+    - CVE-2007-2459
+    - CVE-2007-2413
+  affected_versions: "<0.57"
+  fixed_versions: ">=0.57"
