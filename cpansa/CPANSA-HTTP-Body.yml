@@ -10,4 +10,4 @@
   references:
     - https://security-tracker.debian.org/tracker/CVE-2013-4407
     - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=721634
-  affected_versions: ">=1.08 <1.19"
+  affected_versions: ">=1.08, <1.19"
