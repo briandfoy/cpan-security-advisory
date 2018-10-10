@@ -3,7 +3,6 @@
   distribution: Catalyst-Plugin-Static
   reported: 2005-11-14
   description: >
-  references:
     Serving files outside of $config->{root} directory.
   affected_versions: "<0.10"
   fixed_versions: ">=0.10"
