@@ -5,8 +5,8 @@
   description: >
     An attacker is able to delete other users' accounts.  No httponly cookie flag.  Cross-site scripting vulnerability
     in generation of citation text.
-  affected_verson: "<2.56"
-  fixed_verson: ">=2.56"
+  affected_versions: "<2.56"
+  fixed_versions: ">=2.56"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
 - id: CPANSA-GBrowser-2004-01
@@ -14,8 +14,8 @@
   reported: 2004-04-05
   description: >
     Cross-site scripting.
-  affected_verson: "<1.62"
-  fixed_verson: ">=1.62"
+  affected_versions: "<1.62"
+  fixed_versions: ">=1.62"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
 - id: CPANSA-GBrowser-2003-01
@@ -23,7 +23,7 @@
   reported: 2003-08-23
   description: >
     Path traversal.
-  affected_verson: "<1.54"
-  fixed_verson: ">=1.54"
+  affected_versions: "<1.54"
+  fixed_versions: ">=1.54"
   references:
     - https://metacpan.org/changes/distribution/GBrowse

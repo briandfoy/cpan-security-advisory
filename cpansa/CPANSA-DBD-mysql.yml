@@ -35,8 +35,8 @@
     - CVE-2016-1249
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/793b72b1a0baa5070adacaac0e12fd995a6fbabe
-  affected_verson: ">=2.9003 <4.039"
-  fixed_verson: "<2.9003 >=4.039"
+  affected_versions: ">=2.9003 <4.039"
+  fixed_versions: "<2.9003 >=4.039"
 - id: CPANSA-DBD-mysql-2016-02
   distribution: DBD-mysql
   reported: 2016-10-02
@@ -48,8 +48,8 @@
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/7c164a0c86cec6ee95df1d141e67b0e85dfdefd2
     - http://blogs.perl.org/users/mike_b/2016/10/security-release---buffer-overflow-in-dbdmysql-perl-library.html
-  affected_verson: "<4.037"
-  fixed_verson: ">=4.037"
+  affected_versions: "<4.037"
+  fixed_versions: ">=4.037"
 - id: CPANSA-DBD-mysql-2016-01
   distribution: DBD-mysql
   reported: 2016-08-19
@@ -60,8 +60,8 @@
     - CVE-2015-8949
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/cf0aa7751f6ef8445e9310a64b14dc81460ca156
-  affected_verson: "<4.034"
-  fixed_verson: ">=4.034"
+  affected_versions: "<4.034"
+  fixed_versions: ">=4.034"
 - id: CPANSA-DBD-mysql-2015-01
   distribution: DBD-mysql
   reported: 2015-12-27
@@ -72,8 +72,8 @@
     - CVE-2016-1251
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/3619c170461a3107a258d1fd2d00ed4832adb1b1
-  affected_verson: "<4.041"
-  fixed_verson: ">=4.041"
+  affected_versions: "<4.041"
+  fixed_versions: ">=4.041"
 - id: CPANSA-DBD-mysql-2014-01
   distribution: DBD-mysql
   reported: 2014-07-30
@@ -85,5 +85,5 @@
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/a56ae87a4c1c1fead7d09c3653905841ccccf1cc
     - https://rt.cpan.org/Public/Bug/Display.html?id=97625
-  affected_verson: "<4.028"
-  fixed_verson: ">=4.028"
+  affected_versions: "<4.028"
+  fixed_versions: ">=4.028"
