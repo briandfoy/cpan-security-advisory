@@ -36,6 +36,14 @@ Database is in YAML format with a simple structure:
   fixed_versions: ">= 1.16"
 ```
 
+## Maintainer
+
+Viacheslav Tykhanovskyi (github.com/vti)
+
+## Credits
+
+Takumi Akiyama (github.com/akiym)
+
 ## Contribution
 
 Feel free to contribute with a Pull Request.
