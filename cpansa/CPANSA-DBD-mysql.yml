@@ -35,8 +35,8 @@
     - CVE-2016-1249
   references:
     - https://github.com/perl5-dbi/DBD-mysql/commit/793b72b1a0baa5070adacaac0e12fd995a6fbabe
-  affected_versions: ">=2.9003 <4.039"
-  fixed_versions: "<2.9003 >=4.039"
+  affected_versions: ">=2.9003, <4.039"
+  fixed_versions: "<2.9003, >=4.039"
 - id: CPANSA-DBD-mysql-2016-02
   distribution: DBD-mysql
   reported: 2016-10-02
