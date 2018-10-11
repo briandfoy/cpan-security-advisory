@@ -5,6 +5,17 @@ This is a database of the security advisories for the Perl modules uploaded to C
 This is a hand-picked database. If you want to be automatically notified when one of your dependencies has a security
 issue, check out <https://kritika.io>.
 
+## Sources
+
+- metacpan.org - modules Changes files with security fixes
+- CVE databases
+    - https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+- OS distributions security advisory feeds:
+    - Debian https://www.debian.org/security/dsa
+    - FreeBSD http://vuxml.freebsd.org/freebsd/rss.xml
+    - Gentoo https://security.gentoo.org/glsa/feed.rss
+    - Ubuntu https://usn.ubuntu.com/rss.xml
+
 ## Command line checks
 
 For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) package.
