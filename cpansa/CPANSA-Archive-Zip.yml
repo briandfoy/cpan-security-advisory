@@ -14,18 +14,3 @@
     - https://security-tracker.debian.org/tracker/CVE-2018-10860
     - https://github.com/redhotpenguin/perl-Archive-Zip/pull/33
   affected_versions: "<1.61"
-- id: CPANSA-Archive-Zip-2017-01
-  distribution: Archive-Zip
-  reported: 2017-06-30
-  severity: high
-  description: >
-      perl-archive-zip is vulnerable to a directory traversal in Archive::Zip. It was found that the Archive::Zip module
-      did not properly sanitize paths while extracting zip files. An attacker able to provide a specially crafted
-      archive for processing could use this flaw to write or overwrite arbitrary files in the context of the perl
-      interpreter.
-  cves:
-    - CVE-2018-10860
-  references:
-    - https://security-tracker.debian.org/tracker/CVE-2017-10672
-    - https://github.com/shlomif/perl-XML-LibXML/pull/8
-  affected_versions: "<2.0131"
