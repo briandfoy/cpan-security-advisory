@@ -57,4 +57,5 @@ Takumi Akiyama (github.com/akiym)
 
 ## Contribution
 
-Feel free to contribute with a Pull Request.
+If you know of a security vulnerability that is not present in our database, feel free to contribute with a Pull
+Request. Let's make it as complete as possible!
