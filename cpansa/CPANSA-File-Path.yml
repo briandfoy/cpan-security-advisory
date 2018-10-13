@@ -1,0 +1,14 @@
+---
+- id: CPANSA-File-Path-2017-01
+  distribution: Fake-Encode
+  reported: 2017-05-02
+  description: >
+    Race condition in the rmtree and remove_tree functions allows attackers
+    to set the mode on arbitrary files via vectors involving directory-permission loosening logic.
+  references:
+    - https://metacpan.org/changes/distribution/File-Path
+    - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
+  cves:
+    - CVE-2017-6512
+  affected_versions: "<2.13"
+  fixed_versions: ">=2.13"

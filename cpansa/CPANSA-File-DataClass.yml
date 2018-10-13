@@ -1,0 +1,12 @@
+---
+- id: CPANSA-File-DataClass-2017-01
+  distribution: File-DataClass
+  reported: 2017-04-01
+  description: >
+    Loading modules from . (current directory).
+  references:
+    - https://metacpan.org/changes/distribution/File-DataClass
+  cves:
+    - CVE-2016-1238
+  affected_versions: "<0.72.1"
+  fixed_versions: ">=0.72.1"

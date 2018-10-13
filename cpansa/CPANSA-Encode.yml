@@ -1,0 +1,13 @@
+---
+- id: CPANSA-Encode-2016-01
+  distribution: Encode
+  reported: 2016-07-27
+  description: >
+    Loading optional modules from . (current directory).
+  references:
+    - https://metacpan.org/changes/distribution/Encode
+    - https://github.com/dankogai/p5-encode/pull/58/commits/12be15d64ce089154c4367dc1842cd0dc0993ec6
+  cves:
+    - CVE-2016-1238
+  affected_versions: "<2.85"
+  fixed_versions: ">=2.85"

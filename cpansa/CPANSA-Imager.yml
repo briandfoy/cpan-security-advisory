@@ -1,4 +1,15 @@
 ---
+- id: CPANSA-Imager-2016-01
+  distribution: Imager
+  reported: 2017-08-26
+  description: >
+    Loading modules from . (current directory).
+  references:
+    - https://metacpan.org/changes/distribution/Imager
+  cves:
+    - CVE-2016-1238
+  affected_versions: "<1.006"
+  fixed_versions: ">=1.006"
 - id: CPANSA-Imager-2008-01
   distribution: Imager
   reported: 2008-04-23

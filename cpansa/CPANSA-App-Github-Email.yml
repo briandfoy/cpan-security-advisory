@@ -1,0 +1,13 @@
+---
+- id: CPANSA-App-Github-Email-2018-01
+  distribution: App-Github-Email
+  reported: 2018-01-20
+  description: >
+    Insecure dependency on Email::Address.
+  references:
+    - https://metacpan.org/changes/distribution/App-Github-Email
+    - https://github.com/faraco/App-Github-Email/commit/b7f052280d1c8ae97bdefc106ca3cbba4aea7213
+  cves:
+    - CVE-2015-7686
+  affected_versions: "<0.3.3"
+  fixed_versions: ">=0.3.3"

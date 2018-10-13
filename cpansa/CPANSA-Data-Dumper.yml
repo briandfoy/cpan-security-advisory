@@ -1,0 +1,12 @@
+---
+- id: CPANSA-Data-Dumper-2014-01
+  distribution: Data-Dumper
+  reported: 2014-09-30
+  description: >
+    Infinite recursion.
+  references:
+    - https://metacpan.org/changes/distribution/Data-Dumper
+  cves:
+    - CVE-2014-4330
+  affected_versions: "<2.154"
+  fixed_versions: ">=2.154"

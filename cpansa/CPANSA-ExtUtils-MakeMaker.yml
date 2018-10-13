@@ -1,0 +1,13 @@
+---
+- id: CPANSA-ExtUtils-MakeMaker-2016-01
+  distribution: ExtUtils-MakeMaker
+  reported: 2016-08-07
+  description: >
+    Loading modules from . (current directory).
+  references:
+    - https://metacpan.org/changes/distribution/ExtUtils-MakeMaker
+    - https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/commit/3e9df17d11c40f2561c23ec79693c8c390e0ae88
+  cves:
+    - CVE-2016-1238
+  affected_versions: "<7.22"
+  fixed_versions: ">=7.22"

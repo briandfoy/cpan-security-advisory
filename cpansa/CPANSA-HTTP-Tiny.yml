@@ -1,0 +1,13 @@
+---
+- id: CPANSA-HTTP-Tiny-2016-01
+  distribution: HTTP-Tiny
+  reported: 2016-07-29
+  description: >
+    Loading modules from . (current directory).
+  references:
+    - https://metacpan.org/changes/distribution/HTTP-Tiny
+    - https://github.com/chansen/p5-http-tiny/commit/b239c95ea7a256cfee9b8848f1bd4d1df6e66444
+  cves:
+    - CVE-2016-1238
+  affected_versions: "<0.059"
+  fixed_versions: ">=0.059"

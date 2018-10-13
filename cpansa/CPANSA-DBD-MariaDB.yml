@@ -1,0 +1,34 @@
+---
+- id: CPANSA-DBD-MariaDB-2018-01
+  distribution: DBD-MariaDB
+  reported: 2017-07-01
+  description: >
+    SSL problems of MySQL and MariaDB clients.
+  references:
+    - https://metacpan.org/changes/distribution/DBD-MariaDB
+  cves:
+    - CVE-2018-2767
+  affected_versions: "<1.00"
+  fixed_versions: ">=1.00"
+- id: CPANSA-DBD-MariaDB-2017-02
+  distribution: DBD-MariaDB
+  reported: 2017-07-01
+  description: >
+    Use-after-free after calling mysql_stmt_close().
+  references:
+    - https://metacpan.org/changes/distribution/DBD-MariaDB
+  cves:
+    - CVE-2017-10788
+  affected_versions: "<1.00"
+  fixed_versions: ">=1.00"
+- id: CPANSA-DBD-MariaDB-2017-01
+  distribution: DBD-MariaDB
+  reported: 2017-07-01
+  description: >
+    Leaking dangling pointers.
+  references:
+    - https://metacpan.org/changes/distribution/DBD-MariaDB
+  cves:
+    - CVE-2017-3302
+  affected_versions: "<1.00"
+  fixed_versions: ">=1.00"
