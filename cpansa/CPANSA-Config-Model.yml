@@ -18,6 +18,8 @@
   reported: 2017-05-10
   description: >
     Loads models from a local directory, making it possible to substitute the model.
+  cves:
+    - CVE-2017-0374
   references:
     - https://metacpan.org/changes/distribution/Config-Model
     - https://github.com/dod38fr/config-model/commit/4d37c75b0c4f9633b67999f8260b08027a6bc524
