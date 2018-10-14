@@ -1,0 +1,15 @@
+---
+- id: CPANSA-Compress-Raw-Zlib-2017-01
+  distribution: Compress-Raw-Zlib
+  reported: 2017-11-14
+  description: >
+    Zlib vulnerabilities.
+  cves:
+    - CVE-2016-9843
+    - CVE-2016-9841
+    - CVE-2016-9840
+    - CVE-2016-9842
+  references:
+    - https://metacpan.org/changes/distribution/Compress-Raw-Zlib
+  affected_versions: "<2.075"
+  fixed_versions: ">=2.075"
