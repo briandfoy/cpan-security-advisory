@@ -1,0 +1,23 @@
+---
+- id: CPANSA-mod_perl-2009-01
+  distribution: mod_perl
+  reported: 2009-05-11
+  description: >
+    XSS in Apache::Status.
+  references:
+    - https://metacpan.org/changes/distribution/mod_perl
+  cves:
+    - CVE-2009-0796
+  affected_versions: "<1.31"
+  fixed_versions: ">=1.31"
+- id: CPANSA-mod_perl-2007-01
+  distribution: mod_perl
+  reported: 2007-03-29
+  description: >
+    Unescaped variable interpolation in Apache::PerlRun regular expression could cause regex engine tampering.
+  references:
+    - https://metacpan.org/changes/distribution/mod_perl
+  cves:
+    - CVE-2007-1349
+  affected_versions: "<1.30"
+  fixed_versions: ">=1.30"

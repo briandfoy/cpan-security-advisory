@@ -1,0 +1,23 @@
+---
+- id: CPANSA-MHonArc-2011-01
+  distribution: MHonArc
+  reported: 2011-01-09
+  description: >
+    Improper escaping of certain HTML sequences (XSS).
+  references:
+    - https://metacpan.org/changes/distribution/MHonArc
+  cves:
+    - CVE-2010-4524
+  affected_versions: "<2.6.17"
+  fixed_versions: ">=2.6.17"
+- id: CPANSA-MHonArc-2011-02
+  distribution: MHonArc
+  reported: 2011-01-09
+  description: >
+    DoS when processing html messages with deep tag nesting.
+  references:
+    - https://metacpan.org/changes/distribution/MHonArc
+  cves:
+    - CVE-2010-1677
+  affected_versions: "<2.6.17"
+  fixed_versions: ">=2.6.17"
