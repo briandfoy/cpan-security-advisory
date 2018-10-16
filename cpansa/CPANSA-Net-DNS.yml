@@ -1,0 +1,12 @@
+---
+- id: CPANSA-Net-DNS-2008-01
+  distribution: Net-DNS
+  reported: 2008-02-08
+  description: >
+    Allows remote attackers to cause a denial of service (program "croak") via a crafted DNS response.
+  references:
+    - https://metacpan.org/changes/distribution/Net-DNS
+  cves:
+    - CVE-2007-6341
+  affected_versions: "<0.63"
+  fixed_versions: ">=0.63"
