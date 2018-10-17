@@ -1,0 +1,13 @@
+---
+- id: CPANSA-PAR-Packer-2011-01
+  distribution: PAR-Packer
+  reported: 2011-07-18
+  description: >
+    PAR packed files are extracted to unsafe and predictable temporary directories.
+  references:
+    - https://metacpan.org/changes/distribution/PAR-Packer
+    - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+  cves:
+    - CVE-2011-4114
+  affected_versions: "<1.011"
+  fixed_versions: ">=1.011"
