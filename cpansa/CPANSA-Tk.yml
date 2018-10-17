@@ -1,0 +1,14 @@
+---
+- id: CPANSA-Tk-2008-01
+  distribution: Tk
+  reported: 2008-10-01
+  description: >
+    Buffer overflow in the LWZReadByte_ function in the GD extension in allows remote attackers to have an unknown
+    impact via a GIF file with input_code_size greater than MAX_LWZ_BITS, which triggers an overflow when initializing
+    the table array.
+  references:
+    - https://metacpan.org/changes/distribution/Tk
+  cves:
+    - CVE-2006-4484
+  affected_versions: "<804.029"
+  fixed_versions: ">=804.029"

@@ -1,4 +1,13 @@
 ---
+- id: CPANSA-UI-Dialog-2015-01
+  distribution: UI-Dialog
+  reported: 2015-10-10
+  description: >
+    Allows remote attackers to execute arbitrary commands.
+  references:
+    - https://metacpan.org/changes/distribution/UI-Dialog
+  affected_versions: "<1.11"
+  fixed_versions: ">=1.11"
 - id: CPANSA-UI-Dialog-2004-01
   distribution: UI-Dialog
   reported: 2004-02-18
