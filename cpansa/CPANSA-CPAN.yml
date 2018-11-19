@@ -4,7 +4,7 @@
   reported: 2009-09-23
   description: >
     Archive::Tar preserves permissions in the tarball; extracted file permissions will be set from users umask instead.
-  affected_version: "<1.93"
-  fixed_version: ">=1.93"
+  affected_versions: "<1.93"
+  fixed_versions: ">=1.93"
   references:
     - https://github.com/andk/cpanpm/commit/079fa2e7ee77d626eab8bb06d0465c6a05f6c8b6
