@@ -1,0 +1,12 @@
+---
+- id: CPANSA-HTTP-Session2-2018-01
+  distribution: HTTP-Session2
+  reported: 2018-01-26
+  severity: critical
+  description: >
+      HTTP::Session2 1.10 does not validate session id, this causes RCE depending on the session store you use.
+  references:
+    - https://metacpan.org/changes/distribution/HTTP-Session2
+    - https://github.com/tokuhirom/HTTP-Session2/commit/813838f6d08034b6a265a70e53b59b941b5d3e6d
+  affected_versions: "<1.10"
+  fixed_versions: ">=1.10"

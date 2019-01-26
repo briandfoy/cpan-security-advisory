@@ -1,0 +1,13 @@
+---
+- id: CPANSA-Plack-Middleware-Session-Cookie-2014-01
+  distribution: Plack-Middleware-Session-Cookie
+  reported: 2014-08-11
+  severity: critical
+  description: >
+      Plack::Middleware::Session::Cookie 0.21 has a security vulnerability where it allows an attacker to
+      execute arbitrary code on the server, when the middleware is enabled without a secret.
+  references:
+    - https://gist.github.com/miyagawa/2b8764af908a0dacd43d
+    - https://metacpan.org/changes/distribution/Plack-Middleware-Session
+  affected_versions: "<=0.21"
+  fixed_versions: ">0.21"
