@@ -55,6 +55,10 @@ Viacheslav Tykhanovskyi (github.com/vti)
 
 Takumi Akiyama (github.com/akiym)
 
+Takafumi Onaka (github.com/onk)
+
+Mala (github.com/mala)
+
 ## Contribution
 
 If you know of a security vulnerability that is not present in our database, feel free to contribute with a Pull
