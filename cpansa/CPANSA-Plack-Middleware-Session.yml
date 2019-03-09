@@ -1,6 +1,6 @@
 ---
-- id: CPANSA-Plack-Middleware-Session-Cookie-2014-01
-  distribution: Plack-Middleware-Session-Cookie
+- id: CPANSA-Plack-Middleware-Session-2014-01
+  distribution: Plack-Middleware-Session
   reported: 2014-08-11
   severity: critical
   description: >
