@@ -1,4 +1,18 @@
 ---
+- id: CPANSA-DBI-2020-01
+  distribution: DBI
+  reported: 2020-09-16
+  severity: high
+  description: >
+    A buffer overflow was found in perl-DBI < 1.643 in DBI.xs.
+    A local attacker who is able to supply a string longer than 300 characters could cause an out-of-bounds write,
+    affecting the availability of the service or integrity of data.
+  references:
+    - https://metacpan.org/changes/distribution/DBI
+  cves:
+    - CVE-2020-14393
+  affected_versions: "<1.643"
+  fixed_versions: ">=1.643"
 - id: CPANSA-DBI-2014-01
   distribution: DBI
   reported: 2014-10-15
