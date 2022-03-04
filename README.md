@@ -2,8 +2,7 @@
 
 This is a database of the security advisories for the Perl modules uploaded to CPAN.
 
-This is a hand-picked database. If you want to be automatically notified when one of your dependencies has a security
-issue, check out <https://kritika.io>.
+This is a hand-picked database maintained by the Perl community.
 
 ## Sources
 
@@ -49,17 +48,22 @@ Database is in YAML format with a simple structure:
 
 ## Maintainer
 
-Viacheslav Tykhanovskyi (github.com/vti)
+brian d foy (briandfoy@pobox.com). If you'd like to help, just let me
+know. I'm happy to add people as committers on this repo.
+
+And, please feel free to fork this repo and host it in several places.
+I'd like there to be many ways to get to it so consumers can decide
+which source they want to use (maybe even an internal one).
 
 ## Credits
 
-Takumi Akiyama (github.com/akiym)
-
-Takafumi Onaka (github.com/onk)
-
-Mala (github.com/mala)
+* The original author and maintainer was [Viacheslav Tykhanovskyi](https://github.com/vti).
+* [Takumi Akiyama](https://github.com/akiym)
+* [Takafumi Onaka](https://github.com/onk)
+* [Mala](https://github.com/mala)
 
 ## Contribution
 
-If you know of a security vulnerability that is not present in our database, feel free to contribute with a Pull
-Request. Let's make it as complete as possible!
+If you know of a security vulnerability that is not present in our
+database, feel free to contribute with a Pull Request. Let's make it
+as complete as possible!
