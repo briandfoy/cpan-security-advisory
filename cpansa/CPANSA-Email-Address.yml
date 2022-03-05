@@ -11,3 +11,16 @@
     - CVE-2014-0477
   affected_versions: "<1.905"
   fixed_versions: ">=1.905"
+- id: CPANSA-Email-Address-2014-01
+  distribution: Email-Address
+  reported: 2018-06-19
+  description: >
+    The parse() method in the Email::Address module through 1.909 for Perl is vulnerable to Algorithmic complexity on specially prepared input, leading to Denial of Service. Prepared special input that caused this problem contained 30 form-field characters ("\f").
+  references:
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901873
+    - http://www.openwall.com/lists/oss-security/2018/06/19/3
+    - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00012.html
+  cves:
+    - CVE-2018-12558
+  affected_versions: "<1.909"
+  fixed_versions: ">=1.909"
