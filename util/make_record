@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+use v5.10;
+use experimental qw(signatures);
+
+use IO::Interactive qw(interactive);
+use YAML::XS qw(Dump);
+
+my %hash;
+
+$hash{distribution}      = prompt( 'Package' ) =~ s/::/-/gr;
+$hash{reported}          = prompt( 'Date (YYYY-MM-DD)' );
+$hash{affected_versions} = prompt( 'Affected' );
+$hash{fixed_versions}    = prompt( 'Fixed' );
+$hash{description}       = prompt( 'Description' );
+$hash{cves}              = [ split /\s*,\s*/, prompt( 'CVEs' ) ];
+$hash{severity} = undef;
+
+my @references;
+while(1) {
+	my $ref = prompt('Reference');
+	last unless $ref;
+	push @references, $ref;
+	}
+$hash{references} = \@references;
+
+my( $year ) = ( split /-/, $hash{reported} )[0];
+my $serial = '1';
+
+$hash{id} = sprintf 'CPANSA-%s-%4d-%2d', $hash{distribution}, $year, $serial;
+
+say Dump( [ \%hash ] );
+
+sub prompt ( $message ) {
+	print {interactive} "$message > ";
+	my $answer = <STDIN>;
+	$answer =~ s/\A\s*|\s*\z//gr;
+	}
+
+__END__
+- id: CPANSA-Crypt-Perl-2020-02
+  distribution: Crypt-Perl
+  reported: 2020-06-07
+  severity: high
+  description: >
+    Crypt::Perl::ECDSA in the Crypt::Perl (aka p5-Crypt-Perl) module before 0.32 for Perl fails to verify correct ECDSA signatures when r and s are small and when s = 1. This happens when using the curve secp256r1 (prime256v1). This could conceivably have a security-relevant impact if an attacker wishes to use public r and s values when guessing whether signature verification will fail.
+  references:
+    - https://github.com/FGasper/p5-Crypt-Perl/commit/f960ce75502acf7404187231a706672f8369acb2
+    - https://github.com/FGasper/p5-Crypt-Perl/issues/14
+  affected_versions: "<0.32"
+  fixed_versions: ">=0.32"
+  cves:
+    - CVE-2020-13895
