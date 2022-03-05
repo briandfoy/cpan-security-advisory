@@ -1,0 +1,290 @@
+#!/Users/brian/bin/perl
+use v5.34;
+use utf8;
+use open qw(:std :utf8);
+
+use Mojo::Util qw(dumper);
+use YAML::XS   qw(LoadFile);
+
+my $url = "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl";
+
+my %Ignore = map {
+	chomp;
+	($_, 1)
+	} <DATA>;
+
+my %Seen;
+foreach my $file ( glob('cpansa/*.yml' ) ) {
+	eval {
+		my @keys = map { $_->{cves}->@* } grep { exists $_->{cves} } LoadFile($file)->@*;
+		@Seen{@keys} = (1) x @keys;
+		} or warn "$file: $@\n";
+	}
+
+
+use Mojo::UserAgent;
+my $tx = Mojo::UserAgent
+	->new->get($url)
+	->res
+	->dom->find( 'div#TableWithRules table tr' )
+	->map( sub {
+		my $dom = $_;
+		$dom->find( 'td' )->map( sub { substr( $_->all_text =~ s/\s+$//r, 0, 50 ) } )->to_array
+		} )
+	->each( sub {
+		printf "%s %-17s %s\n", $Seen{$_->[0]} ? '✓' : ' ', $_->@*
+		} )
+	;
+
+__DATA__
+
+  CVE-1999-0150   The Perl fingerd program allows arbitrary command
+  CVE-1999-0450   In IIS, an attacker could determine a real path us
+  CVE-1999-0462   suidperl in Linux Perl does not check the nosuid m
+  CVE-1999-0509   Perl, sh, csh, or other shell interpreters are ins
+  CVE-1999-1053   guestbook.pl cleanses user-inserted SSI commands b
+  CVE-1999-1386   Perl 5.004_04 and earlier follows symbolic links w
+  CVE-2000-0296   fcheck allows local users to gain privileges by em
+  CVE-2000-0703   suidperl (aka sperl) does not properly cleanse the
+  CVE-2000-0883   The default configuration of mod_perl for Apache a
+  CVE-2001-0113   statsconfig.pl in OmniHTTPd 2.07 allows remote att
+  CVE-2001-0370   fcheck prior to 2.57.59 calls the file signature c
+  CVE-2001-0436   dcboard.cgi in DCForum 2000 1.0 allows remote atta
+  CVE-2001-0462   Directory traversal vulnerability in Perl web serv
+  CVE-2001-0733   The #sinclude directive in Embedded Perl (ePerl) 2
+  CVE-2001-0815   Buffer overflow in PerlIS.dll in Activestate Activ
+  CVE-2001-0930   Sendpage.pl allows remote attackers to execute arb
+  CVE-2001-0999   Outlook Express 6.00 allows remote attackers to ex
+  CVE-2001-1187   csvform.pl 0.1 allows remote attackers to execute
+  CVE-2001-1290   admin.cgi in Active Classifieds Free Edition 1.0,
+  CVE-2002-0245   Lotus Domino server 5.0.8 with NoBanner enabled al
+  CVE-2002-0307   Directory traversal vulnerability in ans.pl in Ave
+  CVE-2002-0495   csSearch.cgi in csSearch 2.3 and earlier allows re
+  CVE-2002-0703   An interaction between the Perl MD5 module (perl-D
+  CVE-2002-0924   CGIScript.net csNews.cgi allows remote authenticat
+  CVE-2002-1196   editproducts.cgi in Bugzilla 2.14.x before 2.14.4,
+  CVE-2002-1437   Directory traversal vulnerability in the web handl
+  CVE-2002-2256   Directory traversal vulnerability in pWins Webserv
+  CVE-2003-0495   Cross-site scripting (XSS) vulnerability in LedNew
+  CVE-2003-0562   Buffer overflow in the CGI2PERL.NLM PERL handler i
+  CVE-2003-0770   FUNC.pm in IkonBoard 3.1.2a and earlier, including
+  CVE-2003-0900   Perl 5.8.1 on Fedora Core does not properly initia
+  CVE-2003-1287   Sambar Server before 6.0 beta 3 allows attackers w
+  CVE-2003-1426   Openwebmail in cPanel 5.0, when run using suid Per
+  CVE-2004-0230   TCP, when using a large Window Size, makes it easi
+  CVE-2004-0241   X-Cart 3.4.3 allows remote attackers to execute ar
+  CVE-2004-0377   Buffer overflow in the win32_stat function for (1)
+  CVE-2004-0452   Race condition in the rmtree function in the File:
+  CVE-2004-0976   Multiple scripts in the perl package in Trustix Se
+  CVE-2004-1677   pdesk.cgi in PerlDesk allows remote attackers to g
+  CVE-2004-1678   Directory traversal vulnerability in pdesk.cgi in
+  CVE-2004-1982   Post.pl in YaBB 1 Gold SP 1.2 allows remote attack
+  CVE-2004-2022   ActivePerl 5.8.x and others, and Larry Wall's Perl
+  CVE-2004-2103   Cross-site scripting (XSS) vulnerability in Novell
+  CVE-2004-2286   Integer overflow in the duplication operator in Ac
+  CVE-2004-2550   Multiple cross-site scripting (XSS) vulnerabilitie
+  CVE-2005-0106   SSLeay.pm in libnet-ssleay-perl before 1.25 uses t
+  CVE-2005-0130   Certain Perl scripts in Konversation 0.15 allow re
+  CVE-2005-0155   The PerlIO implementation in Perl 5.8.0, when inst
+  CVE-2005-0156   Buffer overflow in the PerlIO implementation in Pe
+  CVE-2005-0343   SQL injection vulnerability in PerlDesk 1.x allows
+  CVE-2005-0436   Direct code injection vulnerability in awstats.pl
+  CVE-2005-0437   Directory traversal vulnerability in awstats.pl in
+  CVE-2005-0448   Race condition in the rmtree function in File::Pat
+  CVE-2005-1127   Format string vulnerability in the log function in
+  CVE-2005-1349   Buffer overflow in Convert-UUlib (Convert::UUlib)
+  CVE-2005-1527   Eval injection vulnerability in awstats.pl in AWSt
+  CVE-2005-2491   Integer overflow in pcre_compile.c in Perl Compati
+  CVE-2005-2811   Untrusted search path vulnerability in Net-SNMP 5.
+  CVE-2005-2837   Multiple eval injection vulnerabilities in PlainBl
+  CVE-2005-2854   CRLF injection vulnerability in thesitewizard.com
+  CVE-2005-3066   Cross-site scripting (XSS) vulnerability in perldi
+  CVE-2005-3912   Format string vulnerability in miniserv.pl Perl we
+  CVE-2005-3962   Integer overflow in the format string functionalit
+  CVE-2005-4158   Sudo before 1.6.8 p12, when the Perl taint flag is
+  CVE-2005-4162   Cross-site scripting (XSS) vulnerability in cal_ma
+  CVE-2005-4217   Perl in Apple Mac OS X Server 10.3.9 does not prop
+  CVE-2005-4261   Unspecified vulnerability in Positive Software Cor
+  CVE-2005-4278   Untrusted search path vulnerability in Perl before
+  CVE-2005-4780   ** DISPUTED ** Cross-site scripting (XSS) vulnera
+  CVE-2006-0203   membership.asp in Mini-Nuke CMS System 1.8.2 and e
+  CVE-2006-0628   myquiz.pl in Dale Ray MyQuiz 1.01 allows remote at
+  CVE-2006-0735   Cross-site scripting (XSS) vulnerability in BBcode
+  CVE-2006-0780   Multiple cross-site scripting (XSS) vulnerabilitie
+  CVE-2006-0781   Directory traversal vulnerability in weblog.pl in
+  CVE-2006-0782   Unspecified vulnerability in weblog.pl in PerlBlog
+  CVE-2006-0959   SQL injection vulnerability in misc.php in MyBulle
+  CVE-2006-1477   Multiple PHP remote file inclusion vulnerabilities
+  CVE-2006-1478   Directory traversal vulnerability in (1) initiate.
+  CVE-2006-1565   Untrusted search path vulnerability in libgpib-per
+  CVE-2006-1566   Untrusted search path vulnerability in libtunepimp
+  CVE-2006-2856   ActiveState ActivePerl 5.8.8.817 for Windows confi
+  CVE-2006-3207   Directory traversal vulnerability in newpost.php i
+  CVE-2006-3392   Webmin before 1.290 and Usermin before 1.220 calls
+  CVE-2006-3554   Directory traversal vulnerability in index.php in
+  CVE-2006-3589   vmware-config.pl in VMware for Linux, ESX Server 2
+  CVE-2006-3813   A regression error in the Perl package for Red Hat
+  CVE-2006-3819   Eval injection vulnerability in the configure scri
+  CVE-2006-4731   Multiple directory traversal vulnerabilities in (1
+  CVE-2006-4994   Multiple unquoted Windows search path vulnerabilit
+  CVE-2006-5872   login.pl in SQL-Ledger before 2.6.21 and LedgerSMB
+  CVE-2006-6687   Cross-site scripting (XSS) vulnerability in Web Au
+  CVE-2006-6688   Web Automated Perl Portal (WebAPP) 0.9.9.4, and 0.
+  CVE-2007-0669   Unspecified vulnerability in Twiki 4.0.0 through 4
+  CVE-2007-0792   The mod_perl initialization script in Bugzilla 2.2
+  CVE-2007-1359   Interpretation conflict in ModSecurity (mod_securi
+  CVE-2007-1489   Unspecified vulnerability in web-app.org Web Autom
+  CVE-2007-2996   Unspecified vulnerability in perl.rte 5.8.0.10 thr
+  CVE-2007-3295   Directory traversal vulnerability in Yet another B
+  CVE-2007-3944   Multiple heap-based buffer overflows in the Perl C
+  CVE-2007-4144   Cross-site scripting (XSS) vulnerability in sample
+  CVE-2007-4596   The perl extension in PHP does not follow safe_mod
+  CVE-2007-4766   Multiple integer overflows in Perl-Compatible Regu
+  CVE-2007-4768   Heap-based buffer overflow in Perl-Compatible Regu
+  CVE-2007-4829   Directory traversal vulnerability in the Archive::
+  CVE-2007-5116   Buffer overflow in the polymorphic opcode support
+  CVE-2008-0171   regex/v4/perl_matcher_non_recursive.hpp in the Boo
+  CVE-2008-1652   Directory traversal vulnerability in the _serve_re
+  CVE-2008-1927   Double free vulnerability in Perl 5.8.8 allows con
+  CVE-2008-2292   Buffer overflow in the __snprint_value function in
+  CVE-2008-3502   Unspecified vulnerability in Best Practical Soluti
+  CVE-2008-4997   ** DISPUTED ** dfxml-invoice in datafreedom-perl
+  CVE-2008-5305   Eval injection vulnerability in TWiki before 4.2.4
+  CVE-2008-6474   The management interface in F5 BIG-IP 9.4.3 allows
+  CVE-2008-6724   Cross-site scripting (XSS) vulnerability in index.
+  CVE-2009-0486   Bugzilla 3.2.1, 3.0.7, and 3.3.2, when running und
+  CVE-2009-0667   Untrusted search path vulnerability in Agent/Backe
+  CVE-2009-0689   Array index error in the (1) dtoa implementation i
+  CVE-2009-1341   Memory leak in the dequote_bytea function in quote
+  CVE-2009-2899   The monitor perl script in the Sybase database plu
+  CVE-2009-2946   Eval injection vulnerability in scripts/uscan.pl b
+  CVE-2009-3024   The verify_hostname_of_cert function in the certif
+  CVE-2009-3560   The big2_toUtf8 function in lib/xmltok.c in libexp
+  CVE-2009-3626   Perl 5.10.1 allows context-dependent attackers to
+  CVE-2009-3845   The port-3443 HTTP server in HP OpenView Network N
+  CVE-2009-5074   Unspecified vulnerability in the MojoX::Dispatcher
+  CVE-2009-5081   The (1) config.guess, (2) contrib/groffer/perl/gro
+  CVE-2010-1158   Integer overflow in the regular expression engine
+  CVE-2010-1169   PostgreSQL 7.4 before 7.4.29, 8.0 before 8.0.25, 8
+  CVE-2010-2389   Unspecified vulnerability in the Perl component in
+  CVE-2010-2761   The multipart_init function in (1) CGI.pm before 3
+  CVE-2010-3433   The PL/perl and PL/Tcl implementations in PostgreS
+  CVE-2010-3476   Open Ticket Request System (OTRS) 2.3.x before 2.3
+  CVE-2010-4777   The Perl_reg_numbered_buff_fetch function in Perl
+  CVE-2011-0761   Perl 5.10.x allows context-dependent attackers to
+  CVE-2011-0923   The client in HP Data Protector does not properly
+  CVE-2011-1487   The (1) lc, (2) lcfirst, (3) uc, and (4) ucfirst f
+  CVE-2011-1841   Cross-site scripting (XSS) vulnerability in the li
+  CVE-2011-2767   mod_perl 2.0 through 2.0.10 allows attackers to ex
+  CVE-2011-2939   Off-by-one error in the decode_xs function in Unic
+  CVE-2011-3597   Eval injection vulnerability in the Digest module
+  CVE-2011-4616   Cross-site scripting (XSS) vulnerability in the HT
+  CVE-2011-5060   The par_mktmpdir function in the PAR module before
+  CVE-2012-0453   Cross-site request forgery (CSRF) vulnerability in
+  CVE-2012-2981   Webmin 1.590 and earlier allows remote authenticat
+  CVE-2012-3504   The nssconfigFound function in genkey.pl in crypto
+  CVE-2012-5195   Heap-based buffer overflow in the Perl_repeatcpy f
+  CVE-2012-5377   Untrusted search path vulnerability in the install
+  CVE-2012-5697   The btinstall installation script in Bulb Security
+  CVE-2012-5932   Eval injection vulnerability in the ldapagnt_eval
+  CVE-2012-6141   The App::Context module 0.01 through 0.968 for Per
+  CVE-2012-6329   The _compile function in Maketext.pm in the Locale
+  CVE-2013-0209   lib/MT/Upgrade.pm in mt-upgrade.cgi in Movable Typ
+  CVE-2013-1437   Eval injection vulnerability in the Module-Metadat
+  CVE-2013-1667   The rehash mechanism in Perl 5.8.2 through 5.16.x
+  CVE-2013-1751   TWiki before 5.1.4 allows remote attackers to exec
+  CVE-2013-2751   Eval injection vulnerability in frontview/lib/np_h
+  CVE-2013-4279   imapsync 1.564 and earlier performs a release chec
+  CVE-2013-7284   The PlRPC module, possibly 0.2020 and earlier, for
+  CVE-2013-7422   Integer underflow in regcomp.c in Perl before 5.20
+  CVE-2014-0931   Multiple XML external entity (XXE) vulnerabilities
+  CVE-2014-1572   The confirm_create_account function in the account
+  CVE-2014-1573   Bugzilla 2.x through 4.0.x before 4.0.15, 4.1.x an
+  CVE-2014-2285   The perl_trapd_handler function in perl/TrapReceiv
+  CVE-2014-3897   Cross-site scripting (XSS) vulnerability in Homepa
+  CVE-2014-4720   Email::Address module before 1.904 for Perl uses a
+  CVE-2014-5509   clipedit in the Clipboard module for Perl allows l
+  CVE-2014-7180   Electric Cloud ElectricCommander before 4.2.6 and
+  CVE-2014-7236   Eval injection vulnerability in lib/TWiki/Plugins.
+  CVE-2014-8630   Bugzilla before 4.0.16, 4.1.x and 4.2.x before 4.2
+  CVE-2015-0868   Unrestricted file upload vulnerability in Mrs. Shi
+  CVE-2015-0871   Cross-site scripting (XSS) vulnerability in Mrs. S
+  CVE-2015-0873   Cross-site scripting (XSS) vulnerability in Homepa
+  CVE-2015-0898   futomi CGI Cafe MP Form Mail CGI eCommerce before
+  CVE-2015-1592   Movable Type Pro, Open Source, and Advanced before
+  CVE-2015-5073   Heap-based buffer overflow in the find_fixedlength
+  CVE-2015-5667   Cross-site scripting (XSS) vulnerability in the HT
+  CVE-2015-8853   The (1) S_reghop3, (2) S_reghop4, and (3) S_reghop
+  CVE-2016-1211   Cross-site scripting (XSS) vulnerability in Epoch
+  CVE-2016-1531   Exim before 4.86.2, when installed setuid root, al
+  CVE-2016-2381   Perl might allow context-dependent attackers to by
+  CVE-2016-4748   Perl in Apple OS X before 10.12 allows local users
+  CVE-2016-7489   Teradata Virtual Machine Community Edition v15.10'
+  CVE-2017-12763  An unspecified server utility in NoMachine before
+  CVE-2017-12814  Stack-based buffer overflow in the CPerlHost::Add
+  CVE-2017-12837  Heap-based buffer overflow in the S_regatom functi
+  CVE-2017-12883  Buffer overflow in the S_grok_bslash_N function in
+  CVE-2017-14867  Git before 2.10.5, 2.11.x before 2.11.4, 2.12.x be
+  CVE-2018-18311  Perl before 5.26.3 and 5.28.x before 5.28.1 has a
+  CVE-2018-18312  Perl before 5.26.3 and 5.28.0 before 5.28.1 has a
+  CVE-2018-18313  Perl before 5.26.3 has a buffer over-read via a cr
+  CVE-2018-18314  Perl before 5.26.3 has a buffer overflow via a cra
+  CVE-2018-6797   An issue was discovered in Perl 5.18 through 5.26.
+  CVE-2018-6798   An issue was discovered in Perl 5.22 through 5.26.
+  CVE-2018-6913   Heap-based buffer overflow in the pack function in
+  CVE-2019-20327  Insecure permissions in cwrapper_perl in Centreon
+  CVE-2020-10543  Perl before 5.30.3 on 32-bit platforms allows a he
+  CVE-2020-10878  Perl before 5.30.3 has an integer overflow related
+  CVE-2020-12723  regcomp.c in Perl before 5.30.3 allows a buffer ov
+CVE-1999-0034   Buffer overflow in suidperl (sperl), Perl 4.x and
+CVE-2002-1436   The web handler for Perl 5.003 on Novell NetWare 5
+CVE-2002-1438   The web handler for Perl 5.003 on Novell NetWare 5
+CVE-2002-1635   The Apache configuration file (httpd.conf) in Orac
+CVE-2002-1750   csGuestbook.cgi in CGISCRIPT.NET csGuestbook 1.0 a
+CVE-2002-1751   csLiveSupport.cgi in CGIScript.net csLiveSupport a
+CVE-2002-1752   csChatRBox.cgi in CGIScript.net csChat-R-Box allow
+CVE-2002-1753   csNewsPro.cgi in CGIScript.net csNews Professional
+CVE-2005-4872   Perl-Compatible Regular Expression (PCRE) library
+CVE-2006-7225   Perl-Compatible Regular Expression (PCRE) library
+CVE-2006-7226   Perl-Compatible Regular Expression (PCRE) library
+CVE-2006-7227   Integer overflow in Perl-Compatible Regular Expres
+CVE-2006-7228   Integer overflow in Perl-Compatible Regular Expres
+CVE-2006-7230   Perl-Compatible Regular Expression (PCRE) library
+CVE-2007-1659   Perl-Compatible Regular Expression (PCRE) library
+CVE-2007-1660   Perl-Compatible Regular Expression (PCRE) library
+CVE-2007-1661   Perl-Compatible Regular Expression (PCRE) library
+CVE-2007-1662   Perl-Compatible Regular Expression (PCRE) library
+CVE-2007-4767   Perl-Compatible Regular Expression (PCRE) library
+CVE-2008-2371   Heap-based buffer overflow in pcre_compile.c in th
+CVE-2015-2327   PCRE before 8.36 mishandles the /(((a\2)|(a*)\g<-1
+CVE-2015-2328   PCRE before 8.36 mishandles the /((?(R)a|(?1)))+/
+CVE-2015-3210   Heap-based buffer overflow in PCRE 8.34 through 8.
+CVE-2015-3217   PCRE 7.8 and 8.32 through 8.37, and PCRE2 10.10 mi
+CVE-2015-8380   The pcre_exec function in pcre_exec.c in PCRE befo
+CVE-2015-8381   The compile_regex function in pcre_compile.c in PC
+CVE-2015-8382   The match function in pcre_exec.c in PCRE before 8
+CVE-2015-8383   PCRE before 8.38 mishandles certain repeated condi
+CVE-2015-8384   PCRE before 8.38 mishandles the /(?J)(?'d'(?'d'\g{
+CVE-2015-8385   PCRE before 8.38 mishandles the /(?|(\k'Pm')|(?'Pm
+CVE-2015-8386   PCRE before 8.38 mishandles the interaction of loo
+CVE-2015-8387   PCRE before 8.38 mishandles (?123) subroutine call
+CVE-2015-8388   PCRE before 8.38 mishandles the /(?=di(?<=(?1))|(?
+CVE-2015-8389   PCRE before 8.38 mishandles the /(?:|a|){100}x/ pa
+CVE-2015-8390   PCRE before 8.38 mishandles the [: and \\ substrin
+CVE-2015-8391   The pcre_compile function in pcre_compile.c in PCR
+CVE-2015-8392   PCRE before 8.38 mishandles certain instances of t
+CVE-2015-8393   pcregrep in PCRE before 8.38 mishandles the -q opt
+CVE-2015-8394   PCRE before 8.38 mishandles the (?(<digits>) and (
+CVE-2015-8395   PCRE before 8.38 mishandles certain references, wh
+CVE-2016-1283   The pcre_compile2 function in pcre_compile.c in PC
+CVE-2017-4985   In EMC VNX2 versions prior to OE for File 8.1.9.21
+CVE-2017-6972   AlienVault USM and OSSIM before 5.3.7 and NfSen be
+CVE-2018-11189  Quest DR Series Disk Backup software version befor
+CVE-2018-20911  cPanel before 70.0.23 allows code execution becaus
+CVE-2020-24045  A sandbox escape issue was discovered in TitanHQ S
+CVE-2020-26574  ** UNSUPPORTED WHEN ASSIGNED ** Leostream Connecti
+CVE-2020-36163  An issue was discovered in Veritas NetBackup and O
+CVE-2021-38587  In cPanel before 96.0.13, scripts/fix-cpanel-perl
+CVE-2021-38588  In cPanel before 96.0.13, fix_cpanel_perl lacks ve
+CVE-2021-38589  In cPanel before 96.0.13, scripts/fix-cpanel-perl
+CVE-2021-41550  Leostream Connection Broker 9.0.40.17 allows admin
