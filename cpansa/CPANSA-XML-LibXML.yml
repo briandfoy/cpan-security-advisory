@@ -11,3 +11,16 @@
     - CVE-2015-3451
   affected_versions: "<2.0120"
   fixed_versions: ">=2.0120"
+- id: CPANSA-XML-LibXML-2017-01
+  distribution: XML-LibXML
+  reported: 2015-04-23
+  description: >
+    Use-after-free in the XML-LibXML module through 2.0129 for Perl allows remote attackers to execute arbitrary code by controlling the arguments to a replaceChild call.
+  references:
+    - https://www.debian.org/security/2017/dsa-4042
+    - https://rt.cpan.org/Public/Bug/Display.html?id=122246
+    - https://lists.debian.org/debian-lts-announce/2017/11/msg00017.html
+  cves:
+    - CVE-2017-10672
+  affected_versions: "<2.0129"
+  fixed_versions: ">=2.0129"
