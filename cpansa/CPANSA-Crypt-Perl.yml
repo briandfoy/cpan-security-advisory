@@ -1,0 +1,11 @@
+---
+- id: CPANSA-Crypt-Perl-2020-01
+  distribution: Crypt-Perl
+  reported: 2020-08-10
+  severity: high
+  description: >
+    ECDSA/EC/Point.pm in Crypt::Perl before 0.33 does not properly consider timing attacks against the EC point multiplication algorithm.
+  references:
+    - https://github.com/FGasper/p5-Crypt-Perl/compare/0.32...0.33
+  affected_versions: "<0.33"
+  fixed_versions: ">=0.33"
