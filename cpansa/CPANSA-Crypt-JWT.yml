@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-Crypt-JWT-2019-01
-  distribution: Crypt-Perl
+  distribution: Crypt-JWT
   reported: 2019-03-20
   severity: high
   description: >
