@@ -7,5 +7,7 @@
   references:
     - https://metacpan.org/changes/distribution/SVN-Look
     - https://github.com/gnustavo/SVN-Look/commit/b413ac1c397dfc6b2d164fede693f7ff9a94c83c
+    - https://bugs.launchpad.net/ubuntu/+source/libsvn-look-perl/+bug/1323300
   affected_versions: "<0.40"
   fixed_versions: ">=0.40"
+  cves:
