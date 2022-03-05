@@ -1,0 +1,13 @@
+---
+- id: CPANSA-CPAN-Checksums-2020-01
+  distribution: CPAN-Checksums
+  reported: 2020-07-30
+  description: >
+    The CPAN::Checksums package 2.12 for Perl does not uniquely define signed data.
+  references:
+    - https://blog.hackeriet.no/cpan-signature-verification-vulnerabilities/
+    - https://metacpan.org/pod/CPAN::Checksums
+  cves:
+    - CVE-2020-16155
+  affected_versions: ">=2.12"
+  fixed_versions: ""
