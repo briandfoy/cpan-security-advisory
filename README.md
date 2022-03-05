@@ -2,7 +2,16 @@
 
 This is a database of the security advisories for the Perl modules uploaded to CPAN.
 
-This is a hand-picked database maintained by the Perl community.
+This is a hand-picked database maintained by the Perl community. The
+main mirror is [briandfoy/cpan-security-advisory on GitHub](https://github.com/briandfoy/cpan-security-advisory),
+but there are other copies:
+
+- [https://github.com/briandfoy/cpan-security-advisory](https://github.com/briandfoy/cpan-security-advisory)
+- [https://bitbucket.org/briandfoy/cpan-security-advisory](https://bitbucket.org/briandfoy/cpan-security-advisory)
+- [https://gitlab.com/briandfoy/cpan-security-advisory](https://gitlab.com/briandfoy/cpan-security-advisory)
+
+If you want to mirror a copy, let me know. I'd like to have this on
+several different services so we don't depend on one source.
 
 ## Sources
 
