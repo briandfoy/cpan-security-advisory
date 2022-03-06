@@ -1,0 +1,22 @@
+---
+- affected_versions: "<1.35"
+  cves:
+    - CVE-2010-4334
+  description: 'The IO::Socket::SSL module 1.35 for Perl, when verify_mode is not VERIFY_NONE, fails open to VERIFY_NONE instead of throwing an error when a ca_file/ca_path cannot be verified, which allows remote attackers to bypass intended certificate restrictions.'
+  distribution: IO-Socket-SSL
+  fixed_versions: ~
+  id: CPANSA-IO-Socket-SSL-2010-4334
+  references:
+    - http://osvdb.org/69626
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=606058
+    - http://www.securityfocus.com/bid/45189
+    - http://cpansearch.perl.org/src/SULLR/IO-Socket-SSL-1.35/Changes
+    - http://secunia.com/advisories/42508
+    - http://secunia.com/advisories/42757
+    - http://www.openwall.com/lists/oss-security/2010/12/09/8
+    - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052594.html
+    - http://www.openwall.com/lists/oss-security/2010/12/24/1
+    - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052601.html
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2011:092
+  reported: 2011-01-14
+  severity: ~
