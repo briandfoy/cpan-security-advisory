@@ -1,52 +1,112 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 use v5.10;
+use strict;
 use experimental qw(signatures);
 
-use IO::Interactive qw(interactive);
-use YAML::XS qw(Dump);
+=head1 NAME
+
+make_record - turn a CVE into a CPANSA YAML object
+
+=head1 SYNOPSIS
+
+Give this program a CVE ID and see what it does. It guesses the CPAN
+module name, so you need to check that:
+
+	$ perl util/make_record CVE-2011-4117
+	---
+	- affected_versions: ~
+	  cves:
+		- CVE-2011-4117
+	  description: The Batch::BatchRun module 1.03 for Perl does not properly handle temporary files.
+	  distribution: Batch-BatchRun
+	  fixed_versions: ~
+	  id: CPANSA-Batch-BatchRun-2011-4117
+	  references:
+		- http://www.openwall.com/lists/oss-security/2011/11/04/2
+		- http://www.openwall.com/lists/oss-security/2011/11/04/4
+		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
+	  reported: 2020-01-31
+	  severity: high
+
+=cut
 
 my %hash;
+$hash{cves}  = $ARGV[0] // die "Need CVE argument\n";
+my $serial = $hash{cves} =~ s/\ACVE-//r;
 
-$hash{distribution}      = prompt( 'Package' ) =~ s/::/-/gr;
-$hash{reported}          = prompt( 'Date (YYYY-MM-DD)' );
-$hash{affected_versions} = prompt( 'Affected' );
-$hash{fixed_versions}    = prompt( 'Fixed' );
-$hash{description}       = prompt( 'Description' );
-$hash{cves}              = [ split /\s*,\s*/, prompt( 'CVEs' ) ];
-$hash{severity} = undef;
+my $base = 'https://services.nvd.nist.gov/rest/json/cve/1.0';
+use Mojo::UserAgent;
+my $json = Mojo::UserAgent->new->get( "$base/$hash{cves}" )->result->json;
+my $item = $json->{result}{CVE_Items}[0];
 
-my @references;
-while(1) {
-	my $ref = prompt('Reference');
-	last unless $ref;
-	push @references, $ref;
-	}
+$hash{description}       = $item->{cve}{description}{description_data}[0]{value};
+$hash{description}  =~ s/\v/ /g;
+
+my @references = map { $_->{url} } $item->{cve}{references}{reference_data}->@*;
 $hash{references} = \@references;
 
-my( $year ) = ( split /-/, $hash{reported} )[0];
-my $serial = '1';
+$hash{reported} = $item->{publishedDate} =~ s/T.*//r;
+$hash{cves} = [ $hash{cves} ];
 
-$hash{id} = sprintf 'CPANSA-%s-%4d-%2d', $hash{distribution}, $year, $serial;
+$hash{severity} = eval { lc $item->{impact}{baseMetricV3}{cvssV3}{baseSeverity} } || undef;
 
-say Dump( [ \%hash ] );
+my $package = guess_package( $item );
+$package =~ s/::/-/g;
 
-sub prompt ( $message ) {
-	print {interactive} "$message > ";
-	my $answer = <STDIN>;
-	$answer =~ s/\A\s*|\s*\z//gr;
+$hash{distribution} = $package;
+$hash{id} = sprintf 'CPANSA-%s-%s', $package, $serial;
+
+$hash{affected_versions} = undef;
+$hash{fixed_versions} = undef;
+
+use YAML qw(Dump);
+say Dump( [\%hash] );
+
+sub guess_package ( $item ) {
+	my @urls = map { Mojo::URL->new($_->{url}) } $item->{cve}{references}{reference_data}->@*;
+
+	my( $metacpan ) = grep { $_->host =~ /metacpan\.org\z/ } @urls;
+	if( defined $metacpan ) {
+		return $1 if $metacpan =~ m<https://metacpan.org/(pod|dist)/(.*?)(\z|/)>;
+		}
+
+	my( $search ) = grep { $_->host =~ /search\.cpan\.org\z/ } @urls;
+	if( defined $search ) {
+		say "SEARCH: $search";
+		}
+
+	if( $item->{cve}{description}{description_data}[0]{value} =~ /\b ( [A-Z][A-Z0-9_]+(?:::[A-Z][A-Z0-9_]+)+ ) \b/xi ) {
+		return $1
+		}
 	}
 
-__END__
-- id: CPANSA-Crypt-Perl-2020-02
-  distribution: Crypt-Perl
-  reported: 2020-06-07
-  severity: high
-  description: >
-    Crypt::Perl::ECDSA in the Crypt::Perl (aka p5-Crypt-Perl) module before 0.32 for Perl fails to verify correct ECDSA signatures when r and s are small and when s = 1. This happens when using the curve secp256r1 (prime256v1). This could conceivably have a security-relevant impact if an attacker wishes to use public r and s values when guessing whether signature verification will fail.
-  references:
-    - https://github.com/FGasper/p5-Crypt-Perl/commit/f960ce75502acf7404187231a706672f8369acb2
-    - https://github.com/FGasper/p5-Crypt-Perl/issues/14
-  affected_versions: "<0.32"
-  fixed_versions: ">=0.32"
-  cves:
-    - CVE-2020-13895
+# This hasn't turned out so usefule
+sub parse_cpe23uri ( $cpe23uri ) {
+	state @keys = qw(
+		prefix
+		version
+		part
+		vendor
+		product
+		version
+		update
+		edition
+		language
+		sw_edition
+		target_sw
+		target_hw
+		other
+		);
+
+	state $pattern = qr{  # colons not escaped
+		(?<!
+			\\
+		)
+		:
+		}x;
+
+	my %hash;
+	@hash{@keys} = map { s|\\||gr } split /$pattern/, $cpe23uri;
+	return \%hash;
+	}
+
