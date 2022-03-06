@@ -1,15 +1,30 @@
 ---
 - id: CPANSA-Imager-2016-01
   distribution: Imager
-  reported: 2017-08-26
+  reported: 2016-08-02
   description: >
     Loading modules from . (current directory).
   references:
-    - https://metacpan.org/changes/distribution/Imager
+    - http://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html
+    - http://www.securitytracker.com/id/1036440
+    - http://perl5.git.perl.org/perl.git/commit/cee96d52c39b1e7b36e1c62d38bcd8d86e9a41ab
+    - https://rt.perl.org/Public/Bug/Display.html?id=127834
+    - http://www.securityfocus.com/bid/92136
+    - http://www.debian.org/security/2016/dsa-3628
+    - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DOFRQWJRP2NQJEYEWOMECVW3HAMD5SYN/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TZBNQH3DMI7HDELJAZ4TFJJANHXOEDWH/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2FBQOCV3GBAN2EYZUM3CFDJ4ECA3GZOK/
+    - https://security.gentoo.org/glsa/201701-75
+    - https://lists.apache.org/thread.html/7f6a16bc0fd0fd5e67c7fd95bd655069a2ac7d1f88e42d3c853e601c@%3Cannounce.apache.org%3E
+    - https://lists.debian.org/debian-lts-announce/2018/11/msg00016.html
+    - https://security.gentoo.org/glsa/201812-07
+    - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
   cves:
     - CVE-2016-1238
   affected_versions: "<1.006"
   fixed_versions: ">=1.006"
+  severity: high
 - id: CPANSA-Imager-2008-01
   distribution: Imager
   reported: 2008-04-23
