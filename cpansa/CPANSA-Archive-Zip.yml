@@ -14,3 +14,20 @@
     - https://security-tracker.debian.org/tracker/CVE-2018-10860
     - https://github.com/redhotpenguin/perl-Archive-Zip/pull/33
   affected_versions: "<1.61"
+- affected_versions: "<1.14"
+  cves:
+    - CVE-2004-1096
+  description: 'Archive::Zip Perl module before 1.14, when used by antivirus programs such as amavisd-new, allows remote attackers to bypass antivirus protection via a compressed file with both local and global headers set to zero, which does not prevent the compressed file from being opened on a target system.'
+  distribution: Archive-Zip
+  fixed_versions: ~
+  id: CPANSA-Archive-Zip-2004-1096
+  references:
+    - http://www.securityfocus.com/bid/11448
+    - http://www.gentoo.org/security/en/glsa/glsa-200410-31.xml
+    - http://www.idefense.com/application/poi/display?id=153&type=vulnerabilities&flashstatus=true
+    - http://www.kb.cert.org/vuls/id/492545
+    - http://secunia.com/advisories/13038/
+    - http://www.mandriva.com/security/advisories?name=MDKSA-2004:118
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/17761
+  reported: 2005-01-10
+  severity: ~
