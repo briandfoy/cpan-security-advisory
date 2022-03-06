@@ -17,3 +17,18 @@
     - https://metacpan.org/changes/distribution/UI-Dialog
   affected_versions: "<1.03"
   fixed_versions: ">=1.03"
+- affected_versions: "<=1.09"
+  cves:
+    - CVE-2008-7315
+  description: UI-Dialog 1.09 and earlier allows remote attackers to execute arbitrary commands.
+  distribution: UI-Dialog
+  fixed_versions: ">1.09"
+  id: CPANSA-UI-Dialog-2008-7315
+  references:
+    - https://security-tracker.debian.org/tracker/CVE-2008-7315/
+    - https://rt.cpan.org/Public/Bug/Display.html?id=107364
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496448
+    - http://www.securityfocus.com/bid/77031/info
+    - http://www.openwall.com/lists/oss-security/2015/10/08/6
+  reported: 2017-10-10
+  severity: critical
