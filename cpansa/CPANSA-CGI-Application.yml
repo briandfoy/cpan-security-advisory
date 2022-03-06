@@ -1,0 +1,20 @@
+---
+- affected_versions: '<4.50_51'
+  cves:
+    - CVE-2013-7329
+  description: 'The CGI::Application module before 4.50_50 and 4.50_51 for Perl, when run modes are not specified, allows remote attackers to obtain sensitive information (web queries and environment details) via vectors related to the dump_html function.'
+  distribution: CGI-Application
+  fixed_versions: ~
+  id: CPANSA-CGI-Application-2013-7329
+  references:
+    - https://github.com/markstos/CGI--Application/pull/15
+    - http://openwall.com/lists/oss-security/2014/02/19/11
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-March/129436.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-March/129444.html
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739505
+    - http://www.securityfocus.com/bid/65687
+    - https://rt.cpan.org/Public/Bug/Display.html?id=84403
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1067180
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/91735
+  reported: 2014-10-06
+  severity: ~
