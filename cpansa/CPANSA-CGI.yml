@@ -1,12 +1,29 @@
 ---
-- id: CPANSA-CGI-2012-01
+- affected_versions: "<3.63"
+  cves:
+    - CVE-2012-5526
+  description: 'CGI.pm module before 3.63 for Perl does not properly escape newlines in (1) Set-Cookie or (2) P3P headers, which might allow remote attackers to inject arbitrary headers into responses from applications that use CGI.pm.'
   distribution: CGI
-  reported: 2012-11-12
-  description: >
-    CR escaping for Set-Cookie and P3P headers, a potential for newline injection.
-  affected_versions: "<3.63"
+  id: CPANSA-CGI-2012-5526
+  references:
+    - http://www.securityfocus.com/bid/56562
+    - http://www.openwall.com/lists/oss-security/2012/11/15/6
+    - https://github.com/markstos/CGI.pm/pull/23
+    - http://www.securitytracker.com/id?1027780
+    - http://cpansearch.perl.org/src/MARKSTOS/CGI.pm-3.63/Changes
+    - http://secunia.com/advisories/51457
+    - http://www.ubuntu.com/usn/USN-1643-1
+    - http://www.debian.org/security/2012/dsa-2586
+    - http://rhn.redhat.com/errata/RHSA-2013-0685.html
+    - http://secunia.com/advisories/55314
+    - http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/80098
+  reported: 2012-11-21
+  severity: ~
   fixed_versions: ">=3.63"
-- id: CPANSA-CGI-2011-01
+- id: CPANSA-CGI-2011-2766
   distribution: CGI
   reported: 2011-11-08
   description: >
@@ -32,3 +49,28 @@
     Newlines in headers.
   affected_versions: "<3.49"
   fixed_versions: ">=3.49"
+- affected_versions: "<3.50"
+  cves:
+    - CVE-2010-4411
+  description: 'Unspecified vulnerability in CGI.pm 3.50 and earlier allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via unknown vectors.  NOTE: this issue exists because of an incomplete fix for CVE-2010-2761.'
+  distribution: CGI
+  fixed_versions: ">=3.50"
+  id: CPANSA-CGI-2010-4411
+  references:
+    - http://openwall.com/lists/oss-security/2010/12/01/3
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2011:008
+    - http://www.vupen.com/english/advisories/2011/0106
+    - http://www.bugzilla.org/security/3.2.9/
+    - http://secunia.com/advisories/43033
+    - https://bugzilla.mozilla.org/show_bug.cgi?id=591165
+    - http://www.vupen.com/english/advisories/2011/0207
+    - http://www.vupen.com/english/advisories/2011/0271
+    - http://www.vupen.com/english/advisories/2011/0212
+    - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053665.html
+    - http://secunia.com/advisories/43068
+    - http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html
+    - http://secunia.com/advisories/43165
+    - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053678.html
+    - http://lists.opensuse.org/opensuse-security-announce/2011-04/msg00000.html
+  reported: 2010-12-06
+  severity: ~
