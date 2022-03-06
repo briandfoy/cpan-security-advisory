@@ -38,6 +38,9 @@ Sometimes it can't guess the package, so run it again:
 
 my %hash;
 $hash{cves}  = $ARGV[0] // die "Need CVE argument\n";
+$hash{distribution}  = $ARGV[1] if @ARGV > 1;
+$hash{distribution} =~ s/::/-/g;
+
 my $serial = $hash{cves} =~ s/\ACVE-//r;
 
 my $base = 'https://services.nvd.nist.gov/rest/json/cve/1.0';
@@ -59,7 +62,7 @@ $hash{severity} = eval { lc $item->{impact}{baseMetricV3}{cvssV3}{baseSeverity} 
 my $package = guess_package( $item );
 $package =~ s/::/-/g;
 
-$hash{distribution} = $package;
+$hash{distribution} = $package unless defined $hash{distribution};
 $hash{id} = sprintf 'CPANSA-%s-%s', $package, $serial;
 
 $hash{affected_versions} = undef;
