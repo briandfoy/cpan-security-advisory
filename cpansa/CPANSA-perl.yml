@@ -1,0 +1,122 @@
+---
+- affected_versions: ">=5.22.0,<5.24"
+  cves:
+    - CVE-2016-6185
+  description: 'The XSLoader::load method in XSLoader in Perl does not properly locate .so files when called in a string eval, which might allow local users to execute arbitrary code via a Trojan horse library under the current working directory.'
+  distribution: perl
+  fixed_versions: ">=5.24"
+  id: CPANSA-perl-2016-6185
+  references:
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5RFDMASVZLFZYBB2GNTZXU6I76E4NA4V/
+    - https://github.com/Perl/perl5/commit/08e3451d7b3b714ad63a27f1b9c2a23ee75d15ee
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PRIPTDA6XINBVEJXI2NGLKVEINBREHTN/
+    - http://www.openwall.com/lists/oss-security/2016/07/07/1
+    - http://www.openwall.com/lists/oss-security/2016/07/08/5
+    - https://rt.cpan.org/Public/Bug/Display.html?id=115808
+    - http://www.debian.org/security/2016/dsa-3628
+    - http://www.securitytracker.com/id/1036260
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ITYZJXQH24X2F2LAOQEQAC5KXLYJTJ76/
+    - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+    - http://www.securityfocus.com/bid/91685
+    - https://security.gentoo.org/glsa/201701-75
+    - https://usn.ubuntu.com/3625-2/
+    - https://usn.ubuntu.com/3625-1/
+    - https://github.com/Perl/perl5/blob/blead/pod/perl5260delta.pod
+  reported: 2016-08-02
+  severity: high
+- affected_versions: ">=5.005,<5.24"
+  cves:
+    - CVE-2015-8608
+  description: The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
+  distribution: perl
+  fixed_versions: ">=5.24"
+  id: CPANSA-perl-2015-8608
+  references:
+    - https://rt.perl.org/Public/Bug/Display.html?id=126755
+    - https://github.com/Perl/perl5/issues/15067
+    - https://packetstormsecurity.com/files/136649/Perl-5.22-VDir-MapPathA-W-Out-Of-Bounds-Reads-Buffer-Over-Reads.html
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+  reported: 2017-02-07
+  severity: critical
+---
+- affected_versions: "<5.14.2"
+  cves:
+    - CVE-2011-2728
+  description: 'The bsd_glob function in the File::Glob module for Perl before 5.14.2 allows context-dependent attackers to cause a denial of service (crash) via a glob expression with the GLOB_ALTDIRFUNC flag, which triggers an uninitialized pointer dereference.'
+  distribution: perl
+  fixed_versions: ~
+  id: CPANSA-perl-2011-2728
+  references:
+    - http://lists.fedoraproject.org/pipermail/package-announce/2011-November/069752.html
+    - http://www.securityfocus.com/bid/49858
+    - http://cpansearch.perl.org/src/FLORA/perl-5.14.2/pod/perldelta.pod
+    - http://perl5.git.perl.org/perl.git/commit/1af4051e077438976a4c12a0622feaf6715bec77
+    - http://secunia.com/advisories/46172
+    - https://blogs.oracle.com/sunsecurity/entry/cve_2011_2728_denial_of1
+    - https://bugzilla.redhat.com/show_bug.cgi?id=742987
+  reported: 2012-12-21
+  severity: ~
+- affected_versions: "=5.8.8"
+  cves:
+    - CVE-2008-5303
+  description: 'Race condition in the rmtree function in File::Path 1.08 (lib/File/Path.pm) in Perl 5.8.8 allows local users to to delete arbitrary files via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448. It is different from CVE-2008-5302 due to affected versions.'
+  distribution: perl
+  fixed_versions: ~
+  id: CPANSA-File-Path-2008-5303
+  references:
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
+    - http://www.openwall.com/lists/oss-security/2008/11/28/2
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
+    - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
+    - http://www.debian.org/security/2008/dsa-1678
+    - http://www.ubuntu.com/usn/usn-700-1
+    - http://secunia.com/advisories/33314
+    - http://wiki.rpath.com/Advisories:rPSA-2009-0011
+    - http://www.ubuntu.com/usn/usn-700-2
+    - http://secunia.com/advisories/32980
+    - http://support.apple.com/kb/HT4077
+    - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+    - http://secunia.com/advisories/40052
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/47044
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9699
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6680
+    - http://www.securityfocus.com/archive/1/500210/100/0/threaded
+  reported: 2008-12-01
+  severity: ~
+- affected_versions: "=5.8.8,=5.10.0"
+  cves:
+    - CVE-2008-5302
+  description: 'Race condition in the rmtree function in File::Path 1.08 and 2.07 (lib/File/Path.pm) in Perl 5.8.8 and 5.10.0 allows local users to create arbitrary setuid binaries via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448.  It is different from CVE-2008-5303 due to affected versions.'
+  distribution: perl
+  fixed_versions: ~
+  id: CPANSA-perl-2008-5302
+  references:
+    - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
+    - http://www.openwall.com/lists/oss-security/2008/11/28/2
+    - http://www.debian.org/security/2008/dsa-1678
+    - http://secunia.com/advisories/33314
+    - http://www.ubuntu.com/usn/usn-700-1
+    - http://wiki.rpath.com/Advisories:rPSA-2009-0011
+    - http://www.ubuntu.com/usn/usn-700-2
+    - http://lists.opensuse.org/opensuse-security-announce/2009-02/msg00002.html
+    - http://secunia.com/advisories/32980
+    - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+    - http://support.apple.com/kb/HT4077
+    - http://secunia.com/advisories/40052
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/47043
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6890
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11076
+    - http://www.securityfocus.com/archive/1/500210/100/0/threaded
+  reported: 2008-12-01
+  severity: ~
