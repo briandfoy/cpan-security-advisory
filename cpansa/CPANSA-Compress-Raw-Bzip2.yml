@@ -1,5 +1,5 @@
 ---
-- id: CPANSA-Compress-Raw-Bzip2-2010-01
+- id: CPANSA-Compress-Raw-Bzip2-2010-0405
   distribution: Compress-Raw-Bzip2
   reported: 2010-01-27
   description: >
@@ -7,7 +7,7 @@
     context-dependent attackers to cause a denial of service (application crash) or possibly execute arbitrary code via
     a crafted compressed file.
   cves:
-    - VE-2010-0405
+    - CVE-2010-0405
   references:
     - https://metacpan.org/changes/distribution/Compress-Raw-Bzip2
   affected_versions: "<2.031"
