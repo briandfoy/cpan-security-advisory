@@ -1,0 +1,22 @@
+---
+- affected_versions: "<2.71"
+  cves:
+    - CVE-2012-2451
+  description: 'The Config::IniFiles module before 2.71 for Perl creates temporary files with predictable names, which allows local users to overwrite arbitrary files via a symlink attack.  NOTE: some of these details are obtained from third party information.  NOTE: it has been reported that this might only be exploitable by writing in the same directory as the .ini file. If this is the case, then this issue might not cross privilege boundaries.'
+  distribution: Config-IniFiles
+  fixed_versions: ~
+  id: CPANSA-Config-IniFiles-2012-2451
+  references:
+    - http://www.openwall.com/lists/oss-security/2012/05/02/6
+    - http://www.osvdb.org/81671
+    - http://secunia.com/advisories/48990
+    - https://bitbucket.org/shlomif/perl-config-inifiles/changeset/a08fa26f4f59
+    - https://bugzilla.redhat.com/show_bug.cgi?id=818386
+    - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/080713.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/080716.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/081207.html
+    - http://www.securityfocus.com/bid/53361
+    - http://www.ubuntu.com/usn/USN-1543-1
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/75328
+  reported: 2012-06-27
+  severity: ~
