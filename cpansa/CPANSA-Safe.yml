@@ -1,0 +1,86 @@
+---
+- affected_versions: "<=2.26"
+  cves:
+    - CVE-2010-1447
+  description: 'The Safe (aka Safe.pm) module 2.26, and certain earlier versions, for Perl, as used in PostgreSQL 7.4 before 7.4.29, 8.0 before 8.0.25, 8.1 before 8.1.21, 8.2 before 8.2.17, 8.3 before 8.3.11, 8.4 before 8.4.4, and 9.0 Beta before 9.0 Beta 2, allows context-dependent attackers to bypass intended (1) Safe::reval and (2) Safe::rdo access restrictions, and inject and execute arbitrary code, via vectors involving subroutine references and delayed execution.'
+  distribution: Safe
+  fixed_versions: ">=2.27"
+  id: CPANSA-Safe-2010-1447
+  references:
+    - https://bugs.launchpad.net/bugs/cve/2010-1447
+    - http://www.vupen.com/english/advisories/2010/1167
+    - http://secunia.com/advisories/39845
+    - http://www.postgresql.org/about/news.1203
+    - http://security-tracker.debian.org/tracker/CVE-2010-1447
+    - https://bugzilla.redhat.com/show_bug.cgi?id=588269
+    - http://www.securitytracker.com/id?1023988
+    - http://osvdb.org/64756
+    - http://www.securityfocus.com/bid/40305
+    - http://secunia.com/advisories/40052
+    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+    - http://www.openwall.com/lists/oss-security/2010/05/20/5
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+    - http://www.redhat.com/support/errata/RHSA-2010-0457.html
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:115
+    - http://secunia.com/advisories/40049
+    - http://www.debian.org/security/2011/dsa-2267
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7320
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11530
+  reported: 2010-05-19
+  severity: ~
+- affected_versions: "<2.25"
+  cves:
+    - CVE-2010-1168
+  description: 'The Safe (aka Safe.pm) module before 2.25 for Perl allows context-dependent attackers to bypass intended (1) Safe::reval and (2) Safe::rdo access restrictions, and inject and execute arbitrary code, via vectors involving implicitly called methods and implicitly blessed objects, as demonstrated by the (a) DESTROY and (b) AUTOLOAD methods, related to "automagic methods."'
+  distribution: Safe
+  fixed_versions: ~
+  id: CPANSA-Safe-2010-1168
+  references:
+    - http://www.openwall.com/lists/oss-security/2010/05/20/5
+    - http://www.redhat.com/support/errata/RHSA-2010-0457.html
+    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+    - http://secunia.com/advisories/40049
+    - http://cpansearch.perl.org/src/RGARCIA/Safe-2.27/Changes
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:115
+    - http://blogs.perl.org/users/rafael_garcia-suarez/2010/03/new-safepm-fixes-security-hole.html
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+    - https://bugzilla.redhat.com/show_bug.cgi?id=576508
+    - http://secunia.com/advisories/40052
+    - http://securitytracker.com/id?1024062
+    - http://secunia.com/advisories/42402
+    - http://blogs.sun.com/security/entry/cve_2010_1168_vulnerability_in
+    - http://www.vupen.com/english/advisories/2010/3075
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9807
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7424
+  reported: 2010-06-21
+  severity: ~
+- affected_versions: "<=2.07"
+  cves:
+    - CVE-2002-1323
+  description: 'Safe.pm 2.0.7 and earlier, when used in Perl 5.8.0 and earlier, may allow attackers to break out of safe compartments in (1) Safe::reval or (2) Safe::rdo using a redefined @_ variable, which is not reset between successive calls.'
+  distribution: Safe
+  fixed_versions: ">=2.08"
+  id: CPANSA-Safe-2002-1323
+  references:
+    - http://use.perl.org/articles/02/10/06/1118222.shtml?tid=5
+    - http://www.securityfocus.com/bid/6111
+    - http://www.debian.org/security/2002/dsa-208
+    - http://www.iss.net/security_center/static/10574.php
+    - http://bugs6.perl.org/rt2/Ticket/Display.html?id=17744
+    - http://archives.neohapsis.com/archives/vulnwatch/2002-q4/0061.html
+    - http://www.redhat.com/support/errata/RHSA-2003-256.html
+    - http://www.redhat.com/support/errata/RHSA-2003-257.html
+    - ftp://patches.sgi.com/support/free/security/advisories/20030606-01-A
+    - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2004-007.0.txt
+    - ftp://ftp.sco.com/pub/updates/UnixWare/SCOSA-2004.1/SCOSA-2004.1.txt
+    - http://www.osvdb.org/2183
+    - http://www.osvdb.org/3814
+    - http://marc.info/?l=bugtraq&m=104040175522502&w=2
+    - http://marc.info/?l=bugtraq&m=104033126305252&w=2
+    - http://marc.info/?l=bugtraq&m=104005919814869&w=2
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1160
+  reported: 2002-12-11
+  severity: ~
