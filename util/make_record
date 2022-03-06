@@ -12,6 +12,8 @@ make_record - turn a CVE into a CPANSA YAML object
 Give this program a CVE ID and see what it does. It guesses the CPAN
 module name, so you need to check that:
 
+Try it with just the CVE:
+
 	$ perl util/make_record CVE-2011-4117
 	---
 	- affected_versions: ~
@@ -27,6 +29,10 @@ module name, so you need to check that:
 		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
 	  reported: 2020-01-31
 	  severity: high
+
+Sometimes it can't guess the package, so run it again:
+
+	$ perl util/make_record CVE-2011-4117 Some-Package
 
 =cut
 
