@@ -2,6 +2,32 @@
 use v5.26;
 use strict;
 
+=head1 NAME
+
+util/find_record - discover where a CVE appears in the YAML files
+
+=head1 SYNOPSIS
+
+	# Find the records for several CVE
+	$ perl util/find_record CVE-2011-1218 CVE-2022-1234
+
+=head1 DESCRIPTION
+
+Before you make a new report based on a CVE, check that it does not
+already exist. That might be a simple grep:
+
+	grep CVE-2022-1234 cpansa/*.yml
+
+However, that finds that string anywhere in the file. Some descriptions
+and links have references to other CVEs even though those don't exist
+as records in our data.
+
+This tool knows the right place to look ( the `cves` object in each
+record, and it can do several at once. So far it only finds the first
+instance of each.
+
+=cut
+
 use File::Spec::Functions qw(catfile);
 use YAML::XS qw(LoadFile);
 
