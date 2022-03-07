@@ -8,6 +8,7 @@
     - http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits/Catalyst-Runtime.git;a=commitdiff;h=7af54927870a7c6f89323ac1876d49f92e7841f5
   affected_versions: "<5.90020"
   fixed_versions: ">=5.90020"
+  cves: []
 - id: CPANSA-Catalyst-Runtime-2005-01
   distribution: Catalyst-Runtime
   reported: 2005-11-24
@@ -15,3 +16,4 @@
     Path traversal in Static::Simple plugin.
   affected_versions: "<5.58"
   fixed_versions: ">=5.58"
+  cves: []

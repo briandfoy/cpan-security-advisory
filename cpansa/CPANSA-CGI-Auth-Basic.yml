@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/CGI-Auth-Basic
   affected_versions: "<1.11"
   fixed_versions: ">=1.11"
+  cves: []

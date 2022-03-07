@@ -9,6 +9,7 @@
   fixed_versions: ">=2.56"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
+  cves: []
 - id: CPANSA-GBrowser-2004-01
   distribution: GBrowse
   reported: 2004-04-05
@@ -18,6 +19,7 @@
   fixed_versions: ">=1.62"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
+  cves: []
 - id: CPANSA-GBrowser-2003-01
   distribution: GBrowse
   reported: 2003-08-23
@@ -27,3 +29,4 @@
   fixed_versions: ">=1.54"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
+  cves: []

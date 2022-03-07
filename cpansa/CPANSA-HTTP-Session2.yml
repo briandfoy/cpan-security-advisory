@@ -10,3 +10,4 @@
     - https://github.com/tokuhirom/HTTP-Session2/commit/813838f6d08034b6a265a70e53b59b941b5d3e6d
   affected_versions: "<1.10"
   fixed_versions: ">=1.10"
+  cves: []

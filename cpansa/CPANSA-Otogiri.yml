@@ -9,3 +9,4 @@
     - https://metacpan.org/changes/distribution/Otogiri
   affected_versions: "<0.13"
   fixed_versions: ">=0.13"
+  cves: []

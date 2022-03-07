@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/CGI-Application-Plugin-RunmodeDeclare
   affected_versions: "<0.03"
   fixed_versions: ">=0.03"
+  cves: []

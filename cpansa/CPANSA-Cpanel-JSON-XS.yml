@@ -10,6 +10,7 @@
     - https://github.com/dankogai/p5-encode/issues/64
   affected_versions: "<3.0225"
   fixed_versions: ">=3.0225"
+  cves: []
 - id: CPANSA-Cpanel-JSON-XS-2016-01
   distribution: Cpanel-JSON-XS
   reported: 2016-10-06
@@ -20,3 +21,4 @@
     - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
   affected_versions: "<3.0218"
   fixed_versions: ">=3.0218"
+  cves: []

@@ -8,3 +8,4 @@
     - https://jvn.jp/en/jp/JVN53973084/index.html
   affected_versions: "<0.15"
   fixed_versions: ">=0.15"
+  cves: []

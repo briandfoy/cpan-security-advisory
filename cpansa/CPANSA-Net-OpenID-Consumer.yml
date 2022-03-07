@@ -10,6 +10,7 @@
     - http://lists.openid.net/pipermail/openid-security/2010-July/001156.html
   affected_versions: "<1.12"
   fixed_versions: ">=1.12"
+  cves: []
 - id: CPANSA-Net-OpenID-Consumer-2015-05
   distribution: Net-OpenID-Consumer
   reported: 2015-05-26
@@ -19,3 +20,4 @@
     - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
   affected_versions: "<0.06"
   fixed_versions: ">=0.06"
+  cves: []

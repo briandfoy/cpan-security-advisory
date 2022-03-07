@@ -9,3 +9,4 @@
     - https://metacpan.org/changes/distribution/Cmd-Dwarf
   affected_versions: "<1.20"
   fixed_versions: ">=1.20"
+  cves: []

@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/release/ACCARDO/HTML-Perlinfo-1.52
   affected_versions: "<1.52"
   fixed_versions: ">=1.52"
+  cves: []

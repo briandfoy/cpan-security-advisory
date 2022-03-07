@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/CGI-apacheSSI
   affected_versions: "<0.95"
   fixed_versions: ">=0.95"
+  cves: []

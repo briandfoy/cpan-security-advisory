@@ -9,3 +9,4 @@
     - https://github.com/mojomojo/mojomojo/commit/a9b9fd4f4f037627d30f3cbaa10abe42a3439637
   affected_versions: "<0.999033"
   fixed_versions: ">=0.999033"
+  cves: []

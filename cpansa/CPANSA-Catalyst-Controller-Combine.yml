@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/Catalyst-Controller-Combine
   affected_versions: "<0.12"
   fixed_versions: ">=0.12"
+  cves: []

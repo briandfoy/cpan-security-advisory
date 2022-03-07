@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/Apache-SessionX
   affected_versions: "<2.01"
   fixed_versions: ">=2.01"
+  cves: []

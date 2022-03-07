@@ -9,3 +9,4 @@
     - https://github.com/creaktive/LWP-Protocol-Net-Curl/commit/dc8b183c6520a2b6bcde685de635675ee4a7e019
   affected_versions: "<0.009"
   fixed_versions: ">=0.009"
+  cves: []

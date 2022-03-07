@@ -11,3 +11,4 @@
     - https://metacpan.org/changes/distribution/Plack-Middleware-Session
   affected_versions: "<=0.21"
   fixed_versions: ">0.21"
+  cves: []

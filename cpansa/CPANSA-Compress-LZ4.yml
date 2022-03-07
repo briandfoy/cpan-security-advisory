@@ -9,3 +9,4 @@
     - https://github.com/gray/compress-lz4/commit/fc503812b4cbba16429658e1dfe20ad8bbfd77a0
   affected_versions: "<0.20"
   fixed_versions: ">=0.20"
+  cves: []

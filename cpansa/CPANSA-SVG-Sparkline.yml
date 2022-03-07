@@ -9,3 +9,4 @@
     - https://github.com/gwadej/svg-sparkline/commit/ca83d6eb56aa86f3ca735866ffa9aa97acc2e708
   affected_versions: "<1.12"
   fixed_versions: ">=1.12"
+  cves: []

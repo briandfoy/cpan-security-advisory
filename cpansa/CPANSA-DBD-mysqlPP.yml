@@ -10,3 +10,4 @@
     - https://jvn.jp/en/jp/JVN51216285/index.html
   affected_versions: "<0.93"
   fixed_versions: ">=0.03"
+  cves: []

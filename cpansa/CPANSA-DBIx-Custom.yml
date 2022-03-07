@@ -10,3 +10,4 @@
     - https://github.com/yuki-kimoto/DBIx-Custom/commit/5b00b9f9a966e7abecabd91710c8fa893784d919
   affected_versions: "<0.1641"
   fixed_versions: ">=0.1641"
+  cves: []

@@ -8,3 +8,4 @@
     - https://metacpan.org/changes/distribution/CGI-Application-Plugin-AutoRunmode
   affected_versions: "<0.04"
   fixed_versions: ">=0.04"
+  cves: []

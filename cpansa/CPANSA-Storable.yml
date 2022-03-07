@@ -9,3 +9,4 @@
     - https://cxsecurity.com/issue/WLB-2007120031
   affected_versions: "<3.05"
   fixed_versions: ">=3.05"
+  cves: []

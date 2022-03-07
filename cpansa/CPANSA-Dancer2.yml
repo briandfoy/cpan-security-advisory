@@ -12,3 +12,4 @@
     - https://github.com/PerlDancer/Dancer2/commit/3580f5d0874a9abf5483528f73bda9a7fd9ec7f1
   affected_versions: "<0.206000"
   fixed_versions: ">=0.206000"
+  cves: []

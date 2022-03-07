@@ -9,3 +9,4 @@
     - https://rt.cpan.org/Public/Bug/Display.html?id=81908
   affected_versions: "<1.013"
   fixed_versions: ">=1.013"
+  cves: []

@@ -9,3 +9,4 @@
     - https://metacpan.org/changes/distribution/CGI-Application-Dispatch
   affected_versions: "<1.02"
   fixed_versions: ">=1.02"
+  cves: []

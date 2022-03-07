@@ -9,3 +9,4 @@
     - https://github.com/marcusramberg/Mojolicious-Plugin-OAuth2/commit/68315d329059b427e13d486c0e10733f728709aa
   affected_versions: "<1.3"
   fixed_versions: ">=1.3"
+  cves: []

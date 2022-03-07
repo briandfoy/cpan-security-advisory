@@ -9,3 +9,4 @@
     - https://github.com/karpet/Dezi/commit/f1ad292b4dd988d1a38202c804bb7a2a3bcca3c8
   affected_versions: "<0.002002"
   fixed_versions: ">=0.002002"
+  cves: []
