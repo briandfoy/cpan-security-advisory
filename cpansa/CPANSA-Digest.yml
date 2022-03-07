@@ -1,0 +1,25 @@
+---
+- affected_versions: "<1.17"
+  cves:
+    - CVE-2011-3597
+  description: Eval injection vulnerability in the Digest module before 1.17 for Perl allows context-dependent attackers to execute arbitrary commands via the new constructor.
+  distribution: Digest
+  fixed_versions: ">=0.17"
+  id: CPANSA-Digest-2011-3597
+  references:
+    - http://aix.software.ibm.com/aix/efixes/security/perl_advisory2.asc
+    - http://www.redhat.com/support/errata/RHSA-2011-1797.html
+    - http://www.redhat.com/support/errata/RHSA-2011-1424.html
+    - https://bugzilla.redhat.com/show_bug.cgi?id=743010
+    - http://www.securityfocus.com/bid/49911
+    - http://secunia.com/advisories/46279
+    - http://cpansearch.perl.org/src/GAAS/Digest-1.17/Changes
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2012:009
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2012:008
+    - http://secunia.com/advisories/51457
+    - http://www.ubuntu.com/usn/USN-1643-1
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19446
+  reported: 2012-01-13
+  severity: ~
