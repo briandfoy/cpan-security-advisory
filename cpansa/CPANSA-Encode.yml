@@ -29,3 +29,29 @@
     - CVE-2021-36770
   affected_versions: ">=3.05,<=3.11"
   fixed_versions: ">3.11"
+- affected_versions: "<2.44"
+  cves:
+    - CVE-2011-2939
+  description: 'Off-by-one error in the decode_xs function in Unicode/Unicode.xs in the Encode module before 2.44, as used in Perl before 5.15.6, might allow context-dependent attackers to cause a denial of service (memory corruption) via a crafted Unicode string, which triggers a heap-based buffer overflow.'
+  distribution: Encode
+  fixed_versions: ">=2.44"
+  id: CPANSA-Encode-2011-2939
+  references:
+    - http://perl5.git.perl.org/perl.git/commitdiff/e46d973584785af1f445c4dedbee4243419cb860#patch5
+    - https://bugzilla.redhat.com/show_bug.cgi?id=731246
+    - http://www.openwall.com/lists/oss-security/2011/08/19/17
+    - http://www.redhat.com/support/errata/RHSA-2011-1424.html
+    - http://www.openwall.com/lists/oss-security/2011/08/18/8
+    - http://secunia.com/advisories/46989
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2012:008
+    - http://secunia.com/advisories/51457
+    - http://www.ubuntu.com/usn/USN-1643-1
+    - http://www.securityfocus.com/bid/49858
+    - http://secunia.com/advisories/46172
+    - http://cpansearch.perl.org/src/FLORA/perl-5.14.2/pod/perldelta.pod
+    - http://secunia.com/advisories/55314
+    - http://search.cpan.org/~flora/perl-5.14.2/pod/perldelta.pod#Encode_decode_xs_n-byte_heap-overflow_(CVE-2011-2939)
+  reported: 2012-01-13
+  severity: ~
+  x-commit: 'Encode CVE-2011-2939 GitHub #13'
+  x-file: cpansa/CPANSA-Encode.yml
