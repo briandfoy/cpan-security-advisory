@@ -1,6 +1,6 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
+name: Security report
+about: Tell us about a security report we haven't included
 title: ''
 labels: ''
 assignees: ''
