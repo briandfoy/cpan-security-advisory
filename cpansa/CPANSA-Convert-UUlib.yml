@@ -1,5 +1,5 @@
 ---
-- affected_versions: ~
+- affected_versions: "<1.051"
   cves:
     - CVE-2005-1349
   description: Buffer overflow in Convert-UUlib (Convert::UUlib) before 1.051 allows remote attackers to execute arbitrary code via a malformed parameter to a read operation.
