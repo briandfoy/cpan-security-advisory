@@ -64,7 +64,6 @@ $package =~ s/::/-/g;
 
 $hash{distribution} = $package unless defined $hash{distribution};
 $hash{id} = sprintf 'CPANSA-%s-%s', $hash{distribution}, $serial;
-$hash{'x-file'} = "cpansa/CPANSA-$hash{distribution}.yml";
 
 $hash{affected_versions} = undef;
 $hash{fixed_versions} = undef;
