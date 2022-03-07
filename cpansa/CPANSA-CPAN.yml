@@ -8,3 +8,5 @@
   fixed_versions: ">=1.93"
   references:
     - https://github.com/andk/cpanpm/commit/079fa2e7ee77d626eab8bb06d0465c6a05f6c8b6
+    - https://rt.cpan.org/Ticket/Display.html?id=46384
+  cves: []
