@@ -1,0 +1,14 @@
+---
+- affected_versions: ~
+  cves:
+    - CVE-2013-1437
+  description: Eval injection vulnerability in the Module-Metadata module before 1.000015 for Perl allows remote attackers to execute arbitrary Perl code via the $Version value.
+  distribution: Module-Metadata
+  fixed_versions: ~
+  id: CPANSA-Module-Metadata-2013-1437
+  references:
+    - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114912.html
+    - https://metacpan.org/changes/distribution/Module-Metadata
+    - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114904.html
+  reported: 2020-01-28
+  severity: critical
