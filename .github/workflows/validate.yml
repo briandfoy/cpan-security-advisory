@@ -28,8 +28,6 @@ on:
 jobs:
     yaml:
         runs-on: ubuntu-20.04
-        container:
-            image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v2
             - name: Platform check
