@@ -1,0 +1,14 @@
+---
+- affected_versions: ~
+  cves:
+    - CVE-2006-1565
+  description: 'Untrusted search path vulnerability in libgpib-perl 3.2.06-2 in Debian GNU/Linux includes an RPATH value under the /tmp/buildd directory for the LinuxGpib.so module, which might allow local users to gain privileges by installing malicious libraries in that directory.'
+  distribution: GPIB
+  fixed_versions: ~
+  id: CPANSA-GPIB-2006-1565
+  references:
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=359239
+    - http://www.securityfocus.com/bid/17288
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/25681
+  reported: 2006-03-31
+  severity: ~
