@@ -48,14 +48,14 @@ jobs:
 # Need HTTP::Tiny 0.055 or later.
             - name: Install cpanm and multiple modules
               run: |
-                curl -L https://cpanmin.us | perl - App::cpanminus
-                cpanm --notest IO::Socket::SSL App::Cpan HTTP::Tiny
+                curl -L https://cpanmin.us | sudo perl - App::cpanminus
+                cpanm --sudo --notest IO::Socket::SSL App::Cpan HTTP::Tiny
 # Install the dependencies, again not testing them. This installs the
 # module in the current directory, so we end up installing the module,
 # but that's not a big deal.
             - name: Install dependencies
               run: |
-                cpanm --cpanfile cpanfile --installdeps .
+                cpanm  --sudo --cpanfile cpanfile --installdeps .
             - name: Run tests
               run: |
                 prove -r t
@@ -63,5 +63,4 @@ jobs:
             - name: Author tests
               if: hashFiles('xt') != ''
               run: |
-                cpan -M https://www.cpan.org -T Test::CPAN::Changes
                 prove -r -b xt
