@@ -46,3 +46,27 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9499
   reported: 2009-04-30
   severity: ~
+- affected_versions: "<2.0.0"
+  cves:
+    - CVE-2009-1341
+  description: Memory leak in the dequote_bytea function in quote.c in the DBD::Pg (aka DBD-Pg or libdbd-pg-perl) module before 2.0.0 for Perl allows context-dependent attackers to cause a denial of service (memory consumption) by fetching data with BYTEA columns.
+  distribution: DBD-Pg
+  fixed_versions: ">=2.0.0"
+  id: CPANSA-DBD-Pg-2009-1341
+  references:
+    - http://rt.cpan.org/Public/Bug/Display.html?id=21392
+    - https://launchpad.net/bugs/cve/2009-1341
+    - http://security.debian.org/pool/updates/main/libd/libdbd-pg-perl/libdbd-pg-perl_1.49-2+etch1.diff.gz
+    - http://www.debian.org/security/2009/dsa-1780
+    - http://cpansearch.perl.org/src/TURNSTEP/DBD-Pg-2.13.1/Changes
+    - http://secunia.com/advisories/34909
+    - http://www.securityfocus.com/bid/34757
+    - http://www.redhat.com/support/errata/RHSA-2009-0479.html
+    - http://secunia.com/advisories/35058
+    - http://www.redhat.com/support/errata/RHSA-2009-1067.html
+    - http://lists.opensuse.org/opensuse-security-announce/2009-07/msg00002.html
+    - http://secunia.com/advisories/35685
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/50387
+    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9680
+  reported: 2009-04-30
+  severity: ~
