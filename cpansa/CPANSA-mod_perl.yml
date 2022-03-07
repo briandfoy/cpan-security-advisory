@@ -43,4 +43,3 @@
     - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00065.html
   reported: 2018-08-26
   severity: critical
-  x-commit: 'mod_perl CVE-2011-2767 GitHub #13'
