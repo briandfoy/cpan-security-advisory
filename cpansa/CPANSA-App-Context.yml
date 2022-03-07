@@ -1,0 +1,13 @@
+---
+- affected_versions: ">-0.01,<=0.968"
+  cves:
+    - CVE-2012-6141
+  description: 'The App::Context module 0.01 through 0.968 for Perl does not properly use the Storable::thaw function, which allows remote attackers to execute arbitrary code via a crafted request to (1) App::Session::Cookie or (2) App::Session::HTMLHidden, which is not properly handled when it is deserialized.'
+  distribution: App-Context
+  fixed_versions: ">0.968"
+  id: CPANSA-App-Context-2012-6141
+  references:
+    - http://seclists.org/oss-sec/2013/q2/318
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/84198
+  reported: 2014-06-04
+  severity: ~
