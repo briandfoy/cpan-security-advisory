@@ -2,16 +2,19 @@
 
 This is a database of the security advisories for the Perl modules uploaded to CPAN.
 
-This is a hand-picked database maintained by the Perl community. The
-main mirror is [briandfoy/cpan-security-advisory on GitHub](https://github.com/briandfoy/cpan-security-advisory),
+This is a hand-picked database maintained by the Perl community. See [CONTRIBUTING](CONTRIBUTING.md)
+or the [issues](https://github.com/briandfoy/cpan-security-advisory/issues) to see how you might
+help.
+
+The main mirror is [briandfoy/cpan-security-advisory on GitHub](https://github.com/briandfoy/cpan-security-advisory),
 but there are other copies:
 
 - [https://github.com/briandfoy/cpan-security-advisory](https://github.com/briandfoy/cpan-security-advisory)
 - [https://bitbucket.org/briandfoy/cpan-security-advisory](https://bitbucket.org/briandfoy/cpan-security-advisory)
 - [https://gitlab.com/briandfoy/cpan-security-advisory](https://gitlab.com/briandfoy/cpan-security-advisory)
 
-If you want to mirror a copy, let me know. I'd like to have this on
-several different services so we don't depend on one source.
+If you want to mirror a copy, clone the repo and send me the link. Let's
+make this more resilient by keeping the data in several places.
 
 ## Sources
 
@@ -24,22 +27,38 @@ several different services so we don't depend on one source.
     - Gentoo https://security.gentoo.org/glsa/feed.rss
     - Ubuntu https://usn.ubuntu.com/rss.xml
 
-## Command line checks
+## Finding a repord
 
-For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) package.
+	$ perl util/find_record CVE-2022-1234
 
-```
-$ cpan-audit module Catalyst '>7.0'
-```
+## Making a new repord
 
-## Database format
+There's a utility to make a repord for you from a CVE report:
+
+	$ perl util/make_repord CVE-2022-1234
+
+This tool tries to guess the distribution name, but sometimes it can't. If
+it doesn't guess the distribution name, simply run it again with the
+the distribution name you want:
+
+	$ perl util/make_repord CVE-2022-1234 Some-Package
+
+Then, add the report to the file `cpansa/CPANSA-Some-Package.yml`. If
+there are already reports in that file, remember to strip the `---` from
+the top of the output you just created.
+
+### Repord format
 
 Id format: `CPANSA-<dist-name>-<year>-<sequence>`
 
-Database is in YAML format with a simple structure:
+* `dist-name` is the main module name, not necessarily the affected module in the distribution
+* `year` is the year of the report or discovery, not necessarily the year the problem was introduced
+* `sequence` is some integer. For single CVE reports, like CVE-2011-1589, use the same sequence number for easier maintenance
+
+Database is in YAML format with a simple structure.
 
 ```
-- id: CPANSA-Mojolicious-2008-01
+- id: CPANSA-Mojolicious-2011-01
   distribution: Mojolicious
   reported: 2011-04-05
   severity: critical
@@ -55,14 +74,22 @@ Database is in YAML format with a simple structure:
   fixed_versions: ">= 1.16"
 ```
 
+## Command-line checks
+
+For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) module, or the
+[cpan-audit repo](https://github.com/briandfoy/cpan-audit).
+
+    $ cpan-audit module Catalyst '>7.0'
+
+To see your new report, you'll have to regenerate the `CPAN::Audit::DB` database since
+`CPAN::Audit` does everything locally. That happens in the [cpan-audit repo](https://github.com/briandfoy/cpan-audit),
+where this repo is a submodule.
+
 ## Maintainer
 
 brian d foy (briandfoy@pobox.com). If you'd like to help, just let me
-know. I'm happy to add people as committers on this repo.
-
-And, please feel free to fork this repo and host it in several places.
-I'd like there to be many ways to get to it so consumers can decide
-which source they want to use (maybe even an internal one).
+know by opening as issue. I'm happy to add people as committers on this repo. See
+[CONTRIBUTING.md] for more info.
 
 ## Credits
 
