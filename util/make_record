@@ -48,7 +48,7 @@ use Mojo::UserAgent;
 my $json = Mojo::UserAgent->new->get( "$base/$hash{cves}" )->result->json;
 my $item = $json->{result}{CVE_Items}[0];
 
-$hash{description}       = $item->{cve}{description}{description_data}[0]{value};
+$hash{description}  = $item->{cve}{description}{description_data}[0]{value};
 $hash{description}  =~ s/\v/ /g;
 
 my @references = map { $_->{url} } $item->{cve}{references}{reference_data}->@*;
