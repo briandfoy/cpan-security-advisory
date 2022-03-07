@@ -1,0 +1,36 @@
+#!/usr/bin/env perl
+use v5.26;
+use strict;
+
+use File::Spec::Functions qw(catfile);
+use YAML::XS qw(LoadFile);
+
+my %cves_to_find = map { $_, 1 } @ARGV;
+
+my $base = 'cpansa';
+opendir( my $dh, $base ) or die "Could not open <$base>: $!";
+
+while( my $file = readdir($dh) ) {
+	next unless $file =~ /\.yml\z/;
+	my $path = catfile( $base, $file );
+	my $yaml = eval { LoadFile( $path ) };
+
+	unless( defined $yaml ) {
+		warn "$path: $@\n";
+		next;
+		}
+
+	my @found_cves =
+		map { $_->{cves}->@* }
+		grep { exists $_->{cves} }
+		$yaml->@*;
+
+	foreach my $cve ( @found_cves ) {
+		next unless exists $cves_to_find{$cve};
+		say "$cve --> $path";
+		delete $cves_to_find{$cve};
+		}
+
+	last unless keys %cves_to_find;
+	}
+
