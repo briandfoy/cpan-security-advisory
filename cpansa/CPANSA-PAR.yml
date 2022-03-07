@@ -12,3 +12,17 @@
     - CVE-2011-4114
   affected_versions: "<1.003"
   fixed_versions: ">=1.003"
+- affected_versions: "<1.003"
+  cves:
+    - CVE-2011-5060
+  description: 'The par_mktmpdir function in the PAR module before 1.003 for Perl creates temporary files in a directory with a predictable name without verifying ownership and permissions of this directory, which allows local users to overwrite files when another user extracts a PAR packed program, a different vulnerability in a different package than CVE-2011-4114.'
+  distribution: PAR
+  fixed_versions: ">=1.003"
+  id: CPANSA-PAR-2011-5060
+  references:
+    - http://cpansearch.perl.org/src/RSCHUPP/PAR-1.003/ChangeLog
+    - https://bugzilla.redhat.com/show_bug.cgi?id=753955
+    - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/72435
+  reported: 2012-01-13
+  severity: ~
