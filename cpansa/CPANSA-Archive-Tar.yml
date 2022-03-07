@@ -38,4 +38,3 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11658
   reported: 2007-11-02
   severity: ~
-  x-commit: 'Archive-Tar CVE-2007-4829 GitHub #13'
