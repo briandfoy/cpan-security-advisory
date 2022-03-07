@@ -39,4 +39,14 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11261
   reported: 2008-05-18
   severity: ~
-  x-commit: 'Net-SNMP CVE-2008-2292 GitHub #13'
+- affected_versions: "<=5.2.1.2"
+  cves:
+    - CVE-2005-2811
+  description: 'Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and earlier, on Gentoo Linux, installs certain Perl modules with an insecure DT_RPATH, which could allow local users to gain privileges.'
+  distribution: Net-SNMP
+  fixed_versions: ~
+  id: CPANSA-Net-SNMP-2005-2811
+  references:
+    - http://www.gentoo.org/security/en/glsa/glsa-200509-05.xml
+  reported: 2005-09-07
+  severity: ~
