@@ -1,11 +1,17 @@
 ---
-- id: CPANSA-HTML-Scrubber-2015-01
+- affected_versions: ~
+  cves:
+    - CVE-2015-5667
+  description: 'Cross-site scripting (XSS) vulnerability in the HTML-Scrubber module before 0.15 for Perl, when the comment feature is enabled, allows remote attackers to inject arbitrary web script or HTML via a crafted comment.'
   distribution: HTML-Scrubber
-  reported: 2015-10-10
-  description: >
-    Cross-site scripting vulnerability.
+  fixed_versions: ~
+  id: CPANSA-HTML-Scrubber-2015-5667
   references:
-    - https://jvn.jp/en/jp/JVN53973084/index.html
-  affected_versions: "<0.15"
-  fixed_versions: ">=0.15"
-  cves: []
+    - http://jvn.jp/en/jp/JVN53973084/index.html
+    - http://jvndb.jvn.jp/jvndb/JVNDB-2015-000171
+    - https://metacpan.org/release/HTML-Scrubber
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172997.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172983.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172934.html
+  reported: 2015-10-31
+  severity: ~
