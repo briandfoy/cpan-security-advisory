@@ -1,0 +1,15 @@
+---
+- affected_versions: "<1.19"
+  cves:
+    - CVE-2008-3502
+  description: Unspecified vulnerability in Best Practical Solutions RT 3.0.0 through 3.6.6 allows remote authenticated users to cause a denial of service (CPU or memory consumption) via unspecified vectors related to the Devel::StackTrace module for Perl.
+  distribution: Devel-StackTrace
+  fixed_versions: ">=1.19"
+  id: CPANSA-Devel-StackTrace-2008-3502
+  references:
+    - http://lists.bestpractical.com/pipermail/rt-announce/2008-June/000158.html
+    - http://www.securityfocus.com/bid/29925
+    - http://secunia.com/advisories/30830
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/43337
+  reported: 2008-08-06
+  severity: ~
