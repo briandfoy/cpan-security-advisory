@@ -47,7 +47,11 @@ while( my $file = readdir($dh) ) {
 		}
 
 	my @found_cves =
-		map { $_->{cves}->@* }
+		map {
+			ref $_->{cves} ? $_->{cves}->@* : do {
+				warn "$path cves was not an array ref";
+				() }
+			}
 		grep { exists $_->{cves} }
 		$yaml->@*;
 
