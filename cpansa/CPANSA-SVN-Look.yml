@@ -10,4 +10,4 @@
     - https://bugs.launchpad.net/ubuntu/+source/libsvn-look-perl/+bug/1323300
   affected_versions: "<0.40"
   fixed_versions: ">=0.40"
-  cves:
+  cves: []
