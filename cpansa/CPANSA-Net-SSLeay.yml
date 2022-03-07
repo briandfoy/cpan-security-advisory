@@ -1,0 +1,15 @@
+---
+- affected_versions: "<1.25"
+  cves:
+    - CVE-2005-0106
+  description: 'SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy file for entropy if a source is not set in the EGD_PATH variable, which allows local users to reduce the cryptographic strength of certain operations by modifying the file.'
+  distribution: Net-SSLeay
+  fixed_versions: ">=1.25"
+  id: CPANSA-Net-SSLeay-2005-0106
+  references:
+    - http://secunia.com/advisories/18639
+    - http://www.securityfocus.com/bid/13471
+    - http://www.mandriva.com/security/advisories?name=MDKSA-2006:023
+    - https://usn.ubuntu.com/113-1/
+  reported: 2005-05-03
+  severity: ~
