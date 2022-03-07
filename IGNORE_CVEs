@@ -4,3 +4,10 @@ CVE-2008-1604 Non-CPAN code; PerlMailer
 CVE-2005-3351 Non-CPAN code; SpamAssassin
 CVE-2002-1825 Non-CPAN code; PerlRTE_example1.pl in WASD
 CVE-2002-2131 Non-CPAN code; Perl-HTTPd
+CVE-2009-2625 Java Xerces2
+CVE-2008-5305 Non-CPAN code; Twiki
+CVE-2006-1566 libtunepimp-perl
+CVE-2005-1527 Non-CPAN code; AWStats
+CVE-2005-0437 Non-CPAN code; AWStats
+CVE-2005-0436 Non-CPAN code; AWStats
+CVE-2000-0883 Apache on Mandrake
