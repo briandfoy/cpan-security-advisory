@@ -10,4 +10,4 @@
   cves:
     - CVE-2016-9181
   affected_versions: ">=2.12"
-  fixed_versions: ""
+  fixed_versions: ~
