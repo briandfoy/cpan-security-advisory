@@ -27,27 +27,27 @@ make this more resilient by keeping the data in several places.
     - Gentoo https://security.gentoo.org/glsa/feed.rss
     - Ubuntu https://usn.ubuntu.com/rss.xml
 
-## Finding a repord
+## Finding a record
 
 	$ perl util/find_record CVE-2022-1234
 
-## Making a new repord
+## Making a new record
 
-There's a utility to make a repord for you from a CVE report:
+There's a utility to make a record for you from a CVE report:
 
-	$ perl util/make_repord CVE-2022-1234
+	$ perl util/make_record CVE-2022-1234
 
 This tool tries to guess the distribution name, but sometimes it can't. If
 it doesn't guess the distribution name, simply run it again with the
 the distribution name you want:
 
-	$ perl util/make_repord CVE-2022-1234 Some-Package
+	$ perl util/make_record CVE-2022-1234 Some-Package
 
 Then, add the report to the file `cpansa/CPANSA-Some-Package.yml`. If
 there are already reports in that file, remember to strip the `---` from
 the top of the output you just created.
 
-### Repord format
+### Record format
 
 Id format: `CPANSA-<dist-name>-<year>-<sequence>`
 
