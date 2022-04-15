@@ -13,6 +13,19 @@
     - https://metacpan.org/changes/distribution/Compress-Raw-Zlib
   affected_versions: "<2.075"
   fixed_versions: ">=2.075"
+- id: CPANSA-Compress-Raw-Zlib-2018-25032
+  distribution: Compress-Raw-Zlib
+  reported: 2022-03-25
+  description: >
+    zlib 1.2.11 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.
+  cves:
+    - CVE-2018-25032
+  references:
+    - https://metacpan.org/changes/distribution/Compress-Raw-Zlib
+    - https://github.com/advisories/GHSA-jc36-42cf-vqwj
+    - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032
+  affected_versions: ">=2.075,<2.103"
+  fixed_versions: ">=2.103"
 - affected_versions: "<2.017"
   cves:
     - CVE-2009-1391
