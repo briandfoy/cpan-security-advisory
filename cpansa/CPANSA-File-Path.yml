@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-File-Path-2017-01
-  distribution: Fake-Encode
+  distribution: File-Path
   reported: 2017-05-02
   description: >
     Race condition in the rmtree and remove_tree functions allows attackers
