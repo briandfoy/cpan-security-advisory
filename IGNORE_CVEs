@@ -1,3 +1,26 @@
+CVE-2017-12763    An unspecified server utility in NoMachine before 5.3.10 on Mac OS X
+CVE-1999-0509     Perl, sh, csh, or other shell interpreters are installed in the cgi-bin directory on a WWW site, which allows remote attackers to execute arbitrary commands.
+CVE-2005-4158     Sudo before 1.6.8 p12, when the Perl taint flag is off, does not clear
+CVE-2014-1572     The confirm_create_account function in the account-creation feature in
+CVE-2013-2751     Eval injection vulnerability in frontview/lib/np_handler.pl in the Fro
+CVE-2014-0931     Multiple XML external entity (XXE) vulnerabilities in the (1) CCRC WAN
+CVE-2012-5932     Eval injection vulnerability in the ldapagnt_eval function in ldapagnt
+CVE-2005-4278     Untrusted search path vulnerability in Perl before 5.8.7-r1 on Gentoo
+CVE-2000-0296     fcheck allows local users to gain privileges by embedding shell metach
+CVE-2009-5081     The (1) config.guess, (2) contrib/groffer/perl/groffer.pl, and (3) con
+CVE-2009-2946     Eval injection vulnerability in scripts/uscan.pl before Rev 1984 in de
+CVE-2009-0689     Array index error in the (1) dtoa implementation in dtoa.c (aka pdtoa
+CVE-2007-4596     The perl extension in PHP does not follow safe_mode restrictions, whic
+CVE-2007-4144     Cross-site scripting (XSS) vulnerability in sample-forms/simple-contac
+CVE-1999-0450     In IIS, an attacker could determine a real path using a request for a
+CVE-2000-0296     fcheck allows local users to gain privileges by embedding shell metach
+CVE-2002-1437     Directory traversal vulnerability in the web handler for Perl 5.003 on.
+CVE-2004-0230     TCP, when using a large Window Size, makes it easier for remote attack
+CVE-2004-2103     Cross-site scripting (XSS) vulnerability in Novell NetWare Enterprise
+CVE-2004-2550     Multiple cross-site scripting (XSS) vulnerabilities in unspecified Per...
+CVE-2008-0171     regex/v4/perl_matcher_non_recursive.hpp in the Boost regex library (ak...
+CVE-2017-14867    Git before 2.10.5, 2.11.x before 2.11.4, 2.12.x before 2.12.5, 2.13.x
+CVE-2022-30688  needrestart 0.8 through 3.5 before 3.6 is prone to local privilege escalation.
 CVE-2021-41550  Leostream Connection Broker 9.0.40.17 allows admin
 CVE-2021-38589  cPanel before 96.0.13, scripts/fix-cpanel-perl
 CVE-2021-38588  cPanel before 96.0.13, fix_cpanel_perl lacks ve
