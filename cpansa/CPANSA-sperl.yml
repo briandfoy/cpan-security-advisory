@@ -1,0 +1,42 @@
+---
+- affected_versions: ~
+  cves:
+    - CVE-1999-0034
+  description: 'Buffer overflow in suidperl (sperl), Perl 4.x and 5.x.'
+  distribution: ''
+  fixed_versions: ~
+  id: CPANSA-sperl-1999-0034
+  references: []
+  reported: 1997-05-29
+  severity: ~
+- affected_versions: ~
+  cves:
+    - CVE-1999-0462
+  description: 'suidperl in Linux Perl does not check the nosuid mount option on file systems, allowing local users to gain root access by placing a setuid script in a mountable file system, e.g. a CD-ROM or floppy disk.'
+  distribution: ''
+  fixed_versions: ~
+  id: CPANSA-sperl-1999-0462
+  references:
+    - http://www.securityfocus.com/bid/339
+  reported: 1999-03-17
+  severity: ~
+- affected_versions: ~
+  cves:
+    - CVE-2000-0703
+  description: 'suidperl (aka sperl) does not properly cleanse the escape sequence "~!" before calling /bin/mail to send an error report, which allows local users to gain privileges by setting the "interactive" environmental variable and calling suidperl with a filename that contains the escape sequence.'
+  distribution: ''
+  fixed_versions: ~
+  id: CPANSA-sperl-2000-0703
+  references:
+    - http://archives.neohapsis.com/archives/bugtraq/2000-08/0022.html
+    - http://www.calderasystems.com/support/security/advisories/CSSA-2000-026.0.txt
+    - http://www.securityfocus.com/bid/1547
+    - http://www.novell.com/linux/security/advisories/suse_security_announce_59.html
+    - http://www.redhat.com/support/errata/RHSA-2000-048.html
+    - http://www.turbolinux.com/pipermail/tl-security-announce/2000-August/000017.html
+    - http://archives.neohapsis.com/archives/bugtraq/2000-08/0153.html
+    - http://archives.neohapsis.com/archives/bugtraq/2000-08/0086.html
+    - http://archives.neohapsis.com/archives/bugtraq/2000-08/0113.html
+  reported: 2000-10-20
+  severity: ~
+
