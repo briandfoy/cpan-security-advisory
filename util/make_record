@@ -30,92 +30,49 @@ Try it with just the CVE:
 	  reported: 2020-01-31
 	  severity: high
 
-Sometimes it can't guess the package, so run it again:
+Sometimes it can't guess the package, so run it again with what you see
+in the record:
 
 	$ perl util/make_record CVE-2011-4117 Some-Package
 
+If a report file already exists (F<cpansa/CPANSA-Some-Package.yml>), or
+you specify C<-S>, the output omits the YAML header (C<--->) so you can
+append to the YAML array that is already there:
+
+	$ perl util/make_record CVE-2011-4117 Some-Package > cpansa/CPANSA-Some-Package.yml
+	$ perl util/make_record -S CVE-2011-4117 Some-Package
+
+If the report file already exists, it sets C<-S> for you, but you can
+force that header with C<-s> (which always wins):
+
+	$ perl util/make_record -s CVE-2011-4117 Some-Package
+
 =cut
 
-my %hash;
-$hash{cves}  = $ARGV[0] // die "Need CVE argument\n";
-$hash{distribution}  = $ARGV[1] if @ARGV > 1;
-$hash{distribution} =~ s/::/-/g;
+use FindBin;
+use lib "$FindBin::Bin/../lib";
 
-my $serial = $hash{cves} =~ s/\ACVE-//r;
-
-my $base = 'https://services.nvd.nist.gov/rest/json/cve/1.0';
-use Mojo::UserAgent;
-my $json = Mojo::UserAgent->new->get( "$base/$hash{cves}" )->result->json;
-my $item = $json->{result}{CVE_Items}[0];
-
-$hash{description}  = $item->{cve}{description}{description_data}[0]{value};
-$hash{description}  =~ s/\v/ /g;
-
-my @references = map { $_->{url} } $item->{cve}{references}{reference_data}->@*;
-$hash{references} = \@references;
-
-$hash{reported} = $item->{publishedDate} =~ s/T.*//r;
-$hash{cves} = [ $hash{cves} ];
-
-$hash{severity} = eval { lc $item->{impact}{baseMetricV3}{cvssV3}{baseSeverity} } || undef;
-
-my $package = guess_package( $item );
-$package =~ s/::/-/g;
-
-$hash{distribution} = $package unless defined $hash{distribution};
-$hash{id} = sprintf 'CPANSA-%s-%s', $hash{distribution}, $serial;
-
-$hash{affected_versions} = undef;
-$hash{fixed_versions} = undef;
-
+use Local::CPANSA;
 use YAML qw(Dump);
-say Dump( [\%hash] );
 
-sub guess_package ( $item ) {
-	my @urls = map { Mojo::URL->new($_->{url}) } $item->{cve}{references}{reference_data}->@*;
+use Getopt::Long qw(:config no_ignore_case);
+GetOptions (
+	"S" => \my $no_yaml_start,
+	"s" => \my $yes_yaml_start,
+	);
 
-	my( $metacpan ) = grep { $_->host =~ /metacpan\.org\z/ } @urls;
-	if( defined $metacpan ) {
-		return $1 if $metacpan =~ m<https://metacpan.org/(pod|dist)/(.*?)(\z|/)>;
-		}
+my( $cve, $package ) = @ARGV;
 
-	my( $search ) = grep { $_->host =~ /search\.cpan\.org\z/ } @urls;
-	if( defined $search ) {
-		say "SEARCH: $search";
-		}
+my $hash = Local::CPANSA::assemble_record( $cve, $package );
+my $string = Dump( [ $hash ] );
 
-	if( $item->{cve}{description}{description_data}[0]{value} =~ /\b ( [A-Z][A-Z0-9_]+(?:::[A-Z][A-Z0-9_]+)+ ) \b/xi ) {
-		return $1
-		}
+my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
+$no_yaml_start if -e $report_path;
+
+# If we want to redirect into an existing file, take out the YAML
+# header, unless we have -s to force the header
+unless( $yes_yaml_start ) {
+	$string =~ s/\A---\R// if( -e $report_path or $no_yaml_start );
 	}
 
-# This hasn't turned out so usefule
-sub parse_cpe23uri ( $cpe23uri ) {
-	state @keys = qw(
-		prefix
-		version
-		part
-		vendor
-		product
-		version
-		update
-		edition
-		language
-		sw_edition
-		target_sw
-		target_hw
-		other
-		);
-
-	state $pattern = qr{  # colons not escaped
-		(?<!
-			\\
-		)
-		:
-		}x;
-
-	my %hash;
-	@hash{@keys} = map { s|\\||gr } split /$pattern/, $cpe23uri;
-	return \%hash;
-	}
-
+print $string;
