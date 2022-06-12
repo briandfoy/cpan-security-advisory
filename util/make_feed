@@ -85,7 +85,7 @@ sub start_xml () {
 	my %hash = (
 		id          => 'https:///www.theperlreview.com/perl-cve-atom.xml',
 		title       => 'Perl and CPAN CVEs',
-		description => $description,
+		subtitle    => $description,
 		updated     => now(),
 		);
 
