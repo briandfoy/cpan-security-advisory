@@ -3,17 +3,17 @@ name: Create the Atom feed of CVE
 on:
   schedule:
     - cron: '*/15 * * * *'
-    push:
-        branches:
-            - '!**linux**'
-            - '!**windows**'
-            - '!**macos**'
-            - '!**release**'
-        tags-ignore:
-            # I tag release pushes but those should have already been tested
-            - 'release-*'
-        paths:
-            - '.github/workflows/make_atom_feed.yml'
+  push:
+      branches:
+          - '!**linux**'
+          - '!**windows**'
+          - '!**macos**'
+          - '!**release**'
+      tags-ignore:
+          # I tag release pushes but those should have already been tested
+          - 'release-*'
+      paths:
+          - '.github/workflows/make_atom_feed.yml'
 jobs:
   build:
     name: Make feed
