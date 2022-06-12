@@ -22,14 +22,13 @@ jobs:
         - name: Install cpanm and multiple modules
           run: |
             curl -L https://cpanmin.us | perl - App::cpanminus
-            cpanm --notest IO::Socket::SSL App::Cpan ExtUtils::MakeMaker HTTP::Tiny
-            cpan -M https://www.cpan.org -T ExtUtils::MakeMaker
+            cpanm --sudo --notest IO::Socket::SSL App::Cpan ExtUtils::MakeMaker HTTP::Tiny
 # Install the dependencies, again not testing them. This installs the
 # module in the current directory, so we end up installing the module,
 # but that's not a big deal.
         - name: Install dependencies
           run: |
-            cpanm --cpanfile cpanfile --installdeps .
+            cpanm --sudo --cpanfile cpanfile --installdeps .
         - name: Make feed file
           run: |
             perl util/make_feed > perl-cve-atom.xml
