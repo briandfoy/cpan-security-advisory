@@ -73,7 +73,7 @@ sub now { # 2003-12-13T18:30:02Z
 	}
 
 sub start_xml () {
-	my $feed = Mojo::DOM->new_tag('feed');
+	my $feed = Mojo::DOM->new_tag('feed', xmlns => 'http://www.w3.org/2005/Atom');
 
 	my $description = <<~"HERE";
 		Common Vulnerabilities and Exposures related to Perl and CPAN.
