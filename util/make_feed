@@ -1,5 +1,5 @@
 #!/Users/brian/bin/perl
-use v5.34;
+use v5.26;
 use utf8;
 use open qw(:std :utf8);
 
