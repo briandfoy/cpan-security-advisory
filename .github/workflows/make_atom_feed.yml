@@ -21,14 +21,14 @@ jobs:
 # Need HTTP::Tiny 0.055 or later.
         - name: Install cpanm and multiple modules
           run: |
-            sudo cpan App::cpanminus
+            sudo cpan -T App::cpanminus
             cpanm --sudo --notest IO::Socket::SSL App::Cpan ExtUtils::MakeMaker HTTP::Tiny
 # Install the dependencies, again not testing them. This installs the
 # module in the current directory, so we end up installing the module,
 # but that's not a big deal.
         - name: Install dependencies
           run: |
-            cpanm --sudo --cpanfile cpanfile --installdeps .
+            cpanm --sudo --notest --cpanfile cpanfile --installdeps .
         - name: Make feed file
           run: |
             perl util/make_feed > perl-cve-atom.xml
