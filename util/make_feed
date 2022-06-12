@@ -2,14 +2,16 @@
 use v5.26;
 use utf8;
 use open qw(:std :utf8);
+use experimental qw(signatures);
 
 use FindBin;
 use lib "$FindBin::Bin/../lib";
 
 use Local::CPANSA;
 
+use Mojo::DOM;
 use Mojo::URL;
-use Mojo::Util qw(dumper);
+use Mojo::UserAgent;
 
 my $search_url = Mojo::URL->new("https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl");
 
@@ -24,6 +26,7 @@ my $map_sub = sub {
 			} )->to_array;
 
 		my $url = eval { $dom->at( 'td > a' )->attr('href') };
+		$url =  Mojo::URL->new($url)->to_abs($search_url);
 
 		my $hash = {
 			cve         => $array->[0],
@@ -36,15 +39,8 @@ my $map_sub = sub {
 		$hash;
 		};
 
-use XML::Feed;
-use constant FEED_FORMAT => 'Atom';
-my $feed = XML::Feed->new(FEED_FORMAT);
-$feed->author();
-$feed->link();
-$feed->base('https://cve.mitre.org/');
-$feed->description( 'CVEs related to perl' );
+my $feed = start_xml();
 
-use Mojo::UserAgent;
 my $items = Mojo::UserAgent
 	->new->get($search_url)
 	->res
@@ -55,17 +51,49 @@ my $items = Mojo::UserAgent
 	->grep( sub { ! Local::CPANSA::cve_recorded( $_->{cve} ) } )
 	->grep( sub { ! Local::CPANSA::cve_ignored( $_->{cve} ) } )
 	->map( sub {
-		return if Local::CPANSA::cve_recorded( $_->{cve} );
-		my $entry = XML::Feed::Entry->new(FEED_FORMAT);
-		$entry->title( $_->{cve} );
-		$entry->id( $_->{cve} );
-		$entry->link( Mojo::URL->new($_->{url})->to_abs($search_url)->to_string );
-		$entry->content( $_->{description} );
-		$entry
+		my $entry = tag('entry')->at('entry');
+		$entry->append_content( tag( id      => $_->{cve}         ) );
+		$entry->append_content( tag( title   => $_->{cve}         ) );
+		$entry->append_content( tag( content => $_->{description} ) );
+		$entry->append_content( tag( 'link'  => $_->{url}         ) );
+
+		$feed->append_content($entry);
 		} )
 	->to_array
 	;
 
-$feed->add_entry( $_ ) for $items->@*;
+say $feed;
 
-say $feed->as_xml;
+sub now { # 2003-12-13T18:30:02Z
+	my @gmtime = gmtime();
+	$gmtime[5] += 1900;
+	$gmtime[4] += 1;
+
+	my $now = sprintf '%4d-%02d-%02dT%02d:%02d:%02dZ', @gmtime[5,4,3,2,1,0];
+	}
+
+sub start_xml () {
+	my $feed = Mojo::DOM->new_tag('feed');
+
+	my $description = <<~"HERE";
+		Common Vulnerabilities and Exposures related to Perl and CPAN.
+
+		This is part of the CPAN Audit project. See
+		https://github.com/briandfoy/cpan-security-advisory .
+		HERE
+
+	my %hash = (
+		id          => 'https:///www.theperlreview.com/perl-cve-atom.xml',
+		title       => 'Perl and CPAN CVEs',
+		description => $description,
+		updated     => now(),
+		);
+
+	foreach my $tag ( keys %hash ) {
+		$feed->at('feed')->append_content( tag($tag, $hash{$tag}) );
+		}
+
+	$feed->at('feed');
+	}
+
+sub tag ( $tag, $content = '' ) { Mojo::DOM->new_tag($tag, $content) }
