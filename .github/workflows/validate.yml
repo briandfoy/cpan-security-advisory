@@ -18,8 +18,11 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v2
-            - name: Install yamllint
-              run: sudo apt-get install yamllint
-            - name: Run tests
-              run: |
-                yamllint --format github cpansa/*.yml
+            - name: 'Yamllint'
+              uses: karancode/yamllint-github-action@master
+              with:
+                yamllint_file_or_dir: 'cpansa'
+                yamllint_strict: false
+                yamllint_comment: true
+                env:
+                  GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
