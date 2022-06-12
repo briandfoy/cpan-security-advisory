@@ -93,7 +93,8 @@ sub start_xml () {
 		$feed->at('feed')->append_content( tag($tag, $hash{$tag}) );
 		}
 
+	$feed->at('feed')->append_content( Mojo::DOM->new_tag( 'link', rel => 'self', href => $hash{id}, '' ) );
 	$feed->at('feed');
 	}
 
-sub tag ( $tag, $content = '' ) { Mojo::DOM->new_tag($tag, $content) }
+sub tag ( $tag, $content = undef ) { Mojo::DOM->new_tag($tag, $content // '' ) }
