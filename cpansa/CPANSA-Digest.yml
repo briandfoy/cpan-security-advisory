@@ -2,7 +2,7 @@
 - affected_versions: "<1.17"
   cves:
     - CVE-2011-3597
-  description:
+  description: >
     Eval injection vulnerability in the Digest module before 1.17 for
     Perl allows context-dependent attackers to execute arbitrary
     commands via the new constructor.

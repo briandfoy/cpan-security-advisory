@@ -129,7 +129,7 @@
 - affected_versions: "<5.30.3"
   cves:
     - CVE-2020-10543
-  description:
+  description: >
     Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer
     overflow because nested regular expression quantifiers have an
     integer overflow.
@@ -302,7 +302,7 @@
 - affected_versions: "<5.28.1"
   cves:
     - CVE-2018-18311
-  description:
+  description: >
     Perl before 5.26.3 and 5.28.x before 5.28.1 has a buffer overflow
     via a crafted regular expression that triggers invalid write
     operations.
@@ -792,7 +792,7 @@
 - affected_versions: "<5.16"
   cves:
     - CVE-2012-5195
-  description:
+  description: >
     Heap-based buffer overflow in the Perl_repeatcpy function in
     util.c in Perl 5.12.x before 5.12.5, 5.14.x before 5.14.3, and
     5.15.x before 15.15.5 allows context-dependent attackers to cause
