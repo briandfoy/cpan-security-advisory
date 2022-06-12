@@ -2,7 +2,7 @@ name: Create the Atom feed of CVE
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/15 * * * *'
 jobs:
   build:
     name: Trigger Site Rebuild
