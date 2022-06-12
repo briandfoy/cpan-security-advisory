@@ -1,8 +1,3 @@
-# brian's standard GitHub Actions Ubuntu config for Perl 5 modules
-# adapted from version 20220215.002
-# https://github.com/briandfoy/github_actions
-# https://github.com/features/actions
-# This file is licensed under the Artistic License 2.0
 name: validate YAML files
 
 on:
@@ -22,32 +17,8 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v2
-            - name: Platform check
-              run: uname -a
-            - name: Perl version check
-              run: |
-                perl -V
-                perl -v | perl -0777 -ne 'm/(v5\.\d+)/ && print "PERL_VERSION=$1"' >> $GITHUB_ENV
-# Some older versions of Perl have trouble with hostnames in certs. I
-# haven't figured out why.
-            - name: Setup environment
-              run: |
-                echo "PERL_LWP_SSL_VERIFY_HOSTNAME=0" >> $GITHUB_ENV
-# I had some problems with openssl on Ubuntu, so I punted by installing
-# cpanm first, which is easy. I can install IO::Socket::SSL with that,
-# then switch back to cpan. I didn't explore this further, but what you
-# see here hasn't caused problems for me.
-# Need HTTP::Tiny 0.055 or later.
-            - name: Install cpanm and multiple modules
-              run: |
-                curl -L https://cpanmin.us | sudo perl - App::cpanminus
-                cpanm --sudo --notest IO::Socket::SSL App::Cpan HTTP::Tiny
-# Install the dependencies, again not testing them. This installs the
-# module in the current directory, so we end up installing the module,
-# but that's not a big deal.
-            - name: Install dependencies
-              run: |
-                cpanm --sudo --cpanfile cpanfile --installdeps .
+            - name: Install yamllint
+              run: sudo apt-get install yamllint
             - name: Run tests
               run: |
-                perl -Ilib t/000.check-yaml.t
+                yamllint cpansa/*.yml
