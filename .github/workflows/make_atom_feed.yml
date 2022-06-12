@@ -1,0 +1,42 @@
+name: Create the Atom feed of CVE
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+jobs:
+  build:
+    name: Trigger Site Rebuild
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+# Some older versions of Perl have trouble with hostnames in certs. I
+# haven't figured out why.
+        - name: Setup environment
+          run: |
+            echo "PERL_LWP_SSL_VERIFY_HOSTNAME=0" >> $GITHUB_ENV
+# I had some problems with openssl on Ubuntu, so I punted by installing
+# cpanm first, which is easy. I can install IO::Socket::SSL with that,
+# then switch back to cpan. I didn't explore this further, but what you
+# see here hasn't caused problems for me.
+# Need HTTP::Tiny 0.055 or later.
+        - name: Install cpanm and multiple modules
+          run: |
+            curl -L https://cpanmin.us | perl - App::cpanminus
+            cpanm --notest IO::Socket::SSL App::Cpan ExtUtils::MakeMaker HTTP::Tiny
+            cpan -M https://www.cpan.org -T ExtUtils::MakeMaker
+# Install the dependencies, again not testing them. This installs the
+# module in the current directory, so we end up installing the module,
+# but that's not a big deal.
+        - name: Install dependencies
+          run: |
+            cpanm --cpanfile cpanfile --installdeps .
+        - name: Make feed file
+          run: |
+            perl util/make_feed > perl-cve-atom.xml
+        - name: Save feed file
+          uses: actions/upload-artifact@v3
+          with:
+            name: cve-feed
+            retention-days: 5
+            path: |
+              perl-cve-atom.xml
