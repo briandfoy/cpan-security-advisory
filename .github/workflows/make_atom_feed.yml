@@ -21,7 +21,7 @@ jobs:
 # Need HTTP::Tiny 0.055 or later.
         - name: Install cpanm and multiple modules
           run: |
-            curl -L https://cpanmin.us | perl - App::cpanminus
+            sudo cpan App::cpanminus
             cpanm --sudo --notest IO::Socket::SSL App::Cpan ExtUtils::MakeMaker HTTP::Tiny
 # Install the dependencies, again not testing them. This installs the
 # module in the current directory, so we end up installing the module,
