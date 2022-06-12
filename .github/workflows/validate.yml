@@ -3,7 +3,7 @@
 # https://github.com/briandfoy/github_actions
 # https://github.com/features/actions
 # This file is licensed under the Artistic License 2.0
-name: validate
+name: validate YAML files
 
 on:
     push:
@@ -13,16 +13,8 @@ on:
         tags-ignore:
             # I tag release pushes but those should have already been tested
             - 'release-*'
-        paths-ignore:
-            # list all the files which are irrelevant to the tests
-            # non-code, support files, docs, etc
-            - '.appveyor.yml'
-            - '.gitignore'
-            - '.releaserc'
-            - 'Changes'
-            - 'LICENSE'
-            - 'README.pod'
-            - 'util/'
+        paths:
+            - 'cpansa/**.yml'
         pull_request:
 
 jobs:
@@ -55,12 +47,7 @@ jobs:
 # but that's not a big deal.
             - name: Install dependencies
               run: |
-                cpanm  --sudo --cpanfile cpanfile --installdeps .
+                cpanm --sudo --cpanfile cpanfile --installdeps .
             - name: Run tests
               run: |
-                prove -r t
-# Run author tests, but only if there's an xt/ directory
-            - name: Author tests
-              if: hashFiles('xt') != ''
-              run: |
-                prove -r -b xt
+                perl -Ilib t/000.check-yaml.t
