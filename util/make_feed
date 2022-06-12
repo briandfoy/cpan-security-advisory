@@ -62,7 +62,7 @@ my $items = Mojo::UserAgent
 	->to_array
 	;
 
-say $feed;
+say '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' . $feed;
 
 sub now { # 2003-12-13T18:30:02Z
 	my @gmtime = gmtime();
