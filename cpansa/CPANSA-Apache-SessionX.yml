@@ -3,7 +3,7 @@
   reported: 2005-11-15
   distribution: Apache-SessionX
   description: >
-    Problem in session_id validation, which allows createtion of session with invalid ids.
+    Problem in session_id validation, which allows creation of session with invalid ids.
   references:
     - https://metacpan.org/changes/distribution/Apache-SessionX
   affected_versions: "<2.01"
