@@ -10,6 +10,7 @@ on:
             - 'release-*'
         paths:
             - 'cpansa/**.yml'
+            - '.github/workflows/validate.yml'
         pull_request:
 
 jobs:
