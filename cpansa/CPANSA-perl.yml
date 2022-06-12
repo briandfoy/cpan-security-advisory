@@ -840,3 +840,19 @@
     - http://marc.info/?l=bugtraq&m=88932165406213&w=2
   reported: 1999-12-31
   severity: ~
+- affected_versions: '>=5.24.0,<=5.26.0'
+  cves:
+    - CVE-2017-12814
+  description: Stack-based buffer overflow in the CPerlHost::Add method in win32/perlhost.h in Perl before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 on Windows allows attackers to execute arbitrary code via a long environment variable.
+  distribution: perl
+  fixed_versions: ~
+  id: CPANSA-perl-2017-12814
+  references:
+    - https://rt.perl.org/Public/Bug/Display.html?id=131665
+    - https://perl5.git.perl.org/perl.git/log/refs/tags/v5.26.1-RC1
+    - https://perl5.git.perl.org/perl.git/log/refs/tags/v5.24.3-RC1
+    - http://www.securityfocus.com/bid/101051
+    - https://security.netapp.com/advisory/ntap-20180426-0001/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+  reported: 2017-09-28
+  severity: critical
