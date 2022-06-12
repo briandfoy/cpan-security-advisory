@@ -92,4 +92,61 @@ sub report_path ( $package ) {
 	catfile( 'cpansa', "CPANSA-$package.yml" );
 	}
 
+sub get_ignored_cves ( $file = 'IGNORE_CVEs' ) {
+	open my $fh, '<:encoding(UTF-8)', $file or do {
+		warn "Could not open <$file>: $! - Skipping ignored CVEs\n";
+		return {};
+		};
+
+	my %found;
+	while( <$fh> ) {
+		next if $file =~ /\A\s*(?:#|\z)/;
+		my( $cve ) = split;
+		$found{$cve}++;
+		}
+
+	return \%found;
+	}
+
+sub get_recorded_cves ( $base = 'cpansa' ) {
+	state $rc = require YAML::XS;
+
+	opendir( my $dh, $base ) or die "Could not open <$base>: $!";
+
+	my %found;
+	while( my $file = readdir($dh) ) {
+		next unless $file =~ /\.yml\z/;
+		my $path = catfile( $base, $file );
+		my $yaml = eval { YAML::XS::LoadFile( $path ) };
+
+		unless( defined $yaml ) {
+			warn "$path: $@\n";
+			next;
+			}
+
+		my @found_cves =
+			map {
+				ref $_->{cves} ? $_->{cves}->@* : do {
+					warn "$path cves was not an array ref";
+					() }
+				}
+			grep { exists $_->{cves} }
+			$yaml->@*;
+
+		@found{@found_cves} = (1)x@found_cves;
+		}
+
+	return \%found;
+	}
+
+sub cve_ignored ( $cve ) {
+	state $hash = get_ignored_cves();
+	exists $hash->{$cve};
+	}
+
+sub cve_recorded ( $cve ) {
+	state $hash = get_recorded_cves();
+	exists $hash->{$cve};
+	}
+
 1;
