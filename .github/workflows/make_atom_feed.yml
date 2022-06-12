@@ -5,7 +5,7 @@ on:
     - cron: '*/15 * * * *'
 jobs:
   build:
-    name: Trigger Site Rebuild
+    name: Make feed
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v2
