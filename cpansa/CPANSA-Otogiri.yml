@@ -3,7 +3,8 @@
   distribution: Otogiri
   reported: 2014-07-03
   description: >
-    A dependant module SQL::Maker without strict mode is vulnerable to SQL injection.
+    A dependant module SQL::Maker without strict mode is vulnerable to
+    SQL injection.
   references:
     - https://github.com/ytnobody/Otogiri/commit/fac1592b3d153a6871ff1aed8016a6888cff9095
     - https://metacpan.org/changes/distribution/Otogiri

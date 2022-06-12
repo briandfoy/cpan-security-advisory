@@ -2,7 +2,11 @@
 - affected_versions: "<1.0.2"
   cves:
     - CVE-2014-1626
-  description: 'XML External Entity (XXE) vulnerability in MARC::File::XML module before 1.0.2 for Perl, as used in Evergreen, Koha, perl4lib, and possibly other products, allows context-dependent attackers to read arbitrary files via a crafted XML file.'
+  description: >
+    XML External Entity (XXE) vulnerability in MARC::File::XML module
+    before 1.0.2 for Perl, as used in Evergreen, Koha, perl4lib, and
+    possibly other products, allows context-dependent attackers to
+    read arbitrary files via a crafted XML file.
   distribution: MARC-File-XML
   fixed_versions: ~
   id: CPANSA--2014-1626

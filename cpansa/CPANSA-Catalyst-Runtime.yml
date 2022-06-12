@@ -3,7 +3,8 @@
   distribution: Catalyst-Runtime
   reported: 2013-01-23
   description: >
-    Passing a special host to the redirect page link makes it vulnerable to XSS attack.
+    Passing a special host to the redirect page link makes it
+    vulnerable to XSS attack.
   references:
     - http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits/Catalyst-Runtime.git;a=commitdiff;h=7af54927870a7c6f89323ac1876d49f92e7841f5
   affected_versions: "<5.90020"

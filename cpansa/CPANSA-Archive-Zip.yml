@@ -4,10 +4,12 @@
   reported: 2018-06-28
   severity: medium
   description: >
-      perl-archive-zip is vulnerable to a directory traversal in Archive::Zip. It was found that the Archive::Zip module
-      did not properly sanitize paths while extracting zip files. An attacker able to provide a specially crafted
-      archive for processing could use this flaw to write or overwrite arbitrary files in the context of the perl
-      interpreter.
+    perl-archive-zip is vulnerable to a directory traversal in
+    Archive::Zip. It was found that the Archive::Zip module did not
+    properly sanitize paths while extracting zip files. An attacker
+    able to provide a specially crafted archive for processing could
+    use this flaw to write or overwrite arbitrary files in the context
+    of the perl interpreter.
   cves:
     - CVE-2018-10860
   references:
@@ -17,7 +19,12 @@
 - affected_versions: "<1.14"
   cves:
     - CVE-2004-1096
-  description: 'Archive::Zip Perl module before 1.14, when used by antivirus programs such as amavisd-new, allows remote attackers to bypass antivirus protection via a compressed file with both local and global headers set to zero, which does not prevent the compressed file from being opened on a target system.'
+  description: >
+    Archive::Zip Perl module before 1.14, when used by antivirus
+    programs such as amavisd-new, allows remote attackers to bypass
+    antivirus protection via a compressed file with both local and
+    global headers set to zero, which does not prevent the compressed
+    file from being opened on a target system.
   distribution: Archive-Zip
   fixed_versions: ~
   id: CPANSA-Archive-Zip-2004-1096

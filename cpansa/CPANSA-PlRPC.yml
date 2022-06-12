@@ -2,7 +2,11 @@
 - affected_versions: "<=0.2020"
   cves:
     - CVE-2013-7284
-  description: 'The PlRPC module, possibly 0.2020 and earlier, for Perl uses the Storable module, which allows remote attackers to execute arbitrary code via a crafted request, which is not properly handled when it is deserialized.'
+  description: >
+    The PlRPC module, possibly 0.2020 and earlier, for Perl uses the
+    Storable module, which allows remote attackers to execute
+    arbitrary code via a crafted request, which is not properly
+    handled when it is deserialized.
   distribution: PlRPC
   fixed_versions: ~
   id: CPANSA-PlRPC-2013-7284

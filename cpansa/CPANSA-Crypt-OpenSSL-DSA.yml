@@ -3,8 +3,9 @@
   distribution: Crypt-OpenSSL-DSA
   reported: 2009-01-15
   description: >
-    Missing error check in do_verify, which might allow remote attackers to bypass validation of the certificate chain
-    via a malformed SSL/TLS signature.
+    Missing error check in do_verify, which might allow remote
+    attackers to bypass validation of the certificate chain via a
+    malformed SSL/TLS signature.
   references:
     - https://metacpan.org/changes/distribution/Crypt-OpenSSL-DSA
     - https://www.openwall.com/lists/oss-security/2009/01/12/4

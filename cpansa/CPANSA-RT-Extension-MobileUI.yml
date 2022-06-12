@@ -3,7 +3,8 @@
   distribution: RT-Extension-MobileUI
   reported: 2012-05-18
   description: >
-    Multiple cross-site scripting (XSS) vulnerabilities in the topic administration page.
+    Multiple cross-site scripting (XSS) vulnerabilities in the topic
+    administration page.
   references:
     - https://metacpan.org/changes/distribution/RT-Extension-MobileUI
   cves:

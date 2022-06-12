@@ -2,7 +2,9 @@
 - affected_versions: ">=1.03"
   cves:
     - CVE-2011-4117
-  description: The Batch::BatchRun module 1.03 for Perl does not properly handle temporary files.
+  description: >
+    The Batch::BatchRun module 1.03 for Perl does not properly handle
+    temporary files.
   distribution: Batch-BatchRun
   fixed_versions: ~
   id: CPANSA-Batch-BatchRun-2011-4117

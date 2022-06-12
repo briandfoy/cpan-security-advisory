@@ -41,7 +41,8 @@
   distribution: Imager
   reported: 2008-04-30
   description: >
-    A specially crafted compressed BMP file can cause a buffer overflow in malloced memory.
+    A specially crafted compressed BMP file can cause a buffer
+    overflow in malloced memory.
   references:
     - https://rt.cpan.org/Public/Bug/Display.html?id=26811
     - https://metacpan.org/changes/distribution/Imager
@@ -53,7 +54,11 @@
 - affected_versions: "<0.50"
   cves:
     - CVE-2006-0053
-  description: 'Imager (libimager-perl) before 0.50 allows user-assisted attackers to cause a denial of service (segmentation fault) by writing a 2- or 4-channel JPEG image (or a 2-channel TGA image) to a scalar, which triggers a NULL pointer dereference.'
+  description: >
+    Imager (libimager-perl) before 0.50 allows user-assisted
+    attackers to cause a denial of service (segmentation fault) by
+    writing a 2- or 4-channel JPEG image (or a 2-channel TGA image)
+    to a scalar, which triggers a NULL pointer dereference.
   distribution: Imager
   fixed_versions: ">=0.50"
   id: CPANSA-Imager-2006-0053

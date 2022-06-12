@@ -2,7 +2,12 @@
 - affected_versions: "<3.63"
   cves:
     - CVE-2009-3627
-  description: 'The decode_entities function in util.c in HTML-Parser before 3.63 allows context-dependent attackers to cause a denial of service (infinite loop) via an incomplete SGML numeric character reference, which triggers generation of an invalid UTF-8 character.'
+  description: >
+    The decode_entities function in util.c in HTML-Parser before 3.63
+    allows context-dependent attackers to cause a denial of service
+    (infinite loop) via an incomplete SGML numeric character
+    reference, which triggers generation of an invalid UTF-8
+    character.
   distribution: HTML-Parser
   fixed_versions: ~
   id: CPANSA--2009-3627

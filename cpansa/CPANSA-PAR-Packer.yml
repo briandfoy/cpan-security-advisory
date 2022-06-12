@@ -3,7 +3,8 @@
   distribution: PAR-Packer
   reported: 2011-07-18
   description: >
-    PAR packed files are extracted to unsafe and predictable temporary directories.
+    PAR packed files are extracted to unsafe and predictable temporary
+    directories.
   references:
     - https://metacpan.org/changes/distribution/PAR-Packer
     - https://rt.cpan.org/Public/Bug/Display.html?id=69560

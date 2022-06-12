@@ -3,7 +3,10 @@
   distribution: Data-Validate-IP
   reported: 2021-03-31
   description: >
-    The Data::Validate::IP module through 0.29 for Perl does not properly consider extraneous zero characters at the beginning of an IP address string, which (in some situations) allows attackers to bypass access control that is based on IP addresses.
+    The Data::Validate::IP module through 0.29 for Perl does not
+    properly consider extraneous zero characters at the beginning of
+    an IP address string, which (in some situations) allows attackers
+    to bypass access control that is based on IP addresses.
   references:
     - https://security.netapp.com/advisory/ntap-20210604-0002/
     - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/

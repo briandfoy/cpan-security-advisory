@@ -20,7 +20,9 @@
 - affected_versions: "<=1.09"
   cves:
     - CVE-2008-7315
-  description: UI-Dialog 1.09 and earlier allows remote attackers to execute arbitrary commands.
+  description: >
+    UI-Dialog 1.09 and earlier allows remote attackers to execute
+    arbitrary commands.
   distribution: UI-Dialog
   fixed_versions: ">1.09"
   id: CPANSA-UI-Dialog-2008-7315

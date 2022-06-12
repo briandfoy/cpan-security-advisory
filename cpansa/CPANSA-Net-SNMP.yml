@@ -2,7 +2,12 @@
 - affected_versions: ">=5.1.4,<6.0.0"
   cves:
     - CVE-2008-2292
-  description: 'Buffer overflow in the __snprint_value function in snmp_get in Net-SNMP 5.1.4, 5.2.4, and 5.4.1, as used in SNMP.xs for Perl, allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a large OCTETSTRING in an attribute value pair (AVP).'
+  description: >
+    Buffer overflow in the __snprint_value function in snmp_get in
+    Net-SNMP 5.1.4, 5.2.4, and 5.4.1, as used in SNMP.xs for Perl,
+    allows remote attackers to cause a denial of service (crash) and
+    possibly execute arbitrary code via a large OCTETSTRING in an
+    attribute value pair (AVP).
   distribution: Net-SNMP
   fixed_versions: ">=6.0.0"
   id: CPANSA-Net-SNMP-2008-2292
@@ -42,7 +47,11 @@
 - affected_versions: "<=5.2.1.2"
   cves:
     - CVE-2005-2811
-  description: 'Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and earlier, on Gentoo Linux, installs certain Perl modules with an insecure DT_RPATH, which could allow local users to gain privileges.'
+  description: >
+    Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and
+    earlier, on Gentoo Linux, installs certain Perl modules with an
+    insecure DT_RPATH, which could allow local users to gain
+    privileges.
   distribution: Net-SNMP
   fixed_versions: ~
   id: CPANSA-Net-SNMP-2005-2811
@@ -53,7 +62,13 @@
 - affected_versions: '<=5.7.3'
   cves:
     - CVE-2014-2285
-  description: 'The perl_trapd_handler function in perl/TrapReceiver/TrapReceiver.xs in Net-SNMP 5.7.3.pre3 and earlier, when using certain Perl versions, allows remote attackers to cause a denial of service (snmptrapd crash) via an empty community string in an SNMP trap, which triggers a NULL pointer dereference within the newSVpv function in Perl.'
+  description: >
+    The perl_trapd_handler function in
+    perl/TrapReceiver/TrapReceiver.xs in Net-SNMP 5.7.3.pre3 and
+    earlier, when using certain Perl versions, allows remote attackers
+    to cause a denial of service (snmptrapd crash) via an empty
+    community string in an SNMP trap, which triggers a NULL pointer
+    dereference within the newSVpv function in Perl.
   distribution: ''
   fixed_versions: ~
   id: CPANSA-Net-SNMP-2014-2285
@@ -71,4 +86,3 @@
     - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
   reported: 2014-04-27
   severity: ~
-

@@ -3,9 +3,11 @@
   distribution: Module-Signature
   reported: 2013-08-19
   description: >
-    The cpansign verify functionality in the Module::Signature module before 0.72 for Perl allows attackers to bypass
-    the signature check and execute arbitrary code via a SIGNATURE file with a "special unknown cipher" that references
-    an untrusted module in Digest/.
+    The cpansign verify functionality in the Module::Signature module
+    before 0.72 for Perl allows attackers to bypass the signature
+    check and execute arbitrary code via a SIGNATURE file with a
+    "special unknown cipher" that references an untrusted module in
+    Digest/.
   references:
     - https://metacpan.org/changes/distribution/Module-Signature
   cves:

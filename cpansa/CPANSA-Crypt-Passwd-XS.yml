@@ -3,9 +3,12 @@
   distribution: Crypt-Passwd-XS
   reported: 2012-05-07
   description: >
-    The crypt_des (aka DES-based crypt) function does not process the complete cleartext password if this password
-    contains a 0x80 character, which makes it easier for context-dependent attackers to obtain access via an
-    authentication attempt with an initial substring of the intended password, as demonstrated by a Unicode password.
+    The crypt_des (aka DES-based crypt) function does not process the
+    complete cleartext password if this password contains a 0x80
+    character, which makes it easier for context-dependent attackers
+    to obtain access via an authentication attempt with an initial
+    substring of the intended password, as demonstrated by a Unicode
+    password.
   references:
     - https://metacpan.org/changes/distribution/Crypt-Passwd-XS
   cves:

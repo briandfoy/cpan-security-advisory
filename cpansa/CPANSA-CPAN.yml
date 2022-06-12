@@ -3,7 +3,8 @@
   distribution: CPAN
   reported: 2009-09-23
   description: >
-    Archive::Tar preserves permissions in the tarball; extracted file permissions will be set from users umask instead.
+    Archive::Tar preserves permissions in the tarball; extracted file
+    permissions will be set from users umask instead.
   affected_versions: "<1.93"
   fixed_versions: ">=1.93"
   references:

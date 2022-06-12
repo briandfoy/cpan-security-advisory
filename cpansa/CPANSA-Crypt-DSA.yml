@@ -2,7 +2,12 @@
 - affected_versions: "<=1.17"
   cves:
     - CVE-2011-3599
-  description: 'The Crypt::DSA (aka Crypt-DSA) module 1.17 and earlier for Perl, when /dev/random is absent, uses the Data::Random module, which makes it easier for remote attackers to spoof a signature, or determine the signing key of a signed message, via a brute-force attack.'
+  description: >
+    The Crypt::DSA (aka Crypt-DSA) module 1.17 and earlier for Perl,
+    when /dev/random is absent, uses the Data::Random module, which
+    makes it easier for remote attackers to spoof a signature, or
+    determine the signing key of a signed message, via a brute-force
+    attack.
   distribution: Crypt-DSA
   fixed_versions: ~
   id: CPANSA-Crypt-DSA-2011-3599

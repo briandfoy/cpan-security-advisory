@@ -2,7 +2,9 @@
 - affected_versions: ">1.219"
   cves:
     - CVE-2013-4184
-  description: Perl module Data::UUID from CPAN version 1.219 vulnerable to symlink attacks
+  description: >
+    Perl module Data::UUID from CPAN version 1.219 vulnerable to
+    symlink attacks
   distribution: Data-UUID
   fixed_versions: ~
   id: CPANSA-Data-UUID-2013-4184

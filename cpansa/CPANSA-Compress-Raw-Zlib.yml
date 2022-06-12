@@ -17,7 +17,8 @@
   distribution: Compress-Raw-Zlib
   reported: 2022-03-25
   description: >
-    zlib 1.2.11 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.
+    zlib 1.2.11 allows memory corruption when deflating (i.e., when
+    compressing) if the input has many distant matches.
   cves:
     - CVE-2018-25032
   references:
@@ -29,7 +30,14 @@
 - affected_versions: "<2.017"
   cves:
     - CVE-2009-1391
-  description: 'Off-by-one error in the inflate function in Zlib.xs in Compress::Raw::Zlib Perl module before 2.017, as used in AMaViS, SpamAssassin, and possibly other products, allows context-dependent attackers to cause a denial of service (hang or crash) via a crafted zlib compressed stream that triggers a heap-based buffer overflow, as exploited in the wild by Trojan.Downloader-71014 in June 2009.'
+  description: >
+    Off-by-one error in the inflate function in Zlib.xs in
+    Compress::Raw::Zlib Perl module before 2.017, as used in AMaViS,
+    SpamAssassin, and possibly other products, allows
+    context-dependent attackers to cause a denial of service (hang or
+    crash) via a crafted zlib compressed stream that triggers a
+    heap-based buffer overflow, as exploited in the wild by
+    Trojan.Downloader-71014 in June 2009.
   distribution: Compress-Raw-Zlib
   fixed_versions: ~
   id: CPANSA-Compress-Raw-Zlib-2009-1391

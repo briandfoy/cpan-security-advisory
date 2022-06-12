@@ -3,7 +3,8 @@
   distribution: Dezi
   reported: 2012-09-13
   description: >
-    Bypassing authentication on the /index URL app with non-idempotent requests to /search URL.
+    Bypassing authentication on the /index URL app with non-idempotent
+    requests to /search URL.
   references:
     - https://metacpan.org/changes/distribution/Dezi
     - https://github.com/karpet/Dezi/commit/f1ad292b4dd988d1a38202c804bb7a2a3bcca3c8

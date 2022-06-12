@@ -2,7 +2,11 @@
 - affected_versions: "<1.35"
   cves:
     - CVE-2010-4334
-  description: 'The IO::Socket::SSL module 1.35 for Perl, when verify_mode is not VERIFY_NONE, fails open to VERIFY_NONE instead of throwing an error when a ca_file/ca_path cannot be verified, which allows remote attackers to bypass intended certificate restrictions.'
+  description: >
+    The IO::Socket::SSL module 1.35 for Perl, when verify_mode is not
+    VERIFY_NONE, fails open to VERIFY_NONE instead of throwing an
+    error when a ca_file/ca_path cannot be verified, which allows
+    remote attackers to bypass intended certificate restrictions.
   distribution: IO-Socket-SSL
   fixed_versions: ~
   id: CPANSA-IO-Socket-SSL-2010-4334
@@ -23,7 +27,12 @@
 - affected_versions: ">=1.14,<=1.15"
   cves:
     - CVE-2009-3024
-  description: 'The verify_hostname_of_cert function in the certificate checking feature in IO-Socket-SSL (IO::Socket::SSL) 1.14 through 1.25 only matches the prefix of a hostname when no wildcard is used, which allows remote attackers to bypass the hostname check for a certificate.'
+  description: >
+    The verify_hostname_of_cert function in the certificate checking
+    feature in IO-Socket-SSL (IO::Socket::SSL) 1.14 through 1.25 only
+    matches the prefix of a hostname when no wildcard is used, which
+    allows remote attackers to bypass the hostname check for a
+    certificate.
   distribution: IO-Socket-SSL
   fixed_versions: ~
   id: CPANSA-IO-Socket-SSL-2009-3024

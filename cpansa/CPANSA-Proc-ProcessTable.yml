@@ -2,7 +2,10 @@
 - affected_versions: ">=0.45,<0.47"
   cves:
     - CVE-2011-4363
-  description: 'ProcessTable.pm in the Proc::ProcessTable module 0.45 for Perl, when TTY information caching is enabled, allows local users to overwrite arbitrary files via a symlink attack on /tmp/TTYDEVS.'
+  description: >
+    ProcessTable.pm in the Proc::ProcessTable module 0.45 for Perl,
+    when TTY information caching is enabled, allows local users to
+    overwrite arbitrary files via a symlink attack on /tmp/TTYDEVS.
   distribution: Proc-ProcessTable
   fixed_versions: ">=0.47"
   id: CPANSA-Proc-ProcessTable-2011-4363

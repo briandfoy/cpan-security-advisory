@@ -3,7 +3,8 @@
   distribution: Catalyst-Controller-Combine
   reported: 2010-05-21
   description: >
-    Allows to use url-encoded path-parts to crawl along the file system and read files outside the intended directory.
+    Allows to use url-encoded path-parts to crawl along the file
+    system and read files outside the intended directory.
   references:
     - https://metacpan.org/changes/distribution/Catalyst-Controller-Combine
   affected_versions: "<0.12"

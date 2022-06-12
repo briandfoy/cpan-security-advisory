@@ -3,7 +3,8 @@
   distribution: LWP-Protocol-Net-Curl
   reported: 2012-11-28
   description: >
-    Misconfiguration with libcurl v7.28.1 causes a HTTPS validation issues.
+    Misconfiguration with libcurl v7.28.1 causes a HTTPS validation
+    issues.
   references:
     - https://metacpan.org/changes/distribution/LWP-Protocol-Net-Curl
     - https://github.com/creaktive/LWP-Protocol-Net-Curl/commit/dc8b183c6520a2b6bcde685de635675ee4a7e019

@@ -2,7 +2,13 @@
 - affected_versions: "<=0.87"
   cves:
     - CVE-2005-1127
-  description: 'Format string vulnerability in the log function in Net::Server 0.87 and earlier, as used in Postfix Greylisting Policy Server (Postgrey) 1.18 and earlier, and possibly other products, allows remote attackers to cause a denial of service (crash) via format string specifiers that are not properly handled before being sent to syslog, as demonstrated using sender addresses to Postgrey.'
+  description: >
+    Format string vulnerability in the log function in Net::Server
+    0.87 and earlier, as used in Postfix Greylisting Policy Server
+    (Postgrey) 1.18 and earlier, and possibly other products, allows
+    remote attackers to cause a denial of service (crash) via format
+    string specifiers that are not properly handled before being sent
+    to syslog, as demonstrated using sender addresses to Postgrey.
   distribution: Net-Server
   fixed_versions: ">0.87"
   id: CPANSA-Net-Server-2005-1127

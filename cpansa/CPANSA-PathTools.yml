@@ -3,8 +3,10 @@
   distribution: PathTools
   reported: 2016-02-08
   description: >
-    Does not properly remove . (period) characters from the end of the includes directory array, which might allow local
-    users to gain privileges via a Trojan horse module under the current working directory.
+    Does not properly remove . (period) characters from the end of the
+    includes directory array, which might allow local users to gain
+    privileges via a Trojan horse module under the current working
+    directory.
   references:
     - https://metacpan.org/changes/distribution/PathTools
   cves:
@@ -15,8 +17,9 @@
   distribution: PathTools
   reported: 2016-01-11
   description: >
-    Does not properly preserve the taint attribute of data, which might allow context-dependent attackers to bypass the
-    taint protection mechanism via a crafted string.
+    Does not properly preserve the taint attribute of data, which
+    might allow context-dependent attackers to bypass the taint
+    protection mechanism via a crafted string.
   references:
     - https://metacpan.org/changes/distribution/PathTools
   cves:

@@ -3,8 +3,9 @@
   distribution: Email-Address
   reported: 2014-07-03
   description: >
-    Inefficient regular expression, which allows remote attackers to cause a denial of service (CPU consumption) via an
-    empty quoted string in an RFC 2822 address.
+    Inefficient regular expression, which allows remote attackers to
+    cause a denial of service (CPU consumption) via an empty quoted
+    string in an RFC 2822 address.
   references:
     - https://metacpan.org/changes/distribution/Email-Address
   cves:
@@ -15,7 +16,10 @@
   distribution: Email-Address
   reported: 2018-06-19
   description: >
-    The parse() method in the Email::Address module through 1.909 for Perl is vulnerable to Algorithmic complexity on specially prepared input, leading to Denial of Service. Prepared special input that caused this problem contained 30 form-field characters ("\f").
+    The parse() method in the Email::Address module through 1.909 for
+    Perl is vulnerable to Algorithmic complexity on specially prepared
+    input, leading to Denial of Service. Prepared special input that
+    caused this problem contained 30 form-field characters ("\f").
   references:
     - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901873
     - http://www.openwall.com/lists/oss-security/2018/06/19/3
@@ -27,7 +31,12 @@
 - affected_versions: "<1.904"
   cves:
     - CVE-2014-4720
-  description: 'Email::Address module before 1.904 for Perl uses an inefficient regular expression, which allows remote attackers to cause a denial of service (CPU consumption) via vectors related to "backtracking into the phrase," a different vulnerability than CVE-2014-0477.'
+  description: >
+    Email::Address module before 1.904 for Perl uses an inefficient
+    regular expression, which allows remote attackers to cause a
+    denial of service (CPU consumption) via vectors related to
+    "backtracking into the phrase," a different vulnerability than
+    CVE-2014-0477.
   distribution: Email-Address
   fixed_versions: ">=1.904"
   id: CPANSA-Email-Address-2014-4720

@@ -15,7 +15,8 @@
   distribution: Net-OpenID-Consumer
   reported: 2015-05-26
   description: >
-    Incorrect comparison of system openssl status when doing DSA checks.
+    Incorrect comparison of system openssl status when doing DSA
+    checks.
   references:
     - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
   affected_versions: "<0.06"

@@ -3,7 +3,10 @@
   distribution: Net-Netmask
   reported: 2021-03-29
   description: >
-    The Net::Netmask module before 2.0000 for Perl does not properly consider extraneous zero characters at the beginning of an IP address string, which (in some situations) allows attackers to bypass access control that is based on IP addresses.
+    The Net::Netmask module before 2.0000 for Perl does not properly
+    consider extraneous zero characters at the beginning of an IP
+    address string, which (in some situations) allows attackers to
+    bypass access control that is based on IP addresses.
   references:
     - https://security.netapp.com/advisory/ntap-20210604-0007/
     - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CBJVLXJSWN6DKSF5ADUEERI6M23R3GGP/

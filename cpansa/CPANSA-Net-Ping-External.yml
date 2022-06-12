@@ -2,7 +2,12 @@
 - affected_versions: "<=0.15"
   cves:
     - CVE-2008-7319
-  description: 'The Net::Ping::External extension through 0.15 for Perl does not properly sanitize arguments (e.g., invalid hostnames) containing shell metacharacters before use of backticks in External.pm, allowing for shell command injection and arbitrary command execution if untrusted input is used.'
+  description: >
+    The Net::Ping::External extension through 0.15 for Perl does not
+    properly sanitize arguments (e.g., invalid hostnames) containing
+    shell metacharacters before use of backticks in External.pm,
+    allowing for shell command injection and arbitrary command
+    execution if untrusted input is used.
   distribution: Net-Ping-External
   fixed_versions: ~
   id: CPANSA-Net-Ping-External-2008-7319

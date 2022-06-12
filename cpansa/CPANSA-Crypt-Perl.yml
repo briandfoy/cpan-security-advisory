@@ -4,7 +4,9 @@
   reported: 2020-08-10
   severity: high
   description: >
-    ECDSA/EC/Point.pm in Crypt::Perl before 0.33 does not properly consider timing attacks against the EC point multiplication algorithm.
+    ECDSA/EC/Point.pm in Crypt::Perl before 0.33 does not properly
+    consider timing attacks against the EC point multiplication
+    algorithm.
   references:
     - https://github.com/FGasper/p5-Crypt-Perl/compare/0.32...0.33
   affected_versions: "<0.33"
@@ -16,7 +18,12 @@
   reported: 2020-06-07
   severity: high
   description: >
-    Crypt::Perl::ECDSA in the Crypt::Perl (aka p5-Crypt-Perl) module before 0.32 for Perl fails to verify correct ECDSA signatures when r and s are small and when s = 1. This happens when using the curve secp256r1 (prime256v1). This could conceivably have a security-relevant impact if an attacker wishes to use public r and s values when guessing whether signature verification will fail.
+    Crypt::Perl::ECDSA in the Crypt::Perl (aka p5-Crypt-Perl) module
+    before 0.32 for Perl fails to verify correct ECDSA signatures when
+    r and s are small and when s = 1. This happens when using the
+    curve secp256r1 (prime256v1). This could conceivably have a
+    security-relevant impact if an attacker wishes to use public r and
+    s values when guessing whether signature verification will fail.
   references:
     - https://github.com/FGasper/p5-Crypt-Perl/commit/f960ce75502acf7404187231a706672f8369acb2
     - https://github.com/FGasper/p5-Crypt-Perl/issues/14

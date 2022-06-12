@@ -4,9 +4,10 @@
   reported: 2018-06-12
   severity: medium
   description: >
-    In Perl through 5.26.2, the Archive::Tar module allows remote attackers to bypass a directory-traversal protection
-    mechanism, and overwrite arbitrary files, via an archive file containing a symlink and a regular file with the same
-    name.
+    In Perl through 5.26.2, the Archive::Tar module allows remote
+    attackers to bypass a directory-traversal protection mechanism,
+    and overwrite arbitrary files, via an archive file containing a
+    symlink and a regular file with the same name.
   cves:
     - CVE-2018-12015
   references:
@@ -16,7 +17,11 @@
 - affected_versions: "<=1.36"
   cves:
     - CVE-2007-4829
-  description: Directory traversal vulnerability in the Archive::Tar Perl module 1.36 and earlier allows user-assisted remote attackers to overwrite arbitrary files via a TAR archive that contains a file whose name is an absolute path or has ".." sequences.
+  description: >
+    Directory traversal vulnerability in the Archive::Tar Perl module
+    1.36 and earlier allows user-assisted remote attackers to
+    overwrite arbitrary files via a TAR archive that contains a file
+    whose name is an absolute path or has ".." sequences.
   distribution: Archive-Tar
   fixed_versions: ">1.36"
   id: CPANSA-Archive-Tar-2007-4829

@@ -1,7 +1,12 @@
+---
 - affected_versions: "<4.10"
   cves:
     - CVE-2006-1279
-  description: 'CGI::Session 4.03-1 allows local users to overwrite arbitrary files via a symlink attack on temporary files used by (1) Driver::File, (2) Driver::db_file, and possibly (3) Driver::sqlite.'
+  description: >
+    CGI::Session 4.03-1 allows local users to overwrite arbitrary
+    files via a symlink attack on temporary files used by
+    (1) Driver::File, (2) Driver::db_file, and possibly
+    (3) Driver::sqlite.
   distribution: CGI-Session
   fixed_versions: ~
   id: CPANSA-CGI-Session-2006-1279
@@ -15,7 +20,8 @@
   reported: 2006-03-19
   severity: ~
 - affected_versions: "<4.12"
-  description: 'possible SQL injection attack'
+  description: >
+    possible SQL injection attack
   distribution: CGI-Session
   fixed_versions: ">=4.12"
   id: CPANSA-CGI-Session-2006-01

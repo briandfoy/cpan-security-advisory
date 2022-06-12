@@ -2,7 +2,11 @@
 - affected_versions: ">=5.22.0,<5.24.0"
   cves:
     - CVE-2016-6185
-  description: 'The XSLoader::load method in XSLoader in Perl does not properly locate .so files when called in a string eval, which might allow local users to execute arbitrary code via a Trojan horse library under the current working directory.'
+  description: >
+    The XSLoader::load method in XSLoader in Perl does not properly
+    locate .so files when called in a string eval, which might allow
+    local users to execute arbitrary code via a Trojan horse library
+    under the current working directory.
   distribution: perl
   fixed_versions: ">=5.24.0"
   id: CPANSA-perl-2016-6185
@@ -27,7 +31,11 @@
 - affected_versions: ">=5.005,<5.24.0"
   cves:
     - CVE-2015-8608
-  description: The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
+  description: >
+    The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow
+    remote attackers to cause a denial of service (out-of-bounds read)
+    and possibly execute arbitrary code via a crafted (1) drive letter
+    or (2) pInName argument.
   distribution: perl
   fixed_versions: ">=5.24.0"
   id: CPANSA-perl-2015-8608
@@ -42,7 +50,11 @@
 - affected_versions: "<5.14.2"
   cves:
     - CVE-2011-2728
-  description: 'The bsd_glob function in the File::Glob module for Perl before 5.14.2 allows context-dependent attackers to cause a denial of service (crash) via a glob expression with the GLOB_ALTDIRFUNC flag, which triggers an uninitialized pointer dereference.'
+  description: >
+    The bsd_glob function in the File::Glob module for Perl before
+    5.14.2 allows context-dependent attackers to cause a denial of
+    service (crash) via a glob expression with the GLOB_ALTDIRFUNC
+    flag, which triggers an uninitialized pointer dereference.
   distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2011-2728
@@ -59,7 +71,10 @@
 - affected_versions: "<5.30.3"
   cves:
     - CVE-2020-12723
-  description: regcomp.c in Perl before 5.30.3 allows a buffer overflow via a crafted regular expression because of recursive S_study_chunk calls.
+  description: >
+    regcomp.c in Perl before 5.30.3 allows a buffer overflow via a
+    crafted regular expression because of recursive S_study_chunk
+    calls.
   distribution: 'perl'
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-12723
@@ -85,7 +100,11 @@
 - affected_versions: "<5.30.3"
   cves:
     - CVE-2020-10878
-  description: 'Perl before 5.30.3 has an integer overflow related to mishandling of a "PL_regkind[OP(n)] == NOTHING" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.'
+  description: >
+    Perl before 5.30.3 has an integer overflow related to mishandling
+    of a "PL_regkind[OP(n)] == NOTHING" situation. A crafted regular
+    expression could lead to malformed bytecode with a possibility of
+    instruction injection.
   distribution: 'perl'
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-10878
@@ -110,7 +129,10 @@
 - affected_versions: "<5.30.3"
   cves:
     - CVE-2020-10543
-  description: Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer overflow because nested regular expression quantifiers have an integer overflow.
+  description:
+    Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer
+    overflow because nested regular expression quantifiers have an
+    integer overflow.
   distribution: 'perl'
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-10543
@@ -134,7 +156,10 @@
 - affected_versions: ">=5.22.0,<5.28"
   cves:
     - CVE-2018-6798
-  description: An issue was discovered in Perl 5.22 through 5.26. Matching a crafted locale dependent regular expression can cause a heap-based buffer over-read and potentially information disclosure.
+  description: >
+    An issue was discovered in Perl 5.22 through 5.26. Matching a
+    crafted locale dependent regular expression can cause a heap-based
+    buffer over-read and potentially information disclosure.
   distribution: 'perl'
   fixed_versions: ">=5.28"
   id: CPANSA-perl-2018-6798
@@ -151,7 +176,10 @@
 - affected_versions: ">=5.18,<5.28"
   cves:
     - CVE-2018-6797
-  description: 'An issue was discovered in Perl 5.18 through 5.26. A crafted regular expression can cause a heap-based buffer overflow, with control over the bytes written.'
+  description: >
+    An issue was discovered in Perl 5.18 through 5.26. A crafted
+    regular expression can cause a heap-based buffer overflow, with
+    control over the bytes written.
   distribution: 'perl'
   fixed_versions: ">=5.28"
   id: CPANSA-perl-2018-6797
@@ -169,7 +197,10 @@
 - affected_versions: "<5.26.2"
   cves:
     - CVE-2018-6913
-  description: Heap-based buffer overflow in the pack function in Perl before 5.26.2 allows context-dependent attackers to execute arbitrary code via a large item count.
+  description: >
+    Heap-based buffer overflow in the pack function in Perl before
+    5.26.2 allows context-dependent attackers to execute arbitrary
+    code via a large item count.
   distribution: 'perl'
   fixed_versions: ">=5.26.2"
   id: CPANSA-perl-2018-6913
@@ -188,7 +219,9 @@
 - affected_versions: "<5.26.3"
   cves:
     - CVE-2018-18314
-  description: Perl before 5.26.3 has a buffer overflow via a crafted regular expression that triggers invalid write operations.
+  description: >
+    Perl before 5.26.3 has a buffer overflow via a crafted regular
+    expression that triggers invalid write operations.
   distribution: 'perl'
   fixed_versions: ">=5.26.3"
   id: CPANSA-perl-2018-18314
@@ -212,7 +245,10 @@
 - affected_versions: "<5.26.3"
   cves:
     - CVE-2018-18313
-  description: Perl before 5.26.3 has a buffer over-read via a crafted regular expression that triggers disclosure of sensitive information from process memory.
+  description: >
+    Perl before 5.26.3 has a buffer over-read via a crafted regular
+    expression that triggers disclosure of sensitive information from
+    process memory.
   distribution: 'perl'
   fixed_versions: ">=5.26.3"
   id: CPANSA-perl-2018-18313
@@ -239,7 +275,10 @@
 - affected_versions: "<5.28.1"
   cves:
     - CVE-2018-18312
-  description: Perl before 5.26.3 and 5.28.0 before 5.28.1 has a buffer overflow via a crafted regular expression that triggers invalid write operations.
+  description: >
+    Perl before 5.26.3 and 5.28.0 before 5.28.1 has a buffer overflow
+    via a crafted regular expression that triggers invalid write
+    operations.
   distribution: 'perl'
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2018-18312
@@ -263,7 +302,10 @@
 - affected_versions: "<5.28.1"
   cves:
     - CVE-2018-18311
-  description: Perl before 5.26.3 and 5.28.x before 5.28.1 has a buffer overflow via a crafted regular expression that triggers invalid write operations.
+  description:
+    Perl before 5.26.3 and 5.28.x before 5.28.1 has a buffer overflow
+    via a crafted regular expression that triggers invalid write
+    operations.
   distribution: 'perl'
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2018-18311
@@ -301,7 +343,12 @@
 - affected_versions: "<5.26.1"
   cves:
     - CVE-2017-12883
-  description: "Buffer overflow in the S_grok_bslash_N function in regcomp.c in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows remote attackers to disclose sensitive information or cause a denial of service (application crash) via a crafted regular expression with an invalid '\\N{U+...}' escape."
+  description: >
+    Buffer overflow in the S_grok_bslash_N function in regcomp.c in
+    Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows
+    remote attackers to disclose sensitive information or cause a
+    denial of service (application crash) via a crafted regular
+    expression with an invalid '\\N{U+...}' escape.
   distribution: 'perl'
   fixed_versions: ">=5.26.1"
   id: CPANSA-perl-2017-12883
@@ -321,7 +368,12 @@
 - affected_versions: "<5.26.1"
   cves:
     - CVE-2017-12837
-  description: "Heap-based buffer overflow in the S_regatom function in regcomp.c in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows remote attackers to cause a denial of service (out-of-bounds write) via a regular expression with a '\\N{}' escape and the case-insensitive modifier."
+  description: >
+    Heap-based buffer overflow in the S_regatom function in regcomp.c
+    in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows
+    remote attackers to cause a denial of service (out-of-bounds
+    write) via a regular expression with a '\\N{}' escape and the
+    case-insensitive modifier.
   distribution: 'perl'
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2017-12837
@@ -340,7 +392,11 @@
 - affected_versions: "<5.24.0"
   cves:
     - CVE-2015-8853
-  description: 'The (1) S_reghop3, (2) S_reghop4, and (3) S_reghopmaybe3 functions in regexec.c in Perl before 5.24.0 allow context-dependent attackers to cause a denial of service (infinite loop) via crafted utf-8 data, as demonstrated by "a\x80."'
+  description: >
+    The (1) S_reghop3, (2) S_reghop4, and (3) S_reghopmaybe3 functions
+    in regexec.c in Perl before 5.24.0 allow context-dependent
+    attackers to cause a denial of service (infinite loop) via crafted
+    utf-8 data, as demonstrated by "a\x80."
   distribution: 'perl'
   fixed_versions: ">=5.24.0"
   id: CPANSA-perl-2015-8853
@@ -363,7 +419,10 @@
 - affected_versions: "<5.18.0"
   cves:
     - CVE-2013-1667
-  description: The rehash mechanism in Perl 5.8.2 through 5.16.x allows context-dependent attackers to cause a denial of service (memory consumption and crash) via a crafted hash key.
+  description: >
+    The rehash mechanism in Perl 5.8.2 through 5.16.x allows
+    context-dependent attackers to cause a denial of service (memory
+    consumption and crash) via a crafted hash key.
   distribution: 'perl'
   fixed_versions: ">=5.26.1"
   id: CPANSA-perl-2013-1667
@@ -395,7 +454,12 @@
 - affected_versions: ">=5.10.0,<5.12"
   cves:
     - CVE-2011-0761
-  description: 'Perl 5.10.x allows context-dependent attackers to cause a denial of service (NULL pointer dereference and application crash) by leveraging an ability to inject arguments into a (1) getpeername, (2) readdir, (3) closedir, (4) getsockname, (5) rewinddir, (6) tell, or (7) telldir function call.'
+  description: >
+    Perl 5.10.x allows context-dependent attackers to cause a denial
+    of service (NULL pointer dereference and application crash) by
+    leveraging an ability to inject arguments into a (1) getpeername,
+    (2) readdir, (3) closedir, (4) getsockname, (5) rewinddir, (6)
+    tell, or (7) telldir function call.
   distribution: 'perl'
   fixed_versions: ">=5.12"
   id: CPANSA-perl-2011-0761
@@ -411,7 +475,13 @@
 - affected_versions: "<=5.14.0"
   cves:
     - CVE-2010-4777
-  description: 'The Perl_reg_numbered_buff_fetch function in Perl 5.10.0, 5.12.0, 5.14.0, and other versions, when running with debugging enabled, allows context-dependent attackers to cause a denial of service (assertion failure and application exit) via crafted input that is not properly handled when using certain regular expressions, as demonstrated by causing SpamAssassin and OCSInventory to crash.'
+  description: >
+    The Perl_reg_numbered_buff_fetch function in Perl 5.10.0, 5.12.0,
+    5.14.0, and other versions, when running with debugging enabled,
+    allows context-dependent attackers to cause a denial of service
+    (assertion failure and application exit) via crafted input that is
+    not properly handled when using certain regular expressions, as
+    demonstrated by causing SpamAssassin and OCSInventory to crash.
   distribution: 'perl'
   fixed_versions: ">5.14.0"
   id: CPANSA-perl-2010-4777
@@ -428,7 +498,11 @@
 - affected_versions: "<5.10.0"
   cves:
     - CVE-2010-1158
-  description: Integer overflow in the regular expression engine in Perl 5.8.x allows context-dependent attackers to cause a denial of service (stack consumption and application crash) by matching a crafted regular expression against a long string.
+  description: >
+    Integer overflow in the regular expression engine in Perl 5.8.x
+    allows context-dependent attackers to cause a denial of service
+    (stack consumption and application crash) by matching a crafted
+    regular expression against a long string.
   distribution: 'perl'
   fixed_versions: ">=5.10.0"
   id: CPANSA-perl-2010-1158
@@ -444,7 +518,11 @@
 - affected_versions: "<=5.10.1"
   cves:
     - CVE-2009-3626
-  description: 'Perl 5.10.1 allows context-dependent attackers to cause a denial of service (application crash) via a UTF-8 character with a large, invalid codepoint, which is not properly handled during a regular-expression match.'
+  description: >
+    Perl 5.10.1 allows context-dependent attackers to cause a denial
+    of service (application crash) via a UTF-8 character with a large,
+    invalid codepoint, which is not properly handled during a
+    regular-expression match.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2009-3626
@@ -465,7 +543,12 @@
 - affected_versions: "<=5.8.8"
   cves:
     - CVE-2008-1927
-  description: 'Double free vulnerability in Perl 5.8.8 allows context-dependent attackers to cause a denial of service (memory corruption and crash) via a crafted regular expression containing UTF8 characters.  NOTE: this issue might only be present on certain operating systems.'
+  description: >
+    Double free vulnerability in Perl 5.8.8 allows context-dependent
+    attackers to cause a denial of service (memory corruption and
+    crash) via a crafted regular expression containing UTF8
+    characters.  NOTE: this issue might only be present on certain
+    operating systems.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2008-1927
@@ -515,7 +598,13 @@
 - affected_versions: "<5.10.0"
   cves:
     - CVE-2005-3962
-  description: 'Integer overflow in the format string functionality (Perl_sv_vcatpvfn) in Perl 5.9.2 and 5.8.6 Perl allows attackers to overwrite arbitrary memory and possibly execute arbitrary code via format string specifiers with large values, which causes an integer wrap and leads to a buffer overflow, as demonstrated using format string vulnerabilities in Perl applications.'
+  description: >
+    Integer overflow in the format string functionality
+    (Perl_sv_vcatpvfn) in Perl 5.9.2 and 5.8.6 Perl allows attackers
+    to overwrite arbitrary memory and possibly execute arbitrary code
+    via format string specifiers with large values, which causes an
+    integer wrap and leads to a buffer overflow, as demonstrated using
+    format string vulnerabilities in Perl applications.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2005-3962
@@ -577,7 +666,12 @@
 - affected_versions: "5.8.0"
   cves:
     - CVE-2005-0156
-  description: 'Buffer overflow in the PerlIO implementation in Perl 5.8.0, when installed with setuid support (sperl), allows local users to execute arbitrary code by setting the PERLIO_DEBUG variable and executing a Perl script whose full pathname contains a long directory tree.'
+  description: >
+    Buffer overflow in the PerlIO implementation in Perl 5.8.0, when
+    installed with setuid support (sperl), allows local users to
+    execute arbitrary code by setting the PERLIO_DEBUG variable and
+    executing a Perl script whose full pathname contains a long
+    directory tree.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2005-0156
@@ -602,7 +696,10 @@
 - affected_versions: "5.8.0"
   cves:
     - CVE-2005-0155
-  description: 'The PerlIO implementation in Perl 5.8.0, when installed with setuid support (sperl), allows local users to create arbitrary files via the PERLIO_DEBUG variable.'
+  description: >
+    The PerlIO implementation in Perl 5.8.0, when installed with
+    setuid support (sperl), allows local users to create arbitrary
+    files via the PERLIO_DEBUG variable.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2005-0155
@@ -628,7 +725,11 @@
 - affected_versions: '<=5.8.8'
   cves:
     - CVE-2007-5116
-  description: Buffer overflow in the polymorphic opcode support in the Regular Expression Engine (regcomp.c) in Perl 5.8 allows context-dependent attackers to execute arbitrary code by switching from byte to Unicode (UTF) characters in a regular expression.
+  description: >
+    Buffer overflow in the polymorphic opcode support in the Regular
+    Expression Engine (regcomp.c) in Perl 5.8 allows context-dependent
+    attackers to execute arbitrary code by switching from byte to
+    Unicode (UTF) characters in a regular expression.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2007-5116
@@ -691,7 +792,12 @@
 - affected_versions: "<5.16"
   cves:
     - CVE-2012-5195
-  description: "Heap-based buffer overflow in the Perl_repeatcpy function in util.c in Perl 5.12.x before 5.12.5, 5.14.x before 5.14.3, and 5.15.x before 15.15.5 allows context-dependent attackers to cause a denial of service (memory consumption and crash) or possibly execute arbitrary code via the 'x' string repeat operator."
+  description:
+    Heap-based buffer overflow in the Perl_repeatcpy function in
+    util.c in Perl 5.12.x before 5.12.5, 5.14.x before 5.14.3, and
+    5.15.x before 15.15.5 allows context-dependent attackers to cause
+    a denial of service (memory consumption and crash) or possibly
+    execute arbitrary code via the 'x' string repeat operator.
   distribution: 'perl'
   fixed_versions: ">=5.16"
   id: CPANSA-perl-2012-5195
@@ -717,7 +823,10 @@
 - affected_versions: ~
   cves:
     - CVE-2016-2381
-  description: Perl might allow context-dependent attackers to bypass the taint protection mechanism in a child process via duplicate environment variables in envp.
+  description: >
+    Perl might allow context-dependent attackers to bypass the taint
+    protection mechanism in a child process via duplicate environment
+    variables in envp.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2016-2381
@@ -740,7 +849,11 @@
 - affected_versions: "<5.25.2"
   cves:
     - CVE-2016-6185
-  description: 'The XSLoader::load method in XSLoader in Perl does not properly locate .so files when called in a string eval, which might allow local users to execute arbitrary code via a Trojan horse library under the current working directory.'
+  description: >
+    The XSLoader::load method in XSLoader in Perl does not properly
+    locate .so files when called in a string eval, which might allow
+    local users to execute arbitrary code via a Trojan horse library
+    under the current working directory.
   distribution: XSLoader-load
   fixed_versions: ">=5.25.2"
   id: CPANSA-XSLoader-load-2016-6185
@@ -764,7 +877,10 @@
 - affected_versions: '5.8.1'
   cves:
     - CVE-2003-0900
-  description: 'Perl 5.8.1 on Fedora Core does not properly initialize the random number generator when forking, which makes it easier for attackers to predict random numbers.'
+  description: >
+    Perl 5.8.1 on Fedora Core does not properly initialize the random
+    number generator when forking, which makes it easier for attackers
+    to predict random numbers.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2003-0900
@@ -775,7 +891,13 @@
 - affected_versions: "<5.20"
   cves:
     - CVE-2013-7422
-  description: 'Integer underflow in regcomp.c in Perl before 5.20, as used in Apple OS X before 10.10.5 and other products, allows context-dependent attackers to execute arbitrary code or cause a denial of service (application crash) via a long digit string associated with an invalid backreference within a regular expression.'
+  description: >
+    Integer underflow in regcomp.c in Perl before 5.20, as used in
+    Apple OS X before 10.10.5 and other products, allows
+    context-dependent attackers to execute arbitrary code or cause a
+    denial of service (application crash) via a long digit string
+    associated with an invalid backreference within a regular
+    expression.
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-2013-7422
@@ -791,7 +913,11 @@
 - affected_versions: "<5.22.2"
   cves:
     - CVE-2015-8608
-  description: The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
+  description: >
+    The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow
+    remote attackers to cause a denial of service (out-of-bounds read)
+    and possibly execute arbitrary code via a crafted (1) drive letter
+    or (2) pInName argument.
   distribution: VDir-MapPathA
   fixed_versions: ">=5.22.2"
   id: CPANSA-VDir-MapPathA-2015-8608
@@ -805,7 +931,13 @@
 - affected_versions: "<5.14"
   cves:
     - CVE-2011-1487
-  description: 'The (1) lc, (2) lcfirst, (3) uc, and (4) ucfirst functions in Perl 5.10.x, 5.11.x, and 5.12.x through 5.12.3, and 5.13.x through 5.13.11, do not apply the taint attribute to the return value upon processing tainted input, which might allow context-dependent attackers to bypass the taint protection mechanism via a crafted string.'
+  description: >
+    The (1) lc, (2) lcfirst, (3) uc, and (4) ucfirst functions in Perl
+    5.10.x, 5.11.x, and 5.12.x through 5.12.3, and 5.13.x through
+    5.13.11, do not apply the taint attribute to the return value upon
+    processing tainted input, which might allow context-dependent
+    attackers to bypass the taint protection mechanism via a crafted
+    string.
   distribution: 'perl'
   fixed_versions: ">=5.14"
   id: CPANSA-perl-2011-1487
@@ -830,7 +962,10 @@
 - affected_versions: "<5.4.4"
   cves:
     - CVE-1999-1386
-  description: 'Perl 5.004_04 and earlier follows symbolic links when running with the -e option, which allows local users to overwrite arbitrary files via a symlink attack on the /tmp/perl-eaXXXXX file.'
+  description: >
+    Perl 5.004_04 and earlier follows symbolic links when running with
+    the -e option, which allows local users to overwrite arbitrary
+    files via a symlink attack on the /tmp/perl-eaXXXXX file.
   distribution: ''
   fixed_versions: ~
   id: CPANSA-perl-1999-1386
@@ -843,7 +978,11 @@
 - affected_versions: '>=5.24.0,<=5.26.0'
   cves:
     - CVE-2017-12814
-  description: Stack-based buffer overflow in the CPerlHost::Add method in win32/perlhost.h in Perl before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 on Windows allows attackers to execute arbitrary code via a long environment variable.
+  description: >
+    Stack-based buffer overflow in the CPerlHost::Add method in
+    win32/perlhost.h in Perl before 5.24.3-RC1 and 5.26.x before
+    5.26.1-RC1 on Windows allows attackers to execute arbitrary code
+    via a long environment variable.
   distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2017-12814

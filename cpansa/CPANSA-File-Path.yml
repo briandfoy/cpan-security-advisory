@@ -3,8 +3,9 @@
   distribution: File-Path
   reported: 2017-05-02
   description: >
-    Race condition in the rmtree and remove_tree functions allows attackers
-    to set the mode on arbitrary files via vectors involving directory-permission loosening logic.
+    Race condition in the rmtree and remove_tree functions allows
+    attackers to set the mode on arbitrary files via vectors involving
+    directory-permission loosening logic.
   references:
     - https://metacpan.org/changes/distribution/File-Path
     - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
@@ -15,7 +16,13 @@
 - affected_versions: "<=1.08"
   cves:
     - CVE-2008-5303
-  description: 'Race condition in the rmtree function in File::Path 1.08 (lib/File/Path.pm) in Perl 5.8.8 allows local users to to delete arbitrary files via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448. It is different from CVE-2008-5302 due to affected versions.'
+  description: >
+    Race condition in the rmtree function in File::Path 1.08
+    (lib/File/Path.pm) in Perl 5.8.8 allows local users to to delete
+    arbitrary files via a symlink attack, a different vulnerability
+    than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this
+    is a regression error related to CVE-2005-0448. It is different
+    from CVE-2008-5302 due to affected versions.
   distribution: File-Path
   fixed_versions: ~
   id: CPANSA-File-Path-2008-5303
@@ -46,7 +53,14 @@
 - affected_versions: "=1.08,=2.07"
   cves:
     - CVE-2008-5302
-  description: 'Race condition in the rmtree function in File::Path 1.08 and 2.07 (lib/File/Path.pm) in Perl 5.8.8 and 5.10.0 allows local users to create arbitrary setuid binaries via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448.  It is different from CVE-2008-5303 due to affected versions.'
+  description: >
+    Race condition in the rmtree function in File::Path 1.08 and 2.07
+    (lib/File/Path.pm) in Perl 5.8.8 and 5.10.0 allows local users to
+    create arbitrary setuid binaries via a symlink attack, a different
+    vulnerability than CVE-2005-0448, CVE-2004-0452, and
+    CVE-2008-2827. NOTE: this is a regression error related to
+    CVE-2005-0448.  It is different from CVE-2008-5303 due to affected
+    versions.
   distribution: File-Path
   fixed_versions: ~
   id: CPANSA-File-Path-2008-5302
@@ -78,7 +92,12 @@
 - affected_versions: ">=2.04,<2.07"
   cves:
     - CVE-2008-2827
-  description: 'The rmtree function in lib/File/Path.pm in Perl 5.10 does not properly check permissions before performing a chmod, which allows local users to modify the permissions of arbitrary files via a symlink attack, a different vulnerability than CVE-2005-0448 and CVE-2004-0452.'
+  description: >
+    The rmtree function in lib/File/Path.pm in Perl 5.10 does not
+    properly check permissions before performing a chmod, which allows
+    local users to modify the permissions of arbitrary files via a
+    symlink attack, a different vulnerability than CVE-2005-0448 and
+    CVE-2004-0452.
   distribution: File-Path
   fixed_versions: ">=2.07"
   id: CPANSA-File-Path-2008-2827
@@ -99,7 +118,11 @@
 - affected_versions: "<1.07"
   cves:
     - CVE-2005-0448
-  description: 'Race condition in the rmtree function in File::Path.pm in Perl before 5.8.4 allows local users to create arbitrary setuid binaries in the tree being deleted, a different vulnerability than CVE-2004-0452.'
+  description: >
+    Race condition in the rmtree function in File::Path.pm in Perl
+    before 5.8.4 allows local users to create arbitrary setuid
+    binaries in the tree being deleted, a different vulnerability than
+    CVE-2004-0452.
   distribution: File-Path
   fixed_versions: ~
   id: CPANSA-File-Path-2005-0448
@@ -127,7 +150,12 @@
 - affected_versions: ">=1.404,<=1.06"
   cves:
     - CVE-2004-0452
-  description: 'Race condition in the rmtree function in the File::Path module in Perl 5.6.1 and 5.8.4 sets read/write permissions for the world, which allows local users to delete arbitrary files and directories, and possibly read files and directories, via a symlink attack.'
+  description: >
+    Race condition in the rmtree function in the File::Path module in
+    Perl 5.6.1 and 5.8.4 sets read/write permissions for the world,
+    which allows local users to delete arbitrary files and
+    directories, and possibly read files and directories, via a
+    symlink attack.
   distribution: File-Path
   fixed_versions: ~
   id: CPANSA-File-Path-2004-0452

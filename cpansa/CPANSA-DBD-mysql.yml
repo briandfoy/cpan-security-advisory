@@ -3,10 +3,13 @@
   distribution: DBD-mysql
   reported: 2017-04-13
   description: >
-    The DBD::mysql module through 4.043 for Perl allows remote attackers to cause a denial of service (use-after-free
-    and application crash) or possibly have unspecified other impact by triggering (1) certain error responses from
-    a MySQL server or (2) a loss of a network connection to a MySQL server. The use-after-free defect was introduced by
-    relying on incorrect Oracle mysql_stmt_close documentation and code examples.
+    The DBD::mysql module through 4.043 for Perl allows remote
+    attackers to cause a denial of service (use-after-free and
+    application crash) or possibly have unspecified other impact by
+    triggering (1) certain error responses from a MySQL server or (2)
+    a loss of a network connection to a MySQL server. The
+    use-after-free defect was introduced by relying on incorrect
+    Oracle mysql_stmt_close documentation and code examples.
   cves:
     - CVE-2017-10788
   references:
@@ -19,9 +22,12 @@
   distribution: DBD-mysql
   reported: 2017-03-23
   description: >
-    The DBD::mysql module through 4.043 for Perl uses the mysql_ssl=1 setting to mean that SSL is optional (even though
-    this setting's documentation has a "your communication with the server will be encrypted" statement), which allows
-    man-in-the-middle attackers to spoof servers via a cleartext-downgrade attack, a related issue to CVE-2015-3152.
+    The DBD::mysql module through 4.043 for Perl uses the mysql_ssl=1
+    setting to mean that SSL is optional (even though this setting's
+    documentation has a "your communication with the server will be
+    encrypted" statement), which allows man-in-the-middle attackers to
+    spoof servers via a cleartext-downgrade attack, a related issue to
+    CVE-2015-3152.
   cves:
     - CVE-2017-10789
   references:
@@ -43,8 +49,9 @@
   distribution: DBD-mysql
   reported: 2016-10-02
   description: >
-    Buffer overflow in the DBD::mysql module before 4.037 for Perl allows context-dependent attackers to cause a denial
-    of service (crash) via vectors related to an error message.
+    Buffer overflow in the DBD::mysql module before 4.037 for Perl
+    allows context-dependent attackers to cause a denial of service
+    (crash) via vectors related to an error message.
   cves:
     - CVE-2016-1246
   references:
@@ -56,8 +63,10 @@
   distribution: DBD-mysql
   reported: 2016-08-19
   description: >
-    Use-after-free vulnerability in the my_login function in DBD::mysql before 4.033_01 allows attackers to have
-    unspecified impact by leveraging a call to mysql_errno after a failure of my_login.
+    Use-after-free vulnerability in the my_login function in
+    DBD::mysql before 4.033_01 allows attackers to have unspecified
+    impact by leveraging a call to mysql_errno after a failure of
+    my_login.
   cves:
     - CVE-2015-8949
   references:
@@ -68,8 +77,10 @@
   distribution: DBD-mysql
   reported: 2015-12-27
   description: >
-    There is a vulnerability of type use-after-free affecting DBD::mysql (aka DBD-mysql or the Database Interface (DBI)
-    MySQL driver for Perl) 3.x and 4.x before 4.041 when used with mysql_server_prepare=1.
+    There is a vulnerability of type use-after-free affecting
+    DBD::mysql (aka DBD-mysql or the Database Interface (DBI) MySQL
+    driver for Perl) 3.x and 4.x before 4.041 when used with
+    mysql_server_prepare=1.
   cves:
     - CVE-2016-1251
   references:
@@ -80,8 +91,10 @@
   distribution: DBD-mysql
   reported: 2014-07-30
   description: >
-    Use-after-free vulnerability in DBD::mysql before 4.029 allows attackers to cause a denial of service (program
-    crash) or possibly execute arbitrary code via vectors related to a lost server connection.
+    Use-after-free vulnerability in DBD::mysql before 4.029 allows
+    attackers to cause a denial of service (program crash) or possibly
+    execute arbitrary code via vectors related to a lost server
+    connection.
   cves:
     - CVE-2014-9906
   references:

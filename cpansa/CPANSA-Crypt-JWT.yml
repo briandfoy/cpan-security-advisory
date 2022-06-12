@@ -4,7 +4,12 @@
   reported: 2019-03-20
   severity: high
   description: >
-    Perl Crypt::JWT prior to 0.023 is affected by: Incorrect Access Control. The impact is: allow attackers to bypass authentication by providing a token by crafting with hmac(). The component is: JWT.pm, line 614. The attack vector is: network connectivity. The fixed version is: after commit b98a59b42ded9f9e51b2560410106207c2152d6c.
+    Perl Crypt::JWT prior to 0.023 is affected by: Incorrect Access
+    Control. The impact is: allow attackers to bypass authentication
+    by providing a token by crafting with hmac(). The component is:
+    JWT.pm, line 614. The attack vector is: network connectivity. The
+    fixed version is: after commit
+    b98a59b42ded9f9e51b2560410106207c2152d6c.
   references:
     - https://github.com/DCIT/perl-Crypt-JWT/commit/b98a59b42ded9f9e51b2560410106207c2152d6c
     - https://www.openwall.com/lists/oss-security/2018/09/07/1
@@ -17,7 +22,11 @@
   reported: 2019-03-20
   severity: high
   description: >
-    perl-CRYPT-JWT 0.022 and earlier is affected by: Incorrect Access Control. The impact is: bypass authentication. The component is: JWT.pm for JWT security token, line 614 in _decode_jws(). The attack vector is: network connectivity(crafting user-controlled input to bypass authentication). The fixed version is: 0.023.
+    perl-CRYPT-JWT 0.022 and earlier is affected by: Incorrect Access
+    Control. The impact is: bypass authentication. The component is:
+    JWT.pm for JWT security token, line 614 in _decode_jws(). The
+    attack vector is: network connectivity(crafting user-controlled
+    input to bypass authentication). The fixed version is: 0.023.
   references:
     - https://github.com/DCIT/perl-Crypt-JWT/issues/3#issuecomment-417947483
   affected_versions: "<0.022"

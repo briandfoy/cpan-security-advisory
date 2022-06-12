@@ -2,7 +2,10 @@
 - affected_versions: "<0.64"
   cves:
     - CVE-2014-5260
-  description: The (1) mkxmltype and (2) mkdtskel scripts in XML-DT before 0.64 allow local users to overwrite arbitrary files via a symlink attack on a /tmp/_xml_##### temporary file.
+  description:
+    The (1) mkxmltype and (2) mkdtskel scripts in XML-DT before 0.64
+    allow local users to overwrite arbitrary files via a symlink
+    attack on a /tmp/_xml_##### temporary file.
   distribution: XML-DT
   fixed_versions: ~
   id: CPANSA-XML-DT-2014-5260

@@ -2,7 +2,9 @@
 - affected_versions: "<1.0.0"
   cves:
     - CVE-2011-4115
-  description: Parallel::ForkManager module before 1.0.0 for Perl does not properly handle temporary files.
+  description: >
+    Parallel::ForkManager module before 1.0.0 for Perl does not
+    properly handle temporary files.
   distribution: Parallel-ForkManager
   fixed_versions: ~
   id: CPANSA-Parallel-ForkManager-2011-4115

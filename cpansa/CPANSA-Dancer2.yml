@@ -4,8 +4,10 @@
   reported: 2018-01-30
   severity: critical
   description: >
-    There is a potential RCE with regards to Storable. We have added session ID validation to the session engine
-    so that session backends based on Storable can reject malformed session IDs that may lead to exploitation of the RCE.
+    There is a potential RCE with regards to Storable. We have added
+    session ID validation to the session engine so that session
+    backends based on Storable can reject malformed session IDs that
+    may lead to exploitation of the RCE.
   references:
     - https://metacpan.org/changes/distribution/Dancer2
     - http://lists.preshweb.co.uk/pipermail/dancer-users/2018-April/005952.html

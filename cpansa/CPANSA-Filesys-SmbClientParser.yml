@@ -2,7 +2,10 @@
 - affected_versions: "<=2.7"
   cves:
     - CVE-2008-3285
-  description: The Filesys::SmbClientParser module 2.7 and earlier for Perl allows remote SMB servers to execute arbitrary code via a folder name containing shell metacharacters.
+  description: >
+    The Filesys::SmbClientParser module 2.7 and earlier for Perl
+    allows remote SMB servers to execute arbitrary code via a folder
+    name containing shell metacharacters.
   distribution: Filesys-SmbClientParser
   fixed_versions: ~
   id: CPANSA-Filesys-SmbClientParser-2008-3285

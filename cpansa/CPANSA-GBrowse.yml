@@ -1,16 +1,17 @@
 ---
-- id: CPANSA-GBrowser-2017-01
+- id: CPANSA-GBrowse-2017-01
   distribution: GBrowse
   reported: 2017-01-15
   description: >
-    An attacker is able to delete other users' accounts.  No httponly cookie flag.  Cross-site scripting vulnerability
-    in generation of citation text.
+    An attacker is able to delete other users' accounts.  No httponly
+    cookie flag.  Cross-site scripting vulnerability in generation of
+    citation text.
   affected_versions: "<2.56"
   fixed_versions: ">=2.56"
   references:
     - https://metacpan.org/changes/distribution/GBrowse
   cves: []
-- id: CPANSA-GBrowser-2004-01
+- id: CPANSA-GBrowse-2004-01
   distribution: GBrowse
   reported: 2004-04-05
   description: >
@@ -20,7 +21,7 @@
   references:
     - https://metacpan.org/changes/distribution/GBrowse
   cves: []
-- id: CPANSA-GBrowser-2003-01
+- id: CPANSA-GBrowse-2003-01
   distribution: GBrowse
   reported: 2003-08-23
   description: >

@@ -2,7 +2,9 @@
 - affected_versions: "<1.6"
   cves:
     - CVE-2015-8326
-  description: The IPTables-Parse module before 1.6 for Perl allows local users to write to arbitrary files owned by the current user.
+  description: >
+    The IPTables-Parse module before 1.6 for Perl allows local users
+    to write to arbitrary files owned by the current user.
   distribution: IPTables-Parse
   fixed_versions: ~
   id: CPANSA-IPTables-Parse-2015-8326

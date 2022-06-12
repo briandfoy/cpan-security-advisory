@@ -2,7 +2,11 @@
 - affected_versions: "<1.51"
   cves:
     - CVE-2002-1271
-  description: 'The Mail::Mailer Perl module in the perl-MailTools package 1.47 and earlier uses mailx as the default mailer, which allows remote attackers to execute arbitrary commands by inserting them into the mail body, which is then processed by mailx.'
+  description: >
+    The Mail::Mailer Perl module in the perl-MailTools package 1.47
+    and earlier uses mailx as the default mailer, which allows remote
+    attackers to execute arbitrary commands by inserting them into the
+    mail body, which is then processed by mailx.
   distribution: Mail-Mailer
   fixed_versions: ">=1.51"
   id: CPANSA-Mail-Mailer-2002-1271

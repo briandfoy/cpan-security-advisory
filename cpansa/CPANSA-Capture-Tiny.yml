@@ -2,7 +2,10 @@
 - affected_versions: "<0.24"
   cves:
     - CVE-2014-1875
-  description: The Capture::Tiny module before 0.24 for Perl allows local users to write to arbitrary files via a symlink attack on a temporary file.
+  description: >
+    The Capture::Tiny module before 0.24 for Perl allows local users
+    to write to arbitrary files via a symlink attack on a temporary
+    file.
   distribution: Capture-Tiny
   fixed_versions: ~
   id: CPANSA-Capture-Tiny-2014-1875

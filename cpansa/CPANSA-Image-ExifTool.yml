@@ -2,7 +2,9 @@
 - affected_versions: "<=12.37"
   cves:
     - CVE-2022-23935
-  description: 'lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file =~ /\|$/ check, leading to command injection.'
+  description: >
+    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file
+    =~ /\|$/ check, leading to command injection.
   distribution: ''
   fixed_versions: ">12.38"
   id: CPANSA-Image-ExifTool-2022-23935

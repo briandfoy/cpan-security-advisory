@@ -2,7 +2,9 @@
 - affected_versions: '>=2.12'
   cves:
     - CVE-2020-16155
-  description: The CPAN::Checksums package 2.12 for Perl does not uniquely define signed data.
+  description: >
+    The CPAN::Checksums package 2.12 for Perl does not uniquely define
+    signed data.
   distribution: CPAN-Checksums
   fixed_versions: ~
   id: CPANSA-CPAN-Checksums-2020-16155

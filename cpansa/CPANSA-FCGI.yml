@@ -3,7 +3,8 @@
   distribution: FCGI
   reported: 2011-09-24
   description: >
-    Leaking information across requests when using the deprecated and undocumented old FCGI interface.
+    Leaking information across requests when using the deprecated and
+    undocumented old FCGI interface.
   references:
     - https://metacpan.org/changes/distribution/FCGI
     - https://github.com/perl-catalyst/FCGI/commit/297693dc8362d25bb25e473899c72508a0f71d2e
