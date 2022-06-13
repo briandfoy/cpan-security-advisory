@@ -153,7 +153,7 @@
     - https://www.oracle.com/security-alerts/cpuapr2022.html
   reported: 2020-06-05
   severity: high
-- affected_versions: ">=5.22.0,<5.28"
+- affected_versions: ">=5.22.0,<5.28.0"
   cves:
     - CVE-2018-6798
   description: >
@@ -161,7 +161,7 @@
     crafted locale dependent regular expression can cause a heap-based
     buffer over-read and potentially information disclosure.
   distribution: 'perl'
-  fixed_versions: ">=5.28"
+  fixed_versions: ">=5.28.0"
   id: CPANSA-perl-2018-6798
   references:
     - https://www.debian.org/security/2018/dsa-4172
@@ -173,7 +173,7 @@
     - https://www.oracle.com/security-alerts/cpujul2020.html
   reported: 2018-04-17
   severity: high
-- affected_versions: ">=5.18,<5.28"
+- affected_versions: ">=5.18.0,<5.28.0"
   cves:
     - CVE-2018-6797
   description: >
@@ -181,7 +181,7 @@
     regular expression can cause a heap-based buffer overflow, with
     control over the bytes written.
   distribution: 'perl'
-  fixed_versions: ">=5.28"
+  fixed_versions: ">=5.28.0"
   id: CPANSA-perl-2018-6797
   references:
     - https://www.debian.org/security/2018/dsa-4172
@@ -451,7 +451,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18771
   reported: 2013-03-14
   severity: ~
-- affected_versions: ">=5.10.0,<5.12"
+- affected_versions: ">=5.10.0,<5.12.0"
   cves:
     - CVE-2011-0761
   description: >
@@ -461,7 +461,7 @@
     (2) readdir, (3) closedir, (4) getsockname, (5) rewinddir, (6)
     tell, or (7) telldir function call.
   distribution: 'perl'
-  fixed_versions: ">=5.12"
+  fixed_versions: ">=5.12.0"
   id: CPANSA-perl-2011-0761
   references:
     - http://www.securityfocus.com/bid/47766
@@ -663,7 +663,7 @@
     - http://www.securityfocus.com/archive/1/418333/100/0/threaded
   reported: 2005-12-01
   severity: ~
-- affected_versions: "5.8.0"
+- affected_versions: "==5.8.0"
   cves:
     - CVE-2005-0156
   description: >
@@ -693,7 +693,7 @@
     - 'http://www.digitalmunition.com/DMA[2005-0131b].txt'
   reported: 2005-02-07
   severity: ~
-- affected_versions: "5.8.0"
+- affected_versions: "==5.8.0"
   cves:
     - CVE-2005-0155
   description: >
@@ -789,7 +789,7 @@
     - http://www.securityfocus.com/archive/1/483563/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: "<5.16"
+- affected_versions: "<5.16.0"
   cves:
     - CVE-2012-5195
   description: >
@@ -799,7 +799,7 @@
     a denial of service (memory consumption and crash) or possibly
     execute arbitrary code via the 'x' string repeat operator.
   distribution: 'perl'
-  fixed_versions: ">=5.16"
+  fixed_versions: ">=5.16.0"
   id: CPANSA-perl-2012-5195
   references:
     - http://perl5.git.perl.org/perl.git/commit/2709980d5a193ce6f3a16f0d19879a6560dcde44
@@ -874,7 +874,7 @@
     - https://usn.ubuntu.com/3625-1/
   reported: 2016-08-02
   severity: high
-- affected_versions: '5.8.1'
+- affected_versions: '==5.8.1'
   cves:
     - CVE-2003-0900
   description: >
@@ -888,7 +888,7 @@
     - https://bugzilla.redhat.com/bugzilla/long_list.cgi?buglist=108711
   reported: 2003-12-31
   severity: ~
-- affected_versions: "<5.20"
+- affected_versions: "<5.20.0"
   cves:
     - CVE-2013-7422
   description: >
@@ -928,7 +928,7 @@
     - https://www.oracle.com/security-alerts/cpujul2020.html
   reported: 2017-02-07
   severity: critical
-- affected_versions: "<5.14"
+- affected_versions: "<5.14.0"
   cves:
     - CVE-2011-1487
   description: >
@@ -939,7 +939,7 @@
     attackers to bypass the taint protection mechanism via a crafted
     string.
   distribution: 'perl'
-  fixed_versions: ">=5.14"
+  fixed_versions: ">=5.14.0"
   id: CPANSA-perl-2011-1487
   references:
     - https://bugzilla.redhat.com/show_bug.cgi?id=692844
