@@ -55,19 +55,19 @@ my $items = Mojo::UserAgent
 		$entry->append_content( tag( id      => $_->{cve}         ) );
 		$entry->append_content( tag( title   => $_->{cve}         ) );
 		$entry->append_content( tag( content => $_->{description} ) );
-		$entry->append_content( tag( 'link'  => $_->{url}         ) );
 		$entry->append_content( tag( 'link' ) );
-		$entry->at('link')->attr( rel => 'alternate', href => $_->{url} );
 
+		$entry->at('link')->attr( rel => 'alternate', href => $_->{url} );
 
 		$feed->append_content($entry);
 		} )
 	->to_array
 	;
+
 add_default_item($feed) unless $items->@*;
 
-
 say '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' . $feed;
+
 sub add_default_item ( $feed ) {
 	my $message = "No new Perl CVEs for " . localtime;
 	my $entry = tag('entry')->at('entry');
@@ -77,7 +77,6 @@ sub add_default_item ( $feed ) {
 
 	$feed->append_content($entry);
 	}
-
 
 sub now { # 2003-12-13T18:30:02Z
 	my @gmtime = gmtime();
