@@ -56,6 +56,9 @@ my $items = Mojo::UserAgent
 		$entry->append_content( tag( title   => $_->{cve}         ) );
 		$entry->append_content( tag( content => $_->{description} ) );
 		$entry->append_content( tag( 'link'  => $_->{url}         ) );
+		$entry->append_content( tag( 'link' ) );
+		$entry->at('link')->attr( rel => 'alternate', href => $_->{url} );
+
 
 		$feed->append_content($entry);
 		} )
@@ -83,7 +86,7 @@ sub start_xml () {
 		HERE
 
 	my %hash = (
-		id          => 'https:///www.theperlreview.com/perl-cve-atom.xml',
+		id          => 'https://www.theperlreview.com/perl-cve-atom.xml',
 		title       => 'Perl and CPAN CVEs',
 		subtitle    => $description,
 		updated     => now(),
