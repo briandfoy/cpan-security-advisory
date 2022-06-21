@@ -1,3 +1,4 @@
+---
 name: validate YAML files
 
 on:
@@ -21,6 +22,6 @@ jobs:
             - name: 'Yamllint'
               uses: karancode/yamllint-github-action@master
               with:
-                yamllint_file_or_dir: 'cpansa'
-                yamllint_strict: false
-                yamllint_comment: true
+                  yamllint_file_or_dir: 'cpansa'
+                  yamllint_strict: false
+                  yamllint_comment: true
