@@ -1,0 +1,895 @@
+---
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-15358
+  description: >
+    In SQLite before 3.32.3, select.c mishandles query-flattener optimization,
+    leading to a multiSelectOrderBy heap overflow because of misuse of
+    transitive properties for constant propagation.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-15358
+  references:
+    - https://www.sqlite.org/src/info/10fa79d00f8091e5
+    - https://www.sqlite.org/src/timeline?p=version-3.32.3&bt=version-3.32.2
+    - https://www.sqlite.org/src/tktview?name=8f157e8010
+    - https://security.netapp.com/advisory/ntap-20200709-0001/
+    - https://security.gentoo.org/glsa/202007-26
+    - https://usn.ubuntu.com/4438-1/
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://support.apple.com/kb/HT211931
+    - https://support.apple.com/kb/HT211844
+    - https://support.apple.com/kb/HT211850
+    - https://support.apple.com/kb/HT211843
+    - https://support.apple.com/kb/HT211847
+    - http://seclists.org/fulldisclosure/2020/Nov/19
+    - http://seclists.org/fulldisclosure/2020/Nov/22
+    - http://seclists.org/fulldisclosure/2020/Nov/20
+    - http://seclists.org/fulldisclosure/2020/Dec/32
+    - https://www.oracle.com/security-alerts/cpujan2021.html
+    - https://support.apple.com/kb/HT212147
+    - http://seclists.org/fulldisclosure/2021/Feb/14
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+    - https://www.oracle.com/security-alerts/cpuapr2022.html
+  reported: 2020-06-27
+  severity: medium
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-13632
+  description: >
+    ext/fts3/fts3_snippet.c in SQLite before 3.32.0 has a NULL pointer
+    dereference via a crafted matchinfo() query.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-13632
+  references:
+    - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
+    - https://sqlite.org/src/info/a4dd148928ea65bd
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
+    - https://security.netapp.com/advisory/ntap-20200608-0002/
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-05-27
+  severity: medium
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-13631
+  description: >
+    SQLite before 3.32.0 allows a virtual table to be renamed to the name of
+    one of its shadow tables, related to alter.c and build.c.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-13631
+  references:
+    - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
+    - https://sqlite.org/src/info/eca0ba2cf4c0fdf7
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
+    - https://security.netapp.com/advisory/ntap-20200608-0002/
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://support.apple.com/kb/HT211931
+    - https://support.apple.com/kb/HT211844
+    - https://support.apple.com/kb/HT211850
+    - https://support.apple.com/kb/HT211843
+    - https://support.apple.com/kb/HT211952
+    - http://seclists.org/fulldisclosure/2020/Nov/19
+    - http://seclists.org/fulldisclosure/2020/Nov/22
+    - http://seclists.org/fulldisclosure/2020/Nov/20
+    - https://support.apple.com/kb/HT211935
+    - http://seclists.org/fulldisclosure/2020/Dec/32
+    - https://lists.apache.org/thread.html/rc713534b10f9daeee2e0990239fa407e2118e4aa9e88a7041177497c@%3Cissues.guacamole.apache.org%3E
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-05-27
+  severity: medium
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-13630
+  description: >
+    ext/fts3/fts3.c in SQLite before 3.32.0 has a use-after-free in
+    fts3EvalNextRow, related to the snippet feature.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-13630
+  references:
+    - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
+    - https://sqlite.org/src/info/0d69f76f0865f962
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
+    - https://security.netapp.com/advisory/ntap-20200608-0002/
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://support.apple.com/kb/HT211931
+    - https://support.apple.com/kb/HT211844
+    - https://support.apple.com/kb/HT211850
+    - https://support.apple.com/kb/HT211843
+    - https://support.apple.com/kb/HT211952
+    - http://seclists.org/fulldisclosure/2020/Nov/19
+    - http://seclists.org/fulldisclosure/2020/Nov/22
+    - http://seclists.org/fulldisclosure/2020/Nov/20
+    - https://support.apple.com/kb/HT211935
+    - http://seclists.org/fulldisclosure/2020/Dec/32
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-05-27
+  severity: high
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-13435
+  description: >
+    SQLite through 3.32.0 has a segmentation fault in sqlite3ExprCodeTarget in
+    expr.c.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-13435
+  references:
+    - https://www.sqlite.org/src/info/7a5279a25c57adf1
+    - https://security.netapp.com/advisory/ntap-20200528-0004/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://support.apple.com/kb/HT211931
+    - https://support.apple.com/kb/HT211844
+    - https://support.apple.com/kb/HT211850
+    - https://support.apple.com/kb/HT211843
+    - https://support.apple.com/kb/HT211952
+    - http://seclists.org/fulldisclosure/2020/Nov/19
+    - http://seclists.org/fulldisclosure/2020/Nov/22
+    - http://seclists.org/fulldisclosure/2020/Nov/20
+    - https://support.apple.com/kb/HT211935
+    - http://seclists.org/fulldisclosure/2020/Dec/32
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+  reported: 2020-05-24
+  severity: medium
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-13434
+  description: >
+    SQLite through 3.32.0 has an integer overflow in sqlite3_str_vappendf in
+    printf.c.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-13434
+  references:
+    - https://www.sqlite.org/src/info/23439ea582241138
+    - https://www.sqlite.org/src/info/d08d3405878d394e
+    - https://lists.debian.org/debian-lts-announce/2020/05/msg00024.html
+    - https://security.netapp.com/advisory/ntap-20200528-0004/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://support.apple.com/kb/HT211931
+    - https://support.apple.com/kb/HT211844
+    - https://support.apple.com/kb/HT211850
+    - https://support.apple.com/kb/HT211843
+    - https://support.apple.com/kb/HT211952
+    - http://seclists.org/fulldisclosure/2020/Nov/19
+    - http://seclists.org/fulldisclosure/2020/Nov/22
+    - http://seclists.org/fulldisclosure/2020/Nov/20
+    - https://support.apple.com/kb/HT211935
+    - http://seclists.org/fulldisclosure/2020/Dec/32
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.oracle.com/security-alerts/cpuapr2022.html
+  reported: 2020-05-24
+  severity: medium
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-11656
+  description: >
+    In SQLite through 3.31.1, the ALTER TABLE implementation has a
+    use-after-free, as demonstrated by an ORDER BY clause that belongs
+    to a compound SELECT statement.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-11656
+  references:
+    - https://www3.sqlite.org/cgi/src/info/b64674919f673602
+    - https://www.sqlite.org/src/info/d09f8c3621d5f7f8
+    - https://security.netapp.com/advisory/ntap-20200416-0001/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://www.oracle.com/security-alerts/cpujan2021.html
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.tenable.com/security/tns-2021-14
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-04-09
+  severity: critical
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-11655
+  description: >
+    SQLite through 3.31.1 allows attackers to cause a denial of service
+    (segmentation fault) via a malformed window-function query because
+    the AggInfo object's initialization is mishandled.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-11655
+  references:
+    - https://www3.sqlite.org/cgi/src/info/4a302b42c7bf5e11
+    - https://www3.sqlite.org/cgi/src/tktview?name=af4556bb5c
+    - https://security.netapp.com/advisory/ntap-20200416-0001/
+    - https://lists.debian.org/debian-lts-announce/2020/05/msg00006.html
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://www.oracle.com/security-alerts/cpujan2021.html
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.tenable.com/security/tns-2021-14
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-04-09
+  severity: high
+- affected_versions: "<1.65_03"
+  cves:
+    - CVE-2020-9327
+  description: >
+    In SQLite 3.31.1, isAuxiliaryVtabOperator allows attackers to trigger
+    a NULL pointer dereference and segmentation fault because of generated
+    column optimizations.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2020-9327
+  references:
+    - https://www.sqlite.org/cgi/src/info/4374860b29383380
+    - https://www.sqlite.org/cgi/src/info/abc473fb8fb99900
+    - https://www.sqlite.org/cgi/src/info/9d0d4ab95dc0c56e
+    - https://security.netapp.com/advisory/ntap-20200313-0002/
+    - https://security.gentoo.org/glsa/202003-16
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://www.oracle.com/security-alerts/cpuoct2020.html
+    - https://www.oracle.com/security-alerts/cpujan2021.html
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2020-02-21
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-20218
+  description: >
+    selectExpander in select.c in SQLite 3.30.1 proceeds with WITH stack
+    unwinding even after a parsing error.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-20218
+  references:
+    - https://github.com/sqlite/sqlite/commit/a6c1a71cde082e09750465d5675699062922e387
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://security.gentoo.org/glsa/202007-26
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://lists.debian.org/debian-lts-announce/2020/12/msg00016.html
+  reported: 2020-01-02
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19959
+  description: >
+    ext/misc/zipfile.c in SQLite 3.30.1 mishandles certain uses of INSERT INTO
+    in situations involving embedded '\\0' characters in filenames, leading to
+    a memory-management error that can be detected by (for example) valgrind.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19959
+  references:
+    - https://github.com/sqlite/sqlite/commit/1e490c4ca6b43a9cf8637d695907888349f69bec
+    - https://github.com/sqlite/sqlite/commit/d8f2d46cbc9925e034a68aaaf60aad788d9373c1
+    - https://security.netapp.com/advisory/ntap-20200204-0001/
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+  reported: 2020-01-03
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19926
+    - CVE-2019-19880
+  description: >
+    multiSelect in select.c in SQLite 3.30.1 mishandles certain errors during
+    parsing, as demonstrated by errors from sqlite3WindowRewrite() calls.
+    NOTE: this vulnerability exists because of an incomplete fix for
+    CVE-2019-19880.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19926
+  references:
+    - https://github.com/sqlite/sqlite/commit/8428b3b437569338a9d1e10c4cd8154acbe33089
+    - https://security.netapp.com/advisory/ntap-20200114-0003/
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00010.html
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00015.html
+    - https://access.redhat.com/errata/RHSA-2020:0514
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00025.html
+    - https://www.debian.org/security/2020/dsa-4638
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://usn.ubuntu.com/4298-2/
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-23
+  severity: high
+- affected_versions: ">=1.19_01,<1.63_03"
+  cves:
+    - CVE-2019-8457
+  description: >
+    SQLite3 from 3.6.0 to and including 3.27.2 is vulnerable to heap
+    out-of-bound read in the rtreenode() function when handling invalid
+    rtree tables.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.63_04"
+  id: CPANSA-DBD-SQLite-2019-8457
+  references:
+    - https://www.sqlite.org/src/info/90acdbfce9c08858
+    - https://www.sqlite.org/releaselog/3_28_0.html
+    - https://usn.ubuntu.com/4004-1/
+    - https://usn.ubuntu.com/4004-2/
+    - https://security.netapp.com/advisory/ntap-20190606-0002/
+    - https://usn.ubuntu.com/4019-1/
+    - https://usn.ubuntu.com/4019-2/
+    - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00074.html
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SJPFGA45DI4F5MCF2OAACGH3HQOF4G3M/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OPKYSWCOM3CL66RI76TYVIG6TJ263RXH/
+    - https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html
+    - https://www.oracle.com/security-alerts/cpujan2020.html
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
+  reported: 2019-05-30
+  severity: critical
+- affected_versions: ">=1.61_03,<1.63_03"
+  cves:
+    - CVE-2019-5018
+  description: >
+    An exploitable use after free vulnerability exists in the window function
+    functionality of Sqlite3 3.26.0. A specially crafted SQL command can cause
+    a use after free vulnerability, potentially resulting in remote code
+    execution. An attacker can send a malicious SQL command to trigger this
+    vulnerability.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.63_04"
+  id: CPANSA-DBD-SQLite-2019-5018
+  references:
+    - https://talosintelligence.com/vulnerability_reports/TALOS-2019-0777
+    - http://www.securityfocus.com/bid/108294
+    - http://packetstormsecurity.com/files/152809/Sqlite3-Window-Function-Remote-Code-Execution.html
+    - https://security.netapp.com/advisory/ntap-20190521-0001/
+    - https://security.gentoo.org/glsa/201908-09
+    - https://usn.ubuntu.com/4205-1/
+  reported: 2019-05-10
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19925
+  description: >
+    zipfileUpdate in ext/misc/zipfile.c in SQLite 3.30.1 mishandles a NULL
+    pathname during an update of a ZIP archive.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19925
+  references:
+    - https://github.com/sqlite/sqlite/commit/54d501092d88c0cf89bec4279951f548fb0b8618
+    - https://security.netapp.com/advisory/ntap-20200114-0003/
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00010.html
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00015.html
+    - https://access.redhat.com/errata/RHSA-2020:0514
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00025.html
+    - https://www.debian.org/security/2020/dsa-4638
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-24
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19924
+  description: >
+    SQLite 3.30.1 mishandles certain parser-tree rewriting, related to expr.c,
+    vdbeaux.c, and window.c. This is caused by incorrect sqlite3WindowRewrite()
+    error handling.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19924
+  references:
+    - https://github.com/sqlite/sqlite/commit/8654186b0236d556aa85528c2573ee0b6ab71be3
+    - https://security.netapp.com/advisory/ntap-20200114-0003/
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-24
+  severity: medium
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19923
+  description: >
+    flattenSubquery in select.c in SQLite 3.30.1 mishandles certain uses of
+    SELECT DISTINCT involving a LEFT JOIN in which the right-hand side is a
+    view. This can cause a NULL pointer dereference (or incorrect results).
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19923
+  references:
+    - https://github.com/sqlite/sqlite/commit/396afe6f6aa90a31303c183e11b2b2d4b7956b35
+    - https://security.netapp.com/advisory/ntap-20200114-0003/
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00010.html
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00015.html
+    - https://access.redhat.com/errata/RHSA-2020:0514
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00025.html
+    - https://www.debian.org/security/2020/dsa-4638
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-24
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19880
+  description: >
+    exprListAppendList in window.c in SQLite 3.30.1 allows attackers to trigger
+    an invalid pointer dereference because constant integer values in ORDER BY
+    clauses of window definitions are mishandled.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19880
+  references:
+    - https://github.com/sqlite/sqlite/commit/75e95e1fcd52d3ec8282edb75ac8cd0814095d54
+    - https://security.netapp.com/advisory/ntap-20200114-0001/
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00010.html
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00015.html
+    - https://access.redhat.com/errata/RHSA-2020:0514
+    - http://lists.opensuse.org/opensuse-security-announce/2020-02/msg00025.html
+    - https://www.debian.org/security/2020/dsa-4638
+    - https://usn.ubuntu.com/4298-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-18
+  severity: high
+- affected_versions: "<=1.65_02"
+  cves:
+    - CVE-2019-19646
+  description: >
+    pragma.c in SQLite through 3.30.1 mishandles NOT NULL in an integrity_check
+    PRAGMA command in certain cases of generated columns.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19646
+  references:
+    - https://github.com/sqlite/sqlite/commit/ebd70eedd5d6e6a890a670b5ee874a5eae86b4dd
+    - https://github.com/sqlite/sqlite/commit/926f796e8feec15f3836aa0a060ed906f8ae04d3
+    - https://www.sqlite.org/
+    - https://security.netapp.com/advisory/ntap-20191223-0001/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://www.tenable.com/security/tns-2021-14
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-09
+  severity: critical
+- affected_versions: "<=1.65_02"
+  cves:
+    - CVE-2019-19645
+  description: >
+    alter.c in SQLite through 3.30.1 allows attackers to trigger infinite
+    recursion via certain types of self-referential views in conjunction
+    with ALTER TABLE statements.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19645
+  references:
+    - https://github.com/sqlite/sqlite/commit/38096961c7cd109110ac21d3ed7dad7e0cb0ae06
+    - https://security.netapp.com/advisory/ntap-20191223-0001/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://usn.ubuntu.com/4394-1/
+    - https://www.tenable.com/security/tns-2021-14
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-09
+  severity: medium
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19603
+  description: >
+    SQLite 3.30.1 mishandles certain SELECT statements with a nonexistent VIEW,
+    leading to an application crash.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19603
+  references:
+    - https://github.com/sqlite/sqlite/commit/527cbd4a104cb93bf3994b3dd3619a6299a78b13
+    - https://www.sqlite.org/
+    - https://security.netapp.com/advisory/ntap-20191223-0001/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://usn.ubuntu.com/4394-1/
+    - https://lists.apache.org/thread.html/rc713534b10f9daeee2e0990239fa407e2118e4aa9e88a7041177497c@%3Cissues.guacamole.apache.org%3E
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-09
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19317
+  description: >
+    lookupName in resolve.c in SQLite 3.30.1 omits bits from the colUsed
+    bitmask in the case of a generated column, which allows attackers to
+    cause a denial of service or possibly have unspecified other impact.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19317
+  references:
+    - https://github.com/sqlite/sqlite/commit/522ebfa7cee96fb325a22ea3a2464a63485886a8
+    - https://github.com/sqlite/sqlite/commit/73bacb7f93eab9f4bd5a65cbc4ae242acf63c9e3
+    - https://security.netapp.com/advisory/ntap-20191223-0001/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-12-05
+  severity: critical
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19244
+  description: >
+    sqlite3Select in select.c in SQLite 3.30.1 allows a crash if a sub-select
+    uses both DISTINCT and window functions, and also has certain ORDER BY
+    usage.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19244
+  references:
+    - https://github.com/sqlite/sqlite/commit/e59c562b3f6894f84c715772c4b116d7b5c01348
+    - https://usn.ubuntu.com/4205-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-11-25
+  severity: high
+- affected_versions: "1.65_02"
+  cves:
+    - CVE-2019-19242
+  description: >
+    SQLite 3.30.1 mishandles pExpr->y.pTab, as demonstrated by the TK_COLUMN
+    case in sqlite3ExprCodeTarget in expr.c.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.65_03"
+  id: CPANSA-DBD-SQLite-2019-19242
+  references:
+    - https://github.com/sqlite/sqlite/commit/57f7ece78410a8aae86aa4625fb7556897db384c
+    - https://usn.ubuntu.com/4205-1/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+  reported: 2019-11-27
+  severity: medium
+- affected_versions: "<1.61_01"
+  cves:
+    - CVE-2018-20506
+  description: >
+    SQLite before 3.25.3, when the FTS3 extension is enabled, encounters an
+    integer overflow (and resultant buffer overflow) for FTS3 queries in a
+    "merge" operation that occurs after crafted changes to FTS3 shadow tables,
+    allowing remote attackers to execute arbitrary code by leveraging the
+    ability to run arbitrary SQL statements (such as in certain WebSQL use
+    cases). This is a different vulnerability than CVE-2018-20346.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.61_01"
+  id: CPANSA-DBD-SQLite-2018-20506
+  references:
+    - https://support.apple.com/kb/HT209451
+    - https://support.apple.com/kb/HT209450
+    - https://support.apple.com/kb/HT209448
+    - https://support.apple.com/kb/HT209447
+    - https://support.apple.com/kb/HT209446
+    - https://support.apple.com/kb/HT209443
+    - https://sqlite.org/src/info/940f2adc8541a838
+    - https://seclists.org/bugtraq/2019/Jan/39
+    - https://seclists.org/bugtraq/2019/Jan/33
+    - https://seclists.org/bugtraq/2019/Jan/32
+    - https://seclists.org/bugtraq/2019/Jan/31
+    - https://seclists.org/bugtraq/2019/Jan/29
+    - https://seclists.org/bugtraq/2019/Jan/28
+    - http://www.securityfocus.com/bid/106698
+    - http://seclists.org/fulldisclosure/2019/Jan/69
+    - http://seclists.org/fulldisclosure/2019/Jan/68
+    - http://seclists.org/fulldisclosure/2019/Jan/67
+    - http://seclists.org/fulldisclosure/2019/Jan/66
+    - http://seclists.org/fulldisclosure/2019/Jan/64
+    - http://seclists.org/fulldisclosure/2019/Jan/62
+    - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00070.html
+    - https://security.netapp.com/advisory/ntap-20190502-0004/
+    - https://usn.ubuntu.com/4019-1/
+    - https://usn.ubuntu.com/4019-2/
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
+  reported: 2019-04-03
+  severity: high
+- affected_versions: "1.59_02"
+  cves:
+    - CVE-2018-20505
+  description: >
+    SQLite 3.25.2, when queries are run on a table with a malformed
+    PRIMARY KEY, allows remote attackers to cause a denial of service
+    (application crash) by leveraging the ability to run arbitrary SQL
+    statements (such as in certain WebSQL use cases).
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.59_03"
+  id: CPANSA-DBD-SQLite-2018-20505
+  references:
+    - https://support.apple.com/kb/HT209451
+    - https://support.apple.com/kb/HT209450
+    - https://support.apple.com/kb/HT209448
+    - https://support.apple.com/kb/HT209447
+    - https://support.apple.com/kb/HT209446
+    - https://support.apple.com/kb/HT209443
+    - https://sqlite.org/src/info/1a84668dcfdebaf12415d
+    - https://seclists.org/bugtraq/2019/Jan/39
+    - https://seclists.org/bugtraq/2019/Jan/33
+    - https://seclists.org/bugtraq/2019/Jan/32
+    - https://seclists.org/bugtraq/2019/Jan/31
+    - https://seclists.org/bugtraq/2019/Jan/29
+    - https://seclists.org/bugtraq/2019/Jan/28
+    - http://www.securityfocus.com/bid/106698
+    - http://seclists.org/fulldisclosure/2019/Jan/69
+    - http://seclists.org/fulldisclosure/2019/Jan/68
+    - http://seclists.org/fulldisclosure/2019/Jan/67
+    - http://seclists.org/fulldisclosure/2019/Jan/66
+    - http://seclists.org/fulldisclosure/2019/Jan/64
+    - http://seclists.org/fulldisclosure/2019/Jan/62
+    - https://security.netapp.com/advisory/ntap-20190502-0004/
+    - https://usn.ubuntu.com/4019-1/
+  reported: 2019-04-03
+  severity: high
+- affected_versions: "<1.61_01"
+  cves:
+    - CVE-2018-20346
+  description: >
+    SQLite before 3.25.3, when the FTS3 extension is enabled, encounters
+    an integer overflow (and resultant buffer overflow) for FTS3 queries
+    that occur after crafted changes to FTS3 shadow tables, allowing remote
+    attackers to execute arbitrary code by leveraging the ability to run
+    arbitrary SQL statements (such as in certain WebSQL use cases),
+    aka Magellan.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.61_01"
+  id: CPANSA-DBD-SQLite-2018-20346
+  references:
+    - https://www.sqlite.org/releaselog/3_25_3.html
+    - https://www.mail-archive.com/sqlite-users@mailinglists.sqlite.org/msg113218.html
+    - https://crbug.com/900910
+    - https://chromium.googlesource.com/chromium/src/+/c368e30ae55600a1c3c9cb1710a54f9c55de786e
+    - https://chromereleases.googleblog.com/2018/12/stable-channel-update-for-desktop.html
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1659677
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1659379
+    - https://blade.tencent.com/magellan/index_en.html
+    - https://access.redhat.com/articles/3758321
+    - https://worthdoingbadly.com/sqlitebug/
+    - https://sqlite.org/src/info/d44318f59044162e
+    - https://sqlite.org/src/info/940f2adc8541a838
+    - https://news.ycombinator.com/item?id=18685296
+    - https://github.com/zhuowei/worthdoingbadly.com/blob/master/_posts/2018-12-14-sqlitebug.html
+    - https://lists.debian.org/debian-lts-announce/2018/12/msg00012.html
+    - https://www.synology.com/security/advisory/Synology_SA_18_61
+    - http://www.securityfocus.com/bid/106323
+    - https://www.freebsd.org/security/advisories/FreeBSD-EN-19:03.sqlite.asc
+    - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00040.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00070.html
+    - https://security.gentoo.org/glsa/201904-21
+    - https://usn.ubuntu.com/4019-1/
+    - https://usn.ubuntu.com/4019-2/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PU4NZ6DDU4BEM3ACM3FM6GLEPX56ZQXK/
+    - https://support.apple.com/HT209448
+    - https://support.apple.com/HT209447
+    - https://support.apple.com/HT209446
+    - https://support.apple.com/HT209451
+    - https://support.apple.com/HT209443
+    - https://support.apple.com/HT209450
+    - https://www.oracle.com/security-alerts/cpuapr2020.html
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
+  reported: 2018-12-21
+  severity: high
+- affected_versions: "<1.59_01"
+  cves:
+    - CVE-2018-8740
+  description: >
+    In SQLite through 3.22.0, databases whose schema is corrupted using a
+    CREATE TABLE AS statement could cause a NULL pointer dereference,
+    related to build.c and prepare.c.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.59_01"
+  id: CPANSA-DBD-SQLite-2018-8740
+  references:
+    - https://www.sqlite.org/cgi/src/timeline?r=corrupt-schema
+    - https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1756349
+    - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=6964
+    - https://www.sqlite.org/cgi/src/vdiff?from=1774f1c3baf0bc3d&to=d75e67654aa9620b
+    - http://www.securityfocus.com/bid/103466
+    - https://lists.debian.org/debian-lts-announce/2019/01/msg00009.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00050.html
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PU4NZ6DDU4BEM3ACM3FM6GLEPX56ZQXK/
+    - https://usn.ubuntu.com/4205-1/
+    - https://usn.ubuntu.com/4394-1/
+    - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+    - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+  reported: 2018-03-17
+  severity: high
+- affected_versions: "1.55_06,<=1.55_03"
+  cves:
+    - CVE-2017-10989
+  description: >
+    The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3,
+    as used in GDAL and other products, mishandles undersized RTree blobs in
+    a crafted database, leading to a heap-based buffer over-read or possibly
+    unspecified other impact.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.55_07"
+  id: CPANSA-DBD-SQLite-2017-10989
+  references:
+    - https://sqlite.org/src/info/66de6f4a
+    - https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1700937
+    - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=2405
+    - https://sqlite.org/src/vpatch?from=0db20efe201736b3&to=66de6f4a9504ec26
+    - http://marc.info/?l=sqlite-users&m=149933696214713&w=2
+    - http://www.securityfocus.com/bid/99502
+    - http://www.securitytracker.com/id/1039427
+    - https://support.apple.com/HT208144
+    - https://support.apple.com/HT208115
+    - https://support.apple.com/HT208113
+    - https://support.apple.com/HT208112
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    - https://lists.debian.org/debian-lts-announce/2019/01/msg00009.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00050.html
+    - https://usn.ubuntu.com/4019-1/
+    - https://usn.ubuntu.com/4019-2/
+  reported: 2017-07-07
+  severity: critical
+- affected_versions: ">=1.51_04"
+  cves:
+    - CVE-2016-6153
+  description: >
+    os_unix.c in SQLite before 3.13.0 improperly implements the temporary
+    directory search algorithm, which might allow local users to obtain
+    sensitive information, cause a denial of service (application crash),
+    or have unspecified other impact by leveraging use of the current working
+    directory for temporary files.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.51_05"
+  id: CPANSA-DBD-SQLite-2016-6153
+  references:
+    - http://www.openwall.com/lists/oss-security/2016/07/01/1
+    - http://www.securityfocus.com/bid/91546
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IGQTH7V45QVHFDXJAEECHEO3HHD644WZ/
+    - https://www.korelogic.com/Resources/Advisories/KL-001-2016-003.txt
+    - https://www.sqlite.org/releaselog/3_13_0.html
+    - http://www.sqlite.org/cgi/src/info/67985761aa93fb61
+    - http://www.openwall.com/lists/oss-security/2016/07/01/2
+    - http://lists.opensuse.org/opensuse-updates/2016-08/msg00053.html
+    - https://www.tenable.com/security/tns-2016-20
+    - https://usn.ubuntu.com/4019-1/
+    - https://usn.ubuntu.com/4019-2/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PU4NZ6DDU4BEM3ACM3FM6GLEPX56ZQXK/
+  reported: 2016-09-26
+  severity: medium
+- affected_versions: "<=1.47_01"
+  cves:
+    - CVE-2015-3416
+  description: >
+    The sqlite3VXPrintf function in printf.c in SQLite before 3.8.9 does not
+    properly handle precision and width values during floating-point
+    conversions, which allows context-dependent attackers to cause a denial
+    of service (integer overflow and stack-based buffer overflow) or possibly
+    have unspecified other impact via large integers in a crafted printf
+    function call in a SELECT statement.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.47_02"
+  id: CPANSA-DBD-SQLite-2015-3416
+  references:
+    - http://www.sqlite.org/src/info/c494171f77dc2e5e04cb6d865e688448f04e5920
+    - http://seclists.org/fulldisclosure/2015/Apr/31
+    - http://www.debian.org/security/2015/dsa-3252
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2015:217
+    - http://www.ubuntu.com/usn/USN-2698-1
+    - https://support.apple.com/HT205267
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00005.html
+    - https://support.apple.com/HT205213
+    - http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    - http://www.securitytracker.com/id/1033703
+    - https://security.gentoo.org/glsa/201507-05
+    - http://rhn.redhat.com/errata/RHSA-2015-1635.html
+    - http://rhn.redhat.com/errata/RHSA-2015-1634.html
+    - http://www.securityfocus.com/bid/74228
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+  reported: 2015-04-24
+  severity: ~
+- affected_versions: "<=1.47_01"
+  cves:
+    - CVE-2015-3415
+  description: >
+    The sqlite3VdbeExec function in vdbe.c in SQLite before 3.8.9 does not
+    properly implement comparison operators, which allows context-dependent
+    attackers to cause a denial of service (invalid free operation) or
+    possibly have unspecified other impact via a crafted CHECK clause, as
+    demonstrated by CHECK(0&O>O) in a CREATE TABLE statement.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.47_02"
+  id: CPANSA-DBD-SQLite-2015-3415
+  references:
+    - https://www.sqlite.org/src/info/02e3c88fbf6abdcf3975fb0fb71972b0ab30da30
+    - http://seclists.org/fulldisclosure/2015/Apr/31
+    - http://www.debian.org/security/2015/dsa-3252
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2015:217
+    - http://www.ubuntu.com/usn/USN-2698-1
+    - https://support.apple.com/HT205267
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00005.html
+    - https://support.apple.com/HT205213
+    - http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    - http://www.securitytracker.com/id/1033703
+    - https://security.gentoo.org/glsa/201507-05
+    - http://rhn.redhat.com/errata/RHSA-2015-1635.html
+    - http://www.securityfocus.com/bid/74228
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+  reported: 2015-04-24
+  severity: ~
+- affected_versions: "<=1.47_01"
+  cves:
+    - CVE-2015-3414
+  description: >
+    SQLite before 3.8.9 does not properly implement the dequoting of
+    collation-sequence names, which allows context-dependent attackers
+    to cause a denial of service (uninitialized memory access and application
+    crash) or possibly have unspecified other impact via a crafted COLLATE
+    clause, as demonstrated by COLLATE"""""""" at the end of a SELECT
+    statement.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.47_02"
+  id: CPANSA-DBD-SQLite-2015-3414
+  references:
+    - https://www.sqlite.org/src/info/eddc05e7bb31fae74daa86e0504a3478b99fa0f2
+    - http://seclists.org/fulldisclosure/2015/Apr/31
+    - http://www.debian.org/security/2015/dsa-3252
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2015:217
+    - http://www.ubuntu.com/usn/USN-2698-1
+    - https://support.apple.com/HT205267
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html
+    - http://lists.apple.com/archives/security-announce/2015/Sep/msg00005.html
+    - https://support.apple.com/HT205213
+    - http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    - http://www.securitytracker.com/id/1033703
+    - https://security.gentoo.org/glsa/201507-05
+    - http://rhn.redhat.com/errata/RHSA-2015-1635.html
+    - http://www.securityfocus.com/bid/74228
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+  reported: 2015-04-24
+  severity: ~
+- affected_versions: "1.47_01"
+  cves:
+    - CVE-2013-7443
+  description: >
+    Buffer overflow in the skip-scan optimization in SQLite 3.8.2 allows
+    remote attackers to cause a denial of service (crash) via crafted SQL
+    statements.
+  distribution: DBD-SQLite
+  fixed_versions: ">=1.47_02"
+  id: CPANSA-DBD-SQLite-2013-7443
+  references:
+    - https://www.sqlite.org/src/info/520070ec7fbaac73eda0e0123596b7bb3e9a6897
+    - https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1448758
+    - https://www.sqlite.org/src/info/ac5852d6403c9c9628ca0aa7be135c702f000698
+    - http://ubuntu.com/usn/usn-2698-1
+    - http://www.openwall.com/lists/oss-security/2015/07/14/5
+    - http://www.openwall.com/lists/oss-security/2015/07/15/4
+    - http://www.securityfocus.com/bid/76089
+  reported: 2015-08-12
+  severity: ~
