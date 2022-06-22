@@ -1,4 +1,40 @@
 ---
+- id: CPANSA-Mojolicious-2021-02
+  distribution: Mojolicious
+  reported: 2021-06-01
+  severity: ~
+  description: >
+    Small sessions could be used as part of a brute-force attack to decode the
+    session secret.
+  affected_versions: "<9.19"
+  references:
+    - https://github.com/mojolicious/mojo/pull/1791
+- id: CPANSA-Mojolicious-2021-01
+  distribution: Mojolicious
+  reported: 2021-03-16
+  severity: ~
+  description: >
+    A bug in format detection can potentially be exploited for a DoS attack.
+  affected_versions: "<9.11"
+  references:
+    - https://github.com/mojolicious/mojo/issues/1736
+    - https://github.com/mojolicious/mojo/commit/a0c4576ffb11c235088550de9ba7ac4196e1953c
+- id: CPANSA-Mojolicious-2020-01
+  distribution: Mojolicious
+  reported: 2020-11-10
+  severity: ~
+  description: >
+    Mojo::Util secure_compare can leak the string length.
+    By immediately returning when the two strings are not the
+    same length, the function allows an attacker to guess the
+    length of the secret string using timing attacks.
+  affected_versions: ">1.74,<8.65"
+  references:
+    - https://github.com/mojolicious/mojo/pull/1601
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-22
 - id: CPANSA-Mojolicious-2018-04
   distribution: Mojolicious
   reported: 2018-08-09
