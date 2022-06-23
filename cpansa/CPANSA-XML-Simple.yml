@@ -1,0 +1,14 @@
+---
+- affected_versions: "<2.25"
+  cves: []
+  description: >
+    The No. 4 item on the OWASP top 10 is external XML entities. When
+    using XML::Parser, XML::Simple is currently vulnerable by default.
+  distribution: XML-Simple
+  fixed_versions: ">=2.25"
+  id: CPANSA-XML-Simple-2018-01
+  references:
+    - https://metacpan.org/dist/XML-Simple/changes
+    - https://github.com/grantm/xml-simple/pull/8
+  reported: 2018-02-18
+  severity: ~
