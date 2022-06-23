@@ -12,7 +12,12 @@ on:
         paths:
             - 'cpansa/**.yml'
             - '.github/workflows/validate.yml'
-        pull_request:
+    pull_request:
+        branches:
+            - '**'
+        paths:
+            - 'cpansa/**.yml'
+            - '.github/workflows/validate.yml'
 
 jobs:
     yaml:
