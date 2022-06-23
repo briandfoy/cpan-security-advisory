@@ -1,0 +1,12 @@
+---
+- affected_versions: "<1.05_03"
+  cves: []
+  description: >
+    find_link() uses eval().
+  distribution: WWW-Mechanize
+  fixed_versions: ">=1.05_03"
+  id: CPANSA-WWW-Mechanize-2004-01
+  references:
+    - https://metacpan.org/dist/WWW-Mechanize/changes
+  reported: 2004-10-31
+  severity: ~
