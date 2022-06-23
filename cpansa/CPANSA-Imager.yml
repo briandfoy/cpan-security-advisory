@@ -1,10 +1,15 @@
 ---
-- id: CPANSA-Imager-2016-01
-  distribution: Imager
-  reported: 2016-08-02
+- affected_versions: "<1.006"
+  cves:
+    - CVE-2016-1238
   description: >
-    Loading modules from . (current directory).
+    Imager would search the default current directory entry in @INC
+    when searching for file format support modules.
+  distribution: Imager
+  fixed_versions: ">=1.006"
+  id: CPANSA-Imager-2016-1238
   references:
+    - https://metacpan.org/dist/Imager/changes
     - http://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html
     - http://www.securitytracker.com/id/1036440
     - http://perl5.git.perl.org/perl.git/commit/cee96d52c39b1e7b36e1c62d38bcd8d86e9a41ab
@@ -20,56 +25,66 @@
     - https://lists.debian.org/debian-lts-announce/2018/11/msg00016.html
     - https://security.gentoo.org/glsa/201812-07
     - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
-  cves:
-    - CVE-2016-1238
-  affected_versions: "<1.006"
-  fixed_versions: ">=1.006"
+  reported: 2016-08-02
   severity: high
-- id: CPANSA-Imager-2008-01
-  distribution: Imager
-  reported: 2008-04-23
-  description: >
-    Buffer overflow in the floating point sample path for image based fills.
-  references:
-    - https://rt.cpan.org/Ticket/Display.html?id=68910
-    - https://metacpan.org/changes/distribution/Imager
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-23
+- affected_versions: ">=0.42,<=0.63"
   cves:
     - CVE-2008-1928
-  affected_versions: "<0.64"
-  fixed_versions: ">=0.64"
-- id: CPANSA-Imager-2007-01
-  distribution: Imager
-  reported: 2008-04-30
   description: >
-    A specially crafted compressed BMP file can cause a buffer
-    overflow in malloced memory.
+    Buffer overflow in Imager 0.42 through 0.63 allows attackers to
+    cause a denial of service (crash) via an image based fill in which
+    the number of input channels is different from the number of
+    output channels.
+  distribution: Imager
+  fixed_versions: ">=0.64"
+  id: CPANSA-Imager-2008-1928
   references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=26811
-    - https://metacpan.org/changes/distribution/Imager
+    - https://metacpan.org/dist/Imager/changes
+    - http://rt.cpan.org/Public/Bug/Display.html?id=35324
+    - http://imager.perl.org/i/release064/Imager_0_64
+    - https://www.redhat.com/archives/fedora-package-announce/2008-April/msg00569.html
+    - http://www.securityfocus.com/bid/28980
+    - http://secunia.com/advisories/30030
+    - http://secunia.com/advisories/30011
+    - http://www.vupen.com/english/advisories/2008/1387/references
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/41986
+  reported: 2008-04-24
+  severity: ~
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-23
+- affected_versions: ">=0.21,<=0.56"
   cves:
     - CVE-2007-2459
-    - CVE-2007-2413
-  affected_versions: "<0.57"
-  fixed_versions: ">=0.57"
-- affected_versions: "<0.50"
-  cves:
-    - CVE-2006-0053
   description: >
-    Imager (libimager-perl) before 0.50 allows user-assisted
-    attackers to cause a denial of service (segmentation fault) by
-    writing a 2- or 4-channel JPEG image (or a 2-channel TGA image)
-    to a scalar, which triggers a NULL pointer dereference.
+    Heap-based buffer overflow in the BMP reader (bmp.c) in Imager
+    perl module (libimager-perl) 0.45 through 0.56 allows remote
+    attackers to cause a denial of service (application crash) and
+    possibly execute arbitrary code via crafted 8-bit/pixel compressed
+    BMP files.
   distribution: Imager
-  fixed_versions: ">=0.50"
-  id: CPANSA-Imager-2006-0053
+  fixed_versions: ">=0.57"
+  id: CPANSA-Imager-2007-2459
   references:
-    - http://www.debian.org/security/2006/dsa-1028
-    - http://secunia.com/advisories/19577
-    - http://rt.cpan.org/Public/Bug/Display.html?id=18397
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=359661
-    - http://www.securityfocus.com/bid/17415
-    - http://secunia.com/advisories/19575
-    - http://www.vupen.com/english/advisories/2006/1294
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/25717
-  reported: 2006-04-10
+    - http://imager.perl.org/a/65.html
+    - http://rt.cpan.org/Public/Bug/Display.html?id=26811
+    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=421582
+    - http://www.debian.org/security/2008/dsa-1498
+    - http://www.securityfocus.com/bid/23711
+    - http://secunia.com/advisories/25038
+    - http://secunia.com/advisories/28868
+    - http://osvdb.org/39846
+    - http://www.vupen.com/english/advisories/2007/1587
+    - http://osvdb.org/35470
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/34010
+  reported: 2007-05-02
   severity: ~
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-23
