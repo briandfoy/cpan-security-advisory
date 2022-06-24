@@ -1,0 +1,12 @@
+---
+- id: RPC-XML-2002-01
+  distribution: RPC-XML
+  reported: 2002-10-29
+  description: >
+    A a potential security hole in the parsing of external
+    entities.
+  references:
+    - https://metacpan.org/dist/RPC-XML/changes
+  cves: []
+  affected_versions: "<0.45"
+  fixed_versions: ">=0.45"
