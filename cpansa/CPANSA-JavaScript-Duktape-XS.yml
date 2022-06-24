@@ -12,3 +12,7 @@
     - https://github.com/svaarala/duktape/issues/2448
   reported: 2022-01-20
   severity: medium
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-24
