@@ -1,0 +1,13 @@
+---
+- id: IPC-Run-2009-01
+  distribution: IPC-Run
+  reported: 2009-09-14
+  description: >
+    INADDR_ANY can be your external ip, IPC::Run should only listen on
+    localhost.
+  references:
+    - https://metacpan.org/dist/IPC-Run/changes
+    - https://rt.cpan.org/Public/Bug/Display.html?id=49693
+  cves: []
+  affected_versions: "<0.90,0.90_01,0.90_02"
+  fixed_versions: ">=0.90"
