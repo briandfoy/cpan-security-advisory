@@ -5,7 +5,7 @@
   description: >
     Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the
     component duk_push_tval in duktape/duk_api_stack.c.
-  distribution: JavaScript-Duktape
+  distribution: JavaScript-Duktape-XS
   fixed_versions: ~
   id: CPANSA-JavaScript-Duktape-XS-2021-46322
   references:
