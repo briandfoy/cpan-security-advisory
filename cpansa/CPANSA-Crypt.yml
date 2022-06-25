@@ -1,0 +1,41 @@
+- affected_versions: '<0.070'
+  cves:
+    - CVE-2019-17362
+  description: 'In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c) does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers to cause a denial of service (out-of-bounds read and crash) or read information from other memory locations via carefully crafted DER-encoded data.'
+  distribution: Crypt
+  fixed_versions: '>=0.070'
+  id: CPANSA-Crypt-2019-17362
+  references:
+    - https://github.com/libtom/libtomcrypt/pull/508
+    - https://github.com/libtom/libtomcrypt/issues/507
+    - https://vuldb.com/?id.142995
+    - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
+  reported: 2019-10-09
+  severity: critical
+- affected_versions: '<0.062'
+  cves:
+    - CVE-2018-12437
+  description: 'LibTomCrypt through 1.18.1 allows a memory-cache side-channel attack on ECDSA signatures, aka the Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA key, the attacker needs access to either the local machine or a different virtual machine on the same physical host.'
+  distribution: Crypt
+  fixed_versions: '>=0.062'
+  id: CPANSA-Crypt-2018-12437
+  references:
+    - https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/
+    - https://security.gentoo.org/glsa/202007-53
+  reported: 2018-06-15
+  severity: medium
+- affected_versions: '<0.022'
+  cves:
+    - CVE-2016-6129
+  description: 'The rsa_verify_hash_ex function in rsa_verify_hash.c in LibTomCrypt, as used in OP-TEE before 2.2.0, does not validate that the message length is equal to the ASN.1 encoded data length, which makes it easier for remote attackers to forge RSA signatures or public certificates by leveraging a Bleichenbacher signature forgery attack.'
+  distribution: Crypt
+  fixed_versions: '>=0.022'
+  id: CPANSA-Crypt-2016-6129
+  references:
+    - https://www.op-tee.org/advisories/
+    - https://github.com/libtom/libtomcrypt/commit/5eb9743410ce4657e9d54fef26a2ee31a1b5dd0
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1370955
+  reported: 2017-02-13
+  severity: high
