@@ -1,0 +1,149 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2018-14040
+    - CVE-2018-14042
+  description: >
+    In Bootstrap before 4.1.2, XSS is possible in the collapse data-parent
+    attribute.
+  distribution: Plack-Middleware-Bootstrap
+  fixed_versions: ~
+  id: CPANSA-Plack-Middleware-Bootstrap-2018-14040
+  references:
+    - https://github.com/twbs/bootstrap/pull/26630
+    - https://github.com/twbs/bootstrap/issues/26625
+    - https://github.com/twbs/bootstrap/issues/26423
+    - https://blog.getbootstrap.com/2018/07/12/bootstrap-4-1-2/
+    - https://lists.debian.org/debian-lts-announce/2018/08/msg00027.html
+    - https://seclists.org/bugtraq/2019/May/18
+    - http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html
+    - http://seclists.org/fulldisclosure/2019/May/13
+    - http://seclists.org/fulldisclosure/2019/May/11
+    - http://seclists.org/fulldisclosure/2019/May/10
+    - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
+    - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+    - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+    - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+    - http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html
+    - https://lists.apache.org/thread.html/r3dc0cac8d856bca02bd6997355d7ff83027dcfc82f8646a29b89b714@%3Cissues.hbase.apache.org%3E
+    - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.tenable.com/security/tns-2021-14
+  reported: 2018-07-13
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2019-8331
+  description: >
+    In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible in the
+    tooltip or popover data-template attribute.
+  distribution: Plack-Middleware-Bootstrap
+  fixed_versions: ~
+  id: CPANSA-Plack-Middleware-Bootstrap-2019-8331
+  references:
+    - https://github.com/twbs/bootstrap/releases/tag/v4.3.1
+    - https://github.com/twbs/bootstrap/pull/28236
+    - http://www.securityfocus.com/bid/107375
+    - https://github.com/twbs/bootstrap/releases/tag/v3.4.1
+    - https://blog.getbootstrap.com/2019/02/13/bootstrap-4-3-1-and-3-4-1/
+    - https://support.f5.com/csp/article/K24383845
+    - https://seclists.org/bugtraq/2019/May/18
+    - http://seclists.org/fulldisclosure/2019/May/13
+    - http://seclists.org/fulldisclosure/2019/May/11
+    - http://seclists.org/fulldisclosure/2019/May/10
+    - https://access.redhat.com/errata/RHSA-2019:1456
+    - https://lists.apache.org/thread.html/54df3aeb4239b64b50b356f0ca6f986e3c4ca5b84c515dce077c7854@%3Cuser.flink.apache.org%3E
+    - https://lists.apache.org/thread.html/10f0f3aefd51444d1198c65f44ffdf2d78ca3359423dbc1c168c9731@%3Cdev.flink.apache.org%3E
+    - https://lists.apache.org/thread.html/17ff53f7999e74fbe3cc0ceb4e1c3b00b180b7c5afec8e978837bc49@%3Cuser.flink.apache.org%3E
+    - https://lists.apache.org/thread.html/52bafac05ad174000ea465fe275fd3cc7bd5c25535a7631c0bc9bfb2@%3Cuser.flink.apache.org%3E
+    - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
+    - https://access.redhat.com/errata/RHSA-2019:3023
+    - https://access.redhat.com/errata/RHSA-2019:3024
+    - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+    - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+    - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+    - https://support.f5.com/csp/article/K24383845?utm_source=f5support&amp;utm_medium=RSS
+    - http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html
+    - https://lists.apache.org/thread.html/r3dc0cac8d856bca02bd6997355d7ff83027dcfc82f8646a29b89b714@%3Cissues.hbase.apache.org%3E
+    - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.tenable.com/security/tns-2021-14
+  reported: 2019-02-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2018-20676
+  description: >
+    In Bootstrap before 3.4.0, XSS is possible in the tooltip data-viewport
+    attribute.
+  distribution: Plack-Middleware-Bootstrap
+  fixed_versions: ~
+  id: CPANSA-Plack-Middleware-Bootstrap-2018-20676
+  references:
+    - https://github.com/twbs/bootstrap/pull/27047
+    - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452196628
+    - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452140906
+    - https://github.com/twbs/bootstrap/issues/27044
+    - https://blog.getbootstrap.com/2018/12/13/bootstrap-3-4-0/
+    - https://access.redhat.com/errata/RHSA-2019:1456
+    - https://access.redhat.com/errata/RHBA-2019:1076
+    - https://access.redhat.com/errata/RHBA-2019:1570
+    - https://access.redhat.com/errata/RHSA-2019:3023
+    - https://access.redhat.com/errata/RHSA-2020:0132
+    - https://access.redhat.com/errata/RHSA-2020:0133
+    - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    - https://www.tenable.com/security/tns-2021-14
+  reported: 2019-01-09
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2018-20677
+  description: >
+    In Bootstrap before 3.4.0, XSS is possible in the affix configuration
+    target property.
+  distribution: Plack-Middleware-Bootstrap
+  fixed_versions: ~
+  id: CPANSA-Plack-Middleware-Bootstrap-2018-20677
+  references:
+    - https://github.com/twbs/bootstrap/pull/27047
+    - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452196628
+    - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452140906
+    - https://github.com/twbs/bootstrap/issues/27045
+    - https://blog.getbootstrap.com/2018/12/13/bootstrap-3-4-0/
+    - https://access.redhat.com/errata/RHSA-2019:1456
+    - https://access.redhat.com/errata/RHBA-2019:1076
+    - https://access.redhat.com/errata/RHBA-2019:1570
+    - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
+    - https://access.redhat.com/errata/RHSA-2019:3023
+    - https://access.redhat.com/errata/RHSA-2020:0132
+    - https://access.redhat.com/errata/RHSA-2020:0133
+    - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+    - https://www.tenable.com/security/tns-2021-14
+  reported: 2019-01-09
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-10735
+  description: >
+    In Bootstrap 3.x before 3.4.0 and 4.x-beta before 4.0.0-beta.2,
+    XSS is possible in the data-target attribute, a different
+    vulnerability than CVE-2018-14041.
+  distribution: Plack-Middleware-Bootstrap
+  fixed_versions: ~
+  id: CPANSA-Plack-Middleware-Bootstrap-2016-10735
+  references:
+    - https://github.com/twbs/bootstrap/pull/26460
+    - https://github.com/twbs/bootstrap/pull/23687
+    - https://github.com/twbs/bootstrap/pull/23679
+    - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452140906
+    - https://github.com/twbs/bootstrap/issues/20184
+    - https://blog.getbootstrap.com/2018/12/13/bootstrap-3-4-0/
+    - https://access.redhat.com/errata/RHSA-2019:1456
+    - https://access.redhat.com/errata/RHBA-2019:1076
+    - https://access.redhat.com/errata/RHBA-2019:1570
+    - https://access.redhat.com/errata/RHSA-2019:3023
+    - https://access.redhat.com/errata/RHSA-2020:0132
+    - https://access.redhat.com/errata/RHSA-2020:0133
+    - https://www.tenable.com/security/tns-2021-14
+  reported: 2019-01-09
+  severity: medium
