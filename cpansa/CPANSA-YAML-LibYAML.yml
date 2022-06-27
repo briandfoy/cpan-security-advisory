@@ -1,4 +1,15 @@
 ---
+- affected_versions: "<0.69"
+  cves: []
+  description: >
+    Need SafeLoad and SafeDump analog to python
+  distribution: YAML
+  fixed_versions: ">=0.69"
+  id: CPANSA-YAML-2016-01
+  references:
+    - https://github.com/ingydotnet/yaml-libyaml-pm/issues/45
+  reported: 2016-03-10
+  severity: ~
 - affected_versions: "<0.53"
   cves:
     - CVE-2014-9130
