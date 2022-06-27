@@ -13,3 +13,17 @@
     - https://huntr.dev/bounties/be2b7ee4-f487-42e1-874a-6bcc410e4001
   reported: 2022-03-01
   severity: medium
+- affected_versions: "<=0.20"
+  cves:
+    - CVE-2020-8127
+  description: >
+    Insufficient validation in cross-origin communication
+    (postMessage) in reveal.js version 3.9.1 and earlier allow
+    attackers to perform cross-site scripting attacks.
+  distribution: App-revealup
+  fixed_versions: ~
+  id: CPANSA-App-revealup-2020-8127
+  references:
+    - https://hackerone.com/reports/691977
+  reported: 2020-02-28
+  severity: medium
