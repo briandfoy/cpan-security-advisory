@@ -1,0 +1,12 @@
+---
+- affected_versions: "<0.04"
+  cves: []
+  description: >
+    Vulnerability of directory traversal.
+  distribution: Plack-Middleware-StaticShared
+  fixed_versions: ">=0.04"
+  id: CPANSA-Plack-Middleware-StaticShared-2012-01
+  references:
+    - https://metacpan.org/dist/Plack-Middleware-StaticShared/changes
+  reported: 2012-04-26
+  severity: ~
