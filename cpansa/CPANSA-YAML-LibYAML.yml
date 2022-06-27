@@ -3,7 +3,7 @@
   cves: []
   description: >
     Need SafeLoad and SafeDump analog to python
-  distribution: YAML
+  distribution: YAML-LibYAML
   fixed_versions: ">=0.69"
   id: CPANSA-YAML-2016-01
   references:
