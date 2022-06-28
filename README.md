@@ -74,6 +74,29 @@ Database is in YAML format with a simple structure.
   fixed_versions: ">= 1.16"
 ```
 
+If the vulnerability is due to an embedded external library, add the
+`embedded_vulnerability` key, e.g.
+
+```yaml
+- affected_versions: ">=2.0.0"
+  cves:
+    - CVE-2021-46322
+  description: >
+    Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the
+    component duk_push_tval in duktape/duk_api_stack.c.
+  distribution: JavaScript-Duktape
+  fixed_versions: ~
+  id: CPANSA-JavaScript-Duktape-2021-46322
+  references:
+    - https://github.com/svaarala/duktape/issues/2448
+    - https://github.com/mamod/JavaScript-Duktape/issues/41
+  reported: 2022-01-20
+  severity: medium
+  embedded_vulnerability:
+    name: duktape
+    distributed_version: "2.2.0"
+```
+
 ## Command-line checks
 
 For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) module, or the
