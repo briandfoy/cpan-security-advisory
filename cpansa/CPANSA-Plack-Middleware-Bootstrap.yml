@@ -31,6 +31,13 @@
     - https://www.tenable.com/security/tns-2021-14
   reported: 2018-07-13
   severity: medium
+  embedded_vulnerability:
+    name: bootstrap
+    distributed_version: "3.3.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ">0"
   cves:
     - CVE-2019-8331
@@ -70,6 +77,13 @@
     - https://www.tenable.com/security/tns-2021-14
   reported: 2019-02-20
   severity: medium
+  embedded_vulnerability:
+    name: bootstrap
+    distributed_version: "3.3.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ">0"
   cves:
     - CVE-2018-20676
@@ -95,6 +109,13 @@
     - https://www.tenable.com/security/tns-2021-14
   reported: 2019-01-09
   severity: medium
+  embedded_vulnerability:
+    name: bootstrap
+    distributed_version: "3.3.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ">0"
   cves:
     - CVE-2018-20677
@@ -121,6 +142,13 @@
     - https://www.tenable.com/security/tns-2021-14
   reported: 2019-01-09
   severity: medium
+  embedded_vulnerability:
+    name: bootstrap
+    distributed_version: "3.3.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ">0"
   cves:
     - CVE-2016-10735
@@ -147,6 +175,13 @@
     - https://www.tenable.com/security/tns-2021-14
   reported: 2019-01-09
   severity: medium
+  embedded_vulnerability:
+    name: bootstrap
+    distributed_version: "3.3.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ~
   cves:
     - CVE-2015-9251
@@ -198,6 +233,13 @@
     - https://security.netapp.com/advisory/ntap-20210108-0004/
   reported: 2018-01-18
   severity: medium
+  embedded_vulnerability:
+    name: jquery
+    distributed_version: "1.11.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ~
   cves:
     - CVE-2020-11022
@@ -254,6 +296,13 @@
     - https://www.oracle.com/security-alerts/cpuapr2022.html
   reported: 2020-04-29
   severity: medium
+  embedded_vulnerability:
+    name: jquery
+    distributed_version: "1.11.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ~
   cves:
     - CVE-2020-11023
@@ -332,6 +381,13 @@
     - https://www.oracle.com/security-alerts/cpuapr2022.html
   reported: 2020-04-29
   severity: medium
+  embedded_vulnerability:
+    name: jquery
+    distributed_version: "1.11.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: ">0"
   cves:
     - CVE-2019-5428
@@ -348,3 +404,10 @@
   references: []
   reported: ~
   severity: ~
+  embedded_vulnerability:
+    name: jquery
+    distributed_version: "1.11.1"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28

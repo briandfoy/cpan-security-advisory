@@ -10,9 +10,13 @@
   id: CPANSA-JavaScript-Duktape-XS-2021-46322
   references:
     - https://github.com/svaarala/duktape/issues/2448
+    - https://github.com/gonzus/JavaScript-Duktape-XS/issues/33
   reported: 2022-01-20
   severity: medium
+  embedded_vulnerability:
+    name: duktape
+    distributed_version: "2.2.0"
   reviewed_by:
     - name: Robert Rothenberg
       email: rrwo@cpan.org
-      date: 2022-06-24
+      date: 2022-06-28

@@ -36,6 +36,8 @@ sub assemble_record ( $cve, $distribution = undef ) {
 	$hash{affected_versions} = undef;
 	$hash{fixed_versions} = undef;
 
+        $hash{embedded_vulnerability} = { name => undef, distributed_version => undef };
+
 	return \%hash
 	}
 

@@ -57,14 +57,15 @@ Id format: `CPANSA-<dist-name>-<year>-<sequence>`
 
 Database is in YAML format with a simple structure.
 
-```
+```yaml
 - id: CPANSA-Mojolicious-2011-01
   distribution: Mojolicious
   reported: 2011-04-05
   severity: critical
   description: >
-    Directory traversal vulnerability in Path.pm in Mojolicious before 1.16 allows remote attackers to read arbitrary
-    files via a %2f..%2f (encoded slash dot dot slash) in a URI.
+    Directory traversal vulnerability in Path.pm in Mojolicious
+    before 1.16 allows remote attackers to read arbitrary files via a
+    %2f..%2f (encoded slash dot dot slash) in a URI.
   cves:
     - CVE-2011-1589
   references:
@@ -72,6 +73,29 @@ Database is in YAML format with a simple structure.
     - https://www.cvedetails.com/cve/CVE-2011-1589/
   affected_versions: "< 1.16"
   fixed_versions: ">= 1.16"
+```
+
+If the vulnerability is due to an embedded external library, add the
+`embedded_vulnerability` key, e.g.
+
+```yaml
+- affected_versions: ">=2.0.0"
+  cves:
+    - CVE-2021-46322
+  description: >
+    Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the
+    component duk_push_tval in duktape/duk_api_stack.c.
+  distribution: JavaScript-Duktape
+  fixed_versions: ~
+  id: CPANSA-JavaScript-Duktape-2021-46322
+  references:
+    - https://github.com/svaarala/duktape/issues/2448
+    - https://github.com/mamod/JavaScript-Duktape/issues/41
+  reported: 2022-01-20
+  severity: medium
+  embedded_vulnerability:
+    name: duktape
+    distributed_version: "2.2.0"
 ```
 
 ## Command-line checks
