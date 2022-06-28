@@ -11,3 +11,7 @@
   affected_versions: "<0.9001"
   fixed_versions: ">=0.9001"
   cves: []
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
