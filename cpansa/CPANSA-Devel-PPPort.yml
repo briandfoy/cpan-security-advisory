@@ -1,0 +1,14 @@
+---
+- id: CPANSA-Devel-PPPort-2017-01
+  distribution: Devel-PPPort
+  reported: 2017-02-14
+  severity: ~
+  description: >
+    Function croak() takes first parameter printf-like
+    format. Arbitrary string from the variable $@ can cause perl crash
+    when contains one or more '%'.
+  affected_versions: "<3.41"
+  fixed_versions: ">=3.41"
+  references:
+    - https://metacpan.org/dist/Devel-PPPort/changes
+    - https://github.com/Dual-Life/Devel-PPPort/pull/47
