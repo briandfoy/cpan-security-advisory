@@ -9,7 +9,7 @@
     improper handling of > (greater than) and < (less than)
     characters.
   distribution: HTML-Template-Pro
-  fixed_versions: ">=0.9507" 
+  fixed_versions: ">=0.9507"
   id: CPANSA-HTML-Template-Pro-2011-4616
   references:
     - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=652587
