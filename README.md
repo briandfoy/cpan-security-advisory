@@ -57,14 +57,15 @@ Id format: `CPANSA-<dist-name>-<year>-<sequence>`
 
 Database is in YAML format with a simple structure.
 
-```
+```yaml
 - id: CPANSA-Mojolicious-2011-01
   distribution: Mojolicious
   reported: 2011-04-05
   severity: critical
   description: >
-    Directory traversal vulnerability in Path.pm in Mojolicious before 1.16 allows remote attackers to read arbitrary
-    files via a %2f..%2f (encoded slash dot dot slash) in a URI.
+    Directory traversal vulnerability in Path.pm in Mojolicious
+    before 1.16 allows remote attackers to read arbitrary files via a
+    %2f..%2f (encoded slash dot dot slash) in a URI.
   cves:
     - CVE-2011-1589
   references:
