@@ -97,6 +97,7 @@ know by opening as issue. I'm happy to add people as committers on this repo. Se
 * [Takumi Akiyama](https://github.com/akiym)
 * [Takafumi Onaka](https://github.com/onk)
 * [Mala](https://github.com/mala)
+* [Robert Rothenberg](https://metacpan.org/author/RRWO)
 
 ## Contribution
 
