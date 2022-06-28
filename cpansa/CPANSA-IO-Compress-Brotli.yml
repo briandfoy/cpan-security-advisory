@@ -31,7 +31,10 @@
     - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4TOGTZ2ZWDH662ZNFFSZVL3M5AJXV6JF/
   reported: 2020-09-15
   severity: medium
+  embedded_vulnerability:
+    name: brotli
+    distributed_version: "1.0.4"
   reviewed_by:
     - name: Robert Rothenberg
       email: rrwo@cpan.org
-      date: 2022-06-15
+      date: 2022-06-28
