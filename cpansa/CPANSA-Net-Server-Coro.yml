@@ -1,0 +1,17 @@
+---
+- affected_versions: "<1.0"
+  cves:
+    - CVE-CVE-2011-0411
+  description: >
+    Remaining contents of the read buffer could allow plaintext
+    injection attacks wherein attackers could cause nominally
+    SSL-only commands to be executed by appending them to the end
+    of a STARTTLS.
+  distribution: Net-Server-Coro
+  fixed_versions: ">=1.0"
+  id: CPANSA-Net-Server-Coro-CVE-2011-0411
+  references:
+    - https://www.itsecdb.com/oval/definition/oval/org.opensuse.security/def/20110411/CVE-2011-0411.html
+    - https://metacpan.org/dist/Net-Server-Coro/changes
+  reported: 2011-03-16
+  severity: ~
