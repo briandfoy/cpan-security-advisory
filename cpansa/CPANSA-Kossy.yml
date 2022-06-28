@@ -1,0 +1,12 @@
+---
+- affected_versions: "<0.60"
+  cves: []
+  description: >
+    Flaw in defense from JSON hijacking.
+  distribution: Kossy
+  fixed_versions: ">=0.60"
+  id: CPANSA-Kossy-2021-01
+  references:
+    - https://github.com/kazeburo/Kossy/pull/16
+  reported: 2021-08-29
+  severity: ~
