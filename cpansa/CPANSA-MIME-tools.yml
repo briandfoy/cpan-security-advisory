@@ -1,0 +1,12 @@
+---
+- id: CPANSA-MIME-tools-1998-01
+  distribution: MIME-tools
+  reported: 1998-01-10
+  severity: ~
+  description: >
+    There was a potential security hole when outputting entities with
+    recommended filenames.
+  affected_versions: "<4.109"
+  fixed_versions: ">=4.109"
+  references:
+    - https://metacpan.org/dist/MIME-tools/changes
