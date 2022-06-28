@@ -1,0 +1,13 @@
+---
+- id: CPANSA-Kelp-2014-01
+  distribution: Kelp
+  reported: 2014-05-30
+  description: >
+    X-Real-IP, X-Forwarded-Host and X-Remote-User headers were trusted
+    and used in Kelp::Request
+  references:
+    - https://metacpan.org/dist/Kelp/changes
+    - https://github.com/sgnix/kelp/commit/9f8f5a5215bdc1685a671c1157132a65727aadff
+  affected_versions: "<0.9001"
+  fixed_versions: ">=0.9001"
+  cves: []
