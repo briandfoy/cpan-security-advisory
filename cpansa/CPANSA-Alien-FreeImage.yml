@@ -230,3 +230,32 @@
   embedded_vulnerability:
     distributed_version: "1.2.8"
     name: zlib
+- affected_versions: ">=1.001"
+  cves:
+    - CVE-2015-0852
+  description: >
+    Multiple integer underflows in PluginPCX.cpp in FreeImage 3.17.0
+    and earlier allow remote attackers to cause a denial of service
+    (heap memory corruption) via vectors related to the height and
+    width of a window.
+  distribution: Alien-FreeImage
+  embedded_vulnerability:
+    distributed_version: "3.17.0"
+    name: FreeImage
+  fixed_versions: ~
+  id: CPANSA-Alien-FreeImage-2015-0852
+  references:
+    - https://github.com/kmx/alien-freeimage/issues/5
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167766.html
+    - http://www.openwall.com/lists/oss-security/2015/08/28/1
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=797165
+    - http://www.debian.org/security/2015/dsa-3392
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172491.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172583.html
+    - http://www.securitytracker.com/id/1034077
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168000.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168023.html
+    - https://security.gentoo.org/glsa/201701-68
+    - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+  reported: 2015-09-29
+  severity: ~
