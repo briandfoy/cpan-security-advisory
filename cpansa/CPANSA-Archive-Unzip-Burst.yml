@@ -14,6 +14,7 @@
   fixed_versions: ~
   id: CPANSA-Archive-Unzip-Burst-2014-8141
   references:
+    - https://rt.cpan.org/Ticket/Display.html?id=143547
     - https://bugzilla.redhat.com/show_bug.cgi?id=1174856
     - http://www.securitytracker.com/id/1031433
     - http://www.ocert.org/advisories/ocert-2014-011.html
@@ -35,6 +36,7 @@
   fixed_versions: ~
   id: CPANSA-Archive-Unzip-Burst-2014-8140
   references:
+    - https://rt.cpan.org/Ticket/Display.html?id=143547
     - https://bugzilla.redhat.com/show_bug.cgi?id=1174851
     - http://www.securitytracker.com/id/1031433
     - http://www.ocert.org/advisories/ocert-2014-011.html
@@ -56,6 +58,7 @@
   fixed_versions: ~
   id: CPANSA-Archive-Unzip-Burst-2014-8139
   references:
+    - https://rt.cpan.org/Ticket/Display.html?id=143547
     - http://www.securitytracker.com/id/1031433
     - http://www.ocert.org/advisories/ocert-2014-011.html
     - https://access.redhat.com/errata/RHSA-2015:0700
