@@ -13,6 +13,13 @@
     - https://metacpan.org/changes/distribution/Compress-Raw-Zlib
   affected_versions: "<2.075"
   fixed_versions: ">=2.075"
+  embedded_vulnerability:
+    name: zlib
+    distributed_version: "<=1.2.10"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - id: CPANSA-Compress-Raw-Zlib-2018-25032
   distribution: Compress-Raw-Zlib
   reported: 2022-03-25
@@ -27,6 +34,13 @@
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032
   affected_versions: ">=2.075,<2.103"
   fixed_versions: ">=2.103"
+  embedded_vulnerability:
+    name: zlib
+    distributed_version: "1.2.11"
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-06-28
 - affected_versions: "<2.017"
   cves:
     - CVE-2009-1391
