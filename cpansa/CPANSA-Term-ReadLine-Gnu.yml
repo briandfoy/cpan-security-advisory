@@ -1,0 +1,26 @@
+---
+- affected_versions: "<1.27"
+  cves:
+    - CVE-2014-2524
+  description:
+    The _rl_tropen function in util.c in GNU readline before 6.3 patch
+    3 allows local users to create or overwrite arbitrary files via a
+    symlink attack on a /var/tmp/rltrace.[PID] file.
+  distribution: Term-ReadLine-Gnu
+  embedded_vulnerability:
+    distributed_version: readline
+    name: "<=6.3"
+  fixed_versions: ">=1.27"
+  id: CPANSA-Term-ReadLine-Gnu-2014-2524
+  references:
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1077023
+    - http://lists.gnu.org/archive/html/bug-readline/2014-03/msg00057.html
+    - http://seclists.org/oss-sec/2014/q1/579
+    - http://seclists.org/oss-sec/2014/q1/587
+    - https://lists.fedoraproject.org/pipermail/package-announce/2014-July/135686.html
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2014:154
+    - http://advisories.mageia.org/MGASA-2014-0319.html
+    - http://lists.opensuse.org/opensuse-security-announce/2014-09/msg00037.html
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2015:132
+  reported: 2014-08-20
+  severity: ~
