@@ -7,8 +7,8 @@
     when compressing) if the input has many distant matches.
   distribution: Git-Raw
   embedded_vulnerability:
-    distributed_version: zlib
-    name: "1.2.11"
+    distributed_version: "1.2.11"
+    name: zlib
   fixed_versions: ~
   id: CPANSA-Git-Raw-2018-25032
   references:
