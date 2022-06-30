@@ -8,7 +8,7 @@
   distribution: Git-Raw
   embedded_vulnerability:
     distributed_version: "1.2.11"
-    name: zlib
+    name: zlib[libgit]
   fixed_versions: ~
   id: CPANSA-Git-Raw-2018-25032
   references:
@@ -167,7 +167,7 @@
   distribution: Git-Raw
   embedded_vulnerability:
     distributed_version: "2.0.0"
-    name: http-parser
+    name: http-parser[libgit2]
   fixed_versions: ~
   id: CPANSA-Git-Raw-2019-9900
   references:
