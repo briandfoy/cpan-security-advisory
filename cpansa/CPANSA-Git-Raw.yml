@@ -36,3 +36,121 @@
     - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/
   reported: 2022-03-25
   severity: high
+- affected_versions: "<0.85"
+  cves:
+    - CVE-2020-12279
+  description: >
+    An issue was discovered in libgit2 before 0.28.4 and 0.9x before
+    0.99.0. checkout.c mishandles equivalent filenames that exist
+    because of NTFS short names. This may allow remote code execution
+    when cloning a repository. This issue is similar to CVE-2019-1353.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "0.28.0"
+    name: libgit2
+  fixed_versions: ">=0.84"
+  id: CPANSA-Git-Raw-2020-12279
+  references:
+    - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
+    - https://github.com/libgit2/libgit2/commit/64c612cc3e25eff5fb02c59ef5a66ba7a14751e4
+    - https://github.com/libgit2/libgit2/releases/tag/v0.99.0
+    - https://github.com/git/git/security/advisories/GHSA-589j-mmg9-733v
+    - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+  reported: 2020-04-27
+  severity: critical
+- affected_versions: ~
+  cves:
+    - CVE-2020-12278
+  description: >
+    An issue was discovered in libgit2 before 0.28.4 and 0.9x before
+    0.99.0. path.c mishandles equivalent filenames that exist because
+    of NTFS Alternate Data Streams. This may allow remote code
+    execution when cloning a repository. This issue is similar to
+    CVE-2019-1352.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "0.28.0"
+    name: libgit2
+  fixed_versions: ~
+  id: CPANSA-Git-Raw-2020-12278
+  references:
+    - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
+    - https://github.com/libgit2/libgit2/releases/tag/v0.99.0
+    - https://github.com/libgit2/libgit2/commit/e1832eb20a7089f6383cfce474f213157f5300cb
+    - https://github.com/git/git/security/advisories/GHSA-5wph-8frv-58vj
+    - https://github.com/libgit2/libgit2/commit/3f7851eadca36a99627ad78cbe56a40d3776ed01
+    - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+  reported: 2020-04-27
+  severity: critical
+- affected_versions: "<0.83"
+  cves:
+    - CVE-2018-15501
+  description: >
+    In ng_pkt in transports/smart_pkt.c in libgit2 before 0.26.6 and
+    0.27.x before 0.27.4, a remote attacker can send a crafted
+    smart-protocol \"ng\" packet that lacks a '\\0' byte to trigger an
+    out-of-bounds read that leads to DoS.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "0.27.0"
+    name: libgit2
+  fixed_versions: ">=0.83"
+  id: CPANSA-Git-Raw-2018-15501
+  references:
+    - https://www.pro-linux.de/sicherheit/2/44650/denial-of-service-in-libgit2.html
+    - https://github.com/libgit2/libgit2/releases/tag/v0.27.4
+    - https://github.com/libgit2/libgit2/releases/tag/v0.26.6
+    - https://github.com/libgit2/libgit2/commit/1f9a8510e1d2f20ed7334eeeddb92c4dd8e7c649
+    - https://bugzilla.suse.com/show_bug.cgi?id=1104641
+    - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=9406
+    - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+    - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+  reported: 2018-08-18
+  severity: high
+- affected_versions: "<0.83"
+  cves:
+    - CVE-2018-10888
+  description: >
+    A flaw was found in libgit2 before version 0.27.3. A missing check
+    in git_delta_apply function in delta.c file, may lead to an
+    out-of-bound read while reading a binary delta file. An attacker
+    may use this flaw to cause a Denial of Service.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "0.27.0"
+    name: libgit2
+  fixed_versions: ~
+  id: CPANSA-Git-Raw-2018-10888
+  references:
+    - https://github.com/libgit2/libgit2/releases/tag/v0.27.3
+    - https://github.com/libgit2/libgit2/commit/9844d38bed10e9ff17174434b3421b227ae710f3
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1598024
+    - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+    - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+  reported: 2018-07-10
+  severity: medium
+- affected_versions: "<0.83"
+  cves:
+    - CVE-2018-10887
+  description: >
+    A flaw was found in libgit2 before version 0.27.3. It has been
+    discovered that an unexpected sign extension in git_delta_apply
+    function in delta.c file may lead to an integer overflow which in
+    turn leads to an out of bound read, allowing to read before the
+    base object. An attacker may use this flaw to leak memory
+    addresses or cause a Denial of Service.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "0.27.0"
+    name: libgit2
+  fixed_versions: ~
+  id: CPANSA-Git-Raw-2018-10887
+  references:
+    - https://github.com/libgit2/libgit2/releases/tag/v0.27.3
+    - https://github.com/libgit2/libgit2/commit/c1577110467b701dcbcf9439ac225ea851b47d22
+    - https://github.com/libgit2/libgit2/commit/3f461902dc1072acb8b7607ee65d0a0458ffac2a
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1598021
+    - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+    - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+  reported: 2018-07-10
+  severity: high
