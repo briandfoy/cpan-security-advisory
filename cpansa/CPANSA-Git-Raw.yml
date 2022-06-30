@@ -154,3 +154,27 @@
     - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
   reported: 2018-07-10
   severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2019-9900
+  description: >
+    When parsing HTTP/1.x header values, Envoy 1.9.0 and before does
+    not reject embedded zero characters (NUL, ASCII 0x0). This allows
+    remote attackers crafting header values containing embedded NUL
+    characters to potentially bypass header matching rules, gaining
+    access to unauthorized resources.
+  distribution: Git-Raw
+  embedded_vulnerability:
+    distributed_version: "2.0.0"
+    name: http-parser
+  fixed_versions: ~
+  id: CPANSA-Git-Raw-2019-9900
+  references:
+    - https://github.com/nodejs/http-parser/issues/468
+    - https://www.envoyproxy.io/docs/envoy/v1.9.1/intro/version_history
+    - https://github.com/envoyproxy/envoy/issues/6434
+    - https://groups.google.com/forum/#!topic/envoy-announce/VoHfnDqZiAM
+    - https://access.redhat.com/errata/RHSA-2019:0741
+    - https://github.com/envoyproxy/envoy/security/advisories/GHSA-x74r-f4mw-c32h
+  reported: 2019-04-25
+  severity: high
