@@ -58,7 +58,7 @@
     - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
   reported: 2020-04-27
   severity: critical
-- affected_versions: ~
+- affected_versions: "<0.83"
   cves:
     - CVE-2020-12278
   description: >
@@ -71,7 +71,7 @@
   embedded_vulnerability:
     distributed_version: "0.28.0"
     name: libgit2
-  fixed_versions: ~
+  fixed_versions: ">=0.83"
   id: CPANSA-Git-Raw-2020-12278
   references:
     - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
