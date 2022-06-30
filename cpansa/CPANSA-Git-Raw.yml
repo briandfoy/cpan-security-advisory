@@ -12,6 +12,7 @@
   fixed_versions: ~
   id: CPANSA-Git-Raw-2018-25032
   references:
+    - https://github.com/jacquesg/p5-Git-Raw/issues/223
     - https://www.openwall.com/lists/oss-security/2022/03/24/1
     - https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531
     - http://www.openwall.com/lists/oss-security/2022/03/25/2
@@ -170,6 +171,7 @@
   fixed_versions: ~
   id: CPANSA-Git-Raw-2019-9900
   references:
+    - https://github.com/jacquesg/p5-Git-Raw/issues/223
     - https://github.com/nodejs/http-parser/issues/468
     - https://www.envoyproxy.io/docs/envoy/v1.9.1/intro/version_history
     - https://github.com/envoyproxy/envoy/issues/6434
