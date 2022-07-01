@@ -12,8 +12,8 @@
     the host system.
   distribution: Term-ReadLine-Gnu
   external_vulnerability:
-    distributed_version: readline
-    name: "<=6.3"
+    distributed_version: "<=6.3"
+    name: readline
   fixed_versions: ">=1.27"
   id: CPANSA-Term-ReadLine-Gnu-2014-2524
   references:
