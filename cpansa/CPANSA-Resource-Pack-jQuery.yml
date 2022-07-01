@@ -1,0 +1,22 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2014-6071
+  description: >
+    jQuery 1.4.2 allows remote attackers to conduct cross-site
+    scripting (XSS) attacks via vectors related to use of the text
+    method inside after.
+  comments: >
+    This allows users to specify alternative versions.
+  distribution: Resource-Pack-jQuery
+  embedded_vulnerability:
+    distributed_version: "1.4.2"
+    name: jquery
+  fixed_versions: ~
+  id: CPANSA-Resource-Pack-jQuery-2014-6071
+  references:
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1136683
+    - http://seclists.org/fulldisclosure/2014/Sep/10
+    - https://help.ecostruxureit.com/display/public/UADCE725/Security+fixes+in+StruxureWare+Data+Center+Expert+v7.6.0
+  reported: 2018-01-16
+  severity: medium
