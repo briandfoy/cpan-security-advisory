@@ -1,0 +1,21 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2020-7693
+  description: >
+    Incorrect handling of Upgrade header with the value websocket leads
+    in crashing of containers hosting sockjs apps. This affects the
+    package sockjs before 0.3.20.
+  comments: >
+    Multiple versions of socksjs are included in example and t-vendor
+    directories.
+  distribution: SocksJS
+  embedded_vulnerability:
+    distributed_version: "<=0.3.4"
+    name: socksjs
+  fixed_versions: ~
+  id: CPANSA-SocksJS-2020-7693
+  references:
+    - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
+  reported: 2020-07-09
+  severity: ~
