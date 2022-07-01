@@ -75,6 +75,10 @@ Database is in YAML format with a simple structure.
   fixed_versions: ">= 1.16"
 ```
 
+There may be an additional `comments` key with more information about
+the advisory, especially if the `description` comes from an external
+source, such as a CVE report.
+
 If the vulnerability is due to an embedded external library, add the
 `embedded_vulnerability` key, e.g.
 
@@ -104,6 +108,16 @@ library. Add the parent library in brackets, e.g.
   embedded_vulnerability:
      distributed_version: "1.2.11"
      name: zlib[libgit2]
+```
+
+There may be cases whether the Perl distribution relies on a
+particular version of another library with a security vulnerability
+that is installed on the host system, rather than embedded. This may
+be indicayed with the `external_vulnerability` key:
+```yaml
+  external_vulnerability:
+     distributed_version: "<=6.3"
+     name: readline
 ```
 
 ## Command-line checks
