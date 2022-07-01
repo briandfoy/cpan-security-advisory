@@ -62,6 +62,9 @@
     to cause a denial of service (out-of-bounds read and crash) or
     read information from other memory locations via carefully crafted
     DER-encoded data.
+  comments: >
+    It is unclear whether dropbear is affected by this vulnerability.
+    See https://github.com/atrodo/Net-Dropbear/issues/6#issuecomment-1172539182
   distribution: Net-Dropbear
   embedded_vulnerability:
     distributed_version: "1.8.2"
@@ -69,6 +72,7 @@
   fixed_versions: ~
   id: CPANSA-Net-Dropbear-2019-17362
   references:
+    - https://github.com/atrodo/Net-Dropbear/issues/6
     - https://github.com/libtom/libtomcrypt/pull/508
     - https://github.com/libtom/libtomcrypt/issues/507
     - https://vuldb.com/?id.142995
