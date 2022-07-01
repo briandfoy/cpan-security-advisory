@@ -98,6 +98,14 @@ If the vulnerability is due to an embedded external library, add the
     distributed_version: "2.2.0"
 ```
 
+In some cases, the embedded external library may be part of another
+library. Add the parent library in brackets, e.g.
+```yaml
+  embedded_vulnerability:
+     distributed_version: "1.2.11"
+     name: zlib[libgit2]
+```
+
 ## Command-line checks
 
 For command line checks take a look at [CPAN-Audit](https://metacpan.org/release/CPAN-Audit) module, or the
