@@ -51,17 +51,21 @@ The output will go to standard output:
 
 =over 4
 
-=item * B<-a> - the value for affected versions
+=item * B<-a>, B<--affected> - the value for affected versions
 
-=item * B<-f> - the value for fixed versions
+=item * B<-en>, B<--embedded_name> - the name of the vulnerable embedded library
+
+=item * B<-ev>, B<--embedded_version> - the vulnerable version of the embedded library
+
+=item * B<-f>, B<--fixed> - the value for fixed versions
 
 =item * B<-F> - send the output to standard out and not to a file
 
-=item * B<-r=N>, <--rt=N> - Add the URL for the rt.cpan.org ticket N
+=item * B<-r=N>, B<--rt=N> - Add the URL for the rt.cpan.org ticket N
 
 =item * B<s> - force the YAML start line C<--->
 
-=item * B<-S> - remove the YAML start line C<--->. C<-s> wins if you use both.
+=item * B<-S> - remove the YAML start line C<--->. B<-s> wins if you use both.
 
 =back
 
@@ -100,12 +104,14 @@ use YAML qw(Dump);
 
 use Getopt::Long qw(:config no_ignore_case);
 GetOptions (
-	"affected|a=s" => \my $affected,
-	"fixed|f=s"    => \my $fixed,
-	"F"            => \my $no_guess_filename,
-	"S"            => \my $no_yaml_start,
-	"s"            => \my $yes_yaml_start,
-	"rt|r=i"       => \my $rt,
+	"affected|a=s"          => \my $affected,
+	"fixed|f=s"             => \my $fixed,
+	"embedded_name|en=s"    => \my $embedded_name,
+	"embedded_version|ev=s" => \my $embedded_version,
+	"F"                     => \my $no_guess_filename,
+	"S"                     => \my $no_yaml_start,
+	"s"                     => \my $yes_yaml_start,
+	"rt|r=i"                => \my $rt,
 	);
 
 
@@ -121,6 +127,8 @@ unshift $hash->{references}->@*, rt_n_to_url($rt) if $rt;
 
 $hash->{affected_versions} = $affected if $affected;
 $hash->{fixed_versions} = $fixed if $fixed;
+$hash->{embedded_vulnerability}{distributed_version} = $embedded_version if $embedded_version;
+$hash->{embedded_vulnerability}{name} = $embedded_name if $embedded_name;
 
 my $string = Dump( [ $hash ] );
 
