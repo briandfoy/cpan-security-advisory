@@ -66,6 +66,19 @@ my( $cve, $package ) = @ARGV;
 my $hash = Local::CPANSA::assemble_record( $cve, $package );
 my $string = Dump( [ $hash ] );
 
+# We want the folded form to avoid yamllint warnings, but YAML
+# no longer supports this. We can cheat a little because we know
+# exactly where this shows up and we don't have to handle arbitrary
+# data structures
+$string =~ s/^(\x20\x20description:\s+)(.*)/
+    state $rc = require Text::Format;
+	my( $field, $value ) = @{^CAPTURE};
+	my $wrapped = Text::Format->new({columns => 70})->format($value);
+	$wrapped =~ s{\A\s+|\s+\z}{}g;
+	$wrapped =~ s|^|    |gm;
+	"$field>\n$wrapped";
+	/em;
+
 my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
 $no_yaml_start if -e $report_path;
 
