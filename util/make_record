@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.10;
+use v5.26;
 use strict;
 use experimental qw(signatures);
 
@@ -45,6 +45,22 @@ The output will go to standard output:
 	  reported: 2020-01-31
 	  severity: high
 
+=head1 DESCRIPTION
+
+=head2 Options
+
+=over 4
+
+=item C<-F> - send the output to standard out and not to a file
+
+=item C<-r=N>, <--rt=N> - Add the URL for the rt.cpan.org ticket N
+
+=item -s - force the YAML start line C<--->
+
+=item -S - remove the YAML start line C<--->. C<-s> wins if you use both.
+
+=back
+
 =cut
 
 use FindBin;
@@ -58,6 +74,7 @@ GetOptions (
 	"F" => \my $no_guess_filename,
 	"S" => \my $no_yaml_start,
 	"s" => \my $yes_yaml_start,
+	"rt|r=i" => \my $rt,
 	);
 
 
@@ -68,6 +85,11 @@ $include_yaml_start_line = 1 if $yes_yaml_start;
 my( $cve, $package ) = @ARGV;
 
 my $hash = Local::CPANSA::assemble_record( $cve, $package );
+
+if( $rt ) {
+	unshift $hash->{references}->@*, rt_n_to_url($rt);
+	}
+
 my $string = Dump( [ $hash ] );
 
 # We want the folded form to avoid yamllint warnings, but YAML
@@ -100,3 +122,8 @@ my $fh = do {
 $string =~ s/\A---\R// unless $include_yaml_start_line;
 
 print { $fh } $string;
+
+
+sub rt_n_to_url ( $rt ) {
+	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
+	}
