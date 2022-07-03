@@ -51,15 +51,44 @@ The output will go to standard output:
 
 =over 4
 
-=item C<-F> - send the output to standard out and not to a file
+=item * B<-a> - the value for affected versions
 
-=item C<-r=N>, <--rt=N> - Add the URL for the rt.cpan.org ticket N
+=item * B<-f> - the value for fixed versions
 
-=item -s - force the YAML start line C<--->
+=item * B<-F> - send the output to standard out and not to a file
 
-=item -S - remove the YAML start line C<--->. C<-s> wins if you use both.
+=item * B<-r=N>, <--rt=N> - Add the URL for the rt.cpan.org ticket N
+
+=item * B<s> - force the YAML start line C<--->
+
+=item * B<-S> - remove the YAML start line C<--->. C<-s> wins if you use both.
 
 =back
+
+=head2 Versions
+
+Versions are comma-separated values of version specifications. Each
+specification includes a comparator. These come from L<CPAN::Audit::Version>:
+
+=over 4
+
+=item * B<< < >> - all versions less than the specified versions
+
+=item * B<< <= >> - all versions less than and including the specified versions
+
+=item * B<< == >> - the exact version specified
+
+=item * B<< != >> - all versions except the one specified
+
+=item * B<< > >> - all versions greater than the specified versions
+
+=item * B<< >= >> - all versions greater than and including the specified versions
+
+=back
+
+Note that non-semantic versions (fewer than two dots) use three places
+for minor versions, so C<5.34> is C<5.340>. For Perl versions, include
+all three places, so C<v5.34> is C<5.034>.
 
 =cut
 
@@ -71,10 +100,12 @@ use YAML qw(Dump);
 
 use Getopt::Long qw(:config no_ignore_case);
 GetOptions (
-	"F" => \my $no_guess_filename,
-	"S" => \my $no_yaml_start,
-	"s" => \my $yes_yaml_start,
-	"rt|r=i" => \my $rt,
+	"affected|a=s" => \my $affected,
+	"fixed|f=s"    => \my $fixed,
+	"F"            => \my $no_guess_filename,
+	"S"            => \my $no_yaml_start,
+	"s"            => \my $yes_yaml_start,
+	"rt|r=i"       => \my $rt,
 	);
 
 
@@ -86,9 +117,10 @@ my( $cve, $package ) = @ARGV;
 
 my $hash = Local::CPANSA::assemble_record( $cve, $package );
 
-if( $rt ) {
-	unshift $hash->{references}->@*, rt_n_to_url($rt);
-	}
+unshift $hash->{references}->@*, rt_n_to_url($rt) if $rt;
+
+$hash->{affected_versions} = $affected if $affected;
+$hash->{fixed_versions} = $fixed if $fixed;
 
 my $string = Dump( [ $hash ] );
 
