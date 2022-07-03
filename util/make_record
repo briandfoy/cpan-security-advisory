@@ -12,40 +12,38 @@ make_record - turn a CVE into a CPANSA YAML object
 Give this program a CVE ID and see what it does. It guesses the CPAN
 module name, so you need to check that:
 
-Try it with just the CVE:
+Try it with just the CVE. If it can guess the package, it uses that
+to guess the filename under F<cpansa/>:
 
 	$ perl util/make_record CVE-2011-4117
-	---
-	- affected_versions: ~
-	  cves:
-		- CVE-2011-4117
-	  description: The Batch::BatchRun module 1.03 for Perl does not properly handle temporary files.
-	  distribution: Batch-BatchRun
-	  fixed_versions: ~
-	  id: CPANSA-Batch-BatchRun-2011-4117
-	  references:
-		- http://www.openwall.com/lists/oss-security/2011/11/04/2
-		- http://www.openwall.com/lists/oss-security/2011/11/04/4
-		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
-	  reported: 2020-01-31
-	  severity: high
 
 Sometimes it can't guess the package, so run it again with what you see
 in the record:
 
 	$ perl util/make_record CVE-2011-4117 Some-Package
 
-If a report file already exists (F<cpansa/CPANSA-Some-Package.yml>), or
-you specify C<-S>, the output omits the YAML header (C<--->) so you can
-append to the YAML array that is already there:
+This creates or appends to the file F<cpansa/CPANSA-Some-Package.yml>.
 
-	$ perl util/make_record CVE-2011-4117 Some-Package > cpansa/CPANSA-Some-Package.yml
-	$ perl util/make_record -S CVE-2011-4117 Some-Package
+Use C<-F> if you don't want the record to go to a file.
+The output will go to standard output:
 
-If the report file already exists, it sets C<-S> for you, but you can
-force that header with C<-s> (which always wins):
-
-	$ perl util/make_record -s CVE-2011-4117 Some-Package
+	$ perl util/make_record -F CVE-2011-4117 Some-Package
+	---
+	- affected_versions: ~
+	  cves:
+		- CVE-2011-4117
+	  description: >
+	    The Some::Package module 1.03 for Perl does not properly
+	    handle temporary files.
+	  distribution: Some-Package
+	  fixed_versions: ~
+	  id: CPANSA-Some-Package-2011-4117
+	  references:
+		- http://www.openwall.com/lists/oss-security/2011/11/04/2
+		- http://www.openwall.com/lists/oss-security/2011/11/04/4
+		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
+	  reported: 2020-01-31
+	  severity: high
 
 =cut
 
@@ -57,9 +55,15 @@ use YAML qw(Dump);
 
 use Getopt::Long qw(:config no_ignore_case);
 GetOptions (
+	"F" => \my $no_guess_filename,
 	"S" => \my $no_yaml_start,
 	"s" => \my $yes_yaml_start,
 	);
+
+
+my $include_yaml_start_line = 1;
+$include_yaml_start_line = 0 if $no_yaml_start;
+$include_yaml_start_line = 1 if $yes_yaml_start;
 
 my( $cve, $package ) = @ARGV;
 
@@ -71,7 +75,7 @@ my $string = Dump( [ $hash ] );
 # exactly where this shows up and we don't have to handle arbitrary
 # data structures
 $string =~ s/^(\x20\x20description:\s+)(.*)/
-    state $rc = require Text::Format;
+	state $rc = require Text::Format;
 	my( $field, $value ) = @{^CAPTURE};
 	my $wrapped = Text::Format->new({columns => 70})->format($value);
 	$wrapped =~ s{\A\s+|\s+\z}{}g;
@@ -79,13 +83,20 @@ $string =~ s/^(\x20\x20description:\s+)(.*)/
 	"$field>\n$wrapped";
 	/em;
 
-my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
-$no_yaml_start if -e $report_path;
-
 # If we want to redirect into an existing file, take out the YAML
 # header, unless we have -s to force the header
-unless( $yes_yaml_start ) {
-	$string =~ s/\A---\R// if( -e $report_path or $no_yaml_start );
-	}
 
-print $string;
+my $fh = do {
+	if( $no_guess_filename ) { \*STDOUT }
+	else {
+		my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
+		$include_yaml_start_line = 0 if( -e $report_path and ! $yes_yaml_start );
+		open my $fh, '>>:encoding(UTF-8)', $report_path
+			or die "Could not open <$report_path>: $!\n";
+		$fh;
+		}
+	};
+
+$string =~ s/\A---\R// unless $include_yaml_start_line;
+
+print { $fh } $string;
