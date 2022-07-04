@@ -17,7 +17,7 @@ to guess the filename under F<cpansa/>:
 
 	$ perl util/make_record CVE-2011-4117
 
-Sometimes it can't guess the package, so run it again with what you see
+Sometimes it can't guess the namespace, so run it again with what you see
 in the record:
 
 	$ perl util/make_record CVE-2011-4117 Some-Package
@@ -100,69 +100,57 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 
 use Local::CPANSA;
+use Local::Config::make_record;
+
+use Mojo::Util;
 use YAML qw(Dump);
 
-use Getopt::Long qw(:config no_ignore_case);
-GetOptions (
-	"affected|a=s"          => \my $affected,
-	"fixed|f=s"             => \my $fixed,
-	"embedded_name|en=s"    => \my $embedded_name,
-	"embedded_version|ev=s" => \my $embedded_version,
-	"F"                     => \my $no_guess_filename,
-	"S"                     => \my $no_yaml_start,
-	"s"                     => \my $yes_yaml_start,
-	"rt|r=i"                => \my $rt,
-	);
+run( @ARGV ) unless caller;
 
+sub run ( @args ) {
+	my $config = Local::Config::make_record->new( @args );
 
-my $include_yaml_start_line = 1;
-$include_yaml_start_line = 0 if $no_yaml_start;
-$include_yaml_start_line = 1 if $yes_yaml_start;
+	my $hash = Local::CPANSA::assemble_record( $config->cve, $config->namespace );
 
-my( $cve, $package ) = @ARGV;
+	unshift $hash->{references}->@*, rt_n_to_url($config->rt) if $config->rt;
 
-my $hash = Local::CPANSA::assemble_record( $cve, $package );
+	$hash->{affected_versions}                           //= $config->affected;
+	$hash->{fixed_versions}                              //= $config->fixed;
+	$hash->{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
+	$hash->{embedded_vulnerability}{name}                //= $config->embedded_name;
 
-unshift $hash->{references}->@*, rt_n_to_url($rt) if $rt;
+	my $string = Dump( [ $hash ] );
 
-$hash->{affected_versions} = $affected if $affected;
-$hash->{fixed_versions} = $fixed if $fixed;
-$hash->{embedded_vulnerability}{distributed_version} = $embedded_version if $embedded_version;
-$hash->{embedded_vulnerability}{name} = $embedded_name if $embedded_name;
+	# We want the folded form to avoid yamllint warnings, but YAML
+	# no longer supports this. We can cheat a little because we know
+	# exactly where this shows up and we don't have to handle arbitrary
+	# data structures
+	$string =~ s/^(\x20\x20description:\s+)(.*)/
+		state $rc = require Text::Format;
+		my( $field, $value ) = @{^CAPTURE};
+		my $wrapped = Text::Format->new({columns => 70})->format($value);
+		$wrapped =~ s{\A\s+|\s+\z}{}g;
+		$wrapped =~ s|^|    |gm;
+		"$field>\n$wrapped";
+		/em;
 
-my $string = Dump( [ $hash ] );
+	# If we want to redirect into an existing file, take out the YAML
+	# header, unless we have -s to force the header
+	my $fh = do {
+		if( $config->output_filename eq '-' ) { \*STDOUT }
+		else {
+			my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
+			$config->include_yaml_start_line(0) if( -e $report_path and ! $config->yes_yaml_start );
+			open my $fh, '>>:encoding(UTF-8)', $report_path
+				or die "Could not open <$report_path>: $!\n";
+			$fh;
+			}
+		};
 
-# We want the folded form to avoid yamllint warnings, but YAML
-# no longer supports this. We can cheat a little because we know
-# exactly where this shows up and we don't have to handle arbitrary
-# data structures
-$string =~ s/^(\x20\x20description:\s+)(.*)/
-	state $rc = require Text::Format;
-	my( $field, $value ) = @{^CAPTURE};
-	my $wrapped = Text::Format->new({columns => 70})->format($value);
-	$wrapped =~ s{\A\s+|\s+\z}{}g;
-	$wrapped =~ s|^|    |gm;
-	"$field>\n$wrapped";
-	/em;
+	$string =~ s/\A---\R// unless $config->include_yaml_start_line;
 
-# If we want to redirect into an existing file, take out the YAML
-# header, unless we have -s to force the header
-
-my $fh = do {
-	if( $no_guess_filename ) { \*STDOUT }
-	else {
-		my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
-		$include_yaml_start_line = 0 if( -e $report_path and ! $yes_yaml_start );
-		open my $fh, '>>:encoding(UTF-8)', $report_path
-			or die "Could not open <$report_path>: $!\n";
-		$fh;
-		}
-	};
-
-$string =~ s/\A---\R// unless $include_yaml_start_line;
-
-print { $fh } $string;
-
+	print { $fh } $string;
+	}
 
 sub rt_n_to_url ( $rt ) {
 	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
