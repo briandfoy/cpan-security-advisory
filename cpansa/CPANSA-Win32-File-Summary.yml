@@ -1,0 +1,74 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2003-0107
+  description: >
+    Buffer overflow in the gzprintf function in zlib 1.1.4, when zlib
+    is compiled without vsnprintf or when long inputs are truncated using
+    vsnprintf, allows attackers to cause a denial of service or possibly
+    execute arbitrary code.
+  distribution: Win32-File-Summary
+  embedded_vulnerability:
+    distributed_version: "1.1.4"
+    name: zlib
+  fixed_versions: ~
+  id: CPANSA-Win32-File-Summary-2003-0107
+  references:
+    - http://online.securityfocus.com/archive/1/312869
+    - http://www.iss.net/security_center/static/11381.php
+    - http://lists.apple.com/mhonarc/security-announce/msg00038.html
+    - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2003-011.0.txt
+    - http://distro.conectiva.com/atualizacoes/?id=a&anuncio=000619
+    - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2003:033
+    - ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2003-004.txt.asc
+    - http://www.redhat.com/support/errata/RHSA-2003-079.html
+    - http://www.redhat.com/support/errata/RHSA-2003-081.html
+    - http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F57405
+    - http://www.kb.cert.org/vuls/id/142121
+    - http://www.securityfocus.com/bid/6913
+    - http://www.osvdb.org/6599
+    - http://marc.info/?l=bugtraq&m=104620610427210&w=2
+    - http://marc.info/?l=bugtraq&m=104887247624907&w=2
+    - http://marc.info/?l=bugtraq&m=104610536129508&w=2
+    - http://marc.info/?l=bugtraq&m=104610337726297&w=2
+    - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000066.html
+    - http://jvn.jp/en/jp/JVN78689801/index.html
+  reported: 2003-03-07
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2018-25032
+  description: >
+    zlib before 1.2.12 allows memory corruption when deflating (i.e.,
+    when compressing) if the input has many distant matches.
+  distribution: Win32-File-Summary
+  embedded_vulnerability:
+    distributed_version: "1.1.4"
+    name: zlib
+  fixed_versions: ~
+  id: CPANSA-Win32-File-Summary-2018-25032
+  references:
+    - https://www.openwall.com/lists/oss-security/2022/03/24/1
+    - https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531
+    - http://www.openwall.com/lists/oss-security/2022/03/25/2
+    - http://www.openwall.com/lists/oss-security/2022/03/26/1
+    - https://www.openwall.com/lists/oss-security/2022/03/28/1
+    - https://github.com/madler/zlib/compare/v1.2.11...v1.2.12
+    - https://www.openwall.com/lists/oss-security/2022/03/28/3
+    - https://github.com/madler/zlib/issues/605
+    - https://www.debian.org/security/2022/dsa-5111
+    - https://lists.debian.org/debian-lts-announce/2022/04/msg00000.html
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NS2D2GFPFGOJUL4WQ3DUAY7HF4VWQ77F/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOKFMSNQ5D5WGMALBNBXU3GE442V74WU/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VOKNP2L734AEL47NRYGVZIKEFOUBQY5Y/
+    - https://lists.debian.org/debian-lts-announce/2022/05/msg00008.html
+    - https://support.apple.com/kb/HT213255
+    - https://support.apple.com/kb/HT213256
+    - https://support.apple.com/kb/HT213257
+    - http://seclists.org/fulldisclosure/2022/May/33
+    - http://seclists.org/fulldisclosure/2022/May/35
+    - http://seclists.org/fulldisclosure/2022/May/38
+    - https://security.netapp.com/advisory/ntap-20220526-0009/
+    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/
+  reported: 2022-03-25
+  severity: high
