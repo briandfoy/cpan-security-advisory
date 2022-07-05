@@ -46,7 +46,6 @@ sub new ( $class, @args ) {
 	say "new: @args";
 	my $self = bless { args => [ @args ] }, $class;
 	$self->process_args;
-#		say "after process_args: ", $self->dump;
 	$self->prompt(1) if $self->args_is_empty;
 	$self->postprocess_args;
 
