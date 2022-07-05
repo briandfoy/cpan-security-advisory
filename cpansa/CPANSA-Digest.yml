@@ -26,3 +26,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A19446
   reported: 2012-01-13
   severity: ~
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-07-05
