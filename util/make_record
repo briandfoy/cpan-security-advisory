@@ -45,7 +45,38 @@ The output will go to standard output:
 	  reported: 2020-01-31
 	  severity: high
 
+It might be easier to respond to prompts to enter input:
+
+	$ perl util/make_record -p
+
+No argument implies C<-p>:
+
+	$ perl util/make_record
+	CVE value []> CVE-2011-4117
+	Perl namespace []> Some::Package
+	rt.cpan.org issue []>
+	Affected versions []>
+	Fixed versions []>
+	Embedded library name []>
+	Embedded library version []>
+	Output filename [cpansa/CPANSA-Some-Package.yml]>
+
+The C<-p> will remember values from the command line:
+
+	$ perl util/make_record -p CVE-2011-4117 Some-Package
+	CVE value [CVE-2011-4117]>
+	Perl namespace [Some-Package]>
+	rt.cpan.org issue []>
+	Affected versions []>
+	Fixed versions []>
+	Embedded library name []>
+	Embedded library version []>
+	Output filename [cpansa/CPANSA-Some-Package.yml]>
+
 =head1 DESCRIPTION
+
+B<make_record> assembles everything you need for the report of a
+CPAN module vulnerability.
 
 =head2 Options
 
@@ -53,17 +84,25 @@ The output will go to standard output:
 
 =item * B<-a>, B<--affected> - the value for affected versions
 
+=item * B<--cve> - the CVE number (but you can specify it as the first argument)
+
 =item * B<-en>, B<--embedded_name> - the name of the vulnerable embedded library
 
 =item * B<-ev>, B<--embedded_version> - the vulnerable version of the embedded library
 
 =item * B<-f>, B<--fixed> - the value for fixed versions
 
-=item * B<-F> - send the output to standard out and not to a file
+=item * B<-F> - do not guess a filename based on the arguments or CVE (default is to do that)
+
+=item * B<-n>, B<namespace> - the affected Perl namespace
+
+=item * B<-o>, B<--output_file> - specify the destination of the output
+
+=item * B<-p>, B<--prompt> - prompt for values (true if there are no arguments)
 
 =item * B<-r=N>, B<--rt=N> - Add the URL for the rt.cpan.org ticket N
 
-=item * B<s> - force the YAML start line C<--->
+=item * B<-s> - force the YAML start line C<---> from output.
 
 =item * B<-S> - remove the YAML start line C<--->. B<-s> wins if you use both.
 
@@ -93,6 +132,31 @@ specification includes a comparator. These come from L<CPAN::Audit::Version>:
 Note that non-semantic versions (fewer than two dots) use three places
 for minor versions, so C<5.34> is C<5.340>. For Perl versions, include
 all three places, so C<v5.34> is C<5.034>.
+
+=head2 The report format
+
+The report format looks like this:
+
+	---
+	- affected_versions: ~
+	  cves:
+		- CVE-2011-4117
+	  description: >
+		The Batch::BatchRun module 1.03 for Perl does not properly handle
+		temporary files.
+	  distribution: Some-Package
+	  embedded_vulnerability:
+		distributed_version: ~
+		name: ~
+	  fixed_versions: ~
+	  id: CPANSA-Some-Package-2011-4117
+	  references:
+		- http://www.openwall.com/lists/oss-security/2011/11/04/2
+		- http://www.openwall.com/lists/oss-security/2011/11/04/4
+		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
+	  reported: 2020-01-31
+	  severity: high
+
 
 =cut
 
