@@ -1,0 +1,77 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2008-0171
+  description: >
+    regex/v4/perl_matcher_non_recursive.hpp in the Boost regex library
+    (aka Boost.Regex) in Boost 1.33 and 1.34 allows context-dependent
+    attackers to cause a denial of service (failed assertion and crash)
+    via an invalid regular expression.
+  distribution: Boost-Graph
+  embedded_vulnerability:
+    distributed_version: "1.33"
+    name: boost
+  fixed_versions: ~
+  id: CPANSA-Boost-Graph-2008-0171
+  references:
+    - http://bugs.gentoo.org/show_bug.cgi?id=205955
+    - http://svn.boost.org/trac/boost/changeset/42674
+    - http://svn.boost.org/trac/boost/changeset/42745
+    - https://issues.rpath.com/browse/RPL-2143
+    - http://www.ubuntu.com/usn/usn-570-1
+    - http://www.securityfocus.com/bid/27325
+    - https://www.redhat.com/archives/fedora-package-announce/2008-January/msg00760.html
+    - http://secunia.com/advisories/28545
+    - http://www.mandriva.com/en/security/advisories?name=MDVSA-2008:032
+    - http://secunia.com/advisories/28705
+    - http://secunia.com/advisories/28511
+    - http://secunia.com/advisories/28527
+    - http://wiki.rpath.com/Advisories:rPSA-2008-0063
+    - http://www.gentoo.org/security/en/glsa/glsa-200802-08.xml
+    - http://secunia.com/advisories/28943
+    - http://secunia.com/advisories/28860
+    - http://lists.opensuse.org/opensuse-security-announce/2008-03/msg00004.html
+    - http://secunia.com/advisories/29323
+    - http://www.vupen.com/english/advisories/2008/0249
+    - http://secunia.com/advisories/48099
+    - http://www.securityfocus.com/archive/1/488102/100/0/threaded
+  reported: 2008-01-17
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2008-0172
+  description: >
+    The get_repeat_type function in basic_regex_creator.hpp in the
+    Boost regex library (aka Boost.Regex) in Boost 1.33 and 1.34 allows
+    context-dependent attackers to cause a denial of service (NULL
+    dereference and crash) via an invalid regular expression.
+  distribution: Boost-Graph
+  embedded_vulnerability:
+    distributed_version: "1.33"
+    name: boost
+  fixed_versions: ~
+  id: CPANSA-Boost-Graph-2008-0172
+  references:
+    - http://bugs.gentoo.org/show_bug.cgi?id=205955
+    - http://svn.boost.org/trac/boost/changeset/42674
+    - http://svn.boost.org/trac/boost/changeset/42745
+    - https://issues.rpath.com/browse/RPL-2143
+    - http://www.ubuntu.com/usn/usn-570-1
+    - http://www.securityfocus.com/bid/27325
+    - https://www.redhat.com/archives/fedora-package-announce/2008-January/msg00760.html
+    - http://secunia.com/advisories/28545
+    - http://www.mandriva.com/en/security/advisories?name=MDVSA-2008:032
+    - http://secunia.com/advisories/28705
+    - http://secunia.com/advisories/28511
+    - http://secunia.com/advisories/28527
+    - http://wiki.rpath.com/Advisories:rPSA-2008-0063
+    - http://www.gentoo.org/security/en/glsa/glsa-200802-08.xml
+    - http://secunia.com/advisories/28943
+    - http://secunia.com/advisories/28860
+    - http://lists.opensuse.org/opensuse-security-announce/2008-03/msg00004.html
+    - http://secunia.com/advisories/29323
+    - http://www.vupen.com/english/advisories/2008/0249
+    - http://secunia.com/advisories/48099
+    - http://www.securityfocus.com/archive/1/488102/100/0/threaded
+  reported: 2008-01-17
+  severity: ~
