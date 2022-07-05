@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.10;
+use v5.26;
 use strict;
 use experimental qw(signatures);
 
@@ -12,17 +12,32 @@ make_record - turn a CVE into a CPANSA YAML object
 Give this program a CVE ID and see what it does. It guesses the CPAN
 module name, so you need to check that:
 
-Try it with just the CVE:
+Try it with just the CVE. If it can guess the package, it uses that
+to guess the filename under F<cpansa/>:
 
 	$ perl util/make_record CVE-2011-4117
+
+Sometimes it can't guess the namespace, so run it again with what you see
+in the record:
+
+	$ perl util/make_record CVE-2011-4117 Some-Package
+
+This creates or appends to the file F<cpansa/CPANSA-Some-Package.yml>.
+
+Use C<-F> if you don't want the record to go to a file.
+The output will go to standard output:
+
+	$ perl util/make_record -F CVE-2011-4117 Some-Package
 	---
 	- affected_versions: ~
 	  cves:
 		- CVE-2011-4117
-	  description: The Batch::BatchRun module 1.03 for Perl does not properly handle temporary files.
-	  distribution: Batch-BatchRun
+	  description: >
+	    The Some::Package module 1.03 for Perl does not properly
+	    handle temporary files.
+	  distribution: Some-Package
 	  fixed_versions: ~
-	  id: CPANSA-Batch-BatchRun-2011-4117
+	  id: CPANSA-Some-Package-2011-4117
 	  references:
 		- http://www.openwall.com/lists/oss-security/2011/11/04/2
 		- http://www.openwall.com/lists/oss-security/2011/11/04/4
@@ -30,22 +45,54 @@ Try it with just the CVE:
 	  reported: 2020-01-31
 	  severity: high
 
-Sometimes it can't guess the package, so run it again with what you see
-in the record:
+=head1 DESCRIPTION
 
-	$ perl util/make_record CVE-2011-4117 Some-Package
+=head2 Options
 
-If a report file already exists (F<cpansa/CPANSA-Some-Package.yml>), or
-you specify C<-S>, the output omits the YAML header (C<--->) so you can
-append to the YAML array that is already there:
+=over 4
 
-	$ perl util/make_record CVE-2011-4117 Some-Package > cpansa/CPANSA-Some-Package.yml
-	$ perl util/make_record -S CVE-2011-4117 Some-Package
+=item * B<-a>, B<--affected> - the value for affected versions
 
-If the report file already exists, it sets C<-S> for you, but you can
-force that header with C<-s> (which always wins):
+=item * B<-en>, B<--embedded_name> - the name of the vulnerable embedded library
 
-	$ perl util/make_record -s CVE-2011-4117 Some-Package
+=item * B<-ev>, B<--embedded_version> - the vulnerable version of the embedded library
+
+=item * B<-f>, B<--fixed> - the value for fixed versions
+
+=item * B<-F> - send the output to standard out and not to a file
+
+=item * B<-r=N>, B<--rt=N> - Add the URL for the rt.cpan.org ticket N
+
+=item * B<s> - force the YAML start line C<--->
+
+=item * B<-S> - remove the YAML start line C<--->. B<-s> wins if you use both.
+
+=back
+
+=head2 Versions
+
+Versions are comma-separated values of version specifications. Each
+specification includes a comparator. These come from L<CPAN::Audit::Version>:
+
+=over 4
+
+=item * B<< < >> - all versions less than the specified versions
+
+=item * B<< <= >> - all versions less than and including the specified versions
+
+=item * B<< == >> - the exact version specified
+
+=item * B<< != >> - all versions except the one specified
+
+=item * B<< > >> - all versions greater than the specified versions
+
+=item * B<< >= >> - all versions greater than and including the specified versions
+
+=back
+
+Note that non-semantic versions (fewer than two dots) use three places
+for minor versions, so C<5.34> is C<5.340>. For Perl versions, include
+all three places, so C<v5.34> is C<5.034>.
 
 =cut
 
@@ -53,26 +100,58 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 
 use Local::CPANSA;
+use Local::Config::make_record;
+
+use Mojo::Util;
 use YAML qw(Dump);
 
-use Getopt::Long qw(:config no_ignore_case);
-GetOptions (
-	"S" => \my $no_yaml_start,
-	"s" => \my $yes_yaml_start,
-	);
+run( @ARGV ) unless caller;
 
-my( $cve, $package ) = @ARGV;
+sub run ( @args ) {
+	my $config = Local::Config::make_record->new( @args );
 
-my $hash = Local::CPANSA::assemble_record( $cve, $package );
-my $string = Dump( [ $hash ] );
+	my $hash = Local::CPANSA::assemble_record( $config->cve, $config->namespace );
 
-my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
-$no_yaml_start if -e $report_path;
+	unshift $hash->{references}->@*, rt_n_to_url($config->rt) if $config->rt;
 
-# If we want to redirect into an existing file, take out the YAML
-# header, unless we have -s to force the header
-unless( $yes_yaml_start ) {
-	$string =~ s/\A---\R// if( -e $report_path or $no_yaml_start );
+	$hash->{affected_versions}                           //= $config->affected;
+	$hash->{fixed_versions}                              //= $config->fixed;
+	$hash->{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
+	$hash->{embedded_vulnerability}{name}                //= $config->embedded_name;
+
+	my $string = Dump( [ $hash ] );
+
+	# We want the folded form to avoid yamllint warnings, but YAML
+	# no longer supports this. We can cheat a little because we know
+	# exactly where this shows up and we don't have to handle arbitrary
+	# data structures
+	$string =~ s/^(\x20\x20description:\s+)(.*)/
+		state $rc = require Text::Format;
+		my( $field, $value ) = @{^CAPTURE};
+		my $wrapped = Text::Format->new({columns => 70})->format($value);
+		$wrapped =~ s{\A\s+|\s+\z}{}g;
+		$wrapped =~ s|^|    |gm;
+		"$field>\n$wrapped";
+		/em;
+
+	# If we want to redirect into an existing file, take out the YAML
+	# header, unless we have -s to force the header
+	my $fh = do {
+		if( $config->output_filename eq '-' ) { \*STDOUT }
+		else {
+			my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
+			$config->include_yaml_start_line(0) if( -e $report_path and ! $config->yes_yaml_start );
+			open my $fh, '>>:encoding(UTF-8)', $report_path
+				or die "Could not open <$report_path>: $!\n";
+			$fh;
+			}
+		};
+
+	$string =~ s/\A---\R// unless $config->include_yaml_start_line;
+
+	print { $fh } $string;
 	}
 
-print $string;
+sub rt_n_to_url ( $rt ) {
+	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
+	}
