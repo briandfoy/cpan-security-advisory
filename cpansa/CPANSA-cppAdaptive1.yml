@@ -1,0 +1,793 @@
+---
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-9840
+  description: >
+    inftrees.c in zlib 1.2.8 might allow context-dependent attackers
+    to have unspecified impact by leveraging improper pointer arithmetic.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.2.8"
+    name: zlib[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-9840
+  references:
+    - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+    - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+    - https://security.gentoo.org/glsa/201701-56
+    - https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1402345
+    - http://www.securityfocus.com/bid/95131
+    - http://www.openwall.com/lists/oss-security/2016/12/05/21
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+    - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+    - http://www.securitytracker.com/id/1039427
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    - https://support.apple.com/HT208144
+    - https://support.apple.com/HT208115
+    - https://support.apple.com/HT208113
+    - https://support.apple.com/HT208112
+    - https://access.redhat.com/errata/RHSA-2017:3047
+    - https://access.redhat.com/errata/RHSA-2017:3046
+    - https://access.redhat.com/errata/RHSA-2017:3453
+    - https://access.redhat.com/errata/RHSA-2017:2999
+    - https://access.redhat.com/errata/RHSA-2017:1222
+    - https://access.redhat.com/errata/RHSA-2017:1221
+    - https://access.redhat.com/errata/RHSA-2017:1220
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+    - https://usn.ubuntu.com/4246-1/
+    - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+    - https://usn.ubuntu.com/4292-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-9841
+  description: >
+    inffast.c in zlib 1.2.8 might allow context-dependent attackers to
+    have unspecified impact by leveraging improper pointer arithmetic.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.2.8"
+    name: zlib[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-9841
+  references:
+    - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+    - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+    - https://security.gentoo.org/glsa/201701-56
+    - https://github.com/madler/zlib/commit/9aaec95e82117c1cb0f9624264c3618fc380cecb
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1402346
+    - http://www.securityfocus.com/bid/95131
+    - http://www.openwall.com/lists/oss-security/2016/12/05/21
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+    - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+    - http://www.securitytracker.com/id/1039427
+    - http://www.securitytracker.com/id/1039596
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    - https://support.apple.com/HT208144
+    - https://support.apple.com/HT208115
+    - https://support.apple.com/HT208113
+    - https://support.apple.com/HT208112
+    - https://security.netapp.com/advisory/ntap-20171019-0001/
+    - https://access.redhat.com/errata/RHSA-2017:3047
+    - https://access.redhat.com/errata/RHSA-2017:3046
+    - https://access.redhat.com/errata/RHSA-2017:3453
+    - https://access.redhat.com/errata/RHSA-2017:2999
+    - https://access.redhat.com/errata/RHSA-2017:1222
+    - https://access.redhat.com/errata/RHSA-2017:1221
+    - https://access.redhat.com/errata/RHSA-2017:1220
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+    - https://usn.ubuntu.com/4246-1/
+    - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+    - https://usn.ubuntu.com/4292-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: critical
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-9842
+  description: >
+    The inflateMark function in inflate.c in zlib 1.2.8 might allow
+    context-dependent attackers to have unspecified impact via vectors
+    involving left shifts of negative integers.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.2.8"
+    name: zlib[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-9842
+  references:
+    - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+    - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+    - https://security.gentoo.org/glsa/201701-56
+    - https://github.com/madler/zlib/commit/e54e1299404101a5a9d0cf5e45512b543967f958
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1402348
+    - http://www.securityfocus.com/bid/95131
+    - http://www.openwall.com/lists/oss-security/2016/12/05/21
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+    - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+    - http://www.securitytracker.com/id/1039427
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    - https://support.apple.com/HT208144
+    - https://support.apple.com/HT208115
+    - https://support.apple.com/HT208113
+    - https://support.apple.com/HT208112
+    - https://access.redhat.com/errata/RHSA-2017:3047
+    - https://access.redhat.com/errata/RHSA-2017:3046
+    - https://access.redhat.com/errata/RHSA-2017:3453
+    - https://access.redhat.com/errata/RHSA-2017:2999
+    - https://access.redhat.com/errata/RHSA-2017:1222
+    - https://access.redhat.com/errata/RHSA-2017:1221
+    - https://access.redhat.com/errata/RHSA-2017:1220
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+    - https://usn.ubuntu.com/4246-1/
+    - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+    - https://usn.ubuntu.com/4292-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-9843
+  description: >
+    The crc32_big function in crc32.c in zlib 1.2.8 might allow
+    context-dependent attackers to have unspecified impact via vectors
+    involving big-endian CRC calculation.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.2.8"
+    name: zlib[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-9843
+  references:
+    - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+    - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+    - https://security.gentoo.org/glsa/201701-56
+    - https://github.com/madler/zlib/commit/d1d577490c15a0c6862473d7576352a9f18ef811
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1402351
+    - http://www.securityfocus.com/bid/95131
+    - http://www.openwall.com/lists/oss-security/2016/12/05/21
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+    - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+    - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+    - http://www.securitytracker.com/id/1039427
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+    - https://support.apple.com/HT208144
+    - https://support.apple.com/HT208115
+    - https://support.apple.com/HT208113
+    - https://support.apple.com/HT208112
+    - https://access.redhat.com/errata/RHSA-2017:3047
+    - https://access.redhat.com/errata/RHSA-2017:3046
+    - https://access.redhat.com/errata/RHSA-2017:3453
+    - https://access.redhat.com/errata/RHSA-2017:2999
+    - https://access.redhat.com/errata/RHSA-2017:1222
+    - https://access.redhat.com/errata/RHSA-2017:1221
+    - https://access.redhat.com/errata/RHSA-2017:1220
+    - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+    - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+    - http://www.securitytracker.com/id/1041888
+    - https://security.netapp.com/advisory/ntap-20181018-0002/
+    - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+    - https://usn.ubuntu.com/4246-1/
+    - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+    - https://usn.ubuntu.com/4292-1/
+    - https://www.oracle.com/security-alerts/cpujul2020.html
+    - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: critical
+- affected_versions: ">0"
+  cves:
+    - CVE-2013-6954
+  description: >
+    'The png_do_expand_palette function in libpng before 1.6.8 allows
+    remote attackers to cause a denial of service (NULL pointer
+    dereference and application crash) via (1) a PLTE chunk of zero bytes
+    or (2) a NULL palette, related to pngrtran.c and pngset.c.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2013-6954
+  references:
+    - http://www.libpng.org/pub/png/libpng.html
+    - http://sourceforge.net/p/libpng/code/ci/1faa6ff32c648acfe3cf30a58d31d7aebc24968c
+    - http://www.kb.cert.org/vuls/id/650142
+    - https://bugzilla.redhat.com/show_bug.cgi?id=1045561
+    - http://sourceforge.net/projects/libpng/files/libpng16/1.6.8/
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2014:035
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128098.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128099.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127947.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127952.html
+    - http://advisories.mageia.org/MGASA-2014-0075.html
+    - http://www.securityfocus.com/bid/64493
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128114.html
+    - http://lists.opensuse.org/opensuse-updates/2014-01/msg00071.html
+    - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
+    - http://www-01.ibm.com/support/docview.wss?uid=swg21672080
+    - http://www-01.ibm.com/support/docview.wss?uid=swg21676746
+    - http://secunia.com/advisories/58974
+    - http://secunia.com/advisories/59058
+    - https://www.ibm.com/support/docview.wss?uid=swg21675973
+    - http://security.gentoo.org/glsa/glsa-201406-32.xml
+    - http://marc.info/?l=bugtraq&m=140852974709252&w=2
+    - http://marc.info/?l=bugtraq&m=140852886808946&w=2
+    - https://access.redhat.com/errata/RHSA-2014:0414
+    - https://access.redhat.com/errata/RHSA-2014:0413
+  reported: 2014-01-12
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2014-0333
+  description: >
+    The png_push_read_chunk function in pngpread.c in the progressive
+    decoder in libpng 1.6.x through 1.6.9 allows remote attackers to cause
+    a denial of service (infinite loop and CPU consumption) via an IDAT
+    chunk with a length of zero.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2014-0333
+  references:
+    - ftp://ftp.simplesystems.org/pub/png/src/libpng16/patch-libpng16-vu684412.diff
+    - http://www.kb.cert.org/vuls/id/684412
+    - https://sourceforge.net/projects/libpng/files/libpng16/patch-libpng16-vu684412.diff
+    - http://lists.opensuse.org/opensuse-updates/2014-03/msg00029.html
+  reported: 2014-02-27
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2014-9495
+  description: >
+    'Heap-based buffer overflow in the png_combine_row function in
+    libpng before 1.5.21 and 1.6.x before 1.6.16, when running on 64-bit
+    systems, might allow context-dependent attackers to execute arbitrary
+    code via a "very wide interlaced" PNG image.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2014-9495
+  references:
+    - http://www.securitytracker.com/id/1031444
+    - http://www.openwall.com/lists/oss-security/2015/01/04/3
+    - http://www.securityfocus.com/bid/71820
+    - http://sourceforge.net/p/png-mng/mailman/message/33173461/
+    - http://www.openwall.com/lists/oss-security/2015/01/10/1
+    - http://sourceforge.net/p/png-mng/mailman/message/33172831/
+    - http://www.openwall.com/lists/oss-security/2015/01/10/3
+    - http://secunia.com/advisories/62725
+    - https://support.apple.com/HT206167
+    - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+    - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
+  reported: 2015-01-10
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2015-0973
+  description: >
+    'Buffer overflow in the png_read_IDAT_data function in pngrutil.c
+    in libpng before 1.5.21 and 1.6.x before 1.6.16 allows
+    context-dependent attackers to execute arbitrary code via IDAT data
+    with a large width, a different vulnerability than CVE-2014-9495.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2015-0973
+  references:
+    - http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt
+    - http://www.openwall.com/lists/oss-security/2015/01/10/1
+    - http://www.openwall.com/lists/oss-security/2015/01/10/3
+    - http://sourceforge.net/p/png-mng/mailman/message/33173461/
+    - http://secunia.com/advisories/62725
+    - https://support.apple.com/HT206167
+    - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+    - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
+  reported: 2015-01-18
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2015-8126
+  description: >
+    'Multiple buffer overflows in the (1) png_set_PLTE and (2)
+    png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before
+    1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x
+    before 1.6.19 allow remote attackers to cause a denial of service
+    (application crash) or possibly have unspecified other impact via a
+    small bit-depth value in an IHDR (aka image header) chunk in a PNG
+    image.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2015-8126
+  references:
+    - http://www.openwall.com/lists/oss-security/2015/11/12/2
+    - http://www.debian.org/security/2015/dsa-3399
+    - http://www.ubuntu.com/usn/USN-2815-1
+    - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+    - https://code.google.com/p/chromium/issues/detail?id=560291
+    - http://googlechromereleases.blogspot.com/2016/03/stable-channel-update.html
+    - https://support.apple.com/HT206167
+    - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+    - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+    - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    - https://access.redhat.com/errata/RHSA-2016:1430
+    - http://www.securityfocus.com/bid/77568
+    - https://security.gentoo.org/glsa/201603-09
+    - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00028.html
+    - http://www.debian.org/security/2016/dsa-3507
+    - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00015.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00014.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00018.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177344.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177382.html
+    - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+    - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+    - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+    - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+    - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+    - http://lists.opensuse.org/opensuse-updates/2016-01/msg00028.html
+    - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
+    - http://lists.opensuse.org/opensuse-updates/2015-11/msg00159.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172797.html
+    - http://lists.opensuse.org/opensuse-updates/2015-12/msg00063.html
+    - http://lists.opensuse.org/opensuse-updates/2015-12/msg00062.html
+    - http://lists.opensuse.org/opensuse-updates/2016-01/msg00029.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+    - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00034.html
+    - http://www.securitytracker.com/id/1034142
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172769.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172823.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172324.html
+    - http://lists.opensuse.org/opensuse-updates/2016-01/msg00030.html
+    - https://security.gentoo.org/glsa/201611-08
+  reported: 2015-11-13
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2015-8472
+  description: >
+    'Buffer overflow in the png_set_PLTE function in libpng before
+    1.0.65, 1.1.x and 1.2.x before 1.2.55, 1.3.x, 1.4.x before 1.4.18,
+    1.5.x before 1.5.25, and 1.6.x before 1.6.20 allows remote attackers
+    to cause a denial of service (application crash) or possibly have
+    unspecified other impact via a small bit-depth value in an IHDR (aka
+    image header) chunk in a PNG image. NOTE: this vulnerability exists
+    because of an incomplete fix for CVE-2015-8126.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2015-8472
+  references:
+    - http://sourceforge.net/projects/libpng/files/libpng16/1.6.20/
+    - http://www.openwall.com/lists/oss-security/2015/12/03/6
+    - http://sourceforge.net/projects/libpng/files/libpng12/1.2.55/
+    - http://sourceforge.net/projects/libpng/files/libpng10/1.0.65/
+    - http://sourceforge.net/projects/libpng/files/libpng14/1.4.18/
+    - http://www.securityfocus.com/bid/78624
+    - http://sourceforge.net/projects/libpng/files/libpng15/1.5.25/
+    - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+    - https://support.apple.com/HT206167
+    - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+    - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+    - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+    - https://access.redhat.com/errata/RHSA-2016:1430
+    - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+    - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+    - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+    - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+    - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+    - http://www.debian.org/security/2016/dsa-3443
+  reported: 2016-01-21
+  severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-10087
+  description: >
+    'The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x
+    before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x
+    before 1.6.27 allows context-dependent attackers to cause a NULL
+    pointer dereference vectors involving loading a text chunk into a png
+    structure, removing the text, and then adding another text chunk to
+    the structure.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-10087
+  references:
+    - http://www.openwall.com/lists/oss-security/2016/12/30/4
+    - http://www.openwall.com/lists/oss-security/2016/12/29/2
+    - http://www.securityfocus.com/bid/95157
+    - https://security.gentoo.org/glsa/201701-74
+    - https://usn.ubuntu.com/3712-2/
+    - https://usn.ubuntu.com/3712-1/
+    - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+    - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+  reported: 2017-01-30
+  severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2016-3751
+  description: >
+    'Unspecified vulnerability in libpng before 1.6.20, as used in
+    Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and
+    6.x before 2016-07-01, allows attackers to gain privileges via a
+    crafted application, as demonstrated by obtaining Signature or
+    SignatureOrSystem access, aka internal bug 23265085.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2016-3751
+  references:
+    - http://source.android.com/security/bulletin/2016-07-01.html
+    - http://www.openwall.com/lists/oss-security/2016/07/09/4
+    - https://android.googlesource.com/platform/external/libpng/+/9d4853418ab2f754c2b63e091c29c5529b8b86ca
+  reported: 2016-07-11
+  severity: high
+- affected_versions: ">0"
+  cves:
+    - CVE-2017-12652
+  description: >
+    libpng before 1.6.32 does not properly check the length of chunks
+    against the user limit.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2017-12652
+  references:
+    - https://github.com/glennrp/libpng/blob/df7e9dae0c4aac63d55361e35709c864fa1b8363/ANNOUNCE
+    - http://www.securityfocus.com/bid/109269
+    - https://support.f5.com/csp/article/K88124225
+    - https://support.f5.com/csp/article/K88124225?utm_source=f5support&amp;utm_medium=RSS
+    - https://security.netapp.com/advisory/ntap-20220506-0003/
+  reported: 2019-07-10
+  severity: critical
+- affected_versions: ">0"
+  cves:
+    - CVE-2019-7317
+  description: >
+    png_image_free in png.c in libpng 1.6.x before 1.6.37 has a
+    use-after-free because png_image_free_function is called under
+    png_safe_execute.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "1.6.7"
+    name: libpng[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2019-7317
+  references:
+    - https://github.com/glennrp/libpng/issues/275
+    - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
+    - https://seclists.org/bugtraq/2019/Apr/30
+    - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
+    - https://www.debian.org/security/2019/dsa-4435
+    - https://seclists.org/bugtraq/2019/Apr/36
+    - https://usn.ubuntu.com/3962-1/
+    - https://usn.ubuntu.com/3991-1/
+    - https://seclists.org/bugtraq/2019/May/56
+    - https://seclists.org/bugtraq/2019/May/59
+    - https://www.debian.org/security/2019/dsa-4448
+    - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
+    - https://access.redhat.com/errata/RHSA-2019:1265
+    - https://access.redhat.com/errata/RHSA-2019:1269
+    - https://access.redhat.com/errata/RHSA-2019:1267
+    - https://www.debian.org/security/2019/dsa-4451
+    - https://seclists.org/bugtraq/2019/May/67
+    - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
+    - https://usn.ubuntu.com/3997-1/
+    - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
+    - https://access.redhat.com/errata/RHSA-2019:1310
+    - https://access.redhat.com/errata/RHSA-2019:1309
+    - https://access.redhat.com/errata/RHSA-2019:1308
+    - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
+    - http://www.securityfocus.com/bid/108098
+    - https://security.netapp.com/advisory/ntap-20190719-0005/
+    - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+    - https://usn.ubuntu.com/4080-1/
+    - https://usn.ubuntu.com/4083-1/
+    - https://security.gentoo.org/glsa/201908-02
+    - https://access.redhat.com/errata/RHSA-2019:2494
+    - https://access.redhat.com/errata/RHSA-2019:2495
+    - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
+    - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
+    - https://access.redhat.com/errata/RHSA-2019:2585
+    - https://access.redhat.com/errata/RHSA-2019:2590
+    - https://access.redhat.com/errata/RHSA-2019:2592
+    - https://access.redhat.com/errata/RHSA-2019:2737
+    - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
+    - https://www.oracle.com/security-alerts/cpuApr2021.html
+    - https://www.oracle.com/security-alerts/cpuoct2021.html
+  reported: 2019-02-04
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2013-6629
+  description: >
+    'The get_sos function in jdmarker.c in (1) libjpeg 6b and (2)
+    libjpeg-turbo through 1.3.0, as used in Google Chrome before
+    31.0.1650.48, Ghostscript, and other products, does not check for
+    certain duplications of component data during the reading of segments
+    that follow Start Of Scan (SOS) JPEG markers, which allows remote
+    attackers to obtain sensitive information from uninitialized memory
+    locations via a crafted JPEG image.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2013-6629
+  references:
+    - https://code.google.com/p/chromium/issues/detail?id=258723
+    - https://src.chromium.org/viewvc/chrome?revision=229729&view=revision
+    - http://archives.neohapsis.com/archives/fulldisclosure/2013-11/0080.html
+    - http://bugs.ghostscript.com/show_bug.cgi?id=686980
+    - http://googlechromereleases.blogspot.com/2013/11/stable-channel-update.html
+    - http://www.mozilla.org/security/announce/2013/mfsa2013-116.html
+    - https://bugzilla.mozilla.org/show_bug.cgi?id=891693
+    - http://www.debian.org/security/2013/dsa-2799
+    - http://rhn.redhat.com/errata/RHSA-2013-1803.html
+    - http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00025.html
+    - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00002.html
+    - http://rhn.redhat.com/errata/RHSA-2013-1804.html
+    - http://www.ubuntu.com/usn/USN-2053-1
+    - http://www.ubuntu.com/usn/USN-2052-1
+    - http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00026.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/123437.html
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00119.html
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00121.html
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00120.html
+    - http://secunia.com/advisories/56175
+    - http://lists.opensuse.org/opensuse-updates/2014-01/msg00002.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/124108.html
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00086.html
+    - http://www.ubuntu.com/usn/USN-2060-1
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00085.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2014-January/125470.html
+    - http://lists.opensuse.org/opensuse-updates/2013-12/msg00087.html
+    - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/124257.html
+    - http://lists.opensuse.org/opensuse-updates/2014-01/msg00042.html
+    - http://support.apple.com/kb/HT6150
+    - http://www.mandriva.com/security/advisories?name=MDVSA-2013:273
+    - http://advisories.mageia.org/MGASA-2013-0333.html
+    - http://support.apple.com/kb/HT6163
+    - http://support.apple.com/kb/HT6162
+    - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
+    - http://www-01.ibm.com/support/docview.wss?uid=swg21672080
+    - http://www-01.ibm.com/support/docview.wss?uid=swg21676746
+    - http://secunia.com/advisories/58974
+    - http://secunia.com/advisories/59058
+    - https://www.ibm.com/support/docview.wss?uid=swg21675973
+    - http://security.gentoo.org/glsa/glsa-201406-32.xml
+    - http://www.securitytracker.com/id/1029476
+    - http://www.securitytracker.com/id/1029470
+    - https://security.gentoo.org/glsa/201606-03
+    - http://marc.info/?l=bugtraq&m=140852974709252&w=2
+    - http://marc.info/?l=bugtraq&m=140852886808946&w=2
+    - http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+    - https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2013-6629
+    - http://www.securityfocus.com/bid/63676
+    - https://access.redhat.com/errata/RHSA-2014:0414
+    - https://access.redhat.com/errata/RHSA-2014:0413
+  reported: 2013-11-19
+  severity: ~
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39514
+  description: >
+    An issue was discovered in libjpeg through 2020021. An uncaught
+    floating point exception in the function ACLosslessScan::ParseMCU()
+    located in aclosslessscan.cpp. It allows an attacker to cause Denial
+    of Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39514
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/36
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39515
+  description: >
+    An issue was discovered in libjpeg through 2020021. A NULL pointer
+    dereference exists in the function SampleInterleavedLSScan::ParseMCU()
+    located in sampleinterleavedlsscan.cpp. It allows an attacker to cause
+    Denial of Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39515
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/37
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39516
+  description: >
+    An issue was discovered in libjpeg through 2020021. A NULL pointer
+    dereference exists in the function HuffmanDecoder::Get() located in
+    huffmandecoder.hpp. It allows an attacker to cause Denial of Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39516
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/42
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39517
+  description: >
+    An issue was discovered in libjpeg through 2020021. A NULL pointer
+    dereference exists in the function
+    BlockBitmapRequester::ReconstructUnsampled() located in
+    blockbitmaprequester.cpp. It allows an attacker to cause Denial of
+    Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39517
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/33
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39518
+  description: >
+    An issue was discovered in libjpeg through 2020021.
+    LineBuffer::FetchRegion() in linebuffer.cpp has a heap-based buffer
+    overflow.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39518
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/35
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39519
+  description: >
+    An issue was discovered in libjpeg through 2020021. A NULL pointer
+    dereference exists in the function BlockBitmapRequester::PullQData()
+    located in blockbitmaprequester.cpp It allows an attacker to cause
+    Denial of Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39519
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/28
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2021-39520
+  description: >
+    An issue was discovered in libjpeg through 2020021. A NULL pointer
+    dereference exists in the function
+    BlockBitmapRequester::PushReconstructedData() located in
+    blockbitmaprequester.cpp. It allows an attacker to cause Denial of
+    Service.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2021-39520
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/34
+  reported: 2021-09-20
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2022-31620
+  description: >
+    'In libjpeg before 1.64, BitStream<false>::Get in bitstream.hpp
+    has an assertion failure that may cause denial of service. This is
+    related to out-of-bounds array access during arithmetically coded
+    lossless scan or arithmetically coded sequential scan.'
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2022-31620
+  references:
+    - https://github.com/thorfdbg/libjpeg/commit/ef4a29a62ab48b8dc235f4af52cfd6319eda9a6a
+    - https://github.com/thorfdbg/libjpeg/issues/70
+  reported: 2022-05-25
+  severity: medium
+- affected_versions: ">0"
+  cves:
+    - CVE-2022-32978
+  description: >
+    There is an assertion failure in SingleComponentLSScan::ParseMCU
+    in singlecomponentlsscan.cpp in libjpeg before 1.64 via an empty
+    JPEG-LS scan.
+  distribution: cppAdaptive1
+  embedded_vulnerability:
+    distributed_version: "6b"
+    name: libjpeg[dlib]
+  fixed_versions: ~
+  id: CPANSA-cppAdaptive1-2022-32978
+  references:
+    - https://github.com/thorfdbg/libjpeg/issues/75
+    - https://github.com/thorfdbg/libjpeg/commit/4746b577931e926a49e50de9720a4946de3069a7
+  reported: 2022-06-10
+  severity: medium
