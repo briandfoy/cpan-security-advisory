@@ -37,8 +37,6 @@ sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) 
 	}
 
 sub postprocess_args ( $self ) {
-#		say "postprocess_args";
-#		say $self->dump;
 	my( $cve, $namespace ) = $self->leftover_args->@*;
 	$self->cve( $cve ) if defined $cve;
 
@@ -73,7 +71,6 @@ sub prompt_for_values ( $self ) {
 		next unless length $value;
 		$self->$key($value);
 		if( $key eq 'namespace' and  ! $self->output_filename ) {
-			say "output_filename: " . $self->output_filename;
 			$self->output_filename( $self->guess_output_filename($value) )
 			}
 		}
