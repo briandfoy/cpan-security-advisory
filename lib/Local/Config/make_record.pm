@@ -18,9 +18,9 @@ sub getopts_spec ( $self ) {
 		embedded_version   => { order => 7, getopt => "embedded_version|ev=s", description => 'Embedded library version' },
 		no_guess_filename  => { order => 0, getopt => "F",                     description => undef },
 		no_yaml_start      => { order => 0, getopt => "S",                     description => undef },
-		namespace          => { order => 2, getopt => 'n=s',                   description => 'Perl namespace' },
+		namespace          => { order => 2, getopt => 'namespace|n=s',         description => 'Perl namespace' },
 		output_filename    => { order => 8, getopt => 'o=s',                   description => 'Output filename' },
-		prompt             => { order => 0, getopt => "p",                     description => undef },
+		prompt             => { order => 0, getopt => "prompt|p",              description => undef },
 		rt                 => { order => 3, getopt => "rt|r=i",                description => 'rt.cpan.org issue' },
 		yes_yaml_start     => { order => 0, getopt => "s",                     description => undef },
 
