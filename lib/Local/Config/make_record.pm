@@ -18,9 +18,9 @@ sub getopts_spec ( $self ) {
 		embedded_version   => { order => 7, getopt => "embedded_version|ev=s", description => 'Embedded library version' },
 		no_guess_filename  => { order => 0, getopt => "F",                     description => undef },
 		no_yaml_start      => { order => 0, getopt => "S",                     description => undef },
-		namespace          => { order => 2, getopt => 'n=s',                   description => 'Perl namespace' },
+		namespace          => { order => 2, getopt => 'namespace|n=s',         description => 'Perl namespace' },
 		output_filename    => { order => 8, getopt => 'o=s',                   description => 'Output filename' },
-		prompt             => { order => 0, getopt => "p",                     description => undef },
+		prompt             => { order => 0, getopt => "prompt|p",              description => undef },
 		rt                 => { order => 3, getopt => "rt|r=i",                description => 'rt.cpan.org issue' },
 		yes_yaml_start     => { order => 0, getopt => "s",                     description => undef },
 
@@ -37,8 +37,6 @@ sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) 
 	}
 
 sub postprocess_args ( $self ) {
-#		say "postprocess_args";
-#		say $self->dump;
 	my( $cve, $namespace ) = $self->leftover_args->@*;
 	$self->cve( $cve ) if defined $cve;
 
@@ -73,7 +71,6 @@ sub prompt_for_values ( $self ) {
 		next unless length $value;
 		$self->$key($value);
 		if( $key eq 'namespace' and  ! $self->output_filename ) {
-			say "output_filename: " . $self->output_filename;
 			$self->output_filename( $self->guess_output_filename($value) )
 			}
 		}

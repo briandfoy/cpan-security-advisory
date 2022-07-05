@@ -43,7 +43,6 @@ sub getopts_spec ( $self ) {
 sub key_exists ( $self, $key ) { exists $self->getopts_spec->{$key}	}
 
 sub new ( $class, @args ) {
-	say "new: @args";
 	my $self = bless { args => [ @args ] }, $class;
 	$self->process_args;
 	$self->prompt(1) if $self->args_is_empty;
