@@ -80,4 +80,5 @@ sub prompt_for_values ( $self ) {
 
 	$self;
 	}
+
 __PACKAGE__;
