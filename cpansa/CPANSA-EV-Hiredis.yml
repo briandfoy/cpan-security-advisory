@@ -7,8 +7,12 @@
     a NULL pointer dereference because malloc return values are unchecked.
   distribution: EV-Hiredis
   embedded_vulnerability:
-    distributed_version: <0.14.0
+    distributed_versions:
+      - perl_module_version: '>=0.01,<=0.04'
+        version: '0.11.0'
     name: hiredis
+    affected_versions: '<=0.14.0'
+    fixed_versions: '>0.14.1'
   fixed_versions: ~
   id: CPANSA-EV-Hiredis-2020-7105
   references:
