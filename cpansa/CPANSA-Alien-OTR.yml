@@ -1,17 +1,26 @@
 ---
-- affected_versions: <4.1.1.0
+- affected_versions: '<4.1.1.0'
   cves:
     - CVE-2016-2851
   description: >
-    'Integer overflow in proto.c in libotr before 4.1.1 on 64-bit
+    Integer overflow in proto.c in libotr before 4.1.1 on 64-bit
     platforms allows remote attackers to cause a denial of service (memory
     corruption and application crash) or execute arbitrary code via a
     series of large OTR messages, which triggers a heap-based buffer
-    overflow.'
+    overflow.
   distribution: Alien-OTR
   embedded_vulnerability:
-    distributed_version: <=4.1.0
+    distributed_versions:
+        - perl_module_version: '4.1.1.0'
+          version: '4.1.1'
+        - perl_module_version: '4.1.0.0'
+          version: '4.1.0'
+        - perl_module_version: '4.0.0.1'
+          version: '4.0.0-d534073'
+        - perl_module_version: '4.0.0.0'
+          version: '4.0.0'
     name: libotr
+    fixed_versions: ">=4.1.1"
   fixed_versions: ">=4.1.1.0"
   id: CPANSA-Alien-OTR-2016-2851
   references:
