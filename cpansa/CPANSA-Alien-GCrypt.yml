@@ -1,16 +1,16 @@
 ---
-- affected_versions: <1.6.5.0
+- affected_versions: '<1.6.5.0'
   cves:
     - CVE-2014-3591
   description: >
-    "Libgcrypt before 1.6.3 and GnuPG before 1.4.19 does not implement
+    Libgcrypt before 1.6.3 and GnuPG before 1.4.19 does not implement
     ciphertext blinding for Elgamal decryption, which allows physically
     proximate attackers to obtain the server's private key by determining
     factors using crafted ciphertext and the fluctuations in the
-    electromagnetic field during multiplication."
+    electromagnetic field during multiplication.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.6.5
+    distributed_version: '<1.6.5'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2014-3591
@@ -22,17 +22,17 @@
     - http://www.debian.org/security/2015/dsa-3184
   reported: 2019-11-29
   severity: medium
-- affected_versions: <1.6.5.0
+- affected_versions: '<1.6.5.0'
   cves:
     - CVE-2015-0837
   description: >
-    'The mpi_powm function in Libgcrypt before 1.6.3 and GnuPG before
+    The mpi_powm function in Libgcrypt before 1.6.3 and GnuPG before
     1.4.19 allows attackers to obtain sensitive information by leveraging
     timing differences when accessing a pre-computed table during modular
-    exponentiation, related to a "Last-Level Cache Side-Channel Attack."'
+    exponentiation, related to a "Last-Level Cache Side-Channel Attack."
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.6.3
+    distributed_version: '<1.6.3'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2015-0837
@@ -44,17 +44,17 @@
     - https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html
   reported: 2019-11-29
   severity: medium
-- affected_versions: <1.6.5.0
+- affected_versions: '<1.6.5.0'
   cves:
     - CVE-2015-7511
   description: >
-    'Libgcrypt before 1.6.5 does not properly perform elliptic-point
+    Libgcrypt before 1.6.5 does not properly perform elliptic-point
     curve multiplication during decryption, which makes it easier for
     physically proximate attackers to extract ECDH keys by measuring
-    electromagnetic emanations.'
+    electromagnetic emanations.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.6.5
+    distributed_version: '<1.6.5'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2015-7511
@@ -70,17 +70,17 @@
     - https://security.gentoo.org/glsa/201610-04
   reported: 2016-04-19
   severity: low
-- affected_versions: <1.6.6.0
+- affected_versions: '<1.6.6.0'
   cves:
     - CVE-2016-6313
   description: >
-    'The mixing functions in the random number generator in Libgcrypt
+    The mixing functions in the random number generator in Libgcrypt
     before 1.5.6, 1.6.x before 1.6.6, and 1.7.x before 1.7.3 and GnuPG
     before 1.4.21 make it easier for attackers to obtain the values of 160
-    bits by leveraging knowledge of the previous 4640 bits.'
+    bits by leveraging knowledge of the previous 4640 bits.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.6.6
+    distributed_version: '<1.6.6'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2016-6313
@@ -98,16 +98,16 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2674.html
   reported: 2016-12-13
   severity: medium
-- affected_versions: <1.8.1
+- affected_versions: '<1.8.1'
   cves:
     - CVE-2017-0379
   description: >
-    'Libgcrypt before 1.8.1 does not properly consider Curve25519
+    Libgcrypt before 1.8.1 does not properly consider Curve25519
     side-channel attacks, which makes it easier for attackers to discover
-    a secret key, related to cipher/ecc.c and mpi/ec.c.'
+    a secret key, related to cipher/ecc.c and mpi/ec.c.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.8.1
+    distributed_version: '<1.8.1'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2017-0379
@@ -125,7 +125,7 @@
     - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
   reported: 2017-08-29
   severity: high
-- affected_versions: <1.7.8
+- affected_versions: '<1.7.8'
   cves:
     - CVE-2017-7526
   description: >
@@ -138,7 +138,7 @@
     is used.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.7.8
+    distributed_version: '<1.7.8'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2017-7526
@@ -157,19 +157,19 @@
     - https://usn.ubuntu.com/3733-2/
   reported: 2018-07-26
   severity: medium
-- affected_versions: <1.7.7
+- affected_versions: '<1.7.7'
   cves:
     - CVE-2017-9526
   description: >
-    'In Libgcrypt before 1.7.7, an attacker who learns the EdDSA
+    In Libgcrypt before 1.7.7, an attacker who learns the EdDSA
     session key (from side-channel observation during the signing process)
     can easily recover the long-term secret key. 1.7.7 makes a
     cipher/ecc-eddsa.c change to store this session key in secure memory,
     to ensure that constant-time point operations are used in the MPI
-    library.'
+    library.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.7.7
+    distributed_version: '<1.7.7'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2017-9526
@@ -183,20 +183,20 @@
     - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
   reported: 2017-06-11
   severity: medium
-- affected_versions: <1.7.10
+- affected_versions: '<1.7.10'
   cves:
     - CVE-2018-0495
   description: >
-    'Libgcrypt before 1.7.10 and 1.8.x before 1.8.3 allows a
+    Libgcrypt before 1.7.10 and 1.8.x before 1.8.3 allows a
     memory-cache side-channel attack on ECDSA signatures that can be
     mitigated through the use of blinding during the signing process in
     the _gcry_ecc_ecdsa_sign function in cipher/ecc-ecdsa.c, aka the
     Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA
     key, the attacker needs access to either the local machine or a
-    different virtual machine on the same physical host.'
+    different virtual machine on the same physical host.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.7.10
+    distributed_version: '<1.7.10'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2018-0495
@@ -224,19 +224,19 @@
     - https://access.redhat.com/errata/RHSA-2019:2237
   reported: 2018-06-13
   severity: medium
-- affected_versions: <1.8.2
+- affected_versions: '<1.8.2'
   cves:
     - CVE-2018-6829
   description: >
-    "cipher/elgamal.c in Libgcrypt through 1.8.2, when used to encrypt
+    cipher/elgamal.c in Libgcrypt through 1.8.2, when used to encrypt
     messages directly, improperly encodes plaintexts, which allows
     attackers to obtain sensitive information by reading ciphertext data
     (i.e., it does not have semantic security in face of a ciphertext-only
     attack). The Decisional Diffie-Hellman (DDH) assumption does not hold
-    for Libgcrypt's ElGamal implementation."
+    for Libgcrypt's ElGamal implementation.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.8.2
+    distributed_version: '<1.8.2'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2018-6829
@@ -247,19 +247,19 @@
     - https://www.oracle.com/security-alerts/cpujan2020.html
   reported: 2018-02-07
   severity: high
-- affected_versions: <1.8.8
+- affected_versions: '<1.8.8'
   cves:
     - CVE-2019-12904
   description: >
-    "** DISPUTED ** In Libgcrypt 1.8.4, the C implementation of AES is
+    ** DISPUTED ** In Libgcrypt 1.8.4, the C implementation of AES is
     vulnerable to a flush-and-reload side-channel attack because physical
     addresses are available to other processes. (The C implementation is
     used on platforms where an assembly-language implementation is
     unavailable.) NOTE: the vendor's position is that the issue report
-    cannot be validated because there is no description of an attack."
+    cannot be validated because there is no description of an attack.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.8.8
+    distributed_version: '<1.8.8'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2019-12904
@@ -271,7 +271,7 @@
     - https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E
   reported: 2019-06-20
   severity: medium
-- affected_versions: <1.9.0
+- affected_versions: '<1.9.0'
   cves:
     - CVE-2021-3345
   description: >
@@ -281,7 +281,7 @@
     later.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.9.0
+    distributed_version: '<1.9.0'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2021-3345
@@ -294,18 +294,18 @@
     - https://www.oracle.com//security-alerts/cpujul2021.html
   reported: 2021-01-29
   severity: high
-- affected_versions: <1.8.8
+- affected_versions: '<1.8.8'
   cves:
     - CVE-2021-33560
   description: >
-    'Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal
+    Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal
     encryption because it lacks exponent blinding to address a
     side-channel attack against mpi_powm, and the window size is not
     chosen appropriately. This, for example, affects use of ElGamal in
-    OpenPGP.'
+    OpenPGP.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.8.8
+    distributed_version: '<1.8.8'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2021-33560
@@ -322,19 +322,19 @@
     - https://www.oracle.com/security-alerts/cpuapr2022.html
   reported: 2021-06-08
   severity: high
-- affected_versions: <1.9.4
+- affected_versions: '<1.9.4'
   cves:
     - CVE-2021-40528
   description: >
-    "The ElGamal implementation in Libgcrypt before 1.9.4 allows
+    The ElGamal implementation in Libgcrypt before 1.9.4 allows
     plaintext recovery because, during interaction between two
     cryptographic libraries, a certain dangerous combination of the prime
     defined by the receiver's public key, the generator defined by the
     receiver's public key, and the sender's ephemeral exponents can lead
-    to a cross-configuration attack against OpenPGP."
+    to a cross-configuration attack against OpenPGP.
   distribution: Alien-GCrypt
   embedded_vulnerability:
-    distributed_version: <1.9.4
+    distributed_version: '<1.9.4'
     name: libgcrypt
   fixed_versions: ~
   id: CPANSA-Alien-GCrypt-2021-40528

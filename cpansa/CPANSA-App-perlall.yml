@@ -1,5 +1,5 @@
 ---
-- affected_versions: <0.33
+- affected_versions: '<0.33'
   cves:
     - CVE-2013-1667
   description: >
