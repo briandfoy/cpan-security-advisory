@@ -54,11 +54,11 @@
   cves:
     - CVE-2006-5793
   description: >
-    'The sPLT chunk handling code (png_set_sPLT function in pngset.c)
+    The sPLT chunk handling code (png_set_sPLT function in pngset.c)
     in libpng 1.0.6 through 1.2.12 uses a sizeof operator on the wrong
     data type, which allows context-dependent attackers to cause a denial
     of service (crash) via malformed sPLT chunks that trigger an
-    out-of-bounds read.'
+    out-of-bounds read.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -115,10 +115,10 @@
   cves:
     - CVE-2002-1363
   description: >
-    'Portable Network Graphics (PNG) library libpng 1.2.5 and earlier
+    Portable Network Graphics (PNG) library libpng 1.2.5 and earlier
     does not correctly calculate offsets, which allows remote attackers to
     cause a denial of service (crash) and possibly execute arbitrary code
-    via a buffer overflow attack on the row buffers.'
+    via a buffer overflow attack on the row buffers.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.5
@@ -146,12 +146,12 @@
   cves:
     - CVE-2004-0597
   description: >
-    'Multiple buffer overflows in libpng 1.2.5 and earlier, as used in
+    Multiple buffer overflows in libpng 1.2.5 and earlier, as used in
     multiple products, allow remote attackers to execute arbitrary code
     via malformed PNG images in which (1) the png_handle_tRNS function
     does not properly validate the length of transparency chunk (tRNS)
     data, or the (2) png_handle_sBIT or (3) png_handle_hIST functions do
-    not perform sufficient bounds checking.'
+    not perform sufficient bounds checking.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.5
@@ -303,9 +303,9 @@
   cves:
     - CVE-2004-0768
   description: >
-    'libpng 1.2.5 and earlier does not properly calculate certain
+    libpng 1.2.5 and earlier does not properly calculate certain
     buffer offsets, which could allow remote attackers to execute
-    arbitrary code via a buffer overflow attack.'
+    arbitrary code via a buffer overflow attack.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.5
@@ -324,11 +324,11 @@
   cves:
     - CVE-2006-3334
   description: >
-    'Buffer overflow in the png_decompress_chunk function in
+    Buffer overflow in the png_decompress_chunk function in
     pngrutil.c in libpng before 1.2.12 allows context-dependent attackers
     to cause a denial of service and possibly execute arbitrary code via
     unspecified vectors related to "chunk error processing," possibly
-    involving the "chunk_name".'
+    involving the "chunk_name".
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.5
@@ -367,11 +367,11 @@
   cves:
     - CVE-2006-7244
   description: >
-    'Memory leak in pngwutil.c in libpng 1.2.13beta1, and other
+    Memory leak in pngwutil.c in libpng 1.2.13beta1, and other
     versions before 1.2.15beta3, allows context-dependent attackers to
     cause a denial of service (memory leak or segmentation fault) via a
     JPEG image containing an iCCP chunk with a negative embedded profile
-    length.'
+    length.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -508,10 +508,10 @@
   cves:
     - CVE-2007-5267
   description: >
-    'Off-by-one error in ICC profile chunk handling in the
+    Off-by-one error in ICC profile chunk handling in the
     png_set_iCCP function in pngset.c in libpng before 1.2.22 beta1 allows
     remote attackers to cause a denial of service (crash) via a crafted
-    PNG image, due to an incorrect fix for CVE-2007-5266.'
+    PNG image, due to an incorrect fix for CVE-2007-5266.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -549,10 +549,10 @@
   cves:
     - CVE-2007-5268
   description: >
-    'pngrtran.c in libpng before 1.0.29 and 1.2.x before 1.2.21 use
+    pngrtran.c in libpng before 1.0.29 and 1.2.x before 1.2.21 use
     (1) logical instead of bitwise operations and (2) incorrect
     comparisons, which might allow remote attackers to cause a denial of
-    service (crash) via a crafted PNG image.'
+    service (crash) via a crafted PNG image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -604,12 +604,12 @@
   cves:
     - CVE-2007-5269
   description: >
-    'Certain chunk handlers in libpng before 1.0.29 and 1.2.x before
+    Certain chunk handlers in libpng before 1.0.29 and 1.2.x before
     1.2.21 allow remote attackers to cause a denial of service (crash) via
     crafted (1) pCAL (png_handle_pCAL), (2) sCAL (png_handle_sCAL), (3)
     tEXt (png_push_read_tEXt), (4) iTXt (png_handle_iTXt), and (5) ztXT
     (png_handle_ztXt) chunking in PNG images, which trigger out-of-bounds
-    read operations.'
+    read operations.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -694,11 +694,11 @@
   cves:
     - CVE-2008-1382
   description: >
-    'libpng 1.0.6 through 1.0.32, 1.2.0 through 1.2.26, and
+    libpng 1.0.6 through 1.0.32, 1.2.0 through 1.2.26, and
     1.4.0beta01 through 1.4.0beta19 allows context-dependent attackers to
     cause a denial of service (crash) and possibly execute arbitrary code
     via a PNG file with zero length "unknown" chunks, which trigger an
-    access of uninitialized memory.'
+    access of uninitialized memory.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -770,11 +770,11 @@
   cves:
     - CVE-2008-3964
   description: >
-    'Multiple off-by-one errors in libpng before 1.2.32beta01, and 1.4
+    Multiple off-by-one errors in libpng before 1.2.32beta01, and 1.4
     before 1.4.0beta34, allow context-dependent attackers to cause a
     denial of service (crash) or have unspecified other impact via a PNG
     image with crafted zTXt chunks, related to (1) the png_push_read_zTXt
-    function in pngread.c, and possibly related to (2) pngtest.c.'
+    function in pngread.c, and possibly related to (2) pngtest.c.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -809,13 +809,13 @@
   cves:
     - CVE-2008-5907
   description: >
-    "The png_check_keyword function in pngwutil.c in libpng before
+    The png_check_keyword function in pngwutil.c in libpng before
     1.0.42, and 1.2.x before 1.2.34, might allow context-dependent
     attackers to set the value of an arbitrary memory location to zero via
     vectors involving creation of crafted PNG files with keywords, related
     to an implicit cast of the '\\0' character constant to a NULL pointer.
     NOTE: some sources incorrectly report this as a double free
-    vulnerability."
+    vulnerability.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -872,13 +872,13 @@
   cves:
     - CVE-2009-0040
   description: >
-    'The PNG reference library (aka libpng) before 1.0.43, and 1.2.x
+    The PNG reference library (aka libpng) before 1.0.43, and 1.2.x
     before 1.2.35, as used in pngcrush and other applications, allows
     context-dependent attackers to cause a denial of service (application
     crash) or possibly execute arbitrary code via a crafted PNG file that
     triggers a free of an uninitialized pointer in (1) the png_read_png
     function, (2) pCAL chunk handling, or (3) setup of 16-bit gamma
-    tables.'
+    tables.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -974,11 +974,11 @@
   cves:
     - CVE-2009-2042
   description: >
-    'libpng before 1.2.37 does not properly parse 1-bit interlaced
+    libpng before 1.2.37 does not properly parse 1-bit interlaced
     images with width values that are not divisible by 8, which causes
     libpng to include uninitialized bits in certain rows of a PNG file and
     might allow remote attackers to read portions of sensitive memory via
-    "out-of-bounds pixels" in the file.'
+    "out-of-bounds pixels" in the file.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1019,11 +1019,11 @@
   cves:
     - CVE-2009-5063
   description: >
-    'Memory leak in the embedded_profile_len function in pngwutil.c in
+    Memory leak in the embedded_profile_len function in pngwutil.c in
     libpng before 1.2.39beta5 allows context-dependent attackers to cause
     a denial of service (memory leak or segmentation fault) via a JPEG
     image containing an iCCP chunk with a negative embedded profile
-    length. NOTE: this is due to an incomplete fix for CVE-2006-7244.'
+    length. NOTE: this is due to an incomplete fix for CVE-2006-7244.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1042,7 +1042,7 @@
   cves:
     - CVE-2010-0205
   description: >
-    'The png_decompress_chunk function in pngrutil.c in libpng 1.0.x
+    The png_decompress_chunk function in pngrutil.c in libpng 1.0.x
     before 1.0.53, 1.2.x before 1.2.43, and 1.4.x before 1.4.1 does not
     properly handle compressed ancillary-chunk data that has a
     disproportionately large uncompressed representation, which allows
@@ -1050,7 +1050,7 @@
     consumption, and application hang) via a crafted PNG file, as
     demonstrated by use of the deflate compression method on data composed
     of many occurrences of the same character, related to a "decompression
-    bomb" attack.'
+    bomb" attack.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1099,10 +1099,10 @@
   cves:
     - CVE-2010-1205
   description: >
-    'Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x
+    Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x
     before 1.4.3, as used in progressive applications, might allow remote
     attackers to execute arbitrary code via a PNG image that triggers an
-    additional data row.'
+    additional data row.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1165,10 +1165,10 @@
   cves:
     - CVE-2010-2249
   description: >
-    'Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x
+    Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x
     before 1.4.3, allows remote attackers to cause a denial of service
     (memory consumption and application crash) via a PNG image containing
-    malformed Physical Scale (aka sCAL) chunks.'
+    malformed Physical Scale (aka sCAL) chunks.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1222,13 +1222,13 @@
   cves:
     - CVE-2011-2501
   description: >
-    'The png_format_buffer function in pngerror.c in libpng 1.0.x
+    The png_format_buffer function in pngerror.c in libpng 1.0.x
     before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x
     before 1.5.4 allows remote attackers to cause a denial of service
     (application crash) via a crafted PNG image that triggers an
     out-of-bounds read during the copying of error-message data. NOTE:
     this vulnerability exists because of a CVE-2004-0421 regression. NOTE:
-    this is called an off-by-one error by some sources.'
+    this is called an off-by-one error by some sources.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1265,12 +1265,12 @@
   cves:
     - CVE-2011-2690
   description: >
-    'Buffer overflow in libpng 1.0.x before 1.0.55, 1.2.x before
+    Buffer overflow in libpng 1.0.x before 1.0.55, 1.2.x before
     1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4, when used by an
     application that calls the png_rgb_to_gray function but not the
     png_set_expand function, allows remote attackers to overwrite memory
     with an arbitrary amount of data, and possibly have unspecified other
-    impact, via a crafted PNG image.'
+    impact, via a crafted PNG image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1305,11 +1305,11 @@
   cves:
     - CVE-2011-2691
   description: >
-    'The png_err function in pngerror.c in libpng 1.0.x before 1.0.55,
+    The png_err function in pngerror.c in libpng 1.0.x before 1.0.55,
     1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4 makes
     a function call using a NULL pointer argument instead of an
     empty-string argument, which allows remote attackers to cause a denial
-    of service (application crash) via a crafted PNG image.'
+    of service (application crash) via a crafted PNG image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1340,12 +1340,12 @@
   cves:
     - CVE-2011-2692
   description: >
-    'The png_handle_sCAL function in pngrutil.c in libpng 1.0.x before
+    The png_handle_sCAL function in pngrutil.c in libpng 1.0.x before
     1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before
     1.5.4 does not properly handle invalid sCAL chunks, which allows
     remote attackers to cause a denial of service (memory corruption and
     application crash) or possibly have unspecified other impact via a
-    crafted PNG image that triggers the reading of uninitialized memory.'
+    crafted PNG image that triggers the reading of uninitialized memory.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1387,12 +1387,12 @@
   cves:
     - CVE-2011-3045
   description: >
-    'Integer signedness error in the png_inflate function in
+    Integer signedness error in the png_inflate function in
     pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome
     before 17.0.963.83 and other products, allows remote attackers to
     cause a denial of service (application crash) or possibly execute
     arbitrary code via a crafted PNG file, a different vulnerability than
-    CVE-2011-3026.'
+    CVE-2011-3026.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1431,12 +1431,12 @@
   cves:
     - CVE-2011-3048
   description: >
-    'The png_set_text_2 function in pngset.c in libpng 1.0.x before
+    The png_set_text_2 function in pngset.c in libpng 1.0.x before
     1.0.59, 1.2.x before 1.2.49, 1.4.x before 1.4.11, and 1.5.x before
     1.5.10 allows remote attackers to cause a denial of service (crash) or
     execute arbitrary code via a crafted text chunk in a PNG image file,
     which triggers a memory allocation failure that is not properly
-    handled, leading to a heap-based buffer overflow.'
+    handled, leading to a heap-based buffer overflow.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1477,10 +1477,10 @@
   cves:
     - CVE-2012-3425
   description: >
-    'The png_push_read_zTXt function in pngpread.c in libpng 1.0.x
+    The png_push_read_zTXt function in pngpread.c in libpng 1.0.x
     before 1.0.58, 1.2.x before 1.2.48, 1.4.x before 1.4.10, and 1.5.x
     before 1.5.10 allows remote attackers to cause a denial of service
-    (out-of-bounds read) via a large avail_in field value in a PNG image.'
+    (out-of-bounds read) via a large avail_in field value in a PNG image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1503,10 +1503,10 @@
   cves:
     - CVE-2013-6954
   description: >
-    'The png_do_expand_palette function in libpng before 1.6.8 allows
+    The png_do_expand_palette function in libpng before 1.6.8 allows
     remote attackers to cause a denial of service (NULL pointer
     dereference and application crash) via (1) a PLTE chunk of zero bytes
-    or (2) a NULL palette, related to pngrtran.c and pngset.c.'
+    or (2) a NULL palette, related to pngrtran.c and pngset.c.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1545,10 +1545,10 @@
   cves:
     - CVE-2013-7353
   description: >
-    'Integer overflow in the png_set_unknown_chunks function in
+    Integer overflow in the png_set_unknown_chunks function in
     libpng/pngset.c in libpng before 1.5.14beta08 allows context-dependent
     attackers to cause a denial of service (segmentation fault and crash)
-    via a crafted image, which triggers a heap-based buffer overflow.'
+    via a crafted image, which triggers a heap-based buffer overflow.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1566,10 +1566,10 @@
   cves:
     - CVE-2013-7354
   description: >
-    'Multiple integer overflows in libpng before 1.5.14rc03 allow
+    Multiple integer overflows in libpng before 1.5.14rc03 allow
     remote attackers to cause a denial of service (crash) via a crafted
     image to the (1) png_set_sPLT or (2) png_set_text_2 function, which
-    triggers a heap-based buffer overflow.'
+    triggers a heap-based buffer overflow.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1587,10 +1587,10 @@
   cves:
     - CVE-2014-9495
   description: >
-    'Heap-based buffer overflow in the png_combine_row function in
+    Heap-based buffer overflow in the png_combine_row function in
     libpng before 1.5.21 and 1.6.x before 1.6.16, when running on 64-bit
     systems, might allow context-dependent attackers to execute arbitrary
-    code via a "very wide interlaced" PNG image.'
+    code via a "very wide interlaced" PNG image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1615,10 +1615,10 @@
   cves:
     - CVE-2015-0973
   description: >
-    'Buffer overflow in the png_read_IDAT_data function in pngrutil.c
+    Buffer overflow in the png_read_IDAT_data function in pngrutil.c
     in libpng before 1.5.21 and 1.6.x before 1.6.16 allows
     context-dependent attackers to execute arbitrary code via IDAT data
-    with a large width, a different vulnerability than CVE-2014-9495.'
+    with a large width, a different vulnerability than CVE-2014-9495.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1640,11 +1640,11 @@
   cves:
     - CVE-2015-7981
   description: >
-    'The png_convert_to_rfc1123 function in png.c in libpng 1.0.x
+    The png_convert_to_rfc1123 function in png.c in libpng 1.0.x
     before 1.0.64, 1.2.x before 1.2.54, and 1.4.x before 1.4.17 allows
     remote attackers to obtain sensitive process memory information via
     crafted tIME chunk data in an image file, which triggers an
-    out-of-bounds read.'
+    out-of-bounds read.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1679,13 +1679,13 @@
   cves:
     - CVE-2015-8126
   description: >
-    'Multiple buffer overflows in the (1) png_set_PLTE and (2)
+    Multiple buffer overflows in the (1) png_set_PLTE and (2)
     png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before
     1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x
     before 1.6.19 allow remote attackers to cause a denial of service
     (application crash) or possibly have unspecified other impact via a
     small bit-depth value in an IHDR (aka image header) chunk in a PNG
-    image.'
+    image.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1755,13 +1755,13 @@
   cves:
     - CVE-2015-8472
   description: >
-    'Buffer overflow in the png_set_PLTE function in libpng before
+    Buffer overflow in the png_set_PLTE function in libpng before
     1.0.65, 1.1.x and 1.2.x before 1.2.55, 1.3.x, 1.4.x before 1.4.18,
     1.5.x before 1.5.25, and 1.6.x before 1.6.20 allows remote attackers
     to cause a denial of service (application crash) or possibly have
     unspecified other impact via a small bit-depth value in an IHDR (aka
     image header) chunk in a PNG image. NOTE: this vulnerability exists
-    because of an incomplete fix for CVE-2015-8126.'
+    because of an incomplete fix for CVE-2015-8126.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1806,12 +1806,12 @@
   cves:
     - CVE-2015-8540
   description: >
-    'Integer underflow in the png_check_keyword function in pngwutil.c
+    Integer underflow in the png_check_keyword function in pngwutil.c
     in libpng 0.90 through 0.99, 1.0.x before 1.0.66, 1.1.x and 1.2.x
     before 1.2.56, 1.3.x and 1.4.x before 1.4.19, and 1.5.x before 1.5.26
     allows remote attackers to have unspecified impact via a space
     character as a keyword in a PNG image, which triggers an out-of-bounds
-    read.'
+    read.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1844,12 +1844,12 @@
   cves:
     - CVE-2016-10087
   description: >
-    'The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x
+    The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x
     before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x
     before 1.6.27 allows context-dependent attackers to cause a NULL
     pointer dereference vectors involving loading a text chunk into a png
     structure, removing the text, and then adding another text chunk to
-    the structure.'
+    the structure.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1871,11 +1871,11 @@
   cves:
     - CVE-2016-3751
   description: >
-    'Unspecified vulnerability in libpng before 1.6.20, as used in
+    Unspecified vulnerability in libpng before 1.6.20, as used in
     Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and
     6.x before 2016-07-01, allows attackers to gain privileges via a
     crafted application, as demonstrated by obtaining Signature or
-    SignatureOrSystem access, aka internal bug 23265085.'
+    SignatureOrSystem access, aka internal bug 23265085.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1912,11 +1912,11 @@
   cves:
     - CVE-2019-9423
   description: >
-    'In opencv calls that use libpng, there is a possible out of
+    In opencv calls that use libpng, there is a possible out of
     bounds write due to a missing bounds check. This could lead to local
     escalation of privilege with no additional execution privileges
     required. User interaction is not required for exploitation. Product:
-    AndroidVersions: Android-10Android ID: A-110986616'
+    AndroidVersions: Android-10Android ID: A-110986616
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.2.12
@@ -1935,8 +1935,8 @@
   cves:
     - CVE-2018-25032
   description: >
-    'zlib before 1.2.12 allows memory corruption when deflating (i.e.,
-    when compressing) if the input has many distant matches.'
+    zlib before 1.2.12 allows memory corruption when deflating (i.e.,
+    when compressing) if the input has many distant matches.
   distribution: Tk
   embedded_vulnerability:
     distributed_version: 1.1.4
@@ -1972,16 +1972,16 @@
   cves:
     - CVE-2013-6629
   description: >
-    'The get_sos function in jdmarker.c in (1) libjpeg 6b and (2)
+    The get_sos function in jdmarker.c in (1) libjpeg 6b and (2)
     libjpeg-turbo through 1.3.0, as used in Google Chrome before
     31.0.1650.48, Ghostscript, and other products, does not check for
     certain duplications of component data during the reading of segments
     that follow Start Of Scan (SOS) JPEG markers, which allows remote
     attackers to obtain sensitive information from uninitialized memory
-    locations via a crafted JPEG image.'
+    locations via a crafted JPEG image.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2013-6629
@@ -2050,7 +2050,7 @@
     of Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39514
@@ -2068,7 +2068,7 @@
     Denial of Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39515
@@ -2085,7 +2085,7 @@
     huffmandecoder.hpp. It allows an attacker to cause Denial of Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39516
@@ -2104,7 +2104,7 @@
     Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39517
@@ -2121,7 +2121,7 @@
     overflow.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39518
@@ -2139,7 +2139,7 @@
     Denial of Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39519
@@ -2158,7 +2158,7 @@
     Service.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2021-39520
@@ -2170,13 +2170,13 @@
   cves:
     - CVE-2022-31620
   description: >
-    'In libjpeg before 1.64, BitStream<false>::Get in bitstream.hpp
+    In libjpeg before 1.64, BitStream<false>::Get in bitstream.hpp
     has an assertion failure that may cause denial of service. This is
     related to out-of-bounds array access during arithmetically coded
-    lossless scan or arithmetically coded sequential scan.'
+    lossless scan or arithmetically coded sequential scan.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2022-31620
@@ -2194,7 +2194,7 @@
     JPEG-LS scan.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 6b
+    distributed_version: '6b'
     name: libjpeg
   fixed_versions: ~
   id: CPANSA-Tk-2022-32978
@@ -2207,13 +2207,13 @@
   cves:
     - CVE-2007-4769
   description: >
-    'The regular expression parser in TCL before 8.4.17, as used in
+    The regular expression parser in TCL before 8.4.17, as used in
     PostgreSQL 8.2 before 8.2.6, 8.1 before 8.1.11, 8.0 before 8.0.15, and
     7.4 before 7.4.19, allows remote authenticated users to cause a denial
-    of service (backend crash) via an out-of-bounds backref number.'
+    of service (backend crash) via an out-of-bounds backref number.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 8.4.5
+    distributed_version: '8.4.5'
     name: tcl
   fixed_versions: ~
   id: CPANSA-Tk-2007-4769
@@ -2262,13 +2262,13 @@
   cves:
     - CVE-2007-4772
   description: >
-    'The regular expression parser in TCL before 8.4.17, as used in
+    The regular expression parser in TCL before 8.4.17, as used in
     PostgreSQL 8.2 before 8.2.6, 8.1 before 8.1.11, 8.0 before 8.0.15, and
     7.4 before 7.4.19, allows context-dependent attackers to cause a
-    denial of service (infinite loop) via a crafted regular expression.'
+    denial of service (infinite loop) via a crafted regular expression.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 8.4.5
+    distributed_version: '8.4.5'
     name: tcl
   fixed_versions: ~
   id: CPANSA-Tk-2007-4772
@@ -2332,15 +2332,15 @@
   cves:
     - CVE-2007-6067
   description: >
-    'Algorithmic complexity vulnerability in the regular expression
+    Algorithmic complexity vulnerability in the regular expression
     parser in TCL before 8.4.17, as used in PostgreSQL 8.2 before 8.2.6,
     8.1 before 8.1.11, 8.0 before 8.0.15, and 7.4 before 7.4.19, allows
     remote authenticated users to cause a denial of service (memory
     consumption) via a crafted "complex" regular expression with
-    doubly-nested states.'
+    doubly-nested states.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 8.4.5
+    distributed_version: '8.4.5'
     name: tcl
   fixed_versions: ~
   id: CPANSA-Tk-2007-6067
@@ -2391,13 +2391,13 @@
   cves:
     - CVE-2008-0553
   description: >
-    'Stack-based buffer overflow in the ReadImage function in
+    Stack-based buffer overflow in the ReadImage function in
     tkImgGIF.c in Tk (Tcl/Tk) before 8.5.1 allows remote attackers to
     execute arbitrary code via a crafted GIF image, a similar issue to
-    CVE-2006-4484.'
+    CVE-2006-4484.
   distribution: Tk
   embedded_vulnerability:
-    distributed_version: 8.4.5
+    distributed_version: '8.4.5'
     name: tcl
   fixed_versions: ~
   id: CPANSA-Tk-2008-0553

@@ -3,7 +3,7 @@
   cves:
     - CVE-2009-0583
   description: >
-    'Multiple integer overflows in icc.c in the International Color
+    Multiple integer overflows in icc.c in the International Color
     Consortium (ICC) Format library (aka icclib), as used in Ghostscript
     8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and
     earlier, allow context-dependent attackers to cause a denial of
@@ -11,10 +11,10 @@
     execute arbitrary code by using a device file for a translation
     request that operates on a crafted image file and targets a certain
     "native color space," related to an ICC profile in a (1) PostScript or
-    (2) PDF file with embedded images.'
+    (2) PDF file with embedded images.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2009-0583
@@ -65,17 +65,17 @@
   cves:
     - CVE-2009-0584
   description: >
-    'icc.c in the International Color Consortium (ICC) Format library
+    icc.c in the International Color Consortium (ICC) Format library
     (aka icclib), as used in Ghostscript 8.64 and earlier and Argyll Color
     Management System (CMS) 1.0.3 and earlier, allows context-dependent
     attackers to cause a denial of service (application crash) or possibly
     execute arbitrary code by using a device file for processing a crafted
     image file associated with large integer values for certain sizes,
     related to an ICC profile in a (1) PostScript or (2) PDF file with
-    embedded images.'
+    embedded images.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2009-0584
@@ -127,7 +127,7 @@
   cves:
     - CVE-2009-0792
   description: >
-    'Multiple integer overflows in icc.c in the International Color
+    Multiple integer overflows in icc.c in the International Color
     Consortium (ICC) Format library (aka icclib), as used in Ghostscript
     8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and
     earlier, allow context-dependent attackers to cause a denial of
@@ -136,10 +136,10 @@
     request that operates on a crafted image file and targets a certain
     "native color space," related to an ICC profile in a (1) PostScript or
     (2) PDF file with embedded images. NOTE: this issue exists because of
-    an incomplete fix for CVE-2009-0583.'
+    an incomplete fix for CVE-2009-0583.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2009-0792
@@ -186,7 +186,7 @@
     trigger an integer overflow and a heap-based buffer overflow.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2009-3743
@@ -209,7 +209,7 @@
     long name.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2009-4897
@@ -230,14 +230,14 @@
   cves:
     - CVE-2015-3228
   description: >
-    'Integer overflow in the gs_heap_alloc_bytes function in
+    Integer overflow in the gs_heap_alloc_bytes function in
     base/gsmalloc.c in Ghostscript 9.15 and earlier allows remote
     attackers to cause a denial of service (crash) via a crafted
     Postscript (ps) file, as demonstrated by using the ps2pdf command,
-    which triggers an out-of-bounds read or write.'
+    which triggers an out-of-bounds read or write.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2015-3228
@@ -259,15 +259,15 @@
   cves:
     - CVE-2016-9601
   description: >
-    'ghostscript before version 9.21 is vulnerable to a heap based
+    ghostscript before version 9.21 is vulnerable to a heap based
     buffer overflow that was found in the ghostscript
     jbig2_decode_gray_scale_image function which is used to decode
     halftone segments in a JBIG2 image. A document (PostScript or PDF)
     with an embedded, specially crafted, jbig2 image could trigger a
-    segmentation fault in ghostscript.'
+    segmentation fault in ghostscript.
   distribution: Win32-Printer
   embedded_vulnerability:
-    distributed_version: 8.50
+    distributed_version: '8.50'
     name: ghostscript
   fixed_versions: ~
   id: CPANSA-Win32-Printer-2016-9601

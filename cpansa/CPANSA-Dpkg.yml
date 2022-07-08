@@ -1,14 +1,14 @@
 ---
-- affected_versions: <1.21.8
+- affected_versions: '<1.21.8'
   cves:
     - CVE-2022-1664
   description: >
-    'Dpkg::Source::Archive in dpkg, the Debian package management
+    Dpkg::Source::Archive in dpkg, the Debian package management
     system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a
     directory traversal vulnerability. When extracting untrusted source
     packages in v2 and v3 source package formats that include a
     debian.tar, the in-place extraction can lead to directory traversal
-    situations on specially crafted orig.tar and debian.tar tarballs.'
+    situations on specially crafted orig.tar and debian.tar tarballs.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -24,15 +24,15 @@
     - https://git.dpkg.org/cgit/dpkg/dpkg.git/commit/?id=1f23dddc17f69c9598477098c7fb9936e15fa495
   reported: 2022-05-26
   severity: critical
-- affected_versions: <1.18.24
+- affected_versions: '<1.18.24'
   cves:
     - CVE-2017-8283
   description: >
-    'dpkg-source in dpkg 1.3.0 through 1.18.23 is able to use a
+    dpkg-source in dpkg 1.3.0 through 1.18.23 is able to use a
     non-GNU patch program and does not offer a protection mechanism for
     blank-indented diff hunks, which allows remote attackers to conduct
     directory traversal attacks via a crafted Debian source package, as
-    demonstrated by use of dpkg-source on NetBSD.'
+    demonstrated by use of dpkg-source on NetBSD.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -44,11 +44,11 @@
     - http://www.securityfocus.com/bid/98064
   reported: 2017-04-26
   severity: critical
-- affected_versions: <1.18.11
+- affected_versions: '<1.18.11'
   cves:
     - CVE-2016-1238
   description: >
-    '(1) cpan/Archive-Tar/bin/ptar, (2) cpan/Archive-Tar/bin/ptardiff,
+    (1) cpan/Archive-Tar/bin/ptar, (2) cpan/Archive-Tar/bin/ptardiff,
     (3) cpan/Archive-Tar/bin/ptargrep, (4) cpan/CPAN/scripts/cpan, (5)
     cpan/Digest-SHA/shasum, (6) cpan/Encode/bin/enc2xs, (7)
     cpan/Encode/bin/encguess, (8) cpan/Encode/bin/piconv, (9)
@@ -64,7 +64,7 @@
     5.22.3-RC2 and 5.24 before 5.24.1-RC2 do not properly remove .
     (period) characters from the end of the includes directory array,
     which might allow local users to gain privileges via a Trojan horse
-    module under the current working directory.'
+    module under the current working directory.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -89,16 +89,16 @@
     - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
   reported: 2016-08-02
   severity: high
-- affected_versions: <1.18.4
+- affected_versions: '<1.18.4'
   cves:
     - CVE-2015-0860
   description: >
-    'Off-by-one error in the extracthalf function in
+    Off-by-one error in the extracthalf function in
     dpkg-deb/extract.c in the dpkg-deb component in Debian dpkg 1.16.x
     before 1.16.17 and 1.17.x before 1.17.26 allows remote attackers to
     execute arbitrary code via the archive magic version number in an
     "old-style" Debian binary package, which triggers a stack-based buffer
-    overflow.'
+    overflow.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -114,7 +114,7 @@
     - https://security.gentoo.org/glsa/201612-07
   reported: 2015-12-03
   severity: ~
-- affected_versions: <1.18.0
+- affected_versions: '<1.18.0'
   cves:
     - CVE-2015-0840
   description: >
@@ -134,7 +134,7 @@
     - http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157387.html
   reported: 2015-04-13
   severity: ~
-- affected_versions: <1.17.22
+- affected_versions: '<1.17.22'
   cves:
     - CVE-2014-8625
   description: >
@@ -159,14 +159,14 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/98551
   reported: 2015-01-20
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions: '<1.17.10'
   cves:
     - CVE-2014-0471
   description: >
-    'Directory traversal vulnerability in the unpacking functionality
+    Directory traversal vulnerability in the unpacking functionality
     in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8
     allows remote attackers to write arbitrary files via a crafted source
-    package, related to "C-style filename quoting."'
+    package, related to "C-style filename quoting."
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -179,17 +179,17 @@
     - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions: '<1.17.10'
   cves:
     - CVE-2014-3127
   description: >
-    'dpkg 1.15.9 on Debian squeeze introduces support for the "C-style
+    dpkg 1.15.9 on Debian squeeze introduces support for the "C-style
     encoded filenames" feature without recognizing that the squeeze patch
     program lacks this feature, which triggers an interaction error that
     allows remote attackers to conduct directory traversal attacks and
     modify files outside of the intended directories via a crafted source
     package. NOTE: this can be considered a release engineering problem in
-    the effort to fix CVE-2014-0471.'
+    the effort to fix CVE-2014-0471.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -204,14 +204,14 @@
     - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
   reported: 2014-05-14
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions: '<1.17.10'
   cves:
     - CVE-2014-3864
   description: >
-    'Directory traversal vulnerability in dpkg-source in dpkg-dev
+    Directory traversal vulnerability in dpkg-source in dpkg-dev
     1.3.0 allows remote attackers to modify files outside of the intended
     directories via a crafted source package that lacks a --- header
-    line.'
+    line.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -226,15 +226,15 @@
     - http://www.debian.org/security/2014/dsa-2953
   reported: 2014-05-30
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions: '<1.17.10'
   cves:
     - CVE-2014-3865
   description: >
-    'Multiple directory traversal vulnerabilities in dpkg-source in
+    Multiple directory traversal vulnerabilities in dpkg-source in
     dpkg-dev 1.3.0 allow remote attackers to modify files outside of the
     intended directories via a source package with a crafted Index:
     pseudo-header in conjunction with (1) missing --- and +++ header lines
-    or (2) a +++ header line with a blank pathname.'
+    or (2) a +++ header line with a blank pathname.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -249,14 +249,14 @@
     - http://www.debian.org/security/2014/dsa-2953
   reported: 2014-05-30
   severity: ~
-- affected_versions: <1.17.9
+- affected_versions: '<1.17.9'
   cves:
     - CVE-2014-0471
   description: >
-    'Directory traversal vulnerability in the unpacking functionality
+    Directory traversal vulnerability in the unpacking functionality
     in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8
     allows remote attackers to write arbitrary files via a crafted source
-    package, related to "C-style filename quoting."'
+    package, related to "C-style filename quoting."
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -269,17 +269,17 @@
     - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.17.9
+- affected_versions: '<1.17.9'
   cves:
     - CVE-2014-3127
   description: >
-    'dpkg 1.15.9 on Debian squeeze introduces support for the "C-style
+    dpkg 1.15.9 on Debian squeeze introduces support for the "C-style
     encoded filenames" feature without recognizing that the squeeze patch
     program lacks this feature, which triggers an interaction error that
     allows remote attackers to conduct directory traversal attacks and
     modify files outside of the intended directories via a crafted source
     package. NOTE: this can be considered a release engineering problem in
-    the effort to fix CVE-2014-0471.'
+    the effort to fix CVE-2014-0471.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -294,14 +294,14 @@
     - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
   reported: 2014-05-14
   severity: ~
-- affected_versions: <1.17.8
+- affected_versions: '<1.17.8'
   cves:
     - CVE-2014-0471
   description: >
-    'Directory traversal vulnerability in the unpacking functionality
+    Directory traversal vulnerability in the unpacking functionality
     in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8
     allows remote attackers to write arbitrary files via a crafted source
-    package, related to "C-style filename quoting."'
+    package, related to "C-style filename quoting."
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
@@ -314,7 +314,7 @@
     - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.15.8.8
+- affected_versions: '<1.15.8.8'
   cves:
     - CVE-2010-1679
   description: >
@@ -344,7 +344,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/64615
   reported: 2011-01-11
   severity: ~
-- affected_versions: <1.15.6
+- affected_versions: '<1.15.6'
   cves:
     - CVE-2010-0396
   description: >
@@ -364,18 +364,19 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/56887
   reported: 2010-03-15
   severity: ~
-- affected_versions: 1.9.21
+- affected_versions: '1.9.21'
   cves:
     - CVE-2004-2768
   description: >
-    'dpkg 1.9.21 does not properly reset the metadata of a file during
+    dpkg 1.9.21 does not properly reset the metadata of a file during
     replacement of the file in a package upgrade, which might allow local
     users to gain privileges by creating a hard link to a vulnerable (1)
     setuid file, (2) setgid file, or (3) device, a related issue to
-    CVE-2010-2059.'
+    CVE-2010-2059.
   distribution: Dpkg
   embedded_vulnerability:
     distributed_version: ~
+    affected_versions: '==1.9.21'
     name: ~
   fixed_versions: '>=1.9.22'
   id: CPANSA-Dpkg-2004-2768
@@ -387,7 +388,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/59428
   reported: 2010-06-08
   severity: ~
-- affected_versions: '<1.14.31,'
+- affected_versions: '<1.15.10'
   cves:
     - CVE-2011-0402
   description: >
