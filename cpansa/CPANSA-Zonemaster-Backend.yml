@@ -1,0 +1,28 @@
+---
+- affected_versions: '"<7.0.0"'
+  cves: []
+  description: >
+    When running the API behind a reverse proxy on the same machine
+    (like it is using the configuration example provided by the GUI)
+    the remote ip might always be localhost even if the query was done
+    from elsewher
+  distribution: Zonemaster-Backend
+  fixed_versions: '">=7.0.0"'
+  id: CPANSA-Zonemaster-Backend-2021
+  references:
+    - https://github.com/zonemaster/zonemaster-backend/issues/838
+    - https://metacpan.org/dist/Zonemaster-Backend/changes
+  reported: 2021-08-05
+  severity: ~
+- affected_versions: '"<1.0.1"'
+  cves: []
+  description: >
+    Potential SQL injection.
+  distribution: Zonemaster-Backend
+  fixed_versions: '">=1.0.1"'
+  id: CPANSA-Zonemaster-Backend-
+  references:
+    - https://github.com/zonemaster/zonemaster-backend/issues/25
+    - https://metacpan.org/dist/Zonemaster-Backend/changes
+  reported: 2015-01-28
+  severity: ~
