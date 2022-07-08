@@ -6,7 +6,7 @@
     generation (for Crypt::Rijndael).
   distribution: File-KeePass
   fixed_versions: ~
-  id: CPANSA-File-KeePass-
+  id: CPANSA-File-KeePass-2016-01
   references:
     - https://rt.cpan.org/Ticket/Display.html?id=117836
   reported: 2016-09-14
