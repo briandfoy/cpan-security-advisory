@@ -52,7 +52,7 @@
     - https://hackerone.com/reports/701183
   reported: 2019-12-18
   severity: critical
-- affected_versions: ">0"
+- affected_versions: ~
   cves:
     - CVE-2019-17362
   description: >
@@ -63,8 +63,13 @@
     read information from other memory locations via carefully crafted
     DER-encoded data.
   comments: >
-    It is unclear whether dropbear is affected by this vulnerability.
-    See https://github.com/atrodo/Net-Dropbear/issues/6#issuecomment-1172539182
+    From the author: "I have reviewed Dropbear's usage of libtomcrypt,
+    and the function in question for CVE-2019-17362,
+    der_decode_utf8_string, is not used in Dropbear. None of the DER
+    parsing from libtomcrypt is used in Dropbear at all, I have
+    confirmed that the flag to include it is not set, and confirmed
+    that the resultant Dropbear.so that is built by Net::Dropbear does
+    not include any of the der_* symbols."
   distribution: Net-Dropbear
   embedded_vulnerability:
     distributed_version: "1.8.2"
