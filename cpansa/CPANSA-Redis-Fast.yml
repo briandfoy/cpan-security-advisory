@@ -1,5 +1,5 @@
 ---
-- affected_versions: <0.27
+- affected_versions: '<0.27'
   cves:
     - CVE-2020-7105
   description: >
@@ -7,8 +7,20 @@
     a NULL pointer dereference because malloc return values are unchecked.
   distribution: Redis-Fast
   embedded_vulnerability:
-    distributed_version: <0.14.0
+    distributed_versions:
+      - perl_module_version: '>=0.01,<=0.14'
+        version: '0.11.0'
+      - perl_module_version: '>=0.15,<=0.16'
+        version: '0.12.1'
+      - perl_module_version: '>=0.17,<=0.26'
+        version: '0.13.3'
+      - perl_module_version: '>=0.27,<=0.31'
+        version: '1.0.0'
+      - perl_module_version: '>=0.32'
+        version: '1.0.2'
     name: hiredis
+    affected_versions: '<=0.14.0'
+    fixed_versions: '>0.14.1'
   fixed_versions: '>=0.27'
   id: CPANSA-Redis-Fast-2020-7105
   references:
