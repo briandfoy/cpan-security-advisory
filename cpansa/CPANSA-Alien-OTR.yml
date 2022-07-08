@@ -21,6 +21,7 @@
         version: '4.0.0'
     name: libotr
     fixed_versions: ">=4.1.1"
+    affected_versions: "<4.1.1"
   fixed_versions: ">=4.1.1.0"
   id: CPANSA-Alien-OTR-2016-2851
   references:
