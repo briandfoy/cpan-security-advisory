@@ -8,9 +8,41 @@
     dereference and worker process crash) via a crafted UDP DNS response.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    affected_versions: '<1.9.10'
+    fixed_versions: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.8.1'
+  fixed_versions: '>=1.8.1.10'
   id: CPANSA-Nginx-Perl-2016-0742
   references:
     - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
@@ -37,9 +69,40 @@
     response processing.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.8.1'
+    affected_versions: '>=0.6.18,<=1.9.10'
+  fixed_versions: ~
   id: CPANSA-Nginx-Perl-2016-0746
   references:
     - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
@@ -65,9 +128,40 @@
     vectors related to arbitrary name resolution.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.8.1'
+    affected_versions: '<=1.9.10'
+  fixed_versions: ~
   id: CPANSA-Nginx-Perl-2016-0747
   references:
     - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
@@ -83,7 +177,7 @@
     - http://seclists.org/fulldisclosure/2021/Sep/36
   reported: 2016-02-15
   severity: medium
-- affected_versions: '<1.7.5'
+- affected_versions: '<1.8.1.8'
   cves:
     - CVE-2014-3616
   description: >
@@ -94,16 +188,47 @@
     confusion" attacks.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.7.5'
+    affected_versions: '>=0.5.6,<=1.7.4'
+  fixed_versions: '>=1.8.1.8'
   id: CPANSA-Nginx-Perl-2014-3616
   references:
     - http://www.debian.org/security/2014/dsa-3029
     - http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html
   reported: 2014-12-08
   severity: ~
-- affected_versions: '<1.7.4'
+- affected_versions: '>1.2.9.7,<1.8.1.8'
   cves:
     - CVE-2014-3556
   description: >
@@ -116,9 +241,40 @@
     issue to CVE-2011-0411.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.7.4'
+    affected_versions: '>=1.5.1,<+1.7.4'
+  fixed_versions: '>=1.8.1.8'
   id: CPANSA-Nginx-Perl-2014-3556
   references:
     - https://bugzilla.redhat.com/show_bug.cgi?id=1126891
@@ -127,7 +283,7 @@
     - http://marc.info/?l=bugtraq&m=142103967620673&w=2
   reported: 2014-12-29
   severity: ~
-- affected_versions: '<1.5.12'
+- affected_versions: '<1.8.1.8'
   cves:
     - CVE-2014-0133
   description: >
@@ -136,9 +292,40 @@
     execute arbitrary code via a crafted request.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.5.12'
+    affected_versions: '>=1.3.15,<1.5.12'
+  fixed_versions: '>=1.8.1.8'
   id: CPANSA-Nginx-Perl-2014-0133
   references:
     - http://lists.opensuse.org/opensuse-updates/2014-03/msg00095.html
@@ -146,7 +333,7 @@
     - http://www.securityfocus.com/bid/66537
   reported: 2014-03-28
   severity: ~
-- affected_versions: '<1.5.11'
+- affected_versions: '<1.8.1.8'
   cves:
     - CVE-2014-0088
   description: >
@@ -155,16 +342,47 @@
     remote attackers to execute arbitrary code via a crafted request.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.5.11'
+    affected_versions: '==1.5.10'
+  fixed_versions: '>=1.8.1.8'
   id: CPANSA-Nginx-Perl-2014-0088
   references:
     - http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html
     - http://www.securitytracker.com/id/1030150
   reported: 2014-04-29
   severity: ~
-- affected_versions: '<1.5.7'
+- affected_versions: '<1.8.1.8'
   cves:
     - CVE-2013-4547
   description: >
@@ -173,8 +391,39 @@
     character in a URI.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
+    affected_versions: '>=0.8.41,<1.5.7'
   fixed_versions: '>=1.5.7'
   id: CPANSA-Nginx-Perl-2013-4547
   references:
@@ -189,7 +438,7 @@
     - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00007.html
   reported: 2013-11-23
   severity: ~
-- affected_versions: '<1.5.0'
+- affected_versions: '<1.8.1.8'
   cves:
     - CVE-2013-2028
   description: >
@@ -200,8 +449,39 @@
     integer signedness error and a stack-based buffer overflow.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
+    affected_versions: '>=1.3.9,<=1.4.0'
   fixed_versions: '>=1.5.0'
   id: CPANSA-Nginx-Perl-2013-2028
   references:
@@ -217,22 +497,53 @@
     - http://www.securityfocus.com/bid/59699
   reported: 2013-07-20
   severity: ~
-- affected_versions: '<1.3.1'
+- affected_versions: '<1.8.1.8'
   cves: []
   description: >
     nginx/Windows does not ignore trailing dot in URI path
     component, and allows URIs with ":$" in it.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
+    affected_versions: ~
   fixed_versions: '>=1.3.1'
   id: CPANSA-Nginx-Perl-2013-2028
   references:
     - https://metacpan.org/dist/Nginx-Perl/changes
   reported: 2012-06-05
   severity: ~
-- affected_versions: '<1.1.19'
+- affected_versions: '<1.1.19.2'
   cves:
     - CVE-2012-2089
   description: >
@@ -243,9 +554,40 @@
     execute arbitrary code via a crafted MP4 file.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.1.19'
+    affected_versions: '>=1.0.7,<=1.1.18
+  fixed_versions: '>=1.1.19.2'
   id: CPANSA-Nginx-Perl-2012-2089
   references:
     - http://www.openwall.com/lists/oss-security/2012/04/12/9
@@ -258,16 +600,47 @@
     - http://www.securityfocus.com/bid/52999
   reported: 2012-04-17
   severity: ~
-- affected_versions: '<1.1.17'
+- affected_versions: '<1.1.17.1'
   cves: []
   description: >
     content of previously freed memory might be sent to a
     client if backend returned specially crafted response.
   distribution: Nginx-Perl
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - perl_module_versions: '==1.1.9.1'
+        version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        version: '1.8.1'
     name: nginx
-  fixed_versions: '>=1.1.17'
+    affected_versions: ~
+  fixed_versions: '>=1.1.17.1'
   id: CPANSA-Nginx-Perl-2012-01
   references:
     - https://metacpan.org/dist/Nginx-Perl/changes
