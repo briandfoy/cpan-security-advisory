@@ -11,15 +11,15 @@
   distribution: Redland
   embedded_vulnerability:
     distributed_versions:
-        - perl_module_versions: '==0.9.13,==0.9.13.2'
-          version: '0.9.13'
-        - perl_module_versions: '==0.9.14.1'
-          version: '0.9.14'
+      - perl_module_versions: '==0.9.13,==0.9.13.2'
+        version: '0.9.13'
+      - perl_module_versions: '==0.9.14.1'
+        version: '0.9.14'
     external_versions:
-        - perl_module_versions: '==1.0.5.2,==1.0.5.3'
-          version: '1.0.5'
-        - perl_module_versions: '==1.0.13.1'
-          version: '1.0.13'
+      - perl_module_versions: '==1.0.5.2,==1.0.5.3'
+        version: '1.0.5'
+      - perl_module_versions: '==1.0.13.1'
+        version: '1.0.13'
     name: 'libraptor'
     url: https://github.com/dajobe/raptor
   fixed_versions: ~

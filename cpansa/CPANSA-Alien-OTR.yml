@@ -11,14 +11,14 @@
   distribution: Alien-OTR
   embedded_vulnerability:
     distributed_versions:
-        - perl_module_version: '4.1.1.0'
-          version: '4.1.1'
-        - perl_module_version: '4.1.0.0'
-          version: '4.1.0'
-        - perl_module_version: '4.0.0.1'
-          version: '4.0.0-d534073'
-        - perl_module_version: '4.0.0.0'
-          version: '4.0.0'
+      - perl_module_version: '4.1.1.0'
+        version: '4.1.1'
+      - perl_module_version: '4.1.0.0'
+        version: '4.1.0'
+      - perl_module_version: '4.0.0.1'
+        version: '4.0.0-d534073'
+      - perl_module_version: '4.0.0.0'
+        version: '4.0.0'
     name: libotr
     fixed_versions: ">=4.1.1"
   fixed_versions: ">=4.1.1.0"

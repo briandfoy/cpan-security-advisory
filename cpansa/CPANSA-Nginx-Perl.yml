@@ -586,7 +586,7 @@
       - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
         version: '1.8.1'
     name: nginx
-    affected_versions: '>=1.0.7,<=1.1.18
+    affected_versions: '>=1.0.7,<=1.1.18'
   fixed_versions: '>=1.1.19.2'
   id: CPANSA-Nginx-Perl-2012-2089
   references:
@@ -646,4 +646,3 @@
     - https://metacpan.org/dist/Nginx-Perl/changes
   reported: 2012-03-15
   severity: ~
-
