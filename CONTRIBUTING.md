@@ -1,5 +1,9 @@
 # Contributing
 
+See the
+[TODO](https://github.com/briandfoy/cpan-security-advisory/wiki/TODO)
+list from the Wiki for a list of distributions that need futher
+investigation.
 
 # Report an issue
 
