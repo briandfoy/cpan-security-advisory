@@ -88,3 +88,18 @@
     - name: Robert Rothenberg
       email: rrwo@cpan.org
       date: 2022-06-23
+- affected_versions: "<0.98"
+  cves: []
+  description: >
+   When drawing on an image with an alpha channel where the source
+   minimum is greater than zero, Imager would read from beyond the end
+   of a malloc() allocated buffer.  In rare circumstances this could
+   lead to some of the source image not being written to the target
+   image, or possibly to a segmentation fault.
+  distribution: Imager
+  fixed_versions: ">=0.98"
+  id: CPANSA-Imager-2014-01
+  references:
+    - https://metacpan.org/dist/Imager/changes
+  reported: 2014-01-03
+  severity: ~
