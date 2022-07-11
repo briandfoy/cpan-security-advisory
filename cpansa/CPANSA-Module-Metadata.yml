@@ -1,5 +1,5 @@
 ---
-- affected_versions: ~
+- affected_versions: "<1.000015"
   cves:
     - CVE-2013-1437
   description: >
@@ -7,7 +7,7 @@
     1.000015 for Perl allows remote attackers to execute arbitrary
     Perl code via the $Version value.
   distribution: Module-Metadata
-  fixed_versions: ~
+  fixed_versions: ">=1.000015"
   id: CPANSA-Module-Metadata-2013-1437
   references:
     - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114912.html
@@ -15,3 +15,7 @@
     - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114904.html
   reported: 2020-01-28
   severity: critical
+  reviewed_by:
+    - name: Robert Rothenberg
+      email: rrwo@cpan.org
+      date: 2022-07-11
