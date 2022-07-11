@@ -1,0 +1,12 @@
+---
+- affected_versions: '"<1.20"'
+  cves: []
+  description: >
+    Elive::DAO->set() did not die on tainted data.
+  distribution: Elive
+  fixed_versions: '">=1.20"'
+  id: CPANSA-Elive-2011-01
+  references:
+    - https://metacpan.org/dist/Elive/changes
+  reported: 2011-10-15
+  severity: ~
