@@ -3,7 +3,7 @@
   cves:
     - CVE-2016-1238
   description: >
-    '(1) cpan/Archive-Tar/bin/ptar, (2) cpan/Archive-Tar/bin/ptardiff,
+    (1) cpan/Archive-Tar/bin/ptar, (2) cpan/Archive-Tar/bin/ptardiff,
     (3) cpan/Archive-Tar/bin/ptargrep, (4) cpan/CPAN/scripts/cpan, (5)
     cpan/Digest-SHA/shasum, (6) cpan/Encode/bin/enc2xs, (7)
     cpan/Encode/bin/encguess, (8) cpan/Encode/bin/piconv, (9)
@@ -19,7 +19,7 @@
     5.22.3-RC2 and 5.24 before 5.24.1-RC2 do not properly remove .
     (period) characters from the end of the includes directory array,
     which might allow local users to gain privileges via a Trojan horse
-    module under the current working directory.'
+    module under the current working directory.
   distribution: Pod-Perldoc
   fixed_versions: '>=3.26'
   id: CPANSA-Pod-Perldoc-2016-1238
