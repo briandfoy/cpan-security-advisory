@@ -1,0 +1,11 @@
+---
+- affected_versions: <0.11
+  cves: []
+  description: >
+    Testing for nonexistant access rights always returned true.
+  distribution: PApp
+  fixed_versions: '>=0.11'
+  id: CPANSA-PApp-2001-01
+  references: []
+  reported: 2001-10-27
+  severity: ~
