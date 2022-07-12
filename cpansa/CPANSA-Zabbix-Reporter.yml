@@ -3,12 +3,12 @@
   cves:
     - CVE-2015-9251
   description: >
-    'jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
+    jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
     attacks when a cross-domain Ajax request is performed without the
-    dataType option, causing text/javascript responses to be executed.'
+    dataType option, causing text/javascript responses to be executed.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.0.1"'
+    distributed_version: '2.0.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2015-9251
@@ -57,14 +57,14 @@
   cves:
     - CVE-2019-11358
   description: >
-    'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
+    jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
     products, mishandles jQuery.extend(true, {}, ...) because of
     Object.prototype pollution. If an unsanitized source object contained
     an enumerable __proto__ property, it could extend the native
-    Object.prototype.'
+    Object.prototype.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.0.1"'
+    distributed_version: '2.0.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2019-11358
@@ -146,14 +146,14 @@
   cves:
     - CVE-2020-11022
   description: >
-    "In jQuery versions greater than or equal to 1.2 and before 3.5.0,
+    In jQuery versions greater than or equal to 1.2 and before 3.5.0,
     passing HTML from untrusted sources - even after sanitizing it - to
     one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and
     others) may execute untrusted code. This problem is patched in jQuery
-    3.5.0."
+    3.5.0.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.0.1"'
+    distributed_version: '2.0.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2020-11022
@@ -205,14 +205,14 @@
   cves:
     - CVE-2020-11023
   description: >
-    "In jQuery versions greater than or equal to 1.0.3 and before
+    In jQuery versions greater than or equal to 1.0.3 and before
     3.5.0, passing HTML containing <option> elements from untrusted
     sources - even after sanitizing it - to one of jQuery's DOM
     manipulation methods (i.e. .html(), .append(), and others) may execute
-    untrusted code. This problem is patched in jQuery 3.5.0."
+    untrusted code. This problem is patched in jQuery 3.5.0.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.0.1"'
+    distributed_version: '2.0.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2020-11023
@@ -286,11 +286,11 @@
   cves:
     - CVE-2018-14040
   description: >
-    'In Bootstrap before 4.1.2, XSS is possible in the collapse
-    data-parent attribute.'
+    In Bootstrap before 4.1.2, XSS is possible in the collapse
+    data-parent attribute.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14040
@@ -320,11 +320,11 @@
   cves:
     - CVE-2018-14041
   description: >
-    'In Bootstrap before 4.1.2, XSS is possible in the data-target
-    property of scrollspy.'
+    In Bootstrap before 4.1.2, XSS is possible in the data-target
+    property of scrollspy.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14041
@@ -352,11 +352,11 @@
   cves:
     - CVE-2018-14042
   description: >
-    'In Bootstrap before 4.1.2, XSS is possible in the data-container
-    property of tooltip.'
+    In Bootstrap before 4.1.2, XSS is possible in the data-container
+    property of tooltip.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14042
@@ -384,11 +384,11 @@
   cves:
     - CVE-2018-20676
   description: >
-    'In Bootstrap before 3.4.0, XSS is possible in the tooltip
-    data-viewport attribute.'
+    In Bootstrap before 3.4.0, XSS is possible in the tooltip
+    data-viewport attribute.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-20676
@@ -412,11 +412,11 @@
   cves:
     - CVE-2018-20677
   description: >
-    'In Bootstrap before 3.4.0, XSS is possible in the affix
-    configuration target property.'
+    In Bootstrap before 3.4.0, XSS is possible in the affix
+    configuration target property.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-20677
@@ -441,11 +441,11 @@
   cves:
     - CVE-2019-8331
   description: >
-    'In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible
-    in the tooltip or popover data-template attribute.'
+    In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible
+    in the tooltip or popover data-template attribute.
   distribution: Zabbix-Reporter
   embedded_vulnerability:
-    distributed_version: '"2.3.2"'
+    distributed_version: '2.3.2'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2019-8331

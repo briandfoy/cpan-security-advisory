@@ -3,13 +3,13 @@
   cves:
     - CVE-2013-0237
   description: >
-    'Cross-site scripting (XSS) vulnerability in Plupload.as in
+    Cross-site scripting (XSS) vulnerability in Plupload.as in
     Moxiecode plupload before 1.5.5, as used in WordPress before 3.5.1 and
     other products, allows remote attackers to inject arbitrary web script
-    or HTML via the id parameter.'
+    or HTML via the id parameter.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.5.4"'
+    distributed_version: '1.5.4'
     name: plupload
   fixed_versions: ~
   id: CPANSA-Yukki-2013-0237
@@ -24,13 +24,13 @@
   cves:
     - CVE-2016-4566
   description: >
-    'Cross-site scripting (XSS) vulnerability in plupload.flash.swf in
+    Cross-site scripting (XSS) vulnerability in plupload.flash.swf in
     Plupload before 2.1.9, as used in WordPress before 4.5.2, allows
     remote attackers to inject arbitrary web script or HTML via a
-    Same-Origin Method Execution (SOME) attack.'
+    Same-Origin Method Execution (SOME) attack.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.5.4"'
+    distributed_version: '1.5.4'
     name: plupload
   fixed_versions: ~
   id: CPANSA-Yukki-2016-4566
@@ -54,7 +54,7 @@
     would need to trick a user to upload this kind of file.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.5.4"'
+    distributed_version: '1.5.4'
     name: plupload
   fixed_versions: ~
   id: CPANSA-Yukki-2021-23562
@@ -71,7 +71,7 @@
   cves:
     - CVE-2012-6708
   description: >
-    "jQuery before 1.9.0 is vulnerable to Cross-site Scripting (XSS)
+    jQuery before 1.9.0 is vulnerable to Cross-site Scripting (XSS)
     attacks. The jQuery(strInput) function does not differentiate
     selectors from HTML in a reliable fashion. In vulnerable versions,
     jQuery determined whether the input was HTML by looking for the '<'
@@ -79,10 +79,10 @@
     when attempting to construct a malicious payload. In fixed versions,
     jQuery only deems the input to be HTML if it explicitly starts with
     the '<' character, limiting exploitability only to attackers who can
-    control the beginning of a string, which is far less common."
+    control the beginning of a string, which is far less common.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2012-6708
@@ -104,12 +104,12 @@
   cves:
     - CVE-2015-9251
   description: >
-    'jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
+    jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
     attacks when a cross-domain Ajax request is performed without the
-    dataType option, causing text/javascript responses to be executed.'
+    dataType option, causing text/javascript responses to be executed.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2015-9251
@@ -158,14 +158,14 @@
   cves:
     - CVE-2019-11358
   description: >
-    'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
+    jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
     products, mishandles jQuery.extend(true, {}, ...) because of
     Object.prototype pollution. If an unsanitized source object contained
     an enumerable __proto__ property, it could extend the native
-    Object.prototype.'
+    Object.prototype.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2019-11358
@@ -247,13 +247,13 @@
   cves:
     - CVE-2020-7656
   description: >
-    'jquery prior to 1.9.0 allows Cross-site Scripting attacks via the
+    jquery prior to 1.9.0 allows Cross-site Scripting attacks via the
     load method. The load method fails to recognize and remove "<script>"
     HTML tags that contain a whitespace character, i.e: "</script >",
-    which results in the enclosed script logic to be executed.'
+    which results in the enclosed script logic to be executed.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2020-7656
@@ -266,14 +266,14 @@
   cves:
     - CVE-2020-11022
   description: >
-    "In jQuery versions greater than or equal to 1.2 and before 3.5.0,
+    In jQuery versions greater than or equal to 1.2 and before 3.5.0,
     passing HTML from untrusted sources - even after sanitizing it - to
     one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and
     others) may execute untrusted code. This problem is patched in jQuery
-    3.5.0."
+    3.5.0.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2020-11022
@@ -325,14 +325,14 @@
   cves:
     - CVE-2020-11023
   description: >
-    "In jQuery versions greater than or equal to 1.0.3 and before
+    In jQuery versions greater than or equal to 1.0.3 and before
     3.5.0, passing HTML containing <option> elements from untrusted
     sources - even after sanitizing it - to one of jQuery's DOM
     manipulation methods (i.e. .html(), .append(), and others) may execute
-    untrusted code. This problem is patched in jQuery 3.5.0."
+    untrusted code. This problem is patched in jQuery 3.5.0.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.7.2"'
+    distributed_version: '1.7.2'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Yukki-2020-11023
@@ -411,7 +411,7 @@
     to inject arbitrary web script or HTML via the title option.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.8.21"'
+    distributed_version: '1.8.21'
     name: jquery-ui
   fixed_versions: ~
   id: CPANSA-Yukki-2010-5312
@@ -444,7 +444,7 @@
     HTML via the closeText parameter of the dialog function.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.8.21"'
+    distributed_version: '1.8.21'
     name: jquery-ui
   fixed_versions: ~
   id: CPANSA-Yukki-2016-7103
@@ -481,15 +481,15 @@
   cves:
     - CVE-2021-41182
   description: >
-    'jQuery-UI is the official jQuery user interface library. Prior to
+    jQuery-UI is the official jQuery user interface library. Prior to
     version 1.13.0, accepting the value of the `altField` option of the
     Datepicker widget from untrusted sources may execute untrusted code.
     The issue is fixed in jQuery UI 1.13.0. Any string value passed to the
     `altField` option is now treated as a CSS selector. A workaround is to
-    not accept the value of the `altField` option from untrusted sources.'
+    not accept the value of the `altField` option from untrusted sources.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.8.21"'
+    distributed_version: '1.8.21'
     name: jquery-ui
   fixed_versions: ~
   id: CPANSA-Yukki-2021-41182
@@ -512,16 +512,16 @@
   cves:
     - CVE-2021-41183
   description: >
-    'jQuery-UI is the official jQuery user interface library. Prior to
+    jQuery-UI is the official jQuery user interface library. Prior to
     version 1.13.0, accepting the value of various `*Text` options of the
     Datepicker widget from untrusted sources may execute untrusted code.
     The issue is fixed in jQuery UI 1.13.0. The values passed to various
     `*Text` options are now always treated as pure text, not HTML. A
     workaround is to not accept the value of the `*Text` options from
-    untrusted sources.'
+    untrusted sources.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.8.21"'
+    distributed_version: '1.8.21'
     name: jquery-ui
   fixed_versions: ~
   id: CPANSA-Yukki-2021-41183
@@ -546,15 +546,15 @@
   cves:
     - CVE-2021-41184
   description: >
-    'jQuery-UI is the official jQuery user interface library. Prior to
+    jQuery-UI is the official jQuery user interface library. Prior to
     version 1.13.0, accepting the value of the `of` option of the
     `.position()` util from untrusted sources may execute untrusted code.
     The issue is fixed in jQuery UI 1.13.0. Any string value passed to the
     `of` option is now treated as a CSS selector. A workaround is to not
-    accept the value of the `of` option from untrusted sources.'
+    accept the value of the `of` option from untrusted sources.
   distribution: Yukki
   embedded_vulnerability:
-    distributed_version: '"1.8.21"'
+    distributed_version: '1.8.21'
     name: jquery-ui
   fixed_versions: ~
   id: CPANSA-Yukki-2021-41184

@@ -3,12 +3,12 @@
   cves:
     - CVE-2015-9251
   description: >
-    'jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
+    jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
     attacks when a cross-domain Ajax request is performed without the
-    dataType option, causing text/javascript responses to be executed.'
+    dataType option, causing text/javascript responses to be executed.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"2.1.1"'
+    distributed_version: '2.1.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2015-9251
@@ -57,14 +57,14 @@
   cves:
     - CVE-2019-11358
   description: >
-    'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
+    jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
     products, mishandles jQuery.extend(true, {}, ...) because of
     Object.prototype pollution. If an unsanitized source object contained
     an enumerable __proto__ property, it could extend the native
-    Object.prototype.'
+    Object.prototype.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"2.1.1"'
+    distributed_version: '2.1.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2019-11358
@@ -146,14 +146,14 @@
   cves:
     - CVE-2020-11022
   description: >
-    "In jQuery versions greater than or equal to 1.2 and before 3.5.0,
+    In jQuery versions greater than or equal to 1.2 and before 3.5.0,
     passing HTML from untrusted sources - even after sanitizing it - to
     one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and
     others) may execute untrusted code. This problem is patched in jQuery
-    3.5.0."
+    3.5.0.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"2.1.1"'
+    distributed_version: '2.1.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2020-11022
@@ -205,14 +205,14 @@
   cves:
     - CVE-2020-11023
   description: >
-    "In jQuery versions greater than or equal to 1.0.3 and before
+    In jQuery versions greater than or equal to 1.0.3 and before
     3.5.0, passing HTML containing <option> elements from untrusted
     sources - even after sanitizing it - to one of jQuery's DOM
     manipulation methods (i.e. .html(), .append(), and others) may execute
-    untrusted code. This problem is patched in jQuery 3.5.0."
+    untrusted code. This problem is patched in jQuery 3.5.0.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"2.1.1"'
+    distributed_version: '2.1.1'
     name: jquery
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2020-11023
@@ -286,12 +286,12 @@
   cves:
     - CVE-2016-10735
   description: >
-    'In Bootstrap 3.x before 3.4.0 and 4.x-beta before 4.0.0-beta.2,
+    In Bootstrap 3.x before 3.4.0 and 4.x-beta before 4.0.0-beta.2,
     XSS is possible in the data-target attribute, a different
-    vulnerability than CVE-2018-14041.'
+    vulnerability than CVE-2018-14041.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2016-10735
@@ -319,7 +319,7 @@
     data-parent attribute.'
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2018-14040
@@ -353,7 +353,7 @@
     property of scrollspy.'
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2018-14041
@@ -385,7 +385,7 @@
     property of tooltip.'
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2018-14042
@@ -413,11 +413,11 @@
   cves:
     - CVE-2018-20676
   description: >
-    'In Bootstrap before 3.4.0, XSS is possible in the tooltip
-    data-viewport attribute.'
+    In Bootstrap before 3.4.0, XSS is possible in the tooltip
+    data-viewport attribute.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2018-20676
@@ -445,7 +445,7 @@
     configuration target property.'
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2018-20677
@@ -470,11 +470,11 @@
   cves:
     - CVE-2019-8331
   description: >
-    'In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible
-    in the tooltip or popover data-template attribute.'
+    In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible
+    in the tooltip or popover data-template attribute.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"3.2.0"'
+    distributed_version: '3.2.0'
     name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2019-8331
@@ -517,7 +517,7 @@
     `__proto__` payload.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"1.2.22"'
+    distributed_version: '1.2.22'
     name: angularjs
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2019-10768
@@ -530,13 +530,13 @@
   cves:
     - CVE-2019-14863
   description: >
-    'There is a vulnerability in all angular versions before
+    There is a vulnerability in all angular versions before
     1.5.0-beta.0, where after escaping the context of the web application,
     the web application delivers data to its users along with other
-    trusted dynamic content, without validating it.'
+    trusted dynamic content, without validating it.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"1.2.22"'
+    distributed_version: '1.2.22'
     name: angularjs
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2019-14863
@@ -549,18 +549,18 @@
   cves:
     - CVE-2020-7676
   description: >
-    'angular.js prior to 1.8.0 allows cross site scripting. The
+    angular.js prior to 1.8.0 allows cross site scripting. The
     regex-based input HTML replacement may turn sanitized code into
     unsanitized one. Wrapping "<option>" elements in "<select>" ones
-    changes parsing behavior, leading to possibly unsanitizing code.'
+    changes parsing behavior, leading to possibly unsanitizing code.
   distribution: Zonemaster-GUI
   embedded_vulnerability:
-    distributed_version: '"1.2.22"'
+    distributed_version: '1.2.22'
     name: angularjs
   fixed_versions: ~
   id: CPANSA-Zonemaster-GUI-2020-7676
   references:
-    - 'https://github.com/angular/angular.js/pull/17028,'
+    - https://github.com/angular/angular.js/pull/17028
     - https://snyk.io/vuln/SNYK-JS-ANGULAR-570058
     - https://lists.apache.org/thread.html/rda99599896c3667f2cc9e9d34c7b6ef5d2bbed1f4801e1d75a2b0679@%3Ccommits.nifi.apache.org%3E
     - https://lists.apache.org/thread.html/r3f05cfd587c774ea83c18e59eda9fa37fa9bbf3421484d4ee1017a20@%3Cozone-issues.hadoop.apache.org%3E
