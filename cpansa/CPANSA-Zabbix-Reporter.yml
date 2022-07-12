@@ -291,7 +291,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14040
   references:
@@ -325,7 +325,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14041
   references:
@@ -357,7 +357,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-14042
   references:
@@ -389,7 +389,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-20676
   references:
@@ -417,7 +417,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2018-20677
   references:
@@ -446,7 +446,7 @@
   distribution: Zabbix-Reporter
   embedded_vulnerability:
     distributed_version: '"2.3.2"'
-    name: bootstram
+    name: bootstrap
   fixed_versions: ~
   id: CPANSA-Zabbix-Reporter-2019-8331
   references:
