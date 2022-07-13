@@ -9,12 +9,12 @@
   comments: >
     Multiple versions of socksjs are included in example and t-vendor
     directories.
-  distribution: SocksJS
+  distribution: SockJS
   embedded_vulnerability:
     distributed_version: "<=0.3.4"
-    name: socksjs
+    name: sockjs
   fixed_versions: ~
-  id: CPANSA-SocksJS-2020-7693
+  id: CPANSA-SockJS-2020-7693
   references:
     - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
   reported: 2020-07-09
