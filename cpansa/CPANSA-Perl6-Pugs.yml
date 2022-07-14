@@ -1,5 +1,5 @@
 ---
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2005-2491
   description: >
@@ -10,8 +10,12 @@
     heap-based buffer overflow.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.2'
+    fixed_versions: '>=6.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2005-2491
   references:
@@ -84,7 +88,7 @@
     - https://lists.apache.org/thread.html/r5001ecf3d6b2bdd0b732e527654248abb264f08390045d30709a92f6@%3Ccvs.httpd.apache.org%3E
   reported: 2005-08-23
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2005-4872
   description: >
@@ -97,8 +101,12 @@
     and split.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.2'
+    fixed_versions: '>=6.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2005-4872
   references:
@@ -117,7 +125,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11615
   reported: 2005-12-31
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2006-7225
   description: >
@@ -128,8 +136,12 @@
     sequence.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.7'
+    fixed_versions: '>=6.7'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2006-7225
   references:
@@ -146,7 +158,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10985
   reported: 2007-12-03
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2006-7226
   description: >
@@ -157,8 +169,12 @@
     attackers to cause a denial of service (error or crash).
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.7'
+    fixed_versions: '>=6.7'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2006-7226
   references:
@@ -176,7 +192,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11545
   reported: 2007-12-03
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2006-7227
   description: >
@@ -189,8 +205,12 @@
     REJECTED and split.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.7'
+    fixed_versions: '>=6.7'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2006-7227
   references:
@@ -224,7 +244,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10408
   reported: 2007-11-14
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2006-7228
   description: >
@@ -237,8 +257,12 @@
     CVE-2006-7224, but that CVE has been REJECTED and split.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<6.7'
+    fixed_versions: '>=6.7'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2006-7228
   references:
@@ -294,7 +318,7 @@
     - http://www.securityfocus.com/archive/1/488457/100/0/threaded
   reported: 2007-11-14
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2006-7230
   description: >
@@ -306,8 +330,12 @@
     expressions.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.0'
+    fixed_versions: '>=7.0'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2006-7230
   references:
@@ -341,7 +369,7 @@
     - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10911
   reported: 2007-11-15
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-1659
   description: >
@@ -351,8 +379,12 @@
     containing unmatched "\Q\E" sequences with orphan "\E" codes.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-1659
   references:
@@ -416,7 +448,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-1660
   description: >
@@ -427,8 +459,12 @@
     possibly execute arbitrary code.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.0'
+    fixed_versions: '>=7.0'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-1660
   references:
@@ -499,7 +535,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-1661
   description: >
@@ -510,8 +546,12 @@
     (crash), as demonstrated by the "\X?\d" and "\P{L}?\d" patterns.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-1661
   references:
@@ -561,7 +601,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-1662
   description: >
@@ -571,8 +611,12 @@
     denial of service (crash), possibly involving forward references.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-1662
   references:
@@ -620,7 +664,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-4766
   description: >
@@ -630,7 +674,9 @@
     escape (backslash) sequences.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-4766
@@ -681,7 +727,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-4767
   description: >
@@ -692,8 +738,12 @@
     execute arbitrary code.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-4767
   references:
@@ -743,7 +793,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2007-4768
   description: >
@@ -753,8 +803,12 @@
     class in a regex pattern, which is incorrectly optimized.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2007-4768
   references:
@@ -820,7 +874,7 @@
     - http://www.securityfocus.com/archive/1/483357/100/0/threaded
   reported: 2007-11-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2008-0674
   description: >
@@ -830,8 +884,12 @@
     greater than 255.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.6'
+    fixed_versions: '>=7.6'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2008-0674
   references:
@@ -891,7 +949,7 @@
     - http://www.securityfocus.com/archive/1/488927/100/0/threaded
   reported: 2008-02-18
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2008-2371
   description: >
@@ -902,8 +960,12 @@
     with an option and contains multiple branches.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<7.7'
+    fixed_versions: '>=7.7'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2008-2371
   references:
@@ -954,7 +1016,7 @@
     - http://www.securityfocus.com/archive/1/497828/100/0/threaded
   reported: 2008-07-07
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-2325
   description: >
@@ -966,8 +1028,12 @@
     outer group that has a zero minimum quantifier.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.37'
+    fixed_versions: '>=8.37'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-2325
   references:
@@ -977,7 +1043,7 @@
     - https://www.pcre.org/original/changelog.txt
   reported: 2020-01-14
   severity: high
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-2326
   description: >
@@ -988,8 +1054,12 @@
     recursive back reference, as demonstrated by "((?+1)(\1))/".
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.37'
+    fixed_versions: '>=8.37'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-2326
   references:
@@ -999,7 +1069,7 @@
     - https://www.pcre.org/original/changelog.txt
   reported: 2020-01-14
   severity: medium
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-2327
   description: >
@@ -1011,8 +1081,12 @@
     object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.36'
+    fixed_versions: '>=8.36'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-2327
   references:
@@ -1025,7 +1099,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-2328
   description: >
@@ -1036,8 +1110,12 @@
     demonstrated by a JavaScript RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.36'
+    fixed_versions: '>=8.36'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-2328
   references:
@@ -1053,7 +1131,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-5073
   description: >
@@ -1064,8 +1142,12 @@
     regular expression with an excess closing parenthesis.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-5073
   references:
@@ -1084,7 +1166,7 @@
     - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
   reported: 2016-12-13
   severity: critical
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8380
   description: >
@@ -1096,8 +1178,12 @@
     by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8380
   references:
@@ -1111,7 +1197,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8381
   description: >
@@ -1126,8 +1212,12 @@
     object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8381
   references:
@@ -1142,7 +1232,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8382
   description: >
@@ -1156,8 +1246,12 @@
     JavaScript RegExp object encountered by Konqueror, aka ZDI-CAN-2547.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.37'
+    fixed_versions: '>=8.37'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8382
   references:
@@ -1172,7 +1266,7 @@
     - https://bto.bluecoat.com/security-advisory/sa128
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8383
   description: >
@@ -1183,8 +1277,12 @@
     encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8383
   references:
@@ -1198,7 +1296,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8384
   description: >
@@ -1210,8 +1308,12 @@
     by Konqueror, a related issue to CVE-2015-8392 and CVE-2015-8395.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8384
   references:
@@ -1223,7 +1325,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8385
   description: >
@@ -1235,8 +1337,12 @@
     by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8385
   references:
@@ -1252,7 +1358,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8386
   description: >
@@ -1263,8 +1369,12 @@
     demonstrated by a JavaScript RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8386
   references:
@@ -1282,7 +1392,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8387
   description: >
@@ -1293,8 +1403,12 @@
     RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8387
   references:
@@ -1307,7 +1421,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8388
   description: >
@@ -1319,8 +1433,12 @@
     encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8388
   references:
@@ -1336,7 +1454,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8389
   description: >
@@ -1347,8 +1465,12 @@
     RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8389
   references:
@@ -1361,7 +1483,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8390
   description: >
@@ -1372,8 +1494,12 @@
     RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8390
   references:
@@ -1386,7 +1512,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8391
   description: >
@@ -1397,8 +1523,12 @@
     JavaScript RegExp object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8391
   references:
@@ -1416,7 +1546,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8392
   description: >
@@ -1428,8 +1558,12 @@
     related issue to CVE-2015-8384 and CVE-2015-8395.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8392
   references:
@@ -1441,7 +1575,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8393
   description: >
@@ -1451,8 +1585,12 @@
     sends stdout data to a client.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8393
   references:
@@ -1465,7 +1603,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8394
   description: >
@@ -1476,8 +1614,12 @@
     object encountered by Konqueror.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8394
   references:
@@ -1490,7 +1632,7 @@
     - https://security.gentoo.org/glsa/201607-02
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2015-8395
   description: >
@@ -1501,8 +1643,12 @@
     related issue to CVE-2015-8384 and CVE-2015-8392.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2015-8395
   references:
@@ -1514,7 +1660,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-2750.html
   reported: 2015-12-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2016-3191
   description: >
@@ -1527,8 +1673,12 @@
     object encountered by Konqueror, aka ZDI-CAN-3542.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.39'
+    fixed_versions: '>=8.39'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2016-3191
   references:
@@ -1547,7 +1697,7 @@
     - http://rhn.redhat.com/errata/RHSA-2016-1025.html
   reported: 2016-03-17
   severity: critical
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2017-6004
   description: >
@@ -1558,8 +1708,12 @@
     expression.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.38'
+    fixed_versions: '>=8.38'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2017-6004
   references:
@@ -1573,7 +1727,7 @@
     - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
   reported: 2017-02-16
   severity: high
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2019-20838
   description: >
@@ -1582,8 +1736,12 @@
     quantifier, a related issue to CVE-2019-20454.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.43'
+    fixed_versions: '>=8.43'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2019-20838
   references:
@@ -1596,7 +1754,7 @@
     - https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E
   reported: 2020-06-15
   severity: high
-- affected_versions: '>0'
+- affected_versions: '>=6.0.1'
   cves:
     - CVE-2020-14155
   description: >
@@ -1604,8 +1762,12 @@
     number after a (?C substring.
   distribution: Perl6-Pugs
   embedded_vulnerability:
-    distributed_version: '"5.0"'
+    distributed_versions:
+      - version: '5.0'
+      - perl_module_versions: '>=6.0.1'
     name: libpcre
+    affected_versions: '<8.44'
+    fixed_versions: '>=8.44'
   fixed_versions: ~
   id: CPANSA-Perl6-Pugs-2020-14155
   references:

@@ -11,8 +11,12 @@
     to a prototype pollution.
   distribution: Wight-Chart
   embedded_vulnerability:
-    distributed_version: ~
+    distributed_versions:
+      - version: ~
+        perl_module_versions: '==0.003'
     name: chart.js
+    affected_versions: '<2.9.4'
+    fixed_versions: '>=2.9.4'
   fixed_versions: ~
   id: CPANSA-Wight-Chart-2020-7746
   references:

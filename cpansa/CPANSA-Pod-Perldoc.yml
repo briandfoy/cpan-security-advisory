@@ -1,5 +1,5 @@
 ---
-- affected_versions: <3.26
+- affected_versions: '<3.26'
   cves:
     - CVE-2016-1238
   description: >

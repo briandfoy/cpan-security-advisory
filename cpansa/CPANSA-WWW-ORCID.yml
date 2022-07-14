@@ -1,5 +1,5 @@
 ---
-- affected_versions: '>0'
+- affected_versions: '>=0.02'
   cves:
     - CVE-2020-23849
   description: >
@@ -7,15 +7,19 @@
     9.0.2 through injecting and executing JavaScript.
   distribution: WWW-ORCID
   embedded_vulnerability:
-    distributed_version: 5.5.1
+    distributed_versions:
+      - version: '5.5.1'
+        perl_module_version: '>=0.02,<=0.0402'
     name: jsoneditor
+    affected_versions: '<9.0.2'
+    fixed_version: '>=9.0.2'
   fixed_versions: ~
   id: CPANSA-WWW-ORCID-2020-23849
   references:
     - https://github.com/josdejong/jsoneditor/issues/1029
   reported: 2021-01-11
   severity: medium
-- affected_versions: '>0'
+- affected_versions: '>=0.02'
   cves:
     - CVE-2021-3822
   description: >
@@ -23,8 +27,12 @@
     Complexity
   distribution: WWW-ORCID
   embedded_vulnerability:
-    distributed_version: 5.5.1
+    distributed_versions:
+      - version: '5.5.1'
+        perl_module_version: '>=0.02,<=0.0402'
     name: jsoneditor
+    affected_versions: '<9.5.6'
+    fixed_versions: '>=9.5.6'
   fixed_versions: ~
   id: CPANSA-WWW-ORCID-2021-3822
   references:

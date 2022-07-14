@@ -1,5 +1,5 @@
 ---
-- affected_versions: <0.97
+- affected_versions: '<0.97'
   cves: []
   description: >
     User-submitted data cab be executed if it is displayed on a page,

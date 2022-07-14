@@ -1,19 +1,21 @@
 ---
-- affected_versions: '"<0.016000"'
+- affected_versions: '<0.016000'
   cves:
     - CVE-2019-20454
   description: >
-    'An out-of-bounds read was discovered in PCRE before 10.34 when
+    An out-of-bounds read was discovered in PCRE before 10.34 when
     the pattern \X is JIT compiled and used to match specially crafted
     subjects in non-UTF mode. Applications that use PCRE to parse
     untrusted input may be vulnerable to this flaw, which would allow an
     attacker to crash the application. The flaw occurs in do_extuni_no_utf
-    in pcre2_jit_compile.c.'
+    in pcre2_jit_compile.c.
   distribution: Alien-PCRE2
   external_vulnerability:
-    distributed_version: ">=10.34"
+    distributed_versions: ~
     name: libpcre2
-  fixed_versions: '">=0.016000"'
+    affected_versions: '<10.34'
+    fixed_versions: '>=10.34'
+  fixed_versions: '>=0.016000'
   id: CPANSA-Alien-PCRE2-2019-20454
   references:
     - https://bugs.php.net/bug.php?id=78338
