@@ -1,0 +1,8 @@
+---
+name: libpng
+perl_distributions:
+  - name: Zonemaster-GUI
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '1.2.22'
+advisories:

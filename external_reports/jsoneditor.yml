@@ -1,0 +1,29 @@
+---
+name: jsoneditor
+perl_distributions:
+  - name: WWW-ORCID
+    affected:
+      - perl_module_versions: '>=0.02'
+        distributed_library_version: '5.5.1'
+advisories:
+  - cve: CVE-2020-23849
+    description: >
+      Stored XSS was discovered in the tree mode of jsoneditor before
+      9.0.2 through injecting and executing JavaScript.
+    affected_versions: '<9.0.2'
+    fixed_version: '>=9.0.2'
+    references:
+      - https://github.com/josdejong/jsoneditor/issues/1029
+    reported: 2021-01-11
+    severity: medium
+  - cve: CVE-2021-3822
+    description: >
+      jsoneditor is vulnerable to Inefficient Regular Expression
+      Complexity
+    affected_versions: '<9.5.6'
+    fixed_versions: '>=9.5.6'
+    references:
+      - https://github.com/josdejong/jsoneditor/commit/092e386cf49f2a1450625617da8e0137ed067c3e
+      - https://huntr.dev/bounties/1e3ed803-b7ed-42f1-a4ea-c4c75da9de73
+    reported: 2021-09-27
+    severity: high

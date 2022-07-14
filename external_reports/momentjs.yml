@@ -1,0 +1,34 @@
+---
+name: momentjs
+perl_distributions:
+  - name: App-Netdisco
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '2.1.0'
+        fixed_versions: ">=2.052005"
+    reviewed_by:
+      - name: Robert Rothenberg
+        email: rrwo@cpan.org
+        date: 2022-06-28
+advisories:
+  - cve: CVE-2022-24785
+    description: >
+      Moment.js is a JavaScript date library for parsing, validating,
+      manipulating, and formatting dates. A path traversal vulnerability
+      impacts npm (server) users of Moment.js between versions 1.0.1 and
+      2.29.1, especially if a user-provided locale string is directly
+      used to switch moment locale. This problem is patched in 2.29.2,
+      and the patch can be applied to all affected versions. As a
+      workaround, sanitize the user-provided locale name before passing
+      it to Moment.js.
+    references:
+      - https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5
+      - https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4
+      - https://www.tenable.com/security/tns-2022-09
+      - https://security.netapp.com/advisory/ntap-20220513-0006/
+    reported: 2022-04-04
+    severity: high
+    reviewed_by:
+      - name: Robert Rothenberg
+        email: rrwo@cpan.org
+        date: 2022-06-28

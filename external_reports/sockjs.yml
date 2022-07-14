@@ -1,0 +1,22 @@
+---
+name: sockjs
+perl_distributions:
+  - name: SockJS
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '1.2.22'
+        comments: >
+          Multiple versions of socksjs are included in example and t-vendor
+          directories.
+advisories:
+  - cve: CVE-2020-7693
+    description: >
+      Incorrect handling of Upgrade header with the value websocket leads
+      in crashing of containers hosting sockjs apps. This affects the
+      package sockjs before 0.3.20.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
+    reported: 2020-07-09
+    severity: ~

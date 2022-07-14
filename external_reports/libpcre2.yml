@@ -1,0 +1,8 @@
+---
+name: libpcre2
+perl_distributions:
+  - name: Perl6-Pugs
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '5.0'
+advisories:

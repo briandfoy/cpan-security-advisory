@@ -1,0 +1,149 @@
+---
+name: jqueryui
+perl_distributions:
+  - name: Yukki
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '1.2.22'
+advisories:
+  - cve: CVE-2010-5312
+    description: >
+      Cross-site scripting (XSS) vulnerability in jquery.ui.dialog.js in
+      the Dialog widget in jQuery UI before 1.10.0 allows remote attackers
+      to inject arbitrary web script or HTML via the title option.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/jquery/jquery-ui/commit/7e9060c109b928769a664dbcc2c17bd21231b6f3
+      - http://seclists.org/oss-sec/2014/q4/616
+      - http://bugs.jqueryui.com/ticket/6016
+      - http://seclists.org/oss-sec/2014/q4/613
+      - http://rhn.redhat.com/errata/RHSA-2015-0442.html
+      - http://www.debian.org/security/2015/dsa-3249
+      - http://www.securityfocus.com/bid/71106
+      - http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html
+      - http://rhn.redhat.com/errata/RHSA-2015-1462.html
+      - http://www.securitytracker.com/id/1037035
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/98696
+      - https://security.netapp.com/advisory/ntap-20190416-0007/
+      - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+      - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+      - https://lists.debian.org/debian-lts-announce/2022/01/msg00014.html
+      - https://www.drupal.org/sa-core-2022-002
+      - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+    reported: 2014-11-24
+    severity: ~
+  - cve: CVE-2016-7103
+    description: >
+      Cross-site scripting (XSS) vulnerability in jQuery UI before
+      1.12.0 might allow remote attackers to inject arbitrary web script or
+      HTML via the closeText parameter of the dialog function.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://nodesecurity.io/advisories/127
+      - https://jqueryui.com/changelog/1.12.0/
+      - https://github.com/jquery/jquery-ui/commit/9644e7bae9116edaf8d37c5b38cb32b892f10ff6
+      - https://github.com/jquery/api.jqueryui.com/issues/281
+      - http://rhn.redhat.com/errata/RHSA-2017-0161.html
+      - https://www.tenable.com/security/tns-2016-19
+      - http://rhn.redhat.com/errata/RHSA-2016-2933.html
+      - http://rhn.redhat.com/errata/RHSA-2016-2932.html
+      - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+      - http://www.securityfocus.com/bid/104823
+      - https://security.netapp.com/advisory/ntap-20190416-0007/
+      - https://lists.apache.org/thread.html/ff8dcfe29377088ab655fda9d585dccd5b1f07fabd94ae84fd60a7f8@%3Ccommits.pulsar.apache.org%3E
+      - https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E2I4UHPIW26FIALH7GGZ3IYUUA53VOOJ/
+      - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+      - https://lists.apache.org/thread.html/ba79cf1658741e9f146e4c59b50aee56656ea95d841d358d006c18b6@%3Ccommits.roller.apache.org%3E
+      - https://www.oracle.com/technetwork/security-advisory/cpuoct2019-5072832.html
+      - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+      - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+      - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+      - https://www.oracle.com/security-alerts/cpuapr2020.html
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
+      - https://www.oracle.com//security-alerts/cpujul2021.html
+      - https://www.drupal.org/sa-core-2022-002
+      - https://lists.debian.org/debian-lts-announce/2022/01/msg00014.html
+      - https://www.oracle.com/security-alerts/cpujan2022.html
+    reported: 2017-03-15
+    severity: medium
+  - cve: CVE-2021-41182
+    description: >
+      jQuery-UI is the official jQuery user interface library. Prior to
+      version 1.13.0, accepting the value of the `altField` option of the
+      Datepicker widget from untrusted sources may execute untrusted code.
+      The issue is fixed in jQuery UI 1.13.0. Any string value passed to the
+      `altField` option is now treated as a CSS selector. A workaround is to
+      not accept the value of the `altField` option from untrusted sources.
+    distribution: Yukki
+    affected_versions: ~
+    fixed_versions: ~
+    id: CPANSA-Yukki-2021-41182
+    references:
+      - https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc
+      - https://github.com/jquery/jquery-ui/pull/1954/commits/6809ce843e5ac4128108ea4c15cbc100653c2b63
+      - https://blog.jqueryui.com/2021/10/jquery-ui-1-13-0-released/
+      - https://security.netapp.com/advisory/ntap-20211118-0004/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O74SXYY7RGXREQDQUDQD4BPJ4QQTD2XQ/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SNXA7XRKGINWSUIPIZ6ZBCTV6N3KSHES/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NXIUUBRVLA4E7G7MMIKCEN75YN7UFERW/
+      - https://www.drupal.org/sa-contrib-2022-004
+      - https://www.drupal.org/sa-core-2022-002
+      - https://lists.debian.org/debian-lts-announce/2022/01/msg00014.html
+      - https://www.oracle.com/security-alerts/cpuapr2022.html
+      - https://www.tenable.com/security/tns-2022-09
+    reported: 2021-10-26
+    severity: medium
+  - cve: CVE-2021-41183
+    description: >
+      jQuery-UI is the official jQuery user interface library. Prior to
+      version 1.13.0, accepting the value of various `*Text` options of the
+      Datepicker widget from untrusted sources may execute untrusted code.
+      The issue is fixed in jQuery UI 1.13.0. The values passed to various
+      `*Text` options are now always treated as pure text, not HTML. A
+      workaround is to not accept the value of the `*Text` options from
+      untrusted sources.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://bugs.jqueryui.com/ticket/15284
+      - https://github.com/jquery/jquery-ui/pull/1953
+      - https://github.com/jquery/jquery-ui/security/advisories/GHSA-j7qv-pgf6-hvh4
+      - https://blog.jqueryui.com/2021/10/jquery-ui-1-13-0-released/
+      - https://security.netapp.com/advisory/ntap-20211118-0004/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O74SXYY7RGXREQDQUDQD4BPJ4QQTD2XQ/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SNXA7XRKGINWSUIPIZ6ZBCTV6N3KSHES/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NXIUUBRVLA4E7G7MMIKCEN75YN7UFERW/
+      - https://www.drupal.org/sa-contrib-2022-004
+      - https://www.drupal.org/sa-core-2022-001
+      - https://www.drupal.org/sa-core-2022-002
+      - https://lists.debian.org/debian-lts-announce/2022/01/msg00014.html
+      - https://www.oracle.com/security-alerts/cpuapr2022.html
+      - https://www.tenable.com/security/tns-2022-09
+    reported: 2021-10-26
+    severity: medium
+  - cve: CVE-2021-41184
+    description: >
+      jQuery-UI is the official jQuery user interface library. Prior to
+      version 1.13.0, accepting the value of the `of` option of the
+      `.position()` util from untrusted sources may execute untrusted code.
+      The issue is fixed in jQuery UI 1.13.0. Any string value passed to the
+      `of` option is now treated as a CSS selector. A workaround is to not
+      accept the value of the `of` option from untrusted sources.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/jquery/jquery-ui/commit/effa323f1505f2ce7a324e4f429fa9032c72f280
+      - https://github.com/jquery/jquery-ui/security/advisories/GHSA-gpqq-952q-5327
+      - https://blog.jqueryui.com/2021/10/jquery-ui-1-13-0-released/
+      - https://security.netapp.com/advisory/ntap-20211118-0004/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/O74SXYY7RGXREQDQUDQD4BPJ4QQTD2XQ/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SNXA7XRKGINWSUIPIZ6ZBCTV6N3KSHES/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NXIUUBRVLA4E7G7MMIKCEN75YN7UFERW/
+      - https://www.drupal.org/sa-core-2022-001
+      - https://www.oracle.com/security-alerts/cpuapr2022.html
+      - https://www.tenable.com/security/tns-2022-09
+    reported: 2021-10-26
+    severity: medium

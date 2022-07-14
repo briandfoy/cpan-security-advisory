@@ -1,5 +1,5 @@
 ---
-- affected_versions: '>0'
+- affected_versions: '>=0.09'
   cves:
     - CVE-2021-23432
   description: >
@@ -7,8 +7,12 @@
     ability to pass untrusted input to Object.merge()
   distribution: Perldoc-Server
   embedded_vulnerability:
-    distributed_version: 1.2.3
+    distributed_versions:
+      - version: '1.2.3'
+        perl_module_versions: ">=0.09"
     name: mootools
+    affected_versions: ~
+    fixed_versions: ~
   fixed_versions: ~
   id: CPANSA-Perldoc-Server-2021-23432
   references:
