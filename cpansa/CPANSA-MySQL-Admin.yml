@@ -347,10 +347,10 @@
     distributed_version: 2.0.2
     name: bootstrap-markdown
   fixed_versions: ~
-  id: CPANSA-MySQL-Admin-CWE-79
+  id: CPANSA-MySQL-Admin-CWE-79-2014-01
   references:
     - https://security.snyk.io/vuln/npm:bootstrap-markdown:20140826
-  reported: ~
+  reported: 2014-08-25
   severity: ~
 - affected_versions: '>0'
   cves:
