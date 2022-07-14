@@ -167,7 +167,7 @@ use Local::CPANSA;
 use Local::Config::make_record;
 
 use Mojo::Util;
-use YAML qw(Dump);
+use YAML;
 
 run( @ARGV ) unless caller;
 
@@ -183,7 +183,7 @@ sub run ( @args ) {
 	$hash->{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
 	$hash->{embedded_vulnerability}{name}                //= $config->embedded_name;
 
-	my $string = Dump( [ $hash ] );
+	my $string = YAML::Dump( [ $hash ] );
 
 	# We want the folded form to avoid yamllint warnings, but YAML
 	# no longer supports this. We can cheat a little because we know
