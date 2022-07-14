@@ -1,15 +1,19 @@
 ---
-- affected_versions: '>0'
+- affected_versions: '>=1.03'
   cves:
     - CVE-2015-9251
   description: >
-    'jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
+    jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS)
     attacks when a cross-domain Ajax request is performed without the
-    dataType option, causing text/javascript responses to be executed.'
+    dataType option, causing text/javascript responses to be executed.
   distribution: Yote-Server
   embedded_vulnerability:
-    distributed_version: '1.12.0'
+    distributed_version:
+      - version: '1.12.0'
+        perl_module_versions: '>=1.03'
     name: jquery
+    affected_versions: '<3.0.0'
+    fixed_versions: '>=3.0.0'
   fixed_versions: ~
   id: CPANSA-Yote-Server-2015-9251
   references:
@@ -53,19 +57,23 @@
     - https://security.netapp.com/advisory/ntap-20210108-0004/
   reported: 2018-01-18
   severity: medium
-- affected_versions: '>0'
+- affected_versions: '>=1.03'
   cves:
     - CVE-2019-11358
   description: >
-    'jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
+    jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other
     products, mishandles jQuery.extend(true, {}, ...) because of
     Object.prototype pollution. If an unsanitized source object contained
     an enumerable __proto__ property, it could extend the native
-    Object.prototype.'
+    Object.prototype.
   distribution: Yote-Server
   embedded_vulnerability:
-    distributed_version: '1.12.0'
+    distributed_version:
+      - version: '1.12.0'
+        perl_module_versions: '>=1.03'
     name: jquery
+    affected_versions: '<3.4.0'
+    fixed_versions: '>=3.4.0'
   fixed_versions: ~
   id: CPANSA-Yote-Server-2019-11358
   references:
@@ -142,19 +150,23 @@
     - https://www.oracle.com/security-alerts/cpujan2022.html
   reported: 2019-04-20
   severity: medium
-- affected_versions: '>0'
+- affected_versions: '>=1.03'
   cves:
     - CVE-2020-11022
   description: >
-    "In jQuery versions greater than or equal to 1.2 and before 3.5.0,
+    In jQuery versions greater than or equal to 1.2 and before 3.5.0,
     passing HTML from untrusted sources - even after sanitizing it - to
     one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and
     others) may execute untrusted code. This problem is patched in jQuery
-    3.5.0."
+    3.5.0.
   distribution: Yote-Server
   embedded_vulnerability:
-    distributed_version: '1.12.0'
+    distributed_version:
+      - version: '1.12.0'
+        perl_module_versions: '>=1.03'
     name: jquery
+    affected_versions: '>=1.2,<3.5.0'
+    fixed_versions: '>=3.5.0'
   fixed_versions: ~
   id: CPANSA-Yote-Server-2020-11022
   references:
@@ -201,19 +213,23 @@
     - https://www.oracle.com/security-alerts/cpuapr2022.html
   reported: 2020-04-29
   severity: medium
-- affected_versions: '>0'
+- affected_versions: '>=1.03'
   cves:
     - CVE-2020-11023
   description: >
-    "In jQuery versions greater than or equal to 1.0.3 and before
+    In jQuery versions greater than or equal to 1.0.3 and before
     3.5.0, passing HTML containing <option> elements from untrusted
     sources - even after sanitizing it - to one of jQuery's DOM
     manipulation methods (i.e. .html(), .append(), and others) may execute
-    untrusted code. This problem is patched in jQuery 3.5.0."
+    untrusted code. This problem is patched in jQuery 3.5.0.
   distribution: Yote-Server
   embedded_vulnerability:
-    distributed_version: '1.12.0'
+    distributed_version:
+      - version: '1.12.0'
+        perl_module_versions: '>=1.03'
     name: jquery
+    affected_versions: '>=1.0.3,<3.5.0'
+    fixed_versions: '>=3.5.0'
   fixed_versions: ~
   id: CPANSA-Yote-Server-2020-11023
   references:
