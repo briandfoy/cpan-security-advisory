@@ -192,11 +192,19 @@ sub run ( @args ) {
 	$string =~ s/^(\x20\x20description:\s+)(.*)/
 		state $rc = require Text::Format;
 		my( $field, $value ) = @{^CAPTURE};
+		my $first_char = substr $value, 0, 1;
+		if( $first_char =~ m{['"]} ) {
+			my $last_char  = substr $value, -1, 1;
+			if( $last_char eq $first_char ) {
+				$value =~ s{\A\Q$first_char\E|\Q$first_char\E\z}{}g;
+				}
+			}
 		my $wrapped = Text::Format->new({columns => 70})->format($value);
 		$wrapped =~ s{\A\s+|\s+\z}{}g;
 		$wrapped =~ s|^|    |gm;
 		"$field>\n$wrapped";
 		/em;
+
 
 	# If we want to redirect into an existing file, take out the YAML
 	# header, unless we have -s to force the header
