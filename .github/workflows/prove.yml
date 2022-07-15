@@ -28,8 +28,8 @@ jobs:
             - uses: actions/checkout@v2
             - name: 'setup'
               run: |
-                perl -MCPAN -e upgrade
-                cpan YAML::XS
+                sudo perl -MCPAN -e upgrade
+                sudo cpan YAML::XS
             - name: 'prove'
               run: |
                 prove
