@@ -29,7 +29,7 @@ jobs:
             - name: 'setup'
               run: |
                 sudo perl -MCPAN -e upgrade
-                sudo cpan YAML::XS
+                sudo cpan -T YAML::XS
             - name: 'prove'
               run: |
                 prove
