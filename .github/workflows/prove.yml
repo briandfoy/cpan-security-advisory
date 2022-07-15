@@ -1,0 +1,35 @@
+---
+name: run Perl tests
+
+on:
+    push:
+        branches:
+            - '**'
+            - '!**release**'
+        tags-ignore:
+            # I tag release pushes but those should have already been tested
+            - 'release-*'
+        paths:
+            - 'cpansa/**.yml'
+            - 'external_reports/**.yml'
+            - '!.github/workflows/validate.yml'
+    pull_request:
+        branches:
+            - '**'
+        paths:
+            - 'cpansa/**.yml'
+            - 'external_reports/**.yml'
+            - '!.github/workflows/validate.yml'
+
+jobs:
+    perl:
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: 'setup'
+              run: |
+                sudo cpan -T App::Cpan
+                sudo cpan -T YAML::XS
+            - name: 'prove'
+              run: |
+                prove
