@@ -38,3 +38,6 @@ jobs:
                   yamllint_file_or_dir: 'external_reports'
                   yamllint_strict: false
                   yamllint_comment: true
+            - name: 'Perl tests'
+              run: |
+                  prove
