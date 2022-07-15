@@ -1,0 +1,201 @@
+---
+name: libjpeg
+perl_distributions:
+  - name: Tk
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '6b'
+  - name: Prima-codecs-win32
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '6b'
+  - name: Prima-codecs-win64
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '6b'
+  - name: cppAdaptive1
+    comment: As part of dlib
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '6b'
+  - name: cppAdaptive2
+    comment: As part of dlib
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '6b'
+advisories:
+  - cve: CVE-2013-6629
+    description: >
+      The get_sos function in jdmarker.c in (1) libjpeg 6b and (2)
+      libjpeg-turbo through 1.3.0, as used in Google Chrome before
+      31.0.1650.48, Ghostscript, and other products, does not check for
+      certain duplications of component data during the reading of segments
+      that follow Start Of Scan (SOS) JPEG markers, which allows remote
+      attackers to obtain sensitive information from uninitialized memory
+      locations via a crafted JPEG image.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://code.google.com/p/chromium/issues/detail?id=258723
+      - https://src.chromium.org/viewvc/chrome?revision=229729&view=revision
+      - http://archives.neohapsis.com/archives/fulldisclosure/2013-11/0080.html
+      - http://bugs.ghostscript.com/show_bug.cgi?id=686980
+      - http://googlechromereleases.blogspot.com/2013/11/stable-channel-update.html
+      - http://www.mozilla.org/security/announce/2013/mfsa2013-116.html
+      - https://bugzilla.mozilla.org/show_bug.cgi?id=891693
+      - http://www.debian.org/security/2013/dsa-2799
+      - http://rhn.redhat.com/errata/RHSA-2013-1803.html
+      - http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00025.html
+      - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00002.html
+      - http://rhn.redhat.com/errata/RHSA-2013-1804.html
+      - http://www.ubuntu.com/usn/USN-2053-1
+      - http://www.ubuntu.com/usn/USN-2052-1
+      - http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00026.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/123437.html
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00119.html
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00121.html
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00120.html
+      - http://secunia.com/advisories/56175
+      - http://lists.opensuse.org/opensuse-updates/2014-01/msg00002.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/124108.html
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00086.html
+      - http://www.ubuntu.com/usn/USN-2060-1
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00085.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2014-January/125470.html
+      - http://lists.opensuse.org/opensuse-updates/2013-12/msg00087.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2013-December/124257.html
+      - http://lists.opensuse.org/opensuse-updates/2014-01/msg00042.html
+      - http://support.apple.com/kb/HT6150
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2013:273
+      - http://advisories.mageia.org/MGASA-2013-0333.html
+      - http://support.apple.com/kb/HT6163
+      - http://support.apple.com/kb/HT6162
+      - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
+      - http://www-01.ibm.com/support/docview.wss?uid=swg21672080
+      - http://www-01.ibm.com/support/docview.wss?uid=swg21676746
+      - http://secunia.com/advisories/58974
+      - http://secunia.com/advisories/59058
+      - https://www.ibm.com/support/docview.wss?uid=swg21675973
+      - http://security.gentoo.org/glsa/glsa-201406-32.xml
+      - http://www.securitytracker.com/id/1029476
+      - http://www.securitytracker.com/id/1029470
+      - https://security.gentoo.org/glsa/201606-03
+      - http://marc.info/?l=bugtraq&m=140852974709252&w=2
+      - http://marc.info/?l=bugtraq&m=140852886808946&w=2
+      - http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html
+      - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+      - https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2013-6629
+      - http://www.securityfocus.com/bid/63676
+      - https://access.redhat.com/errata/RHSA-2014:0414
+      - https://access.redhat.com/errata/RHSA-2014:0413
+    reported: 2013-11-19
+    severity: ~
+  - cve: CVE-2021-39514
+    description: >
+      An issue was discovered in libjpeg through 2020021. An uncaught
+      floating point exception in the function ACLosslessScan::ParseMCU()
+      located in aclosslessscan.cpp. It allows an attacker to cause Denial
+      of Service.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/36
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39515
+    description: >
+      An issue was discovered in libjpeg through 2020021. A NULL pointer
+      dereference exists in the function SampleInterleavedLSScan::ParseMCU()
+      located in sampleinterleavedlsscan.cpp. It allows an attacker to cause
+      Denial of Service.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/37
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39516
+    description: >
+      An issue was discovered in libjpeg through 2020021. A NULL pointer
+      dereference exists in the function HuffmanDecoder::Get() located in
+      huffmandecoder.hpp. It allows an attacker to cause Denial of Service.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/42
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39517
+    description: >
+      An issue was discovered in libjpeg through 2020021. A NULL pointer
+      dereference exists in the function
+      BlockBitmapRequester::ReconstructUnsampled() located in
+      blockbitmaprequester.cpp. It allows an attacker to cause Denial of
+      Service.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/33
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39518
+    description: >
+      An issue was discovered in libjpeg through 2020021.
+      LineBuffer::FetchRegion() in linebuffer.cpp has a heap-based buffer
+      overflow.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/35
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39519
+    description: >
+      An issue was discovered in libjpeg through 2020021. A NULL pointer
+      dereference exists in the function BlockBitmapRequester::PullQData()
+      located in blockbitmaprequester.cpp It allows an attacker to cause
+      Denial of Service.
+    affected_versions: '<=2020021'
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/28
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2021-39520
+    description: >
+      An issue was discovered in libjpeg through 2020021. A NULL pointer
+      dereference exists in the function
+      BlockBitmapRequester::PushReconstructedData() located in
+      blockbitmaprequester.cpp. It allows an attacker to cause Denial of
+      Service.
+    affected_versions: '<=2020021'
+    fixed_versions: ~
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/34
+    reported: 2021-09-20
+    severity: medium
+  - cve: CVE-2022-31620
+    description: >
+      In libjpeg before 1.64, BitStream<false>::Get in bitstream.hpp
+      has an assertion failure that may cause denial of service. This is
+      related to out-of-bounds array access during arithmetically coded
+      lossless scan or arithmetically coded sequential scan.
+    affected_versions: '<1.64'
+    fixed_versions: '>=1.64'
+    references:
+      - https://github.com/thorfdbg/libjpeg/commit/ef4a29a62ab48b8dc235f4af52cfd6319eda9a6a
+      - https://github.com/thorfdbg/libjpeg/issues/70
+    reported: 2022-05-25
+    severity: medium
+  - cve: CVE-2022-32978
+    description: >
+      There is an assertion failure in SingleComponentLSScan::ParseMCU
+      in singlecomponentlsscan.cpp in libjpeg before 1.64 via an empty
+      JPEG-LS scan.
+    affected_versions: '<1.64'
+    fixed_versions: '>=1.64'
+    references:
+      - https://github.com/thorfdbg/libjpeg/issues/75
+      - https://github.com/thorfdbg/libjpeg/commit/4746b577931e926a49e50de9720a4946de3069a7
+    reported: 2022-06-10
+    severity: medium
