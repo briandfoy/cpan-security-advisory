@@ -2,7 +2,7 @@ use Test::More;
 
 use YAML::XS qw(LoadFile);
 
-my @files = glob('cpansa/*.yml');
+my @files = glob('{.github/workflows,cpansa,external_reports}/*.yml');
 
 foreach my $file ( @files ) {
 	my $yaml = eval { LoadFile($file) };
