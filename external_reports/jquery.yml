@@ -69,6 +69,14 @@ perl_distributions:
     affected:
       - perl_module_versions:
         distributed_library_version: '1.10.0'
+  - name: Kossy
+    affected:
+      - perl_module_versions: '<0.17'
+        distributed_library_version: '1.10.2'
+  - name: MySQL-Admin
+    affected:
+      - perl_module_versions:
+        distributed_library_version: '3.3.1'
   - name: Resource-Pack-jQuery
     affected:
       - perl_module_versions:
