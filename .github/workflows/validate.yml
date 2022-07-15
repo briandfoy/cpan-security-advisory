@@ -12,14 +12,14 @@ on:
         paths:
             - 'cpansa/**.yml'
             - 'external_reports/**.yml'
-            - '.github/workflows/validate.yml'
+            - '.github/workflows/**.yml'
     pull_request:
         branches:
             - '**'
         paths:
             - 'cpansa/**.yml'
             - 'external_reports/**.yml'
-            - '.github/workflows/validate.yml'
+            - '.github/workflows/**.yml'
 
 jobs:
     yaml:
@@ -38,6 +38,3 @@ jobs:
                   yamllint_file_or_dir: 'external_reports'
                   yamllint_strict: false
                   yamllint_comment: true
-            - name: 'Perl tests'
-              run: |
-                  prove
