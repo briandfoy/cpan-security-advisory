@@ -11,12 +11,14 @@ on:
             - 'release-*'
         paths:
             - 'cpansa/**.yml'
+            - 'external_reports/**.yml'
             - '.github/workflows/validate.yml'
     pull_request:
         branches:
             - '**'
         paths:
             - 'cpansa/**.yml'
+            - 'external_reports/**.yml'
             - '.github/workflows/validate.yml'
 
 jobs:
@@ -24,9 +26,15 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v2
-            - name: 'Yamllint'
+            - name: 'yamllint on cpansa'
               uses: karancode/yamllint-github-action@master
               with:
                   yamllint_file_or_dir: 'cpansa'
+                  yamllint_strict: false
+                  yamllint_comment: true
+            - name: 'yamllint on external_reports'
+              uses: karancode/yamllint-github-action@master
+              with:
+                  yamllint_file_or_dir: 'external_reports'
                   yamllint_strict: false
                   yamllint_comment: true
