@@ -28,9 +28,9 @@ jobs:
             - uses: actions/checkout@v2
             - name: 'setup'
               run: |
-                perl -v
-                cpan -v
-                sudo cpan -T YAML::XS
+                sudo perl -MCPAN -e upgrade
+                sudo cpan -T App::cpanminus
+                sudo cpanm --notest YAML::XS
             - name: 'prove'
               run: |
                 prove
