@@ -9,12 +9,11 @@
     untrusted input may be vulnerable to this flaw, which would allow an
     attacker to crash the application. The flaw occurs in do_extuni_no_utf
     in pcre2_jit_compile.c.
+  comment: >
+    This Alien module fetches libpcre2 sources from the network. It tries
+    to get the latest unless you set environment variables to get a
+    different version.
   distribution: Alien-PCRE2
-  external_vulnerability:
-    distributed_versions: ~
-    name: libpcre2
-    affected_versions: '<10.34'
-    fixed_versions: '>=10.34'
   fixed_versions: '>=0.016000'
   id: CPANSA-Alien-PCRE2-2019-20454
   references:
