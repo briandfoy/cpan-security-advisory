@@ -21,9 +21,6 @@
     which might allow local users to gain privileges via a Trojan horse
     module under the current working directory.
   distribution: IPC-Cmd
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=0.96'
   id: CPANSA-IPC-Cmd-2016-1238
   references:

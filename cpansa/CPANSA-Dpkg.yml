@@ -66,9 +66,6 @@
     which might allow local users to gain privileges via a Trojan horse
     module under the current working directory.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.18.11'
   id: CPANSA-Dpkg-2016-1238
   references:
@@ -100,9 +97,6 @@
     "old-style" Debian binary package, which triggers a stack-based buffer
     overflow.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.18.4'
   id: CPANSA-Dpkg-2015-0860
   references:
@@ -122,9 +116,6 @@
     before 1.17.25 allows remote attackers to bypass signature
     verification via a crafted Debian source control file (.dsc).
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.18.0'
   id: CPANSA-Dpkg-2015-0840
   references:
@@ -144,9 +135,6 @@
     code via format string specifiers in the (1) package or (2)
     architecture name.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.22'
   id: CPANSA-Dpkg-2014-8625
   references:
@@ -168,9 +156,6 @@
     allows remote attackers to write arbitrary files via a crafted source
     package, related to "C-style filename quoting."
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.10'
   id: CPANSA-Dpkg-2014-0471
   references:
@@ -191,9 +176,6 @@
     package. NOTE: this can be considered a release engineering problem in
     the effort to fix CVE-2014-0471.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.10'
   id: CPANSA-Dpkg-2014-3127
   references:
@@ -213,9 +195,6 @@
     directories via a crafted source package that lacks a --- header
     line.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.10'
   id: CPANSA-Dpkg-2014-3864
   references:
@@ -236,9 +215,6 @@
     pseudo-header in conjunction with (1) missing --- and +++ header lines
     or (2) a +++ header line with a blank pathname.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.10'
   id: CPANSA-Dpkg-2014-3865
   references:
@@ -258,9 +234,6 @@
     allows remote attackers to write arbitrary files via a crafted source
     package, related to "C-style filename quoting."
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.9'
   id: CPANSA-Dpkg-2014-0471
   references:
@@ -281,9 +254,6 @@
     package. NOTE: this can be considered a release engineering problem in
     the effort to fix CVE-2014-0471.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.9'
   id: CPANSA-Dpkg-2014-3127
   references:
@@ -303,9 +273,6 @@
     allows remote attackers to write arbitrary files via a crafted source
     package, related to "C-style filename quoting."
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.17.8'
   id: CPANSA-Dpkg-2014-0471
   references:
@@ -323,9 +290,6 @@
     arbitrary files via directory traversal sequences in a patch for a
     source-format 3.0 package.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.15.8.8'
   id: CPANSA-Dpkg-2010-1679
   references:
@@ -352,9 +316,6 @@
     dpkg before 1.14.29 allows remote attackers to modify arbitrary files
     via a crafted Debian source archive.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.15.6'
   id: CPANSA-Dpkg-2010-0396
   references:
@@ -396,9 +357,6 @@
     remote attackers to modify arbitrary files via a symlink attack on
     unspecified files in the .pc directory.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.15.10'
   id: CPANSA-Dpkg-2011-0402
   references:
