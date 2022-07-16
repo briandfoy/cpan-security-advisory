@@ -1,10 +1,18 @@
+GENERATED=t/.last_run perl-cve-atom.xml
+CVE_FEED_FILE=perl-cve-atom.xml
 
 all: ## does nothing yet (reserved)
 	@ echo "There is no default target"
 
 .PHONY: clean
 clean: ## clean out generated files
-	rm t/.last_run
+	rm -f $(GENERATED)
+
+.PHONY: feed
+feed: $(CVE_FEED_FILE)
+
+$(CVE_FEED_FILE):
+	perl util/make_feed > $@
 
 .PHONY: test
 test: ## run all tests (with current env)

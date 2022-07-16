@@ -37,9 +37,10 @@ my $map_sub = sub {
 	};
 
 my $assemble_sub = sub {
+	my $hash = $_;
 	sleep 2;
-	$_->{record} = eval { Local::CPANSA::assemble_record( $_->{cve} ) };
-	$_
+	$hash->{record} = eval { Local::CPANSA::assemble_record( $hash->{cve} ) };
+	$hash
 	};
 
 my $feed = start_xml();
@@ -53,6 +54,7 @@ my $items = Mojo::UserAgent
 	->grep( sub { length $_->{cve} } ) # first is a header row
 	->grep( sub { ! Local::CPANSA::cve_recorded( $_->{cve} ) } )
 	->grep( sub { ! Local::CPANSA::cve_ignored( $_->{cve} ) } )
+	->grep( sub { defined } ) # don't know whose making the undef element
 	->map( $assemble_sub )
 	->map( sub {
 		my $entry = tag('entry')->at('entry');
