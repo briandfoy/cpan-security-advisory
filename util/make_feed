@@ -12,32 +12,36 @@ use Local::CPANSA;
 use Mojo::DOM;
 use Mojo::URL;
 use Mojo::UserAgent;
+use Mojo::Util qw(dumper);
 
 my $search_url = Mojo::URL->new("https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl");
 
 my $map_sub = sub {
-		state $header = 1;
-		if( $header ) { $header = 0; return () }
-		my $dom = $_;
+	state $header = 1;
+	if( $header ) { $header = 0; return () }
+	my $dom = $_;
 
-		my $array = $dom->find( 'td' )->map( sub {
-			my $text =  $_->all_text;
-			$text =~ s/\v+/ /gr;
-			} )->to_array;
+	my $array = $dom->find( 'td' )->map( sub {
+		my $text =  $_->all_text;
+		$text =~ s/\v+/ /gr;
+		} )->to_array;
 
-		my $url = eval { $dom->at( 'td > a' )->attr('href') };
-		$url =  Mojo::URL->new($url)->to_abs($search_url);
+	my $url = eval { $dom->at( 'td > a' )->attr('href') };
+	$url =  Mojo::URL->new($url)->to_abs($search_url);
 
-		my $hash = {
-			cve         => $array->[0],
-			description => $array->[1],
-			url         => $url,
-			};
-
-		$hash->{record} = Local::CPANSA::assemble_record( $hash->{cve} );
-
-		$hash;
+	my $hash = {
+		cve         => $array->[0],
+		description => $array->[1],
+		url         => $url,
 		};
+	};
+
+my $assemble_sub = sub {
+	my $hash = $_;
+	sleep 2;
+	$hash->{record} = eval { Local::CPANSA::assemble_record( $hash->{cve} ) };
+	$hash
+	};
 
 my $feed = start_xml();
 
@@ -50,6 +54,8 @@ my $items = Mojo::UserAgent
 	->grep( sub { length $_->{cve} } ) # first is a header row
 	->grep( sub { ! Local::CPANSA::cve_recorded( $_->{cve} ) } )
 	->grep( sub { ! Local::CPANSA::cve_ignored( $_->{cve} ) } )
+	->grep( sub { defined } ) # don't know whose making the undef element
+	->map( $assemble_sub )
 	->map( sub {
 		my $entry = tag('entry')->at('entry');
 		$entry->append_content( tag( id      => $_->{cve}         ) );
