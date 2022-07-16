@@ -15,13 +15,35 @@ First, check that we don't already have the record:
 	$ perl util/find_record CVE-2022-1234
 
 Open an [issue in the briandfoy/cpan-security/advisory GitHub
-repo](https://github.com/briandfoy/cpan-security-advisory/issues) and tell us
-what the CVE report number is, such as `CVE-2022-1234`.
+repo](https://github.com/briandfoy/cpan-security-advisory/issues) and
+tell us what the CVE report number is, such as `CVE-2022-1234`.
+
+Alternately, you can leave a note in [the wiki for something we need
+to investigate](https://github.com/briandfoy/cpan-security-advisory/wiki/TODO).
+
+## Embedded or external vulnerabilities
+
+We have started tracking vulnerabilities of third-party libraries that
+may be distributed or linked into the Perl modules. For example, Tk
+distributes the libjpeg library, and Term::Readline::Gnu links against
+the previously installed version of readline.
+
+These are compiled in the files under *external_reports/*. Follow the
+examples that you see there. There's one file for each third-party
+library, and a section that lists each affected Perl module and the
+third-party library versions that it distributes. We'll use these
+files to generate the reports to feed into the database.
+
+The hardest part of this problem is figuring out which Perl module
+versions distribute which versions. This in an intensive, manual
+process of inspecting the distributions and sussing out the import
+files and their versions.
 
 # Make a Pull Request
 
 But, you can also create the record we need. Most of this is done by
-the `util/make_record` program that makes a [cpan-audit](https://github.com/briandfoy/cpan-audit)-compatible
+the `util/make_record` program that makes a
+[cpan-audit](https://github.com/briandfoy/cpan-audit)-compatible
 record:
 
 	$ perl util/make_record CVE-2022-1234
@@ -39,7 +61,18 @@ exists, you'll probably have to strip the leading `---` line from the
 Once you add the new record, verify that the YAML is valid. Test all
 the files:
 
-	$ perl t/000.check-yaml.t
+	$ make test_all
+
+While you are working, you may want to test just the new files because
+there are so many:
+
+	$ make test_new
+
+The tests use `yamllint` if it is available. You can do this yourself
+to ensure it doesn't warn about anything. We accept the default settings
+and fix anything so `yamllint` is content:
+
+	$ yamllint cpansa/*.yml
 
 The [yq](https://github.com/mikefarah/yq) program is a command-line
 YAML processor that will complain if there's an error:
