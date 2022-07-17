@@ -1,5 +1,6 @@
 ---
 name: jquery
+url: https://github.com/jquery/jquery
 perl_distributions:
   - name: Sidef
     affected:
