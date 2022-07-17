@@ -29,5 +29,7 @@
     - https://github.com/libwww-perl/HTTP-Daemon/security/advisories/GHSA-cg8c-pxmv-w7cf
     - http://metacpan.org/release/HTTP-Daemon/
     - https://cwe.mitre.org/data/definitions/444.html
+    - https://github.com/libwww-perl/HTTP-Daemon/issues/56
+    - https://github.com/NixOS/nixpkgs/pull/181632
   reported: 2022-06-27
   severity: medium
