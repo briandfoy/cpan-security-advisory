@@ -1,5 +1,6 @@
 ---
 name: libjpeg
+url: http://libjpeg.sourceforge.net
 perl_distributions:
   - name: Tk
     affected:
