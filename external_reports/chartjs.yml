@@ -1,5 +1,6 @@
 ---
 name: chartjs
+url: https://github.com/chartjs/Chart.js
 perl_distributions:
   - name: Ukigumo-Server
     affected:

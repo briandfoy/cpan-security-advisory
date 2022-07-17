@@ -1,5 +1,6 @@
 ---
 name: libpng
+url: http://www.libpng.org
 perl_distributions:
   - name: Zonemaster-GUI
     affected:

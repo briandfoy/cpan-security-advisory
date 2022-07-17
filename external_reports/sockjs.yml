@@ -1,5 +1,6 @@
 ---
 name: sockjs
+url: https://github.com/sockjs/sockjs-client
 perl_distributions:
   - name: SockJS
     affected:

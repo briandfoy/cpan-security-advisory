@@ -1,5 +1,6 @@
 ---
 name: openssl
+url: https://www.openssl.org
 perl_distributions:
   - name: Socket-Class
     affected:
