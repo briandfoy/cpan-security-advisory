@@ -11,10 +11,8 @@ advisories:
     description: >
       This affects all versions of package mootools. This is due to the
       ability to pass untrusted input to Object.merge()
-    distribution: Perldoc-Server
     affected_versions: '>0'
     fixed_versions: ~
-    id: CPANSA-Perldoc-Server-2021-23432
     references:
       - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536
     reported: 2021-08-24
