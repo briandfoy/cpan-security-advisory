@@ -1,5 +1,6 @@
 ---
 name: libpcre2
+url: https://www.pcre.org
 perl_distributions:
   - name: MarpaX-ESLIF
     affected:
