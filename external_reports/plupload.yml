@@ -1,5 +1,6 @@
 ---
 name: plupload
+url: https://www.plupload.com
 perl_distributions:
   - name: Yukki
     affected:

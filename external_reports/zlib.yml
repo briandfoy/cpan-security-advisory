@@ -1,5 +1,6 @@
 ---
 name: zlib
+url: https://zlib.net
 perl_distributions:
   - name: BackupPC-XS
     affected:

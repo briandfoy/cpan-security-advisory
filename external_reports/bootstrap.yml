@@ -1,5 +1,6 @@
 ---
 name: json.js
+url: https://github.com/twbs/bootstrap
 perl_distributions:
   - name: UR
     affected:

@@ -1,5 +1,6 @@
 ---
 name: angular
+url: https://github.com/angular/angular
 perl_distributions:
   - name: Zonemaster-GUI
     affected:

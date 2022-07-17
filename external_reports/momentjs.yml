@@ -1,5 +1,6 @@
 ---
 name: momentjs
+url: https://momentjs.com
 perl_distributions:
   - name: App-Netdisco
     affected:

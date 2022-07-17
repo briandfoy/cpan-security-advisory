@@ -1,5 +1,6 @@
 ---
 name: jsoneditor
+url: https://github.com/josdejong/jsoneditor
 perl_distributions:
   - name: WWW-ORCID
     affected:

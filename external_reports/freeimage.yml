@@ -1,5 +1,6 @@
 ---
 name: freeimage
+url: https://freeimage.sourceforge.io
 perl_distributions:
   - name: Alien-FreeImage
     affected:

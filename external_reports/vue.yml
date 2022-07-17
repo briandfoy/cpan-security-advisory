@@ -1,5 +1,6 @@
 ---
 name: vue
+url: https://github.com/vuejs/vue
 perl_distributions:
   - name: Yancy
     affected:
