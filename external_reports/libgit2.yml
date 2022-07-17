@@ -1,5 +1,6 @@
 ---
 name: libgit2
+url: https://github.com/libgit2/libgit2
 perl_distributions:
   - name: Git-Raw
     affected:
