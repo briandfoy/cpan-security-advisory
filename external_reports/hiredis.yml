@@ -1,6 +1,6 @@
 ---
 name: hiredis
-url:
+url: https://github.com/redis/hiredis
 perl_distributions:
   - name: Redis-hiredis
     affected:
