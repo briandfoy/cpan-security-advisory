@@ -4,15 +4,15 @@ url: https://github.com/google/brotli
 perl_distributions:
   - name: IO-Compress-Brotli
     affected:
-      - perl_module_versions: '>=0.002,<=0.002001,
+      - perl_module_versions: '>=0.002,<=0.002001'
         distributed_library_version: '0.5.0'
-      - perl_module_versions: '>=0.002_002,<=0.003,
+      - perl_module_versions: '>=0.002_002,<=0.003'
         distributed_library_version: '0.6.0'
-      - perl_module_versions: '>=0.003_001,<=0.004,
+      - perl_module_versions: '>=0.003_001,<=0.004'
         distributed_library_version: '1.0.1'
-      - perl_module_versions: '==0.004001,
+      - perl_module_versions: '==0.004001'
         distributed_library_version: '1.0.4'
-      - perl_module_versions: '==0.004_002,
+      - perl_module_versions: '==0.004_002'
         distributed_library_version: '1.0.7'
 advisories:
   - cve: CVE-2020-8927
