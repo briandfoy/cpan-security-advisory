@@ -1,5 +1,6 @@
 ---
 name: nginx
+url: https://github.com/nginx/nginx
 perl_distributions:
   - name: Nginx-Engine
     affected:
