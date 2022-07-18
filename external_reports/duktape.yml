@@ -1,0 +1,42 @@
+---
+name: duktape
+url: https://duktape.org
+perl_distributions:
+  - name: JavaScript-Duktape
+    affected:
+      - perl_module_versions: '>0.0.1_1,<=0.0.2_1'
+        distributed_library_version: '1.2.1'
+      - perl_module_versions: '>=0.0.3,<=0.0.5'
+        distributed_library_version: '1.2.2'
+      - perl_module_versions: '>=0.1.1,<=0.3.0'
+        distributed_library_version: '1.3.0'
+      - perl_module_versions: '>=1.0.0,<=1.0.1'
+        distributed_library_version: '1.3.2'
+      - perl_module_versions: '==1.0.2'
+        distributed_library_version: '1.5.0'
+      - perl_module_versions: '>=2.1.0,<=2.1.1'
+        distributed_library_version: '2.0.1'
+      - perl_module_versions: '>=2.1.2,<=2.1.4'
+        distributed_library_version: '2.0.2'
+      - perl_module_versions: '>=2.1.5,<=2.2.1'
+        distributed_library_version: '2.1.0'
+      - perl_module_versions: '>=2.3.0,<=2.4.2'
+        distributed_library_version: '2.2.0'
+      - perl_module_versions: '==2.5.0'
+        distributed_library_version: '2.3.0'
+  - name: JavaScript-Duktape-XS
+    affected:
+      - perl_module_versions: '>=0.000030,<=0.000078'
+        distributed_library_version: '2.2.0'
+advisories:
+  - cve: CVE-2021-46322
+    description: >
+      Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the
+      component duk_push_tval in duktape/duk_api_stack.c.
+    affected_versions: '>=2.0.0,<=2.99.99'
+    fixed_versions: ~
+    references:
+      - https://github.com/svaarala/duktape/issues/2448
+      - https://github.com/gonzus/JavaScript-Duktape-XS/issues/33
+    reported: 2022-01-20
+    severity: medium
