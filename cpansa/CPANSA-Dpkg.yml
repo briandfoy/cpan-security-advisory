@@ -10,9 +10,6 @@
     debian.tar, the in-place extraction can lead to directory traversal
     situations on specially crafted orig.tar and debian.tar tarballs.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.21.8'
   id: CPANSA-Dpkg-2022-1664
   references:
@@ -34,9 +31,6 @@
     directory traversal attacks via a crafted Debian source package, as
     demonstrated by use of dpkg-source on NetBSD.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.18.24'
   id: CPANSA-Dpkg-2017-8283
   references:
@@ -335,10 +329,6 @@
     setuid file, (2) setgid file, or (3) device, a related issue to
     CVE-2010-2059.
   distribution: Dpkg
-  embedded_vulnerability:
-    distributed_version: ~
-    affected_versions: '==1.9.21'
-    name: ~
   fixed_versions: '>=1.9.22'
   id: CPANSA-Dpkg-2004-2768
   references:
