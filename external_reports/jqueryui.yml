@@ -1,5 +1,6 @@
 ---
 name: jqueryui
+url: https://github.com/jquery/jquery-ui
 perl_distributions:
   - name: Yukki
     affected:
