@@ -1,0 +1,247 @@
+---
+name: nginx
+url: https://github.com/nginx/nginx
+perl_distributions:
+  - name: Nginx-Engine
+    affected:
+      - perl_module_versions: '>=0.01,<=0.06'
+        distributed_library_version: '0.8.53'
+      - perl_module_versions: '>=0.07,<=0.12'
+        distributed_library_version: '0.8.54'
+  - name: Nginx-Perl
+    affected:
+      - perl_module_versions: '==1.1.9.1'
+        distributed_library_version: '1.1.9'
+      - perl_module_versions: '==1.1.11.1'
+        distributed_library_version: '1.1.11'
+      - perl_module_versions: '==1.1.13.1'
+        distributed_library_version: '1.1.13'
+      - perl_module_versions: '==1.1.14.1'
+        distributed_library_version: '1.1.14'
+      - perl_module_versions: '==1.1.15.1'
+        distributed_library_version: '1.1.15'
+      - perl_module_versions: '==1.1.16.1'
+        distributed_library_version: '1.1.16'
+      - perl_module_versions: '==1.1.17.1'
+        distributed_library_version: '1.1.17'
+      - perl_module_versions: '>=1.1.18.1,<=1.1.18.2'
+        distributed_library_version: '1.1.18'
+      - perl_module_versions: '>=1.1.19.2,<=1.1.19.3'
+        distributed_library_version: '1.1.19'
+      - perl_module_versions: '==1.2.0.4,==1.2.0.5'
+        distributed_library_version: '1.2.0'
+      - perl_module_versions: '==1.2.1.5'
+        distributed_library_version: '1.2.1'
+      - perl_module_versions: '==1.2.2.5'
+        distributed_library_version: '1.2.2'
+      - perl_module_versions: '>=1.2.6.5,<=1.2.6.6'
+        distributed_library_version: '1.2.6'
+      - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
+        distributed_library_version: '1.2.9'
+      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+        distributed_library_version: '1.8.1'
+advisories:
+  - cve: CVE-2016-0742
+    description: >
+      The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 allows
+      remote attackers to cause a denial of service (invalid pointer
+      dereference and worker process crash) via a crafted UDP DNS response.
+    affected_versions: '<1.9.10'
+    fixed_versions: ~
+    references:
+      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
+      - http://www.ubuntu.com/usn/USN-2892-1
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1302587
+      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+      - http://www.debian.org/security/2016/dsa-3473
+      - https://bto.bluecoat.com/security-advisory/sa115
+      - http://www.securitytracker.com/id/1034869
+      - https://security.gentoo.org/glsa/201606-06
+      - https://access.redhat.com/errata/RHSA-2016:1425
+      - https://support.apple.com/kb/HT212818
+      - http://seclists.org/fulldisclosure/2021/Sep/36
+    reported: 2016-02-15
+    severity: high
+  - cve: CVE-2016-0746
+    description: >
+      Use-after-free vulnerability in the resolver in nginx 0.6.18
+      through 1.8.0 and 1.9.x before 1.9.10 allows remote attackers to cause
+      a denial of service (worker process crash) or possibly have
+      unspecified other impact via a crafted DNS response related to CNAME
+      response processing.
+    affected_versions: '>=0.6.18,<=1.9.10'
+    fixed_versions: ~
+    references:
+      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1302588
+      - http://www.ubuntu.com/usn/USN-2892-1
+      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+      - http://www.debian.org/security/2016/dsa-3473
+      - https://bto.bluecoat.com/security-advisory/sa115
+      - http://www.securitytracker.com/id/1034869
+      - https://security.gentoo.org/glsa/201606-06
+      - https://access.redhat.com/errata/RHSA-2016:1425
+      - https://support.apple.com/kb/HT212818
+      - http://seclists.org/fulldisclosure/2021/Sep/36
+    reported: 2016-02-15
+    severity: critical
+  - cve: CVE-2016-0747
+    description: >
+      The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 does
+      not properly limit CNAME resolution, which allows remote attackers to
+      cause a denial of service (worker process resource consumption) via
+      vectors related to arbitrary name resolution.
+    affected_versions: '<=1.9.10'
+    fixed_versions: ~
+    references:
+      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1302589
+      - http://www.ubuntu.com/usn/USN-2892-1
+      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+      - http://www.debian.org/security/2016/dsa-3473
+      - https://bto.bluecoat.com/security-advisory/sa115
+      - http://www.securitytracker.com/id/1034869
+      - https://security.gentoo.org/glsa/201606-06
+      - https://access.redhat.com/errata/RHSA-2016:1425
+      - https://support.apple.com/kb/HT212818
+      - http://seclists.org/fulldisclosure/2021/Sep/36
+    reported: 2016-02-15
+    severity: medium
+  - cve: CVE-2014-3616
+    description: >
+      nginx 0.5.6 through 1.7.4, when using the same shared
+      ssl_session_cache or ssl_session_ticket_key for multiple servers, can
+      reuse a cached SSL session for an unrelated context, which allows
+      remote attackers with certain privileges to conduct "virtual host
+      confusion" attacks.
+    affected_versions: '>=0.5.6,<=1.7.4'
+    references:
+      - http://www.debian.org/security/2014/dsa-3029
+      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html
+    reported: 2014-12-08
+    severity: ~
+  - cve: CVE-2014-3556
+    description: >
+      The STARTTLS implementation in mail/ngx_mail_smtp_handler.c in
+      the SMTP proxy in nginx 1.5.x and 1.6.x before 1.6.1 and 1.7.x before
+      1.7.4 does not properly restrict I/O buffering, which allows
+      man-in-the-middle attackers to insert commands into encrypted SMTP
+      sessions by sending a cleartext command that is processed after TLS is
+      in place, related to a "plaintext command injection" attack, a similar
+      issue to CVE-2011-0411.
+    affected_versions: '>=1.5.1,<=1.7.4'
+    fixed_versions: ~
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1126891
+      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html
+      - http://nginx.org/download/patch.2014.starttls.txt
+      - http://marc.info/?l=bugtraq&m=142103967620673&w=2
+    reported: 2014-12-29
+    severity: ~
+  - cve: CVE-2013-4547
+    description: >
+      nginx 0.8.41 through 1.4.3 and 1.5.x before 1.5.7 allows remote
+      attackers to bypass intended restrictions via an unescaped space
+      character in a URI.
+    affected_versions: '>=0.8.41,<1.5.7'
+    fixed_versions: '>=1.5.7'
+    references:
+      - http://www.debian.org/security/2012/dsa-2802
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00084.html
+      - http://secunia.com/advisories/55757
+      - http://secunia.com/advisories/55825
+      - http://secunia.com/advisories/55822
+      - http://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00118.html
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00119.html
+      - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00007.html
+    reported: 2013-11-23
+    severity: ~
+  - cve: CVE-2014-0133
+    description: >
+      Heap-based buffer overflow in the SPDY implementation in nginx
+      1.3.15 before 1.4.7 and 1.5.x before 1.5.12 allows remote attackers to
+      execute arbitrary code via a crafted request.
+    affected_versions: '>=1.3.15,<1.5.12'
+    fixed_versions: '>=1.5.12'
+    references:
+      - http://lists.opensuse.org/opensuse-updates/2014-03/msg00095.html
+      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000135.html
+      - http://www.securityfocus.com/bid/66537
+    reported: 2014-03-28
+    severity: ~
+  - cve: CVE-2014-0088
+    description: >
+      The SPDY implementation in the ngx_http_spdy_module module in
+      nginx 1.5.10 before 1.5.11, when running on a 32-bit platform, allows
+      remote attackers to execute arbitrary code via a crafted request.
+    affected_versions: '==1.5.10'
+    fixed_versions: '>=1.5.11'
+    references:
+      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000132.html
+      - http://www.securitytracker.com/id/1030150
+    reported: 2014-04-29
+    severity: ~
+  - cve: CVE-2013-2028
+    description: >
+      The ngx_http_parse_chunked function in http/ngx_http_parse.c in
+      nginx 1.3.9 through 1.4.0 allows remote attackers to cause a denial of
+      service (crash) and execute arbitrary code via a chunked
+      Transfer-Encoding request with a large chunk size, which triggers an
+      integer signedness error and a stack-based buffer overflow.
+    affected_versions: '>=1.3.9,<1.5.0'
+    fixed_versions: '>=1.5.0'
+    references:
+      - http://www.vnsecurity.net/2013/05/analysis-of-nginx-cve-2013-2028/
+      - http://www.osvdb.org/93037
+      - http://nginx.org/download/patch.2013.chunked.txt
+      - https://github.com/rapid7/metasploit-framework/pull/1834
+      - http://packetstormsecurity.com/files/121675/Nginx-1.3.9-1.4.0-Denial-Of-Service.html
+      - http://mailman.nginx.org/pipermail/nginx-announce/2013/000112.html
+      - http://security.gentoo.org/glsa/glsa-201310-04.xml
+      - http://secunia.com/advisories/55181
+      - http://lists.fedoraproject.org/pipermail/package-announce/2013-May/105176.html
+      - http://www.securityfocus.com/bid/59699
+    reported: 2013-07-20
+    severity: ~
+  - cve: X-nginx-2012-04-07-0
+    description: >
+      nginx/Windows does not ignore trailing dot in URI path
+      component, and allows URIs with ":$" in it.
+    affected_versions: '<1.3.1'
+    fixed_versions: '>=1.3.1'
+    references:
+      - https://github.com/nginx/nginx/blob/master/docs/xml/nginx/changes.xml
+    reported: 2012-04-17
+    severity: ~
+  - cve: CVE-2012-2089
+    description: >
+      Buffer overflow in ngx_http_mp4_module.c in the
+      ngx_http_mp4_module module in nginx 1.0.7 through 1.0.14 and 1.1.3
+      through 1.1.18, when the mp4 directive is used, allows remote
+      attackers to cause a denial of service (memory overwrite) or possibly
+      execute arbitrary code via a crafted MP4 file.
+    affected_versions: '>=1.0.7,<=1.1.18'
+    fixed_versions: '>=1.1.19'
+    references:
+      - http://www.openwall.com/lists/oss-security/2012/04/12/9
+      - http://nginx.org/en/security_advisories.html
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/74831
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/079474.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/079467.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079388.html
+      - http://www.securitytracker.com/id?1026924
+      - http://www.securityfocus.com/bid/52999
+    reported: 2012-04-17
+    severity: ~
+  - cve: X-nginx-2012-03-15-0
+    description: >
+      content of previously freed memory might be sent to a
+      client if backend returned specially crafted response.
+    affected_versions: '<1.0.14'
+    fixed_versions: '>=1.0.14'
+    references:
+      - https://metacpan.org/dist/Nginx-Perl/changes
+      - https://mailman.nginx.org/pipermail/nginx-announce/2012/000075.html
+    reported: 2012-03-15
+    severity: ~
