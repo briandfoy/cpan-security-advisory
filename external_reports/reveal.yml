@@ -1,0 +1,40 @@
+---
+name: revealjs
+url: https://revealjs.com
+perl_distributions:
+  - name: App-revealup
+    last_checked_version: '0.23'
+    affected:
+      - perl_module_versions: '>=0.01,<=0.19'
+        distributed_library_version: '2.6.1'
+      - perl_module_versions: '>=0.20,<=0.21'
+        distributed_library_version: '3.1.0'
+      - perl_module_versions: '==0.22'
+        distributed_library_version: '3.9.2'
+      - perl_module_versions: '==0.23'
+        distributed_library_version: '4.3.1'
+advisories:
+  - cve: CVE-2022-0776
+    description: >
+      Cross-site Scripting (XSS) - DOM in GitHub repository
+      hakimel/reveal.js prior to 4.3.0.
+    affected_versions: '<4.3.0'
+    fixed_versions: '>=4.3.0'
+    references:
+      - https://github.com/hakimel/reveal.js/commit/32cdd3b1872ba8e2267c9e87ae216cb55f40f4d2
+      - https://huntr.dev/bounties/be2b7ee4-f487-42e1-874a-6bcc410e4001
+      - https://github.com/yusukebe/App-revealup/issues/12#issuecomment-1169417411
+      - https://github.com/yusukebe/App-revealup/commit/c8fea67994b1aa6d734066bff9ada4e834b09cb7
+    reported: 2022-03-01
+    severity: medium
+  - cve: CVE-2020-8127
+    description: >
+      Insufficient validation in cross-origin communication
+      (postMessage) in reveal.js version 3.9.1 and earlier allow
+      attackers to perform cross-site scripting attacks.
+    affected_versions: '<=3.9.1'
+    fixed_versions: '>3.9.1'
+    references:
+      - https://hackerone.com/reports/691977
+    reported: 2020-02-28
+    severity: medium
