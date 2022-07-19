@@ -1,6 +1,6 @@
 ---
 name: unzip
-url:
+url: http://infozip.sourceforge.net
 perl_distributions:
   - name: Archive-Unzip-Burst
     last_version_checked: '0.09'
