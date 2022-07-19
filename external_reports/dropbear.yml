@@ -1,0 +1,40 @@
+---
+name: dropbear
+url: https://github.com/mkj/dropbear
+perl_distributions:
+  - name: Net-Dropbear
+    affected:
+      - perl_module_versions: '>=0.01,<=0.07'
+        distributed_library_version: '2015.67'
+      - perl_module_versions: '>=0.08,<=0.10'
+        distributed_library_version: '2016.74'
+      - perl_module_versions: '>=0.11,<=0.13'
+        distributed_library_version: '2019.78'
+      - perl_module_versions: '>=0.14,<=0.15'
+        distributed_library_version: '2020.81'
+      - perl_module_versions: '==0.16'
+        distributed_library_version: '2020.81'
+advisories:
+  - cve: CVE-2020-36254
+    description: >
+      scp.c in Dropbear before 2020.79 mishandles the filename of . or
+      an empty filename, a related issue to CVE-2018-20685.
+    affected_versions: '<2020.79'
+    fixed_versions: ">=2020.79"
+    references:
+      - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
+      - https://github.com/mkj/dropbear/commit/8f8a3dff705fad774a10864a2e3dbcfa9779ceff
+    reported: 2021-02-25
+    severity: high
+  - cve: CVE-2019-12953
+    description: >
+      Dropbear 2011.54 through 2018.76 has an inconsistent failure delay
+      that may lead to revealing valid usernames, a different issue than
+      CVE-2018-15599.
+    affected_versions: '>=2011.54,<=2018.76'
+    fixed_versions: ">2018.76"
+    references:
+      - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
+      - https://matt.ucc.asn.au/dropbear/CHANGES
+    reported: 2020-12-30
+    severity: medium
