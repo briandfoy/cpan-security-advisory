@@ -1,0 +1,40 @@
+---
+name: mxml
+url: https://github.com/michaelrsweet/mxml
+perl_distributions:
+  - name: Win32-File-Summary
+    last_version_checked: '1.10'
+    affected:
+      - perl_module_versions: '>=1.00,<=1.10'
+        distributed_library_version: '2.2.2'
+advisories:
+  - cve: CVE-2016-4570
+    description: >
+      The mxmlDelete function in mxml-node.c in mxml 2.9, 2.7, and
+      possibly earlier allows remote attackers to cause a denial of service
+      (stack consumption) via crafted xml file.
+    affected_versions: '<=2.9'
+    fixed_versions: ~
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
+      - http://www.openwall.com/lists/oss-security/2016/05/11/14
+      - http://www.openwall.com/lists/oss-security/2016/05/09/16
+      - http://www.securityfocus.com/bid/90315
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
+    reported: 2017-02-03
+    severity: medium
+  - cve: CVE-2016-4571
+    description: >
+      The mxml_write_node function in mxml-file.c in mxml 2.9, 2.7, and
+      possibly earlier allows remote attackers to cause a denial of service
+      (stack consumption) via crafted xml file.
+    affected_versions: '<=2.9'
+    fixed_versions: ~
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
+      - http://www.openwall.com/lists/oss-security/2016/05/11/14
+      - http://www.openwall.com/lists/oss-security/2016/05/09/16
+      - http://www.securityfocus.com/bid/90315
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
+    reported: 2017-02-03
+    severity: medium
