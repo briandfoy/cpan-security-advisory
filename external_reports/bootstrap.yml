@@ -30,6 +30,20 @@ perl_distributions:
     affected:
       - perl_module_versions:
         distributed_library_version: '3.3.1'
+  - name: Kossy
+    last_version_checked: '0.60'
+    affected:
+      - perl_module_versions: '>=0.08,<=0.11'
+        distributed_library_version: '2.0.3'
+      - perl_module_versions: '>=0.12,<=0.16'
+        distributed_library_version: '2.1.0'
+      - perl_module_versions: '>=0.17,<=0.60'
+        distributed_library_version: '2.3.2'
+  - name: MySQL-Admin
+    last_version_checked: '1.18'
+    affected:
+      - perl_module_versions: '>=1.14,<=1.18'
+        distributed_library_version: '4.1.1'
 advisories:
   - cve: CVE-2018-14040
     description: >
@@ -75,8 +89,8 @@ advisories:
     description: >
       In Bootstrap before 4.1.2, XSS is possible in the data-target
       property of scrollspy.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<4.1.2'
+    fixed_versions: '>=4.1.2'
     references:
       - https://github.com/twbs/bootstrap/pull/26630
       - https://github.com/twbs/bootstrap/issues/26627
@@ -101,8 +115,8 @@ advisories:
     description: >
       In Bootstrap before 4.1.2, XSS is possible in the data-container
       property of tooltip.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<4.1.2'
+    fixed_versions: '>=4.1.2'
     references:
       - https://github.com/twbs/bootstrap/pull/26630
       - https://github.com/twbs/bootstrap/issues/26628
@@ -127,8 +141,8 @@ advisories:
     description: >
       In Bootstrap before 3.4.0, XSS is possible in the tooltip
       data-viewport attribute.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<3.4.0'
+    fixed_versions: '>=3.4.0'
     references:
       - https://github.com/twbs/bootstrap/pull/27047
       - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452196628
@@ -149,8 +163,8 @@ advisories:
     description: >
       In Bootstrap before 3.4.0, XSS is possible in the affix
       configuration target property.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<3.4.0'
+    fixed_versions: '>=3.4.0'
     references:
       - https://github.com/twbs/bootstrap/pull/27047
       - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452196628
@@ -172,7 +186,9 @@ advisories:
     description: >
       In Bootstrap before 3.4.1 and 4.3.x before 4.3.1, XSS is possible
       in the tooltip or popover data-template attribute.
-    affected_versions: ~
+    affected_versions:
+      - '3.4.1'
+      - '>=4.3.0,<4.3.1'
     fixed_versions: ~
     references:
       - https://github.com/twbs/bootstrap/releases/tag/v4.3.1
@@ -209,7 +225,9 @@ advisories:
       In Bootstrap 3.x before 3.4.0 and 4.x-beta before 4.0.0-beta.2,
       XSS is possible in the data-target attribute, a different
       vulnerability than CVE-2018-14041.
-    affected_versions: ~
+    affected_versions:
+      - '>=3.0.0,<3.4.0'
+      - '>=4.0.0-beta,<=4.0.0-beta.2'
     fixed_versions: ~
     references:
       - https://github.com/twbs/bootstrap/pull/26460
