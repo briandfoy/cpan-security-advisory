@@ -1,0 +1,21 @@
+---
+name: bootstrap-markdown-editor
+url: https://github.com/inacho/bootstrap-markdown-editor
+perl_distributions:
+  - name: MySQL-Admin
+    last_version_checked: '1.18'
+    affected:
+      - perl_module_versions: '>=1.14,<=1.18'
+        distributed_library_version: '2.0.2'
+advisories:
+  - cve: X-CVE-2014-08-25-1
+    description: >
+      Affected versions of the package are vulnerable to Cross-site
+      Scripting (XSS) via the editor box.
+    affected_versions: '>0'
+    fixed_versions: ~
+    references:
+      - https://security.snyk.io/vuln/npm:bootstrap-markdown:20140826
+      - https://cwe.mitre.org/data/definitions/79.html
+    reported: 2014-08-25
+    severity: ~
