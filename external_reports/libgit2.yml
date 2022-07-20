@@ -1,0 +1,298 @@
+---
+name: libgit2
+url: https://github.com/libgit2/libgit2
+perl_distributions:
+  - name: Git-Raw
+    affected:
+      - perl_module_versions: '>=0.08,<=0.24'
+        distributed_library_version: '0.17.0'
+      - perl_module_versions: '>=0.25,<=0.28'
+        distributed_library_version: '0.19.0'
+      - perl_module_versions: '>=0.29,<=0.40'
+        distributed_library_version: '0.20.0'
+      - perl_module_versions: '>=0.41,<=0.50'
+        distributed_library_version: '0.21.0'
+      - perl_module_versions: '>=0.51,<=0.53'
+        distributed_library_version: '0.22.0'
+      - perl_module_versions: '>=0.54,<=0.58'
+        distributed_library_version: '0.23.0'
+      - perl_module_versions: '>=0.59,<=0.60'
+        distributed_library_version: '0.24.0'
+      - perl_module_versions: '>=0.61,<=0.74'
+        distributed_library_version: '0.25.0'
+      - perl_module_versions: '==0.75'
+        distributed_library_version: '0.26.0'
+      - perl_module_versions: '>=0.76,<=0.82'
+        distributed_library_version: '0.27.0'
+      - perl_module_versions: '>=0.83,<=0.84'
+        distributed_library_version: '0.28.0'
+      - perl_module_versions: '>=0.85,<=0.87'
+        distributed_library_version: '1.0.0'
+      - perl_module_versions: '==0.88'
+        distributed_library_version: '1.1.0'
+  - name: Git-XS
+    affected:
+      - perl_module_versions: ">=0.01,<=0.02"
+        distributed_library_version: '0.15.0'
+advisories:
+  - cve: CVE-2020-12279
+    description: >
+      An issue was discovered in libgit2 before 0.28.4 and 0.9x before
+      0.99.0. checkout.c mishandles equivalent filenames that exist
+      because of NTFS short names. This may allow remote code execution
+      when cloning a repository. This issue is similar to CVE-2019-1353.
+    affected_versions: '<0.99.0'
+    fixed_versions: ">=0.99.0"
+    references:
+      - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
+      - https://github.com/libgit2/libgit2/commit/64c612cc3e25eff5fb02c59ef5a66ba7a14751e4
+      - https://github.com/libgit2/libgit2/releases/tag/v0.99.0
+      - https://github.com/git/git/security/advisories/GHSA-589j-mmg9-733v
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2020-04-27
+    severity: critical
+  - cve: CVE-2020-12278
+    description: >
+      An issue was discovered in libgit2 before 0.28.4 and 0.9x before
+      0.99.0. path.c mishandles equivalent filenames that exist because
+      of NTFS Alternate Data Streams. This may allow remote code
+      execution when cloning a repository. This issue is similar to
+      CVE-2019-1352.
+    affected_versions: '<0.99.0'
+    fixed_versions: ">=0.99.0"
+    references:
+      - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
+      - https://github.com/libgit2/libgit2/releases/tag/v0.99.0
+      - https://github.com/libgit2/libgit2/commit/e1832eb20a7089f6383cfce474f213157f5300cb
+      - https://github.com/git/git/security/advisories/GHSA-5wph-8frv-58vj
+      - https://github.com/libgit2/libgit2/commit/3f7851eadca36a99627ad78cbe56a40d3776ed01
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2020-04-27
+    severity: critical
+  - cve: CVE-2018-15501
+    description: >
+      In ng_pkt in transports/smart_pkt.c in libgit2 before 0.26.6 and
+      0.27.x before 0.27.4, a remote attacker can send a crafted
+      smart-protocol \"ng\" packet that lacks a '\\0' byte to trigger an
+      out-of-bounds read that leads to DoS.
+    affected_versions: '<0.27.4'
+    fixed_versions: ">=0.27.4"
+    references:
+      - https://www.pro-linux.de/sicherheit/2/44650/denial-of-service-in-libgit2.html
+      - https://github.com/libgit2/libgit2/releases/tag/v0.27.4
+      - https://github.com/libgit2/libgit2/releases/tag/v0.26.6
+      - https://github.com/libgit2/libgit2/commit/1f9a8510e1d2f20ed7334eeeddb92c4dd8e7c649
+      - https://bugzilla.suse.com/show_bug.cgi?id=1104641
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=9406
+      - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-08-18
+    severity: high
+  - cve: CVE-2018-10888
+    description: >
+      A flaw was found in libgit2 before version 0.27.3. A missing check
+      in git_delta_apply function in delta.c file, may lead to an
+      out-of-bound read while reading a binary delta file. An attacker
+      may use this flaw to cause a Denial of Service.
+    affected_versions: '<0.27.3'
+    fixed_versions: '>=0.27.3'
+    references:
+      - https://github.com/libgit2/libgit2/releases/tag/v0.27.3
+      - https://github.com/libgit2/libgit2/commit/9844d38bed10e9ff17174434b3421b227ae710f3
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1598024
+      - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-07-10
+    severity: medium
+  - cve: CVE-2018-10887
+    description: >
+      A flaw was found in libgit2 before version 0.27.3. It has been
+      discovered that an unexpected sign extension in git_delta_apply
+      function in delta.c file may lead to an integer overflow which in
+      turn leads to an out of bound read, allowing to read before the
+      base object. An attacker may use this flaw to leak memory
+      addresses or cause a Denial of Service.
+    affected_versions: '<0.27.3'
+    fixed_versions: '>=0.27.3'
+    references:
+      - https://github.com/libgit2/libgit2/releases/tag/v0.27.3
+      - https://github.com/libgit2/libgit2/commit/c1577110467b701dcbcf9439ac225ea851b47d22
+      - https://github.com/libgit2/libgit2/commit/3f461902dc1072acb8b7607ee65d0a0458ffac2a
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1598021
+      - https://lists.debian.org/debian-lts-announce/2018/08/msg00024.html
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-07-10
+    severity: high
+  - cve: CVE-2014-9390
+    description: >
+      Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x
+      before 2.1.4, and 2.2.x before 2.2.1 on Windows and OS X;
+      Mercurial before 3.2.3 on Windows and OS X; Apple Xcode before 6.2
+      beta 3; mine all versions before 08-12-2014; libgit2 all versions
+      up to 0.21.2; Egit all versions before 08-12-2014; and JGit all
+      versions before 08-12-2014 allow remote Git servers to execute
+      arbitrary commands via a tree containing a crafted .git/config
+      file with (1) an ignorable Unicode codepoint, (2) a git~1/config
+      representation, or (3) mixed case that is improperly handled on a
+      case-insensitive filesystem.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://news.ycombinator.com/item?id=8769667
+      - http://git-blame.blogspot.com/2014/12/git-1856-195-205-214-and-221-and.html
+      - https://github.com/blog/1938-git-client-vulnerability-announced
+      - http://securitytracker.com/id?1031404
+      - http://article.gmane.org/gmane.linux.kernel/1853266
+      - http://mercurial.selenic.com/wiki/WhatsNew
+      - http://support.apple.com/kb/HT204147
+      - https://libgit2.org/security/
+      - https://github.com/libgit2/libgit2/commit/928429c5c96a701bcbcafacb2421a82602b36915
+    reported: 2020-02-12
+    severity: critical
+  - cve: X-libgit2-2015-01-20-0
+    description: >
+      On the heels of CVE 2014-9390, we are announcing another round of
+      security updates to libgit2. Similar to the prior vulnerability,
+      an attacker can construct a git commit that, when checked out, may
+      cause files to be written to your .git directory which may lead to
+      arbitrary code execution.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://www.edwardthomson.com/blog/another-libgit2-security-update.html
+    reported: 2015-01-20
+    severity: critical
+  - cve: CVE-2016-10128
+    description: >
+      Buffer overflow in the git_pkt_parse_line function in
+      transports/smart_pkt.c in the Git Smart Protocol support in
+      libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote
+      attackers to have unspecified impact via a crafted non-flush
+      packet.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/66e3774d279672ee51c3b54545a79d20d1ada834
+      - https://github.com/libgit2/libgit2/commit/4ac39c76c0153d1ee6889a0984c39e97731684b2
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95338
+    reported: 2017-03-24
+    severity: critical
+  - cve: CVE-2016-10129
+    description: >
+      The Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x
+      before 0.25.1 allows remote attackers to cause a denial of service
+      (NULL pointer dereference) via an empty packet line.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/84d30d569ada986f3eef527cbdb932643c2dd037
+      - https://github.com/libgit2/libgit2/commit/2fdef641fd0dd2828bd948234ae86de75221a11a
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95339
+    reported: 2017-03-24
+    severity: high
+  - cve: CVE-2016-10130
+    description: >
+      The http_connect function in transports/http.c in libgit2 before
+      0.24.6 and 0.25.x before 0.25.1 might allow man-in-the-middle
+      attackers to spoof servers by leveraging clobbering of the error
+      variable.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/b5c6a1b407b7f8b952bded2789593b68b1876211
+      - https://github.com/libgit2/libgit2/commit/9a64e62f0f20c9cf9b2e1609f037060eb2d8eb22
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95359
+    reported: 2017-03-24
+    severity: medium
+  - cve: CVE-2016-8568
+    description: >
+      The git_commit_message function in oid.c in libgit2 before 0.24.3
+      allows remote attackers to cause a denial of service
+      (out-of-bounds read) via a cat-file command with a crafted object
+      file.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVUEIG6EESZB6BRU2IE3F5NRUEHMAEKC/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X3JBSNJAXP7JA3TGE2NPNRTD77JXFG4E/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4E77DG5KGQ7L34U75QY7O6NIPKZNQHQJ/
+      - https://github.com/libgit2/libgit2/releases/tag/v0.24.3
+      - https://github.com/libgit2/libgit2/issues/3936
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1383211
+      - http://www.securityfocus.com/bid/93466
+      - http://www.openwall.com/lists/oss-security/2016/10/08/7
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00114.html
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00110.html
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00103.html
+      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00075.html
+    reported: 2017-02-03
+    severity: medium
+  - cve: CVE-2016-8569
+    description: >
+      The git_oid_nfmt function in commit.c in libgit2 before 0.24.3
+      allows remote attackers to cause a denial of service (NULL pointer
+      dereference) via a cat-file command with a crafted object file.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVUEIG6EESZB6BRU2IE3F5NRUEHMAEKC/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X3JBSNJAXP7JA3TGE2NPNRTD77JXFG4E/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4E77DG5KGQ7L34U75QY7O6NIPKZNQHQJ/
+      - https://github.com/libgit2/libgit2/releases/tag/v0.24.3
+      - https://github.com/libgit2/libgit2/issues/3937
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1383211
+      - http://www.securityfocus.com/bid/93465
+      - http://www.openwall.com/lists/oss-security/2016/10/08/7
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00114.html
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00110.html
+      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00103.html
+      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00075.html
+    reported: 2017-02-03
+    severity: medium
+  - cve: CVE-2018-8098
+    description: >
+      Integer overflow in the index.c:read_entry() function while
+      decompressing a compressed prefix length in libgit2 before v0.26.2
+      allows an attacker to cause a denial of service (out-of-bounds
+      read) via a crafted repository index file.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/3db1af1f370295ad5355b8f64b865a2a357bcac0
+      - https://github.com/libgit2/libgit2/commit/3207ddb0103543da8ad2139ec6539f590f9900c1
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
+    severity: medium
+  - cve: CVE-2018-8099
+    description: >
+      Incorrect returning of an error code in the index.c:read_entry()
+      function leads to a double free in libgit2 before v0.26.2, which
+      allows an attacker to cause a denial of service via a crafted
+      repository index file.
+    affected_versions: ~
+    fixed_versions: ~
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/58a6fe94cb851f71214dbefac3f9bffee437d6fe
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
+    severity: medium
