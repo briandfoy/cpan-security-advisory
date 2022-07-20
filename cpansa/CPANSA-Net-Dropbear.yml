@@ -1,23 +1,5 @@
 ---
-- affected_versions: "<0.11"
-  cves:
-    - CVE-2019-15599
-  description: >
-    A Code Injection exists in tree-kill on Windows which allows a
-    remote code execution when an attacker is able to control the
-    input into the command.
-  distribution: Net-Dropbear
-  embedded_vulnerability:
-    distributed_version: "<=2018.76"
-    name: dropbear
-  fixed_versions: ~
-  id: CPANSA-Net-Dropbear-2019-15599
-  references:
-    - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
-    - https://hackerone.com/reports/701183
-  reported: 2019-12-18
-  severity: critical
-- affected_versions: ~
+- affected_versions: '<0'
   cves:
     - CVE-2019-17362
   description: >
@@ -38,8 +20,9 @@
   distribution: Net-Dropbear
   embedded_vulnerability:
     distributed_version: "1.8.2"
-    name: libtomcrypt[dropbear]
-  fixed_versions: ~
+    name: libtomcrypt
+    affected_versions: '<0'
+  fixed_versions: '>0'
   id: CPANSA-Net-Dropbear-2019-17362
   references:
     - https://github.com/atrodo/Net-Dropbear/issues/6

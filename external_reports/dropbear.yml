@@ -38,3 +38,15 @@ advisories:
       - https://matt.ucc.asn.au/dropbear/CHANGES
     reported: 2020-12-30
     severity: medium
+  - cve: CVE-2019-15599
+    description: >
+      A Code Injection exists in tree-kill on Windows which allows a
+      remote code execution when an attacker is able to control the
+      input into the command.
+    affected_versions: "<=2018.76"
+    fixed_versions: ~
+    references:
+      - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
+      - https://hackerone.com/reports/701183
+    reported: 2019-12-18
+    severity: critical
