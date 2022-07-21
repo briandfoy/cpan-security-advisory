@@ -5,9 +5,6 @@
     A bug would allow a malicious user possible writing of files in
     the same directory as the source.asp script.
   distribution: Apache-ASP
-  embedded_vulnerability:
-    distributed_version: ~
-    name: ~
   fixed_versions: '>=1.95'
   id: CPANSA-Apache-ASP-2000-01
   references:

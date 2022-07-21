@@ -183,6 +183,10 @@ sub run ( @args ) {
 	$hash->{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
 	$hash->{embedded_vulnerability}{name}                //= $config->embedded_name;
 
+	delete $hash->{embedded_vulnerability} unless(
+		defined $config->embedded_version or defined $config->embedded_name
+		);
+
 	my $string = YAML::Dump( [ $hash ] );
 
 	# We want the folded form to avoid yamllint warnings, but YAML
