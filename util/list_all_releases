@@ -1,0 +1,44 @@
+use v5.26;
+use utf8;
+
+use FindBin qw($Bin);
+use lib "$Bin/../lib";
+
+use Local::Tools::list_all_releases;
+
+Local::Tools::list_all_releases->run(@ARGV);
+
+=head1 NAME
+
+list_all_releases
+
+=head1 SYNOPSIS
+
+	% perl list_all_releases Some::Module Other::Module
+
+=head1 DESCRIPTION
+
+This script gets the download URLs for all releases for the modules
+you specify. I use this to then download all releases so I can look
+at the history of development.
+
+This script is simply a modulino that uses L<Local::Tools::list_all_releases>
+in this distribution. See that module for more information.
+
+=head1 SOURCE AVAILABILITY
+
+This source is in Github:
+
+	http://github.com/briandfoy/cpan-security-advisory
+
+=head1 AUTHOR
+
+brian d foy, C<< <brian d foy> >>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright © 2022, brian d foy, All Rights Reserved.
+
+You may redistribute this under the terms of the Artistic License 2.0.
+
+=cut
