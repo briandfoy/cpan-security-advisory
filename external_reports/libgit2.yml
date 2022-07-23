@@ -3,6 +3,7 @@ name: libgit2
 url: https://github.com/libgit2/libgit2
 perl_distributions:
   - name: Git-Raw
+    last_version_checked: '0.88'
     affected:
       - perl_module_versions: '>=0.08,<=0.24'
         distributed_library_version: '0.17.0'
@@ -31,6 +32,7 @@ perl_distributions:
       - perl_module_versions: '==0.88'
         distributed_library_version: '1.1.0'
   - name: Git-XS
+    last_version_checked: '0.02'
     affected:
       - perl_module_versions: ">=0.01,<=0.02"
         distributed_library_version: '0.15.0'

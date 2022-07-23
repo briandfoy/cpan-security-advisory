@@ -57,6 +57,7 @@ perl_distributions:
       - perl_module_versions: '>=2.103,<=2.202'
         distributed_library_version: "1.2.12"
   - name: Git-Raw
+    last_version_checked: '0.88'
     comment: As part of libgit2
     affected:
       - perl_module_versions: '>=0.08,<=0.40'
@@ -67,10 +68,10 @@ perl_distributions:
         distributed_library_version: "1.2.11"
   - name: Git-XS
     last_version_checked: "0.02"
+    comment: As part of libgit2
     affected:
       - perl_module_versions: '>=0.01,<=0.02'
         distributed_library_version: "1.2.5"
-        comment: As part of libgit2
   - name: cppAdaptive1
     last_version_checked: "0.01"
     affected:
