@@ -5,13 +5,13 @@ perl_distributions:
   - name: Redland
     affected:
       - perl_module_versions: '==0.9.13,==0.9.13.2'
-        version: '0.9.13'
+        distributed_library_version: '0.9.13'
       - perl_module_versions: '==0.9.14.1'
-        version: '0.9.14'
+        distributed_library_version: '0.9.14'
       - perl_module_versions: '==1.0.5.2,==1.0.5.3'
-        version: '1.0.5'
+        distributed_library_version: '1.0.5'
       - perl_module_versions: '==1.0.13.1'
-        version: '1.0.13'
+        distributed_library_version: '1.0.13'
 advisories:
   - cve: CVE-2012-0037
     description: >
