@@ -6,6 +6,8 @@ use experimental qw(signatures);
 use File::Spec::Functions;
 use IO::Interactive qw(interactive);
 
+=encoding utf8
+
 =head1 NAME
 
 invert-third-party.pl - make the CPANSA reports for external vulnerabilities
@@ -22,8 +24,71 @@ There's a F<Makefile> target:
 	% make invert
 
 After this, there will be a directory F<generated_reports> directory.
+You'd add these reports to the ones you index when you generate the
+CPAN::Audit database.
 
 =head1 DESCRIPTION
+
+This program generates CPANSA-formatted reports for shared third-party
+vulnerabilities across many modules.
+
+=head2 YAML format
+
+The YAML format is always evolving. Throwing in extra stuff is okay.
+I often use C<comment> keys at any level to leave notes.
+
+At the top level, there are four keys:
+
+	* name - name of the third-party library
+	* url - URL for the third-party library
+	* perl_distributions - the mapping from perl module version to third-party version
+	* advisories - the third-party advisories
+
+The basic structure looks like this:
+
+    ---
+    name: foo-js
+    url: https://example.com/foo-js
+    perl_distributions: []
+    advisories: []
+
+The C<perl_distributions> value is an array of objects. Each object
+has the name of the Perl module, and a list of affected Perl module
+versions. There should be one object for each third-party version per
+Perl module. Since several distributions probably distribute the same
+library, we don't capture the vulnerability info here because we'd
+repeat a lot of stuff. You can think about this in terms of a
+database. There is a C<perl_distributions> table with a foreign key
+like thing to the C<advisories> table.
+
+    perl_distributions:
+      - name: Some-Module
+        affected:
+          - perl_module_versions: '>=2.1.3,<=2.1.5'
+            distributed_library_version: '1.2.3'
+      - name: Some-Other-Module
+        affected:
+          - perl_module_versions: "==0.003"
+            distributed_library_version: ~
+            needs_work: true
+            comment: >
+              I don't know how to identify the version from the
+              included file
+
+The C<advisories> sections look very close to the format in F<cpansa/>
+but does not have the Perl information (no C<id> key). This program
+uses the value in C<affected_versions> to connect to the Perl module
+versions.
+
+    advisories: ...
+      - cve: CVE-2037-1234
+        description: >
+          This is just an awful piece of insecure software
+        affected_versions: "<2.9.4"
+        fixed_versions: ">=2.9.4"
+        references: []
+        reported: 2020-10-29
+        severity: high
 
 =cut
 
@@ -158,45 +223,3 @@ sub _output ( $fh, $label, $message ) {
 sub error   ( $message ) { _output( \*STDERR, 'ERROR', $message ) }
 sub info    ( $message ) { _output( \*STDOUT, 'INFO',  $message ) }
 sub verbose ( $message ) { _output( \*STDOUT, 'EXTRA', $message ) }
-
-
-__END__
----
-- affected_versions: "<=2.26"
-  cves:
-    - CVE-2010-1447
-  description: >
-    The Safe (aka Safe.pm) module 2.26, and certain earlier versions,
-    for Perl, as used in PostgreSQL 7.4 before 7.4.29, 8.0 before
-    8.0.25, 8.1 before 8.1.21, 8.2 before 8.2.17, 8.3 before 8.3.11,
-    8.4 before 8.4.4, and 9.0 Beta before 9.0 Beta 2, allows
-    context-dependent attackers to bypass intended (1) Safe::reval and
-    (2) Safe::rdo access restrictions, and inject and execute
-    arbitrary code, via vectors involving subroutine references and
-    delayed execution.
-  distribution: Safe
-  fixed_versions: ">=2.27"
-  id: CPANSA-Safe-2010-1447
-  references:
-    - https://bugs.launchpad.net/bugs/cve/2010-1447
-    - http://www.vupen.com/english/advisories/2010/1167
-    - http://secunia.com/advisories/39845
-    - http://www.postgresql.org/about/news.1203
-    - http://security-tracker.debian.org/tracker/CVE-2010-1447
-    - https://bugzilla.redhat.com/show_bug.cgi?id=588269
-    - http://www.securitytracker.com/id?1023988
-    - http://osvdb.org/64756
-    - http://www.securityfocus.com/bid/40305
-    - http://secunia.com/advisories/40052
-    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
-    - http://www.openwall.com/lists/oss-security/2010/05/20/5
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
-    - http://www.redhat.com/support/errata/RHSA-2010-0457.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:115
-    - http://secunia.com/advisories/40049
-    - http://www.debian.org/security/2011/dsa-2267
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7320
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11530
-  reported: 2010-05-19
-  severity: ~
