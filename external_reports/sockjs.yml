@@ -15,7 +15,7 @@ advisories:
       Incorrect handling of Upgrade header with the value websocket leads
       in crashing of containers hosting sockjs apps. This affects the
       package sockjs before 0.3.20.
-    affected_versions: ~
+    affected_versions: '<0.3.20'
     fixed_versions: ~
     references:
       - https://nvd.nist.gov/vuln/detail/CVE-2020-7693

@@ -23,8 +23,8 @@ advisories:
       JavaScript exceptions, or it tampers with the application source
       code to force the code path that the attacker injects, thereby
       leading to remote code execution.
-    affected_versions:
-    fixed_versions:
+    affected_versions: '>=0'
+    fixed_versions: ~
     references:
       - https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006
     reported: ~

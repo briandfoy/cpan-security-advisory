@@ -11,7 +11,7 @@ advisories:
     description: >
       This affects all versions of package mootools. This is due to the
       ability to pass untrusted input to Object.merge()
-    affected_versions: '>0'
+    affected_versions: '>=0'
     fixed_versions: ~
     references:
       - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536

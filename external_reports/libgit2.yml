@@ -41,7 +41,9 @@ advisories:
       0.99.0. checkout.c mishandles equivalent filenames that exist
       because of NTFS short names. This may allow remote code execution
       when cloning a repository. This issue is similar to CVE-2019-1353.
-    affected_versions: '<0.99.0'
+    affected_versions:
+      - '<0.28.4'
+      - '>0.90,<0.99.0'
     fixed_versions: ">=0.99.0"
     references:
       - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
@@ -58,7 +60,9 @@ advisories:
       of NTFS Alternate Data Streams. This may allow remote code
       execution when cloning a repository. This issue is similar to
       CVE-2019-1352.
-    affected_versions: '<0.99.0'
+    affected_versions:
+      - '<0.28.4'
+      - '>0.90,<0.99.0'
     fixed_versions: ">=0.99.0"
     references:
       - https://github.com/libgit2/libgit2/releases/tag/v0.28.4
@@ -75,7 +79,9 @@ advisories:
       0.27.x before 0.27.4, a remote attacker can send a crafted
       smart-protocol \"ng\" packet that lacks a '\\0' byte to trigger an
       out-of-bounds read that leads to DoS.
-    affected_versions: '<0.27.4'
+    affected_versions:
+      - '<0.26.6'
+      - '>0.27.0,<0.27.4'
     fixed_versions: ">=0.27.4"
     references:
       - https://www.pro-linux.de/sicherheit/2/44650/denial-of-service-in-libgit2.html
@@ -135,7 +141,8 @@ advisories:
       file with (1) an ignorable Unicode codepoint, (2) a git~1/config
       representation, or (3) mixed case that is improperly handled on a
       case-insensitive filesystem.
-    affected_versions: ~
+    affected_versions:
+      - '<1.21.2'
     fixed_versions: ~
     references:
       - https://news.ycombinator.com/item?id=8769667
@@ -169,7 +176,9 @@ advisories:
       libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote
       attackers to have unspecified impact via a crafted non-flush
       packet.
-    affected_versions: ~
+    affected_versions:
+      - '<0.24.6'
+      - '>=0.25.0,<0.25.1'
     fixed_versions: ~
     references:
       - https://libgit2.github.com/security/
@@ -188,7 +197,9 @@ advisories:
       The Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x
       before 0.25.1 allows remote attackers to cause a denial of service
       (NULL pointer dereference) via an empty packet line.
-    affected_versions: ~
+    affected_versions:
+      - '<0.24.6'
+      - '>=0.25.0,<0.25.1'
     fixed_versions: ~
     references:
       - https://libgit2.github.com/security/
@@ -208,7 +219,9 @@ advisories:
       0.24.6 and 0.25.x before 0.25.1 might allow man-in-the-middle
       attackers to spoof servers by leveraging clobbering of the error
       variable.
-    affected_versions: ~
+    affected_versions:
+      - '<0.24.6'
+      - '>=0.25.0,<0.25.1'
     fixed_versions: ~
     references:
       - https://libgit2.github.com/security/
@@ -228,7 +241,8 @@ advisories:
       allows remote attackers to cause a denial of service
       (out-of-bounds read) via a cat-file command with a crafted object
       file.
-    affected_versions: ~
+    affected_versions:
+      - '<0.24.3'
     fixed_versions: ~
     references:
       - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVUEIG6EESZB6BRU2IE3F5NRUEHMAEKC/
@@ -250,7 +264,8 @@ advisories:
       The git_oid_nfmt function in commit.c in libgit2 before 0.24.3
       allows remote attackers to cause a denial of service (NULL pointer
       dereference) via a cat-file command with a crafted object file.
-    affected_versions: ~
+    affected_versions:
+      - '<0.24.3'
     fixed_versions: ~
     references:
       - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XVUEIG6EESZB6BRU2IE3F5NRUEHMAEKC/
@@ -273,7 +288,8 @@ advisories:
       decompressing a compressed prefix length in libgit2 before v0.26.2
       allows an attacker to cause a denial of service (out-of-bounds
       read) via a crafted repository index file.
-    affected_versions: ~
+    affected_versions:
+      - '<0.26.2'
     fixed_versions: ~
     references:
       - https://libgit2.github.com/security/
@@ -288,7 +304,8 @@ advisories:
       function leads to a double free in libgit2 before v0.26.2, which
       allows an attacker to cause a denial of service via a crafted
       repository index file.
-    affected_versions: ~
+    affected_versions:
+      - '<0.26.2'
     fixed_versions: ~
     references:
       - https://libgit2.github.com/security/

@@ -568,6 +568,8 @@ advisories:
       (PCRE) library before 7.3 allow context-dependent attackers to cause a
       denial of service (crash) or execute arbitrary code via unspecified
       escape (backslash) sequences.
+    affected_versions: '<7.3'
+    fixed_versions: '>=7.3'
     references:
       - http://www.pcre.org/changelog.txt
       - http://www.debian.org/security/2007/dsa-1399

@@ -769,7 +769,7 @@ advisories:
       and using the Kerberos authentication method combined with another
       method with the Combination authentication plug-in, any password will
       be recognized as valid for an existing user.
-    affected_versions: ~
+    affected_versions: '==2.0.13'
     fixed_versions: ~
     references:
       - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2612

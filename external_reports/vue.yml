@@ -15,14 +15,19 @@ advisories:
       scripting vulnerability. This issue affected minor releases 16.0.x,
       16.1.x, 16.2.x, 16.3.x, and 16.4.x. It was fixed in 16.0.1, 16.1.2,
       16.2.1, 16.3.3, and 16.4.2.
-    affected_versions: ~
+    affected_versions:
+      - '>=16.0.0,<16.0.1'
+      - '>=16.1.0,<16.1.2'
+      - '>=16.2.0,<16.2.1'
+      - '>=16.3.0,<16.3.3'
+      - '>=16.4.0,<16.4.2'
     fixed_versions: ~
     references:
       - https://twitter.com/reactjs/status/1024745321987887104
       - https://reactjs.org/blog/2018/08/01/react-v-16-4-2.html
     reported: 2018-12-31
     severity: medium
-  - cves: xCVE-2018-vue-001
+  - cve: xCVE-2018-vue-001
     description: >
       Regular Expression Denial of Service.
     affected_versions: '<2.5.14'

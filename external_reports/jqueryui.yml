@@ -12,7 +12,7 @@ advisories:
       Cross-site scripting (XSS) vulnerability in jquery.ui.dialog.js in
       the Dialog widget in jQuery UI before 1.10.0 allows remote attackers
       to inject arbitrary web script or HTML via the title option.
-    affected_versions: ~
+    affected_versions: '<1.10.0'
     fixed_versions: ~
     references:
       - https://github.com/jquery/jquery-ui/commit/7e9060c109b928769a664dbcc2c17bd21231b6f3
@@ -39,7 +39,7 @@ advisories:
       Cross-site scripting (XSS) vulnerability in jQuery UI before
       1.12.0 might allow remote attackers to inject arbitrary web script or
       HTML via the closeText parameter of the dialog function.
-    affected_versions: ~
+    affected_versions: '<1.12.0'
     fixed_versions: ~
     references:
       - https://nodesecurity.io/advisories/127
@@ -79,7 +79,7 @@ advisories:
       `altField` option is now treated as a CSS selector. A workaround is to
       not accept the value of the `altField` option from untrusted sources.
     distribution: Yukki
-    affected_versions: ~
+    affected_versions: '<1.13.0'
     fixed_versions: ~
     id: CPANSA-Yukki-2021-41182
     references:
@@ -106,7 +106,7 @@ advisories:
       `*Text` options are now always treated as pure text, not HTML. A
       workaround is to not accept the value of the `*Text` options from
       untrusted sources.
-    affected_versions: ~
+    affected_versions: '<1.13.0'
     fixed_versions: ~
     references:
       - https://bugs.jqueryui.com/ticket/15284
@@ -133,7 +133,7 @@ advisories:
       The issue is fixed in jQuery UI 1.13.0. Any string value passed to the
       `of` option is now treated as a CSS selector. A workaround is to not
       accept the value of the `of` option from untrusted sources.
-    affected_versions: ~
+    affected_versions: '<1.13.0'
     fixed_versions: ~
     references:
       - https://github.com/jquery/jquery-ui/commit/effa323f1505f2ce7a324e4f429fa9032c72f280

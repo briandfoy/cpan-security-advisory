@@ -23,7 +23,7 @@ advisories:
       and earlier allow remote attackers to cause a denial of service
       (heap memory corruption) via vectors related to the height and
       width of a window.
-    affected_versions: ~
+    affected_versions: '<=3.17.0'
     fixed_versions: ~
     references:
       - https://github.com/kmx/alien-freeimage/issues/5

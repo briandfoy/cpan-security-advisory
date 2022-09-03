@@ -34,7 +34,7 @@ advisories:
       that follow Start Of Scan (SOS) JPEG markers, which allows remote
       attackers to obtain sensitive information from uninitialized memory
       locations via a crafted JPEG image.
-    affected_versions: ~
+    affected_versions: '<=1.3.0'
     fixed_versions: ~
     references:
       - https://code.google.com/p/chromium/issues/detail?id=258723
@@ -97,8 +97,8 @@ advisories:
       floating point exception in the function ACLosslessScan::ParseMCU()
       located in aclosslessscan.cpp. It allows an attacker to cause Denial
       of Service.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<=2020021'
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/36
     reported: 2021-09-20
@@ -120,8 +120,8 @@ advisories:
       An issue was discovered in libjpeg through 2020021. A NULL pointer
       dereference exists in the function HuffmanDecoder::Get() located in
       huffmandecoder.hpp. It allows an attacker to cause Denial of Service.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<=2020021'
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/42
     reported: 2021-09-20
@@ -133,8 +133,8 @@ advisories:
       BlockBitmapRequester::ReconstructUnsampled() located in
       blockbitmaprequester.cpp. It allows an attacker to cause Denial of
       Service.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<=2020021'
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/33
     reported: 2021-09-20
@@ -144,8 +144,8 @@ advisories:
       An issue was discovered in libjpeg through 2020021.
       LineBuffer::FetchRegion() in linebuffer.cpp has a heap-based buffer
       overflow.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<=2020021'
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/35
     reported: 2021-09-20
@@ -157,7 +157,7 @@ advisories:
       located in blockbitmaprequester.cpp It allows an attacker to cause
       Denial of Service.
     affected_versions: '<=2020021'
-    fixed_versions: ~
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/28
     reported: 2021-09-20
@@ -169,8 +169,12 @@ advisories:
       BlockBitmapRequester::PushReconstructedData() located in
       blockbitmaprequester.cpp. It allows an attacker to cause Denial of
       Service.
+    comment: >
+      The version numbers in the report do not map onto the version
+      numbers of the library. This was reported on 2020-09-03 in the
+      GitHub repo.
     affected_versions: '<=2020021'
-    fixed_versions: ~
+    fixed_versions: '>2020021'
     references:
       - https://github.com/thorfdbg/libjpeg/issues/34
     reported: 2021-09-20

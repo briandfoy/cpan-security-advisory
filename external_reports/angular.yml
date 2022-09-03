@@ -12,7 +12,7 @@ advisories:
       In AngularJS before 1.7.9 the function `merge()` could be tricked
       into adding or modifying properties of `Object.prototype` using a
       `__proto__` payload.
-    affected_versions: ~
+    affected_versions: '<=1.7.9'
     fixed_versions: ~
     references:
       - https://snyk.io/vuln/SNYK-JS-ANGULAR-534884
@@ -25,7 +25,7 @@ advisories:
       1.5.0-beta.0, where after escaping the context of the web application,
       the web application delivers data to its users along with other
       trusted dynamic content, without validating it.
-    affected_versions: ~
+    affected_versions: '<1.5.1'
     fixed_versions: ~
     references:
       - https://snyk.io/vuln/npm:angular:20150807
@@ -38,8 +38,8 @@ advisories:
       regex-based input HTML replacement may turn sanitized code into
       unsanitized one. Wrapping "<option>" elements in "<select>" ones
       changes parsing behavior, leading to possibly unsanitizing code.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<1.8.0'
+    fixed_versions: '>1.8.0'
     id: CPANSA-Zonemaster-GUI-2020-7676
     references:
       - https://github.com/angular/angular.js/pull/17028

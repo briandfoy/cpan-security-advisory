@@ -13,8 +13,8 @@ advisories:
       Moxiecode plupload before 1.5.5, as used in WordPress before 3.5.1 and
       other products, allows remote attackers to inject arbitrary web script
       or HTML via the id parameter.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<1.5.5'
+    fixed_versions: '>=1.5.5'
     references:
       - https://bugzilla.redhat.com/show_bug.cgi?id=904122
       - http://wordpress.org/news/2013/01/wordpress-3-5-1/
@@ -28,8 +28,8 @@ advisories:
       Plupload before 2.1.9, as used in WordPress before 4.5.2, allows
       remote attackers to inject arbitrary web script or HTML via a
       Same-Origin Method Execution (SOME) attack.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<2.1.9'
+    fixed_versions: '>=2.1.9'
     references:
       - http://www.plupload.com/punbb/viewtopic.php?pid=28690
       - https://wordpress.org/news/2016/05/wordpress-4-5-2/
@@ -46,8 +46,8 @@ advisories:
       This affects the package plupload before 2.3.9. A file name
       containing JavaScript code could be uploaded and run. An attacker
       would need to trick a user to upload this kind of file.
-    affected_versions: ~
-    fixed_versions: ~
+    affected_versions: '<2.3.9'
+    fixed_versions: '>=2.3.9'
     references:
       - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBMOXIECODE-2306664
       - https://github.com/moxiecode/plupload/commit/d12175d4b5fa799b994ee1bb17bfbeec55b386fb

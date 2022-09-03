@@ -104,7 +104,7 @@ advisories:
       The crc32_big function in crc32.c in zlib 1.2.8 might allow
       context-dependent attackers to have unspecified impact via vectors
       involving big-endian CRC calculation.
-    affected_versions: ~
+    affected_versions: '==1.2.8'
     fixed_versions: ~
     references:
       - https://github.com/kmx/alien-freeimage/issues/4
@@ -148,7 +148,7 @@ advisories:
       The inflateMark function in inflate.c in zlib 1.2.8 might allow
       context-dependent attackers to have unspecified impact via vectors
       involving left shifts of negative integers.
-    affected_versions: ~
+    affected_versions: '==1.2.8'
     fixed_versions: ~
     references:
       - https://github.com/kmx/alien-freeimage/issues/4
@@ -188,7 +188,7 @@ advisories:
     description: >
       inffast.c in zlib 1.2.8 might allow context-dependent attackers to
       have unspecified impact by leveraging improper pointer arithmetic.
-    affected_versions: ~
+    affected_versions: '==1.2.8'
     fixed_versions: ~
     references:
       - https://github.com/kmx/alien-freeimage/issues/4
@@ -235,7 +235,7 @@ advisories:
       inftrees.c in zlib 1.2.8 might allow context-dependent attackers
       to have unspecified impact by leveraging improper pointer
       arithmetic.
-    affected_versions: ~
+    affected_versions: '==1.2.8'
     fixed_versions: ~
     references:
       - https://github.com/kmx/alien-freeimage/issues/4

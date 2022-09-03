@@ -12,7 +12,7 @@ advisories:
     description: >
       Affected versions of the package are vulnerable to Cross-site
       Scripting (XSS) via the editor box.
-    affected_versions: '>0'
+    affected_versions: '>=0'
     fixed_versions: ~
     references:
       - https://security.snyk.io/vuln/npm:bootstrap-markdown:20140826
