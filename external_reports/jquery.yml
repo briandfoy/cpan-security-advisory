@@ -68,8 +68,10 @@ perl_distributions:
         distributed_library_version: '1.12.0'
   - name: Ukigumo-Server
     affected:
-      - perl_module_versions:
-        distributed_library_version: '1.10.0'
+      - perl_module_versions: '>=2.1.3,<=2.1.5'
+        distributed_library_version: '1.11.0'
+      - perl_module_versions: '>=0.01,<=2.1.2'
+        distributed_library_version: '1.6.3'
   - name: Kossy
     affected:
       - perl_module_versions: '<0.17'

@@ -4,7 +4,7 @@ url: https://github.com/angular/angular
 perl_distributions:
   - name: Zonemaster-GUI
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=1.0.7,<=1.0.11'
         distributed_library_version: '1.2.22'
 advisories:
   - cve: CVE-2019-10768
