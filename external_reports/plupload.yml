@@ -4,8 +4,14 @@ url: https://www.plupload.com
 perl_distributions:
   - name: Yukki
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '<=0.99_01'
+        distributed_library_version: '2.3.1'
+      - perl_module_versions: '<=0.991_006'
+        distributed_library_version: '1.5.3'
+      - perl_module_versions: '<=0.140290'
         distributed_library_version: '1.5.4'
+      - perl_module_versions: '>=0.110830,'
+        distributed_library_version: '1.4.2'
 advisories:
   - cve: CVE-2013-0237
     description: >
