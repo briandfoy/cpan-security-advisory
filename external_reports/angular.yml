@@ -7,7 +7,7 @@ perl_distributions:
       - perl_module_versions:
         distributed_library_version: '1.2.22'
 advisories:
-  - cves: CVE-2019-10768
+  - cve: CVE-2019-10768
     description: >
       In AngularJS before 1.7.9 the function `merge()` could be tricked
       into adding or modifying properties of `Object.prototype` using a
@@ -32,7 +32,7 @@ advisories:
       - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14863
     reported: 2020-01-02
     severity: medium
-  - cves: CVE-2020-7676
+  - cve: CVE-2020-7676
     description: >
       angular.js prior to 1.8.0 allows cross site scripting. The
       regex-based input HTML replacement may turn sanitized code into
