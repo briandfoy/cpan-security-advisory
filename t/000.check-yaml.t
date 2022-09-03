@@ -38,7 +38,10 @@ if( $ENV{TEST_CHANGED_ONLY} ) {
 	pass() unless @modified_since_last_run;
 	}
 
+diag( @$files_to_test . ' files to test' );
 subtest 'YAML::XS::LoadFile' => sub {
+	my $start = time;
+	diag( "Checking with YAML::XS" );
 	SKIP: {
 		skip 'No new files' unless $files_to_test->@*;
 		foreach my $file ( $files_to_test->@* ) {
@@ -46,17 +49,21 @@ subtest 'YAML::XS::LoadFile' => sub {
 			ok( defined $yaml, "$file is valid YAML" ) or diag( "$file: $@" );
 			}
 		}
+	diag( "  Elapsed: " . (time-$start) . " seconds" );
 	};
 
 subtest 'yamllint' => sub {
+	my $start = time;
+	diag( "Checking with yamllint" );
 	SKIP: {
 		skip 'No yamllint' unless defined $YAMLLINT;
 		skip 'No new files' unless $files_to_test->@*;
 		foreach my $file ( $files_to_test->@* ) {
-			my $output = `$YAMLLINT $file`;
+			my $output = `$YAMLLINT -c t/yamllint.config $file`;
 			is( $?, 0, "yamllint clean for $file" ) or diag( "$file: $output" );
 			}
 		}
+	diag( "  Elapsed: " . (time-$start) . " seconds" );
 	};
 
 done_testing();
