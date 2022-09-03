@@ -6,6 +6,12 @@ perl_distributions:
     affected:
       - perl_module_versions:
         distributed_library_version:
+        does_not_distribute: true
+        comment: |
+          This depends on what was already present on the system. We
+          don't know how to look at that yet.
+        ignore: true
+        needs_work: true
 advisories:
   - cve: CVE-2014-2524
     description: >
