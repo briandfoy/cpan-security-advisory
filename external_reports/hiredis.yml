@@ -6,10 +6,13 @@ perl_distributions:
     affected:
       - perl_module_versions: '==0.0.1'
         distributed_library_version: ~
+        does_not_distribute: true
       - perl_module_versions: '==0.0.2'
         distributed_library_version: ~
+        does_not_distribute: true
       - perl_module_versions: '==0.0.3'
         distributed_library_version: ~
+        does_not_distribute: true
       - perl_module_versions: '==0.9.2,>=0.9.2.1,<0.9.2.8'
         distributed_library_version: '0.9.2'
       - perl_module_versions: '==0.10.1'
