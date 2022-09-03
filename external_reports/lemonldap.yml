@@ -1,8 +1,7 @@
 ---
 name: lemonldap
 url: https://lemonldap-ng.org
-change_log: "https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/\
-            -/blob/master/changelog"
+change_log: "https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/blob/master/changelog"
 comment: >
   This one is a bit weird because the modules are actually embedded
   in the lemonldap big distro. It kinda works out with this method
