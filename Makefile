@@ -1,12 +1,15 @@
-GENERATED=t/.last_run perl-cve-atom.xml
+GENERATED=t/.last_run perl-cve-atom.xml generated_reports
 CVE_FEED_FILE=perl-cve-atom.xml
 
 all: ## does nothing yet (reserved)
 	@ echo "There is no default target"
 
+invert: ## turn the external_reports into CPANSA-style reports
+	perl util/invert-third-party.pl
+
 .PHONY: clean
 clean: ## clean out generated files
-	rm -f $(GENERATED)
+	rm -rf $(GENERATED)
 
 .PHONY: feed
 feed: $(CVE_FEED_FILE)
