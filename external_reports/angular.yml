@@ -40,7 +40,6 @@ advisories:
       changes parsing behavior, leading to possibly unsanitizing code.
     affected_versions: '<1.8.0'
     fixed_versions: '>1.8.0'
-    id: CPANSA-Zonemaster-GUI-2020-7676
     references:
       - https://github.com/angular/angular.js/pull/17028
       - https://snyk.io/vuln/SNYK-JS-ANGULAR-570058
