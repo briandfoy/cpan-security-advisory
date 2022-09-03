@@ -5,6 +5,7 @@ perl_distributions:
   - name: Alien-FreeImage
     affected:
       - perl_module_versions:
+        needs_work: true
         distributed_library_version: '3.17.0'
   - name: Win32-Printer
     affected:
