@@ -3,11 +3,14 @@ name: freeimage
 url: https://freeimage.sourceforge.io
 perl_distributions:
   - name: Alien-FreeImage
+    last_version_checked: "1.001"
     affected:
-      - perl_module_versions:
-        needs_work: true
+      - perl_module_versions: ">=0.001,<=0.011"
+        distributed_library_version: '3.16.0'
+      - perl_module_versions: ">=1.000_1,<=1.001"
         distributed_library_version: '3.17.0'
   - name: Win32-Printer
+    last_version_checked: "0.9.1"
     affected:
       - perl_module_versions: '>=0.7.0,<=0.7.1'
         distributed_library_version: '3.0.4'

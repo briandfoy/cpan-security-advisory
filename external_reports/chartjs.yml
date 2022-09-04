@@ -9,7 +9,7 @@ perl_distributions:
         needs_work: true
         comment: >
           I don't know how to identify the version from the
-          included file
+          included file. All versions are 931ee2daa98264d3591127ae2154227d
   - name: Wight-Chart
     affected:
       - perl_module_versions: "==0.003"
@@ -17,7 +17,7 @@ perl_distributions:
         needs_work: true
         comment: >
           I don't know how to identify the version from the
-          included file
+          included file. MD5 is fc735f59bf94a75a7414098553b7b7a5
 advisories:
   - cve: CVE-2020-7746
     description: >

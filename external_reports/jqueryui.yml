@@ -3,9 +3,14 @@ name: jqueryui
 url: https://github.com/jquery/jquery-ui
 perl_distributions:
   - name: Yukki
+    last_version_checked: '0.991_006'
     affected:
-      - perl_module_versions:
-        distributed_library_version: '1.2.22'
+      - perl_module_versions: '>=0.99_01,<=0.991_006'
+        distributed_library_version: '1.12.1'
+      - perl_module_versions: '>=0.110830,<=0.112770'
+        distributed_library_version: '1.8.10'
+      - perl_module_versions: '>=0.0.121700,<=0.140290'
+        distributed_library_version: '1.8.21'
 advisories:
   - cve: CVE-2010-5312
     description: >

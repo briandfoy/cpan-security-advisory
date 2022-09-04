@@ -1,11 +1,7 @@
 ---
 name: vue
 url: https://reactjs.org
-perl_distributions:
-  - name: Yancy
-    affected:
-      - perl_module_versions:
-        distributed_library_version:
+perl_distributions: []
 advisories:
   - cve: CVE-2018-6341
     description: >

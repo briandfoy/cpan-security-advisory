@@ -3,8 +3,9 @@ name: vue
 url: https://github.com/vuejs/vue
 perl_distributions:
   - name: Yancy
+    last_version_checked: '1.088'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.010,<=1.088'
         distributed_library_version: '2.5.3'
 advisories:
   - cve: xCVE-2018-vue-001

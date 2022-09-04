@@ -2,35 +2,39 @@
 name: libpng
 url: http://www.libpng.org
 perl_distributions:
-  - name: Zonemaster-GUI
-    affected:
-      - perl_module_versions:
-        distributed_library_version: '1.2.22'
   - name: cppAdaptive1
+    last_version_checked: '0.01'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '==0.01'
         distributed_library_version: '1.6.7'
         comment: As part of dlib
   - name: cppAdaptive2
+    last_version_checked: '3.03'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: ">=0.01,<=3.0.3"
         distributed_library_version: '1.6.7'
         comment: As part of dlib
   - name: Image-PNG-Simple
+    last_version_checked: '0.07'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: ">=0.01,<=0.07"
         distributed_library_version: '1.6.7'
   - name: Prima-codecs-win32
+    last_version_checked: '1.01'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: ">=1.00,<=1.01"
         distributed_library_version: '1.2.9'
   - name: Prima-codecs-win64
+    last_version_checked: '1.02'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: ">=1.01,<=1.02"
         distributed_library_version: '1.2.19'
   - name: Tk
+    last_version_checked: '804.036'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>804.024,<=804.027'
+        distributed_library_version: '1.2.5'
+      - perl_module_versions: '>804.027_500,<=804.036'
         distributed_library_version: '1.2.12'
 advisories:
   - cve: CVE-2013-6954

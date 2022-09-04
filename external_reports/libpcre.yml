@@ -3,8 +3,9 @@ name: libpcre
 url: https://www.pcre.org
 perl_distributions:
   - name: Perl6-Pugs
+    last_version_checked: '6.2.9'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=6.0.12,<=6.2.9'
         distributed_library_version: '5.0'
 advisories:
   - cve: CVE-2005-2491

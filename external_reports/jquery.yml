@@ -3,86 +3,118 @@ name: jquery
 url: https://github.com/jquery/jquery
 perl_distributions:
   - name: Sidef
+    last_checked_version: '22.07'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.06,<=22.07'
         distributed_library_version: '2.1.3'
   - name: Stardust
+    last_checked_version: '0.08'
     affected:
-      - perl_module_versions:
-        distributed_library_version: '2.1.3'
+      - perl_module_versions: '>=0.01,<=0.08'
+        distributed_library_version: '1.3.2'
   - name: Squatting
+    last_checked_version: '0.83'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.40,<=0.83'
         distributed_library_version: '1.2.6'
   - name: UR
+    last_checked_version: '0.47'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.42_01,<=0.47'
         distributed_library_version: '2.0.0'
   - name: Yancy
+    last_checked_version: '1.088'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.010,<=1.088'
         distributed_library_version: '3.2.1'
   - name: YATT-Lite
+    last_checked_version: '0.101_102'
     affected:
-      - perl_module_versions:
-        distributed_library_version: '3.2.1'
+      - perl_module_versions: '>=0.0.6,<=0.101_102'
+        distributed_library_version: '1.8.2'
   - name: Zabbix-Reporter
+    last_checked_version: '0.07'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.06,<=0.07'
         distributed_library_version: '2.0.1'
   - name: Zonemaster-GUI
+    last_checked_version: '1.0.11'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=1.0.8,<=1.0.11'
         distributed_library_version: '2.1.1'
   - name: App-Netdisco
+    last_checked_version: '2.055001'
     affected:
-      - perl_module_versions:
-        distributed_library_version: '2.1.0'
-    reviewed_by:
-      - name: Robert Rothenberg
-        email: rrwo@cpan.org
-        date: 2022-06-28
+      - perl_module_versions: '>=2.001000_001,<=2.007000_001'
+        distributed_library_version: '1.8.0'
+      - perl_module_versions: '>=2.007000_002,<=2.055001'
+        distributed_library_version: '1.9.1'
   - name: JS-jQuery
+    last_checked_version: '1.2.6.001'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '==1.2.3.001'
+        distributed_library_version: '1.2.3'
+      - perl_module_versions: '==1.2.6.001'
         distributed_library_version: '1.2.6'
   - name: Plack-Debugger
+    last_checked_version: '0.03'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.01,<=0.03'
         distributed_library_version: '2.1.1'
   - name: Yukki
+    last_checked_version: '0.991_006'
     affected:
-      - perl_module_versions:
-        distributed_library_version: '1.7.2'
-  - name: Plack-Middleware-Bootstrap
-    affected:
-      - perl_module_versions:
-        distributed_library_version: '1.11.1'
+      - perl_module_versions: '>=0.110830,<=0.140290'
+        distributed_library_version: '1.4.4'
+      - perl_module_versions: '>=0.990_001,<=0.991_006'
+        distributed_library_version: '3.2.1'
   - name: SockJS
+    last_checked_version: '0.10'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.03,<=0.10'
         distributed_library_version: '1.7.1'
   - name: Yote
+    last_versiolast_checked_versionn_checked: '2.01'
+    comment: >
+      Yote stopped distributing web stuff
     affected:
-      - perl_module_versions: '>=1.03'
-        distributed_library_version: '1.12.0'
+      - perl_module_versions: '>=0.03,<=0.073'
+        distributed_library_version: '1.7.1'
+      - perl_module_versions: '>=0.0974,<=0.1010'
+        distributed_library_version: '1.8.0'
+      - perl_module_versions: '>=0.1011,<=0.1019'
+        distributed_library_version: '1.10.0'
+      - perl_module_versions: '>=0.1020,<=0.207'
+        distributed_library_version: '2.0.3'
+      - perl_module_versions: '>=0.208,<=0.312'
+        distributed_library_version: '2.1.0'
+      - perl_module_versions: '==1.02'
+        distributed_library_version: '1.02'
   - name: Ukigumo-Server
+    last_checked_version: '2.1.5'
     affected:
       - perl_module_versions: '>=2.1.3,<=2.1.5'
         distributed_library_version: '1.11.0'
       - perl_module_versions: '>=0.01,<=2.1.2'
         distributed_library_version: '1.6.3'
   - name: Kossy
+    last_checked_version: '0.60'
     affected:
-      - perl_module_versions: '<0.17'
+      - perl_module_versions: '>=0.08,<=0.11'
+        distributed_library_version: '1.7.2'
+      - perl_module_versions: '>=0.17,<=0.60'
         distributed_library_version: '1.10.2'
+      - perl_module_versions: '>=0.12,<=0.16'
+        distributed_library_version: '1.8.0'
   - name: MySQL-Admin
+    last_checked_version: '1.18'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=1.16,<=1.18'
         distributed_library_version: '3.3.1'
   - name: Resource-Pack-jQuery
+    last_checked_version: '0.01'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '==0.01'
         distributed_library_version: '1.4.2'
         comments: >
           This allows users to specify alternative versions.

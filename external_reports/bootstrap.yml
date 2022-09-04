@@ -1,34 +1,45 @@
 ---
 name: bootstrap
 url: https://github.com/twbs/bootstrap
+comment: >
+  Look in bootstrap.css for the version
 perl_distributions:
   - name: UR
+    last_version_checked: '0.47'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.42_01,<=0.47'
         distributed_library_version: '2.3.1'
   - name: Ukigumo-Agent
+    last_version_checked: '0.1.8'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.0.7,<=0.1.8'
         distributed_library_version: '2.3.1'
   - name: WWW-UsePerl-Server
+    last_version_checked: '0.36'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '==0.36'
         distributed_library_version: '2.0.2'
   - name: YATT-Lite
+    last_version_checked: '0.101_102'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0,<=0.101_102'
         distributed_library_version: '2.1.1'
   - name: Zabbix-Reporter
+    last_version_checked: '0.07'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.06,<=0.07'
         distributed_library_version: '2.3.2'
   - name: Zonemaster-GUI
+    last_version_checked: '1.0.11'
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=1.0.7,<1.0.11'
         distributed_library_version: '3.2.0'
   - name: Plack-Middleware-Bootstrap
+    last_version_checked: '0.08'
+    comment: >
+      This does not distribute bootstrap but refers to it in HTML
     affected:
-      - perl_module_versions:
+      - perl_module_versions: '>=0.01,<=0.08'
         distributed_library_version: '3.3.1'
   - name: Kossy
     last_version_checked: '0.60'

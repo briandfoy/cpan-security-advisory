@@ -3,12 +3,15 @@ name: sockjs
 url: https://github.com/sockjs/sockjs-client
 perl_distributions:
   - name: SockJS
+    comment: >
+      Multiple versions of socksjs are included in example and t-vendor
+      directories.
     affected:
-      - perl_module_versions:
-        distributed_library_version: '1.2.22'
-        comments: >
-          Multiple versions of socksjs are included in example and t-vendor
-          directories.
+      - perl_module_versions: '>=0.01,<=0.10'
+        comment: "As 0.3.2.3.g2a1c"
+        distributed_library_version: '0.3.2'
+      - perl_module_versions: '>=0.03,<=0.10'
+        distributed_library_version: '0.3.4'
 advisories:
   - cve: CVE-2020-7693
     description: >
