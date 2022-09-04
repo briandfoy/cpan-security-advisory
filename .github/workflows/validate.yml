@@ -38,3 +38,4 @@ jobs:
                   yamllint_file_or_dir: 'external_reports'
                   yamllint_strict: false
                   yamllint_comment: true
+                  yamllint_config_filepath: t/yamllint.config
