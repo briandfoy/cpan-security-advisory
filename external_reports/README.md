@@ -17,7 +17,3 @@ is needed at the time.
 Participate to whatever level you like. Even if you fill in one
 data point, you've helped. And, you get closer to some GitHub achievement.
 
-At the moment, there are several files that need to fill in Perl module
-versions and which third-party versions they distribute:
-
-* chartjs - figure out how which versions those are?
