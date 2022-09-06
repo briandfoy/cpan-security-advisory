@@ -11,6 +11,12 @@ invert: ## turn the external_reports into CPANSA-style reports
 clean: ## clean out generated files
 	rm -rf $(GENERATED)
 
+.PHONY: pm
+pm: perl-module/lib/CPAN/Audit/DB.pm ## create DB.pm
+
+perl-module/lib/CPAN/Audit/DB.pm:
+	perl util/generate -o $@
+
 .PHONY: feed
 feed: $(CVE_FEED_FILE)
 
