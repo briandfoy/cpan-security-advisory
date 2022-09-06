@@ -20,3 +20,57 @@
     - http://www.sec-1.com/blog/?p=402
   reported: 2013-01-23
   severity: ~
+- affected_versions:
+    - '>=7,<=v7.9.4'
+    - '>=6,<=6.8.6'
+    - '>=4,<=5'
+  cves:
+    - CVE-2022-38078
+  description: >
+    Movable Type XMLRPC API provided by Six Apart Ltd. contains a
+    command injection vulnerability. Sending a specially crafted message
+    by POST method to Movable Type XMLRPC API may allow arbitrary Perl
+    script execution, and an arbitrary OS command may be executed through
+    it. Affected products and versions are as follows: Movable Type 7
+    r.5202 and earlier, Movable Type Advanced 7 r.5202 and earlier,
+    Movable Type 6.8.6 and earlier, Movable Type Advanced 6.8.6 and
+    earlier, Movable Type Premium 1.52 and earlier, and Movable Type
+    Premium Advanced 1.52 and earlier. Note that all versions of Movable
+    Type 4.0 or later including unsupported (End-of-Life, EOL) versions
+    are also affected by this vulnerability.
+  distribution: MT
+  fixed_versions:
+    - '7.9.5'
+    - '6.8.7'
+  id: CPANSA-MT-2022-38078
+  references:
+    - https://movabletype.org/news/2022/08/mt-795-687-released.html
+    - https://jvn.jp/en/jp/JVN57728859/index.html
+  reported: 2022-08-24
+  severity: critical
+- affected_versions:
+    - '>=7,<=7.8.1'
+    - '>=6,<=6.8.2'
+    - '<6'
+  cves:
+    - CVE-2021-20837
+  description: >
+    Movable Type 7 r.5002 and earlier (Movable Type 7 Series), Movable
+    Type 6.8.2 and earlier (Movable Type 6 Series), Movable Type Advanced
+    7 r.5002 and earlier (Movable Type Advanced 7 Series), Movable Type
+    Advanced 6.8.2 and earlier (Movable Type Advanced 6 Series), Movable
+    Type Premium 1.46 and earlier, and Movable Type Premium Advanced 1.46
+    and earlier allow remote attackers to execute arbitrary OS commands
+    via unspecified vectors. Note that all versions of Movable Type 4.0 or
+    later including unsupported (End-of-Life, EOL) versions are also
+    affected by this vulnerability.
+  distribution: MT
+  fixed_versions: ~
+  id: CPANSA-MT-2021-20837
+  references:
+    - https://jvn.jp/en/jp/JVN41119755/index.html
+    - https://movabletype.org/news/2021/10/mt-782-683-released.html
+    - http://packetstormsecurity.com/files/164818/Movable-Type-7-r.5002-XMLRPC-API-Remote-Command-Injection.html
+    - http://packetstormsecurity.com/files/164705/Movable-Type-7-r.5002-XMLRPC-API-Remote-Command-Injection.html
+  reported: 2021-10-26
+  severity: critical
