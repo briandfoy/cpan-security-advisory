@@ -7,7 +7,7 @@
     and earlier uses mailx as the default mailer, which allows remote
     attackers to execute arbitrary commands by inserting them into the
     mail body, which is then processed by mailx.
-  distribution: Mail-Mailer
+  distribution: MailTools
   fixed_versions: ">=1.51"
   id: CPANSA-Mail-Mailer-2002-1271
   references:

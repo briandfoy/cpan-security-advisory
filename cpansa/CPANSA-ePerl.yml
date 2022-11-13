@@ -8,7 +8,7 @@
     modifying the 'sinclude' file to point to another file that
     contains a #include directive that references a file that contains
     the code.
-  distribution: ePerl
+  distribution: eperl
   fixed_versions: ~
   id: CPANSA-ePerl-2001-0733
   references:

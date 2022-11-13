@@ -7,7 +7,7 @@
     use the Storable::thaw function, which allows remote attackers to
     execute arbitrary code via a crafted request, which is not
     properly handled when it is deserialized.
-  distribution: Spoon-Cookie
+  distribution: Spoon
   fixed_versions: ~
   id: CPANSA-Spoon-Cookie-2012-6143
   references:
