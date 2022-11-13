@@ -5,7 +5,7 @@
   description: >
     lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file
     =~ /\|$/ check, leading to command injection.
-  distribution: ''
+  distribution: "Image-ExifTool"
   fixed_versions: ">12.38"
   id: CPANSA-Image-ExifTool-2022-23935
   references:
