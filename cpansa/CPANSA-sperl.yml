@@ -4,7 +4,7 @@
     - CVE-1999-0034
   description: >
     Buffer overflow in suidperl (sperl), Perl 4.x and 5.x.
-  distribution: 'perl'
+  distribution: 'sperl'
   fixed_versions: ~
   id: CPANSA-sperl-1999-0034
   references: []
@@ -18,7 +18,7 @@
     file systems, allowing local users to gain root access by placing
     a setuid script in a mountable file system, e.g. a CD-ROM or
     floppy disk.
-  distribution: 'perl'
+  distribution: 'sperl'
   fixed_versions: ~
   id: CPANSA-sperl-1999-0462
   references:
@@ -34,7 +34,7 @@
     allows local users to gain privileges by setting the "interactive"
     environmental variable and calling suidperl with a filename that
     contains the escape sequence.
-  distribution: 'perl'
+  distribution: 'sperl'
   fixed_versions: ~
   id: CPANSA-sperl-2000-0703
   references:
