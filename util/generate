@@ -214,8 +214,10 @@ sub process_files ( $files ) {
     provides( \%db );
 
     foreach my $dist ( keys %{ $db{dists} } ) {
-        $db{dists}->{$dist}->{versions} = [ all_releases($dist) ];
-        $db{dists}->{$dist}->{main_module} = release($dist)->{main_module};
+        my $distname = $db{dists}->{$dist}->{advisories}->[0]->{distribution};
+
+        $db{dists}->{$dist}->{versions} = [ all_releases($distname) ];
+        $db{dists}->{$dist}->{main_module} = release($distname)->{main_module};
     }
 
     # XXX: need to investigate why this shows up as utf8

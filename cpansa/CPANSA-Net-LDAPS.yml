@@ -7,7 +7,7 @@
     X.509 certificate is not checked by default when connecting to remote
     LDAP backends, because the default configuration of the Net::LDAPS
     module for Perl is used.
-  distribution: Net-LDAPS
+  distribution: perl-ldap
   fixed_versions: ~
   references:
     - https://lemonldap-ng.org/download

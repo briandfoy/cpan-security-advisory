@@ -10,7 +10,7 @@
     parameters, as demonstrated by an eval injection attack against
     the core_drop_meta_for_table function, leading to execution of
     arbitrary Perl code.
-  distribution: 'MT'
+  distribution: "MT"
   fixed_versions: ~
   id: CPANSA-MT-2013-0209
   references:
@@ -21,9 +21,9 @@
   reported: 2013-01-23
   severity: ~
 - affected_versions:
-    - '>=7,<=v7.9.4'
-    - '>=6,<=6.8.6'
-    - '>=4,<=5'
+    - ">=7,<=v7.9.4"
+    - ">=6,<=6.8.6"
+    - ">=4,<=5"
   cves:
     - CVE-2022-38078
   description: >
@@ -40,8 +40,8 @@
     are also affected by this vulnerability.
   distribution: MT
   fixed_versions:
-    - '7.9.5'
-    - '6.8.7'
+    - "7.9.5"
+    - "6.8.7"
   id: CPANSA-MT-2022-38078
   references:
     - https://movabletype.org/news/2022/08/mt-795-687-released.html
@@ -49,9 +49,9 @@
   reported: 2022-08-24
   severity: critical
 - affected_versions:
-    - '>=7,<=7.8.1'
-    - '>=6,<=6.8.2'
-    - '<6'
+    - ">=7,<=7.8.1"
+    - ">=6,<=6.8.2"
+    - "<6"
   cves:
     - CVE-2021-20837
   description: >
@@ -75,7 +75,7 @@
   reported: 2021-10-26
   severity: critical
 - affected_versions:
-    - '>=7,<7.8.0'
+    - ">=7,<7.8.0"
   cves:
     - CVE-2021-20814
   description: >
@@ -94,7 +94,7 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
+    - ">=7,<7.8.0"
   cves:
     - CVE-2021-20813
   description: >
@@ -112,8 +112,8 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
-    - '>=6,<=6.8.0'
+    - ">=7,<7.8.0"
+    - ">=6,<=6.8.0"
   cves:
     - CVE-2021-20815
   description: >
@@ -133,8 +133,8 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
-    - '>=6,<=6.8.0'
+    - ">=7,<7.8.0"
+    - ">=6,<=6.8.0"
   cves:
     - CVE-2021-20811
   description: >
@@ -154,8 +154,8 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
-    - '>=6,<=6.8.0'
+    - ">=7,<7.8.0"
+    - ">=6,<=6.8.0"
   cves:
     - CVE-2021-20810
   description: >
@@ -175,8 +175,8 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
-    - '>=6,<=6.8.0'
+    - ">=7,<7.8.0"
+    - ">=6,<=6.8.0"
   cves:
     - CVE-2021-20809
   description: >
@@ -197,8 +197,8 @@
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.8.0'
-    - '>=6,<=6.8.0'
+    - ">=7,<7.8.0"
+    - ">=6,<=6.8.0"
   cves:
     - CVE-2021-20808
   description: >
@@ -234,8 +234,8 @@
   reported: 2021-10-26
   severity: medium
 - affected_versions:
-    - '>=7,<7.2.1'
-    - '>=6,<=6.5.3'
+    - ">=7,<7.2.1"
+    - ">=6,<=6.5.3"
   cves:
     - CVE-2020-5577
   description: >
@@ -259,8 +259,8 @@
   reported: 2020-05-14
   severity: high
 - affected_versions:
-    - '>=7,<7.2.1'
-    - '>=6,<=6.5.3'
+    - ">=7,<7.2.1"
+    - ">=6,<=6.5.3"
   cves:
     - CVE-2020-5576
   description: >
@@ -284,8 +284,8 @@
   reported: 2020-05-14
   severity: high
 - affected_versions:
-    - '>=7,<7.2.1'
-    - '>=6,<=6.5.3'
+    - ">=7,<7.2.1"
+    - ">=6,<=6.5.3"
   cves:
     - CVE-2020-5575
   description: >
@@ -309,8 +309,8 @@
   reported: 2020-05-14
   severity: medium
 - affected_versions:
-    - '>=7,<7.2.1'
-    - '>=6,<=6.5.3'
+    - ">=7,<7.2.1"
+    - ">=6,<=6.5.3"
   cves:
     - CVE-2020-5574
   description: >
@@ -334,8 +334,8 @@
   reported: 2020-05-14
   severity: medium
 - affected_versions:
-    - '>=7,<7.1.4'
-    - '>=6,<=6.5.2'
+    - ">=7,<7.1.4"
+    - ">=6,<=6.5.2"
   cves:
     - CVE-2020-5528
   description: >
@@ -357,9 +357,9 @@
   reported: 2020-02-06
   severity: medium
 - affected_versions:
-    - '>=7,<7.1.3'
-    - '>=6.5.0,<=6.5.1'
-    - '>=6,<=6.3.9'
+    - ">=7,<7.1.3"
+    - ">=6.5.0,<=6.5.1"
+    - ">=6,<=6.3.9"
   cves:
     - CVE-2019-6025
   description: >
@@ -382,7 +382,7 @@
     - http://jvn.jp/en/jp/JVN65280626/index.html
   reported: 2019-12-26
   severity: medium
-- affected_versions: '==6.3.1'
+- affected_versions: "==6.3.1"
   cves:
     - CVE-2018-0672
   description: >
@@ -397,9 +397,9 @@
   reported: 2018-09-04
   severity: medium
 - affected_versions:
-    - '>=6.0.0,<6.1.3'
-    - '>=6.2.0,<6.2.6'
-    - '<5.2.13'
+    - ">=6.0.0,<6.1.3"
+    - ">=6.2.0,<6.2.6"
+    - "<5.2.13"
   cves:
     - CVE-2016-5742
   description: >
@@ -419,8 +419,8 @@
   reported: 2017-01-23
   severity: critical
 - affected_versions:
-    - '<5.2.12'
-    - '>=6.0.0,<=6.0.7'
+    - "<5.2.12"
+    - ">=6.0.0,<=6.0.7"
   cves:
     - CVE-2015-1592
   description: >
@@ -443,9 +443,9 @@
   reported: 2015-02-19
   severity: ~
 - affected_versions:
-    - '<5.18'
-    - '>=5.2.0,<5.2.11'
-    - '>=6,<6.0.6'
+    - "<5.18"
+    - ">=5.2.0,<5.2.11"
+    - ">=6,<6.0.6"
   cves:
     - CVE-2014-9057
   description: >
@@ -463,7 +463,7 @@
     - https://www.debian.org/security/2015/dsa-3183
   reported: 2014-12-16
   severity: ~
-- affected_versions: '<5.2.6'
+- affected_versions: "<5.2.6"
   cves:
     - CVE-2013-2184
   description: >
@@ -480,7 +480,7 @@
     - http://seclists.org/oss-sec/2013/q2/560
   reported: 2015-03-27
   severity: ~
-- affected_versions: ~
+- affected_versions:
     - '>=4.20,<4.38'
   cves:
     - CVE-2013-0209
@@ -502,7 +502,7 @@
     - http://www.sec-1.com/blog/?p=402
   reported: 2013-01-23
   severity: ~
-- affected_versions: '==5.13'
+- affected_versions: "==5.13"
   cves:
     - CVE-2012-1503
   description: >
@@ -522,9 +522,9 @@
   reported: 2014-08-29
   severity: ~
 - affected_versions:
-    - '<4.38'
-    - '>=5,<5.07'
-    - '>=5.10,<5.13'
+    - "<4.38"
+    - ">=5,<5.07"
+    - ">=5.10,<5.13"
   cves:
     - CVE-2012-0320
   description: >
@@ -546,9 +546,9 @@
   reported: 2012-03-03
   severity: ~
 - affected_versions:
-    - '<4.38'
-    - '>=5,<5.07'
-    - '>=5.10,<5.13'
+    - "<4.38"
+    - ">=5,<5.07"
+    - ">=5.10,<5.13"
   cves:
     - CVE-2012-0317
   description: >
@@ -571,8 +571,8 @@
   reported: 2012-03-03
   severity: ~
 - affected_versions:
-    - '>=4,<4.36'
-    - '>=5,<5.05'
+    - ">=4,<4.36"
+    - ">=5,<5.05"
   cves:
     - CVE-2011-5085
   description: >
@@ -588,8 +588,8 @@
   reported: 2012-04-02
   severity: ~
 - affected_versions:
-    - '>=4,<4.36'
-    - '>=5,<5.05'
+    - ">=4,<4.36"
+    - ">=5,<5.05"
   cves:
     - CVE-2011-5084
   description: >
@@ -604,7 +604,7 @@
     - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-04-02
   severity: ~
-- affected_versions: '>=5.0,<=5.01'
+- affected_versions: ">=5.0,<=5.01"
   cves:
     - CVE-2010-1985
   description: >
@@ -624,7 +624,7 @@
     - http://jvn.jp/en/jp/JVN92854093/index.html
   reported: 2010-05-19
   severity: ~
-- affected_versions: '<4.261'
+- affected_versions: "<4.261"
   cves:
     - CVE-2009-2492
   description: >
@@ -643,7 +643,7 @@
     - http://www.securityfocus.com/bid/35885
   reported: 2009-07-17
   severity: ~
-- affected_versions: '<4.261'
+- affected_versions: "<4.261"
   cves:
     - CVE-2009-2481
   description: >
@@ -663,7 +663,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/51330
   reported: 2009-07-16
   severity: ~
-- affected_versions: '<4.24'
+- affected_versions: "<4.24"
   cves:
     - CVE-2009-0752
   description: >
@@ -677,7 +677,7 @@
     - http://www.movabletype.com/blog/2009/02/movable-type-424-get-updated-with-better-password-recovery.html
   reported: 2009-03-03
   severity: ~
-- affected_versions: '<4.23'
+- affected_versions: "<4.23"
   cves:
     - CVE-2008-5846
   description: >
@@ -694,7 +694,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/47759
   reported: 2009-01-05
   severity: ~
-- affected_versions: '<4.23'
+- affected_versions: "<4.23"
   cves:
     - CVE-2008-5845
   description: >
@@ -716,8 +716,8 @@
   reported: 2009-01-05
   severity: ~
 - affected_versions:
-    - '>=3,<=3.38'
-    - '>=4,<4.23'
+    - ">=3,<=3.38"
+    - ">=4,<4.23"
   cves:
     - CVE-2008-5808
   description: >
@@ -739,7 +739,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/47019
   reported: 2009-01-02
   severity: ~
-- affected_versions: '>=7,<=7.7.1'
+- affected_versions: ">=7,<=7.7.1"
   cves:
     - CVE-2021-20812
   description: >

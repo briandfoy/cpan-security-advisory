@@ -8,7 +8,7 @@
     commands by passing an argument such as \"some text\\rQUIT\" to
     the 'privmsg' handler, which would cause the client to disconnect
     from the server.
-  distribution: Poe-Component-IRC
+  distribution: POE-Component-IRC
   fixed_versions: ~
   id: CPANSA-Poe-Component-IRC-2010-3438
   references:

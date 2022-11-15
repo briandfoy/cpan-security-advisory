@@ -3,7 +3,7 @@
   description: >
     YAML and YAML::HTML parsers are a potential security hole, as they
     may allow arbitrary Perl objects to be instantiated.
-  distribution: Catalyst-Action-Rest
+  distribution: Catalyst-Action-REST
   fixed_versions: ">=1.12"
   id: CPANSA-Catalyst-Action-Rest-2013-01
   references:
