@@ -10,7 +10,7 @@
     character.
   distribution: HTML-Parser
   fixed_versions: ~
-  id: CPANSA--2009-3627
+  id: CPANSA-HTML-Parser-2009-3627
   references:
     - https://issues.apache.org/SpamAssassin/show_bug.cgi?id=6225
     - http://www.openwall.com/lists/oss-security/2009/10/23/9
