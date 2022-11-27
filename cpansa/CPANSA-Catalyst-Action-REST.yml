@@ -5,7 +5,7 @@
     may allow arbitrary Perl objects to be instantiated.
   distribution: Catalyst-Action-REST
   fixed_versions: ">=1.12"
-  id: CPANSA-Catalyst-Action-Rest-2013-01
+  id: CPANSA-Catalyst-Action-REST-2013-01
   references:
     - https://metacpan.org/dist/Catalyst-Action-REST/changes
   reported: 2013-09-03
