@@ -1,5 +1,5 @@
 ---
-- affected_versions: ">-0.01,<=0.968"
+- affected_versions: ">=0.01,<=0.968"
   cves:
     - CVE-2012-6141
   description: >
