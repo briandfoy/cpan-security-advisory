@@ -33,7 +33,7 @@
     request processing without also permitting unprivileged users to
     run Perl code in the context of the user account that runs Apache
     HTTP Server processes.
-  distribution: mod_perl2
+  distribution: mod_perl
   fixed_versions: ~
   id: CPANSA-mod_perl2-2011-2767
   references:
