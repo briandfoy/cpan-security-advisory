@@ -5,7 +5,7 @@
     Embedded HTML in JSON data was not escaped.
   distribution: XAO-Web
   fixed_versions: ">=1.84"
-  id: CPANSA-XAO-Web-
+  id: CPANSA-XAO-Web-2020-01
   references:
     - https://github.com/amaltsev/XAO-Web/commit/20dd1d3bc5b811503f5722a16037b60197fe7ef4
     - https://metacpan.org/release/AMALTSEV/XAO-Web-1.84/changes
