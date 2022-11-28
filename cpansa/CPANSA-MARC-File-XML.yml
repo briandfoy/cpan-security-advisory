@@ -9,7 +9,7 @@
     read arbitrary files via a crafted XML file.
   distribution: MARC-File-XML
   fixed_versions: ~
-  id: CPANSA--2014-1626
+  id: CPANSA-MARC-File-XML-2014-1626
   references:
     - http://www.securityfocus.com/bid/65057
     - http://www.nntp.perl.org/group/perl.perl4lib/2014/01/msg3073.html
