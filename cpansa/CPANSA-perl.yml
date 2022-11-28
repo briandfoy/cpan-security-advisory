@@ -854,9 +854,9 @@
     locate .so files when called in a string eval, which might allow
     local users to execute arbitrary code via a Trojan horse library
     under the current working directory.
-  distribution: XSLoader-load
+  distribution: perl
   fixed_versions: ">=5.25.2"
-  id: CPANSA-XSLoader-load-2016-6185
+  id: CPANSA-perl-2016-6185
   references:
     - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5RFDMASVZLFZYBB2GNTZXU6I76E4NA4V/
     - http://perl5.git.perl.org/perl.git/commitdiff/08e3451d7
@@ -918,9 +918,9 @@
     remote attackers to cause a denial of service (out-of-bounds read)
     and possibly execute arbitrary code via a crafted (1) drive letter
     or (2) pInName argument.
-  distribution: VDir-MapPathA
+  distribution: perl
   fixed_versions: ">=5.22.2"
-  id: CPANSA-VDir-MapPathA-2015-8608
+  id: CPANSA-perl-2015-8608
   references:
     - https://rt.perl.org/Public/Bug/Display.html?id=126755
     - https://packetstormsecurity.com/files/136649/Perl-5.22-VDir-MapPathA-W-Out-Of-Bounds-Reads-Buffer-Over-Reads.html
