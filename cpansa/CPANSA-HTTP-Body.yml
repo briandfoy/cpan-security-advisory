@@ -16,3 +16,4 @@
   affected_versions: ">=1.08,<1.19"
   cves:
     - CVE-2013-4407
+  fixed_versions: ~

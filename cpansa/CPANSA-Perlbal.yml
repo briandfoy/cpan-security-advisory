@@ -10,7 +10,7 @@
     sequence in an unspecified parameter.  NOTE: some of these details
     are obtained from third party information.
   distribution: 'Perlbal'
-  fixed_versions: Perlbal
+  fixed_versions: ~
   id: CPANSA-Perlbal-2008-1652
   references:
     - http://search.cpan.org/src/BRADFITZ/Perlbal-1.70/CHANGES

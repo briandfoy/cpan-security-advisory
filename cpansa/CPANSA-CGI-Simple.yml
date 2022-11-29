@@ -11,6 +11,7 @@
   affected_versions: "<1.113"
   fixed_versions: ">=1.113"
 - id: CPANSA-CGI-Simple-2010-01
+  cves: ~
   distribution: CGI-Simple
   reported: 2010-12-27
   description: >

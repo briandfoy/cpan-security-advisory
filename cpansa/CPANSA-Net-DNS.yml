@@ -20,7 +20,7 @@
     compressed DNS packet with self-referencing pointers, which
     triggers an infinite loop.
   distribution: Net-DNS
-  fixed_versions: ">=0.,60"
+  fixed_versions: ">=0.60"
   id: CPANSA-Net-DNS-2007-3409
   references:
     - http://rt.cpan.org/Public/Bug/Display.html?id=27285

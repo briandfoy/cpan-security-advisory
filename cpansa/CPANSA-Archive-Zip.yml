@@ -16,6 +16,7 @@
     - https://security-tracker.debian.org/tracker/CVE-2018-10860
     - https://github.com/redhotpenguin/perl-Archive-Zip/pull/33
   affected_versions: "<1.61"
+  fixed_versions: ~
 - affected_versions: "<1.14"
   cves:
     - CVE-2004-1096

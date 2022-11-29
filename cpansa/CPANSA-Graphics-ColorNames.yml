@@ -4,7 +4,7 @@
   reported: 2010-02-11
   description: >
     A specially-named file may lead to HTML injection attacks.
-  affected_versions: ">=v2.0_01,<=v3.1.2"
+  affected_versions: ">=2.0_01,<=3.1.2"
   fixed_versions: ">3.1.2"
   references:
     - https://metacpan.org/changes/distribution/Graphics-ColorNames

@@ -21,7 +21,7 @@
   reported: 2013-01-23
   severity: ~
 - affected_versions:
-    - ">=7,<=v7.9.4"
+    - ">=7,<=7.9.4"
     - ">=6,<=6.8.6"
     - ">=4,<=5"
   cves:

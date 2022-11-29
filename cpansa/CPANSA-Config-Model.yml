@@ -29,6 +29,7 @@
   affected_versions: "<2.102"
   fixed_versions: ">=2.102"
 - id: CPANSA-Config-Model-2017-01
+  cves: ~
   distribution: Config-Model
   reported: 2017-05-10
   description: >

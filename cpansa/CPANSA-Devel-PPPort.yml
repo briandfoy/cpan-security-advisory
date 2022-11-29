@@ -12,3 +12,4 @@
   references:
     - https://metacpan.org/dist/Devel-PPPort/changes
     - https://github.com/Dual-Life/Devel-PPPort/pull/47
+  cves: ~

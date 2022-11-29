@@ -52,6 +52,7 @@
   affected_versions: "<5.835"
   fixed_versions: ">=5.835"
 - id: CPANSA-libwww-perl-2001-01
+  cves: ~
   distribution: libwww-perl
   reported: 2001-03-14
   description: >
@@ -62,6 +63,7 @@
   affected_versions: "<5.51"
   fixed_versions: ">=5.51"
 - id: CPANSA-libwww-perl-1995-01
+  cves: ~
   distribution: libwww-perl
   reported: 1995-09-06
   description: >
