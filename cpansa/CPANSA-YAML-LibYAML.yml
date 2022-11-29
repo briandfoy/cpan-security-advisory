@@ -5,7 +5,7 @@
     Need SafeLoad and SafeDump analog to python
   distribution: YAML-LibYAML
   fixed_versions: ">=0.69"
-  id: CPANSA-YAML-2016-01
+  id: CPANSA-YAML-LibYAML-2016-01
   references:
     - https://github.com/ingydotnet/yaml-libyaml-pm/issues/45
   reported: 2016-03-10
