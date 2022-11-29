@@ -15,3 +15,5 @@
     - https://rt.cpan.org/Ticket/Display.html?id=131045
   reported: 2022-07-18
   severity: ~
+  id: CPANSA-Net-LDAPS-2020-16093
+  main_module: "Net::LDAP"
