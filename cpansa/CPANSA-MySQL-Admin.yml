@@ -5,7 +5,7 @@
     Unspecified security issues.
   distribution: MySQL-Admin
   fixed_versions: '>=0.34'
-  id: CPANSA-MySQL-Admin-
+  id: CPANSA-MySQL-Admin-1-1
   references:
     - https://metacpan.org/dist/MySQL-Admin/changes
   reported: ~
