@@ -53,7 +53,7 @@ jobs:
             - uses: actions/checkout@v2
             - name: 'setup'
               run: |
-                cpan -T Mojo::Util Term::ANSIColor YAML::XS
+                cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive
             - name: "Lint reports"
               run: |
                 make invert
