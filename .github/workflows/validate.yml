@@ -53,7 +53,7 @@ jobs:
             - uses: actions/checkout@v2
             - name: 'setup'
               run: |
-                sudo cpan -T Mojo::Util Term::ANSIColor YAML::XS
+                cpan -T Mojo::Util Term::ANSIColor YAML::XS
             - name: "Lint reports"
               run: |
                 perl util/lint_reports
