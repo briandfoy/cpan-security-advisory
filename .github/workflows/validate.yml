@@ -50,7 +50,7 @@ jobs:
         container:
             image: perl:${{ matrix.perl-version }}
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
             - name: 'setup'
               run: |
                 cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive YAML
