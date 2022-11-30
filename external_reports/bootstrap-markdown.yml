@@ -8,7 +8,7 @@ perl_distributions:
       - perl_module_versions: '>=1.14,<=1.18'
         distributed_library_version: '2.0.2'
 advisories:
-  - cve: X-CVE-2014-08-25-1
+  - cve: X-CVE-2014-0001
     description: >
       Affected versions of the package are vulnerable to Cross-site
       Scripting (XSS) via the editor box.

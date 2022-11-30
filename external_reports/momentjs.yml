@@ -25,7 +25,7 @@ advisories:
       it to Moment.js.
     affected_versions:
       - '>=1.0.1,<2.29.1'
-    fixed_version: '>=2.29.1'
+    fixed_versions: '>=2.29.1'
     references:
       - https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5
       - https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4

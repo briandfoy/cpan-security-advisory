@@ -160,7 +160,7 @@ advisories:
       - https://github.com/libgit2/libgit2/commit/928429c5c96a701bcbcafacb2421a82602b36915
     reported: 2020-02-12
     severity: critical
-  - cve: X-libgit2-2015-01-20-0
+  - cve: X-libgit2-2015-0001
     description: >
       On the heels of CVE 2014-9390, we are announcing another round of
       security updates to libgit2. Similar to the prior vulnerability,

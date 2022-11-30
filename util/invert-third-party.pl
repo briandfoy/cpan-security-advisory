@@ -184,6 +184,10 @@ sub make_report ( $name, $advisory, $perl_dist_name, $affected ) {
 	error( "empty affected_versions in $report{id}" )
 		unless defined $report{affected_versions};
 
+	# we don't quite handle this yet, which is no bother because nothing
+	# really uses it.
+	$report{fixed_versions}    = undef;
+
 	return \%report;
 	}
 
@@ -217,6 +221,7 @@ BEGIN {
 	select($original); $|++
 	}
 sub _output ( $fh, $label, $message ) {
+	return;
 	$message =~ s/\s*\z//;
 	say {$fh} $label, ' ', $message;
 	}

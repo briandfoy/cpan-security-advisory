@@ -20,6 +20,7 @@ advisories:
       3.5.1, and other products, allows user-assisted remote attackers to
       read arbitrary files via a crafted XML external entity (XXE)
       declaration and reference in an RDF document.
+    affected_versions: '<2.0.7'
     fixed_versions: ~
     references:
       - http://www.debian.org/security/2012/dsa-2438

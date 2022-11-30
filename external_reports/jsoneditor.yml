@@ -12,7 +12,7 @@ advisories:
       Stored XSS was discovered in the tree mode of jsoneditor before
       9.0.2 through injecting and executing JavaScript.
     affected_versions: '<9.0.2'
-    fixed_version: '>=9.0.2'
+    fixed_versions: '>=9.0.2'
     references:
       - https://github.com/josdejong/jsoneditor/issues/1029
     reported: 2021-01-11

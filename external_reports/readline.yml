@@ -4,7 +4,7 @@ url: https://tiswww.case.edu/php/chet/readline/rltop.html
 perl_distributions:
   - name: Term-ReadLine-Gnu
     affected:
-      - perl_module_versions: ~
+      - perl_module_versions: ">0"
         distributed_library_version: ~
         does_not_distribute: true
         comment: |

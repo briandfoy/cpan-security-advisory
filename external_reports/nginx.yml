@@ -38,7 +38,7 @@ perl_distributions:
         distributed_library_version: '1.2.6'
       - perl_module_versions: '>=1.2.9.6,<=1.2.9.7'
         distributed_library_version: '1.2.9'
-      - perl_module_versions: '=>1.8.1.8,<=1.8.1.10'
+      - perl_module_versions: '>=1.8.1.8,<=1.8.1.10'
         distributed_library_version: '1.8.1'
 advisories:
   - cve: CVE-2016-0742
@@ -115,6 +115,7 @@ advisories:
       remote attackers with certain privileges to conduct "virtual host
       confusion" attacks.
     affected_versions: '>=0.5.6,<=1.7.4'
+    fixed_versions: ~
     references:
       - http://www.debian.org/security/2014/dsa-3029
       - http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html

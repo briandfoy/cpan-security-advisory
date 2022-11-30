@@ -62,7 +62,7 @@ did.
 =cut
 
 my %Errors;
-my @files = @ARGV ? @ARGV : sort glob( 'cpansa/*.yml' );
+my @files = @ARGV ? @ARGV : sort glob( 'cpansa/*.yml generated_reports/*.yml external_reports/*.yml' );
 
 $|++;
 FILE: foreach my $file ( @files ) {
@@ -73,33 +73,79 @@ FILE: foreach my $file ( @files ) {
 		next FILE;
 		}
 
-	RECORD: foreach my( $i, $record ) ( indexed($data->@*) ) {
-		state @checks = checks();
+	my $class = 'Local::CPANReports';
+	$class = 'Local::ExternalReports' if $file =~ m/\Aexternal_reports/;
 
-		print '.';
-		my $id = $record->{id} // "record $i";
-		LINT: foreach my $sub_ref ( @checks ) {
-			my $message = $sub_ref->($record);
-			next unless defined $message;
-			push $Errors{$file}{$id}->@*, $message;
-			}
-		}
+	my $results = $class->run_checks($data);
+	$Errors{$file} = $results if defined $results;
+
 	print "\n";
 	}
 
 exit( print_summary(\%Errors) );
 
-sub checks {
-	state @subs = grep { defined } map { __PACKAGE__->can($_) } qw(
-		check_id
-		check_required_keys
-		check_ranges
-		);
+package Local::Common {
+	sub check_required_keys ($class, $record) {
+		my @required = $class->required_keys;
 
-	return @subs;
+		my $message = '';
+		my $errors  = 0;
+		my @missing = grep { ! exists $record->{$_} } @required;
+		return unless @missing;
+		return "missing keys @missing";
+		}
+
+	sub check_ranges ($class, $record) {
+		state @keys = qw(affected_versions fixed_versions);
+
+		my @errors = ();
+
+		foreach my $key ( @keys ) {
+			unless( exists $record->{$key} ) {
+				push @errors, "$key key is missing";
+				next;
+				}
+			next unless defined $record->{$key};
+
+			my @versions = ref $record->{$key} ? $record->{$key}->@* : $record->{$key};
+
+			foreach my $v ( @versions ) {
+				push @errors, "$key has invalid range $v" unless $class->check_range($v);
+				}
+			}
+
+		return unless @errors;
+
+		return join "\n", @errors;
+		}
+
+	sub check_range ($class, $range ) {
+		state $version = qr/ ([<>=!]=?)? (\d+(\.\d+)* (_\d+)?) /nxa;
+		state $pattern = qr/\A
+			$version
+			(,$version)*
+			\z/nx;
+
+		$range =~ $pattern;
+		}
+
+	sub run_checks { return {} }
 	}
 
-sub check_id ($record) {
+package Local::CPANReports {
+	use base qw(Local::Common);
+
+	sub checks {
+		state @subs = qw(
+			check_id
+			check_required_keys
+			check_ranges
+			);
+
+		return @subs;
+		}
+
+	sub check_id ($self, $record) {
 	my @errors = ();
 
 	return 'id key is missing' unless exists $record->{id};
@@ -107,7 +153,7 @@ sub check_id ($record) {
 	my @table = (
 		[ "id does not start with CPANSA", sub { $_[0] !~ m/\ACPANSA-/ } ],
 		[ "id has double dash–missing something", sub { $_[0] =~ m/--/ } ],
-		[ "id has too many dashes", sub { $_[0] =~ m/-\d+-\d+-/ } ],
+		[ "id has too many dashes", sub { $_[0] =~ m/-\d+-\d+-\d+/ } ],
 		);
 
 	foreach my $row ( @table ) {
@@ -118,50 +164,164 @@ sub check_id ($record) {
 	return join( "\n", @errors );
 	}
 
-sub check_ranges ($record) {
-	state @keys = qw(affected_versions fixed_versions);
+	sub check_ranges ($self, $record) {
+		state @keys = qw(affected_versions fixed_versions);
 
-	my @errors = ();
+		my @errors = ();
 
-	foreach my $key ( @keys ) {
-		unless( exists $record->{$key} ) {
-			push @errors, "$key key is missing";
-			next;
+		foreach my $key ( @keys ) {
+			unless( exists $record->{$key} ) {
+				push @errors, "$key key is missing";
+				next;
+				}
+			next unless defined $record->{$key};
+
+			state $version = qr/ ([<>=!]=?)? (\d+(\.\d+)* (_\d+)?) /nxa;
+			state $pattern = qr/\A
+				$version
+				(,$version)*
+				\z/nx;
+
+			my @versions = ref $record->{$key} ? $record->{$key}->@* : $record->{$key};
+
+			foreach my $v ( @versions ) {
+				push @errors, "$key has invalid range $v" unless $v =~ $pattern;
+				}
 			}
-		next unless defined $record->{$key};
 
-		state $version = qr/ ([<>=!]=?)? (\d+(\.\d+)* (_\d+)?) /nxa;
-		state $pattern = qr/\A
-			$version
-			(,$version)*
-			\z/nx;
+		return unless @errors;
 
-		my @versions = ref $record->{$key} ? $record->{$key}->@* : $record->{$key};
-
-		foreach my $v ( @versions ) {
-			push @errors, "$key has invalid range $v" unless $v =~ $pattern;
-			}
+		return join "\n", @errors;
 		}
 
-	return unless @errors;
-
-	return join "\n", @errors;
-	}
-
-sub check_required_keys ($record) {
-	state @required = qw(
+	sub required_keys {
+		qw(
 		id
+		cves
 		affected_versions
 		fixed_versions
-		description
-		cves
-		);
+		distribution
+		)
+		}
 
-	my $message = '';
-	my $errors  = 0;
-	my @missing = grep { ! exists $record->{$_} } @required;
-	return unless @missing;
-	return "missing keys @missing";
+	sub run_checks ($class, $data) {
+		my %results;
+
+		foreach my($n, $report) ( indexed($data->@*) ) {
+			print ".";
+			my $id = $report->{id} // "report $n";
+			foreach my $method ( $class->checks ) {
+				my $message = $class->$method($report);
+				next unless defined $message;
+				push $results{$id}->@*, $message;
+				}
+			}
+
+		return keys %results? \%results : ();
+		}
+	}
+
+package Local::ExternalReports {
+	use base qw(Local::Common);
+
+	sub checks {
+		state @subs = qw(
+			check_required_keys
+			);
+
+		return @subs;
+		}
+
+	sub check_advisories ($class, $data) {
+		my %results;
+
+		foreach my($n, $report) ( indexed($data->{advisories}->@*) ) {
+			print ".";
+			my $id = $report->{cve} // "report $n";
+			foreach my $method ( $class->checks ) {
+				my $message = $class->$method($report);
+				next unless defined $message;
+				push $results{$id}->@*, $message;
+				}
+			}
+
+		return %results if keys %results;
+		return;
+		}
+
+	sub check_meta ($class, $data) {
+		state @required_keys = qw(
+			advisories
+			name
+			perl_distributions
+			);
+
+		my @missing = grep { ! exists $data->{$_} } @required_keys;
+
+		return [ "Missing keys: @missing" ] if @missing;
+		return;
+		}
+
+=pod
+
+perl_distributions:
+  - name: MySQL-Admin
+    last_version_checked: '1.18'
+    affected:
+      - perl_module_versions: '>=1.14,<=1.18'
+        distributed_library_version: '2.0.2'
+
+=cut
+
+	sub check_perl ($class, $data ) {
+		state @required_keys = qw(name affected);
+		my @errors;
+
+		foreach my($n, $entry) ( indexed($data->{perl_distributions}->@*) ) {
+			my @missing = grep { ! exists $entry->{$_} } @required_keys;
+			if( exists $entry->{affected} ) {
+				foreach my $affected ( $entry->{affected}->@* ) {
+					push @missing,
+						map { "affected/$_" }
+						grep { ! exists $affected->{$_} }
+						qw(perl_module_versions distributed_library_version);
+
+					if( exists $affected->{perl_module_versions} ) {
+						push @errors, "Bad range $affected->{perl_module_versions}"
+							unless $class->check_range($affected->{perl_module_versions});
+						}
+					}
+				}
+			push @errors, "Missing keys: @missing" if @missing;
+			}
+
+		return \@errors if @errors;
+		return;
+		}
+
+	sub required_keys {
+		qw(
+			cve
+			description
+			affected_versions
+			fixed_versions
+		)
+		}
+
+	sub run_checks ($class, $data) {
+		my %results;
+
+		my $general = $class->check_meta($data);
+		$results{general} = $general if defined $general;
+
+		my $perl = $class->check_perl($data);
+		$results{perl} = $perl if defined $perl;
+
+		my $advisories = $class->check_advisories($data);
+		$results{advisories} = $advisories if defined $advisories;
+
+		return keys %results? \%results : ();
+		}
 	}
 
 sub print_summary ( $Errors ) {
