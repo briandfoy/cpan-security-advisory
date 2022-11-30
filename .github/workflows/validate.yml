@@ -39,3 +39,13 @@ jobs:
                   yamllint_strict: false
                   yamllint_comment: true
                   yamllint_config_filepath: t/yamllint.config
+    lint:
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: 'setup'
+              run: |
+                sudo cpan -T Mojo::Util Term::ANSIColor YAML::XS
+            - name: "Lint reports"
+              run: |
+                perl util/lint_reports
