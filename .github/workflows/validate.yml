@@ -53,8 +53,9 @@ jobs:
             - uses: actions/checkout@v3
             - name: 'setup'
               run: |
-                cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive YAML
+                cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive YAML CPAN::Audit
             - name: "Lint reports"
               run: |
+                ls -lR
                 env PERL5LIB=./lib make invert
                 perl util/lint_reports
