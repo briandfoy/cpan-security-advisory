@@ -56,5 +56,5 @@ jobs:
                 cpan -T Mojo::Util Term::ANSIColor YAML::XS
             - name: "Lint reports"
               run: |
-                make generate
+                make invert
                 perl util/lint_reports
