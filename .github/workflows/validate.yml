@@ -40,7 +40,15 @@ jobs:
                   yamllint_comment: true
                   yamllint_config_filepath: t/yamllint.config
     lint:
-        runs-on: ubuntu-20.04
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os:
+                - ubuntu-20.04
+            perl-version:
+                - 'latest'
+        container:
+            image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v2
             - name: 'setup'
