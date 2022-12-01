@@ -14,6 +14,28 @@ use Mojo::URL;
 use Mojo::UserAgent;
 use Mojo::Util qw(dumper);
 
+=head1 NAME
+
+make_feed - turn the CVE search results into RSS
+
+=head1 SYNOPSIS
+
+	% perl util/make_feed
+
+=head1 DESCRIPTION
+
+B<make_feed> grabs some search results and turns those into items in
+an RSS feed. This way, interested people can track new results that
+we should add to the database.
+
+If there are no new results for a day, this adds an item in the RSS
+to note there was nothing new. That we, we notice that it's still
+running.
+
+
+
+=cut
+
 my $search_url = Mojo::URL->new("https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl");
 
 my $map_sub = sub {
