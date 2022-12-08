@@ -19,15 +19,15 @@ $(CVE_FEED_FILE):
 
 .PHONY: test
 test: ## run all tests (with current env)
-	prove -r
+	prove -r t
 
 .PHONY: test_all
 test_all: ## test all YAML files
-	env TEST_CHANGED_ONLY=0 prove -r
+	env TEST_CHANGED_ONLY=0 prove -r t
 
 .PHONY: test_new
 test_new: ## only test the new YAML files
-	env TEST_CHANGED_ONLY=1 prove -r
+	env TEST_CHANGED_ONLY=1 prove -r t
 
 ######################################################################
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
