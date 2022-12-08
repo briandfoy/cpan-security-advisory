@@ -756,3 +756,23 @@
     - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
+- affected_versions: <=7
+  cves:
+    - CVE-2022-43660
+  description: >
+    Improper neutralization of Server-Side Includes (SSW) within a web
+    page in Movable Type series allows a remote authenticated attacker
+    with Privilege of 'Manage of Content Types' may execute an arbitrary
+    Perl script and/or an arbitrary OS command. Affected products/versions
+    are as follows: Movable Type 7 r.5301 and earlier (Movable Type 7
+    Series), Movable Type Advanced 7 r.5301 and earlier (Movable Type
+    Advanced 7 Series), Movable Type Premium 1.53 and earlier, and Movable
+    Type Premium Advanced 1.53 and earlier.
+  distribution: MT
+  fixed_versions: ~
+  id: CPANSA-MT-2022-43660
+  references:
+    - https://movabletype.org/news/2022/11/mt-796-688-released.html
+    - https://jvn.jp/en/jp/JVN37014768/index.html
+  reported: 2022-12-07
+  severity: ~
