@@ -1,5 +1,6 @@
 ---
 - affected_versions: '>=9.25,<=9.26'
+  fixed_versions: '>=9.29'
   cves:
     - CVE-2022-4170
   comment: >
