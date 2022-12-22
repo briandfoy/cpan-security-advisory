@@ -7,7 +7,7 @@
   description: >
     Mojo::DOM did not correctly parse <script> tags.
   affected_versions: "<9.31"
-  fixed_versions: ">-9.31"
+  fixed_versions: ">=9.31"
   references:
     - https://github.com/mojolicious/mojo/commit/6f195d85db6756022d3599f7d2634975688c9550
     - https://github.com/mojolicious/mojo/issues/2014
