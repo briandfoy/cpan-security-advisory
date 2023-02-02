@@ -1,0 +1,18 @@
+---
+- affected_versions: '<0.5'
+  cves:
+    - CVE-2020-36658
+  description: >
+    In Apache::Session::LDAP before 0.5, validity of the X.509
+    certificate is not checked by default when connecting to remote LDAP
+    backends, because the default configuration of the Net::LDAPS module
+    for Perl is used. NOTE: this can, for example, be fixed in conjunction
+    with the CVE-2020-16093 fix.
+  distribution: Apache-Session-LDAP
+  fixed_versions: '>=0.5'
+  id: CPANSA-Apache-Session-LDAP-2020-36658
+  references:
+    - https://github.com/LemonLDAPNG/Apache-Session-LDAP/commit/490722b71eed1ed1ab33d58c78578f23e043561f
+    - https://lists.debian.org/debian-lts-announce/2023/01/msg00024.html
+  reported: 2023-01-27
+  severity: ~
