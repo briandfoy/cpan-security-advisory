@@ -1,0 +1,20 @@
+---
+name: csnappy
+url: https://github.com/zeevt/csnappy
+comment:
+perl_distributions:
+  - name: Sereal::Encoder
+    last_version_checked: "5.003"
+    affected:
+      - perl_module_versions: '>=3.002_002'
+        distributed_library_version: '5'
+      - perl_module_versions: '>=0.06,<3.002_002'
+        distributed_library_version: '4'
+  - name: Sereal::Decoder
+    last_version_checked: "5.003"
+    affected:
+      - perl_module_versions: '>=3.002_002'
+        distributed_library_version: '5'
+      - perl_module_versions: '>=0.06,<3.002_002'
+        distributed_library_version: '4'
+advisories: []
