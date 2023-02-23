@@ -26,7 +26,8 @@
   distribution: Cpanel-JSON-XS
   reported: 2023-02-21
   description: >
-    Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
+    Wrong error messages/sometimes crashes or endless loops with invalid
+    JSON in relaxed mode
   references:
     - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
     - https://github.com/rurban/Cpanel-JSON-XS/issues/208
