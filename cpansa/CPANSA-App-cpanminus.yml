@@ -11,5 +11,5 @@
     - https://blog.hackeriet.no/cpan-signature-verification-vulnerabilities/
   cves:
     - CVE-2020-16154
-  affected_versions: ">=1.7044"
+  affected_versions: "<=1.7044"
   fixed_versions: ~
