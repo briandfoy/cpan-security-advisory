@@ -1,5 +1,5 @@
 ---
-- affected_versions: '>0'
+- affected_versions: '<6.15'
   cves:
     - CVE-2022-31081
   description: >
@@ -19,7 +19,7 @@
     non-negative integer, or, a comma separated repetition of that number.
     (that is `42` or `42, 42, 42`). Anything else MUST be rejected.
   distribution: HTTP-Daemon
-  fixed_versions: ~
+  fixed_versions: '>=6.15'
   id: CPANSA-HTTP-Daemon-2022-31081
   references:
     - https://github.com/libwww-perl/HTTP-Daemon/commit/e84475de51d6fd7b29354a997413472a99db70b2
