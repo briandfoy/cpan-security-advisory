@@ -382,7 +382,7 @@
     - http://jvn.jp/en/jp/JVN65280626/index.html
   reported: 2019-12-26
   severity: medium
-- affected_versions: "==6.3.1"
+- affected_versions: "=6.3.1"
   cves:
     - CVE-2018-0672
   description: >
@@ -502,7 +502,7 @@
     - http://www.sec-1.com/blog/?p=402
   reported: 2013-01-23
   severity: ~
-- affected_versions: "==5.13"
+- affected_versions: "=5.13"
   cves:
     - CVE-2012-1503
   description: >
