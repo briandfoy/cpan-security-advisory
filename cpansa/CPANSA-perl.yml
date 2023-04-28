@@ -663,7 +663,7 @@
     - http://www.securityfocus.com/archive/1/418333/100/0/threaded
   reported: 2005-12-01
   severity: ~
-- affected_versions: "==5.8.0"
+- affected_versions: "=5.8.0"
   cves:
     - CVE-2005-0156
   description: >
@@ -693,7 +693,7 @@
     - 'http://www.digitalmunition.com/DMA[2005-0131b].txt'
   reported: 2005-02-07
   severity: ~
-- affected_versions: "==5.8.0"
+- affected_versions: "=5.8.0"
   cves:
     - CVE-2005-0155
   description: >
@@ -874,7 +874,7 @@
     - https://usn.ubuntu.com/3625-1/
   reported: 2016-08-02
   severity: high
-- affected_versions: '==5.8.1'
+- affected_versions: '=5.8.1'
   cves:
     - CVE-2003-0900
   description: >
