@@ -1,4 +1,29 @@
 ---
+- id: CPANSA-HTTP-Tiny-2023-01
+  affected_versions: ~
+  fixed_versions: ~
+  distribution: HTTP-Tiny
+  reported: 2023-02-14
+  description: >
+    HTTP::Tiny v0.082, a Perl core module since v5.13.9 and available standalone
+    on CPAN, does not verify TLS certs by default. Users must opt-in with the
+    verify_SSL=>1 flag to verify certs when using HTTPS.
+
+    Resulting in a CWE-1188: Insecure Default Initialization of Resource
+    weakness.
+  references:
+    - https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/
+    - https://github.com/chansen/p5-http-tiny/issues/152
+    - https://github.com/chansen/p5-http-tiny/pull/151
+    - https://hackeriet.github.io/cpan-http-tiny-overview/
+    - https://www.reddit.com/r/perl/comments/111tadi/psa_httptiny_disabled_ssl_verification_by_default/
+    - https://github.com/NixOS/nixpkgs/pull/187480
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=962407
+    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=954089
+    - https://salsa.debian.org/perl-team/interpreter/perl/-/commit/1490431e40e22052f75a0b3449f1f53cbd27ba92.patch
+    - https://github.com/chansen/p5-http-tiny/issues/134
+    - https://github.com/chansen/p5-http-tiny/issues/68
+  cves: []
 - id: CPANSA-HTTP-Tiny-2016-01
   distribution: HTTP-Tiny
   reported: 2016-07-29
