@@ -10,7 +10,9 @@
     parameters, as demonstrated by an eval injection attack against
     the core_drop_meta_for_table function, leading to execution of
     arbitrary Perl code.
-  distribution: "MT"
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2013-0209
   references:
@@ -38,7 +40,9 @@
     Premium Advanced 1.52 and earlier. Note that all versions of Movable
     Type 4.0 or later including unsupported (End-of-Life, EOL) versions
     are also affected by this vulnerability.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions:
     - "7.9.5"
     - "6.8.7"
@@ -64,7 +68,9 @@
     via unspecified vectors. Note that all versions of Movable Type 4.0 or
     later including unsupported (End-of-Life, EOL) versions are also
     affected by this vulnerability.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20837
   references:
@@ -85,7 +91,9 @@
     r.4903 and earlier (Movable Type Advanced 7 Series), and Movable Type
     Premium 1.44 and earlier) allows remote attackers to inject arbitrary
     script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20814
   references:
@@ -103,7 +111,9 @@
     Series) and Movable Type Advanced 7 r.4903 and earlier (Movable Type
     Advanced 7 Series)) allows remote attackers to inject arbitrary script
     or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20813
   references:
@@ -124,7 +134,9 @@
     Series), Movable Type Premium 1.44 and earlier, and Movable Type
     Premium Advanced 1.44 and earlier) allows remote attackers to inject
     arbitrary script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20815
   references:
@@ -145,7 +157,9 @@
     Series), Movable Type Premium 1.44 and earlier, and Movable Type
     Premium Advanced 1.44 and earlier) allows remote attackers to inject
     arbitrary script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20811
   references:
@@ -166,7 +180,9 @@
     Series), Movable Type Premium 1.44 and earlier, and Movable Type
     Premium Advanced 1.44 and earlier) allows remote attackers to inject
     arbitrary script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20810
   references:
@@ -188,7 +204,9 @@
     earlier, and Movable Type Premium Advanced 1.44 and earlier) allows
     remote attackers to inject arbitrary script or HTML via unspecified
     vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20809
   references:
@@ -209,7 +227,9 @@
     Movable Type Premium 1.44 and earlier, and Movable Type Premium
     Advanced 1.44 and earlier) allows remote attackers to inject arbitrary
     script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20808
   references:
@@ -225,7 +245,9 @@
     Premium 1.37 and earlier and Movable Type Premium Advanced 1.37 and
     earlier allows a remote authenticated attacker to inject an arbitrary
     script via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5669
   references:
@@ -250,7 +272,9 @@
     Advanced 1.29 and earlier) allow remote authenticated attackers to
     upload arbitrary files and execute a php script via unspecified
     vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5577
   references:
@@ -275,7 +299,9 @@
     1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier)
     allows remote attackers to hijack the authentication of administrators
     via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5576
   references:
@@ -300,7 +326,9 @@
     earlier, and Movable Type Premium Advanced 1.29 and earlier) allows
     remote attackers to inject arbitrary script or HTML via unspecified
     vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5575
   references:
@@ -325,7 +353,9 @@
     1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier)
     allows remote attackers to inject arbitrary HTML attribute value via
     unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5574
   references:
@@ -348,7 +378,9 @@
     earlier (Movable Type Premium Advanced)) allows remote attackers to
     inject arbitrary web script or HTML in the block editor and the rich
     text editor via a specially crafted URL.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2020-5528
   references:
@@ -374,7 +406,9 @@
     Edition) 1.24 and earlier (Movable Type Premium) allows remote
     attackers to redirect users to arbitrary web sites and conduct
     phishing attacks via a specially crafted URL.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2019-6025
   references:
@@ -389,7 +423,9 @@
     Cross-site scripting vulnerability in Movable Type versions prior
     to Ver. 6.3.1 allows remote attackers to inject arbitrary web script
     or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2018-0672
   references:
@@ -407,7 +443,9 @@
     Type Pro and Advanced 6.x before 6.1.3 and 6.2.x before 6.2.6 and
     Movable Type Open Source 5.2.13 and earlier allows remote attackers to
     execute arbitrary SQL commands via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2016-5742
   references:
@@ -429,7 +467,9 @@
     Storable::thaw function, which allows remote attackers to include and
     execute arbitrary local Perl files and possibly execute arbitrary code
     via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2015-1592
   references:
@@ -453,7 +493,9 @@
     Type before 5.18, 5.2.x before 5.2.11, and 6.x before 6.0.6 allows
     remote attackers to execute arbitrary SQL commands via unspecified
     vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2014-9057
   references:
@@ -470,7 +512,9 @@
     Movable Type before 5.2.6 does not properly use the Storable::thaw
     function, which allows remote attackers to execute arbitrary code via
     the comment_state parameter.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2013-2184
   references:
@@ -492,7 +536,9 @@
     demonstrated by an eval injection attack against the
     core_drop_meta_for_table function, leading to execution of arbitrary
     Perl code.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2013-0209
   references:
@@ -509,7 +555,9 @@
     Cross-site scripting (XSS) vulnerability in Six Apart (formerly
     Six Apart KK) Movable Type (MT) Pro 5.13 allows remote attackers to
     inject arbitrary web script or HTML via the comment section.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2012-1503
   references:
@@ -532,7 +580,9 @@
     allows remote attackers to take control of sessions via unspecified
     vectors related to the (1) commenting feature and (2) community
     script.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2012-0320
   references:
@@ -557,7 +607,9 @@
     remote attackers to hijack the authentication of arbitrary users for
     requests that modify data via the (1) commenting feature or (2)
     community script.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2012-0317
   references:
@@ -579,7 +631,9 @@
     Unspecified vulnerability in Movable Type 4.x before 4.36 and 5.x
     before 5.05 allows remote attackers to read or modify data via unknown
     vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2011-5085
   references:
@@ -596,7 +650,9 @@
     Cross-site scripting (XSS) vulnerability in Movable Type 4.x
     before 4.36 and 5.x before 5.05 allows remote attackers to inject
     arbitrary web script or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2011-5084
   references:
@@ -612,7 +668,9 @@
     administrative user interface in Six Apart Movable Type 5.0 and 5.01
     allow remote attackers to inject arbitrary web script or HTML via
     unknown vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2010-1985
   references:
@@ -632,7 +690,9 @@
     Apart Movable Type before 4.261 allows remote attackers to inject
     arbitrary web script or HTML via unspecified vectors, a different
     vulnerability than CVE-2009-2480.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2009-2492
   references:
@@ -651,7 +711,9 @@
     templates are not initialized, allows remote attackers to bypass
     access restrictions and (1) send e-mail to arbitrary addresses or (2)
     obtain sensitive information via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2009-2481
   references:
@@ -670,7 +732,9 @@
     Unspecified vulnerability in Movable Type Pro and Community
     Solution 4.x before 4.24 has unknown impact and attack vectors,
     possibly related to the password recovery mechanism.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2009-0752
   references:
@@ -685,7 +749,9 @@
     authenticated users with create permission for posts to bypass
     intended access restrictions and publish posts via a "system-wide
     entry listing screen."
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2008-5846
   references:
@@ -706,7 +772,9 @@
     or (6) edit screen in the CMS app; (7) a TrackBack title, related to
     the HTML sanitization library; or (8) a user archive name (aka archive
     title) on a published Community Blog template.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2008-5845
   references:
@@ -727,7 +795,9 @@
     Enterprise 4.x before 4.23 allows remote attackers to inject arbitrary
     web script or HTML via unspecified vectors, possibly related to
     "application management."
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2008-5808
   references:
@@ -748,7 +818,9 @@
     (Movable Type Advanced 7 Series) and Movable Type Premium Advanced
     1.44 and earlier) allows remote attackers to inject arbitrary script
     or HTML via unspecified vectors.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2021-20812
   references:
@@ -768,7 +840,9 @@
     Series), Movable Type Advanced 7 r.5301 and earlier (Movable Type
     Advanced 7 Series), Movable Type Premium 1.53 and earlier, and Movable
     Type Premium Advanced 1.53 and earlier.
-  distribution: MT
+  url: https://www.movabletype.org/
+  darkpan: true
+  distribution: ~
   fixed_versions: ~
   id: CPANSA-MT-2022-43660
   references:
