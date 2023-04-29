@@ -221,7 +221,16 @@ BEGIN {
 	select($original); $|++
 	}
 sub _output ( $fh, $label, $message ) {
-	return;
+	state $log_levels = {
+		QUIET   => 0,
+		INFO    => 1,
+		ERROR   => 2,
+		EXTRA   => 3,
+		};
+	state $default_log_level = 'QUIET';
+
+	return unless $log_levels->{$label} <= $log_levels->{ $ENV{CPANSA_LOG_LEVEL} // $default_log_level };
+
 	$message =~ s/\s*\z//;
 	say {$fh} $label, ' ', $message;
 	}
