@@ -1,5 +1,5 @@
 ---
-- affected_versions: ~
+- affected_versions: ">=4.0,<5.4.0"
   cves:
     - CVE-1999-0034
   description: >
@@ -7,10 +7,12 @@
   distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-sperl-1999-0034
-  references: []
+  references:
+    - https://exchange.xforce.ibmcloud.com/vulnerabilities/448
+    - https://www.cpan.org/src/5.0/CA-97.17.sperl
   reported: 1997-05-29
   severity: ~
-- affected_versions: ~
+- affected_versions: ">=4.0,<5.6.0"
   cves:
     - CVE-1999-0462
   description: >
@@ -25,7 +27,7 @@
     - http://www.securityfocus.com/bid/339
   reported: 1999-03-17
   severity: ~
-- affected_versions: ~
+- affected_versions: '<5.6.1'
   cves:
     - CVE-2000-0703
   description: >
@@ -47,5 +49,6 @@
     - http://archives.neohapsis.com/archives/bugtraq/2000-08/0153.html
     - http://archives.neohapsis.com/archives/bugtraq/2000-08/0086.html
     - http://archives.neohapsis.com/archives/bugtraq/2000-08/0113.html
+    - https://www.cpan.org/src/5.0/sperl-2000-08-05/sperl-2000-08-05.txt
   reported: 2000-10-20
   severity: ~
