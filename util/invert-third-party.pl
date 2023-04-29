@@ -99,10 +99,13 @@ FILE: foreach my $file ( get_files(@ARGV) ) {
 	info( "Processing $file" );
 	my $data = get_data( $file );
 	unless( defined $data ) {
-		error( "ERROR: $@" );
+		error( "$@" );
 		next FILE;
 		}
-
+	unless( ref $data eq ref {} ) {
+		error( "data for <$file> was not a hash" );
+		next FILE;
+		}
 	my $affected = affected_version_hash( $data->{advisories} );
 	#say dumper($affected);
 
