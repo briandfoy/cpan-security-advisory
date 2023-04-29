@@ -12,6 +12,10 @@ invert: ## turn the external_reports into CPANSA-style reports
 clean: ## clean out generated files
 	rm -rf $(GENERATED)
 
+.PHONY: lint
+lint: invert ## lint the reports
+	perl util/lint_reports
+
 .PHONY: pm
 pm: perl-module/lib/CPAN/Audit/DB.pm ## create DB.pm
 
