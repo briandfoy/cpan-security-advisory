@@ -23,7 +23,8 @@
     - https://salsa.debian.org/perl-team/interpreter/perl/-/commit/1490431e40e22052f75a0b3449f1f53cbd27ba92.patch
     - https://github.com/chansen/p5-http-tiny/issues/134
     - https://github.com/chansen/p5-http-tiny/issues/68
-  cves: []
+  cves:
+    - CVE-2023-31486
 - id: CPANSA-HTTP-Tiny-2016-01
   distribution: HTTP-Tiny
   reported: 2016-07-29
