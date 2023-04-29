@@ -1,7 +1,9 @@
 ---
-- affected_versions: '<0.070'
-  cves:
-    - CVE-2019-17362
+name: libtomcrypt
+url: https://github.com/libtom/libtomcrypt
+perl_distributions: []
+advisories:
+- cve: CVE-2019-17362
   description: >
     In LibTomCrypt through 1.18.2, the der_decode_utf8_string function
     (in der_decode_utf8_string.c) does not properly detect certain
@@ -9,9 +11,8 @@
     to cause a denial of service (out-of-bounds read and crash) or
     read information from other memory locations via carefully crafted
     DER-encoded data.
-  distribution: Crypt
-  fixed_versions: '>=0.070'
-  id: CPANSA-Crypt-2019-17362
+  affected_versions: '<=1.18.2'
+  fixed_versions: '>1.18.2'
   references:
     - https://github.com/libtom/libtomcrypt/pull/508
     - https://github.com/libtom/libtomcrypt/issues/507
@@ -21,26 +22,21 @@
     - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
   reported: 2019-10-09
   severity: critical
-- affected_versions: '<0.062'
-  cves:
-    - CVE-2018-12437
+- cve: CVE-2018-12437
   description: >
     LibTomCrypt through 1.18.1 allows a memory-cache side-channel
     attack on ECDSA signatures, aka the Return Of the Hidden Number
     Problem or ROHNP. To discover an ECDSA key, the attacker needs
     access to either the local machine or a different virtual machine
     on the same physical host.
-  distribution: Crypt
-  fixed_versions: '>=0.062'
-  id: CPANSA-Crypt-2018-12437
+  affected_versions: '<=1.18.1'
+  fixed_versions: '>1.18.1'
   references:
     - https://www.nccgroup.trust/us/our-research/technical-advisory-return-of-the-hidden-number-problem/
     - https://security.gentoo.org/glsa/202007-53
   reported: 2018-06-15
   severity: medium
-- affected_versions: '<0.022'
-  cves:
-    - CVE-2016-6129
+- cve: CVE-2016-6129
   description: >
     The rsa_verify_hash_ex function in rsa_verify_hash.c in
     LibTomCrypt, as used in OP-TEE before 2.2.0, does not validate
@@ -48,9 +44,8 @@
     which makes it easier for remote attackers to forge RSA signatures
     or public certificates by leveraging a Bleichenbacher signature
     forgery attack.
-  distribution: Crypt
-  fixed_versions: '>=0.022'
-  id: CPANSA-Crypt-2016-6129
+  affected_versions: ~
+  fixed_versions: ~
   references:
     - https://www.op-tee.org/advisories/
     - https://github.com/libtom/libtomcrypt/commit/5eb9743410ce4657e9d54fef26a2ee31a1b5dd0
