@@ -4,6 +4,7 @@ CVE_FEED_FILE=perl-cve-atom.xml
 all: ## does nothing yet (reserved)
 	@ echo "There is no default target"
 
+.PHONY: invert
 invert: ## turn the external_reports into CPANSA-style reports
 	perl util/invert-third-party.pl
 
