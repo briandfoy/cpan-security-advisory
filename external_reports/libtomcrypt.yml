@@ -1,4 +1,7 @@
 ---
+name: libtomcrypt
+url: https://www.libtom.net/LibTomCrypt/
+advisories:
 - affected_versions: '<0.070'
   cves:
     - CVE-2019-17362
@@ -9,7 +12,6 @@
     to cause a denial of service (out-of-bounds read and crash) or
     read information from other memory locations via carefully crafted
     DER-encoded data.
-  distribution: Crypt
   fixed_versions: '>=0.070'
   id: CPANSA-Crypt-2019-17362
   references:
@@ -30,7 +32,6 @@
     Problem or ROHNP. To discover an ECDSA key, the attacker needs
     access to either the local machine or a different virtual machine
     on the same physical host.
-  distribution: Crypt
   fixed_versions: '>=0.062'
   id: CPANSA-Crypt-2018-12437
   references:
@@ -48,7 +49,6 @@
     which makes it easier for remote attackers to forge RSA signatures
     or public certificates by leveraging a Bleichenbacher signature
     forgery attack.
-  distribution: Crypt
   fixed_versions: '>=0.022'
   id: CPANSA-Crypt-2016-6129
   references:
