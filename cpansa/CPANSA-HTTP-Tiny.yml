@@ -1,5 +1,5 @@
 ---
-- id: CPANSA-HTTP-Tiny-2023-01
+- id: CPANSA-HTTP-Tiny-2023-31486
   affected_versions: ~
   fixed_versions: ~
   distribution: HTTP-Tiny
@@ -25,7 +25,7 @@
     - https://github.com/chansen/p5-http-tiny/issues/68
   cves:
     - CVE-2023-31486
-- id: CPANSA-HTTP-Tiny-2016-01
+- id: CPANSA-HTTP-Tiny-2016-1238
   distribution: HTTP-Tiny
   reported: 2016-07-29
   description: >
