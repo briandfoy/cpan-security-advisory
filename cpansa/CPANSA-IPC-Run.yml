@@ -9,5 +9,8 @@
     - https://metacpan.org/dist/IPC-Run/changes
     - https://rt.cpan.org/Public/Bug/Display.html?id=49693
   cves: []
-  affected_versions: "<0.90,0.90_01,0.90_02"
+  affected_versions:
+    - "<0.90"
+    - "=0.90_01"
+    - "=0.90_02"
   fixed_versions: ">=0.90"
