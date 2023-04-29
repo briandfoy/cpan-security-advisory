@@ -10,4 +10,5 @@
     - https://github.com/bluefeet/GitLab-API-v4/pull/57
     - https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/
   reported: 2023-02-28
-  cves: []
+  cves:
+    - CVE-2023-31485
