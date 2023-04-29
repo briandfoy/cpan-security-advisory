@@ -90,6 +90,13 @@ versions.
         reported: 2020-10-29
         severity: high
 
+=head2 Logging
+
+Set the CPANSA_LOG_LEVEL environment variable to either C<INFO>, C<ERROR>,
+or C<EXTRA> to get additional info:
+
+	$ env CPANSA_LOG_LEVEL=ERROR make invert
+
 =cut
 
 my $Report_dir = 'generated_reports';
