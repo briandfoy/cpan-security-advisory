@@ -1,6 +1,6 @@
 ---
-- id: CPANSA-GitLab-API-v4-2023-01
-  affected_versions: ~
+- id: CPANSA-GitLab-API-v4-2023-31485
+  affected_versions: ">=0.26"
   fixed_versions: ~
   description: >
     GitLab::API::v4 is missing the verify_SSL=>1 flag in HTTP::Tiny, allowing a
