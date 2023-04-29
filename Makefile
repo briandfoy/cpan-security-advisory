@@ -28,6 +28,10 @@ feed: $(CVE_FEED_FILE)
 $(CVE_FEED_FILE):
 	perl util/make_feed > $@
 
+.PHONY: setup
+setup: ## setup the environment to use these tools
+	cpanm --installdeps .
+
 .PHONY: test
 test: ## run all tests (with current env)
 	prove -r t
