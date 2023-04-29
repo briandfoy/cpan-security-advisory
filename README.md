@@ -27,6 +27,14 @@ make this more resilient by keeping the data in several places.
     - Gentoo https://security.gentoo.org/glsa/feed.rss
     - Ubuntu https://usn.ubuntu.com/rss.xml
 
+## Setup your environment
+
+To run the various programs, you'll need some Perl modules. Install
+[cpanminus](https://github.com/miyagawa/cpanminus/tree/devel/App-cpanminus)
+if you don't already have it:
+
+	$ make setup
+
 ## Finding a record
 
 	$ perl util/find_record CVE-2022-1234
@@ -119,6 +127,21 @@ be indicayed with the `external_vulnerability` key:
      distributed_version: "<=6.3"
      name: readline
 ```
+
+## Check the results
+
+Check all the files for basic YAML:
+
+	$ make test_all
+
+Checking all the files can take a minute, so you can also just check
+the files that have changed:
+
+	$ make test_new
+
+Run the `lint` target to check all of the report files:
+
+	$ make lint
 
 ## Command-line checks
 

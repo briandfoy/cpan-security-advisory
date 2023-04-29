@@ -90,6 +90,13 @@ versions.
         reported: 2020-10-29
         severity: high
 
+=head2 Logging
+
+Set the CPANSA_LOG_LEVEL environment variable to either C<INFO>, C<ERROR>,
+or C<EXTRA> to get additional info:
+
+	$ env CPANSA_LOG_LEVEL=ERROR make invert
+
 =cut
 
 my $Report_dir = 'generated_reports';
@@ -99,10 +106,13 @@ FILE: foreach my $file ( get_files(@ARGV) ) {
 	info( "Processing $file" );
 	my $data = get_data( $file );
 	unless( defined $data ) {
-		error( "ERROR: $@" );
+		error( "$@" );
 		next FILE;
 		}
-
+	unless( ref $data eq ref {} ) {
+		error( "data for <$file> was not a hash" );
+		next FILE;
+		}
 	my $affected = affected_version_hash( $data->{advisories} );
 	#say dumper($affected);
 
@@ -221,7 +231,16 @@ BEGIN {
 	select($original); $|++
 	}
 sub _output ( $fh, $label, $message ) {
-	return;
+	state $log_levels = {
+		QUIET   => 0,
+		INFO    => 1,
+		ERROR   => 2,
+		EXTRA   => 3,
+		};
+	state $default_log_level = 'QUIET';
+
+	return unless $log_levels->{$label} <= $log_levels->{ $ENV{CPANSA_LOG_LEVEL} // $default_log_level };
+
 	$message =~ s/\s*\z//;
 	say {$fh} $label, ' ', $message;
 	}

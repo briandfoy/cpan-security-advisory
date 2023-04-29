@@ -4,12 +4,17 @@ CVE_FEED_FILE=perl-cve-atom.xml
 all: ## does nothing yet (reserved)
 	@ echo "There is no default target"
 
+.PHONY: invert
 invert: ## turn the external_reports into CPANSA-style reports
 	perl util/invert-third-party.pl
 
 .PHONY: clean
 clean: ## clean out generated files
 	rm -rf $(GENERATED)
+
+.PHONY: lint
+lint: invert ## lint the reports
+	perl util/lint_reports
 
 .PHONY: pm
 pm: perl-module/lib/CPAN/Audit/DB.pm ## create DB.pm
@@ -22,6 +27,10 @@ feed: $(CVE_FEED_FILE)
 
 $(CVE_FEED_FILE):
 	perl util/make_feed > $@
+
+.PHONY: setup
+setup: ## setup the environment to use these tools
+	cpanm --installdeps .
 
 .PHONY: test
 test: ## run all tests (with current env)
