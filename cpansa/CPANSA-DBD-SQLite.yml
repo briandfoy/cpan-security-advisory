@@ -262,7 +262,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2020-02-21
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-20218
   description: >
@@ -280,7 +280,7 @@
     - https://lists.debian.org/debian-lts-announce/2020/12/msg00016.html
   reported: 2020-01-02
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19959
   description: >
@@ -298,7 +298,7 @@
     - https://www.oracle.com/security-alerts/cpuapr2020.html
   reported: 2020-01-03
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19926
     - CVE-2019-19880
@@ -373,7 +373,7 @@
     - https://usn.ubuntu.com/4205-1/
   reported: 2019-05-10
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19925
   description: >
@@ -395,7 +395,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-24
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19924
   description: >
@@ -415,7 +415,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-24
   severity: medium
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19923
   description: >
@@ -438,7 +438,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-24
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19880
   description: >
@@ -499,7 +499,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-09
   severity: medium
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19603
   description: >
@@ -518,7 +518,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-09
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19317
   description: >
@@ -536,7 +536,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-12-05
   severity: critical
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19244
   description: >
@@ -553,7 +553,7 @@
     - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
   reported: 2019-11-25
   severity: high
-- affected_versions: "1.65_02"
+- affected_versions: "=1.65_02"
   cves:
     - CVE-2019-19242
   description: >
@@ -612,7 +612,7 @@
     - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
   reported: 2019-04-03
   severity: high
-- affected_versions: "1.59_02"
+- affected_versions: "=1.59_02"
   cves:
     - CVE-2018-20505
   description: >
@@ -723,7 +723,9 @@
     - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
   reported: 2018-03-17
   severity: high
-- affected_versions: "1.55_06,<=1.55_03"
+- affected_versions:
+    - "=1.55_06"
+    - "<=1.55_03"
   cves:
     - CVE-2017-10989
   description: >
@@ -873,7 +875,7 @@
     - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
   reported: 2015-04-24
   severity: ~
-- affected_versions: "1.47_01"
+- affected_versions: "=1.47_01"
   cves:
     - CVE-2013-7443
   description: >
