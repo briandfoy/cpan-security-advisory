@@ -32,7 +32,7 @@
   affected_versions: "<0.55"
   fixed_versions: ">=0.55"
 - id: CPANSA-SOAP-Lite-2000-01
-  cves: ~
+  cves: []
   distribution: SOAP-Lite
   reported: 2000-10-05
   description: >

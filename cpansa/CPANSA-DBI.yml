@@ -61,7 +61,7 @@
   affected_versions: "<1.643"
   fixed_versions: ">=1.643"
 - id: CPANSA-DBI-2014-01
-  cves: ~
+  cves: []
   distribution: DBI
   reported: 2014-10-15
   severity: high

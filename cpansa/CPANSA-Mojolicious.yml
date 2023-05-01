@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-Mojolicious-2022-03
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2022-12-10
   severity: ~
@@ -13,7 +13,7 @@
     - https://github.com/mojolicious/mojo/issues/2014
     - https://github.com/mojolicious/mojo/issues/2015
 - id: CPANSA-Mojolicious-2021-02
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2021-06-01
   severity: ~
@@ -25,7 +25,7 @@
   references:
     - https://github.com/mojolicious/mojo/pull/1791
 - id: CPANSA-Mojolicious-2021-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2021-03-16
   severity: ~
@@ -37,7 +37,7 @@
     - https://github.com/mojolicious/mojo/issues/1736
     - https://github.com/mojolicious/mojo/commit/a0c4576ffb11c235088550de9ba7ac4196e1953c
 - id: CPANSA-Mojolicious-2020-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2020-11-10
   severity: ~
@@ -55,7 +55,7 @@
       email: rrwo@cpan.org
       date: 2022-06-22
 - id: CPANSA-Mojolicious-2018-04
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2018-08-09
   severity: critical
@@ -70,7 +70,7 @@
   references:
     - https://github.com/mojolicious/mojo/commit/61f6cbf22c7bf8eb4787bd1014d91ee2416c73e7
 - id: CPANSA-Mojolicious-2018-03
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2018-05-19
   severity: high
@@ -82,7 +82,7 @@
     - https://github.com/mojolicious/mojo/pull/1226
     - https://github.com/mojolicious/mojo/commit/d3cbbad890673612fdbdea63fdd522b516f6104c
 - id: CPANSA-Mojolicious-2018-02
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2018-05-11
   severity: critical
@@ -95,7 +95,7 @@
     - https://github.com/mojolicious/mojo/pull/1217
     - https://github.com/mojolicious/mojo/commit/23ebe051d9378f0f122e3c908845fc0c2cae0106
 - id: CPANSA-Mojolicious-2018-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2018-02-13
   severity: minor
@@ -109,7 +109,7 @@
     - https://github.com/mojolicious/mojo/issues/1185
     - https://github.com/mojolicious/mojo/commit/c16a56a9d6575ddc53d15e76d58f0ebcb0eeb149
 - id: CPANSA-Mojolicious-2015-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2015-02-02
   severity: critical
@@ -121,7 +121,7 @@
   affected_versions: "<5.76"
   fixed_versions: ~
 - id: CPANSA-Mojolicious-2014-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2014-10-07
   severity: high
@@ -133,7 +133,7 @@
   affected_versions: "<5.48"
   fixed_versions: ~
 - id: CPANSA-Mojolicious-2011-02
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2011-04-05
   severity: critical
@@ -147,7 +147,7 @@
   affected_versions: "<1.16"
   fixed_versions: ~
 - id: CPANSA-Mojolicious-2011-01
-  cves: ~
+  cves: []
   distribution: Mojolicious
   reported: 2011-03-10
   severity: high

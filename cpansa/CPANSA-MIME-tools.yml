@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-MIME-tools-1998-01
-  cves: ~
+  cves: []
   distribution: MIME-tools
   reported: 1998-01-10
   severity: ~

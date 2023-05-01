@@ -40,7 +40,7 @@
   affected_versions: "<3.56"
   fixed_versions: ">=3.56"
 - id: CPANSA-CGI-2010-02
-  cves: ~
+  cves: []
   distribution: CGI
   reported: 2010-11-08
   description: >
@@ -48,7 +48,7 @@
   affected_versions: "<3.50"
   fixed_versions: ">=3.50"
 - id: CPANSA-CGI-2010-01
-  cves: ~
+  cves: []
   distribution: CGI
   reported: 2010-02-05
   description: >
