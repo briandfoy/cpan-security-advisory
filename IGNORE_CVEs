@@ -197,3 +197,4 @@ CVE-2022-30688  needrestart 0.8 through 3.5 before 3.6 is prone to local privile
 CVE-2022-33941  PowerCMS XMLRPC API provided by Alfasado Inc. contains a command injection vulnerability.
 CVE-2022-39051  OTRS - Attacker might be able to execute malicious Perl code in the Template toolkit, by having the admin installing an unverified 3th party package
 CVE-2023-26490	dovecot container stuff
+CVE-2022-44542	lesspipe's misuse of Storable
