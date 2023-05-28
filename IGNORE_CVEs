@@ -198,3 +198,4 @@ CVE-2022-33941  PowerCMS XMLRPC API provided by Alfasado Inc. contains a command
 CVE-2022-39051  OTRS - Attacker might be able to execute malicious Perl code in the Template toolkit, by having the admin installing an unverified 3th party package
 CVE-2023-26490	dovecot container stuff
 CVE-2022-44542	lesspipe's misuse of Storable
+CVE-2023-2868	 Barracuda misuse of non-Perl things
