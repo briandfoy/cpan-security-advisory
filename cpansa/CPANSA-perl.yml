@@ -966,7 +966,7 @@
     Perl 5.004_04 and earlier follows symbolic links when running with
     the -e option, which allows local users to overwrite arbitrary
     files via a symlink attack on the /tmp/perl-eaXXXXX file.
-  distribution: ''
+  distribution: 'perl'
   fixed_versions: ~
   id: CPANSA-perl-1999-1386
   references:

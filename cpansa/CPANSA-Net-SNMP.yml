@@ -69,7 +69,7 @@
     to cause a denial of service (snmptrapd crash) via an empty
     community string in an SNMP trap, which triggers a NULL pointer
     dereference within the newSVpv function in Perl.
-  distribution: ''
+  distribution: Net-SNMP
   fixed_versions: ~
   id: CPANSA-Net-SNMP-2014-2285
   references:
