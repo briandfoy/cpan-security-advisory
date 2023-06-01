@@ -75,7 +75,7 @@
     regcomp.c in Perl before 5.30.3 allows a buffer overflow via a
     crafted regular expression because of recursive S_study_chunk
     calls.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-12723
   references:
@@ -105,7 +105,7 @@
     of a "PL_regkind[OP(n)] == NOTHING" situation. A crafted regular
     expression could lead to malformed bytecode with a possibility of
     instruction injection.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-10878
   references:
@@ -133,7 +133,7 @@
     Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer
     overflow because nested regular expression quantifiers have an
     integer overflow.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.30.3"
   id: CPANSA-perl-2020-10543
   references:
@@ -160,7 +160,7 @@
     An issue was discovered in Perl 5.22 through 5.26. Matching a
     crafted locale dependent regular expression can cause a heap-based
     buffer over-read and potentially information disclosure.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.28.0"
   id: CPANSA-perl-2018-6798
   references:
@@ -180,7 +180,7 @@
     An issue was discovered in Perl 5.18 through 5.26. A crafted
     regular expression can cause a heap-based buffer overflow, with
     control over the bytes written.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.28.0"
   id: CPANSA-perl-2018-6797
   references:
@@ -201,7 +201,7 @@
     Heap-based buffer overflow in the pack function in Perl before
     5.26.2 allows context-dependent attackers to execute arbitrary
     code via a large item count.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.26.2"
   id: CPANSA-perl-2018-6913
   references:
@@ -222,7 +222,7 @@
   description: >
     Perl before 5.26.3 has a buffer overflow via a crafted regular
     expression that triggers invalid write operations.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.26.3"
   id: CPANSA-perl-2018-18314
   references:
@@ -249,7 +249,7 @@
     Perl before 5.26.3 has a buffer over-read via a crafted regular
     expression that triggers disclosure of sensitive information from
     process memory.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.26.3"
   id: CPANSA-perl-2018-18313
   references:
@@ -279,7 +279,7 @@
     Perl before 5.26.3 and 5.28.0 before 5.28.1 has a buffer overflow
     via a crafted regular expression that triggers invalid write
     operations.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2018-18312
   references:
@@ -306,7 +306,7 @@
     Perl before 5.26.3 and 5.28.x before 5.28.1 has a buffer overflow
     via a crafted regular expression that triggers invalid write
     operations.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2018-18311
   references:
@@ -349,7 +349,7 @@
     remote attackers to disclose sensitive information or cause a
     denial of service (application crash) via a crafted regular
     expression with an invalid '\\N{U+...}' escape.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.26.1"
   id: CPANSA-perl-2017-12883
   references:
@@ -374,7 +374,7 @@
     remote attackers to cause a denial of service (out-of-bounds
     write) via a regular expression with a '\\N{}' escape and the
     case-insensitive modifier.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.28.1"
   id: CPANSA-perl-2017-12837
   references:
@@ -397,7 +397,7 @@
     in regexec.c in Perl before 5.24.0 allow context-dependent
     attackers to cause a denial of service (infinite loop) via crafted
     utf-8 data, as demonstrated by "a\x80."
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.24.0"
   id: CPANSA-perl-2015-8853
   references:
@@ -423,7 +423,7 @@
     The rehash mechanism in Perl 5.8.2 through 5.16.x allows
     context-dependent attackers to cause a denial of service (memory
     consumption and crash) via a crafted hash key.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.26.1"
   id: CPANSA-perl-2013-1667
   references:
@@ -460,7 +460,7 @@
     leveraging an ability to inject arguments into a (1) getpeername,
     (2) readdir, (3) closedir, (4) getsockname, (5) rewinddir, (6)
     tell, or (7) telldir function call.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.12.0"
   id: CPANSA-perl-2011-0761
   references:
@@ -482,7 +482,7 @@
     (assertion failure and application exit) via crafted input that is
     not properly handled when using certain regular expressions, as
     demonstrated by causing SpamAssassin and OCSInventory to crash.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">5.14.0"
   id: CPANSA-perl-2010-4777
   references:
@@ -503,7 +503,7 @@
     allows context-dependent attackers to cause a denial of service
     (stack consumption and application crash) by matching a crafted
     regular expression against a long string.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.10.0"
   id: CPANSA-perl-2010-1158
   references:
@@ -523,7 +523,7 @@
     of service (application crash) via a UTF-8 character with a large,
     invalid codepoint, which is not properly handled during a
     regular-expression match.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2009-3626
   references:
@@ -549,7 +549,7 @@
     crash) via a crafted regular expression containing UTF8
     characters.  NOTE: this issue might only be present on certain
     operating systems.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2008-1927
   references:
@@ -605,7 +605,7 @@
     via format string specifiers with large values, which causes an
     integer wrap and leads to a buffer overflow, as demonstrated using
     format string vulnerabilities in Perl applications.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2005-3962
   references:
@@ -672,7 +672,7 @@
     execute arbitrary code by setting the PERLIO_DEBUG variable and
     executing a Perl script whose full pathname contains a long
     directory tree.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2005-0156
   references:
@@ -700,7 +700,7 @@
     The PerlIO implementation in Perl 5.8.0, when installed with
     setuid support (sperl), allows local users to create arbitrary
     files via the PERLIO_DEBUG variable.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2005-0155
   references:
@@ -730,7 +730,7 @@
     Expression Engine (regcomp.c) in Perl 5.8 allows context-dependent
     attackers to execute arbitrary code by switching from byte to
     Unicode (UTF) characters in a regular expression.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2007-5116
   references:
@@ -798,7 +798,7 @@
     5.15.x before 15.15.5 allows context-dependent attackers to cause
     a denial of service (memory consumption and crash) or possibly
     execute arbitrary code via the 'x' string repeat operator.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.16.0"
   id: CPANSA-perl-2012-5195
   references:
@@ -827,7 +827,7 @@
     Perl might allow context-dependent attackers to bypass the taint
     protection mechanism in a child process via duplicate environment
     variables in envp.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2016-2381
   references:
@@ -881,7 +881,7 @@
     Perl 5.8.1 on Fedora Core does not properly initialize the random
     number generator when forking, which makes it easier for attackers
     to predict random numbers.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2003-0900
   references:
@@ -898,7 +898,7 @@
     denial of service (application crash) via a long digit string
     associated with an invalid backreference within a regular
     expression.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-2013-7422
   references:
@@ -938,7 +938,7 @@
     processing tainted input, which might allow context-dependent
     attackers to bypass the taint protection mechanism via a crafted
     string.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ">=5.14.0"
   id: CPANSA-perl-2011-1487
   references:
@@ -966,7 +966,7 @@
     Perl 5.004_04 and earlier follows symbolic links when running with
     the -e option, which allows local users to overwrite arbitrary
     files via a symlink attack on the /tmp/perl-eaXXXXX file.
-  distribution: 'perl'
+  distribution: perl
   fixed_versions: ~
   id: CPANSA-perl-1999-1386
   references:
