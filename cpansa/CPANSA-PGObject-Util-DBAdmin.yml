@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-PGObject-Util-DBAdmin-2018-01
-  distribution: CPAN-Checksums
+  distribution: PGObject-Util-DBAdmin
   reported: 2018-06-18
   description: >
     The PGObject::Util::DBAdmin module before 0.120.0 for Perl, as
