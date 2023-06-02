@@ -216,3 +216,17 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
   reported: 2011-05-03
   severity: ~
+- affected_versions: "<0.991250"
+  cves:
+    - CVE-2009-5074
+  description: >
+    Unspecified vulnerability in the MojoX::Dispatcher::Static
+    implementation in Mojolicious before 0.991250 has unknown impact
+    and attack vectors.
+  distribution: Mojolicious
+  fixed_versions: ">0.991250"
+  id: CPANSA-Mojolicious-2009-5074
+  references:
+    - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+  reported: 2011-05-03
+  severity: ~
