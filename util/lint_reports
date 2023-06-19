@@ -85,14 +85,14 @@ FILE: foreach my $file ( @files ) {
 exit( print_summary(\%Errors) );
 
 package Local::Common {
-	sub check_required_keys ($class, $record) {
-		my @required = $class->required_keys;
+	sub check_range ($class, $range) {
+		state $version = qr/ (<|<=|=|>=|>) (\d+(\.\d+)* (_\d+)?) /nxa;
+		state $pattern = qr/\A
+			$version
+			(,$version)*
+			\z/nx;
 
-		my $message = '';
-		my $errors  = 0;
-		my @missing = grep { ! exists $record->{$_} } @required;
-		return unless @missing;
-		return "missing keys @missing";
+		$range =~ $pattern;
 		}
 
 	sub check_ranges ($class, $record) {
@@ -119,14 +119,14 @@ package Local::Common {
 		return join "\n", @errors;
 		}
 
-	sub check_range ($class, $range ) {
-		state $version = qr/ ([<>=!]=?)? (\d+(\.\d+)* (_\d+)?) /nxa;
-		state $pattern = qr/\A
-			$version
-			(,$version)*
-			\z/nx;
+	sub check_required_keys ($class, $record) {
+		my @required = $class->required_keys;
 
-		$range =~ $pattern;
+		my $message = '';
+		my $errors  = 0;
+		my @missing = grep { ! exists $record->{$_} } @required;
+		return unless @missing;
+		return "missing keys @missing";
 		}
 
 	sub run_checks { return {} }
@@ -135,7 +135,7 @@ package Local::Common {
 package Local::CPANReports {
 	use base qw(Local::Common);
 
-	sub checks {
+	sub record_checks {
 		state @subs = qw(
 			check_id
 			check_required_keys
@@ -145,23 +145,43 @@ package Local::CPANReports {
 		return @subs;
 		}
 
-	sub check_id ($self, $record) {
-	my @errors = ();
+	sub file_checks {
+		state @subs = qw(
+			check_distributions_match
+			);
 
-	return 'id key is missing' unless exists $record->{id};
-
-	my @table = (
-		[ "id does not start with CPANSA", sub { $_[0] !~ m/\ACPANSA-/ } ],
-		[ "id has double dash–missing something", sub { $_[0] =~ m/--/ } ],
-		[ "id has too many dashes", sub { $_[0] =~ m/-\d+-\d+-\d+/ } ],
-		);
-
-	foreach my $row ( @table ) {
-		push @errors, $row->[0] if $row->[1]($record->{id});
+		return @subs;
 		}
 
-	return unless @errors;
-	return join( "\n", @errors );
+	sub check_distributions_match ($self, $data) {
+		my %Seen;
+
+		foreach my($n, $report) ( indexed($data->@*) ) {
+			$Seen{ $report->{distribution} }++;
+			}
+
+		my $key_count = keys %Seen;
+		return if $key_count == 1;
+		return "There are more than one distribution in the records: " . join( " ", keys %Seen );
+		}
+
+	sub check_id ($self, $record) {
+		my @errors = ();
+
+		return 'id key is missing' unless exists $record->{id};
+
+		my @table = (
+			[ "id does not start with CPANSA", sub { $_[0] !~ m/\ACPANSA-/ } ],
+			[ "id has double dash–missing something", sub { $_[0] =~ m/--/ } ],
+			[ "id has too many dashes", sub { $_[0] =~ m/-\d+-\d+-\d+/ } ],
+			);
+
+		foreach my $row ( @table ) {
+			push @errors, $row->[0] if $row->[1]($record->{id});
+			}
+
+		return unless @errors;
+		return join( "\n", @errors );
 	}
 
 	sub check_ranges ($self, $record) {
@@ -204,18 +224,37 @@ package Local::CPANReports {
 		)
 		}
 
-	sub run_checks ($class, $data) {
+	sub run_file_checks ($class, $data) {
 		my %results;
+		foreach my $method ( $class->file_checks ) {
+			my $message = $class->$method($data);
+			next unless defined $message;
+			push $results{$method}->@*, $message;
+			}
 
+		return \%results;
+		}
+
+	sub run_record_checks ($class, $data) {
+		my %results;
 		foreach my($n, $report) ( indexed($data->@*) ) {
 			print ".";
 			my $id = $report->{id} // "report $n";
-			foreach my $method ( $class->checks ) {
+			foreach my $method ( $class->record_checks ) {
 				my $message = $class->$method($report);
 				next unless defined $message;
 				push $results{$id}->@*, $message;
 				}
 			}
+
+		return \%results;
+		}
+
+	sub run_checks ($class, $data) {
+		my %results;
+
+		$results{records} = $class->run_record_checks($data);
+		$results{file} = $class->run_file_checks($data);
 
 		return keys %results? \%results : ();
 		}
@@ -224,9 +263,16 @@ package Local::CPANReports {
 package Local::ExternalReports {
 	use base qw(Local::Common);
 
-	sub checks {
+	sub record_checks {
 		state @subs = qw(
 			check_required_keys
+			);
+
+		return @subs;
+		}
+
+	sub file_checks {
+		state @subs = qw(
 			);
 
 		return @subs;
@@ -235,10 +281,11 @@ package Local::ExternalReports {
 	sub check_advisories ($class, $data) {
 		my %results;
 
+
 		foreach my($n, $report) ( indexed($data->{advisories}->@*) ) {
 			print ".";
 			my $id = $report->{cve} // "report $n";
-			foreach my $method ( $class->checks ) {
+			foreach my $method ( $class->record_checks ) {
 				my $message = $class->$method($report);
 				next unless defined $message;
 				push $results{$id}->@*, $message;
@@ -308,17 +355,37 @@ perl_distributions:
 		)
 		}
 
+	sub run_file_checks ($class, $data) {
+		my %results;
+		foreach my $method ( $class->file_checks ) {
+			my $message = $class->$method($data);
+			next unless defined $message;
+			push $results{$method}->@*, $message;
+			}
+
+		return \%results;
+		}
+
+	sub run_record_checks ($class, $data) {
+		my %results;
+		foreach my($n, $report) ( indexed($data->{advisories}->@*) ) {
+			print ".";
+			my $id = $report->{id} // "report $n";
+			foreach my $method ( $class->record_checks ) {
+				my $message = $class->$method($report);
+				next unless defined $message;
+				push $results{$id}->@*, $message;
+				}
+			}
+
+		return \%results;
+		}
+
 	sub run_checks ($class, $data) {
 		my %results;
 
-		my $general = $class->check_meta($data);
-		$results{general} = $general if defined $general;
-
-		my $perl = $class->check_perl($data);
-		$results{perl} = $perl if defined $perl;
-
-		my $advisories = $class->check_advisories($data);
-		$results{advisories} = $advisories if defined $advisories;
+		$results{records} = $class->run_record_checks($data);
+		$results{file} = $class->run_file_checks($data);
 
 		return keys %results? \%results : ();
 		}
@@ -328,13 +395,23 @@ sub print_summary ( $Errors ) {
 	my $errors = 0;
 
 	say "========== SUMMARY ==========";
-	foreach my $file ( sort keys $Errors->%* ) {
-		say "$file:";
-		foreach my $record ( keys $Errors->{$file}->%* ) {
-			say "\t$record:";
-			foreach my $problem ( $Errors->{$file}{$record}->@* ) {
-				$errors++;
-				say colored( ['red bold'], $problem =~ s/^/\t\t/mgr );
+	FILENAME: foreach my $filename ( sort keys $Errors->%* ) {
+		my $string = '';
+		my $errors = 0;
+
+		my $f_h = $Errors->{$filename};
+
+		TYPE: foreach my $type ( keys $f_h->%* ) {
+			my $count_of_type = 0;
+			my $t_h = $f_h->{$type};
+			PROBLEM: foreach my $problem ( keys $t_h->%* ) {
+				say "\t$filename:" if $errors == 0;
+				say "\t$type:" if $count_of_type++ == 0;
+				my $p_a = $t_h->{$problem};
+				MESSAGE: foreach my $message ( $p_a->@* ) {
+					$errors++;
+					say colored( ['red bold'], $message =~ s/^/\t\t/mgr );
+					}
 				}
 			}
 		}
