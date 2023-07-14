@@ -1,0 +1,15 @@
+---
+- affected_versions: '<0.0.19'
+  fixed_versions: '>=0.0.19'
+  cves: []
+  url: ~
+  description: >
+    When not using signed cookies, it was possible to
+    bypass XSRFBlock by POSTing an empty form value and
+    an empty cookie
+  distribution: Plack-Middleware-XSRFBlock
+  id: CPANSA-Plack-Middleware-XSRFBlock-20230714-01
+  references:
+    - https://metacpan.org/dist/Plack-Middleware-XSRFBlock/changes
+  reported: 2023-07-14
+  severity: ~
