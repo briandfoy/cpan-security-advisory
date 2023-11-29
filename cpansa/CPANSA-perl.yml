@@ -1038,7 +1038,7 @@
     from these compromised locations, arbitrary code can be executed.
   distribution: 'perl'
   fixed_versions:
-  id: CPANSA-perl-2023-47038
+  id: CPANSA-perl-2023-47039
   references: []
   reported: 20231030
   severity: ~
