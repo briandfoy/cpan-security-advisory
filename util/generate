@@ -24,27 +24,27 @@ util/generate - create the data for lib/CPAN/Audit/DB.pm
 
 =head1 SYNOPSIS
 
-    # usual operation, outputs to lib/CPAN/Audit/DB.pm
-    # gets data from cpan-security-advisory/cpansa/*.yml
-    % perl util/generate
+	# usual operation, outputs to lib/CPAN/Audit/DB.pm
+	# gets data from cpan-security-advisory/cpansa/*.yml
+	% perl util/generate
 
-    # usual operation, outputs to lib/CPAN/Audit/DB.pm
-    # gets data from other_source/*.yml
-    % perl util/generate other_source/*.yml
+	# usual operation, outputs to lib/CPAN/Audit/DB.pm
+	# gets data from other_source/*.yml
+	% perl util/generate other_source/*.yml
 
-    # suppress progress messages
-    % perl util/generate -q
-    % perl util/generate --quiet
+	# suppress progress messages
+	% perl util/generate -q
+	% perl util/generate --quiet
 
-    # output somewhere else
-    % perl util/generate -o some_other_file
-    % perl util/generate --output-file some_other_file
+	# output somewhere else
+	% perl util/generate -o some_other_file
+	% perl util/generate --output-file some_other_file
 
-    # output to stdout (- is a special file name)
-    % perl util/generate -o -
+	# output to stdout (- is a special file name)
+	% perl util/generate -o -
 
-    # output JSON instead of a Perl module (probably want to specify output)
-    % perl util/generate --json -o -
+	# output JSON instead of a Perl module (probably want to specify output)
+	% perl util/generate --json -o -
 
 =head1 DESCRIPTION
 
@@ -69,278 +69,278 @@ run(@ARGV) unless caller;
 use Mojo::Util qw(dumper);
 
 sub process_options ( @args ) {
-    state $rc = require Getopt::Long;
+	state $rc = require Getopt::Long;
 
-    my %results = (
-        gpg_key     => $ENV{CPAN_AUDIT_GPG_KEY_FINGERPRINT},
-        output_file => default_file(),
-        );
+	my %results = (
+		gpg_key     => $ENV{CPAN_AUDIT_GPG_KEY_FINGERPRINT},
+		output_file => default_file(),
+		);
 
-    my %opts = (
-        'gpg-key|g=s'      => \ $results{gpg_key},
-        'json|j'           => \ $results{json},
-        'output-file|o=s'  => \ $results{output_file},
-        'perl-module|pm|p' => \ $results{perl_module},
-        'quiet|q'          => \ $results{quiet},
-        'module-version'   => \ $results{version},
-    );
+	my %opts = (
+		'gpg-key|g=s'      => \ $results{gpg_key},
+		'json|j'           => \ $results{json},
+		'output-file|o=s'  => \ $results{output_file},
+		'perl-module|pm|p' => \ $results{perl_module},
+		'quiet|q'          => \ $results{quiet},
+		'module-version'   => \ $results{version},
+	);
 
-    my $p = Getopt::Long::Parser->new();
-    $p->configure( qw(no_ignore_case) );
-    $p->getoptionsfromarray( \@args, %opts );
+	my $p = Getopt::Long::Parser->new();
+	$p->configure( qw(no_ignore_case) );
+	$p->getoptionsfromarray( \@args, %opts );
 
 
-    say dumper( \%results );
+	say dumper( \%results );
 
-    *config = sub () { \%results };
-    $results{version} //= default_version();
+	*config = sub () { \%results };
+	$results{version} //= default_version();
 
-    \@args;
+	\@args;
 }
 
 sub default_file () {
-    state $file = catfile(qw(lib CPAN Audit DB.pm));
-    $file;
+	state $file = catfile(qw(lib CPAN Audit DB.pm));
+	$file;
 }
 
 sub default_version () {
-    my $opts = config();
-    my( $year, $month, $day ) = (localtime)[5,4,3];
+	my $opts = config();
+	my( $year, $month, $day ) = (localtime)[5,4,3];
 
-    my $date = sprintf '%4d%02d%02d', $year + 1900, $month + 1, $day;
-    my( $previous_date, $previous_serial ) = get_previous_date_serial( $opts->{output_file} );
+	my $date = sprintf '%4d%02d%02d', $year + 1900, $month + 1, $day;
+	my( $previous_date, $previous_serial ) = get_previous_date_serial( $opts->{output_file} );
 
-    my $serial = sprintf '%03d', $previous_date == $date ? $previous_serial + 1 : 1;
+	my $serial = sprintf '%03d', $previous_date == $date ? $previous_serial + 1 : 1;
 
-    my $version = join '.', $date, $serial;
-    return $version;
+	my $version = join '.', $date, $serial;
+	return $version;
 }
 
 sub get_previous_date_serial ( $file ) {
-    open my $fh, '<:encoding(UTF-8)', $file or return;
-    while( <$fh> ) {
-        next unless /VERSION\s*=\s*'(\d{8})\.(\d{3})'/;
-        return ( $1, 2 );
-    }
-    return;
+	open my $fh, '<:encoding(UTF-8)', $file or return;
+	while( <$fh> ) {
+		next unless /VERSION\s*=\s*'(\d{8})\.(\d{3})'/;
+		return ( $1, 2 );
+	}
+	return;
 }
 
 sub run ( @args ) {
 say STDERR "Arg count is: " . @args;
 
-    my( $leftover_args ) = process_options( @args );
+	my( $leftover_args ) = process_options( @args );
 say STDERR "File count after is: " . @$leftover_args;
-    my $opts = config();
+	my $opts = config();
 
-    *message = $opts->{quiet} ? sub ($m) {} : sub ($m) { print STDERR $m };
+	*message = $opts->{quiet} ? sub ($m) {} : sub ($m) { print STDERR $m };
 
-    my $files = get_file_list( $leftover_args );
+	my $files = get_file_list( $leftover_args );
 say STDERR "File count after after is: " . @$files;
-    die "Usage: <files>\n" unless @$files;
+	die "Usage: <files>\n" unless @$files;
 
-    my $out_fh = do {
-        message( "Output file is <$opts->{output_file}>\n" );
+	my $out_fh = do {
+		message( "Output file is <$opts->{output_file}>\n" );
 
-        make_path dirname($opts->{output_file});
+		make_path dirname($opts->{output_file});
 
-        if( $opts->{output_file} eq '-' ) { \*STDOUT }
-        elsif( $opts->{output_file} ) {
-            open my $fh, '>:encoding(UTF-8)', $opts->{output_file}
-                or die "Could not open <$opts->{output_file}>: $!\n";
-            $fh;
-        }
-        else { \*STDOUT }
-    };
+		if( $opts->{output_file} eq '-' ) { \*STDOUT }
+		elsif( $opts->{output_file} ) {
+			open my $fh, '>:encoding(UTF-8)', $opts->{output_file}
+				or die "Could not open <$opts->{output_file}>: $!\n";
+			$fh;
+		}
+		else { \*STDOUT }
+	};
 
-    my $db = process_files( $files );
+	my $db = process_files( $files );
 
-    my $string = do {
-        if( $opts->{perl_module} ) { stringify_data($db) }
-        elsif( $opts->{json} )     { JSON::encode_json($db) }
-        else                       { stringify_data($db) }
-    };
+	my $string = do {
+		if( $opts->{perl_module} ) { stringify_data($db) }
+		elsif( $opts->{json} )     { JSON::encode_json($db) }
+		else					   { stringify_data($db) }
+	};
 
-    print $out_fh $string;
+	print $out_fh $string;
 
-    output_gpg_signature( $string );
+	output_gpg_signature( $string );
 }
 
 sub get_file_list ( $args ) {
-    state $dir_list = [ qw(cpansa cpan-security-advisory/cpansa) ];
-    unless( @$args ) {
-        my( $dir ) = grep { -e } @$dir_list;
-        warn "No arguments given: looking in $dir\n";
-        croak "Did not find $dir" unless -d $dir;
-        @$args = glob( "$dir/*.yml" );
-    }
+	state $dir_list = [ qw(cpansa cpan-security-advisory/cpansa) ];
+	unless( @$args ) {
+		my( $dir ) = grep { -e } @$dir_list;
+		warn "No arguments given: looking in $dir\n";
+		croak "Did not find $dir" unless -d $dir;
+		@$args = glob( "$dir/*.yml" );
+	}
 
-    my @files = ($^O eq 'MSWin32') ? map { glob } @$args : @$args;
+	my @files = ($^O eq 'MSWin32') ? map { glob } @$args : @$args;
 
-    \@files;
+	\@files;
 }
 
 sub output_gpg_signature ( $string ) {
-    my $opts = config();
+	my $opts = config();
 
-    return if $opts->{output_file} eq '-';
-    return unless defined $opts->{gpg_key};
+	return if $opts->{output_file} eq '-';
+	return unless defined $opts->{gpg_key};
 
-    my $gpg_file = $opts->{output_file} . '.gpg';
+	my $gpg_file = $opts->{output_file} . '.gpg';
 
-    state $rc = require Encode;
-    my $octets = Encode::encode("UTF-8", $string);
+	state $rc = require Encode;
+	my $octets = Encode::encode("UTF-8", $string);
 
-    my @command = ( 'gpg', '-o', $gpg_file, '-sb', '--armor', '-u', $opts->{gpg_key} );
-    say STDERR "COMMAND is @command";
+	my @command = ( 'gpg', '-o', $gpg_file, '-sb', '--armor', '-u', $opts->{gpg_key} );
+	say STDERR "COMMAND is @command";
 
-    open my $gpg_fh, '|-', @command;
+	open my $gpg_fh, '|-', @command;
 
-    print { $gpg_fh } $octets;
+	print { $gpg_fh } $octets;
 
-    close $gpg_fh or croak "Problem making GPG signature: $!";
+	close $gpg_fh or croak "Problem making GPG signature: $!";
 
-    return 1;
+	return 1;
 }
 
 sub process_files ( $files ) {
-    my %db;
-    foreach my $file ( $files->@* ) {
-        message( "Processing $file...\n" );
-        my $yaml = YAML::Tiny->read($file)->[0];
+	my %db;
+	foreach my $file ( $files->@* ) {
+		message( "Processing $file...\n" );
+		my $yaml = YAML::Tiny->read($file)->[0];
 
-        my $dist = basename $file;
-        $dist =~ s{\ACPANSA-}{};
-        $dist =~ s{\.yml\z}{};
+		my $dist = basename $file;
+		$dist =~ s{\ACPANSA-}{};
+		$dist =~ s{\.yml\z}{};
 
-        $db{dists}->{$dist}->{advisories} = $yaml;
-    }
+		$db{dists}->{$dist}->{advisories} = $yaml;
+	}
 
-    provides( \%db );
+	provides( \%db );
 
-    foreach my $dist ( keys %{ $db{dists} } ) {
-        my $distname = $db{dists}->{$dist}->{advisories}->[0]->{distribution};
+	foreach my $dist ( keys %{ $db{dists} } ) {
+		my $distname = $db{dists}->{$dist}->{advisories}->[0]->{distribution};
 
-        $db{dists}->{$dist}->{versions} = [ all_releases($distname) ];
-        $db{dists}->{$dist}->{main_module} = release($distname)->{main_module};
-    }
+		$db{dists}->{$dist}->{versions} = [ all_releases($distname) ];
+		$db{dists}->{$dist}->{main_module} = release($distname)->{main_module};
+	}
 
-    # XXX: need to investigate why this shows up as utf8
-    $db{dists}->{'perl'}->{main_module} = 'perl';
+	# XXX: need to investigate why this shows up as utf8
+	$db{dists}->{'perl'}->{main_module} = 'perl';
 
-    \%db;
+	\%db;
 }
 
 sub stringify_data ( $db ) {
-    my $opts = config();
+	my $opts = config();
 
-    local $Data::Dumper::Sortkeys = 1;
-    my $dump = Dumper( $db );
-    $dump =~ s{^\$VAR1\s*=\s*}{};
-    $dump =~ s{}{};
+	local $Data::Dumper::Sortkeys = 1;
+	my $dump = Dumper( $db );
+	$dump =~ s{^\$VAR1\s*=\s*}{};
+	$dump =~ s{}{};
 
-    my $submodule_dir = 'cpan-security-advisory';
+	my $submodule_dir = 'cpan-security-advisory';
 
-    my( $commit ) = split /\s+/, join '',
-        grep { /\Q$submodule_dir/ }
-        `git submodule status` =~ s/\A\s+//r;
+	my( $commit ) = split /\s+/, join '',
+		grep { /\Q$submodule_dir/ }
+		`git submodule status` =~ s/\A\s+//r;
 
-    my $string = <<~"EOF";
-    # created by $0 at @{[ scalar localtime]}
-    # $submodule_dir $commit
-    #
-    package CPAN::Audit::DB;
+	my $string = <<~"EOF";
+	# created by $0 at @{[ scalar localtime]}
+	# $submodule_dir $commit
+	#
+	package CPAN::Audit::DB;
 
-    use strict;
-    use warnings;
+	use strict;
+	use warnings;
 
-    our \$VERSION = '$opts->{version}';
+	our \$VERSION = '$opts->{version}';
 
-    sub db {
-        $dump
-    }
+	sub db {
+		$dump
+	}
 
-    1;
-    EOF
+	1;
+	EOF
 }
 
 sub provides {
-    my ($db) = @_;
+	my ($db) = @_;
 
-    my $ua = HTTP::Tiny->new;
+	my $ua = HTTP::Tiny->new;
 
-    my $details_file = '/tmp/02packages.details.txt.gz';
-    message( "Downloading 02packages.details.txt.gz (this may take awhile)\n" );
-    $ua->mirror( 'http://www.cpan.org/modules/02packages.details.txt.gz',
-        $details_file );
-    message( "Downloaded 02packages.details.txt.gz\n" );
-    message( "Digesting 02packages.details.txt.gz (this may take awhile)\n" );
+	my $details_file = '/tmp/02packages.details.txt.gz';
+	message( "Downloading 02packages.details.txt.gz (this may take awhile)\n" );
+	$ua->mirror( 'http://www.cpan.org/modules/02packages.details.txt.gz',
+		$details_file );
+	message( "Downloaded 02packages.details.txt.gz\n" );
+	message( "Digesting 02packages.details.txt.gz (this may take awhile)\n" );
 
-    open my $fh, '<:gzip', $details_file
-      or die "Can't open '$details_file': $!";
+	open my $fh, '<:gzip', $details_file
+	  or die "Can't open '$details_file': $!";
 
-    while ( defined( my $line = <$fh> ) ) {
-        chomp $line;
+	while ( defined( my $line = <$fh> ) ) {
+		chomp $line;
 
-        last if $line eq '';
-    }
+		last if $line eq '';
+	}
 
-    while ( defined( my $line = <$fh> ) ) {
-        my ( $module, $version, $pathname ) = split /\s+/, $line;
-        next unless $module && $pathname;
+	while ( defined( my $line = <$fh> ) ) {
+		my ( $module, $version, $pathname ) = split /\s+/, $line;
+		next unless $module && $pathname;
 
-        my $dist_info = CPAN::DistnameInfo->new($pathname);
-        next unless $dist_info;
+		my $dist_info = CPAN::DistnameInfo->new($pathname);
+		next unless $dist_info;
 
-        my $author = $dist_info->cpanid;
-        my $dist   = $dist_info->dist;
-        my $name   = $dist_info->distvname;
+		my $author = $dist_info->cpanid;
+		my $dist   = $dist_info->dist;
+		my $name   = $dist_info->distvname;
 
-        next unless $dist;
+		next unless $dist;
 
-        next unless $db->{dists}->{$dist};
+		next unless $db->{dists}->{$dist};
 
-        $db->{module2dist}->{$module} = $dist;
-    }
+		$db->{module2dist}->{$module} = $dist;
+	}
 
-    close $fh;
+	close $fh;
 }
 
 sub release {
-    my ($distribution) = @_;
+	my ($distribution) = @_;
 
-    my $response = HTTP::Tiny->new->get(
-        'http://fastapi.metacpan.org/v1/release/' . $distribution );
+	my $response = HTTP::Tiny->new->get(
+		'http://fastapi.metacpan.org/v1/release/' . $distribution );
 
-    my $content_json = JSON::decode_json( $response->{content} );
+	my $content_json = JSON::decode_json( $response->{content} );
 
-    return $content_json;
+	return $content_json;
 }
 
 sub all_releases {
-    my ($distribution) = @_;
+	my ($distribution) = @_;
 
-    my $response = HTTP::Tiny->new->post(
-        'http://fastapi.metacpan.org/v1/release/_search',
-        {
-            headers => { 'Content-Type' => 'application/json' },
-            content => JSON::encode_json(
-                {
-                    size   => 5000,
-                    fields => [ 'date', 'version' ],
-                    filter => {
-                        term => { distribution => $distribution }
-                    }
-                }
-            )
-        }
-    );
+	my $response = HTTP::Tiny->new->post(
+		'http://fastapi.metacpan.org/v1/release/_search',
+		{
+			headers => { 'Content-Type' => 'application/json' },
+			content => JSON::encode_json(
+				{
+					size   => 5000,
+					fields => [ 'date', 'version' ],
+					filter => {
+						term => { distribution => $distribution }
+					}
+				}
+			)
+		}
+	);
 
-    my $content_json = JSON::decode_json( $response->{content} );
+	my $content_json = JSON::decode_json( $response->{content} );
 
-    my @results =
-      sort { $a->{date} cmp $b->{date} }
-      map  { $_->{fields} } @{ $content_json->{hits}->{hits} };
-    return unless @results;
+	my @results =
+	  sort { $a->{date} cmp $b->{date} }
+	  map  { $_->{fields} } @{ $content_json->{hits}->{hits} };
+	return unless @results;
 
-    return @results;
+	return @results;
 }
