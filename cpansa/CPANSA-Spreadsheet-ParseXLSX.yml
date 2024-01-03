@@ -1,6 +1,6 @@
 ---
 - id: CPANSA-Spreadsheet-ParseXLSX-2024-01
-  distribution: Spreadsheet::ParseXLSX
+  distribution: Spreadsheet-ParseXLSX
   reported: 2024-01-03
   description: >
     ParseXLSX also handles with merged cells, but the memoize
