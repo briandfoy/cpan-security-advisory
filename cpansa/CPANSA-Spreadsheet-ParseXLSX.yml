@@ -1,0 +1,13 @@
+---
+- id: CPANSA-Spreadsheet-ParseXLSX-2024-01
+  distribution: Spreadsheet::ParseXLSX
+  reported: 2024-01-03
+  description: >
+    ParseXLSX also handles with merged cells, but the memoize
+    implementation allows attacker to allocate an arbitrary memory size.
+  references:
+    - https://github.com/haile01/perl_spreadsheet_excel_rce_poc/blob/main/parse_xlsx_bomb.md
+    - https://github.com/briandfoy/cpan-security-advisory/issues/131
+  affected_versions: "<0.28"
+  fixed_versions: ">=0.28"
+  cves: []
