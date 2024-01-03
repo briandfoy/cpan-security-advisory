@@ -3,7 +3,7 @@ use v5.26;
 use experimental qw(signatures);
 
 sub assemble_record ( $cve, $distribution = undef ) {
-	state $base = 'https://services.nvd.nist.gov/rest/json/cve/1.0';
+	state $base = 'https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=';
 	state $rc = require Mojo::UserAgent;
 
 	my %hash;
@@ -13,19 +13,22 @@ sub assemble_record ( $cve, $distribution = undef ) {
 
 	my $serial = $hash{cves} =~ s/\ACVE-//r;
 
-	my $json = Mojo::UserAgent->new->get( "$base/$hash{cves}" )->result->json;
-	my $item = $json->{result}{CVE_Items}[0];
+	my $url = "$base$hash{cves}";
 
-	$hash{description}  = $item->{cve}{description}{description_data}[0]{value};
+	my $json = Mojo::UserAgent->new->get( $url )->result->json;
+
+	my $item = $json->{vulnerabilities}[0]{cve};
+
+	$hash{description}  = (map { $_->{value} } grep { $_->{lang} eq 'en' } $item->{descriptions}->@* )[0] // '';
 	$hash{description}  =~ s/\v/ /g;
 
-	my @references = map { $_->{url} } $item->{cve}{references}{reference_data}->@*;
+	my @references = map { $_->{url} } $item->{references}->@*;
 	$hash{references} = \@references;
 
-	$hash{reported} = $item->{publishedDate} =~ s/T.*//r;
+	$hash{reported} = $item->{published} =~ s/T.*//r;
 	$hash{cves} = [ $hash{cves} ];
 
-	$hash{severity} = eval { lc $item->{impact}{baseMetricV3}{cvssV3}{baseSeverity} } || undef;
+	$hash{severity} = eval { lc $item->{metrics}{cvssMetricV31}{cvssData}{baseSeverity} } || undef;
 
 	my $package = guess_package( $item );
 	$package =~ s/::/-/g;
