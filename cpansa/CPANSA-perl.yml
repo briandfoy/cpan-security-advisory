@@ -1045,7 +1045,7 @@
   references: []
   reported: 20231030
   severity: ~
-- affected_versions: '>=5.30.0,<5.38.2'
+- affected_versions: '>=5.30.0,<5.36.3,>=5.38.0,<5.38.2'
   cves:
     - CVE-2023-47100
   description: >
