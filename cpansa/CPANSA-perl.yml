@@ -1023,7 +1023,7 @@
   fixed_versions: '5.34.3,5.36.3,5.38.2'
   id: CPANSA-perl-2023-47038
   references: []
-  reported: 20231030
+  reported: 2023-10-30
   severity: ~
 - affected_versions: '<=5.38.0'
   cves:
@@ -1043,7 +1043,7 @@
   fixed_versions:
   id: CPANSA-perl-2023-47039
   references: []
-  reported: 20231030
+  reported: 2023-10-30
   severity: ~
 - affected_versions: '>=5.30.0,<5.36.3,>=5.38.0,<5.38.2'
   cves:
