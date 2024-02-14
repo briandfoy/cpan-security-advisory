@@ -33,4 +33,5 @@
     - https://github.com/rurban/Cpanel-JSON-XS/issues/208
   affected_versions: "<4.033"
   fixed_versions: ">=4.033"
-  cves: []
+  cves:
+    - CVE-2022-48623

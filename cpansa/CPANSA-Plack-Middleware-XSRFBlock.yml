@@ -1,7 +1,8 @@
 ---
 - affected_versions: '<0.0.19'
   fixed_versions: '>=0.0.19'
-  cves: []
+  cves:
+    - CVE-2023-52431
   url: ~
   description: >
     When not using signed cookies, it was possible to
@@ -11,5 +12,7 @@
   id: CPANSA-Plack-Middleware-XSRFBlock-20230714-01
   references:
     - https://metacpan.org/dist/Plack-Middleware-XSRFBlock/changes
+    - https://metacpan.org/release/DAKKAR/Plack-Middleware-XSRFBlock-0.0.19/source/Changes
+    - https://nvd.nist.gov/vuln/detail/CVE-2023-52431
   reported: 2023-07-14
   severity: ~
