@@ -620,6 +620,7 @@ advisories:
   reported: 2022-12-07
   severity: ~
 cpansa_version: 2
+darkpan: true
 distribution: MT
 last_checked: 1708150859
 latest_version: ~

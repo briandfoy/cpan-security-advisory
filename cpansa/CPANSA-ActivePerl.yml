@@ -103,6 +103,7 @@ advisories:
   reported: 2001-12-06
   severity: ~
 cpansa_version: 2
+darkpan: true
 distribution: ActivePerl
 last_checked: 1708150827
 latest_version: ~

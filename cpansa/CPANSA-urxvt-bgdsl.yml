@@ -19,6 +19,7 @@ advisories:
   severity: ~
   url: http://software.schmorp.de/pkg/rxvt-unicode.html
 cpansa_version: 2
+darkpan: true
 distribution: urxvt-bgdsl
 last_checked: 1708150869
 latest_version: ~
