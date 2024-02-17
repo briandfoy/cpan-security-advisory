@@ -15,10 +15,10 @@ advisories:
   - https://nvd.nist.gov/vuln/detail/CVE-2023-52431
   reported: 2023-07-14
   severity: ~
-  url: ~
 cpansa_version: 2
 distribution: Plack-Middleware-XSRFBlock
 last_checked: 1708150864
 latest_version: 0.0.19
 metacpan: https://metacpan.org/pod/Plack::Middleware::XSRFBlock
 repo: git://github.com/chiselwright/plack-middleware-xsrfblock.git
+url: ~

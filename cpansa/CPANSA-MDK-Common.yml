@@ -1,9 +1,6 @@
 ---
 advisories:
-- affected_versions:
-  - =1.1.11
-  - =1.1.24
-  - '>=1.2.9,<=1.2.14'
+- affected_versions: '=1.1.11,=1.1.24,>=1.2.9,<=1.2.14'
   cves:
   - CVE-2009-0912
   description: |

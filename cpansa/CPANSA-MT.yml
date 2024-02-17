@@ -16,17 +16,12 @@ advisories:
   - http://www.sec-1.com/blog/?p=402
   reported: 2013-01-23
   severity: ~
-- affected_versions:
-  - '>=7,<=7.9.4'
-  - '>=6,<=6.8.6'
-  - '>=4,<=5'
+- affected_versions: '>=7,<=7.9.4,>=6,<=6.8.6,>=4,<=5'
   cves:
   - CVE-2022-38078
   description: |
     Movable Type XMLRPC API provided by Six Apart Ltd. contains a command injection vulnerability. Sending a specially crafted message by POST method to Movable Type XMLRPC API may allow arbitrary Perl script execution, and an arbitrary OS command may be executed through it. Affected products and versions are as follows: Movable Type 7 r.5202 and earlier, Movable Type Advanced 7 r.5202 and earlier, Movable Type 6.8.6 and earlier, Movable Type Advanced 6.8.6 and earlier, Movable Type Premium 1.52 and earlier, and Movable Type Premium Advanced 1.52 and earlier. Note that all versions of Movable Type 4.0 or later including unsupported (End-of-Life, EOL) versions are also affected by this vulnerability.
-  fixed_versions:
-  - 7.9.5
-  - 6.8.7
+  fixed_versions: '7.9.5,6.8.7'
   github_security_advisory:
   - GHSA-f342-4q2c-v2q2
   id: CPANSA-MT-2022-38078
@@ -35,10 +30,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN57728859/index.html
   reported: 2022-08-24
   severity: critical
-- affected_versions:
-  - '>=7,<=7.8.1'
-  - '>=6,<=6.8.2'
-  - <6
+- affected_versions: '>=7,<=7.8.1,>=6,<=6.8.2,<6'
   cves:
   - CVE-2021-20837
   description: |
@@ -54,8 +46,7 @@ advisories:
   - http://packetstormsecurity.com/files/164705/Movable-Type-7-r.5002-XMLRPC-API-Remote-Command-Injection.html
   reported: 2021-10-26
   severity: critical
-- affected_versions:
-  - '>=7,<7.8.0'
+- affected_versions: '>=7,<7.8.0'
   cves:
   - CVE-2021-20814
   description: |
@@ -69,8 +60,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
+- affected_versions: '>=7,<7.8.0'
   cves:
   - CVE-2021-20813
   description: |
@@ -84,9 +74,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
-  - '>=6,<=6.8.0'
+- affected_versions: '>=7,<7.8.0,>=6,<=6.8.0'
   cves:
   - CVE-2021-20815
   description: |
@@ -100,9 +88,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
-  - '>=6,<=6.8.0'
+- affected_versions: '>=7,<7.8.0,>=6,<=6.8.0'
   cves:
   - CVE-2021-20811
   description: |
@@ -116,9 +102,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
-  - '>=6,<=6.8.0'
+- affected_versions: '>=7,<7.8.0,>=6,<=6.8.0'
   cves:
   - CVE-2021-20810
   description: |
@@ -132,9 +116,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
-  - '>=6,<=6.8.0'
+- affected_versions: '>=7,<7.8.0,>=6,<=6.8.0'
   cves:
   - CVE-2021-20809
   description: |
@@ -148,9 +130,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.8.0'
-  - '>=6,<=6.8.0'
+- affected_versions: '>=7,<7.8.0,>=6,<=6.8.0'
   cves:
   - CVE-2021-20808
   description: |
@@ -178,9 +158,7 @@ advisories:
   - https://jvn.jp/en/jp/JVN94245475/index.html
   reported: 2021-10-26
   severity: medium
-- affected_versions:
-  - '>=7,<7.2.1'
-  - '>=6,<=6.5.3'
+- affected_versions: '>=7,<7.2.1,>=6,<=6.5.3'
   cves:
   - CVE-2020-5577
   description: |
@@ -194,9 +172,7 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: high
-- affected_versions:
-  - '>=7,<7.2.1'
-  - '>=6,<=6.5.3'
+- affected_versions: '>=7,<7.2.1,>=6,<=6.5.3'
   cves:
   - CVE-2020-5576
   description: |
@@ -210,9 +186,7 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: high
-- affected_versions:
-  - '>=7,<7.2.1'
-  - '>=6,<=6.5.3'
+- affected_versions: '>=7,<7.2.1,>=6,<=6.5.3'
   cves:
   - CVE-2020-5575
   description: |
@@ -226,9 +200,7 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: medium
-- affected_versions:
-  - '>=7,<7.2.1'
-  - '>=6,<=6.5.3'
+- affected_versions: '>=7,<7.2.1,>=6,<=6.5.3'
   cves:
   - CVE-2020-5574
   description: |
@@ -242,9 +214,7 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: medium
-- affected_versions:
-  - '>=7,<7.1.4'
-  - '>=6,<=6.5.2'
+- affected_versions: '>=7,<7.1.4,>=6,<=6.5.2'
   cves:
   - CVE-2020-5528
   description: |
@@ -258,10 +228,7 @@ advisories:
   - http://jvn.jp/en/jp/JVN94435544/index.html
   reported: 2020-02-06
   severity: medium
-- affected_versions:
-  - '>=7,<7.1.3'
-  - '>=6.5.0,<=6.5.1'
-  - '>=6,<=6.3.9'
+- affected_versions: '>=7,<7.1.3,>=6.5.0,<=6.5.1,>=6,<=6.3.9'
   cves:
   - CVE-2019-6025
   description: |
@@ -288,10 +255,7 @@ advisories:
   - http://jvn.jp/en/jp/JVN89550319/index.html
   reported: 2018-09-04
   severity: medium
-- affected_versions:
-  - '>=6.0.0,<6.1.3'
-  - '>=6.2.0,<6.2.6'
-  - <5.2.13
+- affected_versions: '>=6.0.0,<6.1.3,>=6.2.0,<6.2.6,<5.2.13'
   cves:
   - CVE-2016-5742
   description: |
@@ -308,9 +272,7 @@ advisories:
   - http://www.securitytracker.com/id/1036160
   reported: 2017-01-23
   severity: critical
-- affected_versions:
-  - <5.2.12
-  - '>=6.0.0,<=6.0.7'
+- affected_versions: '<5.2.12,>=6.0.0,<=6.0.7'
   cves:
   - CVE-2015-1592
   description: |
@@ -329,10 +291,7 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/100912
   reported: 2015-02-19
   severity: ~
-- affected_versions:
-  - <5.18
-  - '>=5.2.0,<5.2.11'
-  - '>=6,<6.0.6'
+- affected_versions: '<5.18,>=5.2.0,<5.2.11,>=6,<6.0.6'
   cves:
   - CVE-2014-9057
   description: |
@@ -364,8 +323,7 @@ advisories:
   - http://seclists.org/oss-sec/2013/q2/560
   reported: 2015-03-27
   severity: ~
-- affected_versions:
-  - '>=4.20,<4.38'
+- affected_versions: '>=4.20,<4.38'
   cves:
   - CVE-2013-0209
   description: |
@@ -399,10 +357,7 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/79521
   reported: 2014-08-29
   severity: ~
-- affected_versions:
-  - <4.38
-  - '>=5,<5.07'
-  - '>=5.10,<5.13'
+- affected_versions: '<4.38,>=5,<5.07,>=5.10,<5.13'
   cves:
   - CVE-2012-0320
   description: |
@@ -421,10 +376,7 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-03-03
   severity: ~
-- affected_versions:
-  - <4.38
-  - '>=5,<5.07'
-  - '>=5.10,<5.13'
+- affected_versions: '<4.38,>=5,<5.07,>=5.10,<5.13'
   cves:
   - CVE-2012-0317
   description: |
@@ -443,9 +395,7 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-03-03
   severity: ~
-- affected_versions:
-  - '>=4,<4.36'
-  - '>=5,<5.05'
+- affected_versions: '>=4,<4.36,>=5,<5.05'
   cves:
   - CVE-2011-5085
   description: |
@@ -459,9 +409,7 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-04-02
   severity: ~
-- affected_versions:
-  - '>=4,<4.36'
-  - '>=5,<5.05'
+- affected_versions: '>=4,<4.36,>=5,<5.05'
   cves:
   - CVE-2011-5084
   description: |
@@ -571,9 +519,7 @@ advisories:
   - http://jvn.jp/en/jp/JVN45658190/index.html
   reported: 2009-01-05
   severity: ~
-- affected_versions:
-  - '>=3,<=3.38'
-  - '>=4,<4.23'
+- affected_versions: '>=3,<=3.38,>=4,<4.23'
   cves:
   - CVE-2008-5808
   description: |

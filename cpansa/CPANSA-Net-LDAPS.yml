@@ -9,7 +9,6 @@ advisories:
   github_security_advisory:
   - GHSA-9c48-27fx-7952
   id: CPANSA-Net-LDAPS-2020-16093
-  main_module: Net::LDAP
   references:
   - https://lemonldap-ng.org/download
   - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2250
@@ -22,3 +21,4 @@ last_checked: 1708150860
 latest_version: '0.68'
 metacpan: https://metacpan.org/pod/perl::ldap
 repo: git://github.com/perl-ldap/perl-ldap.git
+main_module: Net::LDAP

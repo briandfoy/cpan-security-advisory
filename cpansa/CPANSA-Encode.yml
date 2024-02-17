@@ -58,8 +58,6 @@ advisories:
   - http://search.cpan.org/~flora/perl-5.14.2/pod/perldelta.pod#Encode_decode_xs_n-byte_heap-overflow_(CVE-2011-2939)
   reported: 2012-01-13
   severity: ~
-  x-commit: 'Encode CVE-2011-2939 GitHub #13'
-  x-file: cpansa/CPANSA-Encode.yml
 cpansa_version: 2
 distribution: Encode
 last_checked: 1708150846

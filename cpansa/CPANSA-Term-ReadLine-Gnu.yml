@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions: <1.27
-  comments: |
+  comment: |
     The presense of affected versions of Term-ReadLine-Gnu suggests that a vulnerable version of the readline linrary is installed on the host system.
   cves:
   - CVE-2014-2524

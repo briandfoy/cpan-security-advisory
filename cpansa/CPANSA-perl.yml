@@ -69,8 +69,7 @@ advisories:
   description: |
     regcomp.c in Perl before 5.30.3 allows a buffer overflow via a crafted regular expression because of recursive S_study_chunk calls.
   fixed_versions: '>=5.30.3'
-  github_security_advisory:
-  - ''
+  github_security_advisory: []
   id: CPANSA-perl-2020-12723
   references:
   - https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3
@@ -97,8 +96,7 @@ advisories:
   description: |
     Perl before 5.30.3 has an integer overflow related to mishandling of a "PL_regkind[OP(n)] == NOTHING" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.
   fixed_versions: '>=5.30.3'
-  github_security_advisory:
-  - ''
+  github_security_advisory: []
   id: CPANSA-perl-2020-10878
   references:
   - https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3
@@ -124,8 +122,7 @@ advisories:
   description: |
     Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer overflow because nested regular expression quantifiers have an integer overflow.
   fixed_versions: '>=5.30.3'
-  github_security_advisory:
-  - ''
+  github_security_advisory: []
   id: CPANSA-perl-2020-10543
   references:
   - https://github.com/Perl/perl5/compare/v5.30.2...v5.30.3

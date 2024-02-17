@@ -29,7 +29,6 @@ advisories:
   description: |
     Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
   fixed_versions: '>=4.033'
-  github_advisory_database: https://github.com/advisories/GHSA-44qr-8pf6-6q33
   github_security_advisory:
   - GHSA-44qr-8pf6-6q33
   id: CPANSA-Cpanel-JSON-XS-2023-01
