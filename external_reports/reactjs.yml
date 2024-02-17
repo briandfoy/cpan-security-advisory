@@ -1,25 +1,23 @@
 ---
-name: vue
-url: https://reactjs.org
-perl_distributions: []
 advisories:
-  - cve: CVE-2018-6341
-    description: >
-      React applications which rendered to HTML using the
-      ReactDOMServer API were not escaping user-supplied attribute names at
-      render-time. That lack of escaping could lead to a cross-site
-      scripting vulnerability. This issue affected minor releases 16.0.x,
-      16.1.x, 16.2.x, 16.3.x, and 16.4.x. It was fixed in 16.0.1, 16.1.2,
-      16.2.1, 16.3.3, and 16.4.2.
-    affected_versions:
-      - '>=16.0.0,<16.0.1'
-      - '>=16.1.0,<16.1.2'
-      - '>=16.2.0,<16.2.1'
-      - '>=16.3.0,<16.3.3'
-      - '>=16.4.0,<16.4.2'
-    fixed_versions: ~
-    references:
-      - https://twitter.com/reactjs/status/1024745321987887104
-      - https://reactjs.org/blog/2018/08/01/react-v-16-4-2.html
-    reported: 2018-12-31
-    severity: medium
+- affected_versions:
+  - '>=16.0.0,<16.0.1'
+  - '>=16.1.0,<16.1.2'
+  - '>=16.2.0,<16.2.1'
+  - '>=16.3.0,<16.3.3'
+  - '>=16.4.0,<16.4.2'
+  cve: CVE-2018-6341
+  description: |
+    React applications which rendered to HTML using the ReactDOMServer API were not escaping user-supplied attribute names at render-time. That lack of escaping could lead to a cross-site scripting vulnerability. This issue affected minor releases 16.0.x, 16.1.x, 16.2.x, 16.3.x, and 16.4.x. It was fixed in 16.0.1, 16.1.2, 16.2.1, 16.3.3, and 16.4.2.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-mvjj-gqq2-p4hw
+  references:
+  - https://twitter.com/reactjs/status/1024745321987887104
+  - https://reactjs.org/blog/2018/08/01/react-v-16-4-2.html
+  reported: 2018-12-31
+  severity: medium
+cpansa_version: 2
+name: vue
+perl_distributions: []
+url: https://reactjs.org

@@ -1,32 +1,22 @@
 ---
-name: json.js
-url: https://github.com/douglascrockford/JSON-js
-perl_distributions:
-  - name: UR
-    affected:
-      - perl_module_versions: '>=0.20'
-        distributed_library_version: '2008-01-17'
-        last_version_checked: '0.47'
 advisories:
-  - cve: CVE-2019-5428
-    description: >
-      Prototype Pollution is a vulnerability affecting
-      JavaScript. Prototype Pollution refers to the ability to inject
-      properties into existing JavaScript language construct prototypes,
-      such as objects. JavaScript allows all Object attributes to be
-      altered, including their magical attributes such as _proto_,
-      constructor and prototype. An attacker manipulates these
-      attributes to overwrite, or pollute, a JavaScript application
-      object prototype of the base object by injecting other
-      values. Properties on the Object.prototype are then inherited by
-      all the JavaScript objects through the prototype chain. When that
-      happens, this leads to either denial of service by triggering
-      JavaScript exceptions, or it tampers with the application source
-      code to force the code path that the attacker injects, thereby
-      leading to remote code execution.
-    affected_versions: '>=0'
-    fixed_versions: ~
-    references:
-      - https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006
-    reported: ~
-    severity: ~
+- affected_versions: '>=0'
+  cve: CVE-2019-5428
+  description: |
+    Prototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as _proto_, constructor and prototype. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values. Properties on the Object.prototype are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-wv67-q8rr-grjp
+  references:
+  - https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006
+  reported: ~
+  severity: ~
+cpansa_version: 2
+name: json.js
+perl_distributions:
+- affected:
+  - distributed_library_version: 2008-01-17
+    last_version_checked: '0.47'
+    perl_module_versions: '>=0.20'
+  name: UR
+url: https://github.com/douglascrockford/JSON-js

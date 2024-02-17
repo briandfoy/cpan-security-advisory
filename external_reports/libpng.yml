@@ -1,1758 +1,1669 @@
 ---
-name: libpng
-url: http://www.libpng.org
-perl_distributions:
-  - name: cppAdaptive1
-    last_version_checked: '0.01'
-    affected:
-      - perl_module_versions: '==0.01'
-        distributed_library_version: '1.6.7'
-        comment: As part of dlib
-  - name: cppAdaptive2
-    last_version_checked: '3.03'
-    affected:
-      - perl_module_versions: ">=0.01,<=3.0.3"
-        distributed_library_version: '1.6.7'
-        comment: As part of dlib
-  - name: Image-PNG-Simple
-    last_version_checked: '0.07'
-    affected:
-      - perl_module_versions: ">=0.01,<=0.07"
-        distributed_library_version: '1.6.7'
-  - name: Prima-codecs-win32
-    last_version_checked: '1.01'
-    affected:
-      - perl_module_versions: ">=1.00,<=1.01"
-        distributed_library_version: '1.2.9'
-  - name: Prima-codecs-win64
-    last_version_checked: '1.02'
-    affected:
-      - perl_module_versions: ">=1.01,<=1.02"
-        distributed_library_version: '1.2.19'
-  - name: Tk
-    last_version_checked: '804.036'
-    affected:
-      - perl_module_versions: '>804.024,<=804.027'
-        distributed_library_version: '1.2.5'
-      - perl_module_versions: '>804.027_500,<=804.036'
-        distributed_library_version: '1.2.12'
 advisories:
-  - cve: CVE-2013-6954
-    description: >
-      The png_do_expand_palette function in libpng before 1.6.8 allows
-      remote attackers to cause a denial of service (NULL pointer
-      dereference and application crash) via (1) a PLTE chunk of zero bytes
-      or (2) a NULL palette, related to pngrtran.c and pngset.c.'
-    affected_versions: '<1.6.8'
-    fixed_versions: '>=1.6.8'
-    references:
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://sourceforge.net/p/libpng/code/ci/1faa6ff32c648acfe3cf30a58d31d7aebc24968c
-      - http://www.kb.cert.org/vuls/id/650142
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1045561
-      - http://sourceforge.net/projects/libpng/files/libpng16/1.6.8/
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2014:035
-      - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128098.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128099.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127947.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127952.html
-      - http://advisories.mageia.org/MGASA-2014-0075.html
-      - http://www.securityfocus.com/bid/64493
-      - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128114.html
-      - http://lists.opensuse.org/opensuse-updates/2014-01/msg00071.html
-      - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
-      - http://www-01.ibm.com/support/docview.wss?uid=swg21672080
-      - http://www-01.ibm.com/support/docview.wss?uid=swg21676746
-      - http://secunia.com/advisories/58974
-      - http://secunia.com/advisories/59058
-      - https://www.ibm.com/support/docview.wss?uid=swg21675973
-      - http://security.gentoo.org/glsa/glsa-201406-32.xml
-      - http://marc.info/?l=bugtraq&m=140852974709252&w=2
-      - http://marc.info/?l=bugtraq&m=140852886808946&w=2
-      - https://access.redhat.com/errata/RHSA-2014:0414
-      - https://access.redhat.com/errata/RHSA-2014:0413
-    reported: 2014-01-12
-    severity: ~
-  - cve: CVE-2014-0333
-    description: >
-      The png_push_read_chunk function in pngpread.c in the progressive
-      decoder in libpng 1.6.x through 1.6.9 allows remote attackers to cause
-      a denial of service (infinite loop and CPU consumption) via an IDAT
-      chunk with a length of zero.
-    affected_versions: '>1.6.0,<=1.6.9'
-    fixed_versions: ~
-    references:
-      - ftp://ftp.simplesystems.org/pub/png/src/libpng16/patch-libpng16-vu684412.diff
-      - http://www.kb.cert.org/vuls/id/684412
-      - https://sourceforge.net/projects/libpng/files/libpng16/patch-libpng16-vu684412.diff
-      - http://lists.opensuse.org/opensuse-updates/2014-03/msg00029.html
-    reported: 2014-02-27
-    severity: ~
-  - cve: CVE-2014-9495
-    description: >
-      Heap-based buffer overflow in the png_combine_row function in
-      libpng before 1.5.21 and 1.6.x before 1.6.16, when running on 64-bit
-      systems, might allow context-dependent attackers to execute arbitrary
-      code via a "very wide interlaced" PNG image.
-    affected_versions: '<1.5.21,<1.6.16'
-    fixed_versions: '>=1.6.16'
-    references:
-      - http://www.securitytracker.com/id/1031444
-      - http://www.openwall.com/lists/oss-security/2015/01/04/3
-      - http://www.securityfocus.com/bid/71820
-      - http://sourceforge.net/p/png-mng/mailman/message/33173461/
-      - http://www.openwall.com/lists/oss-security/2015/01/10/1
-      - http://sourceforge.net/p/png-mng/mailman/message/33172831/
-      - http://www.openwall.com/lists/oss-security/2015/01/10/3
-      - http://secunia.com/advisories/62725
-      - https://support.apple.com/HT206167
-      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
-    reported: 2015-01-10
-    severity: ~
-  - cve: CVE-2015-0973
-    description: >
-      Buffer overflow in the png_read_IDAT_data function in pngrutil.c
-      in libpng before 1.5.21 and 1.6.x before 1.6.16 allows
-      context-dependent attackers to execute arbitrary code via IDAT data
-      with a large width, a different vulnerability than CVE-2014-9495.
-    affected_versions: '<1.5.21,<1.6.16'
-    fixed_versions: '>=1.6.16'
-    references:
-      - http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt
-      - http://www.openwall.com/lists/oss-security/2015/01/10/1
-      - http://www.openwall.com/lists/oss-security/2015/01/10/3
-      - http://sourceforge.net/p/png-mng/mailman/message/33173461/
-      - http://secunia.com/advisories/62725
-      - https://support.apple.com/HT206167
-      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
-    reported: 2015-01-18
-    severity: ~
-  - cve: CVE-2015-8126
-    description: >
-      Multiple buffer overflows in the (1) png_set_PLTE and (2)
-      png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before
-      1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x
-      before 1.6.19 allow remote attackers to cause a denial of service
-      (application crash) or possibly have unspecified other impact via a
-      small bit-depth value in an IHDR (aka image header) chunk in a PNG
-      image.
-    affected_versions: '<1.6.19'
-    fixed_versions: '>=1.6.19'
-    references:
-      - http://www.openwall.com/lists/oss-security/2015/11/12/2
-      - http://www.debian.org/security/2015/dsa-3399
-      - http://www.ubuntu.com/usn/USN-2815-1
-      - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
-      - https://code.google.com/p/chromium/issues/detail?id=560291
-      - http://googlechromereleases.blogspot.com/2016/03/stable-channel-update.html
-      - https://support.apple.com/HT206167
-      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2596.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2595.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2594.html
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
-      - https://access.redhat.com/errata/RHSA-2016:1430
-      - http://www.securityfocus.com/bid/77568
-      - https://security.gentoo.org/glsa/201603-09
-      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00028.html
-      - http://www.debian.org/security/2016/dsa-3507
-      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00015.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00014.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00018.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177344.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177382.html
-      - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
-      - http://rhn.redhat.com/errata/RHSA-2016-0057.html
-      - http://rhn.redhat.com/errata/RHSA-2016-0056.html
-      - http://rhn.redhat.com/errata/RHSA-2016-0055.html
-      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
-      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00028.html
-      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
-      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00159.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172797.html
-      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00063.html
-      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00062.html
-      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00029.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
-      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00034.html
-      - http://www.securitytracker.com/id/1034142
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172769.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172823.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172324.html
-      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00030.html
-      - https://security.gentoo.org/glsa/201611-08
-    reported: 2015-11-13
-    severity: ~
-  - cve: CVE-2015-8472
-    description: >
-      Buffer overflow in the png_set_PLTE function in libpng before
-      1.0.65, 1.1.x and 1.2.x before 1.2.55, 1.3.x, 1.4.x before 1.4.18,
-      1.5.x before 1.5.25, and 1.6.x before 1.6.20 allows remote attackers
-      to cause a denial of service (application crash) or possibly have
-      unspecified other impact via a small bit-depth value in an IHDR (aka
-      image header) chunk in a PNG image. NOTE: this vulnerability exists
-      because of an incomplete fix for CVE-2015-8126.
-    affected_versions: '<1.6.20'
-    fixed_versions: '>=1.6.20'
-    references:
-      - http://sourceforge.net/projects/libpng/files/libpng16/1.6.20/
-      - http://www.openwall.com/lists/oss-security/2015/12/03/6
-      - http://sourceforge.net/projects/libpng/files/libpng12/1.2.55/
-      - http://sourceforge.net/projects/libpng/files/libpng10/1.0.65/
-      - http://sourceforge.net/projects/libpng/files/libpng14/1.4.18/
-      - http://www.securityfocus.com/bid/78624
-      - http://sourceforge.net/projects/libpng/files/libpng15/1.5.25/
-      - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
-      - https://support.apple.com/HT206167
-      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2596.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2595.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2594.html
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
-      - https://access.redhat.com/errata/RHSA-2016:1430
-      - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
-      - http://rhn.redhat.com/errata/RHSA-2016-0057.html
-      - http://rhn.redhat.com/errata/RHSA-2016-0056.html
-      - http://rhn.redhat.com/errata/RHSA-2016-0055.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
-      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
-      - http://www.debian.org/security/2016/dsa-3443
-    reported: 2016-01-21
-    severity: high
-  - cve: CVE-2016-10087
-    description: >
-      The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x
-      before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x
-      before 1.6.27 allows context-dependent attackers to cause a NULL
-      pointer dereference vectors involving loading a text chunk into a png
-      structure, removing the text, and then adding another text chunk to
-      the structure.
-    affected_versions: '<1.6.27'
-    fixed_versions: '>=1.6.27'
-    references:
-      - http://www.openwall.com/lists/oss-security/2016/12/30/4
-      - http://www.openwall.com/lists/oss-security/2016/12/29/2
-      - http://www.securityfocus.com/bid/95157
-      - https://security.gentoo.org/glsa/201701-74
-      - https://usn.ubuntu.com/3712-2/
-      - https://usn.ubuntu.com/3712-1/
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2017-01-30
-    severity: high
-  - cve: CVE-2016-3751
-    description: >
-      Unspecified vulnerability in libpng before 1.6.20, as used in
-      Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and
-      6.x before 2016-07-01, allows attackers to gain privileges via a
-      crafted application, as demonstrated by obtaining Signature or
-      SignatureOrSystem access, aka internal bug 23265085.
-    affected_versions: '<1.6.20'
-    fixed_versions: '>=1.6.20'
-    references:
-      - http://source.android.com/security/bulletin/2016-07-01.html
-      - http://www.openwall.com/lists/oss-security/2016/07/09/4
-      - https://android.googlesource.com/platform/external/libpng/+/9d4853418ab2f754c2b63e091c29c5529b8b86ca
-    reported: 2016-07-11
-    severity: high
-  - cve: CVE-2017-12652
-    description: >
-      libpng before 1.6.32 does not properly check the length of chunks
-      against the user limit.
-    affected_versions: '<1.6.32'
-    fixed_versions: '>=1.6.32'
-    references:
-      - https://github.com/glennrp/libpng/blob/df7e9dae0c4aac63d55361e35709c864fa1b8363/ANNOUNCE
-      - http://www.securityfocus.com/bid/109269
-      - https://support.f5.com/csp/article/K88124225
-      - https://support.f5.com/csp/article/K88124225?utm_source=f5support&amp;utm_medium=RSS
-      - https://security.netapp.com/advisory/ntap-20220506-0003/
-    reported: 2019-07-10
-    severity: critical
-  - cve: CVE-2019-9423
-    ignore: true
-    comment: >
-      This appears to be an issue with opencv, not libpng
-    description: >
-      In opencv calls that use libpng, there is a possible out of
-      bounds write due to a missing bounds check. This could lead to local
-      escalation of privilege with no additional execution privileges
-      required. User interaction is not required for exploitation. Product:
-      AndroidVersions: Android-10Android ID: A-110986616
-    affected_versions: ~
-    fixed_versions: ~
-    references:
-      - https://source.android.com/security/bulletin/android-10
-      - http://www.openwall.com/lists/oss-security/2019/10/25/17
-      - http://www.openwall.com/lists/oss-security/2019/10/27/1
-      - http://www.openwall.com/lists/oss-security/2019/11/07/1
-      - http://www.openwall.com/lists/oss-security/2020/12/05/1
-    reported: 2019-09-27
-    severity: high
-  - cve: CVE-2019-7317
-    description: >
-      png_image_free in png.c in libpng 1.6.x before 1.6.37 has a
-      use-after-free because png_image_free_function is called under
-      png_safe_execute.
-    distribution: cppAdaptive1
-    affected_versions: '>=1.6.0,<1.6.37'
-    fixed_versions: '>1.6.37'
-    references:
-      - https://github.com/glennrp/libpng/issues/275
-      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
-      - https://seclists.org/bugtraq/2019/Apr/30
-      - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
-      - https://www.debian.org/security/2019/dsa-4435
-      - https://seclists.org/bugtraq/2019/Apr/36
-      - https://usn.ubuntu.com/3962-1/
-      - https://usn.ubuntu.com/3991-1/
-      - https://seclists.org/bugtraq/2019/May/56
-      - https://seclists.org/bugtraq/2019/May/59
-      - https://www.debian.org/security/2019/dsa-4448
-      - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
-      - https://access.redhat.com/errata/RHSA-2019:1265
-      - https://access.redhat.com/errata/RHSA-2019:1269
-      - https://access.redhat.com/errata/RHSA-2019:1267
-      - https://www.debian.org/security/2019/dsa-4451
-      - https://seclists.org/bugtraq/2019/May/67
-      - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
-      - https://usn.ubuntu.com/3997-1/
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
-      - https://access.redhat.com/errata/RHSA-2019:1310
-      - https://access.redhat.com/errata/RHSA-2019:1309
-      - https://access.redhat.com/errata/RHSA-2019:1308
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
-      - http://www.securityfocus.com/bid/108098
-      - https://security.netapp.com/advisory/ntap-20190719-0005/
-      - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
-      - https://usn.ubuntu.com/4080-1/
-      - https://usn.ubuntu.com/4083-1/
-      - https://security.gentoo.org/glsa/201908-02
-      - https://access.redhat.com/errata/RHSA-2019:2494
-      - https://access.redhat.com/errata/RHSA-2019:2495
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
-      - https://access.redhat.com/errata/RHSA-2019:2585
-      - https://access.redhat.com/errata/RHSA-2019:2590
-      - https://access.redhat.com/errata/RHSA-2019:2592
-      - https://access.redhat.com/errata/RHSA-2019:2737
-      - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
-      - https://www.oracle.com/security-alerts/cpuApr2021.html
-      - https://www.oracle.com/security-alerts/cpuoct2021.html
-    reported: 2019-02-04
-    severity: medium
-  - cve: CVE-2015-7981
-    description: >
-      The png_convert_to_rfc1123 function in png.c in libpng 1.0.x
-      before 1.0.64, 1.2.x before 1.2.54, and 1.4.x before 1.4.17 allows
-      remote attackers to obtain sensitive process memory information via
-      crafted tIME chunk data in an image file, which triggers an
-      out-of-bounds read.
-    affected_versions:
-      - '>=1.0.0,<1.0.64'
-      - '>=1.2.0,1.2.54'
-      - '>=1.4.0,<1.4.17'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/projects/libpng/files/libpng14/1.4.17/
-      - http://sourceforge.net/p/libpng/bugs/241/
-      - http://sourceforge.net/projects/libpng/files/libpng10/1.0.64/
-      - http://www.openwall.com/lists/oss-security/2015/10/26/1
-      - http://www.debian.org/security/2015/dsa-3399
-      - http://www.openwall.com/lists/oss-security/2015/10/26/3
-      - http://www.ubuntu.com/usn/USN-2815-1
-      - http://sourceforge.net/projects/libpng/files/libpng12/1.2.54/
-      - http://rhn.redhat.com/errata/RHSA-2015-2595.html
-      - http://rhn.redhat.com/errata/RHSA-2015-2594.html
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
-      - https://access.redhat.com/errata/RHSA-2016:1430
-      - http://www.securityfocus.com/bid/77304
-      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
-      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
-      - http://www.securitytracker.com/id/1034393
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
-      - https://security.gentoo.org/glsa/201611-08
-    reported: 2015-11-24
-    severity: ~
-  - cve: CVE-2015-8540
-    description: >
-      Integer underflow in the png_check_keyword function in pngwutil.c
-      in libpng 0.90 through 0.99, 1.0.x before 1.0.66, 1.1.x and 1.2.x
-      before 1.2.56, 1.3.x and 1.4.x before 1.4.19, and 1.5.x before 1.5.26
-      allows remote attackers to have unspecified impact via a space
-      character as a keyword in a PNG image, which triggers an out-of-bounds
-      read.
-    affected_versions:
-      - '>=0.90,<=0.99'
-      - '>=1.0.0,<1.066'
-      - '>=1.1.0,<1.2.56'
-      - '>=1.3.0,<1.4.19'
-      - '>=1.5.0,<1.5.26'
-    fixed_versions: '>=1.5.26'
-    references:
-      - http://sourceforge.net/projects/libpng/files/libpng10/1.0.66/
-      - http://www.openwall.com/lists/oss-security/2015/12/10/7
-      - http://www.openwall.com/lists/oss-security/2015/12/11/2
-      - http://sourceforge.net/projects/libpng/files/libpng12/1.2.56/
-      - http://sourceforge.net/p/libpng/bugs/244/
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-December/174435.html
-      - http://sourceforge.net/projects/libpng/files/libpng15/1.5.26/
-      - http://sourceforge.net/projects/libpng/files/libpng14/1.4.19/
-      - http://www.securityfocus.com/bid/80592
-      - http://sourceforge.net/p/libpng/code/ci/d9006f683c641793252d92254a75ae9b815b42ed/
-      - http://www.openwall.com/lists/oss-security/2015/12/10/6
-      - http://www.openwall.com/lists/oss-security/2015/12/17/10
-      - http://www.openwall.com/lists/oss-security/2015/12/11/1
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
-      - https://access.redhat.com/errata/RHSA-2016:1430
-      - https://security.gentoo.org/glsa/201611-08
-      - http://www.debian.org/security/2016/dsa-3443
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2016-04-14
-    severity: high
-  - cve: CVE-2007-5266
-    description: >
-      Off-by-one error in ICC profile chunk handling in the png_set_iCCP
-      function in pngset.c in libpng before 1.0.29 beta1 and 1.2.x before
-      1.2.21 beta1 allows remote attackers to cause a denial of service
-      (crash) via a crafted PNG image that prevents a name field from being
-      NULL terminated.
-    affected_versions:
-      - '<1.0.29'
-      - '>=1.2.0,<1.2.21'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=5122753600C3E94F87FBDFFCC090D1FF0400EA68%40MERCMBX07.na.sas.com&forum_name=png-mng-implement
-      - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0709140846k24e9a040r81623783b6b1c00f%40mail.gmail.com
-      - https://issues.rpath.com/browse/RPL-1814
-      - http://bugs.gentoo.org/show_bug.cgi?id=195261
-      - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
-      - http://www.securityfocus.com/bid/25957
-      - http://secunia.com/advisories/27284
-      - http://secunia.com/advisories/27529
-      - http://secunia.com/advisories/27629
-      - http://secunia.com/advisories/27746
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
-      - http://secunia.com/advisories/30161
-      - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
-      - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
-      - http://secunia.com/advisories/30430
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://secunia.com/advisories/35302
-      - http://secunia.com/advisories/35386
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/1697
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/483582/100/0/threaded
-    reported: 2007-10-08
-    severity: ~
-  - cve: CVE-2007-5267
-    description: >
-      Off-by-one error in ICC profile chunk handling in the
-      png_set_iCCP function in pngset.c in libpng before 1.2.22 beta1 allows
-      remote attackers to cause a denial of service (crash) via a crafted
-      PNG image, due to an incorrect fix for CVE-2007-5266.
-    affected_versions: '<1.2.22'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=47067C84.7010205%40playstation.sony.com&forum_name=png-mng-implement
-      - http://sourceforge.net/mailarchive/message.php?msg_name=3.0.6.32.20071005143158.012ada08%40mail.comcast.net
-      - http://secunia.com/advisories/27130
-      - https://issues.rpath.com/browse/RPL-1814
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
-      - http://www.securityfocus.com/bid/25957
-      - http://secunia.com/advisories/27284
-      - http://secunia.com/advisories/27746
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://secunia.com/advisories/35302
-      - http://secunia.com/advisories/35386
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.vupen.com/english/advisories/2007/3391
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/483582/100/0/threaded
-    reported: 2007-10-08
-    severity: ~
-  - cve: CVE-2007-5268
-    description: >
-      pngrtran.c in libpng before 1.0.29 and 1.2.x before 1.2.21 use
-      (1) logical instead of bitwise operations and (2) incorrect
-      comparisons, which might allow remote attackers to cause a denial of
-      service (crash) via a crafted PNG image.
-    affected_versions:
-      - '<1.0.29'
-      - '>=1.2.0,<1.2.21'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/mailarchive/message.php?msg_name=5122753600C3E94F87FBDFFCC090D1FF0400EBC5%40MERCMBX07.na.sas.com
-      - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0709140846k24e9a040r81623783b6b1c00f%40mail.gmail.com
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=3.0.6.32.20071004082318.012a7628%40mail.comcast.net&forum_name=png-mng-implement
-      - http://secunia.com/advisories/27093
-      - https://issues.rpath.com/browse/RPL-1814
-      - http://bugs.gentoo.org/show_bug.cgi?id=195261
-      - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
-      - http://www.ubuntu.com/usn/usn-538-1
-      - http://www.securityfocus.com/bid/25956
-      - http://secunia.com/advisories/27284
-      - http://secunia.com/advisories/27405
-      - http://secunia.com/advisories/27529
-      - http://secunia.com/advisories/27629
-      - http://secunia.com/advisories/27746
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
-      - http://secunia.com/advisories/30161
-      - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
-      - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
-      - http://secunia.com/advisories/30430
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://secunia.com/advisories/35302
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://secunia.com/advisories/35386
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/1697
-      - http://www.vupen.com/english/advisories/2007/3390
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/483582/100/0/threaded
-    reported: 2007-10-08
-    severity: ~
-  - cve: CVE-2007-5269
-    description: >
-      Certain chunk handlers in libpng before 1.0.29 and 1.2.x before
-      1.2.21 allow remote attackers to cause a denial of service (crash) via
-      crafted (1) pCAL (png_handle_pCAL), (2) sCAL (png_handle_sCAL), (3)
-      tEXt (png_push_read_tEXt), (4) iTXt (png_handle_iTXt), and (5) ztXT
-      (png_handle_ztXt) chunking in PNG images, which trigger out-of-bounds
-      read operations.
-    affected_versions:
-      - '<1.0.29'
-      - '>=1.2.0,<1.2.21'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=3.0.6.32.20071004082318.012a7628%40mail.comcast.net&forum_name=png-mng-implement
-      - http://secunia.com/advisories/27093
-      - https://issues.rpath.com/browse/RPL-1814
-      - https://bugzilla.redhat.com/show_bug.cgi?id=327791
-      - https://bugzilla.redhat.com/show_bug.cgi?id=337461
-      - http://bugs.gentoo.org/show_bug.cgi?id=195261
-      - http://support.avaya.com/elmodocs2/security/ASA-2007-460.htm
-      - https://www.redhat.com/archives/fedora-package-announce/2007-October/msg00353.html
-      - https://www.redhat.com/archives/fedora-package-announce/2007-October/msg00356.html
-      - https://www.redhat.com/archives/fedora-package-announce/2007-November/msg00072.html
-      - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
-      - http://www.redhat.com/support/errata/RHSA-2007-0992.html
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
-      - http://www.novell.com/linux/security/advisories/2007_25_sr.html
-      - http://www.ubuntu.com/usn/usn-538-1
-      - http://www.securityfocus.com/bid/25956
-      - http://www.securitytracker.com/id?1018849
-      - http://secunia.com/advisories/27284
-      - http://secunia.com/advisories/27405
-      - http://secunia.com/advisories/27369
-      - http://secunia.com/advisories/27391
-      - http://secunia.com/advisories/27492
-      - http://secunia.com/advisories/27529
-      - http://secunia.com/advisories/27662
-      - http://secunia.com/advisories/27629
-      - http://secunia.com/advisories/27746
-      - http://secunia.com/advisories/27965
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://lists.vmware.com/pipermail/security-announce/2008/000008.html
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://www.vmware.com/security/advisories/VMSA-2008-0005.html
-      - http://www.vmware.com/support/ace2/doc/releasenotes_ace2.html
-      - http://www.vmware.com/support/player/doc/releasenotes_player.html
-      - http://www.vmware.com/support/player2/doc/releasenotes_player2.html
-      - http://www.vmware.com/support/server/doc/releasenotes_server.html
-      - http://www.vmware.com/support/ws55/doc/releasenotes_ws55.html
-      - http://www.vmware.com/support/ws6/doc/releasenotes_ws6.html
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://www.securityfocus.com/bid/28276
-      - http://secunia.com/advisories/29420
-      - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
-      - http://secunia.com/advisories/30161
-      - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
-      - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
-      - http://secunia.com/advisories/30430
-      - http://secunia.com/advisories/31712
-      - http://www.vmware.com/security/advisories/VMSA-2008-0014.html
-      - http://secunia.com/advisories/31713
-      - http://lists.grok.org.uk/pipermail/full-disclosure/2008-August/064118.html
-      - http://www.debian.org/security/2009/dsa-1750
-      - http://secunia.com/advisories/34388
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://secunia.com/advisories/35302
-      - http://secunia.com/advisories/35386
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/1697
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.vupen.com/english/advisories/2008/0905/references
-      - http://www.vupen.com/english/advisories/2007/3390
-      - http://www.vupen.com/english/advisories/2008/2466
-      - http://security.gentoo.org/glsa/glsa-201209-25.xml
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10614
-      - http://www.securityfocus.com/archive/1/495869/100/0/threaded
-      - http://www.securityfocus.com/archive/1/489739/100/0/threaded
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/483582/100/0/threaded
-    reported: 2007-10-08
-    severity: ~
-  - cve: CVE-2008-1382
-    description: >
-      libpng 1.0.6 through 1.0.32, 1.2.0 through 1.2.26, and
-      1.4.0beta01 through 1.4.0beta19 allows context-dependent attackers to
-      cause a denial of service (crash) and possibly execute arbitrary code
-      via a PNG file with zero length "unknown" chunks, which trigger an
-      access of uninitialized memory.
-    affected_versions:
-      - '>=1.0.6,<=1.0.32'
-      - '>=1.2.0,<=1.0.26'
-      - '>=1.4.0,<1.4.1'
-    fixed_versions: ~
-    references:
-      - http://www.ocert.org/advisories/ocert-2008-003.html
-      - http://libpng.sourceforge.net/Advisory-1.2.26.txt
-      - http://secunia.com/advisories/29792
-      - http://www.securityfocus.com/bid/28770
-      - http://www.securitytracker.com/id?1019840
-      - http://security.gentoo.org/glsa/glsa-200804-15.xml
-      - http://secunia.com/advisories/29678
-      - http://www.osvdb.org/44364
-      - http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0151
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2008&m=slackware-security.541247
-      - http://lists.opensuse.org/opensuse-security-announce/2008-04/msg00011.html
-      - http://secunia.com/advisories/29992
-      - http://secunia.com/advisories/29957
-      - http://secunia.com/advisories/30009
-      - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00721.html
-      - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00960.html
-      - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00951.html
-      - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00033.html
-      - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00080.html
-      - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00111.html
-      - http://secunia.com/advisories/30402
-      - http://secunia.com/advisories/30486
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2008:156
-      - http://lists.apple.com/archives/security-announce//2008/Sep/msg00005.html
-      - http://secunia.com/advisories/31882
-      - http://www.us-cert.gov/cas/techalerts/TA08-260A.html
-      - http://security.gentoo.org/glsa/glsa-200805-10.xml
-      - http://secunia.com/advisories/30174
-      - http://secunia.com/advisories/30157
-      - http://secunia.com/advisories/33137
-      - http://security.gentoo.org/glsa/glsa-200812-15.xml
-      - http://secunia.com/advisories/34388
-      - http://www.debian.org/security/2009/dsa-1750
-      - http://support.apple.com/kb/HT3549
-      - http://secunia.com/advisories/35074
-      - http://lists.apple.com/archives/security-announce/2009/May/msg00002.html
-      - http://www.us-cert.gov/cas/techalerts/TA09-133A.html
-      - http://www.vupen.com/english/advisories/2009/1297
-      - http://secunia.com/advisories/35258
-      - http://www.vmware.com/security/advisories/VMSA-2009-0007.html
-      - http://www.vupen.com/english/advisories/2009/1451
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://secunia.com/advisories/35302
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://secunia.com/advisories/35386
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://secunia.com/advisories/34152
-      - http://www.redhat.com/support/errata/RHSA-2009-0333.html
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/1225/references
-      - http://www.vupen.com/english/advisories/2008/2584
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/41800
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6275
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10326
-      - http://www.securityfocus.com/archive/1/503912/100/0/threaded
-      - http://www.securityfocus.com/archive/1/491424/100/0/threaded
-      - http://www.securityfocus.com/archive/1/490823/100/0/threaded
-    reported: 2008-04-14
-    severity: ~
-  - cve: CVE-2008-3964
-    description: >
-      Multiple off-by-one errors in libpng before 1.2.32beta01, and 1.4
-      before 1.4.0beta34, allow context-dependent attackers to cause a
-      denial of service (crash) or have unspecified other impact via a PNG
-      image with crafted zTXt chunks, related to (1) the png_push_read_zTXt
-      function in pngread.c, and possibly related to (2) pngtest.c.
-    affected_versions: '<1.4.0'
-    fixed_versions: ~
-    references:
-      - http://www.openwall.com/lists/oss-security/2008/09/09/3
-      - http://sourceforge.net/tracker/index.php?func=detail&aid=2095669&group_id=5624&atid=105624
-      - http://sourceforge.net/project/shownotes.php?release_id=624518
-      - http://www.openwall.com/lists/oss-security/2008/09/09/8
-      - http://sourceforge.net/project/shownotes.php?group_id=5624&release_id=624517
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=e56ccc8f0809180317u6a5306fg14683947affb3e1b%40mail.gmail.com&forum_name=png-mng-implement
-      - http://www.securityfocus.com/bid/31049
-      - http://www.kb.cert.org/vuls/id/889484
-      - http://secunia.com/advisories/33137
-      - http://security.gentoo.org/glsa/glsa-200812-15.xml
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://secunia.com/advisories/35302
-      - http://secunia.com/advisories/35386
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://secunia.com/advisories/31781
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2008/2512
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/44928
-    reported: 2008-09-11
-    severity: ~
-  - cve: CVE-2008-5907
-    description: >
-      The png_check_keyword function in pngwutil.c in libpng before
-      1.0.42, and 1.2.x before 1.2.34, might allow context-dependent
-      attackers to set the value of an arbitrary memory location to zero via
-      vectors involving creation of crafted PNG files with keywords, related
-      to an implicit cast of the '\\0' character constant to a NULL pointer.
-      NOTE: some sources incorrectly report this as a double free
-      vulnerability.
-    affected_versions:
-      - '<1.0.42'
-      - '>=1.2.0,<1.2.34'
-    fixed_versions: ~
-    references:
-      - http://libpng.sourceforge.net/index.html
-      - http://openwall.com/lists/oss-security/2009/01/09/1
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=4B6F0239C13D0245820603C036D180BC79FBAA%40CABOTUKEXCH01.cabot.local&forum_name=png-mng-implement
-      - http://lists.opensuse.org/opensuse-security-announce/2009-02/msg00000.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
-      - http://security.gentoo.org/glsa/glsa-200903-28.xml
-      - http://secunia.com/advisories/34320
-      - http://secunia.com/advisories/34388
-      - http://www.debian.org/security/2009/dsa-1750
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/48128
-    reported: 2009-01-15
-    severity: ~
-  - cve: CVE-2008-6218
-    description: >
-      Memory leak in the png_handle_tEXt function in pngrutil.c in
-      libpng before 1.2.33 rc02 and 1.4.0 beta36 allows context-dependent
-      attackers to cause a denial of service (memory exhaustion) via a
-      crafted PNG file.
-    affected_versions: '<1.4.0'
-    fixed_versions: ~
-    references:
-      - http://secunia.com/advisories/32418
-      - http://www.securitytracker.com/id?1021104
-      - http://www.securityfocus.com/bid/31920
-      - http://sourceforge.net/project/shownotes.php?release_id=635837
-      - http://sourceforge.net/project/shownotes.php?release_id=635463&group_id=5624
-      - http://security.gentoo.org/glsa/glsa-200903-28.xml
-      - http://wiki.rpath.com/Advisories:rPSA-2009-0046
-      - http://secunia.com/advisories/34265
-      - http://secunia.com/advisories/34320
-      - http://secunia.com/advisories/34388
-      - http://www.debian.org/security/2009/dsa-1750
-      - http://www.vupen.com/english/advisories/2010/1837
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
-      - http://www.vupen.com/english/advisories/2008/2917
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/46115
-      - http://www.securityfocus.com/archive/1/501767/100/0/threaded
-    reported: 2009-02-20
-    severity: ~
-  - cve: CVE-2009-0040
-    description: >
-      The PNG reference library (aka libpng) before 1.0.43, and 1.2.x
-      before 1.2.35, as used in pngcrush and other applications, allows
-      context-dependent attackers to cause a denial of service (application
-      crash) or possibly execute arbitrary code via a crafted PNG file that
-      triggers a free of an uninitialized pointer in (1) the png_read_png
-      function, (2) pCAL chunk handling, or (3) setup of 16-bit gamma
-      tables.
-    affected_versions:
-      - '<1.0.43'
-      - '>=1.2.0,<1.2.35'
-    fixed_versions: ~
-    references:
-      - ftp://ftp.simplesystems.org/pub/png/src/libpng-1.2.34-ADVISORY.txt
-      - http://downloads.sourceforge.net/libpng/libpng-1.2.34-ADVISORY.txt
-      - http://secunia.com/advisories/33976
-      - http://sourceforge.net/project/shownotes.php?group_id=1689&release_id=662441
-      - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0902181726i200f4bf0n20d919473ec409b7%40mail.gmail.com
-      - http://secunia.com/advisories/33970
-      - http://www.securityfocus.com/bid/33827
-      - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00000.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
-      - http://secunia.com/advisories/34145
-      - http://support.avaya.com/japple/css/japple?temp.documentID=366362&temp.productID=154235&temp.releaseID=361845&temp.bucketID=126655&PAGE=Document
-      - http://www.securityfocus.com/bid/33990
-      - http://secunia.com/advisories/34272
-      - http://secunia.com/advisories/34210
-      - http://secunia.com/advisories/34265
-      - http://wiki.rpath.com/Advisories:rPSA-2009-0046
-      - http://security.gentoo.org/glsa/glsa-200903-28.xml
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:075
-      - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00002.html
-      - http://www.vupen.com/english/advisories/2009/0632
-      - http://secunia.com/advisories/34320
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00272.html
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-069.htm
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00412.html
-      - http://www.debian.org/security/2009/dsa-1750
-      - http://secunia.com/advisories/34388
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00771.html
-      - http://secunia.com/advisories/34324
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00769.html
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.405420
-      - http://secunia.com/advisories/34462
-      - http://secunia.com/advisories/34464
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.433952
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:083
-      - http://lists.opensuse.org/opensuse-security-announce/2009-04/msg00009.html
-      - http://lists.apple.com/archives/security-announce/2009/May/msg00002.html
-      - http://www.us-cert.gov/cas/techalerts/TA09-133A.html
-      - http://secunia.com/advisories/35074
-      - http://support.apple.com/kb/HT3549
-      - http://www.vupen.com/english/advisories/2009/1297
-      - http://www.vmware.com/security/advisories/VMSA-2009-0007.html
-      - http://secunia.com/advisories/35258
-      - http://www.vupen.com/english/advisories/2009/1462
-      - http://www.vupen.com/english/advisories/2009/1451
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
-      - http://www.kb.cert.org/vuls/id/649212
-      - http://secunia.com/advisories/35302
-      - http://secunia.com/advisories/35379
-      - http://support.apple.com/kb/HT3613
-      - http://www.vupen.com/english/advisories/2009/1522
-      - http://lists.apple.com/archives/security-announce/2009/jun/msg00002.html
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
-      - http://secunia.com/advisories/35386
-      - http://www.vupen.com/english/advisories/2009/1560
-      - http://www.vupen.com/english/advisories/2009/1621
-      - http://lists.apple.com/archives/security-announce/2009/Jun/msg00005.html
-      - http://support.apple.com/kb/HT3639
-      - http://www.vupen.com/english/advisories/2009/2172
-      - http://support.apple.com/kb/HT3757
-      - http://secunia.com/advisories/36096
-      - http://lists.apple.com/archives/security-announce/2009/Aug/msg00001.html
-      - http://www.us-cert.gov/cas/techalerts/TA09-218A.html
-      - http://www.debian.org/security/2009/dsa-1830
-      - http://lists.vmware.com/pipermail/security-announce/2009/000062.html
-      - http://www.redhat.com/support/errata/RHSA-2009-0333.html
-      - http://www.redhat.com/support/errata/RHSA-2009-0315.html
-      - http://secunia.com/advisories/34143
-      - http://www.redhat.com/support/errata/RHSA-2009-0325.html
-      - http://www.redhat.com/support/errata/RHSA-2009-0340.html
-      - http://secunia.com/advisories/34137
-      - http://secunia.com/advisories/34140
-      - http://secunia.com/advisories/34152
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
-      - http://www.vupen.com/english/advisories/2009/0473
-      - http://www.vupen.com/english/advisories/2009/0469
-      - http://security.gentoo.org/glsa/glsa-201209-25.xml
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/48819
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6458
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10316
-      - http://www.securityfocus.com/archive/1/505990/100/0/threaded
-      - http://www.securityfocus.com/archive/1/503912/100/0/threaded
-      - http://www.securityfocus.com/archive/1/501767/100/0/threaded
-    reported: 2009-02-22
-    severity: ~
-  - cve: CVE-2009-2042
-    description: >
-      libpng before 1.2.37 does not properly parse 1-bit interlaced
-      images with width values that are not divisible by 8, which causes
-      libpng to include uninitialized bits in certain rows of a PNG file and
-      might allow remote attackers to read portions of sensitive memory via
-      "out-of-bounds pixels" in the file.
-    affected_versions: '<1.2.37'
-    fixed_versions: ~
-    references:
-      - http://www.securityfocus.com/bid/35233
-      - http://secunia.com/advisories/35346
-      - http://www.vupen.com/english/advisories/2009/1510
-      - http://www.libpng.org/pub/png/libpng.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00630.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00218.html
-      - http://secunia.com/advisories/35470
-      - http://secunia.com/advisories/35524
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.551809
-      - http://security.gentoo.org/glsa/glsa-200906-01.xml
-      - http://secunia.com/advisories/35594
-      - http://ubuntu.com/usn/usn-913-1
-      - http://www.vupen.com/english/advisories/2010/0637
-      - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
-      - http://support.apple.com/kb/HT4077
-      - http://secunia.com/advisories/39215
-      - http://lists.vmware.com/pipermail/security-announce/2010/000090.html
-      - http://archives.neohapsis.com/archives/bugtraq/2010-04/0077.html
-      - http://archives.neohapsis.com/archives/fulldisclosure/2010-04/0121.html
-      - http://secunia.com/advisories/39206
-      - http://www.vmware.com/security/advisories/VMSA-2010-0007.html
-      - http://secunia.com/advisories/39251
-      - http://www.debian.org/security/2010/dsa-2032
-      - http://www.vupen.com/english/advisories/2010/0847
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
-      - http://www.vupen.com/english/advisories/2010/0682
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/50966
-    reported: 2009-06-12
-    severity: ~
-  - cve: CVE-2009-5063
-    description: >
-      Memory leak in the embedded_profile_len function in pngwutil.c in
-      libpng before 1.2.39beta5 allows context-dependent attackers to cause
-      a denial of service (memory leak or segmentation fault) via a JPEG
-      image containing an iCCP chunk with a negative embedded profile
-      length. NOTE: this is due to an incomplete fix for CVE-2006-7244.
-    affected_versions: '<1.2.39'
-    fixed_versions: ~
-    references:
-      - http://www.openwall.com/lists/oss-security/2011/03/22/7
-      - http://www.openwall.com/lists/oss-security/2011/03/28/6
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=948ee23a2a400672b1751cfc646a7467741e9b2e#patch18
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-    reported: 2011-08-31
-    severity: ~
-  - cve: CVE-2010-0205
-    description: >
-      The png_decompress_chunk function in pngrutil.c in libpng 1.0.x
-      before 1.0.53, 1.2.x before 1.2.43, and 1.4.x before 1.4.1 does not
-      properly handle compressed ancillary-chunk data that has a
-      disproportionately large uncompressed representation, which allows
-      remote attackers to cause a denial of service (memory and CPU
-      consumption, and application hang) via a crafted PNG file, as
-      demonstrated by use of the deflate compression method on data composed
-      of many occurrences of the same character, related to a "decompression
-      bomb" attack.
-    affected_versions:
-      - '>=1.0.0,<=1.0.53'
-      - '>=1.2.0,<1.2.43'
-      - '>=1.4.0,<1.4.1'
-    fixed_versions: ~
-    references:
-      - http://libpng.sourceforge.net/decompression_bombs.html
-      - http://www.securityfocus.com/bid/38478
-      - http://libpng.sourceforge.net/ADVISORY-1.4.1.html
-      - http://www.kb.cert.org/vuls/id/576029
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037237.html
-      - http://www.vupen.com/english/advisories/2010/0637
-      - http://ubuntu.com/usn/usn-913-1
-      - http://www.vupen.com/english/advisories/2010/0626
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037355.html
-      - http://www.vupen.com/english/advisories/2010/0605
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037364.html
-      - http://secunia.com/advisories/38774
-      - http://www.vupen.com/english/advisories/2010/0517
-      - http://www.vupen.com/english/advisories/2010/0847
-      - http://secunia.com/advisories/39251
-      - http://www.debian.org/security/2010/dsa-2032
-      - http://osvdb.org/62670
-      - http://www.securitytracker.com/id?1023674
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:064
-      - http://www.vupen.com/english/advisories/2010/0667
-      - http://www.vupen.com/english/advisories/2010/0682
-      - http://www.vupen.com/english/advisories/2010/0686
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037607.html
-      - http://www.vupen.com/english/advisories/2010/1107
-      - http://lists.opensuse.org/opensuse-security-announce/2010-05/msg00001.html
-      - http://lists.opensuse.org/opensuse-security-announce/2010-05/msg00002.html
-      - http://lists.opensuse.org/opensuse-security-announce/2010-06/msg00001.html
-      - http://www.vupen.com/english/advisories/2010/2491
-      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
-      - http://secunia.com/advisories/41574
-      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
-      - http://support.apple.com/kb/HT4435
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/56661
-    reported: 2010-03-03
-    severity: ~
-  - cve: CVE-2010-1205
-    description: >
-      Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x
-      before 1.4.3, as used in progressive applications, might allow remote
-      attackers to execute arbitrary code via a PNG image that triggers an
-      additional data row.
-    affected_versions: '<1.4.3'
-    fixed_versions: ~
-    references:
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=188eb6b42602bf7d7ae708a21897923b6a83fe7c#patch18
-      - http://www.vupen.com/english/advisories/2010/1612
-      - http://secunia.com/advisories/40302
-      - https://bugzilla.redhat.com/show_bug.cgi?id=608238
-      - http://www.securityfocus.com/bid/41174
-      - http://www.libpng.org/pub/png/libpng.html
-      - https://bugs.webkit.org/show_bug.cgi?id=40798
-      - http://code.google.com/p/chromium/issues/detail?id=45983
-      - http://googlechromereleases.blogspot.com/2010/07/stable-channel-update.html
-      - http://trac.webkit.org/changeset/61816
-      - http://secunia.com/advisories/40472
-      - http://www.vupen.com/english/advisories/2010/1755
-      - http://www.ubuntu.com/usn/USN-960-1
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
-      - http://www.debian.org/security/2010/dsa-2072
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
-      - http://secunia.com/advisories/40547
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
-      - http://www.vupen.com/english/advisories/2010/1846
-      - https://bugzilla.mozilla.org/show_bug.cgi?id=570451
-      - http://www.vupen.com/english/advisories/2010/1837
-      - http://www.vupen.com/english/advisories/2010/1877
-      - http://lists.apple.com/archives/security-announce/2010//Aug/msg00003.html
-      - http://support.apple.com/kb/HT4312
-      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
-      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
-      - http://secunia.com/advisories/41574
-      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
-      - http://www.vupen.com/english/advisories/2010/2491
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
-      - http://support.apple.com/kb/HT4435
-      - http://support.apple.com/kb/HT4456
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
-      - http://www.vupen.com/english/advisories/2010/3045
-      - http://www.vupen.com/english/advisories/2010/3046
-      - http://support.apple.com/kb/HT4457
-      - http://secunia.com/advisories/42314
-      - http://secunia.com/advisories/42317
-      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
-      - http://support.apple.com/kb/HT4554
-      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
-      - http://support.apple.com/kb/HT4566
-      - http://blackberry.com/btsc/KB27244
-      - http://secunia.com/advisories/40336
-      - http://www.vupen.com/english/advisories/2010/1637
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
-      - http://www.mozilla.org/security/announce/2010/mfsa2010-41.html
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59815
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11851
-    reported: 2010-06-30
-    severity: critical
-  - cve: CVE-2010-2249
-    description: >
-      Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x
-      before 1.4.3, allows remote attackers to cause a denial of service
-      (memory consumption and application crash) via a PNG image containing
-      malformed Physical Scale (aka sCAL) chunks.
-    affected_versions: '<1.4.3'
-    fixed_versions: ~
-    id: CPANSA-Prima-codecs-win32-2010-2249
-    references:
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=90cfcecc09febb8d6c8c1d37ea7bb7cf0f4b00f3#patch20
-      - https://bugzilla.redhat.com/show_bug.cgi?id=608644
-      - http://secunia.com/advisories/40302
-      - http://www.vupen.com/english/advisories/2010/1612
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://www.securityfocus.com/bid/41174
-      - http://www.ubuntu.com/usn/USN-960-1
-      - http://www.vupen.com/english/advisories/2010/1755
-      - http://secunia.com/advisories/40472
-      - http://www.vupen.com/english/advisories/2010/1877
-      - http://www.debian.org/security/2010/dsa-2072
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
-      - http://www.vupen.com/english/advisories/2010/1837
-      - http://www.vupen.com/english/advisories/2010/1846
-      - http://secunia.com/advisories/40547
-      - http://secunia.com/advisories/41574
-      - http://www.vupen.com/english/advisories/2010/2491
-      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
-      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
-      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
-      - http://support.apple.com/kb/HT4435
-      - http://support.apple.com/kb/HT4456
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
-      - http://www.vupen.com/english/advisories/2010/3046
-      - http://support.apple.com/kb/HT4457
-      - http://www.vupen.com/english/advisories/2010/3045
-      - http://secunia.com/advisories/42314
-      - http://www.securitytracker.com/id?1024723
-      - http://secunia.com/advisories/42317
-      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
-      - http://support.apple.com/kb/HT4554
-      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
-      - http://support.apple.com/kb/HT4566
-      - http://secunia.com/advisories/40336
-      - http://www.vupen.com/english/advisories/2010/1637
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59816
-    reported: 2010-06-30
-    severity: medium
-  - cve: CVE-2011-2501
-    description: >
-      The png_format_buffer function in pngerror.c in libpng 1.0.x
-      before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x
-      before 1.5.4 allows remote attackers to cause a denial of service
-      (application crash) via a crafted PNG image that triggers an
-      out-of-bounds read during the copying of error-message data. NOTE:
-      this vulnerability exists because of a CVE-2004-0421 regression. NOTE:
-      this is called an off-by-one error by some sources.
-    affected_versions: '<1.5.4'
-    fixed_versions: ~
-    references:
-      - http://secunia.com/advisories/45046
-      - http://www.securityfocus.com/bid/48474
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=65e6d5a34f49acdb362a0625a706c6b914e670af
-      - http://www.openwall.com/lists/oss-security/2011/06/28/16
-      - https://bugzilla.redhat.com/show_bug.cgi?id=717084
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=BANLkTikrnU6FJNQYFvwmt78hwpgKPVRd1Q%40mail.gmail.com&forum_name=png-mng-implement
-      - http://www.openwall.com/lists/oss-security/2011/06/27/13
-      - http://secunia.com/advisories/45415
-      - http://secunia.com/advisories/45486
-      - http://secunia.com/advisories/45289
-      - http://secunia.com/advisories/45460
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2011&m=slackware-security.617466
-      - http://www.debian.org/security/2011/dsa-2287
-      - http://secunia.com/advisories/45405
-      - http://www.redhat.com/support/errata/RHSA-2011-1105.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/062720.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
-      - http://www.ubuntu.com/usn/USN-1175-1
-      - http://secunia.com/advisories/45492
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/68517
-    reported: 2011-07-17
-    severity: medium
-  - cve: CVE-2011-2690
-    description: >
-      Buffer overflow in libpng 1.0.x before 1.0.55, 1.2.x before
-      1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4, when used by an
-      application that calls the png_rgb_to_gray function but not the
-      png_set_expand function, allows remote attackers to overwrite memory
-      with an arbitrary amount of data, and possibly have unspecified other
-      impact, via a crafted PNG image.
-    affected_versions: '<1.5.4'
-    fixed_versions: ~
-    references:
-      - http://www.openwall.com/lists/oss-security/2011/07/13/2
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://secunia.com/advisories/45046
-      - http://www.securityfocus.com/bid/48660
-      - https://bugzilla.redhat.com/show_bug.cgi?id=720607
-      - http://secunia.com/advisories/45461
-      - http://www.redhat.com/support/errata/RHSA-2011-1104.html
-      - http://secunia.com/advisories/45415
-      - http://secunia.com/advisories/45460
-      - http://secunia.com/advisories/45405
-      - http://www.redhat.com/support/errata/RHSA-2011-1105.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
-      - http://www.ubuntu.com/usn/USN-1175-1
-      - http://secunia.com/advisories/45492
-      - http://support.apple.com/kb/HT5002
-      - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://www.debian.org/security/2011/dsa-2287
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/68538
-    reported: 2011-07-17
-    severity: high
-  - cve: CVE-2011-2691
-    description: >
-      The png_err function in pngerror.c in libpng 1.0.x before 1.0.55,
-      1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4 makes
-      a function call using a NULL pointer argument instead of an
-      empty-string argument, which allows remote attackers to cause a denial
-      of service (application crash) via a crafted PNG image.
-    affected_versions: '<1.5.4'
-    fixed_versions: ~
-    references:
-      - http://secunia.com/advisories/45046
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=9dad5e37aef295b4ef8dea39392b652deebc9261
-      - http://www.openwall.com/lists/oss-security/2011/07/13/2
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://www.securityfocus.com/bid/48660
-      - https://bugzilla.redhat.com/show_bug.cgi?id=720608
-      - http://www.debian.org/security/2011/dsa-2287
-      - http://secunia.com/advisories/45405
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
-      - http://secunia.com/advisories/45492
-      - http://support.apple.com/kb/HT5002
-      - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://marc.info/?l=bugtraq&m=133951357207000&w=2
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/68537
-    reported: 2011-07-17
-    severity: medium
-  - cve: CVE-2011-2692
-    description: >
-      The png_handle_sCAL function in pngrutil.c in libpng 1.0.x before
-      1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before
-      1.5.4 does not properly handle invalid sCAL chunks, which allows
-      remote attackers to cause a denial of service (memory corruption and
-      application crash) or possibly have unspecified other impact via a
-      crafted PNG image that triggers the reading of uninitialized memory.
-    affected_versions: '<1.5.4'
-    fixed_versions: ~
-    references:
-      - http://www.kb.cert.org/vuls/id/819894
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://secunia.com/advisories/45046
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=61a2d8a2a7b03023e63eae9a3e64607aaaa6d339
-      - http://sourceforge.net/mailarchive/forum.php?thread_name=003101cc2790%24fb5d6e80%24f2184b80%24%40acm.org&forum_name=png-mng-implement
-      - https://bugzilla.redhat.com/show_bug.cgi?id=720612
-      - http://www.openwall.com/lists/oss-security/2011/07/13/2
-      - http://secunia.com/advisories/45445
-      - http://secunia.com/advisories/45461
-      - http://www.securityfocus.com/bid/48618
-      - http://www.redhat.com/support/errata/RHSA-2011-1104.html
-      - http://www.redhat.com/support/errata/RHSA-2011-1103.html
-      - http://secunia.com/advisories/45415
-      - http://secunia.com/advisories/45460
-      - http://www.debian.org/security/2011/dsa-2287
-      - http://secunia.com/advisories/45405
-      - http://www.redhat.com/support/errata/RHSA-2011-1105.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
-      - http://www.ubuntu.com/usn/USN-1175-1
-      - http://secunia.com/advisories/45492
-      - http://support.apple.com/kb/HT5002
-      - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
-      - http://support.apple.com/kb/HT5281
-      - http://lists.apple.com/archives/security-announce/2012/May/msg00001.html
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://secunia.com/advisories/49660
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/68536
-    reported: 2011-07-17
-    severity: high
-  - cve: CVE-2011-3045
-    description: >
-      Integer signedness error in the png_inflate function in
-      pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome
-      before 17.0.963.83 and other products, allows remote attackers to
-      cause a denial of service (application crash) or possibly execute
-      arbitrary code via a crafted PNG file, a different vulnerability than
-      CVE-2011-3026.
-    affected_versions: '<1.4.10'
-    fixed_versions: ~
-    references:
-      - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
-      - http://code.google.com/p/chromium/issues/detail?id=116162
-      - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
-      - https://bugzilla.redhat.com/show_bug.cgi?id=799000
-      - http://secunia.com/advisories/48485
-      - http://secunia.com/advisories/48512
-      - http://secunia.com/advisories/48554
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
-      - http://secunia.com/advisories/48320
-      - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://www.securitytracker.com/id?1026823
-      - http://rhn.redhat.com/errata/RHSA-2012-0488.html
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
-      - http://www.debian.org/security/2012/dsa-2439
-      - http://rhn.redhat.com/errata/RHSA-2012-0407.html
-      - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
-    reported: 2012-03-22
-    severity: ~
-  - cve: CVE-2011-3048
-    description: >
-      The png_set_text_2 function in pngset.c in libpng 1.0.x before
-      1.0.59, 1.2.x before 1.2.49, 1.4.x before 1.4.11, and 1.5.x before
-      1.5.10 allows remote attackers to cause a denial of service (crash) or
-      execute arbitrary code via a crafted text chunk in a PNG image file,
-      which triggers a memory allocation failure that is not properly
-      handled, leading to a heap-based buffer overflow.
-    affected_versions: '<1.5.10'
-    fixed_versions: ~
-    references:
-      - http://secunia.com/advisories/48721
-      - http://secunia.com/advisories/48587
-      - http://ubuntu.com/usn/usn-1417-1
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://www.debian.org/security/2012/dsa-2446
-      - http://www.osvdb.org/80822
-      - http://rhn.redhat.com/errata/RHSA-2012-0523.html
-      - http://secunia.com/advisories/48665
-      - http://secunia.com/advisories/48983
-      - http://www.libpng.org/pub/png/src/libpng-1.5.10-README.txt
-      - http://secunia.com/advisories/48644
-      - http://www.securitytracker.com/id?1026879
-      - http://www.securityfocus.com/bid/52830
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077819.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077472.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079039.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079051.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077043.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077007.html
-      - http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html
-      - http://support.apple.com/kb/HT5501
-      - http://support.apple.com/kb/HT5503
-      - http://lists.apple.com/archives/security-announce/2012/Sep/msg00003.html
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/74494
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:046
-    reported: 2012-05-29
-    severity: ~
-  - cve: CVE-2012-3425
-    description: >
-      The png_push_read_zTXt function in pngpread.c in libpng 1.0.x
-      before 1.0.58, 1.2.x before 1.2.48, 1.4.x before 1.4.10, and 1.5.x
-      before 1.5.10 allows remote attackers to cause a denial of service
-      (out-of-bounds read) via a large avail_in field value in a PNG image.
-    affected_versions: '<1.5.10'
-    fixed_versions: ~
-    references:
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=284de253b1561b976291ba7405acd71ae71ff597;hb=refs/heads/libpng10
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=73e2ffd6a1471f2144d0ce7165d7323cb109f10f;hb=refs/heads/libpng15
-      - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=668082
-      - http://www.openwall.com/lists/oss-security/2012/07/24/3
-      - http://www.openwall.com/lists/oss-security/2012/07/24/5
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=2da5a7a8b690e257f94353b5b49d493cdc385322;hb=refs/heads/libpng14
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;hb=a4b640865ae47986bbe71ecc0e7d5181dcb0bac8
-      - http://lists.opensuse.org/opensuse-updates/2012-08/msg00004.html
-      - http://www.ubuntu.com/usn/USN-2815-1
-    reported: 2012-08-13
-    severity: ~
-  - cve: CVE-2013-7353
-    description: >
-      Integer overflow in the png_set_unknown_chunks function in
-      libpng/pngset.c in libpng before 1.5.14beta08 allows context-dependent
-      attackers to cause a denial of service (segmentation fault and crash)
-      via a crafted image, which triggers a heap-based buffer overflow.
-    affected_versions: '<1.5.14'
-    fixed_versions: ~
-    references:
-      - http://seclists.org/oss-sec/2014/q2/83
-      - http://lists.opensuse.org/opensuse-updates/2014-05/msg00015.html
-      - http://sourceforge.net/p/libpng/bugs/199/
-      - http://www.securityfocus.com/bid/67345
-    reported: 2014-05-06
-    severity: ~
-  - cve: CVE-2013-7354
-    description: >
-      Multiple integer overflows in libpng before 1.5.14rc03 allow
-      remote attackers to cause a denial of service (crash) via a crafted
-      image to the (1) png_set_sPLT or (2) png_set_text_2 function, which
-      triggers a heap-based buffer overflow.
-    affected_versions: '<1.5.14'
-    fixed_versions: ~
-    references:
-      - http://seclists.org/oss-sec/2014/q2/83
-      - http://lists.opensuse.org/opensuse-updates/2014-05/msg00015.html
-      - http://sourceforge.net/p/libpng/bugs/199/
-      - http://www.securityfocus.com/bid/67344
-    reported: 2014-05-06
-    severity: ~
-  - cve: CVE-2006-5793
-    description: >
-      The sPLT chunk handling code (png_set_sPLT function in pngset.c)
-      in libpng 1.0.6 through 1.2.12 uses a sizeof operator on the wrong
-      data type, which allows context-dependent attackers to cause a denial
-      of service (crash) via malformed sPLT chunks that trigger an
-      out-of-bounds read.
-    affected_versions: '>=1.0.6,<=1.2.12'
-    fixed_versions: ~
-    references:
-      - http://bugs.gentoo.org/show_bug.cgi?id=154380
-      - http://bugs.gentoo.org/attachment.cgi?id=101400&action=view
-      - https://issues.rpath.com/browse/RPL-790
-      - http://www.securityfocus.com/bid/21078
-      - http://sourceforge.net/project/shownotes.php?release_id=464278
-      - http://security.gentoo.org/glsa/glsa-200611-09.xml
-      - http://www.ubuntu.com/usn/usn-383-1
-      - http://secunia.com/advisories/22889
-      - http://secunia.com/advisories/22900
-      - http://secunia.com/advisories/22956
-      - http://secunia.com/advisories/22958
-      - http://secunia.com/advisories/22941
-      - http://www.trustix.org/errata/2006/0065/
-      - http://securitytracker.com/id?1017244
-      - http://secunia.com/advisories/22950
-      - http://secunia.com/advisories/22951
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.465035
-      - http://secunia.com/advisories/23208
-      - https://issues.rpath.com/browse/RPL-824
-      - http://www.novell.com/linux/security/advisories/2006_28_sr.html
-      - http://secunia.com/advisories/23335
-      - http://www.openpkg.com/security/advisories/OpenPKG-SA-2006.036.html
-      - http://www.redhat.com/support/errata/RHSA-2007-0356.html
-      - http://secunia.com/advisories/25329
-      - http://support.avaya.com/elmodocs2/security/ASA-2007-254.htm
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:209
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:210
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:211
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
-      - http://secunia.com/advisories/25742
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://www.vupen.com/english/advisories/2006/4521
-      - http://www.vupen.com/english/advisories/2006/4568
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/30290
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10324
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/453484/100/100/threaded
-      - http://www.securityfocus.com/archive/1/451874/100/200/threaded
-    reported: 2006-11-17
-    severity: ~
-  - cve: CVE-2002-1363
-    description: >
-      Portable Network Graphics (PNG) library libpng 1.2.5 and earlier
-      does not correctly calculate offsets, which allows remote attackers to
-      cause a denial of service (crash) and possibly execute arbitrary code
-      via a buffer overflow attack on the row buffers.
-    affected_versions: '<=1.2.5'
-    fixed_versions: ~
-    references:
-      - http://www.debian.org/security/2002/dsa-213
-      - https://bugzilla.fedora.us/show_bug.cgi?id=1943
-      - http://frontal2.mandriva.com/security/advisories?name=MDKSA-2003:008
-      - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:063
-      - http://www.redhat.com/support/errata/RHSA-2003-006.html
-      - http://www.redhat.com/support/errata/RHSA-2003-007.html
-      - http://www.redhat.com/support/errata/RHSA-2003-119.html
-      - http://www.redhat.com/support/errata/RHSA-2003-157.html
-      - http://www.redhat.com/support/errata/RHSA-2004-249.html
-      - http://www.redhat.com/support/errata/RHSA-2004-402.html
-      - http://www.novell.com/linux/security/advisories/2003_004_libpng.html
-      - http://www.securityfocus.com/bid/6431
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A3657
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/10925
-    reported: 2002-12-26
-    severity: ~
-  - cve: CVE-2004-0597
-    description: >
-      Multiple buffer overflows in libpng 1.2.5 and earlier, as used in
-      multiple products, allow remote attackers to execute arbitrary code
-      via malformed PNG images in which (1) the png_handle_tRNS function
-      does not properly validate the length of transparency chunk (tRNS)
-      data, or the (2) png_handle_sBIT or (3) png_handle_hIST functions do
-      not perform sufficient bounds checking.
-    affected_versions: '<=1.2.5'
-    fixed_versions: ~
-    references:
-      - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
-      - http://www.debian.org/security/2004/dsa-536
-      - http://www.securityfocus.com/bid/10857
-      - http://scary.beasts.org/security/CESA-2004-001.txt
-      - http://lists.apple.com/mhonarc/security-announce/msg00056.html
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
-      - http://www.redhat.com/support/errata/RHSA-2004-402.html
-      - http://www.redhat.com/support/errata/RHSA-2004-421.html
-      - http://www.redhat.com/support/errata/RHSA-2004-429.html
-      - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
-      - http://www.trustix.net/errata/2004/0040/
-      - http://www.mozilla.org/projects/security/known-vulnerabilities.html
-      - http://www.adobe.com/support/downloads/detail.jsp?ftpID=2679
-      - http://www.us-cert.gov/cas/techalerts/TA05-039A.html
-      - http://www.kb.cert.org/vuls/id/388984
-      - http://www.kb.cert.org/vuls/id/817368
-      - ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2005.49/SCOSA-2005.49.txt
-      - http://www.securityfocus.com/bid/15495
-      - http://www.coresecurity.com/common/showdoc.php?idx=421&idxseccion=10
-      - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
-      - http://secunia.com/advisories/22957
-      - http://secunia.com/advisories/22958
-      - http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-114816-02-1
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
-      - https://bugzilla.fedora.us/show_bug.cgi?id=1943
-      - http://marc.info/?l=bugtraq&m=109163866717909&w=2
-      - http://marc.info/?l=bugtraq&m=109761239318458&w=2
-      - http://marc.info/?l=bugtraq&m=109181639602978&w=2
-      - http://marc.info/?l=bugtraq&m=109900315219363&w=2
-      - http://marc.info/?l=bugtraq&m=110796779903455&w=2
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/16894
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7709
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A594
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A4492
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2378
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2274
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11284
-      - https://docs.microsoft.com/en-us/security-updates/securitybulletins/2005/ms05-009
-    reported: 2004-11-23
-    severity: ~
-  - cve: CVE-2004-0598
-    description: >
-      The png_handle_iCCP function in libpng 1.2.5 and earlier allows
-      remote attackers to cause a denial of service (application crash) via
-      a certain PNG image that triggers a null dereference.
-    affected_versions: '<=1.2.5'
-    fixed_versions: ~
-    references:
-      - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
-      - http://www.securityfocus.com/bid/10857
-      - http://scary.beasts.org/security/CESA-2004-001.txt
-      - http://lists.apple.com/mhonarc/security-announce/msg00056.html
-      - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
-      - http://www.debian.org/security/2004/dsa-536
-      - https://bugzilla.fedora.us/show_bug.cgi?id=1943
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
-      - http://www.redhat.com/support/errata/RHSA-2004-402.html
-      - http://www.redhat.com/support/errata/RHSA-2004-429.html
-      - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
-      - http://www.trustix.net/errata/2004/0040/
-      - http://www.mozilla.org/projects/security/known-vulnerabilities.html
-      - http://www.kb.cert.org/vuls/id/236656
-      - http://secunia.com/advisories/22957
-      - http://secunia.com/advisories/22958
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
-      - http://marc.info/?l=bugtraq&m=109163866717909&w=2
-      - http://marc.info/?l=bugtraq&m=109761239318458&w=2
-      - http://marc.info/?l=bugtraq&m=109181639602978&w=2
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/16895
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2572
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10203
-    reported: 2004-11-23
-    severity: ~
-  - cve: CVE-2004-0599
-    description: >
-      Multiple integer overflows in the (1) png_read_png in pngread.c or
-      (2) png_handle_sPLT functions in pngrutil.c or (3) progressive display
-      image reading capability in libpng 1.2.5 and earlier allow remote
-      attackers to cause a denial of service (application crash) via a
-      malformed PNG image.
-    affected_versions: '<=1.2.5'
-    fixed_versions: ~
-    references:
-      - http://www.securityfocus.com/bid/10857
-      - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
-      - http://scary.beasts.org/security/CESA-2004-001.txt
-      - http://lists.apple.com/mhonarc/security-announce/msg00056.html
-      - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
-      - http://www.debian.org/security/2004/dsa-536
-      - http://www.debian.org/security/2004/dsa-570
-      - http://www.debian.org/security/2004/dsa-571
-      - https://bugzilla.fedora.us/show_bug.cgi?id=1943
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
-      - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
-      - http://www.redhat.com/support/errata/RHSA-2004-402.html
-      - http://www.redhat.com/support/errata/RHSA-2004-421.html
-      - http://www.redhat.com/support/errata/RHSA-2004-429.html
-      - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
-      - http://www.trustix.net/errata/2004/0040/
-      - http://www.mozilla.org/projects/security/known-vulnerabilities.html
-      - http://www.kb.cert.org/vuls/id/160448
-      - http://www.kb.cert.org/vuls/id/286464
-      - http://www.kb.cert.org/vuls/id/477512
-      - ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2005.49/SCOSA-2005.49.txt
-      - http://www.securityfocus.com/bid/15495
-      - http://secunia.com/advisories/22957
-      - http://secunia.com/advisories/22958
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
-      - http://marc.info/?l=bugtraq&m=109163866717909&w=2
-      - http://marc.info/?l=bugtraq&m=109761239318458&w=2
-      - http://marc.info/?l=bugtraq&m=109181639602978&w=2
-      - http://marc.info/?l=bugtraq&m=109900315219363&w=2
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/16896
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1479
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10938
-    reported: 2004-11-23
-    severity: ~
-  - cve: CVE-2004-0768
-    description: >
-      libpng 1.2.5 and earlier does not properly calculate certain
-      buffer offsets, which could allow remote attackers to execute
-      arbitrary code via a buffer overflow attack.
-    affected_versions: '<=1.2.5'
-    fixed_versions: ~
-    references:
-      - http://www.debian.org/security/2004/dsa-536
-      - https://bugzilla.fedora.us/show_bug.cgi?id=1943
-      - http://secunia.com/advisories/33137
-      - http://security.gentoo.org/glsa/glsa-200812-15.xml
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/16914
-    reported: 2004-10-20
-    severity: ~
-  - cve: CVE-2006-3334
-    description: >
-      Buffer overflow in the png_decompress_chunk function in
-      pngrutil.c in libpng before 1.2.12 allows context-dependent attackers
-      to cause a denial of service and possibly execute arbitrary code via
-      unspecified vectors related to "chunk error processing," possibly
-      involving the "chunk_name".
-    affected_versions: '<1.2.12'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/project/shownotes.php?group_id=5624&release_id=428123
-      - http://www.securityfocus.com/bid/18698
-      - http://security.gentoo.org/glsa/glsa-200607-06.xml
-      - http://www.novell.com/linux/security/advisories/2006_16_sr.html
-      - http://secunia.com/advisories/22956
-      - http://secunia.com/advisories/22957
-      - http://secunia.com/advisories/22958
-      - http://www.novell.com/linux/security/advisories/2006_28_sr.html
-      - http://secunia.com/advisories/23335
-      - http://secunia.com/advisories/20960
-      - https://issues.rpath.com/browse/RPL-517
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:209
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:210
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:211
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://secunia.com/advisories/33137
-      - http://security.gentoo.org/glsa/glsa-200812-15.xml
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.vupen.com/english/advisories/2006/2585
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/27468
-      - http://www.securityfocus.com/archive/1/440594/100/0/threaded
-    reported: 2006-06-30
-    severity: ~
-  - cve: CVE-2006-7244
-    description: >
-      Memory leak in pngwutil.c in libpng 1.2.13beta1, and other
-      versions before 1.2.15beta3, allows context-dependent attackers to
-      cause a denial of service (memory leak or segmentation fault) via a
-      JPEG image containing an iCCP chunk with a negative embedded profile
-      length.
-    affected_versions: '<1.2.15'
-    fixed_versions: ~
-    references:
-      - https://bugs.gentoo.org/159216?id=159216
-      - http://www.openwall.com/lists/oss-security/2011/03/22/7
-      - http://www.openwall.com/lists/oss-security/2011/03/28/6
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=948ee23a2a400672b1751cfc646a7467741e9b2e#patch18
-    reported: 2011-08-31
-    severity: ~
-  - cve: CVE-2007-2445
-    description: >
-      The png_handle_tRNS function in pngrutil.c in libpng before 1.0.25
-      and 1.2.x before 1.2.17 allows remote attackers to cause a denial of
-      service (application crash) via a grayscale PNG image with a bad tRNS
-      chunk CRC value.
-    affected_versions: '<1.2.17'
-    fixed_versions: ~
-    references:
-      - http://sourceforge.net/project/shownotes.php?release_id=508653&group_id=5624
-      - http://sourceforge.net/project/shownotes.php?release_id=508656&group_id=5624
-      - http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/l/li/libpng/libpng-1.2.17-ADVISORY.txt
-      - http://www.kb.cert.org/vuls/id/684664
-      - http://secunia.com/advisories/25292
-      - https://issues.rpath.com/browse/RPL-1381
-      - http://openpkg.com/go/OpenPKG-SA-2007.013
-      - http://www.redhat.com/support/errata/RHSA-2007-0356.html
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.492650
-      - http://www.securityfocus.com/bid/24000
-      - http://www.securityfocus.com/bid/24023
-      - http://www.securitytracker.com/id?1018078
-      - http://secunia.com/advisories/25329
-      - http://secunia.com/advisories/25268
-      - http://secunia.com/advisories/25273
-      - http://support.avaya.com/elmodocs2/security/ASA-2007-254.htm
-      - http://irrlicht.sourceforge.net/changes.txt
-      - http://www.gentoo.org/security/en/glsa/glsa-200705-24.xml
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:116
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-102987-1
-      - http://www.novell.com/linux/security/advisories/2007_13_sr.html
-      - http://www.trustix.org/errata/2007/0019/
-      - http://www.ubuntu.com/usn/usn-472-1
-      - http://secunia.com/advisories/25353
-      - http://secunia.com/advisories/25461
-      - http://secunia.com/advisories/25554
-      - http://secunia.com/advisories/25571
-      - http://secunia.com/advisories/25742
-      - http://secunia.com/advisories/25867
-      - http://secunia.com/advisories/27056
-      - http://secunia.com/advisories/25787
-      - http://www.coresecurity.com/?action=item&id=2148
-      - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200871-1
-      - http://docs.info.apple.com/article.html?artnum=307562
-      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
-      - http://secunia.com/advisories/29420
-      - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
-      - http://secunia.com/advisories/30161
-      - http://www.debian.org/security/2008/dsa-1613
-      - http://secunia.com/advisories/31168
-      - http://www.debian.org/security/2009/dsa-1750
-      - http://secunia.com/advisories/34388
-      - http://www.vupen.com/english/advisories/2008/0924/references
-      - http://www.vupen.com/english/advisories/2007/1838
-      - http://www.vupen.com/english/advisories/2007/2385
-      - http://osvdb.org/36196
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/34340
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10094
-      - http://www.securityfocus.com/archive/1/489135/100/0/threaded
-      - http://www.securityfocus.com/archive/1/468910/100/0/threaded
-    reported: 2007-05-16
-    severity: ~
+- affected_versions: <1.6.8
+  cve: CVE-2013-6954
+  description: |
+    The png_do_expand_palette function in libpng before 1.6.8 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via (1) a PLTE chunk of zero bytes or (2) a NULL palette, related to pngrtran.c and pngset.c.'
+  fixed_versions: '>=1.6.8'
+  github_security_advisory:
+  - GHSA-jqh6-vqxw-fcv3
+  references:
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://sourceforge.net/p/libpng/code/ci/1faa6ff32c648acfe3cf30a58d31d7aebc24968c
+  - http://www.kb.cert.org/vuls/id/650142
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1045561
+  - http://sourceforge.net/projects/libpng/files/libpng16/1.6.8/
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2014:035
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128098.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128099.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127947.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/127952.html
+  - http://advisories.mageia.org/MGASA-2014-0075.html
+  - http://www.securityfocus.com/bid/64493
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128114.html
+  - http://lists.opensuse.org/opensuse-updates/2014-01/msg00071.html
+  - http://www.oracle.com/technetwork/topics/security/cpuapr2014-1972952.html
+  - http://www-01.ibm.com/support/docview.wss?uid=swg21672080
+  - http://www-01.ibm.com/support/docview.wss?uid=swg21676746
+  - http://secunia.com/advisories/58974
+  - http://secunia.com/advisories/59058
+  - https://www.ibm.com/support/docview.wss?uid=swg21675973
+  - http://security.gentoo.org/glsa/glsa-201406-32.xml
+  - http://marc.info/?l=bugtraq&m=140852974709252&w=2
+  - http://marc.info/?l=bugtraq&m=140852886808946&w=2
+  - https://access.redhat.com/errata/RHSA-2014:0414
+  - https://access.redhat.com/errata/RHSA-2014:0413
+  reported: 2014-01-12
+  severity: ~
+- affected_versions: '>1.6.0,<=1.6.9'
+  cve: CVE-2014-0333
+  description: |
+    The png_push_read_chunk function in pngpread.c in the progressive decoder in libpng 1.6.x through 1.6.9 allows remote attackers to cause a denial of service (infinite loop and CPU consumption) via an IDAT chunk with a length of zero.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-fpgr-xxq4-wvw4
+  references:
+  - ftp://ftp.simplesystems.org/pub/png/src/libpng16/patch-libpng16-vu684412.diff
+  - http://www.kb.cert.org/vuls/id/684412
+  - https://sourceforge.net/projects/libpng/files/libpng16/patch-libpng16-vu684412.diff
+  - http://lists.opensuse.org/opensuse-updates/2014-03/msg00029.html
+  reported: 2014-02-27
+  severity: ~
+- affected_versions: <1.5.21,<1.6.16
+  cve: CVE-2014-9495
+  description: |
+    Heap-based buffer overflow in the png_combine_row function in libpng before 1.5.21 and 1.6.x before 1.6.16, when running on 64-bit systems, might allow context-dependent attackers to execute arbitrary code via a "very wide interlaced" PNG image.
+  fixed_versions: '>=1.6.16'
+  github_security_advisory:
+  - GHSA-wpr3-pfv2-chjq
+  references:
+  - http://www.securitytracker.com/id/1031444
+  - http://www.openwall.com/lists/oss-security/2015/01/04/3
+  - http://www.securityfocus.com/bid/71820
+  - http://sourceforge.net/p/png-mng/mailman/message/33173461/
+  - http://www.openwall.com/lists/oss-security/2015/01/10/1
+  - http://sourceforge.net/p/png-mng/mailman/message/33172831/
+  - http://www.openwall.com/lists/oss-security/2015/01/10/3
+  - http://secunia.com/advisories/62725
+  - https://support.apple.com/HT206167
+  - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
+  reported: 2015-01-10
+  severity: ~
+- affected_versions: <1.5.21,<1.6.16
+  cve: CVE-2015-0973
+  description: |
+    Buffer overflow in the png_read_IDAT_data function in pngrutil.c in libpng before 1.5.21 and 1.6.x before 1.6.16 allows context-dependent attackers to execute arbitrary code via IDAT data with a large width, a different vulnerability than CVE-2014-9495.
+  fixed_versions: '>=1.6.16'
+  github_security_advisory:
+  - GHSA-5gg5-9r5r-wpgh
+  references:
+  - http://tfpwn.com/files/libpng_heap_overflow_1.6.15.txt
+  - http://www.openwall.com/lists/oss-security/2015/01/10/1
+  - http://www.openwall.com/lists/oss-security/2015/01/10/3
+  - http://sourceforge.net/p/png-mng/mailman/message/33173461/
+  - http://secunia.com/advisories/62725
+  - https://support.apple.com/HT206167
+  - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html
+  reported: 2015-01-18
+  severity: ~
+- affected_versions: <1.6.19
+  cve: CVE-2015-8126
+  description: |
+    Multiple buffer overflows in the (1) png_set_PLTE and (2) png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before 1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x before 1.6.19 allow remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a small bit-depth value in an IHDR (aka image header) chunk in a PNG image.
+  fixed_versions: '>=1.6.19'
+  github_security_advisory:
+  - GHSA-rr6q-q2jh-948f
+  references:
+  - http://www.openwall.com/lists/oss-security/2015/11/12/2
+  - http://www.debian.org/security/2015/dsa-3399
+  - http://www.ubuntu.com/usn/USN-2815-1
+  - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+  - https://code.google.com/p/chromium/issues/detail?id=560291
+  - http://googlechromereleases.blogspot.com/2016/03/stable-channel-update.html
+  - https://support.apple.com/HT206167
+  - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+  - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+  - https://access.redhat.com/errata/RHSA-2016:1430
+  - http://www.securityfocus.com/bid/77568
+  - https://security.gentoo.org/glsa/201603-09
+  - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00028.html
+  - http://www.debian.org/security/2016/dsa-3507
+  - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00015.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00014.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00018.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177344.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177382.html
+  - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+  - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+  - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+  - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+  - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+  - http://lists.opensuse.org/opensuse-updates/2016-01/msg00028.html
+  - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
+  - http://lists.opensuse.org/opensuse-updates/2015-11/msg00159.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172797.html
+  - http://lists.opensuse.org/opensuse-updates/2015-12/msg00063.html
+  - http://lists.opensuse.org/opensuse-updates/2015-12/msg00062.html
+  - http://lists.opensuse.org/opensuse-updates/2016-01/msg00029.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+  - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00034.html
+  - http://www.securitytracker.com/id/1034142
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172769.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172823.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172324.html
+  - http://lists.opensuse.org/opensuse-updates/2016-01/msg00030.html
+  - https://security.gentoo.org/glsa/201611-08
+  reported: 2015-11-13
+  severity: ~
+- affected_versions: <1.6.20
+  cve: CVE-2015-8472
+  description: |
+    Buffer overflow in the png_set_PLTE function in libpng before 1.0.65, 1.1.x and 1.2.x before 1.2.55, 1.3.x, 1.4.x before 1.4.18, 1.5.x before 1.5.25, and 1.6.x before 1.6.20 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a small bit-depth value in an IHDR (aka image header) chunk in a PNG image. NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-8126.
+  fixed_versions: '>=1.6.20'
+  github_security_advisory:
+  - GHSA-h5hh-r95x-mmfq
+  references:
+  - http://sourceforge.net/projects/libpng/files/libpng16/1.6.20/
+  - http://www.openwall.com/lists/oss-security/2015/12/03/6
+  - http://sourceforge.net/projects/libpng/files/libpng12/1.2.55/
+  - http://sourceforge.net/projects/libpng/files/libpng10/1.0.65/
+  - http://sourceforge.net/projects/libpng/files/libpng14/1.4.18/
+  - http://www.securityfocus.com/bid/78624
+  - http://sourceforge.net/projects/libpng/files/libpng15/1.5.25/
+  - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+  - https://support.apple.com/HT206167
+  - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+  - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+  - https://access.redhat.com/errata/RHSA-2016:1430
+  - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+  - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+  - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+  - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+  - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+  - http://www.debian.org/security/2016/dsa-3443
+  reported: 2016-01-21
+  severity: high
+- affected_versions: <1.6.27
+  cve: CVE-2016-10087
+  description: |
+    The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x before 1.6.27 allows context-dependent attackers to cause a NULL pointer dereference vectors involving loading a text chunk into a png structure, removing the text, and then adding another text chunk to the structure.
+  fixed_versions: '>=1.6.27'
+  github_security_advisory:
+  - GHSA-r346-8vrh-m3wr
+  references:
+  - http://www.openwall.com/lists/oss-security/2016/12/30/4
+  - http://www.openwall.com/lists/oss-security/2016/12/29/2
+  - http://www.securityfocus.com/bid/95157
+  - https://security.gentoo.org/glsa/201701-74
+  - https://usn.ubuntu.com/3712-2/
+  - https://usn.ubuntu.com/3712-1/
+  - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+  - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+  reported: 2017-01-30
+  severity: high
+- affected_versions: <1.6.20
+  cve: CVE-2016-3751
+  description: |
+    Unspecified vulnerability in libpng before 1.6.20, as used in Android 4.x before 4.4.4, 5.0.x before 5.0.2, 5.1.x before 5.1.1, and 6.x before 2016-07-01, allows attackers to gain privileges via a crafted application, as demonstrated by obtaining Signature or SignatureOrSystem access, aka internal bug 23265085.
+  fixed_versions: '>=1.6.20'
+  github_security_advisory:
+  - GHSA-38fg-rh2c-fh5c
+  references:
+  - http://source.android.com/security/bulletin/2016-07-01.html
+  - http://www.openwall.com/lists/oss-security/2016/07/09/4
+  - https://android.googlesource.com/platform/external/libpng/+/9d4853418ab2f754c2b63e091c29c5529b8b86ca
+  reported: 2016-07-11
+  severity: high
+- affected_versions: <1.6.32
+  cve: CVE-2017-12652
+  description: |
+    libpng before 1.6.32 does not properly check the length of chunks against the user limit.
+  fixed_versions: '>=1.6.32'
+  github_security_advisory:
+  - GHSA-94xg-qm4r-9r7c
+  references:
+  - https://github.com/glennrp/libpng/blob/df7e9dae0c4aac63d55361e35709c864fa1b8363/ANNOUNCE
+  - http://www.securityfocus.com/bid/109269
+  - https://support.f5.com/csp/article/K88124225
+  - https://support.f5.com/csp/article/K88124225?utm_source=f5support&amp;utm_medium=RSS
+  - https://security.netapp.com/advisory/ntap-20220506-0003/
+  reported: 2019-07-10
+  severity: critical
+- affected_versions: ~
+  comment: |
+    This appears to be an issue with opencv, not libpng
+  cve: CVE-2019-9423
+  description: |
+    In opencv calls that use libpng, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges required. User interaction is not required for exploitation. Product: AndroidVersions: Android-10Android ID: A-110986616
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-8849-5h85-98qw
+  ignore: true
+  references:
+  - https://source.android.com/security/bulletin/android-10
+  - http://www.openwall.com/lists/oss-security/2019/10/25/17
+  - http://www.openwall.com/lists/oss-security/2019/10/27/1
+  - http://www.openwall.com/lists/oss-security/2019/11/07/1
+  - http://www.openwall.com/lists/oss-security/2020/12/05/1
+  reported: 2019-09-27
+  severity: high
+- affected_versions: '>=1.6.0,<1.6.37'
+  cve: CVE-2019-7317
+  description: |
+    png_image_free in png.c in libpng 1.6.x before 1.6.37 has a use-after-free because png_image_free_function is called under png_safe_execute.
+  fixed_versions: '>1.6.37'
+  github_security_advisory:
+  - GHSA-m96g-x499-p5f9
+  references:
+  - https://github.com/glennrp/libpng/issues/275
+  - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
+  - https://seclists.org/bugtraq/2019/Apr/30
+  - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
+  - https://www.debian.org/security/2019/dsa-4435
+  - https://seclists.org/bugtraq/2019/Apr/36
+  - https://usn.ubuntu.com/3962-1/
+  - https://usn.ubuntu.com/3991-1/
+  - https://seclists.org/bugtraq/2019/May/56
+  - https://seclists.org/bugtraq/2019/May/59
+  - https://www.debian.org/security/2019/dsa-4448
+  - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
+  - https://access.redhat.com/errata/RHSA-2019:1265
+  - https://access.redhat.com/errata/RHSA-2019:1269
+  - https://access.redhat.com/errata/RHSA-2019:1267
+  - https://www.debian.org/security/2019/dsa-4451
+  - https://seclists.org/bugtraq/2019/May/67
+  - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
+  - https://usn.ubuntu.com/3997-1/
+  - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
+  - https://access.redhat.com/errata/RHSA-2019:1310
+  - https://access.redhat.com/errata/RHSA-2019:1309
+  - https://access.redhat.com/errata/RHSA-2019:1308
+  - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
+  - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
+  - http://www.securityfocus.com/bid/108098
+  - https://security.netapp.com/advisory/ntap-20190719-0005/
+  - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+  - https://usn.ubuntu.com/4080-1/
+  - https://usn.ubuntu.com/4083-1/
+  - https://security.gentoo.org/glsa/201908-02
+  - https://access.redhat.com/errata/RHSA-2019:2494
+  - https://access.redhat.com/errata/RHSA-2019:2495
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
+  - https://access.redhat.com/errata/RHSA-2019:2585
+  - https://access.redhat.com/errata/RHSA-2019:2590
+  - https://access.redhat.com/errata/RHSA-2019:2592
+  - https://access.redhat.com/errata/RHSA-2019:2737
+  - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
+  - https://www.oracle.com/security-alerts/cpuApr2021.html
+  - https://www.oracle.com/security-alerts/cpuoct2021.html
+  reported: 2019-02-04
+  severity: medium
+- affected_versions:
+  - '>=1.0.0,<1.0.64'
+  - '>=1.2.0,1.2.54'
+  - '>=1.4.0,<1.4.17'
+  cve: CVE-2015-7981
+  description: |
+    The png_convert_to_rfc1123 function in png.c in libpng 1.0.x before 1.0.64, 1.2.x before 1.2.54, and 1.4.x before 1.4.17 allows remote attackers to obtain sensitive process memory information via crafted tIME chunk data in an image file, which triggers an out-of-bounds read.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-fr3h-2jww-582m
+  references:
+  - http://sourceforge.net/projects/libpng/files/libpng14/1.4.17/
+  - http://sourceforge.net/p/libpng/bugs/241/
+  - http://sourceforge.net/projects/libpng/files/libpng10/1.0.64/
+  - http://www.openwall.com/lists/oss-security/2015/10/26/1
+  - http://www.debian.org/security/2015/dsa-3399
+  - http://www.openwall.com/lists/oss-security/2015/10/26/3
+  - http://www.ubuntu.com/usn/USN-2815-1
+  - http://sourceforge.net/projects/libpng/files/libpng12/1.2.54/
+  - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+  - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+  - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+  - https://access.redhat.com/errata/RHSA-2016:1430
+  - http://www.securityfocus.com/bid/77304
+  - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
+  - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
+  - http://www.securitytracker.com/id/1034393
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
+  - https://security.gentoo.org/glsa/201611-08
+  reported: 2015-11-24
+  severity: ~
+- affected_versions:
+  - '>=0.90,<=0.99'
+  - '>=1.0.0,<1.066'
+  - '>=1.1.0,<1.2.56'
+  - '>=1.3.0,<1.4.19'
+  - '>=1.5.0,<1.5.26'
+  cve: CVE-2015-8540
+  description: |
+    Integer underflow in the png_check_keyword function in pngwutil.c in libpng 0.90 through 0.99, 1.0.x before 1.0.66, 1.1.x and 1.2.x before 1.2.56, 1.3.x and 1.4.x before 1.4.19, and 1.5.x before 1.5.26 allows remote attackers to have unspecified impact via a space character as a keyword in a PNG image, which triggers an out-of-bounds read.
+  fixed_versions: '>=1.5.26'
+  github_security_advisory:
+  - GHSA-7qhq-6293-wrx3
+  references:
+  - http://sourceforge.net/projects/libpng/files/libpng10/1.0.66/
+  - http://www.openwall.com/lists/oss-security/2015/12/10/7
+  - http://www.openwall.com/lists/oss-security/2015/12/11/2
+  - http://sourceforge.net/projects/libpng/files/libpng12/1.2.56/
+  - http://sourceforge.net/p/libpng/bugs/244/
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-December/174435.html
+  - http://sourceforge.net/projects/libpng/files/libpng15/1.5.26/
+  - http://sourceforge.net/projects/libpng/files/libpng14/1.4.19/
+  - http://www.securityfocus.com/bid/80592
+  - http://sourceforge.net/p/libpng/code/ci/d9006f683c641793252d92254a75ae9b815b42ed/
+  - http://www.openwall.com/lists/oss-security/2015/12/10/6
+  - http://www.openwall.com/lists/oss-security/2015/12/17/10
+  - http://www.openwall.com/lists/oss-security/2015/12/11/1
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+  - https://access.redhat.com/errata/RHSA-2016:1430
+  - https://security.gentoo.org/glsa/201611-08
+  - http://www.debian.org/security/2016/dsa-3443
+  - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+  - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+  reported: 2016-04-14
+  severity: high
+- affected_versions:
+  - <1.0.29
+  - '>=1.2.0,<1.2.21'
+  cve: CVE-2007-5266
+  description: |
+    Off-by-one error in ICC profile chunk handling in the png_set_iCCP function in pngset.c in libpng before 1.0.29 beta1 and 1.2.x before 1.2.21 beta1 allows remote attackers to cause a denial of service (crash) via a crafted PNG image that prevents a name field from being NULL terminated.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-rprg-9vqr-w8h6
+  references:
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=5122753600C3E94F87FBDFFCC090D1FF0400EA68%40MERCMBX07.na.sas.com&forum_name=png-mng-implement
+  - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0709140846k24e9a040r81623783b6b1c00f%40mail.gmail.com
+  - https://issues.rpath.com/browse/RPL-1814
+  - http://bugs.gentoo.org/show_bug.cgi?id=195261
+  - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
+  - http://www.securityfocus.com/bid/25957
+  - http://secunia.com/advisories/27284
+  - http://secunia.com/advisories/27529
+  - http://secunia.com/advisories/27629
+  - http://secunia.com/advisories/27746
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
+  - http://secunia.com/advisories/30161
+  - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
+  - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
+  - http://secunia.com/advisories/30430
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://secunia.com/advisories/35302
+  - http://secunia.com/advisories/35386
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/1697
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/483582/100/0/threaded
+  reported: 2007-10-08
+  severity: ~
+- affected_versions: <1.2.22
+  cve: CVE-2007-5267
+  description: |
+    Off-by-one error in ICC profile chunk handling in the png_set_iCCP function in pngset.c in libpng before 1.2.22 beta1 allows remote attackers to cause a denial of service (crash) via a crafted PNG image, due to an incorrect fix for CVE-2007-5266.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-c7qv-v9rv-f39q
+  references:
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=47067C84.7010205%40playstation.sony.com&forum_name=png-mng-implement
+  - http://sourceforge.net/mailarchive/message.php?msg_name=3.0.6.32.20071005143158.012ada08%40mail.comcast.net
+  - http://secunia.com/advisories/27130
+  - https://issues.rpath.com/browse/RPL-1814
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
+  - http://www.securityfocus.com/bid/25957
+  - http://secunia.com/advisories/27284
+  - http://secunia.com/advisories/27746
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://secunia.com/advisories/35302
+  - http://secunia.com/advisories/35386
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.vupen.com/english/advisories/2007/3391
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/483582/100/0/threaded
+  reported: 2007-10-08
+  severity: ~
+- affected_versions:
+  - <1.0.29
+  - '>=1.2.0,<1.2.21'
+  cve: CVE-2007-5268
+  description: |
+    pngrtran.c in libpng before 1.0.29 and 1.2.x before 1.2.21 use (1) logical instead of bitwise operations and (2) incorrect comparisons, which might allow remote attackers to cause a denial of service (crash) via a crafted PNG image.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-mpjr-rfjg-826r
+  references:
+  - http://sourceforge.net/mailarchive/message.php?msg_name=5122753600C3E94F87FBDFFCC090D1FF0400EBC5%40MERCMBX07.na.sas.com
+  - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0709140846k24e9a040r81623783b6b1c00f%40mail.gmail.com
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=3.0.6.32.20071004082318.012a7628%40mail.comcast.net&forum_name=png-mng-implement
+  - http://secunia.com/advisories/27093
+  - https://issues.rpath.com/browse/RPL-1814
+  - http://bugs.gentoo.org/show_bug.cgi?id=195261
+  - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
+  - http://www.ubuntu.com/usn/usn-538-1
+  - http://www.securityfocus.com/bid/25956
+  - http://secunia.com/advisories/27284
+  - http://secunia.com/advisories/27405
+  - http://secunia.com/advisories/27529
+  - http://secunia.com/advisories/27629
+  - http://secunia.com/advisories/27746
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
+  - http://secunia.com/advisories/30161
+  - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
+  - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
+  - http://secunia.com/advisories/30430
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://secunia.com/advisories/35302
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://secunia.com/advisories/35386
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/1697
+  - http://www.vupen.com/english/advisories/2007/3390
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/483582/100/0/threaded
+  reported: 2007-10-08
+  severity: ~
+- affected_versions:
+  - <1.0.29
+  - '>=1.2.0,<1.2.21'
+  cve: CVE-2007-5269
+  description: |
+    Certain chunk handlers in libpng before 1.0.29 and 1.2.x before 1.2.21 allow remote attackers to cause a denial of service (crash) via crafted (1) pCAL (png_handle_pCAL), (2) sCAL (png_handle_sCAL), (3) tEXt (png_push_read_tEXt), (4) iTXt (png_handle_iTXt), and (5) ztXT (png_handle_ztXt) chunking in PNG images, which trigger out-of-bounds read operations.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-fvgw-xjx9-w93q
+  references:
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=3.0.6.32.20071004082318.012a7628%40mail.comcast.net&forum_name=png-mng-implement
+  - http://secunia.com/advisories/27093
+  - https://issues.rpath.com/browse/RPL-1814
+  - https://bugzilla.redhat.com/show_bug.cgi?id=327791
+  - https://bugzilla.redhat.com/show_bug.cgi?id=337461
+  - http://bugs.gentoo.org/show_bug.cgi?id=195261
+  - http://support.avaya.com/elmodocs2/security/ASA-2007-460.htm
+  - https://www.redhat.com/archives/fedora-package-announce/2007-October/msg00353.html
+  - https://www.redhat.com/archives/fedora-package-announce/2007-October/msg00356.html
+  - https://www.redhat.com/archives/fedora-package-announce/2007-November/msg00072.html
+  - http://www.gentoo.org/security/en/glsa/glsa-200711-08.xml
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2007:217
+  - http://www.redhat.com/support/errata/RHSA-2007-0992.html
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.520323
+  - http://www.novell.com/linux/security/advisories/2007_25_sr.html
+  - http://www.ubuntu.com/usn/usn-538-1
+  - http://www.securityfocus.com/bid/25956
+  - http://www.securitytracker.com/id?1018849
+  - http://secunia.com/advisories/27284
+  - http://secunia.com/advisories/27405
+  - http://secunia.com/advisories/27369
+  - http://secunia.com/advisories/27391
+  - http://secunia.com/advisories/27492
+  - http://secunia.com/advisories/27529
+  - http://secunia.com/advisories/27662
+  - http://secunia.com/advisories/27629
+  - http://secunia.com/advisories/27746
+  - http://secunia.com/advisories/27965
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://lists.vmware.com/pipermail/security-announce/2008/000008.html
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://www.vmware.com/security/advisories/VMSA-2008-0005.html
+  - http://www.vmware.com/support/ace2/doc/releasenotes_ace2.html
+  - http://www.vmware.com/support/player/doc/releasenotes_player.html
+  - http://www.vmware.com/support/player2/doc/releasenotes_player2.html
+  - http://www.vmware.com/support/server/doc/releasenotes_server.html
+  - http://www.vmware.com/support/ws55/doc/releasenotes_ws55.html
+  - http://www.vmware.com/support/ws6/doc/releasenotes_ws6.html
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://www.securityfocus.com/bid/28276
+  - http://secunia.com/advisories/29420
+  - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
+  - http://secunia.com/advisories/30161
+  - http://lists.apple.com/archives/security-announce/2008//May/msg00001.html
+  - http://www.us-cert.gov/cas/techalerts/TA08-150A.html
+  - http://secunia.com/advisories/30430
+  - http://secunia.com/advisories/31712
+  - http://www.vmware.com/security/advisories/VMSA-2008-0014.html
+  - http://secunia.com/advisories/31713
+  - http://lists.grok.org.uk/pipermail/full-disclosure/2008-August/064118.html
+  - http://www.debian.org/security/2009/dsa-1750
+  - http://secunia.com/advisories/34388
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://secunia.com/advisories/35302
+  - http://secunia.com/advisories/35386
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/1697
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.vupen.com/english/advisories/2008/0905/references
+  - http://www.vupen.com/english/advisories/2007/3390
+  - http://www.vupen.com/english/advisories/2008/2466
+  - http://security.gentoo.org/glsa/glsa-201209-25.xml
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10614
+  - http://www.securityfocus.com/archive/1/495869/100/0/threaded
+  - http://www.securityfocus.com/archive/1/489739/100/0/threaded
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/483582/100/0/threaded
+  reported: 2007-10-08
+  severity: ~
+- affected_versions:
+  - '>=1.0.6,<=1.0.32'
+  - '>=1.2.0,<=1.0.26'
+  - '>=1.4.0,<1.4.1'
+  cve: CVE-2008-1382
+  description: |
+    libpng 1.0.6 through 1.0.32, 1.2.0 through 1.2.26, and 1.4.0beta01 through 1.4.0beta19 allows context-dependent attackers to cause a denial of service (crash) and possibly execute arbitrary code via a PNG file with zero length "unknown" chunks, which trigger an access of uninitialized memory.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-wcwj-fgp8-wvg8
+  references:
+  - http://www.ocert.org/advisories/ocert-2008-003.html
+  - http://libpng.sourceforge.net/Advisory-1.2.26.txt
+  - http://secunia.com/advisories/29792
+  - http://www.securityfocus.com/bid/28770
+  - http://www.securitytracker.com/id?1019840
+  - http://security.gentoo.org/glsa/glsa-200804-15.xml
+  - http://secunia.com/advisories/29678
+  - http://www.osvdb.org/44364
+  - http://wiki.rpath.com/wiki/Advisories:rPSA-2008-0151
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2008&m=slackware-security.541247
+  - http://lists.opensuse.org/opensuse-security-announce/2008-04/msg00011.html
+  - http://secunia.com/advisories/29992
+  - http://secunia.com/advisories/29957
+  - http://secunia.com/advisories/30009
+  - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00721.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00960.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00951.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00033.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00080.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00111.html
+  - http://secunia.com/advisories/30402
+  - http://secunia.com/advisories/30486
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2008:156
+  - http://lists.apple.com/archives/security-announce//2008/Sep/msg00005.html
+  - http://secunia.com/advisories/31882
+  - http://www.us-cert.gov/cas/techalerts/TA08-260A.html
+  - http://security.gentoo.org/glsa/glsa-200805-10.xml
+  - http://secunia.com/advisories/30174
+  - http://secunia.com/advisories/30157
+  - http://secunia.com/advisories/33137
+  - http://security.gentoo.org/glsa/glsa-200812-15.xml
+  - http://secunia.com/advisories/34388
+  - http://www.debian.org/security/2009/dsa-1750
+  - http://support.apple.com/kb/HT3549
+  - http://secunia.com/advisories/35074
+  - http://lists.apple.com/archives/security-announce/2009/May/msg00002.html
+  - http://www.us-cert.gov/cas/techalerts/TA09-133A.html
+  - http://www.vupen.com/english/advisories/2009/1297
+  - http://secunia.com/advisories/35258
+  - http://www.vmware.com/security/advisories/VMSA-2009-0007.html
+  - http://www.vupen.com/english/advisories/2009/1451
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://secunia.com/advisories/35302
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://secunia.com/advisories/35386
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://secunia.com/advisories/34152
+  - http://www.redhat.com/support/errata/RHSA-2009-0333.html
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/1225/references
+  - http://www.vupen.com/english/advisories/2008/2584
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/41800
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6275
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10326
+  - http://www.securityfocus.com/archive/1/503912/100/0/threaded
+  - http://www.securityfocus.com/archive/1/491424/100/0/threaded
+  - http://www.securityfocus.com/archive/1/490823/100/0/threaded
+  reported: 2008-04-14
+  severity: ~
+- affected_versions: <1.4.0
+  cve: CVE-2008-3964
+  description: |
+    Multiple off-by-one errors in libpng before 1.2.32beta01, and 1.4 before 1.4.0beta34, allow context-dependent attackers to cause a denial of service (crash) or have unspecified other impact via a PNG image with crafted zTXt chunks, related to (1) the png_push_read_zTXt function in pngread.c, and possibly related to (2) pngtest.c.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-fj2p-r342-gx3m
+  references:
+  - http://www.openwall.com/lists/oss-security/2008/09/09/3
+  - http://sourceforge.net/tracker/index.php?func=detail&aid=2095669&group_id=5624&atid=105624
+  - http://sourceforge.net/project/shownotes.php?release_id=624518
+  - http://www.openwall.com/lists/oss-security/2008/09/09/8
+  - http://sourceforge.net/project/shownotes.php?group_id=5624&release_id=624517
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=e56ccc8f0809180317u6a5306fg14683947affb3e1b%40mail.gmail.com&forum_name=png-mng-implement
+  - http://www.securityfocus.com/bid/31049
+  - http://www.kb.cert.org/vuls/id/889484
+  - http://secunia.com/advisories/33137
+  - http://security.gentoo.org/glsa/glsa-200812-15.xml
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://secunia.com/advisories/35302
+  - http://secunia.com/advisories/35386
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://secunia.com/advisories/31781
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2008/2512
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/44928
+  reported: 2008-09-11
+  severity: ~
+- affected_versions:
+  - <1.0.42
+  - '>=1.2.0,<1.2.34'
+  cve: CVE-2008-5907
+  description: |
+    The png_check_keyword function in pngwutil.c in libpng before 1.0.42, and 1.2.x before 1.2.34, might allow context-dependent attackers to set the value of an arbitrary memory location to zero via vectors involving creation of crafted PNG files with keywords, related to an implicit cast of the '\\0' character constant to a NULL pointer. NOTE: some sources incorrectly report this as a double free vulnerability.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-598m-m5h8-fc92
+  references:
+  - http://libpng.sourceforge.net/index.html
+  - http://openwall.com/lists/oss-security/2009/01/09/1
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=4B6F0239C13D0245820603C036D180BC79FBAA%40CABOTUKEXCH01.cabot.local&forum_name=png-mng-implement
+  - http://lists.opensuse.org/opensuse-security-announce/2009-02/msg00000.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
+  - http://security.gentoo.org/glsa/glsa-200903-28.xml
+  - http://secunia.com/advisories/34320
+  - http://secunia.com/advisories/34388
+  - http://www.debian.org/security/2009/dsa-1750
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/48128
+  reported: 2009-01-15
+  severity: ~
+- affected_versions: <1.4.0
+  cve: CVE-2008-6218
+  description: |
+    Memory leak in the png_handle_tEXt function in pngrutil.c in libpng before 1.2.33 rc02 and 1.4.0 beta36 allows context-dependent attackers to cause a denial of service (memory exhaustion) via a crafted PNG file.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-8p6q-rjmr-6gp9
+  references:
+  - http://secunia.com/advisories/32418
+  - http://www.securitytracker.com/id?1021104
+  - http://www.securityfocus.com/bid/31920
+  - http://sourceforge.net/project/shownotes.php?release_id=635837
+  - http://sourceforge.net/project/shownotes.php?release_id=635463&group_id=5624
+  - http://security.gentoo.org/glsa/glsa-200903-28.xml
+  - http://wiki.rpath.com/Advisories:rPSA-2009-0046
+  - http://secunia.com/advisories/34265
+  - http://secunia.com/advisories/34320
+  - http://secunia.com/advisories/34388
+  - http://www.debian.org/security/2009/dsa-1750
+  - http://www.vupen.com/english/advisories/2010/1837
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
+  - http://www.vupen.com/english/advisories/2008/2917
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/46115
+  - http://www.securityfocus.com/archive/1/501767/100/0/threaded
+  reported: 2009-02-20
+  severity: ~
+- affected_versions:
+  - <1.0.43
+  - '>=1.2.0,<1.2.35'
+  cve: CVE-2009-0040
+  description: |
+    The PNG reference library (aka libpng) before 1.0.43, and 1.2.x before 1.2.35, as used in pngcrush and other applications, allows context-dependent attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file that triggers a free of an uninitialized pointer in (1) the png_read_png function, (2) pCAL chunk handling, or (3) setup of 16-bit gamma tables.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-m968-rq7m-646j
+  references:
+  - ftp://ftp.simplesystems.org/pub/png/src/libpng-1.2.34-ADVISORY.txt
+  - http://downloads.sourceforge.net/libpng/libpng-1.2.34-ADVISORY.txt
+  - http://secunia.com/advisories/33976
+  - http://sourceforge.net/project/shownotes.php?group_id=1689&release_id=662441
+  - http://sourceforge.net/mailarchive/message.php?msg_name=e56ccc8f0902181726i200f4bf0n20d919473ec409b7%40mail.gmail.com
+  - http://secunia.com/advisories/33970
+  - http://www.securityfocus.com/bid/33827
+  - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00000.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:051
+  - http://secunia.com/advisories/34145
+  - http://support.avaya.com/japple/css/japple?temp.documentID=366362&temp.productID=154235&temp.releaseID=361845&temp.bucketID=126655&PAGE=Document
+  - http://www.securityfocus.com/bid/33990
+  - http://secunia.com/advisories/34272
+  - http://secunia.com/advisories/34210
+  - http://secunia.com/advisories/34265
+  - http://wiki.rpath.com/Advisories:rPSA-2009-0046
+  - http://security.gentoo.org/glsa/glsa-200903-28.xml
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:075
+  - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00002.html
+  - http://www.vupen.com/english/advisories/2009/0632
+  - http://secunia.com/advisories/34320
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00272.html
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-069.htm
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00412.html
+  - http://www.debian.org/security/2009/dsa-1750
+  - http://secunia.com/advisories/34388
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00771.html
+  - http://secunia.com/advisories/34324
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00769.html
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.405420
+  - http://secunia.com/advisories/34462
+  - http://secunia.com/advisories/34464
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.433952
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:083
+  - http://lists.opensuse.org/opensuse-security-announce/2009-04/msg00009.html
+  - http://lists.apple.com/archives/security-announce/2009/May/msg00002.html
+  - http://www.us-cert.gov/cas/techalerts/TA09-133A.html
+  - http://secunia.com/advisories/35074
+  - http://support.apple.com/kb/HT3549
+  - http://www.vupen.com/english/advisories/2009/1297
+  - http://www.vmware.com/security/advisories/VMSA-2009-0007.html
+  - http://secunia.com/advisories/35258
+  - http://www.vupen.com/english/advisories/2009/1462
+  - http://www.vupen.com/english/advisories/2009/1451
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-259989-1
+  - http://www.kb.cert.org/vuls/id/649212
+  - http://secunia.com/advisories/35302
+  - http://secunia.com/advisories/35379
+  - http://support.apple.com/kb/HT3613
+  - http://www.vupen.com/english/advisories/2009/1522
+  - http://lists.apple.com/archives/security-announce/2009/jun/msg00002.html
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-208.htm
+  - http://secunia.com/advisories/35386
+  - http://www.vupen.com/english/advisories/2009/1560
+  - http://www.vupen.com/english/advisories/2009/1621
+  - http://lists.apple.com/archives/security-announce/2009/Jun/msg00005.html
+  - http://support.apple.com/kb/HT3639
+  - http://www.vupen.com/english/advisories/2009/2172
+  - http://support.apple.com/kb/HT3757
+  - http://secunia.com/advisories/36096
+  - http://lists.apple.com/archives/security-announce/2009/Aug/msg00001.html
+  - http://www.us-cert.gov/cas/techalerts/TA09-218A.html
+  - http://www.debian.org/security/2009/dsa-1830
+  - http://lists.vmware.com/pipermail/security-announce/2009/000062.html
+  - http://www.redhat.com/support/errata/RHSA-2009-0333.html
+  - http://www.redhat.com/support/errata/RHSA-2009-0315.html
+  - http://secunia.com/advisories/34143
+  - http://www.redhat.com/support/errata/RHSA-2009-0325.html
+  - http://www.redhat.com/support/errata/RHSA-2009-0340.html
+  - http://secunia.com/advisories/34137
+  - http://secunia.com/advisories/34140
+  - http://secunia.com/advisories/34152
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-77-1020521.1-1
+  - http://www.vupen.com/english/advisories/2009/0473
+  - http://www.vupen.com/english/advisories/2009/0469
+  - http://security.gentoo.org/glsa/glsa-201209-25.xml
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/48819
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6458
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10316
+  - http://www.securityfocus.com/archive/1/505990/100/0/threaded
+  - http://www.securityfocus.com/archive/1/503912/100/0/threaded
+  - http://www.securityfocus.com/archive/1/501767/100/0/threaded
+  reported: 2009-02-22
+  severity: ~
+- affected_versions: <1.2.37
+  cve: CVE-2009-2042
+  description: |
+    libpng before 1.2.37 does not properly parse 1-bit interlaced images with width values that are not divisible by 8, which causes libpng to include uninitialized bits in certain rows of a PNG file and might allow remote attackers to read portions of sensitive memory via "out-of-bounds pixels" in the file.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-rh45-m734-j52q
+  references:
+  - http://www.securityfocus.com/bid/35233
+  - http://secunia.com/advisories/35346
+  - http://www.vupen.com/english/advisories/2009/1510
+  - http://www.libpng.org/pub/png/libpng.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00630.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00218.html
+  - http://secunia.com/advisories/35470
+  - http://secunia.com/advisories/35524
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.551809
+  - http://security.gentoo.org/glsa/glsa-200906-01.xml
+  - http://secunia.com/advisories/35594
+  - http://ubuntu.com/usn/usn-913-1
+  - http://www.vupen.com/english/advisories/2010/0637
+  - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+  - http://support.apple.com/kb/HT4077
+  - http://secunia.com/advisories/39215
+  - http://lists.vmware.com/pipermail/security-announce/2010/000090.html
+  - http://archives.neohapsis.com/archives/bugtraq/2010-04/0077.html
+  - http://archives.neohapsis.com/archives/fulldisclosure/2010-04/0121.html
+  - http://secunia.com/advisories/39206
+  - http://www.vmware.com/security/advisories/VMSA-2010-0007.html
+  - http://secunia.com/advisories/39251
+  - http://www.debian.org/security/2010/dsa-2032
+  - http://www.vupen.com/english/advisories/2010/0847
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
+  - http://www.vupen.com/english/advisories/2010/0682
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/50966
+  reported: 2009-06-12
+  severity: ~
+- affected_versions: <1.2.39
+  cve: CVE-2009-5063
+  description: |
+    Memory leak in the embedded_profile_len function in pngwutil.c in libpng before 1.2.39beta5 allows context-dependent attackers to cause a denial of service (memory leak or segmentation fault) via a JPEG image containing an iCCP chunk with a negative embedded profile length. NOTE: this is due to an incomplete fix for CVE-2006-7244.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-w9jf-3rvw-rjrv
+  references:
+  - http://www.openwall.com/lists/oss-security/2011/03/22/7
+  - http://www.openwall.com/lists/oss-security/2011/03/28/6
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=948ee23a2a400672b1751cfc646a7467741e9b2e#patch18
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  reported: 2011-08-31
+  severity: ~
+- affected_versions:
+  - '>=1.0.0,<=1.0.53'
+  - '>=1.2.0,<1.2.43'
+  - '>=1.4.0,<1.4.1'
+  cve: CVE-2010-0205
+  description: |
+    The png_decompress_chunk function in pngrutil.c in libpng 1.0.x before 1.0.53, 1.2.x before 1.2.43, and 1.4.x before 1.4.1 does not properly handle compressed ancillary-chunk data that has a disproportionately large uncompressed representation, which allows remote attackers to cause a denial of service (memory and CPU consumption, and application hang) via a crafted PNG file, as demonstrated by use of the deflate compression method on data composed of many occurrences of the same character, related to a "decompression bomb" attack.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-qjvj-64rf-p4qg
+  references:
+  - http://libpng.sourceforge.net/decompression_bombs.html
+  - http://www.securityfocus.com/bid/38478
+  - http://libpng.sourceforge.net/ADVISORY-1.4.1.html
+  - http://www.kb.cert.org/vuls/id/576029
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037237.html
+  - http://www.vupen.com/english/advisories/2010/0637
+  - http://ubuntu.com/usn/usn-913-1
+  - http://www.vupen.com/english/advisories/2010/0626
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037355.html
+  - http://www.vupen.com/english/advisories/2010/0605
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037364.html
+  - http://secunia.com/advisories/38774
+  - http://www.vupen.com/english/advisories/2010/0517
+  - http://www.vupen.com/english/advisories/2010/0847
+  - http://secunia.com/advisories/39251
+  - http://www.debian.org/security/2010/dsa-2032
+  - http://osvdb.org/62670
+  - http://www.securitytracker.com/id?1023674
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:064
+  - http://www.vupen.com/english/advisories/2010/0667
+  - http://www.vupen.com/english/advisories/2010/0682
+  - http://www.vupen.com/english/advisories/2010/0686
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-March/037607.html
+  - http://www.vupen.com/english/advisories/2010/1107
+  - http://lists.opensuse.org/opensuse-security-announce/2010-05/msg00001.html
+  - http://lists.opensuse.org/opensuse-security-announce/2010-05/msg00002.html
+  - http://lists.opensuse.org/opensuse-security-announce/2010-06/msg00001.html
+  - http://www.vupen.com/english/advisories/2010/2491
+  - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
+  - http://secunia.com/advisories/41574
+  - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
+  - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+  - http://support.apple.com/kb/HT4435
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/56661
+  reported: 2010-03-03
+  severity: ~
+- affected_versions: <1.4.3
+  cve: CVE-2010-1205
+  description: |
+    Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x before 1.4.3, as used in progressive applications, might allow remote attackers to execute arbitrary code via a PNG image that triggers an additional data row.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-qq2m-25fj-pxvm
+  references:
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=188eb6b42602bf7d7ae708a21897923b6a83fe7c#patch18
+  - http://www.vupen.com/english/advisories/2010/1612
+  - http://secunia.com/advisories/40302
+  - https://bugzilla.redhat.com/show_bug.cgi?id=608238
+  - http://www.securityfocus.com/bid/41174
+  - http://www.libpng.org/pub/png/libpng.html
+  - https://bugs.webkit.org/show_bug.cgi?id=40798
+  - http://code.google.com/p/chromium/issues/detail?id=45983
+  - http://googlechromereleases.blogspot.com/2010/07/stable-channel-update.html
+  - http://trac.webkit.org/changeset/61816
+  - http://secunia.com/advisories/40472
+  - http://www.vupen.com/english/advisories/2010/1755
+  - http://www.ubuntu.com/usn/USN-960-1
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
+  - http://www.debian.org/security/2010/dsa-2072
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
+  - http://secunia.com/advisories/40547
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
+  - http://www.vupen.com/english/advisories/2010/1846
+  - https://bugzilla.mozilla.org/show_bug.cgi?id=570451
+  - http://www.vupen.com/english/advisories/2010/1837
+  - http://www.vupen.com/english/advisories/2010/1877
+  - http://lists.apple.com/archives/security-announce/2010//Aug/msg00003.html
+  - http://support.apple.com/kb/HT4312
+  - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
+  - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
+  - http://secunia.com/advisories/41574
+  - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
+  - http://www.vupen.com/english/advisories/2010/2491
+  - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+  - http://support.apple.com/kb/HT4435
+  - http://support.apple.com/kb/HT4456
+  - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
+  - http://www.vupen.com/english/advisories/2010/3045
+  - http://www.vupen.com/english/advisories/2010/3046
+  - http://support.apple.com/kb/HT4457
+  - http://secunia.com/advisories/42314
+  - http://secunia.com/advisories/42317
+  - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
+  - http://support.apple.com/kb/HT4554
+  - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
+  - http://support.apple.com/kb/HT4566
+  - http://blackberry.com/btsc/KB27244
+  - http://secunia.com/advisories/40336
+  - http://www.vupen.com/english/advisories/2010/1637
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
+  - http://www.mozilla.org/security/announce/2010/mfsa2010-41.html
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/59815
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11851
+  reported: 2010-06-30
+  severity: critical
+- affected_versions: <1.4.3
+  cve: CVE-2010-2249
+  description: |
+    Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x before 1.4.3, allows remote attackers to cause a denial of service (memory consumption and application crash) via a PNG image containing malformed Physical Scale (aka sCAL) chunks.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-2r3r-854p-xjfr
+  id: CPANSA-Prima-codecs-win32-2010-2249
+  references:
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=90cfcecc09febb8d6c8c1d37ea7bb7cf0f4b00f3#patch20
+  - https://bugzilla.redhat.com/show_bug.cgi?id=608644
+  - http://secunia.com/advisories/40302
+  - http://www.vupen.com/english/advisories/2010/1612
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://www.securityfocus.com/bid/41174
+  - http://www.ubuntu.com/usn/USN-960-1
+  - http://www.vupen.com/english/advisories/2010/1755
+  - http://secunia.com/advisories/40472
+  - http://www.vupen.com/english/advisories/2010/1877
+  - http://www.debian.org/security/2010/dsa-2072
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
+  - http://www.vupen.com/english/advisories/2010/1837
+  - http://www.vupen.com/english/advisories/2010/1846
+  - http://secunia.com/advisories/40547
+  - http://secunia.com/advisories/41574
+  - http://www.vupen.com/english/advisories/2010/2491
+  - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
+  - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
+  - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
+  - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+  - http://support.apple.com/kb/HT4435
+  - http://support.apple.com/kb/HT4456
+  - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
+  - http://www.vupen.com/english/advisories/2010/3046
+  - http://support.apple.com/kb/HT4457
+  - http://www.vupen.com/english/advisories/2010/3045
+  - http://secunia.com/advisories/42314
+  - http://www.securitytracker.com/id?1024723
+  - http://secunia.com/advisories/42317
+  - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
+  - http://support.apple.com/kb/HT4554
+  - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
+  - http://support.apple.com/kb/HT4566
+  - http://secunia.com/advisories/40336
+  - http://www.vupen.com/english/advisories/2010/1637
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/59816
+  reported: 2010-06-30
+  severity: medium
+- affected_versions: <1.5.4
+  cve: CVE-2011-2501
+  description: |
+    The png_format_buffer function in pngerror.c in libpng 1.0.x before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4 allows remote attackers to cause a denial of service (application crash) via a crafted PNG image that triggers an out-of-bounds read during the copying of error-message data. NOTE: this vulnerability exists because of a CVE-2004-0421 regression. NOTE: this is called an off-by-one error by some sources.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-8m2c-g35f-jj8v
+  references:
+  - http://secunia.com/advisories/45046
+  - http://www.securityfocus.com/bid/48474
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=65e6d5a34f49acdb362a0625a706c6b914e670af
+  - http://www.openwall.com/lists/oss-security/2011/06/28/16
+  - https://bugzilla.redhat.com/show_bug.cgi?id=717084
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=BANLkTikrnU6FJNQYFvwmt78hwpgKPVRd1Q%40mail.gmail.com&forum_name=png-mng-implement
+  - http://www.openwall.com/lists/oss-security/2011/06/27/13
+  - http://secunia.com/advisories/45415
+  - http://secunia.com/advisories/45486
+  - http://secunia.com/advisories/45289
+  - http://secunia.com/advisories/45460
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2011&m=slackware-security.617466
+  - http://www.debian.org/security/2011/dsa-2287
+  - http://secunia.com/advisories/45405
+  - http://www.redhat.com/support/errata/RHSA-2011-1105.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/062720.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
+  - http://www.ubuntu.com/usn/USN-1175-1
+  - http://secunia.com/advisories/45492
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/68517
+  reported: 2011-07-17
+  severity: medium
+- affected_versions: <1.5.4
+  cve: CVE-2011-2690
+  description: |
+    Buffer overflow in libpng 1.0.x before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4, when used by an application that calls the png_rgb_to_gray function but not the png_set_expand function, allows remote attackers to overwrite memory with an arbitrary amount of data, and possibly have unspecified other impact, via a crafted PNG image.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-45qx-49q8-7q26
+  references:
+  - http://www.openwall.com/lists/oss-security/2011/07/13/2
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://secunia.com/advisories/45046
+  - http://www.securityfocus.com/bid/48660
+  - https://bugzilla.redhat.com/show_bug.cgi?id=720607
+  - http://secunia.com/advisories/45461
+  - http://www.redhat.com/support/errata/RHSA-2011-1104.html
+  - http://secunia.com/advisories/45415
+  - http://secunia.com/advisories/45460
+  - http://secunia.com/advisories/45405
+  - http://www.redhat.com/support/errata/RHSA-2011-1105.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
+  - http://www.ubuntu.com/usn/USN-1175-1
+  - http://secunia.com/advisories/45492
+  - http://support.apple.com/kb/HT5002
+  - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - http://www.debian.org/security/2011/dsa-2287
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/68538
+  reported: 2011-07-17
+  severity: high
+- affected_versions: <1.5.4
+  cve: CVE-2011-2691
+  description: |
+    The png_err function in pngerror.c in libpng 1.0.x before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4 makes a function call using a NULL pointer argument instead of an empty-string argument, which allows remote attackers to cause a denial of service (application crash) via a crafted PNG image.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-vprr-5687-f565
+  references:
+  - http://secunia.com/advisories/45046
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=9dad5e37aef295b4ef8dea39392b652deebc9261
+  - http://www.openwall.com/lists/oss-security/2011/07/13/2
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://www.securityfocus.com/bid/48660
+  - https://bugzilla.redhat.com/show_bug.cgi?id=720608
+  - http://www.debian.org/security/2011/dsa-2287
+  - http://secunia.com/advisories/45405
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
+  - http://secunia.com/advisories/45492
+  - http://support.apple.com/kb/HT5002
+  - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - http://marc.info/?l=bugtraq&m=133951357207000&w=2
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/68537
+  reported: 2011-07-17
+  severity: medium
+- affected_versions: <1.5.4
+  cve: CVE-2011-2692
+  description: |
+    The png_handle_sCAL function in pngrutil.c in libpng 1.0.x before 1.0.55, 1.2.x before 1.2.45, 1.4.x before 1.4.8, and 1.5.x before 1.5.4 does not properly handle invalid sCAL chunks, which allows remote attackers to cause a denial of service (memory corruption and application crash) or possibly have unspecified other impact via a crafted PNG image that triggers the reading of uninitialized memory.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-jggw-3xrj-fwp3
+  references:
+  - http://www.kb.cert.org/vuls/id/819894
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://secunia.com/advisories/45046
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=61a2d8a2a7b03023e63eae9a3e64607aaaa6d339
+  - http://sourceforge.net/mailarchive/forum.php?thread_name=003101cc2790%24fb5d6e80%24f2184b80%24%40acm.org&forum_name=png-mng-implement
+  - https://bugzilla.redhat.com/show_bug.cgi?id=720612
+  - http://www.openwall.com/lists/oss-security/2011/07/13/2
+  - http://secunia.com/advisories/45445
+  - http://secunia.com/advisories/45461
+  - http://www.securityfocus.com/bid/48618
+  - http://www.redhat.com/support/errata/RHSA-2011-1104.html
+  - http://www.redhat.com/support/errata/RHSA-2011-1103.html
+  - http://secunia.com/advisories/45415
+  - http://secunia.com/advisories/45460
+  - http://www.debian.org/security/2011/dsa-2287
+  - http://secunia.com/advisories/45405
+  - http://www.redhat.com/support/errata/RHSA-2011-1105.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-July/063118.html
+  - http://www.ubuntu.com/usn/USN-1175-1
+  - http://secunia.com/advisories/45492
+  - http://support.apple.com/kb/HT5002
+  - http://lists.apple.com/archives/Security-announce/2011//Oct/msg00003.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2011:151
+  - http://support.apple.com/kb/HT5281
+  - http://lists.apple.com/archives/security-announce/2012/May/msg00001.html
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - http://secunia.com/advisories/49660
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/68536
+  reported: 2011-07-17
+  severity: high
+- affected_versions: <1.4.10
+  cve: CVE-2011-3045
+  description: |
+    Integer signedness error in the png_inflate function in pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome before 17.0.963.83 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file, a different vulnerability than CVE-2011-3026.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-w4pv-vqp3-f753
+  references:
+  - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
+  - http://code.google.com/p/chromium/issues/detail?id=116162
+  - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
+  - https://bugzilla.redhat.com/show_bug.cgi?id=799000
+  - http://secunia.com/advisories/48485
+  - http://secunia.com/advisories/48512
+  - http://secunia.com/advisories/48554
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
+  - http://secunia.com/advisories/48320
+  - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - http://www.securitytracker.com/id?1026823
+  - http://rhn.redhat.com/errata/RHSA-2012-0488.html
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
+  - http://www.debian.org/security/2012/dsa-2439
+  - http://rhn.redhat.com/errata/RHSA-2012-0407.html
+  - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
+  reported: 2012-03-22
+  severity: ~
+- affected_versions: <1.5.10
+  cve: CVE-2011-3048
+  description: |
+    The png_set_text_2 function in pngset.c in libpng 1.0.x before 1.0.59, 1.2.x before 1.2.49, 1.4.x before 1.4.11, and 1.5.x before 1.5.10 allows remote attackers to cause a denial of service (crash) or execute arbitrary code via a crafted text chunk in a PNG image file, which triggers a memory allocation failure that is not properly handled, leading to a heap-based buffer overflow.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-mmpj-hr4h-5g99
+  references:
+  - http://secunia.com/advisories/48721
+  - http://secunia.com/advisories/48587
+  - http://ubuntu.com/usn/usn-1417-1
+  - http://www.libpng.org/pub/png/libpng.html
+  - http://www.debian.org/security/2012/dsa-2446
+  - http://www.osvdb.org/80822
+  - http://rhn.redhat.com/errata/RHSA-2012-0523.html
+  - http://secunia.com/advisories/48665
+  - http://secunia.com/advisories/48983
+  - http://www.libpng.org/pub/png/src/libpng-1.5.10-README.txt
+  - http://secunia.com/advisories/48644
+  - http://www.securitytracker.com/id?1026879
+  - http://www.securityfocus.com/bid/52830
+  - http://secunia.com/advisories/49660
+  - http://security.gentoo.org/glsa/glsa-201206-15.xml
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077819.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077472.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079039.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079051.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077043.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077007.html
+  - http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html
+  - http://support.apple.com/kb/HT5501
+  - http://support.apple.com/kb/HT5503
+  - http://lists.apple.com/archives/security-announce/2012/Sep/msg00003.html
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/74494
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2012:046
+  reported: 2012-05-29
+  severity: ~
+- affected_versions: <1.5.10
+  cve: CVE-2012-3425
+  description: |
+    The png_push_read_zTXt function in pngpread.c in libpng 1.0.x before 1.0.58, 1.2.x before 1.2.48, 1.4.x before 1.4.10, and 1.5.x before 1.5.10 allows remote attackers to cause a denial of service (out-of-bounds read) via a large avail_in field value in a PNG image.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-2q8q-w58c-r6vg
+  references:
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=284de253b1561b976291ba7405acd71ae71ff597;hb=refs/heads/libpng10
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=73e2ffd6a1471f2144d0ce7165d7323cb109f10f;hb=refs/heads/libpng15
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=668082
+  - http://www.openwall.com/lists/oss-security/2012/07/24/3
+  - http://www.openwall.com/lists/oss-security/2012/07/24/5
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;h=2da5a7a8b690e257f94353b5b49d493cdc385322;hb=refs/heads/libpng14
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=blob;f=CHANGES;hb=a4b640865ae47986bbe71ecc0e7d5181dcb0bac8
+  - http://lists.opensuse.org/opensuse-updates/2012-08/msg00004.html
+  - http://www.ubuntu.com/usn/USN-2815-1
+  reported: 2012-08-13
+  severity: ~
+- affected_versions: <1.5.14
+  cve: CVE-2013-7353
+  description: |
+    Integer overflow in the png_set_unknown_chunks function in libpng/pngset.c in libpng before 1.5.14beta08 allows context-dependent attackers to cause a denial of service (segmentation fault and crash) via a crafted image, which triggers a heap-based buffer overflow.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-hr5g-ggm4-mgqr
+  references:
+  - http://seclists.org/oss-sec/2014/q2/83
+  - http://lists.opensuse.org/opensuse-updates/2014-05/msg00015.html
+  - http://sourceforge.net/p/libpng/bugs/199/
+  - http://www.securityfocus.com/bid/67345
+  reported: 2014-05-06
+  severity: ~
+- affected_versions: <1.5.14
+  cve: CVE-2013-7354
+  description: |
+    Multiple integer overflows in libpng before 1.5.14rc03 allow remote attackers to cause a denial of service (crash) via a crafted image to the (1) png_set_sPLT or (2) png_set_text_2 function, which triggers a heap-based buffer overflow.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-65xw-3h2x-5pw4
+  references:
+  - http://seclists.org/oss-sec/2014/q2/83
+  - http://lists.opensuse.org/opensuse-updates/2014-05/msg00015.html
+  - http://sourceforge.net/p/libpng/bugs/199/
+  - http://www.securityfocus.com/bid/67344
+  reported: 2014-05-06
+  severity: ~
+- affected_versions: '>=1.0.6,<=1.2.12'
+  cve: CVE-2006-5793
+  description: |
+    The sPLT chunk handling code (png_set_sPLT function in pngset.c) in libpng 1.0.6 through 1.2.12 uses a sizeof operator on the wrong data type, which allows context-dependent attackers to cause a denial of service (crash) via malformed sPLT chunks that trigger an out-of-bounds read.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-gp79-46cf-7pmq
+  references:
+  - http://bugs.gentoo.org/show_bug.cgi?id=154380
+  - http://bugs.gentoo.org/attachment.cgi?id=101400&action=view
+  - https://issues.rpath.com/browse/RPL-790
+  - http://www.securityfocus.com/bid/21078
+  - http://sourceforge.net/project/shownotes.php?release_id=464278
+  - http://security.gentoo.org/glsa/glsa-200611-09.xml
+  - http://www.ubuntu.com/usn/usn-383-1
+  - http://secunia.com/advisories/22889
+  - http://secunia.com/advisories/22900
+  - http://secunia.com/advisories/22956
+  - http://secunia.com/advisories/22958
+  - http://secunia.com/advisories/22941
+  - http://www.trustix.org/errata/2006/0065/
+  - http://securitytracker.com/id?1017244
+  - http://secunia.com/advisories/22950
+  - http://secunia.com/advisories/22951
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2006&m=slackware-security.465035
+  - http://secunia.com/advisories/23208
+  - https://issues.rpath.com/browse/RPL-824
+  - http://www.novell.com/linux/security/advisories/2006_28_sr.html
+  - http://secunia.com/advisories/23335
+  - http://www.openpkg.com/security/advisories/OpenPKG-SA-2006.036.html
+  - http://www.redhat.com/support/errata/RHSA-2007-0356.html
+  - http://secunia.com/advisories/25329
+  - http://support.avaya.com/elmodocs2/security/ASA-2007-254.htm
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:209
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:210
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:211
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
+  - http://secunia.com/advisories/25742
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://www.vupen.com/english/advisories/2006/4521
+  - http://www.vupen.com/english/advisories/2006/4568
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/30290
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10324
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/453484/100/100/threaded
+  - http://www.securityfocus.com/archive/1/451874/100/200/threaded
+  reported: 2006-11-17
+  severity: ~
+- affected_versions: <=1.2.5
+  cve: CVE-2002-1363
+  description: |
+    Portable Network Graphics (PNG) library libpng 1.2.5 and earlier does not correctly calculate offsets, which allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a buffer overflow attack on the row buffers.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-c3x2-x88p-4gpx
+  references:
+  - http://www.debian.org/security/2002/dsa-213
+  - https://bugzilla.fedora.us/show_bug.cgi?id=1943
+  - http://frontal2.mandriva.com/security/advisories?name=MDKSA-2003:008
+  - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:063
+  - http://www.redhat.com/support/errata/RHSA-2003-006.html
+  - http://www.redhat.com/support/errata/RHSA-2003-007.html
+  - http://www.redhat.com/support/errata/RHSA-2003-119.html
+  - http://www.redhat.com/support/errata/RHSA-2003-157.html
+  - http://www.redhat.com/support/errata/RHSA-2004-249.html
+  - http://www.redhat.com/support/errata/RHSA-2004-402.html
+  - http://www.novell.com/linux/security/advisories/2003_004_libpng.html
+  - http://www.securityfocus.com/bid/6431
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A3657
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/10925
+  reported: 2002-12-26
+  severity: ~
+- affected_versions: <=1.2.5
+  cve: CVE-2004-0597
+  description: |
+    Multiple buffer overflows in libpng 1.2.5 and earlier, as used in multiple products, allow remote attackers to execute arbitrary code via malformed PNG images in which (1) the png_handle_tRNS function does not properly validate the length of transparency chunk (tRNS) data, or the (2) png_handle_sBIT or (3) png_handle_hIST functions do not perform sufficient bounds checking.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-pjf2-ggxp-rg8p
+  references:
+  - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
+  - http://www.debian.org/security/2004/dsa-536
+  - http://www.securityfocus.com/bid/10857
+  - http://scary.beasts.org/security/CESA-2004-001.txt
+  - http://lists.apple.com/mhonarc/security-announce/msg00056.html
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
+  - http://www.redhat.com/support/errata/RHSA-2004-402.html
+  - http://www.redhat.com/support/errata/RHSA-2004-421.html
+  - http://www.redhat.com/support/errata/RHSA-2004-429.html
+  - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
+  - http://www.trustix.net/errata/2004/0040/
+  - http://www.mozilla.org/projects/security/known-vulnerabilities.html
+  - http://www.adobe.com/support/downloads/detail.jsp?ftpID=2679
+  - http://www.us-cert.gov/cas/techalerts/TA05-039A.html
+  - http://www.kb.cert.org/vuls/id/388984
+  - http://www.kb.cert.org/vuls/id/817368
+  - ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2005.49/SCOSA-2005.49.txt
+  - http://www.securityfocus.com/bid/15495
+  - http://www.coresecurity.com/common/showdoc.php?idx=421&idxseccion=10
+  - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
+  - http://secunia.com/advisories/22957
+  - http://secunia.com/advisories/22958
+  - http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-114816-02-1
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
+  - https://bugzilla.fedora.us/show_bug.cgi?id=1943
+  - http://marc.info/?l=bugtraq&m=109163866717909&w=2
+  - http://marc.info/?l=bugtraq&m=109761239318458&w=2
+  - http://marc.info/?l=bugtraq&m=109181639602978&w=2
+  - http://marc.info/?l=bugtraq&m=109900315219363&w=2
+  - http://marc.info/?l=bugtraq&m=110796779903455&w=2
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/16894
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7709
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A594
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A4492
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2378
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2274
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11284
+  - https://docs.microsoft.com/en-us/security-updates/securitybulletins/2005/ms05-009
+  reported: 2004-11-23
+  severity: ~
+- affected_versions: <=1.2.5
+  cve: CVE-2004-0598
+  description: |
+    The png_handle_iCCP function in libpng 1.2.5 and earlier allows remote attackers to cause a denial of service (application crash) via a certain PNG image that triggers a null dereference.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-7c4j-3c7c-wh66
+  references:
+  - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
+  - http://www.securityfocus.com/bid/10857
+  - http://scary.beasts.org/security/CESA-2004-001.txt
+  - http://lists.apple.com/mhonarc/security-announce/msg00056.html
+  - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
+  - http://www.debian.org/security/2004/dsa-536
+  - https://bugzilla.fedora.us/show_bug.cgi?id=1943
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
+  - http://www.redhat.com/support/errata/RHSA-2004-402.html
+  - http://www.redhat.com/support/errata/RHSA-2004-429.html
+  - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
+  - http://www.trustix.net/errata/2004/0040/
+  - http://www.mozilla.org/projects/security/known-vulnerabilities.html
+  - http://www.kb.cert.org/vuls/id/236656
+  - http://secunia.com/advisories/22957
+  - http://secunia.com/advisories/22958
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
+  - http://marc.info/?l=bugtraq&m=109163866717909&w=2
+  - http://marc.info/?l=bugtraq&m=109761239318458&w=2
+  - http://marc.info/?l=bugtraq&m=109181639602978&w=2
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/16895
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A2572
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10203
+  reported: 2004-11-23
+  severity: ~
+- affected_versions: <=1.2.5
+  cve: CVE-2004-0599
+  description: |
+    Multiple integer overflows in the (1) png_read_png in pngread.c or (2) png_handle_sPLT functions in pngrutil.c or (3) progressive display image reading capability in libpng 1.2.5 and earlier allow remote attackers to cause a denial of service (application crash) via a malformed PNG image.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-xpw2-c8vq-gfg3
+  references:
+  - http://www.securityfocus.com/bid/10857
+  - http://www.us-cert.gov/cas/techalerts/TA04-217A.html
+  - http://scary.beasts.org/security/CESA-2004-001.txt
+  - http://lists.apple.com/mhonarc/security-announce/msg00056.html
+  - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000856
+  - http://www.debian.org/security/2004/dsa-536
+  - http://www.debian.org/security/2004/dsa-570
+  - http://www.debian.org/security/2004/dsa-571
+  - https://bugzilla.fedora.us/show_bug.cgi?id=1943
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-03.xml
+  - http://www.gentoo.org/security/en/glsa/glsa-200408-22.xml
+  - http://www.redhat.com/support/errata/RHSA-2004-402.html
+  - http://www.redhat.com/support/errata/RHSA-2004-421.html
+  - http://www.redhat.com/support/errata/RHSA-2004-429.html
+  - http://www.novell.com/linux/security/advisories/2004_23_libpng.html
+  - http://www.trustix.net/errata/2004/0040/
+  - http://www.mozilla.org/projects/security/known-vulnerabilities.html
+  - http://www.kb.cert.org/vuls/id/160448
+  - http://www.kb.cert.org/vuls/id/286464
+  - http://www.kb.cert.org/vuls/id/477512
+  - ftp://ftp.sco.com/pub/updates/OpenServer/SCOSA-2005.49/SCOSA-2005.49.txt
+  - http://www.securityfocus.com/bid/15495
+  - http://secunia.com/advisories/22957
+  - http://secunia.com/advisories/22958
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2004:079
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200663-1
+  - http://marc.info/?l=bugtraq&m=109163866717909&w=2
+  - http://marc.info/?l=bugtraq&m=109761239318458&w=2
+  - http://marc.info/?l=bugtraq&m=109181639602978&w=2
+  - http://marc.info/?l=bugtraq&m=109900315219363&w=2
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/16896
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A1479
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10938
+  reported: 2004-11-23
+  severity: ~
+- affected_versions: <=1.2.5
+  cve: CVE-2004-0768
+  description: |
+    libpng 1.2.5 and earlier does not properly calculate certain buffer offsets, which could allow remote attackers to execute arbitrary code via a buffer overflow attack.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-8p78-6v29-xw89
+  references:
+  - http://www.debian.org/security/2004/dsa-536
+  - https://bugzilla.fedora.us/show_bug.cgi?id=1943
+  - http://secunia.com/advisories/33137
+  - http://security.gentoo.org/glsa/glsa-200812-15.xml
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/16914
+  reported: 2004-10-20
+  severity: ~
+- affected_versions: <1.2.12
+  cve: CVE-2006-3334
+  description: |
+    Buffer overflow in the png_decompress_chunk function in pngrutil.c in libpng before 1.2.12 allows context-dependent attackers to cause a denial of service and possibly execute arbitrary code via unspecified vectors related to "chunk error processing," possibly involving the "chunk_name".
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-852r-9m3w-pq97
+  references:
+  - http://sourceforge.net/project/shownotes.php?group_id=5624&release_id=428123
+  - http://www.securityfocus.com/bid/18698
+  - http://security.gentoo.org/glsa/glsa-200607-06.xml
+  - http://www.novell.com/linux/security/advisories/2006_16_sr.html
+  - http://secunia.com/advisories/22956
+  - http://secunia.com/advisories/22957
+  - http://secunia.com/advisories/22958
+  - http://www.novell.com/linux/security/advisories/2006_28_sr.html
+  - http://secunia.com/advisories/23335
+  - http://secunia.com/advisories/20960
+  - https://issues.rpath.com/browse/RPL-517
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:209
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:210
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:211
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:212
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:213
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://secunia.com/advisories/33137
+  - http://security.gentoo.org/glsa/glsa-200812-15.xml
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.vupen.com/english/advisories/2006/2585
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/27468
+  - http://www.securityfocus.com/archive/1/440594/100/0/threaded
+  reported: 2006-06-30
+  severity: ~
+- affected_versions: <1.2.15
+  cve: CVE-2006-7244
+  description: |
+    Memory leak in pngwutil.c in libpng 1.2.13beta1, and other versions before 1.2.15beta3, allows context-dependent attackers to cause a denial of service (memory leak or segmentation fault) via a JPEG image containing an iCCP chunk with a negative embedded profile length.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-v548-29gf-8prw
+  references:
+  - https://bugs.gentoo.org/159216?id=159216
+  - http://www.openwall.com/lists/oss-security/2011/03/22/7
+  - http://www.openwall.com/lists/oss-security/2011/03/28/6
+  - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=948ee23a2a400672b1751cfc646a7467741e9b2e#patch18
+  reported: 2011-08-31
+  severity: ~
+- affected_versions: <1.2.17
+  cve: CVE-2007-2445
+  description: |
+    The png_handle_tRNS function in pngrutil.c in libpng before 1.0.25 and 1.2.x before 1.2.17 allows remote attackers to cause a denial of service (application crash) via a grayscale PNG image with a bad tRNS chunk CRC value.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-v9wg-49f7-4f43
+  references:
+  - http://sourceforge.net/project/shownotes.php?release_id=508653&group_id=5624
+  - http://sourceforge.net/project/shownotes.php?release_id=508656&group_id=5624
+  - http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/l/li/libpng/libpng-1.2.17-ADVISORY.txt
+  - http://www.kb.cert.org/vuls/id/684664
+  - http://secunia.com/advisories/25292
+  - https://issues.rpath.com/browse/RPL-1381
+  - http://openpkg.com/go/OpenPKG-SA-2007.013
+  - http://www.redhat.com/support/errata/RHSA-2007-0356.html
+  - http://slackware.com/security/viewer.php?l=slackware-security&y=2007&m=slackware-security.492650
+  - http://www.securityfocus.com/bid/24000
+  - http://www.securityfocus.com/bid/24023
+  - http://www.securitytracker.com/id?1018078
+  - http://secunia.com/advisories/25329
+  - http://secunia.com/advisories/25268
+  - http://secunia.com/advisories/25273
+  - http://support.avaya.com/elmodocs2/security/ASA-2007-254.htm
+  - http://irrlicht.sourceforge.net/changes.txt
+  - http://www.gentoo.org/security/en/glsa/glsa-200705-24.xml
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2007:116
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-26-102987-1
+  - http://www.novell.com/linux/security/advisories/2007_13_sr.html
+  - http://www.trustix.org/errata/2007/0019/
+  - http://www.ubuntu.com/usn/usn-472-1
+  - http://secunia.com/advisories/25353
+  - http://secunia.com/advisories/25461
+  - http://secunia.com/advisories/25554
+  - http://secunia.com/advisories/25571
+  - http://secunia.com/advisories/25742
+  - http://secunia.com/advisories/25867
+  - http://secunia.com/advisories/27056
+  - http://secunia.com/advisories/25787
+  - http://www.coresecurity.com/?action=item&id=2148
+  - http://android-developers.blogspot.com/2008/03/android-sdk-update-m5-rc15-released.html
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-66-200871-1
+  - http://docs.info.apple.com/article.html?artnum=307562
+  - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+  - http://secunia.com/advisories/29420
+  - http://www.gentoo.org/security/en/glsa/glsa-200805-07.xml
+  - http://secunia.com/advisories/30161
+  - http://www.debian.org/security/2008/dsa-1613
+  - http://secunia.com/advisories/31168
+  - http://www.debian.org/security/2009/dsa-1750
+  - http://secunia.com/advisories/34388
+  - http://www.vupen.com/english/advisories/2008/0924/references
+  - http://www.vupen.com/english/advisories/2007/1838
+  - http://www.vupen.com/english/advisories/2007/2385
+  - http://osvdb.org/36196
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/34340
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10094
+  - http://www.securityfocus.com/archive/1/489135/100/0/threaded
+  - http://www.securityfocus.com/archive/1/468910/100/0/threaded
+  reported: 2007-05-16
+  severity: ~
+cpansa_version: 2
+name: libpng
+perl_distributions:
+- affected:
+  - comment: As part of dlib
+    distributed_library_version: 1.6.7
+    perl_module_versions: ==0.01
+  last_version_checked: '0.01'
+  name: cppAdaptive1
+- affected:
+  - comment: As part of dlib
+    distributed_library_version: 1.6.7
+    perl_module_versions: '>=0.01,<=3.0.3'
+  last_version_checked: '3.03'
+  name: cppAdaptive2
+- affected:
+  - distributed_library_version: 1.6.7
+    perl_module_versions: '>=0.01,<=0.07'
+  last_version_checked: '0.07'
+  name: Image-PNG-Simple
+- affected:
+  - distributed_library_version: 1.2.9
+    perl_module_versions: '>=1.00,<=1.01'
+  last_version_checked: '1.01'
+  name: Prima-codecs-win32
+- affected:
+  - distributed_library_version: 1.2.19
+    perl_module_versions: '>=1.01,<=1.02'
+  last_version_checked: '1.02'
+  name: Prima-codecs-win64
+- affected:
+  - distributed_library_version: 1.2.5
+    perl_module_versions: '>804.024,<=804.027'
+  - distributed_library_version: 1.2.12
+    perl_module_versions: '>804.027_500,<=804.036'
+  last_version_checked: '804.036'
+  name: Tk
+url: http://www.libpng.org

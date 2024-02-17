@@ -1,69 +1,68 @@
 ---
-name: plupload
-url: https://www.plupload.com
-perl_distributions:
-  - name: Yukki
-    affected:
-      - perl_module_versions: '>=0.99_01,<=0.991_006'
-        distributed_library_version: '2.3.1'
-      - perl_module_versions: '>=0.99_01,<=0.991_006'
-        distributed_library_version: '1.5.3'
-      - perl_module_versions: '<=0.140290'
-        distributed_library_version: '1.5.4'
-      - perl_module_versions: '>=0.110830,<=0.111160'
-        distributed_library_version: '1.4.2'
-      - perl_module_versions: '>=0.111280,<=0.112770'
-        distributed_library_version: '1.4.3.2'
-      - perl_module_versions: '>=0.121700,<=0.140290'
-        distributed_library_version: '1.5.4'
 advisories:
-  - cve: CVE-2013-0237
-    description: >
-      Cross-site scripting (XSS) vulnerability in Plupload.as in
-      Moxiecode plupload before 1.5.5, as used in WordPress before 3.5.1 and
-      other products, allows remote attackers to inject arbitrary web script
-      or HTML via the id parameter.
-    affected_versions: '<1.5.5'
-    fixed_versions: '>=1.5.5'
-    references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=904122
-      - http://wordpress.org/news/2013/01/wordpress-3-5-1/
-      - https://github.com/moxiecode/plupload/commit/2d746ee9083c184f1234d8fed311e89bdd1b39e5
-      - http://codex.wordpress.org/Version_3.5.1
-    reported: 2013-07-08
-    severity: ~
-  - cve: CVE-2016-4566
-    description: >
-      Cross-site scripting (XSS) vulnerability in plupload.flash.swf in
-      Plupload before 2.1.9, as used in WordPress before 4.5.2, allows
-      remote attackers to inject arbitrary web script or HTML via a
-      Same-Origin Method Execution (SOME) attack.
-    affected_versions: '<2.1.9'
-    fixed_versions: '>=2.1.9'
-    references:
-      - http://www.plupload.com/punbb/viewtopic.php?pid=28690
-      - https://wordpress.org/news/2016/05/wordpress-4-5-2/
-      - http://www.openwall.com/lists/oss-security/2016/05/07/2
-      - https://codex.wordpress.org/Version_4.5.2
-      - https://core.trac.wordpress.org/changeset/37382/
-      - https://gist.github.com/cure53/09a81530a44f6b8173f545accc9ed07e
-      - https://wpvulndb.com/vulnerabilities/8489
-      - http://www.securitytracker.com/id/1035818
-    reported: 2016-05-22
-    severity: medium
-  - cve: CVE-2021-23562
-    description: >
-      This affects the package plupload before 2.3.9. A file name
-      containing JavaScript code could be uploaded and run. An attacker
-      would need to trick a user to upload this kind of file.
-    affected_versions: '<2.3.9'
-    fixed_versions: '>=2.3.9'
-    references:
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBMOXIECODE-2306664
-      - https://github.com/moxiecode/plupload/commit/d12175d4b5fa799b994ee1bb17bfbeec55b386fb
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-2306665
-      - https://github.com/moxiecode/plupload/blob/master/js/jquery.plupload.queue/jquery.plupload.queue.js%23L226
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-2306663
-      - https://snyk.io/vuln/SNYK-JS-PLUPLOAD-1583909
-    reported: 2021-12-03
-    severity: high
+- affected_versions: <1.5.5
+  cve: CVE-2013-0237
+  description: |
+    Cross-site scripting (XSS) vulnerability in Plupload.as in Moxiecode plupload before 1.5.5, as used in WordPress before 3.5.1 and other products, allows remote attackers to inject arbitrary web script or HTML via the id parameter.
+  fixed_versions: '>=1.5.5'
+  github_security_advisory:
+  - GHSA-v2m5-2mm5-8v3w
+  references:
+  - https://bugzilla.redhat.com/show_bug.cgi?id=904122
+  - http://wordpress.org/news/2013/01/wordpress-3-5-1/
+  - https://github.com/moxiecode/plupload/commit/2d746ee9083c184f1234d8fed311e89bdd1b39e5
+  - http://codex.wordpress.org/Version_3.5.1
+  reported: 2013-07-08
+  severity: ~
+- affected_versions: <2.1.9
+  cve: CVE-2016-4566
+  description: |
+    Cross-site scripting (XSS) vulnerability in plupload.flash.swf in Plupload before 2.1.9, as used in WordPress before 4.5.2, allows remote attackers to inject arbitrary web script or HTML via a Same-Origin Method Execution (SOME) attack.
+  fixed_versions: '>=2.1.9'
+  github_security_advisory:
+  - GHSA-cv88-x229-26m4
+  references:
+  - http://www.plupload.com/punbb/viewtopic.php?pid=28690
+  - https://wordpress.org/news/2016/05/wordpress-4-5-2/
+  - http://www.openwall.com/lists/oss-security/2016/05/07/2
+  - https://codex.wordpress.org/Version_4.5.2
+  - https://core.trac.wordpress.org/changeset/37382/
+  - https://gist.github.com/cure53/09a81530a44f6b8173f545accc9ed07e
+  - https://wpvulndb.com/vulnerabilities/8489
+  - http://www.securitytracker.com/id/1035818
+  reported: 2016-05-22
+  severity: medium
+- affected_versions: <2.3.9
+  cve: CVE-2021-23562
+  description: |
+    This affects the package plupload before 2.3.9. A file name containing JavaScript code could be uploaded and run. An attacker would need to trick a user to upload this kind of file.
+  fixed_versions: '>=2.3.9'
+  github_security_advisory:
+  - GHSA-rp2c-jrgp-cvr8
+  references:
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBMOXIECODE-2306664
+  - https://github.com/moxiecode/plupload/commit/d12175d4b5fa799b994ee1bb17bfbeec55b386fb
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-2306665
+  - https://github.com/moxiecode/plupload/blob/master/js/jquery.plupload.queue/jquery.plupload.queue.js%23L226
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-2306663
+  - https://snyk.io/vuln/SNYK-JS-PLUPLOAD-1583909
+  reported: 2021-12-03
+  severity: high
+cpansa_version: 2
+name: plupload
+perl_distributions:
+- affected:
+  - distributed_library_version: 2.3.1
+    perl_module_versions: '>=0.99_01,<=0.991_006'
+  - distributed_library_version: 1.5.3
+    perl_module_versions: '>=0.99_01,<=0.991_006'
+  - distributed_library_version: 1.5.4
+    perl_module_versions: <=0.140290
+  - distributed_library_version: 1.4.2
+    perl_module_versions: '>=0.110830,<=0.111160'
+  - distributed_library_version: 1.4.3.2
+    perl_module_versions: '>=0.111280,<=0.112770'
+  - distributed_library_version: 1.5.4
+    perl_module_versions: '>=0.121700,<=0.140290'
+  name: Yukki
+url: https://www.plupload.com

@@ -1,26 +1,26 @@
 ---
-name: sockjs
-url: https://github.com/sockjs/sockjs-client
-perl_distributions:
-  - name: SockJS
-    comment: >
-      Multiple versions of socksjs are included in example and t-vendor
-      directories.
-    affected:
-      - perl_module_versions: '>=0.01,<=0.10'
-        comment: "As 0.3.2.3.g2a1c"
-        distributed_library_version: '0.3.2'
-      - perl_module_versions: '>=0.03,<=0.10'
-        distributed_library_version: '0.3.4'
 advisories:
-  - cve: CVE-2020-7693
-    description: >
-      Incorrect handling of Upgrade header with the value websocket leads
-      in crashing of containers hosting sockjs apps. This affects the
-      package sockjs before 0.3.20.
-    affected_versions: '<0.3.20'
-    fixed_versions: ~
-    references:
-      - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
-    reported: 2020-07-09
-    severity: ~
+- affected_versions: <0.3.20
+  cve: CVE-2020-7693
+  description: |
+    Incorrect handling of Upgrade header with the value websocket leads in crashing of containers hosting sockjs apps. This affects the package sockjs before 0.3.20.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-c9g6-9335-x697
+  references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
+  reported: 2020-07-09
+  severity: ~
+cpansa_version: 2
+name: sockjs
+perl_distributions:
+- affected:
+  - comment: As 0.3.2.3.g2a1c
+    distributed_library_version: 0.3.2
+    perl_module_versions: '>=0.01,<=0.10'
+  - distributed_library_version: 0.3.4
+    perl_module_versions: '>=0.03,<=0.10'
+  comment: |
+    Multiple versions of socksjs are included in example and t-vendor directories.
+  name: SockJS
+url: https://github.com/sockjs/sockjs-client

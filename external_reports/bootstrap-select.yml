@@ -1,23 +1,24 @@
 ---
-name: bootstrap-select
-url:
-perl_distributions:
-  - name: MySQL-Admin
-    affected:
-      - perl_module_versions: '>=1.16,<=1.18'
-        distributed_library_version: '1.12.4'
 advisories:
-  - cve: CVE-2019-20921
-    description: >
-      bootstrap-select before 1.13.6 allows Cross-Site Scripting (XSS).
-      It does not escape title values in OPTION elements. This may allow
-      attackers to execute arbitrary JavaScript in a victim's browser.
-    affected_versions: '<1.13.6'
-    fixed_versions: '>=1.13.6'
-    references:
-      - https://github.com/advisories/GHSA-9r7h-6639-v5mw
-      - https://github.com/snapappointments/bootstrap-select/issues/2199
-      - https://www.npmjs.com/advisories/1522
-      - https://snyk.io/vuln/SNYK-JS-BOOTSTRAPSELECT-570457
-    reported: 2020-09-30
-    severity: medium
+- affected_versions: <1.13.6
+  cve: CVE-2019-20921
+  description: |
+    bootstrap-select before 1.13.6 allows Cross-Site Scripting (XSS). It does not escape title values in OPTION elements. This may allow attackers to execute arbitrary JavaScript in a victim's browser.
+  fixed_versions: '>=1.13.6'
+  github_security_advisory:
+  - GHSA-7c82-mp33-r854
+  references:
+  - https://github.com/advisories/GHSA-9r7h-6639-v5mw
+  - https://github.com/snapappointments/bootstrap-select/issues/2199
+  - https://www.npmjs.com/advisories/1522
+  - https://snyk.io/vuln/SNYK-JS-BOOTSTRAPSELECT-570457
+  reported: 2020-09-30
+  severity: medium
+cpansa_version: 2
+name: bootstrap-select
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.12.4
+    perl_module_versions: '>=1.16,<=1.18'
+  name: MySQL-Admin
+url: ~

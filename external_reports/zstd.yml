@@ -1,79 +1,76 @@
 ---
-name: zstd
-url: http://facebook.github.io/zstd/
-comment:
-perl_distributions:
-  - name: Sereal::Encoder
-    last_version_checked: "5.003"
-    affected:
-      - perl_module_versions: '>=4.001_001,<4.009_002'
-        distributed_library_version: '1.1.2'
-      - perl_module_versions: '>=4.009_002,<4.014'
-        distributed_library_version: '1.4.4'
-      - perl_module_versions: '>=4.014,<4.019'
-        distributed_library_version: '1.4.5'
-      - perl_module_versions: '>=4.019,<5.002'
-        distributed_library_version: '1.4.7'
-      - perl_module_versions: '>=5.002'
-        distributed_library_version: '1.5.2'
-  - name: Sereal::Decoder
-    last_version_checked: "5.003"
-    affected:
-      - perl_module_versions: '>=4.001_001,<4.009_002'
-        distributed_library_version: '1.1.2'
-      - perl_module_versions: '>=4.009_002,<4.012'
-        distributed_library_version: '1.4.4'
-      - perl_module_versions: '>=4.012,<4.019'
-        distributed_library_version: '1.4.5'
-      - perl_module_versions: '>=4.019,<5.002_001'
-        distributed_library_version: '1.4.7'
-      - perl_module_versions: '>=5.002_001'
-        distributed_library_version: '1.5.2'
 advisories:
-  - cve: CVE-2021-24031
-    description: >
-      In the Zstandard command-line utility prior to v1.4.1, output
-      files were created with default permissions. Correct file permissions
-      (matching the input) would only be set at completion time. Output
-      files could therefore be readable or writable to unintended parties.
-    affected_versions: '<1.4.1'
-    fixed_versions: '>=1.4.1'
-    references:
-      - https://www.facebook.com/security/advisories/cve-2021-24031
-      - https://github.com/facebook/zstd/issues/1630
-      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=981404
-    reported: 2021-03-04
-    severity: medium
-  - cve: CVE-2021-24032
-    description: >
-      Beginning in v1.4.1 and prior to v1.4.9, due to an incomplete fix
-      for CVE-2021-24031, the Zstandard command-line utility created output
-      files with default permissions and restricted those permissions
-      immediately afterwards. Output files could therefore momentarily be
-      readable or writable to unintended parties.
-    affected_versions: '>=1.4.1,<1.4.9'
-    fixed_versions: '>1.4.9'
-    id: CPANSA--2021-24032
-    references:
-      - https://github.com/facebook/zstd/issues/2491
-      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982519
-      - https://www.facebook.com/security/advisories/cve-2021-24032
-    reported: 2021-03-04
-    severity: medium
-  - cve: CVE-2019-11922
-    description: >
-      A race condition in the one-pass compression functions of
-      Zstandard prior to version 1.3.8 could allow an attacker to write
-      bytes out of bounds if an output buffer smaller than the recommended
-      size was used.
-    affected_versions: '<1.3.8'
-    fixed_versions: '>=1.3.8'
-    references:
-      - https://www.facebook.com/security/advisories/cve-2019-11922
-      - https://github.com/facebook/zstd/pull/1404/commits/3e5cdf1b6a85843e991d7d10f6a2567c15580da0
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00008.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00062.html
-      - https://usn.ubuntu.com/4108-1/
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00078.html
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-    reported: 2019-07-25
+- affected_versions: <1.4.1
+  cve: CVE-2021-24031
+  description: |
+    In the Zstandard command-line utility prior to v1.4.1, output files were created with default permissions. Correct file permissions (matching the input) would only be set at completion time. Output files could therefore be readable or writable to unintended parties.
+  fixed_versions: '>=1.4.1'
+  github_security_advisory:
+  - GHSA-5mqj-v3fr-pg3x
+  references:
+  - https://www.facebook.com/security/advisories/cve-2021-24031
+  - https://github.com/facebook/zstd/issues/1630
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=981404
+  reported: 2021-03-04
+  severity: medium
+- affected_versions: '>=1.4.1,<1.4.9'
+  cve: CVE-2021-24032
+  description: |
+    Beginning in v1.4.1 and prior to v1.4.9, due to an incomplete fix for CVE-2021-24031, the Zstandard command-line utility created output files with default permissions and restricted those permissions immediately afterwards. Output files could therefore momentarily be readable or writable to unintended parties.
+  fixed_versions: '>1.4.9'
+  github_security_advisory:
+  - GHSA-ffqj-7pgc-cmj5
+  id: CPANSA--2021-24032
+  references:
+  - https://github.com/facebook/zstd/issues/2491
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982519
+  - https://www.facebook.com/security/advisories/cve-2021-24032
+  reported: 2021-03-04
+  severity: medium
+- affected_versions: <1.3.8
+  cve: CVE-2019-11922
+  description: |
+    A race condition in the one-pass compression functions of Zstandard prior to version 1.3.8 could allow an attacker to write bytes out of bounds if an output buffer smaller than the recommended size was used.
+  fixed_versions: '>=1.3.8'
+  github_security_advisory:
+  - GHSA-w77f-wv46-4vcx
+  references:
+  - https://www.facebook.com/security/advisories/cve-2019-11922
+  - https://github.com/facebook/zstd/pull/1404/commits/3e5cdf1b6a85843e991d7d10f6a2567c15580da0
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00008.html
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00062.html
+  - https://usn.ubuntu.com/4108-1/
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00078.html
+  - https://www.oracle.com/security-alerts/cpuoct2020.html
+  reported: 2019-07-25
+comment: ~
+cpansa_version: 2
+name: zstd
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.1.2
+    perl_module_versions: '>=4.001_001,<4.009_002'
+  - distributed_library_version: 1.4.4
+    perl_module_versions: '>=4.009_002,<4.014'
+  - distributed_library_version: 1.4.5
+    perl_module_versions: '>=4.014,<4.019'
+  - distributed_library_version: 1.4.7
+    perl_module_versions: '>=4.019,<5.002'
+  - distributed_library_version: 1.5.2
+    perl_module_versions: '>=5.002'
+  last_version_checked: '5.003'
+  name: Sereal::Encoder
+- affected:
+  - distributed_library_version: 1.1.2
+    perl_module_versions: '>=4.001_001,<4.009_002'
+  - distributed_library_version: 1.4.4
+    perl_module_versions: '>=4.009_002,<4.012'
+  - distributed_library_version: 1.4.5
+    perl_module_versions: '>=4.012,<4.019'
+  - distributed_library_version: 1.4.7
+    perl_module_versions: '>=4.019,<5.002_001'
+  - distributed_library_version: 1.5.2
+    perl_module_versions: '>=5.002_001'
+  last_version_checked: '5.003'
+  name: Sereal::Decoder
+url: http://facebook.github.io/zstd/

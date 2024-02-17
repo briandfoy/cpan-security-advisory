@@ -1,349 +1,349 @@
 ---
-name: zlib
-url: https://zlib.net
-perl_distributions:
-  - name: BackupPC-XS
-    affected:
-      - perl_module_versions: '>=0.50,<=0.62'
-        distributed_library_version: '1.2.3'
-  - name: Alien-FreeImage
-    affected:
-      - perl_module_versions: '>=0.001,<=1.001'
-        distributed_library_version: "1.2.8"
-  - name: Win32-File-Summary
-    affected:
-      - perl_module_versions: '>=1.00,<=1.10.1'
-        distributed_library_version: "1.1.4"
-  - name: Tk
-    affected:
-      - perl_module_versions: '>=804.025,<=804.027'
-        distributed_library_version: "1.1.4"
-      - perl_module_versions: '>=804.027_500,<=804.036'
-        distributed_library_version: "1.2.3"
-  - name: SPVM-Resource-Zlib-V1_2_11
-    affected:
-      - perl_module_versions: '>=0.01,<=0.02'
-        distributed_library_version: "1.2.11"
-  - name: Prima-codecs-win64
-    affected:
-      - perl_module_versions: '>=1.01,<=1.02'
-        distributed_library_version: "1.1.3"
-  - name: Prima-codecs-win32
-    affected:
-      - perl_module_versions: '>=1.00,<=1.01'
-        distributed_library_version: "1.1.3"
-  - name: LibZip
-    affected:
-      - perl_module_versions: '>=0.02,<=0.06'
-        distributed_library_version: "1.1.4"
-  - name: Image-PNG-Simple
-    affected:
-      - perl_module_versions: '>=0.01,<=0.07'
-        distributed_library_version: "1.2.8"
-  - name: Compress-Raw-Zlib
-    affected:
-      - perl_module_versions: '>=2.000_09,<=2.024'
-        distributed_library_version: "1.2.3"
-      - perl_module_versions: '>=2.025,<=2.048'
-        distributed_library_version: "1.2.5"
-      - perl_module_versions: '>=2.049,<=2.052'
-        distributed_library_version: "1.2.6"
-      - perl_module_versions: '>=2.053,<=2.060'
-        distributed_library_version: "1.2.7"
-      - perl_module_versions: '>=2.061,<=2.074'
-        distributed_library_version: "1.2.8"
-      - perl_module_versions: '>=2.075,<=2.101'
-        distributed_library_version: "1.2.11"
-      - perl_module_versions: '>=2.103,<=2.202'
-        distributed_library_version: "1.2.12"
-  - name: Git-Raw
-    last_version_checked: '0.88'
-    comment: As part of libgit2
-    affected:
-      - perl_module_versions: '>=0.08,<=0.40'
-        distributed_library_version: "1.2.5"
-      - perl_module_versions: '>=0.41,<=0.75'
-        distributed_library_version: "1.2.8"
-      - perl_module_versions: '>=0.76,<=0.88'
-        distributed_library_version: "1.2.11"
-  - name: Git-XS
-    last_version_checked: "0.02"
-    comment: As part of libgit2
-    affected:
-      - perl_module_versions: '>=0.01,<=0.02'
-        distributed_library_version: "1.2.5"
-  - name: cppAdaptive1
-    last_version_checked: "0.01"
-    affected:
-      - perl_module_versions: '==0.01'
-        distributed_library_version: "1.2.8"
-        comment: As part of dlib
-  - name: cppAdaptive2
-    last_version_checked: "3.0.3"
-    affected:
-      - perl_module_versions: '>=0.01,<=3.0.3'
-        distributed_library_version: "1.2.8"
-        comment: As part of dlib
 advisories:
-  - cve: CVE-2018-25032
-    description: >
-      zlib before 1.2.12 allows memory corruption when deflating (i.e.,
-      when compressing) if the input has many distant matches.
-    affected_versions: '<1.2.12'
-    fixed_versions: '>=1.2.12'
-    references:
-      - https://rt.cpan.org/Ticket/Display.html?id=143579
-      - https://www.openwall.com/lists/oss-security/2022/03/24/1
-      - https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531
-      - http://www.openwall.com/lists/oss-security/2022/03/25/2
-      - http://www.openwall.com/lists/oss-security/2022/03/26/1
-      - https://www.openwall.com/lists/oss-security/2022/03/28/1
-      - https://github.com/madler/zlib/compare/v1.2.11...v1.2.12
-      - https://www.openwall.com/lists/oss-security/2022/03/28/3
-      - https://github.com/madler/zlib/issues/605
-      - https://www.debian.org/security/2022/dsa-5111
-      - https://lists.debian.org/debian-lts-announce/2022/04/msg00000.html
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NS2D2GFPFGOJUL4WQ3DUAY7HF4VWQ77F/
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOKFMSNQ5D5WGMALBNBXU3GE442V74WU/
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VOKNP2L734AEL47NRYGVZIKEFOUBQY5Y/
-      - https://lists.debian.org/debian-lts-announce/2022/05/msg00008.html
-      - https://support.apple.com/kb/HT213255
-      - https://support.apple.com/kb/HT213256
-      - https://support.apple.com/kb/HT213257
-      - http://seclists.org/fulldisclosure/2022/May/33
-      - http://seclists.org/fulldisclosure/2022/May/35
-      - http://seclists.org/fulldisclosure/2022/May/38
-      - https://security.netapp.com/advisory/ntap-20220526-0009/
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/
-    reported: 2022-03-25
-    severity: high
-  - cve: CVE-2016-9843
-    description: >
-      The crc32_big function in crc32.c in zlib 1.2.8 might allow
-      context-dependent attackers to have unspecified impact via vectors
-      involving big-endian CRC calculation.
-    affected_versions: '==1.2.8'
-    fixed_versions: ~
-    references:
-      - https://github.com/kmx/alien-freeimage/issues/4
-      - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
-      - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
-      - https://security.gentoo.org/glsa/201701-56
-      - https://github.com/madler/zlib/commit/d1d577490c15a0c6862473d7576352a9f18ef811
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1402351
-      - http://www.securityfocus.com/bid/95131
-      - http://www.openwall.com/lists/oss-security/2016/12/05/21
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
-      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
-      - http://www.securitytracker.com/id/1039427
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
-      - https://support.apple.com/HT208144
-      - https://support.apple.com/HT208115
-      - https://support.apple.com/HT208113
-      - https://support.apple.com/HT208112
-      - https://access.redhat.com/errata/RHSA-2017:3047
-      - https://access.redhat.com/errata/RHSA-2017:3046
-      - https://access.redhat.com/errata/RHSA-2017:3453
-      - https://access.redhat.com/errata/RHSA-2017:2999
-      - https://access.redhat.com/errata/RHSA-2017:1222
-      - https://access.redhat.com/errata/RHSA-2017:1221
-      - https://access.redhat.com/errata/RHSA-2017:1220
-      - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
-      - http://www.securitytracker.com/id/1041888
-      - https://security.netapp.com/advisory/ntap-20181018-0002/
-      - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
-      - https://usn.ubuntu.com/4246-1/
-      - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
-      - https://usn.ubuntu.com/4292-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-54
-    reported: 2017-05-23
-    severity: critical
-  - cve: CVE-2016-9842
-    description: >
-      The inflateMark function in inflate.c in zlib 1.2.8 might allow
-      context-dependent attackers to have unspecified impact via vectors
-      involving left shifts of negative integers.
-    affected_versions: '==1.2.8'
-    fixed_versions: ~
-    references:
-      - https://github.com/kmx/alien-freeimage/issues/4
-      - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
-      - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
-      - https://security.gentoo.org/glsa/201701-56
-      - https://github.com/madler/zlib/commit/e54e1299404101a5a9d0cf5e45512b543967f958
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1402348
-      - http://www.securityfocus.com/bid/95131
-      - http://www.openwall.com/lists/oss-security/2016/12/05/21
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
-      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
-      - http://www.securitytracker.com/id/1039427
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
-      - https://support.apple.com/HT208144
-      - https://support.apple.com/HT208115
-      - https://support.apple.com/HT208113
-      - https://support.apple.com/HT208112
-      - https://access.redhat.com/errata/RHSA-2017:3047
-      - https://access.redhat.com/errata/RHSA-2017:3046
-      - https://access.redhat.com/errata/RHSA-2017:3453
-      - https://access.redhat.com/errata/RHSA-2017:2999
-      - https://access.redhat.com/errata/RHSA-2017:1222
-      - https://access.redhat.com/errata/RHSA-2017:1221
-      - https://access.redhat.com/errata/RHSA-2017:1220
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
-      - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
-      - https://usn.ubuntu.com/4246-1/
-      - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
-      - https://usn.ubuntu.com/4292-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-54
-    reported: 2017-05-23
-    severity: high
-  - cve: CVE-2016-9841
-    description: >
-      inffast.c in zlib 1.2.8 might allow context-dependent attackers to
-      have unspecified impact by leveraging improper pointer arithmetic.
-    affected_versions: '==1.2.8'
-    fixed_versions: ~
-    references:
-      - https://github.com/kmx/alien-freeimage/issues/4
-      - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
-      - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
-      - https://security.gentoo.org/glsa/201701-56
-      - https://github.com/madler/zlib/commit/9aaec95e82117c1cb0f9624264c3618fc380cecb
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1402346
-      - http://www.securityfocus.com/bid/95131
-      - http://www.openwall.com/lists/oss-security/2016/12/05/21
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
-      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
-      - http://www.securitytracker.com/id/1039427
-      - http://www.securitytracker.com/id/1039596
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
-      - https://support.apple.com/HT208144
-      - https://support.apple.com/HT208115
-      - https://support.apple.com/HT208113
-      - https://support.apple.com/HT208112
-      - https://security.netapp.com/advisory/ntap-20171019-0001/
-      - https://access.redhat.com/errata/RHSA-2017:3047
-      - https://access.redhat.com/errata/RHSA-2017:3046
-      - https://access.redhat.com/errata/RHSA-2017:3453
-      - https://access.redhat.com/errata/RHSA-2017:2999
-      - https://access.redhat.com/errata/RHSA-2017:1222
-      - https://access.redhat.com/errata/RHSA-2017:1221
-      - https://access.redhat.com/errata/RHSA-2017:1220
-      - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
-      - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
-      - https://usn.ubuntu.com/4246-1/
-      - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
-      - https://usn.ubuntu.com/4292-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-54
-    reported: 2017-05-23
-    severity: critical
-    embedded_vulnerability:
-      distributed_version: "1.2.8"
-      name: zlib
-  - cve: CVE-2016-9840
-    description: >
-      inftrees.c in zlib 1.2.8 might allow context-dependent attackers
-      to have unspecified impact by leveraging improper pointer
-      arithmetic.
-    affected_versions: '==1.2.8'
-    fixed_versions: ~
-    references:
-      - https://github.com/kmx/alien-freeimage/issues/4
-      - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
-      - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
-      - https://security.gentoo.org/glsa/201701-56
-      - https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1402345
-      - http://www.securityfocus.com/bid/95131
-      - http://www.openwall.com/lists/oss-security/2016/12/05/21
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
-      - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
-      - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
-      - http://www.securitytracker.com/id/1039427
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
-      - https://support.apple.com/HT208144
-      - https://support.apple.com/HT208115
-      - https://support.apple.com/HT208113
-      - https://support.apple.com/HT208112
-      - https://access.redhat.com/errata/RHSA-2017:3047
-      - https://access.redhat.com/errata/RHSA-2017:3046
-      - https://access.redhat.com/errata/RHSA-2017:3453
-      - https://access.redhat.com/errata/RHSA-2017:2999
-      - https://access.redhat.com/errata/RHSA-2017:1222
-      - https://access.redhat.com/errata/RHSA-2017:1221
-      - https://access.redhat.com/errata/RHSA-2017:1220
-      - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
-      - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
-      - https://usn.ubuntu.com/4246-1/
-      - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
-      - https://usn.ubuntu.com/4292-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-54
-    reported: 2017-05-23
-    severity: high
-  - cve: CVE-2003-0107
-    description: >
-      Buffer overflow in the gzprintf function in zlib 1.1.4, when zlib
-      is compiled without vsnprintf or when long inputs are truncated using
-      vsnprintf, allows attackers to cause a denial of service or possibly
-      execute arbitrary code.
-    affected_versions: '==1.1.4'
-    fixed_versions: ~
-    references:
-      - http://online.securityfocus.com/archive/1/312869
-      - http://www.iss.net/security_center/static/11381.php
-      - http://lists.apple.com/mhonarc/security-announce/msg00038.html
-      - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2003-011.0.txt
-      - http://distro.conectiva.com/atualizacoes/?id=a&anuncio=000619
-      - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2003:033
-      - ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2003-004.txt.asc
-      - http://www.redhat.com/support/errata/RHSA-2003-079.html
-      - http://www.redhat.com/support/errata/RHSA-2003-081.html
-      - http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F57405
-      - http://www.kb.cert.org/vuls/id/142121
-      - http://www.securityfocus.com/bid/6913
-      - http://www.osvdb.org/6599
-      - http://marc.info/?l=bugtraq&m=104620610427210&w=2
-      - http://marc.info/?l=bugtraq&m=104887247624907&w=2
-      - http://marc.info/?l=bugtraq&m=104610536129508&w=2
-      - http://marc.info/?l=bugtraq&m=104610337726297&w=2
-      - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000066.html
-      - http://jvn.jp/en/jp/JVN78689801/index.html
-    reported: 2003-03-07
-    severity: ~
-  - cve: CVE-2002-0059
-    description: >
-      The decompression algorithm in zlib 1.1.3 and earlier, as used in
-      many different utilities and packages, causes inflateEnd to release
-      certain memory more than once (a "double free"), which may allow local
-      and remote attackers to execute arbitrary code via a block of
-      malformed compression data.
-    affected_versions: '<=1.1.3'
-    fixed_versions: '>1.1.3'
-    references:
-      - http://www.redhat.com/support/errata/RHSA-2002-026.html
-      - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-023.php
-      - http://www.redhat.com/support/errata/RHSA-2002-027.html
-      - http://www.cert.org/advisories/CA-2002-07.html
-      - http://www.kb.cert.org/vuls/id/368819
-      - http://www.debian.org/security/2002/dsa-122
-      - http://frontal2.mandriva.com/security/advisories?name=MDKSA-2002:022
-      - http://www.caldera.com/support/security/advisories/CSSA-2002-014.1.txt
-      - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2002-015.1.txt
-      - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000469
-      - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-030
-      - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-036
-      - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-037
-      - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-024.php3
-      - http://www.securityfocus.com/bid/4267
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/8427
-    reported: 2002-03-15
-    severity: ~
+- affected_versions: <1.2.12
+  cve: CVE-2018-25032
+  description: |
+    zlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.
+  fixed_versions: '>=1.2.12'
+  github_security_advisory:
+  - GHSA-jc36-42cf-vqwj
+  references:
+  - https://rt.cpan.org/Ticket/Display.html?id=143579
+  - https://www.openwall.com/lists/oss-security/2022/03/24/1
+  - https://github.com/madler/zlib/commit/5c44459c3b28a9bd3283aaceab7c615f8020c531
+  - http://www.openwall.com/lists/oss-security/2022/03/25/2
+  - http://www.openwall.com/lists/oss-security/2022/03/26/1
+  - https://www.openwall.com/lists/oss-security/2022/03/28/1
+  - https://github.com/madler/zlib/compare/v1.2.11...v1.2.12
+  - https://www.openwall.com/lists/oss-security/2022/03/28/3
+  - https://github.com/madler/zlib/issues/605
+  - https://www.debian.org/security/2022/dsa-5111
+  - https://lists.debian.org/debian-lts-announce/2022/04/msg00000.html
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NS2D2GFPFGOJUL4WQ3DUAY7HF4VWQ77F/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XOKFMSNQ5D5WGMALBNBXU3GE442V74WU/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VOKNP2L734AEL47NRYGVZIKEFOUBQY5Y/
+  - https://lists.debian.org/debian-lts-announce/2022/05/msg00008.html
+  - https://support.apple.com/kb/HT213255
+  - https://support.apple.com/kb/HT213256
+  - https://support.apple.com/kb/HT213257
+  - http://seclists.org/fulldisclosure/2022/May/33
+  - http://seclists.org/fulldisclosure/2022/May/35
+  - http://seclists.org/fulldisclosure/2022/May/38
+  - https://security.netapp.com/advisory/ntap-20220526-0009/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DF62MVMH3QUGMBDCB3DY2ERQ6EBHTADB/
+  reported: 2022-03-25
+  severity: high
+- affected_versions: ==1.2.8
+  cve: CVE-2016-9843
+  description: |
+    The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-q27x-567x-5347
+  references:
+  - https://github.com/kmx/alien-freeimage/issues/4
+  - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+  - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+  - https://security.gentoo.org/glsa/201701-56
+  - https://github.com/madler/zlib/commit/d1d577490c15a0c6862473d7576352a9f18ef811
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1402351
+  - http://www.securityfocus.com/bid/95131
+  - http://www.openwall.com/lists/oss-security/2016/12/05/21
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+  - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+  - http://www.securitytracker.com/id/1039427
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+  - https://support.apple.com/HT208144
+  - https://support.apple.com/HT208115
+  - https://support.apple.com/HT208113
+  - https://support.apple.com/HT208112
+  - https://access.redhat.com/errata/RHSA-2017:3047
+  - https://access.redhat.com/errata/RHSA-2017:3046
+  - https://access.redhat.com/errata/RHSA-2017:3453
+  - https://access.redhat.com/errata/RHSA-2017:2999
+  - https://access.redhat.com/errata/RHSA-2017:1222
+  - https://access.redhat.com/errata/RHSA-2017:1221
+  - https://access.redhat.com/errata/RHSA-2017:1220
+  - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+  - http://www.securitytracker.com/id/1041888
+  - https://security.netapp.com/advisory/ntap-20181018-0002/
+  - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+  - https://usn.ubuntu.com/4246-1/
+  - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+  - https://usn.ubuntu.com/4292-1/
+  - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: critical
+- affected_versions: ==1.2.8
+  cve: CVE-2016-9842
+  description: |
+    The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-3686-jjcf-4w27
+  references:
+  - https://github.com/kmx/alien-freeimage/issues/4
+  - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+  - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+  - https://security.gentoo.org/glsa/201701-56
+  - https://github.com/madler/zlib/commit/e54e1299404101a5a9d0cf5e45512b543967f958
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1402348
+  - http://www.securityfocus.com/bid/95131
+  - http://www.openwall.com/lists/oss-security/2016/12/05/21
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+  - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+  - http://www.securitytracker.com/id/1039427
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+  - https://support.apple.com/HT208144
+  - https://support.apple.com/HT208115
+  - https://support.apple.com/HT208113
+  - https://support.apple.com/HT208112
+  - https://access.redhat.com/errata/RHSA-2017:3047
+  - https://access.redhat.com/errata/RHSA-2017:3046
+  - https://access.redhat.com/errata/RHSA-2017:3453
+  - https://access.redhat.com/errata/RHSA-2017:2999
+  - https://access.redhat.com/errata/RHSA-2017:1222
+  - https://access.redhat.com/errata/RHSA-2017:1221
+  - https://access.redhat.com/errata/RHSA-2017:1220
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+  - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+  - https://usn.ubuntu.com/4246-1/
+  - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+  - https://usn.ubuntu.com/4292-1/
+  - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: high
+- affected_versions: ==1.2.8
+  cve: CVE-2016-9841
+  description: |
+    inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic.
+  embedded_vulnerability:
+    distributed_version: 1.2.8
+    name: zlib
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-5f8r-846v-423w
+  references:
+  - https://github.com/kmx/alien-freeimage/issues/4
+  - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+  - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+  - https://security.gentoo.org/glsa/201701-56
+  - https://github.com/madler/zlib/commit/9aaec95e82117c1cb0f9624264c3618fc380cecb
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1402346
+  - http://www.securityfocus.com/bid/95131
+  - http://www.openwall.com/lists/oss-security/2016/12/05/21
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+  - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+  - http://www.securitytracker.com/id/1039427
+  - http://www.securitytracker.com/id/1039596
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+  - https://support.apple.com/HT208144
+  - https://support.apple.com/HT208115
+  - https://support.apple.com/HT208113
+  - https://support.apple.com/HT208112
+  - https://security.netapp.com/advisory/ntap-20171019-0001/
+  - https://access.redhat.com/errata/RHSA-2017:3047
+  - https://access.redhat.com/errata/RHSA-2017:3046
+  - https://access.redhat.com/errata/RHSA-2017:3453
+  - https://access.redhat.com/errata/RHSA-2017:2999
+  - https://access.redhat.com/errata/RHSA-2017:1222
+  - https://access.redhat.com/errata/RHSA-2017:1221
+  - https://access.redhat.com/errata/RHSA-2017:1220
+  - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+  - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+  - https://usn.ubuntu.com/4246-1/
+  - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+  - https://usn.ubuntu.com/4292-1/
+  - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: critical
+- affected_versions: ==1.2.8
+  cve: CVE-2016-9840
+  description: |
+    inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-wrj6-35fr-8xw5
+  references:
+  - https://github.com/kmx/alien-freeimage/issues/4
+  - https://wiki.mozilla.org/MOSS/Secure_Open_Source/Completed#zlib
+  - https://wiki.mozilla.org/images/0/09/Zlib-report.pdf
+  - https://security.gentoo.org/glsa/201701-56
+  - https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1402345
+  - http://www.securityfocus.com/bid/95131
+  - http://www.openwall.com/lists/oss-security/2016/12/05/21
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00053.html
+  - http://lists.opensuse.org/opensuse-updates/2017-01/msg00050.html
+  - http://lists.opensuse.org/opensuse-updates/2016-12/msg00127.html
+  - http://www.securitytracker.com/id/1039427
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html
+  - https://support.apple.com/HT208144
+  - https://support.apple.com/HT208115
+  - https://support.apple.com/HT208113
+  - https://support.apple.com/HT208112
+  - https://access.redhat.com/errata/RHSA-2017:3047
+  - https://access.redhat.com/errata/RHSA-2017:3046
+  - https://access.redhat.com/errata/RHSA-2017:3453
+  - https://access.redhat.com/errata/RHSA-2017:2999
+  - https://access.redhat.com/errata/RHSA-2017:1222
+  - https://access.redhat.com/errata/RHSA-2017:1221
+  - https://access.redhat.com/errata/RHSA-2017:1220
+  - http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+  - https://lists.debian.org/debian-lts-announce/2019/03/msg00027.html
+  - https://usn.ubuntu.com/4246-1/
+  - https://lists.debian.org/debian-lts-announce/2020/01/msg00030.html
+  - https://usn.ubuntu.com/4292-1/
+  - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://security.gentoo.org/glsa/202007-54
+  reported: 2017-05-23
+  severity: high
+- affected_versions: ==1.1.4
+  cve: CVE-2003-0107
+  description: |
+    Buffer overflow in the gzprintf function in zlib 1.1.4, when zlib is compiled without vsnprintf or when long inputs are truncated using vsnprintf, allows attackers to cause a denial of service or possibly execute arbitrary code.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-c9pj-8qx8-ccrw
+  references:
+  - http://online.securityfocus.com/archive/1/312869
+  - http://www.iss.net/security_center/static/11381.php
+  - http://lists.apple.com/mhonarc/security-announce/msg00038.html
+  - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2003-011.0.txt
+  - http://distro.conectiva.com/atualizacoes/?id=a&anuncio=000619
+  - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2003:033
+  - ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2003-004.txt.asc
+  - http://www.redhat.com/support/errata/RHSA-2003-079.html
+  - http://www.redhat.com/support/errata/RHSA-2003-081.html
+  - http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F57405
+  - http://www.kb.cert.org/vuls/id/142121
+  - http://www.securityfocus.com/bid/6913
+  - http://www.osvdb.org/6599
+  - http://marc.info/?l=bugtraq&m=104620610427210&w=2
+  - http://marc.info/?l=bugtraq&m=104887247624907&w=2
+  - http://marc.info/?l=bugtraq&m=104610536129508&w=2
+  - http://marc.info/?l=bugtraq&m=104610337726297&w=2
+  - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000066.html
+  - http://jvn.jp/en/jp/JVN78689801/index.html
+  reported: 2003-03-07
+  severity: ~
+- affected_versions: <=1.1.3
+  cve: CVE-2002-0059
+  description: |
+    The decompression algorithm in zlib 1.1.3 and earlier, as used in many different utilities and packages, causes inflateEnd to release certain memory more than once (a "double free"), which may allow local and remote attackers to execute arbitrary code via a block of malformed compression data.
+  fixed_versions: '>1.1.3'
+  github_security_advisory:
+  - GHSA-8894-p74v-5485
+  references:
+  - http://www.redhat.com/support/errata/RHSA-2002-026.html
+  - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-023.php
+  - http://www.redhat.com/support/errata/RHSA-2002-027.html
+  - http://www.cert.org/advisories/CA-2002-07.html
+  - http://www.kb.cert.org/vuls/id/368819
+  - http://www.debian.org/security/2002/dsa-122
+  - http://frontal2.mandriva.com/security/advisories?name=MDKSA-2002:022
+  - http://www.caldera.com/support/security/advisories/CSSA-2002-014.1.txt
+  - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2002-015.1.txt
+  - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000469
+  - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-030
+  - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-036
+  - http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBTL0204-037
+  - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-024.php3
+  - http://www.securityfocus.com/bid/4267
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/8427
+  reported: 2002-03-15
+  severity: ~
+cpansa_version: 2
+name: zlib
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.2.3
+    perl_module_versions: '>=0.50,<=0.62'
+  name: BackupPC-XS
+- affected:
+  - distributed_library_version: 1.2.8
+    perl_module_versions: '>=0.001,<=1.001'
+  name: Alien-FreeImage
+- affected:
+  - distributed_library_version: 1.1.4
+    perl_module_versions: '>=1.00,<=1.10.1'
+  name: Win32-File-Summary
+- affected:
+  - distributed_library_version: 1.1.4
+    perl_module_versions: '>=804.025,<=804.027'
+  - distributed_library_version: 1.2.3
+    perl_module_versions: '>=804.027_500,<=804.036'
+  name: Tk
+- affected:
+  - distributed_library_version: 1.2.11
+    perl_module_versions: '>=0.01,<=0.02'
+  name: SPVM-Resource-Zlib-V1_2_11
+- affected:
+  - distributed_library_version: 1.1.3
+    perl_module_versions: '>=1.01,<=1.02'
+  name: Prima-codecs-win64
+- affected:
+  - distributed_library_version: 1.1.3
+    perl_module_versions: '>=1.00,<=1.01'
+  name: Prima-codecs-win32
+- affected:
+  - distributed_library_version: 1.1.4
+    perl_module_versions: '>=0.02,<=0.06'
+  name: LibZip
+- affected:
+  - distributed_library_version: 1.2.8
+    perl_module_versions: '>=0.01,<=0.07'
+  name: Image-PNG-Simple
+- affected:
+  - distributed_library_version: 1.2.3
+    perl_module_versions: '>=2.000_09,<=2.024'
+  - distributed_library_version: 1.2.5
+    perl_module_versions: '>=2.025,<=2.048'
+  - distributed_library_version: 1.2.6
+    perl_module_versions: '>=2.049,<=2.052'
+  - distributed_library_version: 1.2.7
+    perl_module_versions: '>=2.053,<=2.060'
+  - distributed_library_version: 1.2.8
+    perl_module_versions: '>=2.061,<=2.074'
+  - distributed_library_version: 1.2.11
+    perl_module_versions: '>=2.075,<=2.101'
+  - distributed_library_version: 1.2.12
+    perl_module_versions: '>=2.103,<=2.202'
+  name: Compress-Raw-Zlib
+- affected:
+  - distributed_library_version: 1.2.5
+    perl_module_versions: '>=0.08,<=0.40'
+  - distributed_library_version: 1.2.8
+    perl_module_versions: '>=0.41,<=0.75'
+  - distributed_library_version: 1.2.11
+    perl_module_versions: '>=0.76,<=0.88'
+  comment: As part of libgit2
+  last_version_checked: '0.88'
+  name: Git-Raw
+- affected:
+  - distributed_library_version: 1.2.5
+    perl_module_versions: '>=0.01,<=0.02'
+  comment: As part of libgit2
+  last_version_checked: '0.02'
+  name: Git-XS
+- affected:
+  - comment: As part of dlib
+    distributed_library_version: 1.2.8
+    perl_module_versions: ==0.01
+  last_version_checked: '0.01'
+  name: cppAdaptive1
+- affected:
+  - comment: As part of dlib
+    distributed_library_version: 1.2.8
+    perl_module_versions: '>=0.01,<=3.0.3'
+  last_version_checked: 3.0.3
+  name: cppAdaptive2
+url: https://zlib.net

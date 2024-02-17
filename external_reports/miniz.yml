@@ -1,34 +1,36 @@
 ---
-name: miniz
-url: https://github.com/richgel999/miniz
-comment:
-perl_distributions:
-  - name: Sereal::Encoder
-    last_version_checked: "5.003"
-    affected:
-      - perl_module_versions: '>=3.000_001,<4.009_002'
-        distributed_library_version: '1.15'
-      - perl_module_versions: '>=4.009_002,<5.002_001'
-        distributed_library_version: '2.1.0'
-      - perl_module_versions: '>=5.002_001'
-        distributed_library_version: '3.0.0'
-  - name: Sereal::Decoder
-    last_version_checked: "5.003"
-    affected:
-      - perl_module_versions: '>=3.000_001,<4.009_002'
-        distributed_library_version: '1.15'
-      - perl_module_versions: '>=4.009_002,<5.002_001'
-        distributed_library_version: '2.1.0'
-      - perl_module_versions: '>=5.002_001'
-        distributed_library_version: '3.0.0'
 advisories:
-  - cve: CVE-2018-12913
-    affected_versions: '2.0.7'
-    description: >
-      In Miniz 2.0.7, tinfl_decompress in miniz_tinfl.c has an infinite
-      loop because sym2 and counter can both remain equal to zero.
-    fixed_versions: ~
-    references:
-      - https://github.com/richgel999/miniz/issues/90
-    reported: 2018-06-27
-    severity: high
+- affected_versions: 2.0.7
+  cve: CVE-2018-12913
+  description: |
+    In Miniz 2.0.7, tinfl_decompress in miniz_tinfl.c has an infinite loop because sym2 and counter can both remain equal to zero.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-prfm-chh2-jj5h
+  references:
+  - https://github.com/richgel999/miniz/issues/90
+  reported: 2018-06-27
+  severity: high
+comment: ~
+cpansa_version: 2
+name: miniz
+perl_distributions:
+- affected:
+  - distributed_library_version: '1.15'
+    perl_module_versions: '>=3.000_001,<4.009_002'
+  - distributed_library_version: 2.1.0
+    perl_module_versions: '>=4.009_002,<5.002_001'
+  - distributed_library_version: 3.0.0
+    perl_module_versions: '>=5.002_001'
+  last_version_checked: '5.003'
+  name: Sereal::Encoder
+- affected:
+  - distributed_library_version: '1.15'
+    perl_module_versions: '>=3.000_001,<4.009_002'
+  - distributed_library_version: 2.1.0
+    perl_module_versions: '>=4.009_002,<5.002_001'
+  - distributed_library_version: 3.0.0
+    perl_module_versions: '>=5.002_001'
+  last_version_checked: '5.003'
+  name: Sereal::Decoder
+url: https://github.com/richgel999/miniz
