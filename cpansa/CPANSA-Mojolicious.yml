@@ -1,232 +1,217 @@
 ---
-- id: CPANSA-Mojolicious-2022-03
+advisories:
+- affected_versions: <9.31
   cves: []
-  distribution: Mojolicious
+  description: |
+    Mojo::DOM did not correctly parse <script> tags.
+  fixed_versions: '>=9.31'
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2022-03
+  references:
+  - https://github.com/mojolicious/mojo/commit/6f195d85db6756022d3599f7d2634975688c9550
+  - https://github.com/mojolicious/mojo/issues/2014
+  - https://github.com/mojolicious/mojo/issues/2015
   reported: 2022-12-10
   severity: ~
-  description: >
-    Mojo::DOM did not correctly parse <script> tags.
-  affected_versions: "<9.31"
-  fixed_versions: ">=9.31"
-  references:
-    - https://github.com/mojolicious/mojo/commit/6f195d85db6756022d3599f7d2634975688c9550
-    - https://github.com/mojolicious/mojo/issues/2014
-    - https://github.com/mojolicious/mojo/issues/2015
-- id: CPANSA-Mojolicious-2021-02
+- affected_versions: <9.19
   cves: []
-  distribution: Mojolicious
+  description: |
+    Small sessions could be used as part of a brute-force attack to decode the session secret.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2021-02
+  references:
+  - https://github.com/mojolicious/mojo/pull/1791
   reported: 2021-06-01
   severity: ~
-  description: >
-    Small sessions could be used as part of a brute-force attack to decode the
-    session secret.
-  affected_versions: "<9.19"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/pull/1791
-- id: CPANSA-Mojolicious-2021-01
+- affected_versions: <9.11
   cves: []
-  distribution: Mojolicious
+  description: |
+    A bug in format detection can potentially be exploited for a DoS attack.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2021-01
+  references:
+  - https://github.com/mojolicious/mojo/issues/1736
+  - https://github.com/mojolicious/mojo/commit/a0c4576ffb11c235088550de9ba7ac4196e1953c
   reported: 2021-03-16
   severity: ~
-  description: >
-    A bug in format detection can potentially be exploited for a DoS attack.
-  affected_versions: "<9.11"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/issues/1736
-    - https://github.com/mojolicious/mojo/commit/a0c4576ffb11c235088550de9ba7ac4196e1953c
-- id: CPANSA-Mojolicious-2020-01
+- affected_versions: '>1.74,<8.65'
   cves: []
-  distribution: Mojolicious
+  description: |
+    Mojo::Util secure_compare can leak the string length. By immediately returning when the two strings are not the same length, the function allows an attacker to guess the length of the secret string using timing attacks.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2020-01
+  references:
+  - https://github.com/mojolicious/mojo/pull/1601
   reported: 2020-11-10
-  severity: ~
-  description: >
-    Mojo::Util secure_compare can leak the string length.
-    By immediately returning when the two strings are not the
-    same length, the function allows an attacker to guess the
-    length of the secret string using timing attacks.
-  affected_versions: ">1.74,<8.65"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/pull/1601
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-22
-- id: CPANSA-Mojolicious-2018-04
+  - date: 2022-06-22
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: ~
+- affected_versions: '>7.83,<7.92'
   cves: []
-  distribution: Mojolicious
+  description: |
+    This release reverts the addition of stream classes (added in 7.83), which have unfortunately resulted in many Mojolicious applications becoming unstable. While there are no known exploits yet, we've chosen to err on the side of cautiousness and will classify this as a security issue.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2018-04
+  references:
+  - https://github.com/mojolicious/mojo/commit/61f6cbf22c7bf8eb4787bd1014d91ee2416c73e7
   reported: 2018-08-09
   severity: critical
-  description: >
-    This release reverts the addition of stream classes (added in
-    7.83), which have unfortunately resulted in many Mojolicious
-    applications becoming unstable. While there are no known exploits
-    yet, we've chosen to err on the side of cautiousness and will
-    classify this as a security issue.
-  affected_versions: ">7.83,<7.92"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/commit/61f6cbf22c7bf8eb4787bd1014d91ee2416c73e7
-- id: CPANSA-Mojolicious-2018-03
+- affected_versions: <7.80
   cves: []
-  distribution: Mojolicious
+  description: |
+    Mojo::UserAgent was not checking peer SSL certificates by default.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2018-03
+  references:
+  - https://github.com/mojolicious/mojo/pull/1226
+  - https://github.com/mojolicious/mojo/commit/d3cbbad890673612fdbdea63fdd522b516f6104c
   reported: 2018-05-19
   severity: high
-  description: >
-    Mojo::UserAgent was not checking peer SSL certificates by default.
-  affected_versions: "<7.80"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/pull/1226
-    - https://github.com/mojolicious/mojo/commit/d3cbbad890673612fdbdea63fdd522b516f6104c
-- id: CPANSA-Mojolicious-2018-02
+- affected_versions: <7.78
   cves: []
-  distribution: Mojolicious
+  description: |
+    GET requests with embedded backslashes can be used to access local files on Windows hosts
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2018-02
+  references:
+  - https://github.com/mojolicious/mojo/pull/1217
+  - https://github.com/mojolicious/mojo/commit/23ebe051d9378f0f122e3c908845fc0c2cae0106
   reported: 2018-05-11
   severity: critical
-  description: >
-    GET requests with embedded backslashes can be used to access local
-    files on Windows hosts
-  affected_versions: "<7.78"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/pull/1217
-    - https://github.com/mojolicious/mojo/commit/23ebe051d9378f0f122e3c908845fc0c2cae0106
-- id: CPANSA-Mojolicious-2018-01
+- affected_versions: <7.66
   cves: []
-  distribution: Mojolicious
+  description: |
+    Mojo::UserAgent::CookieJar leaks old cookies because of the missing host_only flag on empty domain.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2018-01
+  references:
+  - https://github.com/mojolicious/mojo/pull/1192
+  - https://github.com/mojolicious/mojo/issues/1185
+  - https://github.com/mojolicious/mojo/commit/c16a56a9d6575ddc53d15e76d58f0ebcb0eeb149
   reported: 2018-02-13
   severity: minor
-  description: >
-    Mojo::UserAgent::CookieJar leaks old cookies because of the
-    missing host_only flag on empty domain.
-  affected_versions: "<7.66"
-  fixed_versions: ~
-  references:
-    - https://github.com/mojolicious/mojo/pull/1192
-    - https://github.com/mojolicious/mojo/issues/1185
-    - https://github.com/mojolicious/mojo/commit/c16a56a9d6575ddc53d15e76d58f0ebcb0eeb149
-- id: CPANSA-Mojolicious-2015-01
+- affected_versions: <5.76
   cves: []
-  distribution: Mojolicious
+  description: |
+    Directory traversal on Windows
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2015-01
+  references:
+  - https://github.com/mojolicious/mojo/issues/738
+  - https://github.com/mojolicious/mojo/commit/9ffa38fca73a9ddee91cbc70e0696268d500edde
   reported: 2015-02-02
   severity: critical
-  description: >
-    Directory traversal on Windows
-  references:
-    - https://github.com/mojolicious/mojo/issues/738
-    - https://github.com/mojolicious/mojo/commit/9ffa38fca73a9ddee91cbc70e0696268d500edde
-  affected_versions: "<5.76"
-  fixed_versions: ~
-- id: CPANSA-Mojolicious-2014-01
+- affected_versions: <5.48
   cves: []
-  distribution: Mojolicious
+  description: |
+    Context sensitivity of method param could lead to parameter injection attacks.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2014-01
+  references:
+  - https://github.com/mojolicious/mojo/commit/a815d4797145f872ef6e9f1270841eda1d410afb
   reported: 2014-10-07
   severity: high
-  description: >
-    Context sensitivity of method param could lead to parameter
-    injection attacks.
-  references:
-    - https://github.com/mojolicious/mojo/commit/a815d4797145f872ef6e9f1270841eda1d410afb
-  affected_versions: "<5.48"
-  fixed_versions: ~
-- id: CPANSA-Mojolicious-2011-02
+- affected_versions: <1.16
   cves: []
-  distribution: Mojolicious
+  description: |
+    Directory traversal vulnerability in Path.pm in Mojolicious before 1.16 allows remote attackers to read arbitrary files via a %2f..%2f (encoded slash dot dot slash) in a URI.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2011-02
+  references:
+  - https://github.com/mojolicious/mojo/commit/b09854988c5b5b6a2ba53cc8661c4b2677da3818
+  - https://www.cvedetails.com/cve/CVE-2011-1589/
   reported: 2011-04-05
   severity: critical
-  description: >
-    Directory traversal vulnerability in Path.pm in Mojolicious before
-    1.16 allows remote attackers to read arbitrary files via a
-    %2f..%2f (encoded slash dot dot slash) in a URI.
-  references:
-    - https://github.com/mojolicious/mojo/commit/b09854988c5b5b6a2ba53cc8661c4b2677da3818
-    - https://www.cvedetails.com/cve/CVE-2011-1589/
-  affected_versions: "<1.16"
-  fixed_versions: ~
-- id: CPANSA-Mojolicious-2011-01
+- affected_versions: <1.12
   cves: []
-  distribution: Mojolicious
+  description: |
+    Mojolicious is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by link_to helper. A remote attacker could exploit this vulnerability using a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.
+  fixed_versions: ~
+  github_security_advisory: []
+  id: CPANSA-Mojolicious-2011-01
+  references:
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
+  - https://www.debian.org/security/2011/dsa-2239
+  - https://github.com/mojolicious/mojo/commit/f6801ef7be8c78092e38f870b19fae3da0899d60
   reported: 2011-03-10
   severity: high
-  description: >
-    Mojolicious is vulnerable to cross-site scripting, caused by
-    improper validation of user-supplied input by link_to helper. A
-    remote attacker could exploit this vulnerability using a
-    specially-crafted URL to execute script in a victim's Web browser
-    within the security context of the hosting Web site, once the URL
-    is clicked. An attacker could use this vulnerability to steal the
-    victim's cookie-based authentication credentials.
-  references:
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
-    - https://www.debian.org/security/2011/dsa-2239
-    - https://github.com/mojolicious/mojo/commit/f6801ef7be8c78092e38f870b19fae3da0899d60
-  affected_versions: "<1.12"
-  fixed_versions: ~
-- affected_versions: "<0.999927"
+- affected_versions: <0.999927
   cves:
-    - CVE-2010-4803
-  description: >
-    Mojolicious before 0.999927 does not properly implement HMAC-MD5
-    checksums, which has unspecified impact and remote attack vectors.
-  distribution: Mojolicious
+  - CVE-2010-4803
+  description: |
+    Mojolicious before 0.999927 does not properly implement HMAC-MD5 checksums, which has unspecified impact and remote attack vectors.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-4q9r-c3w8-rm5f
   id: CPANSA-Mojolicious-2010-4803
   references:
-    - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=622952
-    - http://www.debian.org/security/2011/dsa-2239
+  - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=622952
+  - http://www.debian.org/security/2011/dsa-2239
   reported: 2011-05-03
   severity: ~
-- affected_versions: "<0.999928"
+- affected_versions: <0.999928
   cves:
-    - CVE-2010-4802
-  description: >
-    Commands.pm in Mojolicious before 0.999928 does not properly
-    perform CGI environment detection, which has unspecified impact
-    and remote attack vectors.
-  distribution: Mojolicious
+  - CVE-2010-4802
+  description: |
+    Commands.pm in Mojolicious before 0.999928 does not properly perform CGI environment detection, which has unspecified impact and remote attack vectors.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-9wxp-xqhf-2m53
   id: CPANSA-Mojolicious-2010-4802
   references:
-    - https://github.com/kraih/mojo/commit/b3a1fb453eda447c0bb082cd9eed81bb75a7564a
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=622952
-    - https://github.com/kraih/mojo/commit/aa7c8da54b1ebd4ccb64aa66dede7b7cdb381c44
-    - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
-    - http://www.debian.org/security/2011/dsa-2239
+  - https://github.com/kraih/mojo/commit/b3a1fb453eda447c0bb082cd9eed81bb75a7564a
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=622952
+  - https://github.com/kraih/mojo/commit/aa7c8da54b1ebd4ccb64aa66dede7b7cdb381c44
+  - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+  - http://www.debian.org/security/2011/dsa-2239
   reported: 2011-05-03
   severity: ~
-- affected_versions: "<1.12"
+- affected_versions: <1.12
   cves:
-    - CVE-2011-1841
-  description: >
-    Cross-site scripting (XSS) vulnerability in the link_to helper in
-    Mojolicious before 1.12 allows remote attackers to inject
-    arbitrary web script or HTML via unspecified vectors.
-  distribution: Mojolicious
-  fixed_versions: ">=1.12"
+  - CVE-2011-1841
+  description: |
+    Cross-site scripting (XSS) vulnerability in the link_to helper in Mojolicious before 1.12 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+  fixed_versions: '>=1.12'
+  github_security_advisory:
+  - GHSA-w975-73p7-chcj
   id: CPANSA-Mojolicious-2011-1841
   references:
-    - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060122.html
-    - http://www.debian.org/security/2011/dsa-2239
-    - http://www.securityfocus.com/bid/47713
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
+  - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060122.html
+  - http://www.debian.org/security/2011/dsa-2239
+  - http://www.securityfocus.com/bid/47713
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
   reported: 2011-05-03
   severity: ~
-- affected_versions: "<0.991250"
+- affected_versions: <0.991250
   cves:
-    - CVE-2009-5074
-  description: >
-    Unspecified vulnerability in the MojoX::Dispatcher::Static
-    implementation in Mojolicious before 0.991250 has unknown impact
-    and attack vectors.
-  distribution: Mojolicious
-  fixed_versions: ">0.991250"
+  - CVE-2009-5074
+  description: |
+    Unspecified vulnerability in the MojoX::Dispatcher::Static implementation in Mojolicious before 0.991250 has unknown impact and attack vectors.
+  fixed_versions: '>0.991250'
+  github_security_advisory:
+  - GHSA-73xj-fh2g-76q8
   id: CPANSA-Mojolicious-2009-5074
   references:
-    - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+  - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
   reported: 2011-05-03
   severity: ~
+cpansa_version: 2
+distribution: Mojolicious
+last_checked: 1708150858
+latest_version: '9.35'
+metacpan: https://metacpan.org/pod/Mojolicious
+repo: https://github.com/mojolicious/mojo.git

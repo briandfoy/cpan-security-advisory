@@ -1,13 +1,19 @@
 ---
-- affected_versions: '<1.95'
+advisories:
+- affected_versions: <1.95
   cves: []
-  description: >
-    A bug would allow a malicious user possible writing of files in
-    the same directory as the source.asp script.
-  distribution: Apache-ASP
+  description: |
+    A bug would allow a malicious user possible writing of files in the same directory as the source.asp script.
   fixed_versions: '>=1.95'
+  github_security_advisory: []
   id: CPANSA-Apache-ASP-2000-01
   references:
-    - https://metacpan.org/release/CHAMAS/Apache-ASP-2.63/source/README
+  - https://metacpan.org/release/CHAMAS/Apache-ASP-2.63/source/README
   reported: 2000-07-10
   severity: ~
+cpansa_version: 2
+distribution: Apache-ASP
+last_checked: 1708150828
+latest_version: 2.63
+metacpan: https://metacpan.org/pod/Apache::ASP
+repo: ~

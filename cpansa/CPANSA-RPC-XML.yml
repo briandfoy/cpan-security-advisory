@@ -1,12 +1,18 @@
 ---
-- id: CPANSA-RPC-XML-2002-01
-  distribution: RPC-XML
-  reported: 2002-10-29
-  description: >
-    A a potential security hole in the parsing of external
-    entities.
-  references:
-    - https://metacpan.org/dist/RPC-XML/changes
+advisories:
+- affected_versions: <0.45
   cves: []
-  affected_versions: "<0.45"
-  fixed_versions: ">=0.45"
+  description: |
+    A a potential security hole in the parsing of external entities.
+  fixed_versions: '>=0.45'
+  github_security_advisory: []
+  id: CPANSA-RPC-XML-2002-01
+  references:
+  - https://metacpan.org/dist/RPC-XML/changes
+  reported: 2002-10-29
+cpansa_version: 2
+distribution: RPC-XML
+last_checked: 1708150865
+latest_version: '0.82'
+metacpan: https://metacpan.org/pod/RPC::XML
+repo: http://github.com/rjray/rpc-xml

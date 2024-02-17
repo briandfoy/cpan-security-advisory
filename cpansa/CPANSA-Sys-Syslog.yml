@@ -1,14 +1,22 @@
 ---
-- affected_versions: "<0.35"
+advisories:
+- affected_versions: <0.35
   cves:
-    - CVE-2016-1238
-  description: >
+  - CVE-2016-1238
+  description: |
     Optional modules loaded from loading optional modules from "."
-  distribution: Sys-Syslog
-  fixed_versions: ">=0.35"
+  fixed_versions: '>=0.35'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
   id: CPANSA-Sys-Syslog-2016-1238
   references:
-    - https://metacpan.org/dist/Sys-Syslog/changes
-    - https://rt.cpan.org/Public/Bug/Display.html?id=116543
+  - https://metacpan.org/dist/Sys-Syslog/changes
+  - https://rt.cpan.org/Public/Bug/Display.html?id=116543
   reported: 2016-07-27
   severity: high
+cpansa_version: 2
+distribution: Sys-Syslog
+last_checked: 1708150868
+latest_version: '0.36'
+metacpan: https://metacpan.org/pod/Sys::Syslog
+repo: https://github.com/maddingue/Sys-Syslog.git

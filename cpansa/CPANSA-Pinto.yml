@@ -1,16 +1,23 @@
 ---
-- id: CPANSA-Pinto-2014-01
-  distribution: Pinto
-  reported: 2014-08-19
-  description: >
-    Pinto server allowed directory traveral.
-  references:
-    - https://metacpan.org/dist/Pinto/changes
-    - https://github.com/thaljef/Pinto/commit/195d46eb4488a7dec6c39d6eb1c48dc872ab2b3b
-  affected_versions: "<0.09995"
-  fixed_versions: ">=0.09995"
+advisories:
+- affected_versions: <0.09995
   cves: []
+  description: |
+    Pinto server allowed directory traveral.
+  fixed_versions: '>=0.09995'
+  github_security_advisory: []
+  id: CPANSA-Pinto-2014-01
+  references:
+  - https://metacpan.org/dist/Pinto/changes
+  - https://github.com/thaljef/Pinto/commit/195d46eb4488a7dec6c39d6eb1c48dc872ab2b3b
+  reported: 2014-08-19
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-28
+  - date: 2022-06-28
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+cpansa_version: 2
+distribution: Pinto
+last_checked: 1708150863
+latest_version: '0.14'
+metacpan: https://metacpan.org/pod/Pinto
+repo: git://github.com/thaljef/Pinto.git

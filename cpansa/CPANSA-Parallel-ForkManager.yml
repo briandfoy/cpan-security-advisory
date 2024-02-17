@@ -1,16 +1,23 @@
 ---
-- affected_versions: "<1.0.0"
+advisories:
+- affected_versions: <1.0.0
   cves:
-    - CVE-2011-4115
-  description: >
-    Parallel::ForkManager module before 1.0.0 for Perl does not
-    properly handle temporary files.
-  distribution: Parallel-ForkManager
+  - CVE-2011-4115
+  description: |
+    Parallel::ForkManager module before 1.0.0 for Perl does not properly handle temporary files.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-xp3x-85w4-72px
   id: CPANSA-Parallel-ForkManager-2011-4115
   references:
-    - http://www.openwall.com/lists/oss-security/2011/11/04/2
-    - http://www.openwall.com/lists/oss-security/2011/11/04/4
-    - https://rt.cpan.org/Public/Bug/Display.html?id=68298
+  - http://www.openwall.com/lists/oss-security/2011/11/04/2
+  - http://www.openwall.com/lists/oss-security/2011/11/04/4
+  - https://rt.cpan.org/Public/Bug/Display.html?id=68298
   reported: 2020-01-31
   severity: high
+cpansa_version: 2
+distribution: Parallel-ForkManager
+last_checked: 1708150862
+latest_version: '2.02'
+metacpan: https://metacpan.org/pod/Parallel::ForkManager
+repo: https://github.com/dluxhu/perl-parallel-forkmanager.git

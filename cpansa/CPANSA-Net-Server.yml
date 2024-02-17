@@ -1,33 +1,36 @@
 ---
-- affected_versions: "<=0.87"
+advisories:
+- affected_versions: <=0.87
   cves:
-    - CVE-2005-1127
-  description: >
-    Format string vulnerability in the log function in Net::Server
-    0.87 and earlier, as used in Postfix Greylisting Policy Server
-    (Postgrey) 1.18 and earlier, and possibly other products, allows
-    remote attackers to cause a denial of service (crash) via format
-    string specifiers that are not properly handled before being sent
-    to syslog, as demonstrated using sender addresses to Postgrey.
-  distribution: Net-Server
-  fixed_versions: ">0.87"
+  - CVE-2005-1127
+  description: |
+    Format string vulnerability in the log function in Net::Server 0.87 and earlier, as used in Postfix Greylisting Policy Server (Postgrey) 1.18 and earlier, and possibly other products, allows remote attackers to cause a denial of service (crash) via format string specifiers that are not properly handled before being sent to syslog, as demonstrated using sender addresses to Postgrey.
+  fixed_versions: '>0.87'
+  github_security_advisory:
+  - GHSA-3c38-6263-x4qc
   id: CPANSA-Net-Server-2005-1127
   references:
-    - http://lists.ee.ethz.ch/postgrey/msg00627.html
-    - http://lists.ee.ethz.ch/postgrey/msg00630.html
-    - http://lists.ee.ethz.ch/postgrey/msg00647.html
-    - http://www.osvdb.org/15517
-    - http://secunia.com/advisories/14958
-    - http://www.debian.org/security/2006/dsa-1121
-    - http://www.debian.org/security/2006/dsa-1122
-    - http://secunia.com/advisories/21164
-    - http://secunia.com/advisories/21152
-    - http://secunia.com/advisories/21149
-    - http://www.gentoo.org/security/en/glsa/glsa-200608-18.xml
-    - http://www.securityfocus.com/bid/13193
-    - http://secunia.com/advisories/21452
-    - http://www.mandriva.com/security/advisories?name=MDKSA-2006:131
-    - http://marc.info/?l=full-disclosure&m=111354538331167&w=2
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/20108
+  - http://lists.ee.ethz.ch/postgrey/msg00627.html
+  - http://lists.ee.ethz.ch/postgrey/msg00630.html
+  - http://lists.ee.ethz.ch/postgrey/msg00647.html
+  - http://www.osvdb.org/15517
+  - http://secunia.com/advisories/14958
+  - http://www.debian.org/security/2006/dsa-1121
+  - http://www.debian.org/security/2006/dsa-1122
+  - http://secunia.com/advisories/21164
+  - http://secunia.com/advisories/21152
+  - http://secunia.com/advisories/21149
+  - http://www.gentoo.org/security/en/glsa/glsa-200608-18.xml
+  - http://www.securityfocus.com/bid/13193
+  - http://secunia.com/advisories/21452
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:131
+  - http://marc.info/?l=full-disclosure&m=111354538331167&w=2
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/20108
   reported: 2005-05-02
   severity: ~
+cpansa_version: 2
+distribution: Net-Server
+last_checked: 1708150860
+latest_version: '2.014'
+metacpan: https://metacpan.org/pod/Net::Server
+repo: ~

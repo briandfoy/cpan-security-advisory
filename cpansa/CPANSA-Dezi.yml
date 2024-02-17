@@ -1,13 +1,19 @@
 ---
-- id: CPANSA-Dezi-2012-01
-  distribution: Dezi
-  reported: 2012-09-13
-  description: >
-    Bypassing authentication on the /index URL app with non-idempotent
-    requests to /search URL.
-  references:
-    - https://metacpan.org/changes/distribution/Dezi
-    - https://github.com/karpet/Dezi/commit/f1ad292b4dd988d1a38202c804bb7a2a3bcca3c8
-  affected_versions: "<0.002002"
-  fixed_versions: ">=0.002002"
+advisories:
+- affected_versions: <0.002002
   cves: []
+  description: |
+    Bypassing authentication on the /index URL app with non-idempotent requests to /search URL.
+  fixed_versions: '>=0.002002'
+  github_security_advisory: []
+  id: CPANSA-Dezi-2012-01
+  references:
+  - https://metacpan.org/changes/distribution/Dezi
+  - https://github.com/karpet/Dezi/commit/f1ad292b4dd988d1a38202c804bb7a2a3bcca3c8
+  reported: 2012-09-13
+cpansa_version: 2
+distribution: Dezi
+last_checked: 1708150845
+latest_version: '0.004003'
+metacpan: https://metacpan.org/pod/Dezi
+repo: http://github.com/karpet/Dezi

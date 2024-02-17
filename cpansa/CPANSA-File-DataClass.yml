@@ -1,12 +1,20 @@
 ---
-- id: CPANSA-File-DataClass-2017-01
-  distribution: File-DataClass
-  reported: 2017-04-01
-  description: >
-    Loading modules from . (current directory).
-  references:
-    - https://metacpan.org/changes/distribution/File-DataClass
+advisories:
+- affected_versions: <0.72.1
   cves:
-    - CVE-2016-1238
-  affected_versions: "<0.72.1"
-  fixed_versions: ">=0.72.1"
+  - CVE-2016-1238
+  description: |
+    Loading modules from . (current directory).
+  fixed_versions: '>=0.72.1'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-File-DataClass-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/File-DataClass
+  reported: 2017-04-01
+cpansa_version: 2
+distribution: File-DataClass
+last_checked: 1708150847
+latest_version: 0.73.1
+metacpan: https://metacpan.org/pod/File::DataClass
+repo: git://github.com/pjfl/p5-file-dataclass.git

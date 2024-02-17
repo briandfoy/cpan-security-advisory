@@ -1,13 +1,19 @@
 ---
+advisories:
 - affected_versions: '>0'
   cves: []
-  description: >
-    The module is making use of the perl rand function for key and iv
-    generation (for Crypt::Rijndael).
-  distribution: File-KeePass
+  description: |
+    The module is making use of the perl rand function for key and iv generation (for Crypt::Rijndael).
   fixed_versions: ~
+  github_security_advisory: []
   id: CPANSA-File-KeePass-2016-01
   references:
-    - https://rt.cpan.org/Ticket/Display.html?id=117836
+  - https://rt.cpan.org/Ticket/Display.html?id=117836
   reported: 2016-09-14
   severity: ~
+cpansa_version: 2
+distribution: File-KeePass
+last_checked: 1708150848
+latest_version: '2.03'
+metacpan: https://metacpan.org/pod/File::KeePass
+repo: ~

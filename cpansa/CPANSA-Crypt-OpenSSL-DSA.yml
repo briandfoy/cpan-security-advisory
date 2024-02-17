@@ -1,16 +1,22 @@
 ---
-- id: CPANSA-Crypt-OpenSSL-DSA-2009-01
-  distribution: Crypt-OpenSSL-DSA
-  reported: 2009-01-15
-  description: >
-    Missing error check in do_verify, which might allow remote
-    attackers to bypass validation of the certificate chain via a
-    malformed SSL/TLS signature.
-  references:
-    - https://metacpan.org/changes/distribution/Crypt-OpenSSL-DSA
-    - https://www.openwall.com/lists/oss-security/2009/01/12/4
-    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=511519
+advisories:
+- affected_versions: <0.14
   cves:
-    - CVE-2009-0129
-  affected_versions: "<0.14"
-  fixed_versions: ">=0.14"
+  - CVE-2009-0129
+  description: |
+    Missing error check in do_verify, which might allow remote attackers to bypass validation of the certificate chain via a malformed SSL/TLS signature.
+  fixed_versions: '>=0.14'
+  github_security_advisory:
+  - GHSA-cvwp-gwp2-6xqh
+  id: CPANSA-Crypt-OpenSSL-DSA-2009-01
+  references:
+  - https://metacpan.org/changes/distribution/Crypt-OpenSSL-DSA
+  - https://www.openwall.com/lists/oss-security/2009/01/12/4
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=511519
+  reported: 2009-01-15
+cpansa_version: 2
+distribution: Crypt-OpenSSL-DSA
+last_checked: 1708150842
+latest_version: '0.20'
+metacpan: https://metacpan.org/pod/Crypt::OpenSSL::DSA
+repo: https://github.com/kmx/perl-Crypt-OpenSSL-DSA

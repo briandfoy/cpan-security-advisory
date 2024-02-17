@@ -1,12 +1,19 @@
 ---
-- id: CPANSA-Catalyst-Authentication-Store-LDAP-2012-01
-  distribution: Catalyst-Authentication-Store-LDAP
+advisories:
+- affected_versions: <1.013
+  cves: []
+  description: |
+    Incorrect password check binds to the unauthenticated user.
+  fixed_versions: '>=1.013'
+  github_security_advisory: []
+  id: CPANSA-Catalyst-Authentication-Store-LDAP-2012-01
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=81908
   reported: 2012-12-11
   severity: high
-  description: >
-    Incorrect password check binds to the unauthenticated user.
-  references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=81908
-  affected_versions: "<1.013"
-  fixed_versions: ">=1.013"
-  cves: []
+cpansa_version: 2
+distribution: Catalyst-Authentication-Store-LDAP
+last_checked: 1708150831
+latest_version: '1.017'
+metacpan: https://metacpan.org/pod/Catalyst::Authentication::Store::LDAP
+repo: git://git.shadowcat.co.uk/catagits/Catalyst-Authentication-Store-LDAP.git

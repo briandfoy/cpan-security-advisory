@@ -1,19 +1,25 @@
 ---
-- affected_versions: "<=2.7"
+advisories:
+- affected_versions: <=2.7
   cves:
-    - CVE-2008-3285
-  description: >
-    The Filesys::SmbClientParser module 2.7 and earlier for Perl
-    allows remote SMB servers to execute arbitrary code via a folder
-    name containing shell metacharacters.
-  distribution: Filesys-SmbClientParser
+  - CVE-2008-3285
+  description: |
+    The Filesys::SmbClientParser module 2.7 and earlier for Perl allows remote SMB servers to execute arbitrary code via a folder name containing shell metacharacters.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-7wc9-px2p-j49m
   id: CPANSA-Filesys-SmbClientParser-2008-3285
   references:
-    - http://www.securityfocus.com/bid/30290
-    - http://secunia.com/advisories/31175
-    - http://securityreason.com/securityalert/4027
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/43910
-    - http://www.securityfocus.com/archive/1/494536/100/0/threaded
+  - http://www.securityfocus.com/bid/30290
+  - http://secunia.com/advisories/31175
+  - http://securityreason.com/securityalert/4027
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/43910
+  - http://www.securityfocus.com/archive/1/494536/100/0/threaded
   reported: 2008-07-24
   severity: ~
+cpansa_version: 2
+distribution: Filesys-SmbClientParser
+last_checked: 1708150848
+latest_version: '2.7'
+metacpan: https://metacpan.org/pod/Filesys::SmbClientParser
+repo: ~

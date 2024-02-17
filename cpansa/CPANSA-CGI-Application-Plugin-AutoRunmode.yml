@@ -1,11 +1,18 @@
 ---
-- id: CPANSA-CGI-Application-Plugin-AutoRunmode-2005-01
-  distribution: CGI-Application-Plugin-AutoRunmode
-  reported: 2005-03-04
-  description: >
-    Non-word characters are allowed in runmode name.
-  references:
-    - https://metacpan.org/changes/distribution/CGI-Application-Plugin-AutoRunmode
-  affected_versions: "<0.04"
-  fixed_versions: ">=0.04"
+advisories:
+- affected_versions: <0.04
   cves: []
+  description: |
+    Non-word characters are allowed in runmode name.
+  fixed_versions: '>=0.04'
+  github_security_advisory: []
+  id: CPANSA-CGI-Application-Plugin-AutoRunmode-2005-01
+  references:
+  - https://metacpan.org/changes/distribution/CGI-Application-Plugin-AutoRunmode
+  reported: 2005-03-04
+cpansa_version: 2
+distribution: CGI-Application-Plugin-AutoRunmode
+last_checked: 1708150833
+latest_version: '0.18'
+metacpan: https://metacpan.org/pod/CGI::Application::Plugin::AutoRunmode
+repo: ~

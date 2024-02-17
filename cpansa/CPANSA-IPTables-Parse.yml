@@ -1,17 +1,24 @@
 ---
-- affected_versions: "<1.6"
+advisories:
+- affected_versions: <1.6
   cves:
-    - CVE-2015-8326
-  description: >
-    The IPTables-Parse module before 1.6 for Perl allows local users
-    to write to arbitrary files owned by the current user.
-  distribution: IPTables-Parse
+  - CVE-2015-8326
+  description: |
+    The IPTables-Parse module before 1.6 for Perl allows local users to write to arbitrary files owned by the current user.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-927g-cfpc-w2j4
   id: CPANSA-IPTables-Parse-2015-8326
   references:
-    - https://metacpan.org/source/MRASH/IPTables-Parse-1.6/Changes
-    - https://github.com/mtrmac/IPTables-Parse/commit/b400b976d81140f6971132e94eb7657b5b0a2b87
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1267962
-    - http://www.openwall.com/lists/oss-security/2015/11/24/10
+  - https://metacpan.org/source/MRASH/IPTables-Parse-1.6/Changes
+  - https://github.com/mtrmac/IPTables-Parse/commit/b400b976d81140f6971132e94eb7657b5b0a2b87
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1267962
+  - http://www.openwall.com/lists/oss-security/2015/11/24/10
   reported: 2017-06-07
   severity: medium
+cpansa_version: 2
+distribution: IPTables-Parse
+last_checked: 1708150853
+latest_version: '1.6'
+metacpan: https://metacpan.org/pod/IPTables::Parse
+repo: ~

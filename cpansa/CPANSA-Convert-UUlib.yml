@@ -1,19 +1,25 @@
 ---
-- affected_versions: "<1.051"
+advisories:
+- affected_versions: <1.051
   cves:
-    - CVE-2005-1349
-  description: >
-    Buffer overflow in Convert-UUlib (Convert::UUlib) before 1.051
-    allows remote attackers to execute arbitrary code via a malformed
-    parameter to a read operation.
-  distribution: Convert-UUlib
+  - CVE-2005-1349
+  description: |
+    Buffer overflow in Convert-UUlib (Convert::UUlib) before 1.051 allows remote attackers to execute arbitrary code via a malformed parameter to a read operation.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-4x75-6x49-vgw2
   id: CPANSA-Convert-UUlib-2005-1349
   references:
-    - http://www.gentoo.org/security/en/glsa/glsa-200504-26.xml
-    - http://secunia.com/advisories/15130
-    - http://www.securityfocus.com/bid/13401
-    - http://www.mandriva.com/security/advisories?name=MDKSA-2006:022
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/20275
+  - http://www.gentoo.org/security/en/glsa/glsa-200504-26.xml
+  - http://secunia.com/advisories/15130
+  - http://www.securityfocus.com/bid/13401
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:022
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/20275
   reported: 2005-05-02
   severity: ~
+cpansa_version: 2
+distribution: Convert-UUlib
+last_checked: 1708150839
+latest_version: 1.8
+metacpan: https://metacpan.org/pod/Convert::UUlib
+repo: ~

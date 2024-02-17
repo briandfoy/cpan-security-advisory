@@ -1,88 +1,86 @@
 ---
-- affected_versions: ">=5.1.4,<6.0.0"
+advisories:
+- affected_versions: '>=5.1.4,<6.0.0'
   cves:
-    - CVE-2008-2292
-  description: >
-    Buffer overflow in the __snprint_value function in snmp_get in
-    Net-SNMP 5.1.4, 5.2.4, and 5.4.1, as used in SNMP.xs for Perl,
-    allows remote attackers to cause a denial of service (crash) and
-    possibly execute arbitrary code via a large OCTETSTRING in an
-    attribute value pair (AVP).
-  distribution: Net-SNMP
-  fixed_versions: ">=6.0.0"
+  - CVE-2008-2292
+  description: |
+    Buffer overflow in the __snprint_value function in snmp_get in Net-SNMP 5.1.4, 5.2.4, and 5.4.1, as used in SNMP.xs for Perl, allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a large OCTETSTRING in an attribute value pair (AVP).
+  fixed_versions: '>=6.0.0'
+  github_security_advisory:
+  - GHSA-c59r-cvwm-r87m
   id: CPANSA-Net-SNMP-2008-2292
   references:
-    - http://sourceforge.net/tracker/index.php?func=detail&aid=1826174&group_id=12694&atid=112694
-    - http://www.securityfocus.com/bid/29212
-    - http://secunia.com/advisories/30187
-    - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00459.html
-    - http://www.vmware.com/security/advisories/VMSA-2008-0013.html
-    - http://secunia.com/advisories/31334
-    - http://secunia.com/advisories/30647
-    - http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00000.html
-    - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00363.html
-    - http://secunia.com/advisories/31155
-    - http://secunia.com/advisories/31351
-    - http://security.gentoo.org/glsa/glsa-200808-02.xml
-    - http://sunsolve.sun.com/search/document.do?assetkey=1-26-239785-1
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2008:118
-    - http://secunia.com/advisories/31467
-    - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00380.html
-    - http://support.avaya.com/elmodocs2/security/ASA-2008-282.htm
-    - http://secunia.com/advisories/31568
-    - http://www.debian.org/security/2008/dsa-1663
-    - http://secunia.com/advisories/30615
-    - http://www.redhat.com/support/errata/RHSA-2008-0529.html
-    - http://secunia.com/advisories/32664
-    - http://www.ubuntu.com/usn/usn-685-1
-    - http://secunia.com/advisories/33003
-    - http://www.vupen.com/english/advisories/2008/2361
-    - http://www.vupen.com/english/advisories/2008/2141/references
-    - http://www.vupen.com/english/advisories/2008/1528/references
-    - http://www.securitytracker.com/id?1020527
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/42430
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11261
+  - http://sourceforge.net/tracker/index.php?func=detail&aid=1826174&group_id=12694&atid=112694
+  - http://www.securityfocus.com/bid/29212
+  - http://secunia.com/advisories/30187
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00459.html
+  - http://www.vmware.com/security/advisories/VMSA-2008-0013.html
+  - http://secunia.com/advisories/31334
+  - http://secunia.com/advisories/30647
+  - http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00000.html
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00363.html
+  - http://secunia.com/advisories/31155
+  - http://secunia.com/advisories/31351
+  - http://security.gentoo.org/glsa/glsa-200808-02.xml
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-26-239785-1
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2008:118
+  - http://secunia.com/advisories/31467
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg00380.html
+  - http://support.avaya.com/elmodocs2/security/ASA-2008-282.htm
+  - http://secunia.com/advisories/31568
+  - http://www.debian.org/security/2008/dsa-1663
+  - http://secunia.com/advisories/30615
+  - http://www.redhat.com/support/errata/RHSA-2008-0529.html
+  - http://secunia.com/advisories/32664
+  - http://www.ubuntu.com/usn/usn-685-1
+  - http://secunia.com/advisories/33003
+  - http://www.vupen.com/english/advisories/2008/2361
+  - http://www.vupen.com/english/advisories/2008/2141/references
+  - http://www.vupen.com/english/advisories/2008/1528/references
+  - http://www.securitytracker.com/id?1020527
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/42430
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11261
   reported: 2008-05-18
   severity: ~
-- affected_versions: "<=5.2.1.2"
+- affected_versions: <=5.2.1.2
   cves:
-    - CVE-2005-2811
-  description: >
-    Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and
-    earlier, on Gentoo Linux, installs certain Perl modules with an
-    insecure DT_RPATH, which could allow local users to gain
-    privileges.
-  distribution: Net-SNMP
+  - CVE-2005-2811
+  description: |
+    Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and earlier, on Gentoo Linux, installs certain Perl modules with an insecure DT_RPATH, which could allow local users to gain privileges.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-w7p9-h59x-gp43
   id: CPANSA-Net-SNMP-2005-2811
   references:
-    - http://www.gentoo.org/security/en/glsa/glsa-200509-05.xml
+  - http://www.gentoo.org/security/en/glsa/glsa-200509-05.xml
   reported: 2005-09-07
   severity: ~
-- affected_versions: '<=5.7.3'
+- affected_versions: <=5.7.3
   cves:
-    - CVE-2014-2285
-  description: >
-    The perl_trapd_handler function in
-    perl/TrapReceiver/TrapReceiver.xs in Net-SNMP 5.7.3.pre3 and
-    earlier, when using certain Perl versions, allows remote attackers
-    to cause a denial of service (snmptrapd crash) via an empty
-    community string in an SNMP trap, which triggers a NULL pointer
-    dereference within the newSVpv function in Perl.
-  distribution: Net-SNMP
+  - CVE-2014-2285
+  description: |
+    The perl_trapd_handler function in perl/TrapReceiver/TrapReceiver.xs in Net-SNMP 5.7.3.pre3 and earlier, when using certain Perl versions, allows remote attackers to cause a denial of service (snmptrapd crash) via an empty community string in an SNMP trap, which triggers a NULL pointer dereference within the newSVpv function in Perl.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-vjgw-84x2-wchq
   id: CPANSA-Net-SNMP-2014-2285
   references:
-    - http://lists.opensuse.org/opensuse-updates/2014-03/msg00060.html
-    - http://comments.gmane.org/gmane.comp.security.oss.general/12284
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1072778
-    - http://sourceforge.net/p/net-snmp/patches/1275/
-    - http://www.nntp.perl.org/group/perl.perl5.porters/2006/09/msg116250.html
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1072044
-    - http://lists.opensuse.org/opensuse-updates/2014-03/msg00061.html
-    - http://secunia.com/advisories/59974
-    - http://www.gentoo.org/security/en/glsa/glsa-201409-02.xml
-    - https://rhn.redhat.com/errata/RHSA-2014-0322.html
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+  - http://lists.opensuse.org/opensuse-updates/2014-03/msg00060.html
+  - http://comments.gmane.org/gmane.comp.security.oss.general/12284
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1072778
+  - http://sourceforge.net/p/net-snmp/patches/1275/
+  - http://www.nntp.perl.org/group/perl.perl5.porters/2006/09/msg116250.html
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1072044
+  - http://lists.opensuse.org/opensuse-updates/2014-03/msg00061.html
+  - http://secunia.com/advisories/59974
+  - http://www.gentoo.org/security/en/glsa/glsa-201409-02.xml
+  - https://rhn.redhat.com/errata/RHSA-2014-0322.html
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
   reported: 2014-04-27
   severity: ~
+cpansa_version: 2
+distribution: Net-SNMP
+last_checked: 1708150860
+latest_version: v6.0.1
+metacpan: https://metacpan.org/pod/Net::SNMP
+repo: ~

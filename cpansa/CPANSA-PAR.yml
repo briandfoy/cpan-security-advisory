@@ -1,35 +1,37 @@
 ---
-- id: CPANSA-PAR-2011-01
-  distribution: PAR
-  reported: 2011-07-18
-  description: >
-    PAR packed files are extracted to unsafe and predictable temporary
-    directories (this bug was originally reported against PAR::Packer,
-    but it applies to PAR as well).
+advisories:
+- affected_versions: <1.003
+  cves:
+  - CVE-2011-4114
+  description: |
+    PAR packed files are extracted to unsafe and predictable temporary directories (this bug was originally reported against PAR::Packer, but it applies to PAR as well).
+  fixed_versions: '>=1.003'
+  github_security_advisory:
+  - GHSA-gxwf-286g-rc8g
+  id: CPANSA-PAR-2011-01
   references:
-    - https://metacpan.org/changes/distribution/PAR
-    - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+  - https://metacpan.org/changes/distribution/PAR
+  - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+  reported: 2011-07-18
+- affected_versions: <1.003
   cves:
-    - CVE-2011-4114
-  affected_versions: "<1.003"
-  fixed_versions: ">=1.003"
-- affected_versions: "<1.003"
-  cves:
-    - CVE-2011-5060
-  description: >
-    The par_mktmpdir function in the PAR module before 1.003 for Perl
-    creates temporary files in a directory with a predictable name
-    without verifying ownership and permissions of this directory,
-    which allows local users to overwrite files when another user
-    extracts a PAR packed program, a different vulnerability in a
-    different package than CVE-2011-4114.
-  distribution: PAR
-  fixed_versions: ">=1.003"
+  - CVE-2011-5060
+  description: |
+    The par_mktmpdir function in the PAR module before 1.003 for Perl creates temporary files in a directory with a predictable name without verifying ownership and permissions of this directory, which allows local users to overwrite files when another user extracts a PAR packed program, a different vulnerability in a different package than CVE-2011-4114.
+  fixed_versions: '>=1.003'
+  github_security_advisory:
+  - GHSA-hmhv-64cw-2g3m
   id: CPANSA-PAR-2011-5060
   references:
-    - http://cpansearch.perl.org/src/RSCHUPP/PAR-1.003/ChangeLog
-    - https://bugzilla.redhat.com/show_bug.cgi?id=753955
-    - https://rt.cpan.org/Public/Bug/Display.html?id=69560
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/72435
+  - http://cpansearch.perl.org/src/RSCHUPP/PAR-1.003/ChangeLog
+  - https://bugzilla.redhat.com/show_bug.cgi?id=753955
+  - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/72435
   reported: 2012-01-13
   severity: ~
+cpansa_version: 2
+distribution: PAR
+last_checked: 1708150862
+latest_version: '1.019'
+metacpan: https://metacpan.org/pod/PAR
+repo: git://github.com/rschupp/PAR.git

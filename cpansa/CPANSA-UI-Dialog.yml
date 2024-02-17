@@ -1,38 +1,45 @@
 ---
-- id: CPANSA-UI-Dialog-2015-01
+advisories:
+- affected_versions: <1.11
   cves: []
-  distribution: UI-Dialog
-  reported: 2015-10-10
-  description: >
+  description: |
     Allows remote attackers to execute arbitrary commands.
+  fixed_versions: '>=1.11'
+  github_security_advisory: []
+  id: CPANSA-UI-Dialog-2015-01
   references:
-    - https://metacpan.org/changes/distribution/UI-Dialog
-  affected_versions: "<1.11"
-  fixed_versions: ">=1.11"
-- id: CPANSA-UI-Dialog-2004-01
+  - https://metacpan.org/changes/distribution/UI-Dialog
+  reported: 2015-10-10
+- affected_versions: <1.03
   cves: []
-  distribution: UI-Dialog
-  reported: 2004-02-18
-  description: >
+  description: |
     CDialog and Whiptail backends usage of the temp files.
+  fixed_versions: '>=1.03'
+  github_security_advisory: []
+  id: CPANSA-UI-Dialog-2004-01
   references:
-    - https://metacpan.org/changes/distribution/UI-Dialog
-  affected_versions: "<1.03"
-  fixed_versions: ">=1.03"
-- affected_versions: "<=1.09"
+  - https://metacpan.org/changes/distribution/UI-Dialog
+  reported: 2004-02-18
+- affected_versions: <=1.09
   cves:
-    - CVE-2008-7315
-  description: >
-    UI-Dialog 1.09 and earlier allows remote attackers to execute
-    arbitrary commands.
-  distribution: UI-Dialog
-  fixed_versions: ">1.09"
+  - CVE-2008-7315
+  description: |
+    UI-Dialog 1.09 and earlier allows remote attackers to execute arbitrary commands.
+  fixed_versions: '>1.09'
+  github_security_advisory:
+  - GHSA-3f84-j5xw-c967
   id: CPANSA-UI-Dialog-2008-7315
   references:
-    - https://security-tracker.debian.org/tracker/CVE-2008-7315/
-    - https://rt.cpan.org/Public/Bug/Display.html?id=107364
-    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496448
-    - http://www.securityfocus.com/bid/77031/info
-    - http://www.openwall.com/lists/oss-security/2015/10/08/6
+  - https://security-tracker.debian.org/tracker/CVE-2008-7315/
+  - https://rt.cpan.org/Public/Bug/Display.html?id=107364
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=496448
+  - http://www.securityfocus.com/bid/77031/info
+  - http://www.openwall.com/lists/oss-security/2015/10/08/6
   reported: 2017-10-10
   severity: critical
+cpansa_version: 2
+distribution: UI-Dialog
+last_checked: 1708150869
+latest_version: '1.21'
+metacpan: https://metacpan.org/pod/UI::Dialog
+repo: ~

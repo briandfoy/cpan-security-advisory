@@ -1,13 +1,20 @@
 ---
+advisories:
 - affected_versions: '>=1.712,<=1.715'
   cves: []
-  description: >
+  description: |
     The WithStackTrace proxy may expose sensitive information
-  distribution: Log-Any
   fixed_versions: 1.716
+  github_security_advisory: []
   id: CPANSA-Log-Any-2023-001
   references:
-    - https://metacpan.org/dist/Log-Any/changes
-    - https://github.com/preaction/Log-Any/pull/97
+  - https://metacpan.org/dist/Log-Any/changes
+  - https://github.com/preaction/Log-Any/pull/97
   reported: ~
   severity: ~
+cpansa_version: 2
+distribution: Log-Any
+last_checked: 1708150855
+latest_version: '1.717'
+metacpan: https://metacpan.org/pod/Log::Any
+repo: https://github.com/preaction/Log-Any.git

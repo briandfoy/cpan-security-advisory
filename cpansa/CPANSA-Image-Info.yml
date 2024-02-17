@@ -1,17 +1,21 @@
 ---
-- id: CPANSA-Image-Info-2016-01
-  distribution: Image-Info
-  reported: 2016-11-04
-  description: >
-    perl-Image-Info: When parsing an SVG file, external entity
-    expansion (XXE) was not disabled. An attacker could craft an SVG
-    file which, when processed by an application using
-    perl-Image-Info, could cause denial of service or, potentially,
-    information disclosure.
-  references:
-    - http://www.securityfocus.com/bid/94220
-    - http://www.openwall.com/lists/oss-security/2016/11/04/2
+advisories:
+- affected_versions: '>=2.12'
   cves:
-    - CVE-2016-9181
-  affected_versions: ">=2.12"
+  - CVE-2016-9181
+  description: |
+    perl-Image-Info: When parsing an SVG file, external entity expansion (XXE) was not disabled. An attacker could craft an SVG file which, when processed by an application using perl-Image-Info, could cause denial of service or, potentially, information disclosure.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-99g7-5p97-g9vw
+  id: CPANSA-Image-Info-2016-01
+  references:
+  - http://www.securityfocus.com/bid/94220
+  - http://www.openwall.com/lists/oss-security/2016/11/04/2
+  reported: 2016-11-04
+cpansa_version: 2
+distribution: Image-Info
+last_checked: 1708150852
+latest_version: '1.44'
+metacpan: https://metacpan.org/pod/Image::Info
+repo: git://github.com/eserte/image-info.git

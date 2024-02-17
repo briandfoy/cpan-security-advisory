@@ -1,13 +1,19 @@
 ---
-- id: CPANSA-LWP-Protocol-Net-Curl-2012-01
-  distribution: LWP-Protocol-Net-Curl
-  reported: 2012-11-28
-  description: >
-    Misconfiguration with libcurl v7.28.1 causes a HTTPS validation
-    issues.
-  references:
-    - https://metacpan.org/changes/distribution/LWP-Protocol-Net-Curl
-    - https://github.com/creaktive/LWP-Protocol-Net-Curl/commit/dc8b183c6520a2b6bcde685de635675ee4a7e019
-  affected_versions: "<0.009"
-  fixed_versions: ">=0.009"
+advisories:
+- affected_versions: <0.009
   cves: []
+  description: |
+    Misconfiguration with libcurl v7.28.1 causes a HTTPS validation issues.
+  fixed_versions: '>=0.009'
+  github_security_advisory: []
+  id: CPANSA-LWP-Protocol-Net-Curl-2012-01
+  references:
+  - https://metacpan.org/changes/distribution/LWP-Protocol-Net-Curl
+  - https://github.com/creaktive/LWP-Protocol-Net-Curl/commit/dc8b183c6520a2b6bcde685de635675ee4a7e019
+  reported: 2012-11-28
+cpansa_version: 2
+distribution: LWP-Protocol-Net-Curl
+last_checked: 1708150856
+latest_version: '0.026'
+metacpan: https://metacpan.org/pod/LWP::Protocol::Net::Curl
+repo: git://github.com/creaktive/LWP-Protocol-Net-Curl.git

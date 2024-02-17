@@ -1,12 +1,18 @@
 ---
-- affected_versions: "<0.25"
+advisories:
+- affected_versions: <0.25
   cves: []
-  description: >
-    Allowed file schema
-  distribution: Moxy
-  fixed_versions: ">=0.25"
+  description: "Allowed file schema\n"
+  fixed_versions: '>=0.25'
+  github_security_advisory: []
   id: CPANSA-Moxy-2008-01
   references:
-    - https://metacpan.org/dist/Moxy/changes
+  - https://metacpan.org/dist/Moxy/changes
   reported: 2008-04-09
   severity: ~
+cpansa_version: 2
+distribution: Moxy
+last_checked: 1708150859
+latest_version: '0.70'
+metacpan: https://metacpan.org/pod/Moxy
+repo: git://github.com/kan/moxy.git

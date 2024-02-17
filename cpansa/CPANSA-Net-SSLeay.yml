@@ -1,19 +1,24 @@
 ---
-- affected_versions: "<1.25"
+advisories:
+- affected_versions: <1.25
   cves:
-    - CVE-2005-0106
-  description: >
-    SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy
-    file for entropy if a source is not set in the EGD_PATH variable,
-    which allows local users to reduce the cryptographic strength of
-    certain operations by modifying the file.
-  distribution: Net-SSLeay
-  fixed_versions: ">=1.25"
+  - CVE-2005-0106
+  description: |
+    SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy file for entropy if a source is not set in the EGD_PATH variable, which allows local users to reduce the cryptographic strength of certain operations by modifying the file.
+  fixed_versions: '>=1.25'
+  github_security_advisory:
+  - GHSA-c8r4-w8p2-gf3q
   id: CPANSA-Net-SSLeay-2005-0106
   references:
-    - http://secunia.com/advisories/18639
-    - http://www.securityfocus.com/bid/13471
-    - http://www.mandriva.com/security/advisories?name=MDKSA-2006:023
-    - https://usn.ubuntu.com/113-1/
+  - http://secunia.com/advisories/18639
+  - http://www.securityfocus.com/bid/13471
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2006:023
+  - https://usn.ubuntu.com/113-1/
   reported: 2005-05-03
   severity: ~
+cpansa_version: 2
+distribution: Net-SSLeay
+last_checked: 1708150861
+latest_version: '1.94'
+metacpan: https://metacpan.org/pod/Net::SSLeay
+repo: git://github.com/radiator-software/p5-net-ssleay.git

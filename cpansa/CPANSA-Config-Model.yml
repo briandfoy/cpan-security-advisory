@@ -1,42 +1,45 @@
 ---
-- id: CPANSA-Config-Model-2017-03
-  distribution: Config-Model
-  reported: 2017-05-10
-  description: >
-    The gen_class_pod implementation in
-    lib/Config/Model/Utils/GenClassPod.pm in Config-Model (aka
-    libconfig-model-perl) before 2.102 has a dangerous "use lib" line,
-    which allows remote attackers to have an unspecified impact via a
-    crafted Debian package file.
-  references:
-    - https://metacpan.org/changes/distribution/Config-Model
-    - https://github.com/dod38fr/config-model/commit/9bd64d9ec6c0939166a2216a37d58dd19a725951
+advisories:
+- affected_versions: <2.102
   cves:
-    - CVE-2017-0373
-  affected_versions: "<2.102"
-  fixed_versions: ">=2.102"
-- id: CPANSA-Config-Model-2017-02
-  distribution: Config-Model
-  reported: 2017-05-10
-  description: >
-    Loads models from a local directory, making it possible to
-    substitute the model.
-  cves:
-    - CVE-2017-0374
+  - CVE-2017-0373
+  description: |
+    The gen_class_pod implementation in lib/Config/Model/Utils/GenClassPod.pm in Config-Model (aka libconfig-model-perl) before 2.102 has a dangerous "use lib" line, which allows remote attackers to have an unspecified impact via a crafted Debian package file.
+  fixed_versions: '>=2.102'
+  github_security_advisory:
+  - GHSA-pcw9-xjj5-7cp5
+  id: CPANSA-Config-Model-2017-03
   references:
-    - https://metacpan.org/changes/distribution/Config-Model
-    - https://github.com/dod38fr/config-model/commit/4d37c75b0c4f9633b67999f8260b08027a6bc524
-  affected_versions: "<2.102"
-  fixed_versions: ">=2.102"
-- id: CPANSA-Config-Model-2017-01
+  - https://metacpan.org/changes/distribution/Config-Model
+  - https://github.com/dod38fr/config-model/commit/9bd64d9ec6c0939166a2216a37d58dd19a725951
+  reported: 2017-05-10
+- affected_versions: <2.102
+  cves:
+  - CVE-2017-0374
+  description: |
+    Loads models from a local directory, making it possible to substitute the model.
+  fixed_versions: '>=2.102'
+  github_security_advisory:
+  - GHSA-88hg-rvfq-4jp9
+  id: CPANSA-Config-Model-2017-02
+  references:
+  - https://metacpan.org/changes/distribution/Config-Model
+  - https://github.com/dod38fr/config-model/commit/4d37c75b0c4f9633b67999f8260b08027a6bc524
+  reported: 2017-05-10
+- affected_versions: <2.102
   cves: []
-  distribution: Config-Model
-  reported: 2017-05-10
-  description: >
-    YAML or YAML::XS can be loaded automatically making it possible to
-    run arbitrary code loading a specially crafted YAML file.
+  description: |
+    YAML or YAML::XS can be loaded automatically making it possible to run arbitrary code loading a specially crafted YAML file.
+  fixed_versions: '>=2.102'
+  github_security_advisory: []
+  id: CPANSA-Config-Model-2017-01
   references:
-    - https://metacpan.org/changes/distribution/Config-Model
-    - https://github.com/dod38fr/config-model/commit/01d212348bfbadf31bd74aadd26b1e391ff2fd92
-  affected_versions: "<2.102"
-  fixed_versions: ">=2.102"
+  - https://metacpan.org/changes/distribution/Config-Model
+  - https://github.com/dod38fr/config-model/commit/01d212348bfbadf31bd74aadd26b1e391ff2fd92
+  reported: 2017-05-10
+cpansa_version: 2
+distribution: Config-Model
+last_checked: 1708150839
+latest_version: '2.153'
+metacpan: https://metacpan.org/pod/Config::Model
+repo: git://github.com/dod38fr/config-model.git

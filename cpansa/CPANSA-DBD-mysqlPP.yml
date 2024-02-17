@@ -1,13 +1,19 @@
 ---
-- id: CPANSA-DBD-mysqlPP-2011-01
-  distribution: DBD-mysqlPP
+advisories:
+- affected_versions: <0.93
+  cves: []
+  description: "SQL injection.\n"
+  fixed_versions: '>=0.03'
+  github_security_advisory: []
+  id: CPANSA-DBD-mysqlPP-2011-01
+  references:
+  - https://metacpan.org/changes/distribution/DBD-mysqlPP
+  - https://jvn.jp/en/jp/JVN51216285/index.html
   reported: 2011-10-14
   severity: high
-  description: >
-    SQL injection.
-  references:
-    - https://metacpan.org/changes/distribution/DBD-mysqlPP
-    - https://jvn.jp/en/jp/JVN51216285/index.html
-  affected_versions: "<0.93"
-  fixed_versions: ">=0.03"
-  cves: []
+cpansa_version: 2
+distribution: DBD-mysqlPP
+last_checked: 1708150844
+latest_version: '0.07'
+metacpan: https://metacpan.org/pod/DBD::mysqlPP
+repo: ~

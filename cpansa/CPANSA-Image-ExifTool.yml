@@ -1,15 +1,22 @@
 ---
-- affected_versions: "<=12.37"
+advisories:
+- affected_versions: <=12.37
   cves:
-    - CVE-2022-23935
-  description: >
-    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file
-    =~ /\|$/ check, leading to command injection.
-  distribution: "Image-ExifTool"
-  fixed_versions: ">12.38"
+  - CVE-2022-23935
+  description: |
+    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file =~ /\|$/ check, leading to command injection.
+  fixed_versions: '>12.38'
+  github_security_advisory:
+  - GHSA-jx53-3cxj-386g
   id: CPANSA-Image-ExifTool-2022-23935
   references:
-    - https://github.com/exiftool/exiftool/commit/74dbab1d2766d6422bb05b033ac6634bf8d1f582
-    - https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429
+  - https://github.com/exiftool/exiftool/commit/74dbab1d2766d6422bb05b033ac6634bf8d1f582
+  - https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429
   reported: 2022-01-25
   severity: critical
+cpansa_version: 2
+distribution: Image-ExifTool
+last_checked: 1708150852
+latest_version: '12.76'
+metacpan: https://metacpan.org/pod/Image::ExifTool
+repo: ~

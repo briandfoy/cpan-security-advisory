@@ -1,13 +1,20 @@
 ---
-- id: CPANSA-SVN-Look-2014-01
-  distribution: SVN-Look
-  reported: 2014-05-31
-  description: >
-    Two-arg open with a possibility of running arbitrary commands.
-  references:
-    - https://metacpan.org/changes/distribution/SVN-Look
-    - https://github.com/gnustavo/SVN-Look/commit/b413ac1c397dfc6b2d164fede693f7ff9a94c83c
-    - https://bugs.launchpad.net/ubuntu/+source/libsvn-look-perl/+bug/1323300
-  affected_versions: "<0.40"
-  fixed_versions: ">=0.40"
+advisories:
+- affected_versions: <0.40
   cves: []
+  description: |
+    Two-arg open with a possibility of running arbitrary commands.
+  fixed_versions: '>=0.40'
+  github_security_advisory: []
+  id: CPANSA-SVN-Look-2014-01
+  references:
+  - https://metacpan.org/changes/distribution/SVN-Look
+  - https://github.com/gnustavo/SVN-Look/commit/b413ac1c397dfc6b2d164fede693f7ff9a94c83c
+  - https://bugs.launchpad.net/ubuntu/+source/libsvn-look-perl/+bug/1323300
+  reported: 2014-05-31
+cpansa_version: 2
+distribution: SVN-Look
+last_checked: 1708150868
+latest_version: '0.43'
+metacpan: https://metacpan.org/pod/SVN::Look
+repo: git://github.com/gnustavo/SVN-Look.git

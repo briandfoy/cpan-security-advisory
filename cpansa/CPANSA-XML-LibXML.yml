@@ -1,30 +1,34 @@
 ---
-- id: CPANSA-XML-LibXML-2015-01
-  distribution: XML-LibXML
-  reported: 2015-04-23
-  description: >
-    The _clone function does not properly set the expand_entities
-    option, which allows remote attackers to conduct XML external
-    entity (XXE) attacks via crafted XML data to the (1) new or (2)
-    load_xml function.
-  references:
-    - https://metacpan.org/changes/distribution/XML-LibXML
+advisories:
+- affected_versions: <2.0120
   cves:
-    - CVE-2015-3451
-  affected_versions: "<2.0120"
-  fixed_versions: ">=2.0120"
-- id: CPANSA-XML-LibXML-2017-01
-  distribution: XML-LibXML
-  reported: 2015-04-23
-  description: >
-    Use-after-free in the XML-LibXML module through 2.0129 for Perl
-    allows remote attackers to execute arbitrary code by controlling
-    the arguments to a replaceChild call.
+  - CVE-2015-3451
+  description: |
+    The _clone function does not properly set the expand_entities option, which allows remote attackers to conduct XML external entity (XXE) attacks via crafted XML data to the (1) new or (2) load_xml function.
+  fixed_versions: '>=2.0120'
+  github_security_advisory:
+  - GHSA-mrvg-p24w-mp92
+  id: CPANSA-XML-LibXML-2015-01
   references:
-    - https://www.debian.org/security/2017/dsa-4042
-    - https://rt.cpan.org/Public/Bug/Display.html?id=122246
-    - https://lists.debian.org/debian-lts-announce/2017/11/msg00017.html
+  - https://metacpan.org/changes/distribution/XML-LibXML
+  reported: 2015-04-23
+- affected_versions: <2.0129
   cves:
-    - CVE-2017-10672
-  affected_versions: "<2.0129"
-  fixed_versions: ">=2.0129"
+  - CVE-2017-10672
+  description: |
+    Use-after-free in the XML-LibXML module through 2.0129 for Perl allows remote attackers to execute arbitrary code by controlling the arguments to a replaceChild call.
+  fixed_versions: '>=2.0129'
+  github_security_advisory:
+  - GHSA-v3c8-h936-vqgh
+  id: CPANSA-XML-LibXML-2017-01
+  references:
+  - https://www.debian.org/security/2017/dsa-4042
+  - https://rt.cpan.org/Public/Bug/Display.html?id=122246
+  - https://lists.debian.org/debian-lts-announce/2017/11/msg00017.html
+  reported: 2015-04-23
+cpansa_version: 2
+distribution: XML-LibXML
+last_checked: 1708150870
+latest_version: '2.0210'
+metacpan: https://metacpan.org/pod/XML::LibXML
+repo: https://github.com/shlomif/perl-XML-LibXML.git

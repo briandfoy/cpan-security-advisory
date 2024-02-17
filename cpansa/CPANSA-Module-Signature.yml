@@ -1,16 +1,20 @@
 ---
-- id: CPANSA-Module-Signature-2013-01
-  distribution: Module-Signature
-  reported: 2013-08-19
-  description: >
-    The cpansign verify functionality in the Module::Signature module
-    before 0.72 for Perl allows attackers to bypass the signature
-    check and execute arbitrary code via a SIGNATURE file with a
-    "special unknown cipher" that references an untrusted module in
-    Digest/.
-  references:
-    - https://metacpan.org/changes/distribution/Module-Signature
+advisories:
+- affected_versions: <0.72
   cves:
-    - CVE-2013-2145
-  affected_versions: "<0.72"
-  fixed_versions: ">=0.72"
+  - CVE-2013-2145
+  description: |
+    The cpansign verify functionality in the Module::Signature module before 0.72 for Perl allows attackers to bypass the signature check and execute arbitrary code via a SIGNATURE file with a "special unknown cipher" that references an untrusted module in Digest/.
+  fixed_versions: '>=0.72'
+  github_security_advisory:
+  - GHSA-99g4-3v63-xpqx
+  id: CPANSA-Module-Signature-2013-01
+  references:
+  - https://metacpan.org/changes/distribution/Module-Signature
+  reported: 2013-08-19
+cpansa_version: 2
+distribution: Module-Signature
+last_checked: 1708150858
+latest_version: '0.87'
+metacpan: https://metacpan.org/pod/Module::Signature
+repo: http://github.com/audreyt/module-signature

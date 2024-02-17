@@ -1,20 +1,25 @@
 ---
-- id: CPANSA-Data-Validate-IP-2021-01
-  distribution: Data-Validate-IP
-  reported: 2021-03-31
-  description: >
-    The Data::Validate::IP module through 0.29 for Perl does not
-    properly consider extraneous zero characters at the beginning of
-    an IP address string, which (in some situations) allows attackers
-    to bypass access control that is based on IP addresses.
-  references:
-    - https://security.netapp.com/advisory/ntap-20210604-0002/
-    - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
-    - https://github.com/houseabsolute/Data-Validate-IP
-    - https://github.com/houseabsolute/Data-Validate-IP/commit/3bba13c819d616514a75e089badd75002fd4f14e
-    - https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-018.md
-    - https://sick.codes/sick-2021-018/
+advisories:
+- affected_versions: <=0.29
   cves:
-    - CVE-2021-29662
-  affected_versions: "<=0.29"
-  fixed_versions: ">0.29"
+  - CVE-2021-29662
+  description: |
+    The Data::Validate::IP module through 0.29 for Perl does not properly consider extraneous zero characters at the beginning of an IP address string, which (in some situations) allows attackers to bypass access control that is based on IP addresses.
+  fixed_versions: '>0.29'
+  github_security_advisory:
+  - GHSA-r243-xrwf-w499
+  id: CPANSA-Data-Validate-IP-2021-01
+  references:
+  - https://security.netapp.com/advisory/ntap-20210604-0002/
+  - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
+  - https://github.com/houseabsolute/Data-Validate-IP
+  - https://github.com/houseabsolute/Data-Validate-IP/commit/3bba13c819d616514a75e089badd75002fd4f14e
+  - https://github.com/sickcodes/security/blob/master/advisories/SICK-2021-018.md
+  - https://sick.codes/sick-2021-018/
+  reported: 2021-03-31
+cpansa_version: 2
+distribution: Data-Validate-IP
+last_checked: 1708150843
+latest_version: '0.31'
+metacpan: https://metacpan.org/pod/Data::Validate::IP
+repo: git://github.com/houseabsolute/Data-Validate-IP.git

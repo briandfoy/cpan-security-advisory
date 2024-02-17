@@ -1,34 +1,43 @@
 ---
-- id: CPANSA-DBD-MariaDB-2018-01
-  distribution: DBD-MariaDB
-  reported: 2017-07-01
-  description: >
+advisories:
+- affected_versions: <1.00
+  cves:
+  - CVE-2018-2767
+  description: |
     SSL problems of MySQL and MariaDB clients.
+  fixed_versions: '>=1.00'
+  github_security_advisory:
+  - GHSA-qhg6-x5p3-8653
+  id: CPANSA-DBD-MariaDB-2018-01
   references:
-    - https://metacpan.org/changes/distribution/DBD-MariaDB
-  cves:
-    - CVE-2018-2767
-  affected_versions: "<1.00"
-  fixed_versions: ">=1.00"
-- id: CPANSA-DBD-MariaDB-2017-02
-  distribution: DBD-MariaDB
+  - https://metacpan.org/changes/distribution/DBD-MariaDB
   reported: 2017-07-01
-  description: >
+- affected_versions: <1.00
+  cves:
+  - CVE-2017-10788
+  description: |
     Use-after-free after calling mysql_stmt_close().
+  fixed_versions: '>=1.00'
+  github_security_advisory:
+  - GHSA-hx52-v9vv-vhp2
+  id: CPANSA-DBD-MariaDB-2017-02
   references:
-    - https://metacpan.org/changes/distribution/DBD-MariaDB
-  cves:
-    - CVE-2017-10788
-  affected_versions: "<1.00"
-  fixed_versions: ">=1.00"
-- id: CPANSA-DBD-MariaDB-2017-01
-  distribution: DBD-MariaDB
+  - https://metacpan.org/changes/distribution/DBD-MariaDB
   reported: 2017-07-01
-  description: >
-    Leaking dangling pointers.
-  references:
-    - https://metacpan.org/changes/distribution/DBD-MariaDB
+- affected_versions: <1.00
   cves:
-    - CVE-2017-3302
-  affected_versions: "<1.00"
-  fixed_versions: ">=1.00"
+  - CVE-2017-3302
+  description: "Leaking dangling pointers.\n"
+  fixed_versions: '>=1.00'
+  github_security_advisory:
+  - GHSA-77pr-jpcv-9w4v
+  id: CPANSA-DBD-MariaDB-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/DBD-MariaDB
+  reported: 2017-07-01
+cpansa_version: 2
+distribution: DBD-MariaDB
+last_checked: 1708150844
+latest_version: '1.23'
+metacpan: https://metacpan.org/pod/DBD::MariaDB
+repo: https://github.com/perl5-dbi/DBD-MariaDB.git

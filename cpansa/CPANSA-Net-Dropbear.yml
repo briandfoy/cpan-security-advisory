@@ -1,36 +1,33 @@
 ---
-- affected_versions: '<0'
+advisories:
+- affected_versions: <0
+  comments: |
+    From the author: "I have reviewed Dropbear's usage of libtomcrypt, and the function in question for CVE-2019-17362, der_decode_utf8_string, is not used in Dropbear. None of the DER parsing from libtomcrypt is used in Dropbear at all, I have confirmed that the flag to include it is not set, and confirmed that the resultant Dropbear.so that is built by Net::Dropbear does not include any of the der_* symbols."
   cves:
-    - CVE-2019-17362
-  description: >
-    In LibTomCrypt through 1.18.2, the der_decode_utf8_string function
-    (in der_decode_utf8_string.c) does not properly detect certain
-    invalid UTF-8 sequences. This allows context-dependent attackers
-    to cause a denial of service (out-of-bounds read and crash) or
-    read information from other memory locations via carefully crafted
-    DER-encoded data.
-  comments: >
-    From the author: "I have reviewed Dropbear's usage of libtomcrypt,
-    and the function in question for CVE-2019-17362,
-    der_decode_utf8_string, is not used in Dropbear. None of the DER
-    parsing from libtomcrypt is used in Dropbear at all, I have
-    confirmed that the flag to include it is not set, and confirmed
-    that the resultant Dropbear.so that is built by Net::Dropbear does
-    not include any of the der_* symbols."
-  distribution: Net-Dropbear
+  - CVE-2019-17362
+  description: |
+    In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c) does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers to cause a denial of service (out-of-bounds read and crash) or read information from other memory locations via carefully crafted DER-encoded data.
   embedded_vulnerability:
-    distributed_version: "1.8.2"
+    affected_versions: <0
+    distributed_version: 1.8.2
     name: libtomcrypt
-    affected_versions: '<0'
   fixed_versions: '>0'
+  github_security_advisory:
+  - GHSA-x32c-6j92-4hp9
   id: CPANSA-Net-Dropbear-2019-17362
   references:
-    - https://github.com/atrodo/Net-Dropbear/issues/6
-    - https://github.com/libtom/libtomcrypt/pull/508
-    - https://github.com/libtom/libtomcrypt/issues/507
-    - https://vuldb.com/?id.142995
-    - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
-    - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
-    - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
+  - https://github.com/atrodo/Net-Dropbear/issues/6
+  - https://github.com/libtom/libtomcrypt/pull/508
+  - https://github.com/libtom/libtomcrypt/issues/507
+  - https://vuldb.com/?id.142995
+  - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
+  - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
+  - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
   reported: 2019-10-09
   severity: critical
+cpansa_version: 2
+distribution: Net-Dropbear
+last_checked: 1708150859
+latest_version: '0.16'
+metacpan: https://metacpan.org/pod/Net::Dropbear
+repo: https://github.com/atrodo/Net-Dropbear.git

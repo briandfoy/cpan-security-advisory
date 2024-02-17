@@ -1,17 +1,23 @@
 ---
+advisories:
 - affected_versions: <=1.06
   cves:
-    - CVE-2023-24038
-  description: >
-    The HTML-StripScripts module through 1.06 for Perl allows
-    _hss_attval_style ReDoS because of catastrophic backtracking for HTML
-    content with certain style attributes.
-  distribution: HTML-StripScripts
+  - CVE-2023-24038
+  description: |
+    The HTML-StripScripts module through 1.06 for Perl allows _hss_attval_style ReDoS because of catastrophic backtracking for HTML content with certain style attributes.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-p983-rj5f-9qwf
   id: CPANSA-HTML-StripScripts-2023-24038
   references:
-    - https://github.com/clintongormley/perl-html-stripscripts/issues/3
-    - https://lists.debian.org/debian-lts-announce/2023/01/msg00036.html
-    - https://www.debian.org/security/2023/dsa-5339
+  - https://github.com/clintongormley/perl-html-stripscripts/issues/3
+  - https://lists.debian.org/debian-lts-announce/2023/01/msg00036.html
+  - https://www.debian.org/security/2023/dsa-5339
   reported: 2023-01-21
   severity: high
+cpansa_version: 2
+distribution: HTML-StripScripts
+last_checked: 1708150851
+latest_version: '1.06'
+metacpan: https://metacpan.org/pod/HTML::StripScripts
+repo: git://github.com/clintongormley/perl-html-stripscripts.git

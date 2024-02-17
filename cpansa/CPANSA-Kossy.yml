@@ -1,12 +1,19 @@
 ---
-- affected_versions: "<0.60"
+advisories:
+- affected_versions: <0.60
   cves: []
-  description: >
+  description: |
     Flaw in defense from JSON hijacking.
-  distribution: Kossy
-  fixed_versions: ">=0.60"
+  fixed_versions: '>=0.60'
+  github_security_advisory: []
   id: CPANSA-Kossy-2021-01
   references:
-    - https://github.com/kazeburo/Kossy/pull/16
+  - https://github.com/kazeburo/Kossy/pull/16
   reported: 2021-08-29
   severity: ~
+cpansa_version: 2
+distribution: Kossy
+last_checked: 1708150854
+latest_version: '0.63'
+metacpan: https://metacpan.org/pod/Kossy
+repo: https://github.com/kazeburo/Kossy.git

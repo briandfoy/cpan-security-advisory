@@ -1,12 +1,20 @@
 ---
-- id: CPANSA-Fake-Encode-2017-01
-  distribution: Fake-Encode
-  reported: 2017-01-23
-  description: >
-    Loading modules from . (current directory).
-  references:
-    - https://metacpan.org/changes/distribution/Fake-Encode
+advisories:
+- affected_versions: <0.08
   cves:
-    - CVE-2016-1238
-  affected_versions: "<0.08"
-  fixed_versions: ">=0.08"
+  - CVE-2016-1238
+  description: |
+    Loading modules from . (current directory).
+  fixed_versions: '>=0.08'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-Fake-Encode-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/Fake-Encode
+  reported: 2017-01-23
+cpansa_version: 2
+distribution: Fake-Encode
+last_checked: 1708150847
+latest_version: '0.11'
+metacpan: https://metacpan.org/pod/Fake::Encode
+repo: https://github.com/ina-cpan/Fake-Encode

@@ -1,27 +1,33 @@
 ---
-- affected_versions: "<0.24"
+advisories:
+- affected_versions: <0.24
   cves:
-    - CVE-2014-1875
-  description: >
-    The Capture::Tiny module before 0.24 for Perl allows local users
-    to write to arbitrary files via a symlink attack on a temporary
-    file.
-  distribution: Capture-Tiny
+  - CVE-2014-1875
+  description: |
+    The Capture::Tiny module before 0.24 for Perl allows local users to write to arbitrary files via a symlink attack on a temporary file.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-mx62-7r33-gq29
   id: CPANSA-Capture-Tiny-2014-1875
   references:
-    - http://osvdb.org/102963
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1062424
-    - http://www.securityfocus.com/bid/65475
-    - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737835
-    - https://github.com/dagolden/Capture-Tiny/issues/16
-    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128882.html
-    - https://github.com/dagolden/Capture-Tiny/commit/635c9eabd52ab8042b0c841823bd6e692de87924
-    - http://cpansearch.perl.org/src/DAGOLDEN/Capture-Tiny-0.24/Changes
-    - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128823.html
-    - http://seclists.org/oss-sec/2014/q1/272
-    - http://seclists.org/oss-sec/2014/q1/267
-    - http://secunia.com/advisories/56823
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/91464
+  - http://osvdb.org/102963
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1062424
+  - http://www.securityfocus.com/bid/65475
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737835
+  - https://github.com/dagolden/Capture-Tiny/issues/16
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128882.html
+  - https://github.com/dagolden/Capture-Tiny/commit/635c9eabd52ab8042b0c841823bd6e692de87924
+  - http://cpansearch.perl.org/src/DAGOLDEN/Capture-Tiny-0.24/Changes
+  - http://lists.fedoraproject.org/pipermail/package-announce/2014-February/128823.html
+  - http://seclists.org/oss-sec/2014/q1/272
+  - http://seclists.org/oss-sec/2014/q1/267
+  - http://secunia.com/advisories/56823
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/91464
   reported: 2014-10-06
   severity: ~
+cpansa_version: 2
+distribution: Capture-Tiny
+last_checked: 1708150831
+latest_version: '0.48'
+metacpan: https://metacpan.org/pod/Capture::Tiny
+repo: https://github.com/dagolden/Capture-Tiny.git

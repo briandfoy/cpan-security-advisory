@@ -1,11 +1,18 @@
 ---
-- id: CPANSA-HTML-Perlinfo-2008-01
-  distribution: HTML-Perlinfo
-  reported: 2008-07-04
-  description: >
-    Possibility of denial-of-service attack.
-  references:
-    - https://metacpan.org/changes/release/ACCARDO/HTML-Perlinfo-1.52
-  affected_versions: "<1.52"
-  fixed_versions: ">=1.52"
+advisories:
+- affected_versions: <1.52
   cves: []
+  description: |
+    Possibility of denial-of-service attack.
+  fixed_versions: '>=1.52'
+  github_security_advisory: []
+  id: CPANSA-HTML-Perlinfo-2008-01
+  references:
+  - https://metacpan.org/changes/release/ACCARDO/HTML-Perlinfo-1.52
+  reported: 2008-07-04
+cpansa_version: 2
+distribution: HTML-Perlinfo
+last_checked: 1708150850
+latest_version: '1.73'
+metacpan: https://metacpan.org/pod/HTML::Perlinfo
+repo: ~

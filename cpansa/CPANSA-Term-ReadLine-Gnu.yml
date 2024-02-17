@@ -1,30 +1,34 @@
 ---
-- affected_versions: "<1.27"
+advisories:
+- affected_versions: <1.27
+  comments: |
+    The presense of affected versions of Term-ReadLine-Gnu suggests that a vulnerable version of the readline linrary is installed on the host system.
   cves:
-    - CVE-2014-2524
-  description: >
-    The _rl_tropen function in util.c in GNU readline before 6.3 patch
-    3 allows local users to create or overwrite arbitrary files via a
-    symlink attack on a /var/tmp/rltrace.[PID] file.
-  comments: >
-    The presense of affected versions of Term-ReadLine-Gnu suggests
-    that a vulnerable version of the readline linrary is installed on
-    the host system.
-  distribution: Term-ReadLine-Gnu
+  - CVE-2014-2524
+  description: |
+    The _rl_tropen function in util.c in GNU readline before 6.3 patch 3 allows local users to create or overwrite arbitrary files via a symlink attack on a /var/tmp/rltrace.[PID] file.
   external_vulnerability:
-    distributed_version: "<=6.3"
+    distributed_version: <=6.3
     name: readline
-  fixed_versions: ">=1.27"
+  fixed_versions: '>=1.27'
+  github_security_advisory:
+  - GHSA-hq65-wq6g-7mcc
   id: CPANSA-Term-ReadLine-Gnu-2014-2524
   references:
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1077023
-    - http://lists.gnu.org/archive/html/bug-readline/2014-03/msg00057.html
-    - http://seclists.org/oss-sec/2014/q1/579
-    - http://seclists.org/oss-sec/2014/q1/587
-    - https://lists.fedoraproject.org/pipermail/package-announce/2014-July/135686.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2014:154
-    - http://advisories.mageia.org/MGASA-2014-0319.html
-    - http://lists.opensuse.org/opensuse-security-announce/2014-09/msg00037.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2015:132
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1077023
+  - http://lists.gnu.org/archive/html/bug-readline/2014-03/msg00057.html
+  - http://seclists.org/oss-sec/2014/q1/579
+  - http://seclists.org/oss-sec/2014/q1/587
+  - https://lists.fedoraproject.org/pipermail/package-announce/2014-July/135686.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2014:154
+  - http://advisories.mageia.org/MGASA-2014-0319.html
+  - http://lists.opensuse.org/opensuse-security-announce/2014-09/msg00037.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2015:132
   reported: 2014-08-20
   severity: ~
+cpansa_version: 2
+distribution: Term-ReadLine-Gnu
+last_checked: 1708150868
+latest_version: '1.46'
+metacpan: https://metacpan.org/pod/Term::ReadLine::Gnu
+repo: https://github.com/hirooih/perl-trg.git

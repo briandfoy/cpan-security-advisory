@@ -1,24 +1,30 @@
 ---
-- id: CPANSA-Net-OpenID-Consumer-2010-01
-  distribution: Net-OpenID-Consumer
-  reported: 2010-11-06
-  description: >
+advisories:
+- affected_versions: <1.12
+  cves: []
+  description: |
     A potential timing attack when checking signatures.
+  fixed_versions: '>=1.12'
+  github_security_advisory: []
+  id: CPANSA-Net-OpenID-Consumer-2010-01
   references:
-    - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
-    - https://github.com/wrog/Net-OpenID-Consumer/commit/4e82c7e4b6ad4bc40571c5cfcaa58f9365b147a5
-    - http://lists.openid.net/pipermail/openid-security/2010-July/001156.html
-  affected_versions: "<1.12"
-  fixed_versions: ">=1.12"
+  - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
+  - https://github.com/wrog/Net-OpenID-Consumer/commit/4e82c7e4b6ad4bc40571c5cfcaa58f9365b147a5
+  - http://lists.openid.net/pipermail/openid-security/2010-July/001156.html
+  reported: 2010-11-06
+- affected_versions: <0.06
   cves: []
-- id: CPANSA-Net-OpenID-Consumer-2015-05
-  distribution: Net-OpenID-Consumer
+  description: |
+    Incorrect comparison of system openssl status when doing DSA checks.
+  fixed_versions: '>=0.06'
+  github_security_advisory: []
+  id: CPANSA-Net-OpenID-Consumer-2015-05
+  references:
+  - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
   reported: 2015-05-26
-  description: >
-    Incorrect comparison of system openssl status when doing DSA
-    checks.
-  references:
-    - https://metacpan.org/changes/distribution/Net-OpenID-Consumer
-  affected_versions: "<0.06"
-  fixed_versions: ">=0.06"
-  cves: []
+cpansa_version: 2
+distribution: Net-OpenID-Consumer
+last_checked: 1708150860
+latest_version: '1.18'
+metacpan: https://metacpan.org/pod/Net::OpenID::Consumer
+repo: git://github.com/wrog/Net-OpenID-Consumer.git

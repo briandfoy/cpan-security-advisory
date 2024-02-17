@@ -1,16 +1,23 @@
 ---
-- affected_versions: ">=1.03"
+advisories:
+- affected_versions: '>=1.03'
   cves:
-    - CVE-2011-4117
-  description: >
-    The Batch::Batchrun module 1.03 for Perl does not properly handle
-    temporary files.
-  distribution: Batch-Batchrun
+  - CVE-2011-4117
+  description: |
+    The Batch::Batchrun module 1.03 for Perl does not properly handle temporary files.
   fixed_versions: ~
+  github_security_advisory:
+  - GHSA-2mgm-x4fm-vrg8
   id: CPANSA-Batch-Batchrun-2011-4117
   references:
-    - http://www.openwall.com/lists/oss-security/2011/11/04/2
-    - http://www.openwall.com/lists/oss-security/2011/11/04/4
-    - https://rt.cpan.org/Public/Bug/Display.html?id=69594
+  - http://www.openwall.com/lists/oss-security/2011/11/04/2
+  - http://www.openwall.com/lists/oss-security/2011/11/04/4
+  - https://rt.cpan.org/Public/Bug/Display.html?id=69594
   reported: 2020-01-31
   severity: high
+cpansa_version: 2
+distribution: Batch-Batchrun
+last_checked: 1708150831
+latest_version: '1.03'
+metacpan: https://metacpan.org/pod/Batch::Batchrun
+repo: ~

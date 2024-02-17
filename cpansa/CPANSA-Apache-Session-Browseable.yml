@@ -1,18 +1,22 @@
 ---
-- affected_versions: '<1.3.6'
+advisories:
+- affected_versions: <1.3.6
   cves:
-    - CVE-2020-36659
-  description: >
-    In Apache::Session::Browseable before 1.3.6, validity of the X.509
-    certificate is not checked by default when connecting to remote LDAP
-    backends, because the default configuration of the Net::LDAPS module
-    for Perl is used. NOTE: this can, for example, be fixed in conjunction
-    with the CVE-2020-16093 fix.
-  distribution: Apache-Session-Browseable
+  - CVE-2020-36659
+  description: |
+    In Apache::Session::Browseable before 1.3.6, validity of the X.509 certificate is not checked by default when connecting to remote LDAP backends, because the default configuration of the Net::LDAPS module for Perl is used. NOTE: this can, for example, be fixed in conjunction with the CVE-2020-16093 fix.
   fixed_versions: '>=1.3.6'
+  github_security_advisory:
+  - GHSA-crqh-wr78-6jgr
   id: CPANSA-Apache-Session-Browseable-2020-36659
   references:
-    - https://github.com/LemonLDAPNG/Apache-Session-Browseable/commit/fdf393235140b293cae5578ef136055a78f3574f
-    - https://lists.debian.org/debian-lts-announce/2023/01/msg00025.html
+  - https://github.com/LemonLDAPNG/Apache-Session-Browseable/commit/fdf393235140b293cae5578ef136055a78f3574f
+  - https://lists.debian.org/debian-lts-announce/2023/01/msg00025.html
   reported: 2023-01-27
   severity: ~
+cpansa_version: 2
+distribution: Apache-Session-Browseable
+last_checked: 1708150828
+latest_version: v1.3.13
+metacpan: https://metacpan.org/pod/Apache::Session::Browseable
+repo: https://github.com/LemonLDAPNG/Apache-Session-Browseable

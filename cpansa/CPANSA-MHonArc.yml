@@ -1,23 +1,32 @@
 ---
-- id: CPANSA-MHonArc-2011-01
-  distribution: MHonArc
-  reported: 2011-01-09
-  description: >
+advisories:
+- affected_versions: <2.6.17
+  cves:
+  - CVE-2010-4524
+  description: |
     Improper escaping of certain HTML sequences (XSS).
+  fixed_versions: '>=2.6.17'
+  github_security_advisory:
+  - GHSA-r98c-rm5p-j4fw
+  id: CPANSA-MHonArc-2011-01
   references:
-    - https://metacpan.org/changes/distribution/MHonArc
-  cves:
-    - CVE-2010-4524
-  affected_versions: "<2.6.17"
-  fixed_versions: ">=2.6.17"
-- id: CPANSA-MHonArc-2011-02
-  distribution: MHonArc
+  - https://metacpan.org/changes/distribution/MHonArc
   reported: 2011-01-09
-  description: >
-    DoS when processing html messages with deep tag nesting.
-  references:
-    - https://metacpan.org/changes/distribution/MHonArc
+- affected_versions: <2.6.17
   cves:
-    - CVE-2010-1677
-  affected_versions: "<2.6.17"
-  fixed_versions: ">=2.6.17"
+  - CVE-2010-1677
+  description: |
+    DoS when processing html messages with deep tag nesting.
+  fixed_versions: '>=2.6.17'
+  github_security_advisory:
+  - GHSA-7jx8-cpc3-f4pq
+  id: CPANSA-MHonArc-2011-02
+  references:
+  - https://metacpan.org/changes/distribution/MHonArc
+  reported: 2011-01-09
+cpansa_version: 2
+distribution: MHonArc
+last_checked: 1708150857
+latest_version: v2.6.24
+metacpan: https://metacpan.org/pod/MHonArc
+repo: https://github.com/sympa-community/mhonarc.git

@@ -1,12 +1,18 @@
 ---
-- id: CPANSA-Apache-SessionX-2005-01
-  reported: 2005-11-15
-  distribution: Apache-SessionX
-  description: >
-    Problem in session_id validation, which allows creation of session
-    with invalid ids.
-  references:
-    - https://metacpan.org/changes/distribution/Apache-SessionX
-  affected_versions: "<2.01"
-  fixed_versions: ">=2.01"
+advisories:
+- affected_versions: <2.01
   cves: []
+  description: |
+    Problem in session_id validation, which allows creation of session with invalid ids.
+  fixed_versions: '>=2.01'
+  github_security_advisory: []
+  id: CPANSA-Apache-SessionX-2005-01
+  references:
+  - https://metacpan.org/changes/distribution/Apache-SessionX
+  reported: 2005-11-15
+cpansa_version: 2
+distribution: Apache-SessionX
+last_checked: 1708150829
+latest_version: '2.01'
+metacpan: https://metacpan.org/pod/Apache::SessionX
+repo: ~

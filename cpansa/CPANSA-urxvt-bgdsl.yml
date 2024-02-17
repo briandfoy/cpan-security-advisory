@@ -1,20 +1,26 @@
 ---
+advisories:
 - affected_versions: '>=9.25,<=9.26'
-  fixed_versions: '>=9.29'
-  cves:
-    - CVE-2022-4170
-  comment: >
+  comment: |
     This is a darkpan application.
-  url: http://software.schmorp.de/pkg/rxvt-unicode.html
+  cves:
+  - CVE-2022-4170
   darkpan: true,
-  description: >
-    The rxvt-unicode package is vulnerable to a remote code execution,
-    in the Perl background extension, when an attacker can control the
-    data written to the user's terminal and certain options are set.
-  distribution: urxvt-bgdsl
+  description: |
+    The rxvt-unicode package is vulnerable to a remote code execution, in the Perl background extension, when an attacker can control the data written to the user's terminal and certain options are set.
+  fixed_versions: '>=9.29'
+  github_security_advisory:
+  - GHSA-v3h7-vj8g-6x3r
   id: CPANSA-urxvt-bgdsl-2022-4170
   references:
-    - https://bugzilla.redhat.com/show_bug.cgi?id=2151597
-    - https://www.openwall.com/lists/oss-security/2022/12/05/1
+  - https://bugzilla.redhat.com/show_bug.cgi?id=2151597
+  - https://www.openwall.com/lists/oss-security/2022/12/05/1
   reported: 2022-12-09
   severity: ~
+  url: http://software.schmorp.de/pkg/rxvt-unicode.html
+cpansa_version: 2
+distribution: urxvt-bgdsl
+last_checked: 1708150869
+latest_version: ~
+metacpan: https://metacpan.org/pod/urxvt::bgdsl
+repo: ~

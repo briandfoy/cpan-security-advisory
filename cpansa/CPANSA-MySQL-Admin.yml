@@ -1,12 +1,18 @@
 ---
+advisories:
 - affected_versions: <0.34
   cves: []
-  description: >
-    Unspecified security issues.
-  distribution: MySQL-Admin
+  description: "Unspecified security issues.\n"
   fixed_versions: '>=0.34'
+  github_security_advisory: []
   id: CPANSA-MySQL-Admin-1-1
   references:
-    - https://metacpan.org/dist/MySQL-Admin/changes
+  - https://metacpan.org/dist/MySQL-Admin/changes
   reported: ~
   severity: ~
+cpansa_version: 2
+distribution: MySQL-Admin
+last_checked: 1708150859
+latest_version: '1.18'
+metacpan: https://metacpan.org/pod/MySQL::Admin
+repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/
