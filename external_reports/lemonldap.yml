@@ -240,7 +240,7 @@ perl_distributions:
     perl_module_versions: 2.0.8
   - distributed_library_version: 2.0.9
     perl_module_versions: 2.0.9
-  name: LemonLDAP-NG-Common
+  name: Lemonldap-NG-Common
 - affected:
   - distributed_library_version: '0.6'
     perl_module_versions: '0.63'
@@ -416,7 +416,7 @@ perl_distributions:
     perl_module_versions: 2.0.8
   - distributed_library_version: 2.0.9
     perl_module_versions: 2.0.9
-  name: LemonLDAP-NG-Handler
+  name: Lemonldap-NG-Handler
 - affected:
   - distributed_library_version: '0.6'
     perl_module_versions: '0.03'
@@ -592,7 +592,7 @@ perl_distributions:
     perl_module_versions: 2.0.8
   - distributed_library_version: 2.0.9
     perl_module_versions: 2.0.9
-  name: LemonLDAP-NG-Manager
+  name: Lemonldap-NG-Manager
 - affected:
   - distributed_library_version: '0.6'
     perl_module_versions: '0.42'
@@ -768,5 +768,5 @@ perl_distributions:
     perl_module_versions: 2.0.8
   - distributed_library_version: 2.0.9
     perl_module_versions: 2.0.9
-  name: LemonLDAP-NG-Portal
+  name: Lemonldap-NG-Portal
 url: https://lemonldap-ng.org
