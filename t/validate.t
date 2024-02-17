@@ -11,7 +11,6 @@ package My::Type::YYYYMMDD {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
-		say STDERR "In type uri";
 		'tag:example.com,EXAMPLE:rx/cpansa-date',
 		}
 
