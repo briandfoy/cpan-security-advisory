@@ -263,5 +263,5 @@ perl_distributions:
   - distributed_library_version: 1.8.11.0
     perl_module_versions: ==1.8.11.0
   last_version_checked: 1.8.11.0
-  name: Alien::SVN
+  name: Alien-SVN
 url: https://subversion.apache.org

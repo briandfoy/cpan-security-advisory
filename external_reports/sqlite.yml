@@ -1158,5 +1158,5 @@ perl_distributions:
   - distributed_library_version: 3.39.4
     perl_module_versions: '>=1.71_07,<=1.72'
   last_version_checked: '1.72'
-  name: DBD::SQLite
+  name: DBD-SQLite
 url: https://www.sqlite.org/index.html

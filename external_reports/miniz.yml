@@ -23,7 +23,7 @@ perl_distributions:
   - distributed_library_version: 3.0.0
     perl_module_versions: '>=5.002_001'
   last_version_checked: '5.003'
-  name: Sereal::Encoder
+  name: Sereal-Encoder
 - affected:
   - distributed_library_version: '1.15'
     perl_module_versions: '>=3.000_001,<4.009_002'
@@ -32,5 +32,5 @@ perl_distributions:
   - distributed_library_version: 3.0.0
     perl_module_versions: '>=5.002_001'
   last_version_checked: '5.003'
-  name: Sereal::Decoder
+  name: Sereal-Decoder
 url: https://github.com/richgel999/miniz

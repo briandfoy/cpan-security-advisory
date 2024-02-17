@@ -10,12 +10,12 @@ perl_distributions:
   - distributed_library_version: '4'
     perl_module_versions: '>=0.06,<3.002_002'
   last_version_checked: '5.003'
-  name: Sereal::Encoder
+  name: Sereal-Encoder
 - affected:
   - distributed_library_version: '5'
     perl_module_versions: '>=3.002_002'
   - distributed_library_version: '4'
     perl_module_versions: '>=0.06,<3.002_002'
   last_version_checked: '5.003'
-  name: Sereal::Decoder
+  name: Sereal-Decoder
 url: https://github.com/zeevt/csnappy

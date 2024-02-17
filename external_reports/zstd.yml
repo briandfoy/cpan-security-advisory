@@ -59,7 +59,7 @@ perl_distributions:
   - distributed_library_version: 1.5.2
     perl_module_versions: '>=5.002'
   last_version_checked: '5.003'
-  name: Sereal::Encoder
+  name: Sereal-Encoder
 - affected:
   - distributed_library_version: 1.1.2
     perl_module_versions: '>=4.001_001,<4.009_002'
@@ -72,5 +72,5 @@ perl_distributions:
   - distributed_library_version: 1.5.2
     perl_module_versions: '>=5.002_001'
   last_version_checked: '5.003'
-  name: Sereal::Decoder
+  name: Sereal-Decoder
 url: http://facebook.github.io/zstd/
