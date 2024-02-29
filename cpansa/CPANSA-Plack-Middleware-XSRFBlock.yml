@@ -13,12 +13,6 @@ advisories:
   - https://metacpan.org/dist/Plack-Middleware-XSRFBlock/changes
   - https://metacpan.org/release/DAKKAR/Plack-Middleware-XSRFBlock-0.0.19/source/Changes
   - https://nvd.nist.gov/vuln/detail/CVE-2023-52431
-  url: ~
-  id: CPANSA-Plack-Middleware-XSRFBlock-20230714-01
-  references:
-    - https://metacpan.org/dist/Plack-Middleware-XSRFBlock/changes
-    - https://metacpan.org/release/DAKKAR/Plack-Middleware-XSRFBlock-0.0.19/source/Changes
-    - https://nvd.nist.gov/vuln/detail/CVE-2023-52431
   reported: 2023-07-14
   severity: ~
 cpansa_version: 2
