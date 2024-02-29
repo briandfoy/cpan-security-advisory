@@ -32,6 +32,8 @@ jobs:
                   yamllint_file_or_dir: 'cpansa'
                   yamllint_strict: false
                   yamllint_comment: true
+              env:
+                  YAMLLINT_CONFIG_FILE: t/yamllint.config
             - name: 'yamllint on external_reports'
               uses: karancode/yamllint-github-action@master
               with:
@@ -39,6 +41,8 @@ jobs:
                   yamllint_strict: false
                   yamllint_comment: true
                   yamllint_config_filepath: t/yamllint.config
+              env:
+                  YAMLLINT_CONFIG_FILE: t/yamllint.config
     lint:
         runs-on: ${{ matrix.os }}
         strategy:
