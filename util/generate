@@ -19,7 +19,7 @@ use subs qw(config message);
 
 =head1 NAME
 
-util/generate - create the data for lib/CPAN/Audit/DB.pm
+util/generate - create the data for perl-module/lib/CPAN/Audit/DB.pm
 
 =head1 SYNOPSIS
 
@@ -58,7 +58,7 @@ Maintained by: brian d foy (C<briandfoy@pobox.com>)
 
 =head1 LICENSE
 
-L<CPAN::Audit> is dual-licensed under the GPL or the Artistic License.
+L<CPAN::Audit::DB> is dual-licensed under the GPL or the Artistic License.
 See the included F<LICENSE> file for details.
 
 =cut
@@ -120,7 +120,7 @@ sub all_releases {
 }
 
 sub default_file () {
-	state $file = catfile(qw(lib CPAN Audit DB.pm));
+	state $file = catfile(qw(perl-module lib CPAN Audit DB.pm));
 	$file;
 }
 
@@ -144,10 +144,14 @@ sub default_version () {
 sub get_file_list ( $args ) {
 	message "Updating git\n";
 	system 'git', 'pull';
+<<<<<<< HEAD
 	unless( @$args and -e 'cpan-security-advisory/cpansa' ) {
 		debug 'No arguments given fo: looking in cpan-security-advisory/cpansa';
 		@$args = glob( 'cpansa/*.yml' );
 	}
+=======
+	@$args = glob( 'cpansa/*.yml' );
+>>>>>>> c42acb6 (A few more report coversions)
 
 	my @files = ($^O eq 'MSWin32') ? map { glob } @$args : @$args;
 
