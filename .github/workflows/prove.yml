@@ -13,6 +13,8 @@ on:
             - 'cpansa/**.yml'
             - 'external_reports/**.yml'
             - '!.github/workflows/validate.yml'
+            - 'util/**'
+            - 't/*.t'
     pull_request:
         branches:
             - '**'
