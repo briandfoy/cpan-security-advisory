@@ -1,7 +1,7 @@
 ---
 - id: CPANSA-HTTP-Tiny-2023-31486
-  affected_versions: ~
-  fixed_versions: ~
+  affected_versions: "<0.083"
+  fixed_versions: ">=0.083"
   distribution: HTTP-Tiny
   reported: 2023-02-14
   description: >
