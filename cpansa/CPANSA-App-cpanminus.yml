@@ -5,7 +5,7 @@ advisories:
   - CVE-2020-16154
   description: |
     The App::cpanminus package 1.7044 for Perl allows Signature Verification Bypass.
-  fixed_versions: ~
+  fixed_versions: ">=1.7045"
   github_security_advisory:
   - GHSA-m92x-373g-xc36
   id: CPANSA-App-cpanminus-2020-01
