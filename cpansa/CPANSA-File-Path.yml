@@ -149,7 +149,7 @@
     - https://usn.ubuntu.com/94-1/
   reported: 2005-05-02
   severity: ~
-- affected_versions: ">=1.404,<=1.06"
+- affected_versions: "<=1.404,>=1.06"
   cves:
     - CVE-2004-0452
   description: >
