@@ -1,0 +1,106 @@
+=pod
+
+=encoding utf8
+
+=head1 The CPAN::Audit::DB module
+
+This is the I<README> for the L<CPAN::Audit::DB> Perl module.
+
+You're probably looking at this because you don't know where else to
+find what you're looking for. Read this once and you might never have
+to read one again for any Perl module.
+
+=head2 Documentation
+
+To read about L<CPAN::Audit::DB>, look at the embedded documentation
+in the module itself. Inside the distribution, you can format it
+with L<perldoc|http://perldoc.perl.org/perldoc.html>:
+
+	% perldoc lib/CPAN/Audit/DB.pm
+
+If you have already installed the module, you can specify the module
+name instead of the file location:
+
+	% perldoc CPAN::Audit::DB
+
+You can read the documentation and inspect the meta data on
+L<MetaCPAN|http://www.metacpan.org/module/CPAN::Audit::DB>.
+
+The standard module documentation has example uses in the SYNOPSIS
+section, but you can also look in the I<examples/> directory (if it's
+there), or look at the test files in I<t/>.
+
+=head2 Installation
+
+You can install this module with a CPAN client, which will resolve
+and install the dependencies:
+
+	% cpan CPAN::Audit::DB
+	% cpanm CPAN::Audit::DB
+
+You can also install directly from the distribution directory, which
+will also install the dependencies:
+
+	% cpan .
+	% cpanm .
+
+You could install just this module manually:
+
+	% perl Makefile.PL
+	% make
+	% make test
+	% make install
+
+You probably don't want to do that unless you're fiddling with the
+module and only want to run the tests without installing anything.
+
+=head2 Source location
+
+The meta data, such as the source repository and bug tracker, is in
+I<Makefile.PL> or the I<META.*> files it creates. You can find that on
+those CPAN web interfaces, but you can also look at files directly in
+the source repository:
+
+=over 4
+
+=item *	L<https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory>
+
+=back
+
+If you find a problem, file a ticket in the L<issue
+tracker|https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory/issues>:
+
+=over 4
+
+=item *	L<https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory/issues>
+
+=back
+
+=head2 Getting help
+
+Although I'm happy to hear from module users in private email,
+that's the best way for me to forget to do something.
+
+Besides the issue trackers, you can find help at
+L<Perlmonks|http://www.perlmonks.org> or
+L<Stackoverflow|http://www.stackoverflow.com>, both of which have many
+competent Perlers who can answer your question, almost in real time.
+They might not know the particulars of this module, but they can help
+you diagnose your problem.
+
+You might like to read L<brian's Guide to Solving Any Perl
+Problem|https://briandfoy.github.io/brians-guide-to-solving-any-perl-problem/>.
+
+=head2 Copyright and License
+
+You should have received a I<LICENSE> file, but the license is also noted
+in the module files. About the only thing you can't do is pretend that
+you wrote code that you didn't.
+
+=head2 Good luck!
+
+Enjoy,
+
+brian d foy, bdfoy@cpan.org
+
+=cut
