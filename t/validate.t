@@ -1,4 +1,4 @@
-use v5.36;
+use v5.30;
 
 use Test::More;
 
