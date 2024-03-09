@@ -5,7 +5,7 @@ use experimental qw(signatures);
 use strict;
 use warnings;
 
-use Carp qw(carp croak);
+use Carp qw(croak);
 use CPAN::DistnameInfo;
 use File::Basename qw(basename);
 use File::Spec::Functions qw(catfile);
@@ -19,7 +19,7 @@ use subs qw(config message);
 
 =head1 NAME
 
-util/generate - create the data for perl-module/lib/CPAN/Audit/DB.pm
+util/generate - create the data for lib/CPAN/Audit/DB.pm
 
 =head1 SYNOPSIS
 
@@ -58,7 +58,7 @@ Maintained by: brian d foy (C<briandfoy@pobox.com>)
 
 =head1 LICENSE
 
-L<CPAN::Audit::DB> is dual-licensed under the GPL or the Artistic License.
+L<CPAN::Audit> is dual-licensed under the GPL or the Artistic License.
 See the included F<LICENSE> file for details.
 
 =cut
@@ -91,6 +91,7 @@ sub all_releases {
 	my $content_json;
 	FETCH: {
 		sleep $tries * 10;
+		debug( "Try $tries for $distribution" );
 		my $response = HTTP::Tiny->new->post(
 			'http://fastapi.metacpan.org/v1/release/_search',
 			{
@@ -109,7 +110,7 @@ sub all_releases {
 		);
 
 		$content_json = eval { JSON::decode_json( $response->{content} ) };
-		last if defined $content_json;
+		last if $content_json;
 		redo FETCH unless $tries++ > 3;
 		}
 
@@ -120,7 +121,7 @@ sub all_releases {
 }
 
 sub default_file () {
-	state $file = catfile(qw(perl-module lib CPAN Audit DB.pm));
+	state $file = catfile(qw(lib CPAN Audit DB.pm));
 	$file;
 }
 
@@ -142,16 +143,12 @@ sub default_version () {
 }
 
 sub get_file_list ( $args ) {
-	message "Updating git\n";
-	system 'git', 'pull';
-<<<<<<< HEAD
+	message "Updating submodules";
+	system 'git', 'submodule', 'update', '--remote';
 	unless( @$args and -e 'cpan-security-advisory/cpansa' ) {
 		debug 'No arguments given fo: looking in cpan-security-advisory/cpansa';
-		@$args = glob( 'cpansa/*.yml' );
+		@$args = glob( 'cpan-security-advisory/cpansa/*.yml' );
 	}
-=======
-	@$args = glob( 'cpansa/*.yml' );
->>>>>>> c42acb6 (A few more report coversions)
 
 	my @files = ($^O eq 'MSWin32') ? map { glob } @$args : @$args;
 
@@ -159,12 +156,7 @@ sub get_file_list ( $args ) {
 }
 
 sub get_previous_date_serial ( $file ) {
-	return unless -e $file;
-	open my $fh, '<:encoding(UTF-8)', $file or do {
-		warn( "Could not read <$file>: $!\n" );
-		return;
-		};
-
+	open my $fh, '<:encoding(UTF-8)', $file or croak( "Could not read <$file>: $!" );
 	while( <$fh> ) {
 		next unless /VERSION\s*=\s*'(\d{8})\.(\d{3})'/;
 		return ( $1, $2 );
@@ -200,13 +192,30 @@ sub process_files ( $files ) {
 	foreach my $file ( $files->@* ) {
 		message "Reading $file";
 		my $yaml = YAML::Tiny->read($file)->[0];
-		message sprintf "\tFound %d reports", scalar $yaml->{advisories}->@*;
+		message sprintf "\tFound %d reports", scalar $yaml->@*;
 		my %dists_in_file;
+		my $n = 0;
 
-		warn "Missing distribution key ($file)\n" unless exists $yaml->{distribution};
-		warn "Undefined distribution key in ($file)\n" unless defined $yaml->{distribution};
-		warn "Empty distribution key in ($file)\n" unless length $yaml->{distribution};
-		my $dist = $yaml->{distribution};
+		foreach my $record ( $yaml->@* ) {
+			$n++;
+			my $id = $record->{id};
+			warn "Missing distribution key in record $n ($id)\n" unless exists $record->{distribution};
+			warn "Undefined distribution key in record $n ($id)\n" unless defined $record->{distribution};
+			warn "Empty distribution key in record $n ($id)\n" unless length $record->{distribution};
+
+			$dists_in_file{ $record->{distribution} }++;
+			}
+
+		if( keys %dists_in_file == 0 ) {
+			warn "There were no distributions declared in the records in <$file>\n";
+			next FILE;
+		}
+		elsif( keys %dists_in_file > 1 ) {
+			my @dists = map { length ? $_ : '<not defined or empty>' } keys %dists_in_file;
+			warn "There were more than one distribution declared in the records in <$file>: @dists\n";
+		}
+
+		my( $dist ) = keys %dists_in_file;
 
 		if( exists $db{dists}{$dist}{advisories} ) {
 			warn "\tAlready have advisories for $dist\n";
@@ -215,18 +224,18 @@ sub process_files ( $files ) {
 			$db{dists}{$dist}{advisories} = [];
 		}
 
-		push $db{dists}{$dist}{advisories}->@*, $yaml->{advisories}->@*;
+		push $db{dists}{$dist}{advisories}->@*, $yaml->@*;
 	}
 
 	provides( \%db );
 
 	foreach my $dist ( sort keys $db{dists}->%* ) {
+		message "Processing $dist";
 		my @releases = all_releases($dist);
 		if (!@releases) {
 			warn "no releases found on CPAN for '$dist'\n";
 			next;
 		}
-		message "Processing $dist";
 
 		# try to fetch the latest release, according to MetaCPAN.
 		# if there is no 'latest' tag, grab the last item (because
@@ -273,7 +282,6 @@ sub process_options ( @args ) {
 	my $p = Getopt::Long::Parser->new();
 	$p->configure( qw(no_ignore_case) );
 	$p->getoptionsfromarray( \@args, %opts );
-
 
 	debug dumper( \%results );
 
@@ -371,12 +379,15 @@ sub stringify_data ( $db ) {
 	$dump =~ s{^\$VAR1\s*=\s*}{};
 	$dump =~ s{}{};
 
+	my $submodule_dir = 'cpan-security-advisory';
 
-	chomp( my( $commit ) = `git rev-parse HEAD` );
+	my( $commit ) = split /\s+/, join '',
+		grep { /\Q$submodule_dir/ }
+		`git submodule status` =~ s/\A\s+//r;
 
 	my $string = <<~"EOF";
 		# created by $0 at @{[ scalar localtime]}
-		# briandfoy/cpan-security-adviory $commit
+		# $submodule_dir $commit
 		#
 		package CPAN::Audit::DB;
 
