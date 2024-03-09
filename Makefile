@@ -32,6 +32,11 @@ $(CVE_FEED_FILE):
 setup: ## setup the environment to use these tools
 	cpanm --installdeps .
 
+.PHONY: sync
+sync:
+	cp ../cpan-audit/lib/CPAN/Audit/DB.pm perl-module/lib/CPAN/Audit/DB.pm
+	cp ../cpan-audit/lib/CPAN/Audit/DB.pm.gpg perl-module/lib/CPAN/Audit/DB.pm.gpg
+
 .PHONY: test
 test: ## run all tests (with current env)
 	prove -r t
