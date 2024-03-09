@@ -13,6 +13,10 @@ advisories:
   - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DENFY4CRTIZL5WYYUYUM4VKCJNXO4QIW/
   - https://metacpan.org/pod/App::cpanminus
   - https://blog.hackeriet.no/cpan-signature-verification-vulnerabilities/
+  - https://access.redhat.com/security/cve/cve-2020-16154
+  - https://security-tracker.debian.org/tracker/CVE-2020-16154
+  - https://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html
+  - https://github.com/miyagawa/cpanminus/pull/638
   reported: 2020-07-30
 cpansa_version: 2
 distribution: App-cpanminus
