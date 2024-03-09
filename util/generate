@@ -121,7 +121,7 @@ sub all_releases {
 }
 
 sub default_file () {
-	state $file = catfile(qw(perl-module lib CPAN Audit DB.pm));
+	state $file = catfile(qw(cpan-audit-db lib CPAN Audit DB.pm));
 	$file;
 }
 
