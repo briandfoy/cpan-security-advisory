@@ -1,11 +1,11 @@
 ---
 advisories:
-- affected_versions: '>1.219'
+- affected_versions: '>1.219,<1.227'
   cves:
   - CVE-2013-4184
   description: |
     Perl module Data::UUID from CPAN version 1.219 vulnerable to symlink attacks
-  fixed_versions: ~
+  fixed_versions: '>=1.227'
   github_security_advisory:
   - GHSA-52mm-w3hf-39rg
   id: CPANSA-Data-UUID-2013-4184
@@ -21,7 +21,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: Data-UUID
-last_checked: 1708150843
-latest_version: '1.226'
+last_checked: 1710811790
+latest_version: '1.227'
 metacpan: https://metacpan.org/pod/Data::UUID
 repo: https://github.com/rjbs/Data-UUID
