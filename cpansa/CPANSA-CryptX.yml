@@ -1,7 +1,8 @@
 ---
 advisories:
 - affected_versions: <0.062
-  cves: []
+  cves:
+  - CVE-2018-25099
   description: |
     A user can pass anything as the tag into gcm_decrypt_verify() and it will return decrypted plaintext.
   fixed_versions: ~

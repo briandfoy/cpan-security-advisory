@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions: <0.22
+  cves:
+  - CVE-2021-47154
+  description: >
+    The Net::CIDR::Lite module before 0.22 for Perl does not properly
+    consider extraneous zero characters at the beginning of an IP address
+    string, which (in some situations) allows attackers to bypass access
+    control that is based on IP addresses.
+  fixed_versions: '>=0.22'
+  github_security_advisory: []
+  id: CPANSA-Net-CIDR-Lite-2021-47154
+  references:
+  - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
+  - https://github.com/stigtsp/Net-CIDR-Lite/commit/23b6ff0590dc279521863a502e890ef19a5a76fc
+  - https://metacpan.org/dist/Net-CIDR-Lite/changes
+  - https://metacpan.org/pod/Net::CIDR::Lite
+  reported: 2024-03-18
+  severity: ~
+cpansa_version: 2
+distribution: Net-CIDR-Lite
+last_checked: 1708150855
+latest_version: '1.717'
+metacpan: https://metacpan.org/pod/Log::Any
+repo: https://github.com/preaction/Log-Any.git
