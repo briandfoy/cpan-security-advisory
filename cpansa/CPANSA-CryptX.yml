@@ -1,6 +1,7 @@
 ---
 - id: CPANSA-CryptX-2018-01
-  cves: []
+  cves:
+    - CVE-2018-25099
   fixed_versions: ~
   distribution: CryptX
   reported: 2018-10-26
