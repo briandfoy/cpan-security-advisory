@@ -133,7 +133,8 @@
   affected_versions: "<5.48"
   fixed_versions: ~
 - id: CPANSA-Mojolicious-2011-02
-  cves: []
+  cves:
+    - CVE-2011-1589
   distribution: Mojolicious
   reported: 2011-04-05
   severity: critical
