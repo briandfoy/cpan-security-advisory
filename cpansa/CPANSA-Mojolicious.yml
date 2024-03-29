@@ -87,7 +87,8 @@ advisories:
   reported: 2018-05-11
   severity: critical
 - affected_versions: <7.66
-  cves: []
+  cves:
+  - CVE-2018-25100
   description: |
     Mojo::UserAgent::CookieJar leaks old cookies because of the missing host_only flag on empty domain.
   fixed_versions: ~
@@ -135,7 +136,8 @@ advisories:
   reported: 2011-04-05
   severity: critical
 - affected_versions: <1.12
-  cves: []
+  cves:
+  - CVE-2011-1589
   description: |
     Mojolicious is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by link_to helper. A remote attacker could exploit this vulnerability using a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.
   fixed_versions: ~
