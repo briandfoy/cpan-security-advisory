@@ -7,7 +7,7 @@
     properly consider extraneous zero characters in an IP address string,
     which (in some situations) allows attackers to bypass access control
     that is based on IP addresses.
-  distribution: Net-IPV4Addr
+  distribution: Net-IPv4Addr
   fixed_versions: ~
   id: CPANSA-Net-IPV4Addr-2021-47155
   references:
