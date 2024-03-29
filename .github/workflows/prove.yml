@@ -28,8 +28,7 @@ jobs:
             - uses: actions/checkout@v3
             - name: 'setup'
               run: |
-                sudo cpan -T App::Cpan
-                sudo cpan -T YAML::XS
+                sudo cpan -T App::Cpan YAML::XS Mojolicious
             - name: 'prove'
               run: |
                 prove
