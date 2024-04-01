@@ -95,7 +95,8 @@
     - https://github.com/mojolicious/mojo/pull/1217
     - https://github.com/mojolicious/mojo/commit/23ebe051d9378f0f122e3c908845fc0c2cae0106
 - id: CPANSA-Mojolicious-2018-01
-  cves: [CVE-2018-25100]
+  cves:
+    - CVE-2018-25100
   distribution: Mojolicious
   reported: 2018-02-13
   severity: minor
