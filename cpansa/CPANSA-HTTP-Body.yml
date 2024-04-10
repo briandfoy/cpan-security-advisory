@@ -11,6 +11,7 @@
     leveraging subsequent behavior that may assume the suffix is
     well-formed.
   references:
+    - https://www.openwall.com/lists/oss-security/2024/04/07/1
     - https://security-tracker.debian.org/tracker/CVE-2013-4407
     - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=721634
   affected_versions: ">=1.08,<1.23"
