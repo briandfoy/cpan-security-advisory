@@ -25,7 +25,8 @@
   references:
     - https://github.com/mojolicious/mojo/pull/1791
 - id: CPANSA-Mojolicious-2021-01
-  cves: []
+  cves:
+    - CVE-2021-47208
   distribution: Mojolicious
   reported: 2021-03-16
   severity: ~
@@ -37,7 +38,8 @@
     - https://github.com/mojolicious/mojo/issues/1736
     - https://github.com/mojolicious/mojo/commit/a0c4576ffb11c235088550de9ba7ac4196e1953c
 - id: CPANSA-Mojolicious-2020-01
-  cves: []
+  cves:
+    - CVE-2020-36829
   distribution: Mojolicious
   reported: 2020-11-10
   severity: ~
