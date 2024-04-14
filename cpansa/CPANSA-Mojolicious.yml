@@ -25,7 +25,8 @@ advisories:
   reported: 2021-06-01
   severity: ~
 - affected_versions: <9.11
-  cves: []
+  cves:
+  - CVE-2021-47208
   description: |
     A bug in format detection can potentially be exploited for a DoS attack.
   fixed_versions: ~
@@ -37,7 +38,8 @@ advisories:
   reported: 2021-03-16
   severity: ~
 - affected_versions: '>1.74,<8.65'
-  cves: []
+  cves:
+  - CVE-2020-36829
   description: |
     Mojo::Util secure_compare can leak the string length. By immediately returning when the two strings are not the same length, the function allows an attacker to guess the length of the secret string using timing attacks.
   fixed_versions: ~
