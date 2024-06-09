@@ -200,3 +200,4 @@ CVE-2023-26490	dovecot container stuff
 CVE-2022-44542	lesspipe's misuse of Storable
 CVE-2023-2868	 Barracuda misuse of non-Perl things
 CVE-2023-6078	BIOVIA Materials Studio
+CVE-2024-23793 OTRS - not at all about Perl
