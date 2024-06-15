@@ -11,7 +11,7 @@
     this causes failures in any downstream code that attempts to access
     whatever filename (plus the erroneous garbage) was linked to.
   distribution: POSIX-2008
-  fixed_versions: <0.24
+  fixed_versions: >=0.24
   id: CPANSA-POSIX-2008-001
   references:
     - https://rt.cpan.org/Public/Bug/Display.html?id=96644
