@@ -1,6 +1,6 @@
 ---
 - affected_versions: '<0.24'
-  cves:
+  cves: []
   description: >
     POSIX::2008's implementation of readlink()
     and readlinkat(). The underlying syscalls do not add any null terminator
