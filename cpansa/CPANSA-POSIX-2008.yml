@@ -1,0 +1,19 @@
+---
+- affected_versions: <0.24
+  cves:
+  description: >
+    POSIX::2008's implementation of readlink()
+    and readlinkat(). The underlying syscalls do not add any null terminator
+    byte at the end of the output buffer, but _readlink50c() in 2008.XS also
+    fails to add a null terminator before returning the result string to perl.
+    This results in arbitrary memory contents being visible in the result
+    returned to perl code by readlink() and readlinkat(). At the very least,
+    this causes failures in any downstream code that attempts to access
+    whatever filename (plus the erroneous garbage) was linked to.
+  distribution: POSIX-2008
+  fixed_versions: <0.24
+  id: CPANSA-POSIX-2008-001
+  references:
+    - https://rt.cpan.org/Public/Bug/Display.html?id=96644
+  reported: ~
+  severity: ~
