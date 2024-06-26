@@ -1,0 +1,23 @@
+---
+- affected_versions: <=0.01
+  cves:
+    - CVE-2024-38526
+  description: >
+    pdoc provides API Documentation for Python Projects. Documentation
+    generated with `pdoc --math` linked to JavaScript files from
+    polyfill.io. The polyfill.io CDN has been sold and now serves
+    malicious code. This issue has been fixed in pdoc 14.5.1.
+  distribution: Mojolicious-Plugin-LazyImage
+  embedded_vulnerability:
+    distributed_version: ~
+    name: polyfill.io
+  fixed_versions: ~
+  id: CPANSA-Mojolicious-Plugin-LazyImage-2024-38526
+  references:
+    - https://github.com/mitmproxy/pdoc/pull/703
+    - https://github.com/mitmproxy/pdoc/security/advisories/GHSA-5vgj-ggm4-fg62
+    - https://sansec.io/research/polyfill-supply-chain-attack
+    - https://github.com/briandfoy/cpan-security-advisory/issues/155
+    - https://stackdiary.com/polyfill-compromise-hits-100000-sites-in-a-supply-chain-attack/
+  reported: 2024-06-26
+  severity: ~
