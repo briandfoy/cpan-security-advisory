@@ -725,7 +725,7 @@ advisories:
   - https://usn.ubuntu.com/4019-2/
   reported: 2017-07-07
   severity: critical
-- affected_versions: '>=1.51_04'
+- affected_versions: '<=1.51_04'
   cves:
   - CVE-2016-6153
   description: |
