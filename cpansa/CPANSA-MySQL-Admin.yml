@@ -1,9 +1,11 @@
 ---
 advisories:
-- affected_versions: <0.34
+- affected_versions:
+  - <0.34
   cves: []
   description: "Unspecified security issues.\n"
-  fixed_versions: '>=0.34'
+  fixed_versions: 
+  - '>=0.34'
   github_security_advisory: []
   id: CPANSA-MySQL-Admin-1-1
   references:

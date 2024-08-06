@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <4.10
+- affected_versions:
+  - <4.10
   cves:
   - CVE-2006-1279
   description: |
     CGI::Session 4.03-1 allows local users to overwrite arbitrary files via a symlink attack on temporary files used by (1) Driver::File, (2) Driver::db_file, and possibly (3) Driver::sqlite.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-xxvm-h45q-hvv9
   id: CPANSA-CGI-Session-2006-1279
@@ -18,10 +20,12 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/25285
   reported: 2006-03-19
   severity: ~
-- affected_versions: <4.12
+- affected_versions:
+  - <4.12
   cves: []
   description: "possible SQL injection attack\n"
-  fixed_versions: '>=4.12'
+  fixed_versions: 
+  - '>=4.12'
   github_security_advisory: []
   id: CPANSA-CGI-Session-2006-01
   references:

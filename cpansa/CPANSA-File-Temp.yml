@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: '>0'
+- affected_versions:
+  - '>0'
   cves:
   - CVE-2011-4116
   description: |
     _is_safe in the File::Temp module for Perl does not properly handle symlinks.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-grqm-6jmc-2h46
   id: CPANSA-File-Temp-2011-4116

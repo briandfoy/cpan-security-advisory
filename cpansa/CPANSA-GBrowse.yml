@@ -1,28 +1,34 @@
 ---
 advisories:
-- affected_versions: <2.56
+- affected_versions:
+  - <2.56
   cves: []
   description: |
     An attacker is able to delete other users' accounts.  No httponly cookie flag.  Cross-site scripting vulnerability in generation of citation text.
-  fixed_versions: '>=2.56'
+  fixed_versions: 
+  - '>=2.56'
   github_security_advisory: []
   id: CPANSA-GBrowse-2017-01
   references:
   - https://metacpan.org/changes/distribution/GBrowse
   reported: 2017-01-15
-- affected_versions: <1.62
+- affected_versions:
+  - <1.62
   cves: []
   description: "Cross-site scripting.\n"
-  fixed_versions: '>=1.62'
+  fixed_versions: 
+  - '>=1.62'
   github_security_advisory: []
   id: CPANSA-GBrowse-2004-01
   references:
   - https://metacpan.org/changes/distribution/GBrowse
   reported: 2004-04-05
-- affected_versions: <1.54
+- affected_versions:
+  - <1.54
   cves: []
   description: "Path traversal.\n"
-  fixed_versions: '>=1.54'
+  fixed_versions: 
+  - '>=1.54'
   github_security_advisory: []
   id: CPANSA-GBrowse-2003-01
   references:

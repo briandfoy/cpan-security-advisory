@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: <1.27
+- affected_versions:
+  - <1.27
   comment: |
     The presense of affected versions of Term-ReadLine-Gnu suggests that a vulnerable version of the readline linrary is installed on the host system.
   cves:
@@ -10,7 +11,8 @@ advisories:
   external_vulnerability:
     distributed_version: <=6.3
     name: readline
-  fixed_versions: '>=1.27'
+  fixed_versions: 
+  - '>=1.27'
   github_security_advisory:
   - GHSA-hq65-wq6g-7mcc
   id: CPANSA-Term-ReadLine-Gnu-2014-2524

@@ -1,9 +1,11 @@
 ---
 advisories:
-- affected_versions: <0.04
+- affected_versions:
+  - <0.04
   cves: []
   description: "TBD\n"
-  fixed_versions: '>=0.04'
+  fixed_versions: 
+  - '>=0.04'
   github_security_advisory: []
   id: CPANSA-RTMP-Client-2011-01
   references:

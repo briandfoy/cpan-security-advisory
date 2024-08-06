@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: '>0'
+- affected_versions:
+  - '>0'
   cves:
   - CVE-2018-12015
   description: |
@@ -8,7 +9,8 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-44r9-882w-xw5m
   id: CPANSA-Win32-File-Summary-2018-01
@@ -17,7 +19,8 @@ advisories:
   - https://github.com/jib/archive-tar-new/commit/ae65651eab053fc6dc4590dbb863a268215c1fc5
   reported: 2018-06-12
   severity: medium
-- affected_versions: '>0'
+- affected_versions:
+  - '>0'
   cves:
   - CVE-2007-4829
   description: |
@@ -25,7 +28,8 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-rwhc-g7xj-h37q
   id: CPANSA-Win32-File-Summary-2007-4829
@@ -47,7 +51,8 @@ advisories:
   - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11658
   reported: 2007-11-02
   severity: ~
-- affected_versions: '>0'
+- affected_versions:
+  - '>0'
   cves:
   - CVE-2016-1238
   description: |
@@ -55,7 +60,8 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-Win32-File-Summary-2016-1238

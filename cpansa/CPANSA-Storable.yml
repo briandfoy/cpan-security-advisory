@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <3.05
+- affected_versions:
+  - <3.05
   cves: []
   description: |
     Malcrafted storable files or buffers.
-  fixed_versions: '>=3.05'
+  fixed_versions: 
+  - '>=3.05'
   github_security_advisory: []
   id: CPANSA-Storable-2017-01
   references:

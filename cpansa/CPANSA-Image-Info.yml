@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: '>=2.12'
+- affected_versions:
+  - '>=2.12'
   cves:
   - CVE-2016-9181
   description: |
     perl-Image-Info: When parsing an SVG file, external entity expansion (XXE) was not disabled. An attacker could craft an SVG file which, when processed by an application using perl-Image-Info, could cause denial of service or, potentially, information disclosure.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-99g7-5p97-g9vw
   id: CPANSA-Image-Info-2016-01

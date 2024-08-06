@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: <=0.015
+- affected_versions:
+  - <=0.015
   cves:
   - CVE-2024-38526
   description: >
@@ -11,7 +12,8 @@ advisories:
   embedded_vulnerability:
     distributed_version: ~
     name: polyfill.io
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory: []
   id: CPANSA-Mojo-DOM-Role-Analyzer-2024-38526
   references:

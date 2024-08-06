@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: '>=0.10'
+- affected_versions:
+  - '>=0.10'
   cves:
   - CVE-2021-47155
   description: >
@@ -8,7 +9,8 @@ advisories:
     properly consider extraneous zero characters in an IP address string,
     which (in some situations) allows attackers to bypass access control
     that is based on IP addresses.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory: []
   id: CPANSA-Net-IPV4Addr-2021-47155
   references:

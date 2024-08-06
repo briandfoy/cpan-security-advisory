@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.45
+- affected_versions:
+  - <0.45
   cves: []
   description: |
     A a potential security hole in the parsing of external entities.
-  fixed_versions: '>=0.45'
+  fixed_versions: 
+  - '>=0.45'
   github_security_advisory: []
   id: CPANSA-RPC-XML-2002-01
   references:

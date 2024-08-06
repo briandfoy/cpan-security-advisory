@@ -6,7 +6,8 @@ advisories:
   - CVE-2013-0209
   description: |
     lib/MT/Upgrade.pm in mt-upgrade.cgi in Movable Type 4.2x and 4.3x through 4.38 does not require authentication for requests to database-migration functions, which allows remote attackers to conduct eval injection and SQL injection attacks via crafted parameters, as demonstrated by an eval injection attack against the core_drop_meta_for_table function, leading to execution of arbitrary Perl code.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-qhr8-p6mw-gmf5
   id: CPANSA-MT-2013-0209
@@ -44,7 +45,8 @@ advisories:
   - CVE-2021-20837
   description: |
     Movable Type 7 r.5002 and earlier (Movable Type 7 Series), Movable Type 6.8.2 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.5002 and earlier (Movable Type Advanced 7 Series), Movable Type Advanced 6.8.2 and earlier (Movable Type Advanced 6 Series), Movable Type Premium 1.46 and earlier, and Movable Type Premium Advanced 1.46 and earlier allow remote attackers to execute arbitrary OS commands via unspecified vectors. Note that all versions of Movable Type 4.0 or later including unsupported (End-of-Life, EOL) versions are also affected by this vulnerability.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-fq4q-8q83-6gj7
   id: CPANSA-MT-2021-20837
@@ -61,7 +63,8 @@ advisories:
   - CVE-2021-20814
   description: |
     Cross-site scripting vulnerability in Setting screen of ContentType Information Widget Plugin of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), and Movable Type Premium 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-qjjc-j7xm-pf48
   id: CPANSA-MT-2021-20814
@@ -76,7 +79,8 @@ advisories:
   - CVE-2021-20813
   description: |
     Cross-site scripting vulnerability in Edit screen of Content Data of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series) and Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series)) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-8p38-cjxc-8fxx
   id: CPANSA-MT-2021-20813
@@ -92,7 +96,8 @@ advisories:
   - CVE-2021-20815
   description: |
     Cross-site scripting vulnerability in Edit Boilerplate screen of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type 6.8.0 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.44 and earlier, and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-44gc-6277-jwf7
   id: CPANSA-MT-2021-20815
@@ -108,7 +113,8 @@ advisories:
   - CVE-2021-20811
   description: |
     Cross-site scripting vulnerability in List of Assets screen of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type 6.8.0 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.44 and earlier, and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-9xx6-3c29-j6cq
   id: CPANSA-MT-2021-20811
@@ -124,7 +130,8 @@ advisories:
   - CVE-2021-20810
   description: |
     Cross-site scripting vulnerability in Website Management screen of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type 6.8.0 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.44 and earlier, and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-j9hg-mq8j-8cvg
   id: CPANSA-MT-2021-20810
@@ -140,7 +147,8 @@ advisories:
   - CVE-2021-20809
   description: |
     Cross-site scripting vulnerability in Create screens of Entry, Page, and Content Type of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type 6.8.0 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.44 and earlier, and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-53cw-v2f6-28h4
   id: CPANSA-MT-2021-20809
@@ -156,7 +164,8 @@ advisories:
   - CVE-2021-20808
   description: |
     Cross-site scripting vulnerability in Search screen of Movable Type (Movable Type 7 r.4903 and earlier (Movable Type 7 Series), Movable Type 6.8.0 and earlier (Movable Type 6 Series), Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.44 and earlier, and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-j2cp-gw4q-c3gq
   id: CPANSA-MT-2021-20808
@@ -165,12 +174,14 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-- affected_versions: []
+- affected_versions:
+  - []
   cves:
   - CVE-2020-5669
   description: |
     Cross-site scripting vulnerability in Movable Type Movable Type Premium 1.37 and earlier and Movable Type Premium Advanced 1.37 and earlier allows a remote authenticated attacker to inject an arbitrary script via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-3x6m-pmx9-j7f5
   id: CPANSA-MT-2020-5669
@@ -186,7 +197,8 @@ advisories:
   - CVE-2020-5577
   description: |
     Movable Type series (Movable Type 7 r.4606 (7.2.1) and earlier (Movable Type 7), Movable Type Advanced 7 r.4606 (7.2.1) and earlier (Movable Type Advanced 7), Movable Type for AWS 7 r.4606 (7.2.1) and earlier (Movable Type for AWS 7), Movable Type 6.5.3 and earlier (Movable Type 6.5), Movable Type Advanced 6.5.3 and earlier (Movable Type Advanced 6.5), Movable Type 6.3.11 and earlier (Movable Type 6.3), Movable Type Advanced 6.3.11 and earlier (Movable Type 6.3), Movable Type Premium 1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier) allow remote authenticated attackers to upload arbitrary files and execute a php script via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-qq4g-m927-9x4x
   id: CPANSA-MT-2020-5577
@@ -202,7 +214,8 @@ advisories:
   - CVE-2020-5576
   description: |
     Cross-site request forgery (CSRF) vulnerability in Movable Type series (Movable Type 7 r.4606 (7.2.1) and earlier (Movable Type 7), Movable Type Advanced 7 r.4606 (7.2.1) and earlier (Movable Type Advanced 7), Movable Type for AWS 7 r.4606 (7.2.1) and earlier (Movable Type for AWS 7), Movable Type 6.5.3 and earlier (Movable Type 6.5), Movable Type Advanced 6.5.3 and earlier (Movable Type Advanced 6.5), Movable Type 6.3.11 and earlier (Movable Type 6.3), Movable Type Advanced 6.3.11 and earlier (Movable Type 6.3), Movable Type Premium 1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier) allows remote attackers to hijack the authentication of administrators via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-3pqr-r447-f4mh
   id: CPANSA-MT-2020-5576
@@ -218,7 +231,8 @@ advisories:
   - CVE-2020-5575
   description: |
     Cross-site scripting vulnerability in Movable Type series (Movable Type 7 r.4606 (7.2.1) and earlier (Movable Type 7), Movable Type Advanced 7 r.4606 (7.2.1) and earlier (Movable Type Advanced 7), Movable Type for AWS 7 r.4606 (7.2.1) and earlier (Movable Type for AWS 7), Movable Type 6.5.3 and earlier (Movable Type 6.5), Movable Type Advanced 6.5.3 and earlier (Movable Type Advanced 6.5), Movable Type 6.3.11 and earlier (Movable Type 6.3), Movable Type Advanced 6.3.11 and earlier (Movable Type 6.3), Movable Type Premium 1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-fpmm-r4rm-5rg2
   id: CPANSA-MT-2020-5575
@@ -234,7 +248,8 @@ advisories:
   - CVE-2020-5574
   description: |
     HTML attribute value injection vulnerability in Movable Type series (Movable Type 7 r.4606 (7.2.1) and earlier (Movable Type 7), Movable Type Advanced 7 r.4606 (7.2.1) and earlier (Movable Type Advanced 7), Movable Type for AWS 7 r.4606 (7.2.1) and earlier (Movable Type for AWS 7), Movable Type 6.5.3 and earlier (Movable Type 6.5), Movable Type Advanced 6.5.3 and earlier (Movable Type Advanced 6.5), Movable Type 6.3.11 and earlier (Movable Type 6.3), Movable Type Advanced 6.3.11 and earlier (Movable Type 6.3), Movable Type Premium 1.29 and earlier, and Movable Type Premium Advanced 1.29 and earlier) allows remote attackers to inject arbitrary HTML attribute value via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-34jf-34wf-852g
   id: CPANSA-MT-2020-5574
@@ -250,7 +265,8 @@ advisories:
   - CVE-2020-5528
   description: |
     Cross-site scripting vulnerability in Movable Type series (Movable Type 7 r.4603 and earlier (Movable Type 7), Movable Type 6.5.2 and earlier (Movable Type 6.5), Movable Type Advanced 7 r.4603 and earlier (Movable Type Advanced 7), Movable Type Advanced 6.5.2 and earlier (Movable Type Advanced 6.5), Movable Type Premium 1.26 and earlier (Movable Type Premium), and Movable Type Premium Advanced 1.26 and earlier (Movable Type Premium Advanced)) allows remote attackers to inject arbitrary web script or HTML in the block editor and the rich text editor via a specially crafted URL.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-5928-fcw8-m7f4
   id: CPANSA-MT-2020-5528
@@ -267,7 +283,8 @@ advisories:
   - CVE-2019-6025
   description: |
     Open redirect vulnerability in Movable Type series Movable Type 7 r.4602 (7.1.3) and earlier (Movable Type 7), Movable Type 6.5.0 and 6.5.1 (Movable Type 6.5), Movable Type 6.3.9 and earlier (Movable Type 6.3.x, 6.2.x, 6.1.x, 6.0.x), Movable Type Advanced 7 r.4602 (7.1.3) and earlier (Movable Type 7), Movable Type Advanced 6.5.0 and 6.5.1 (Movable Type 6.5), Movable Type Advanced 6.3.9 and earlier (Movable Type 6.3.x, 6.2.x, 6.1.x, 6.0.x), Movable Type Premium 1.24 and earlier (Movable Type Premium), and Movable Type Premium (Advanced Edition) 1.24 and earlier (Movable Type Premium) allows remote attackers to redirect users to arbitrary web sites and conduct phishing attacks via a specially crafted URL.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-cc2h-7vfw-mgxv
   id: CPANSA-MT-2019-6025
@@ -282,7 +299,8 @@ advisories:
   - CVE-2018-0672
   description: |
     Cross-site scripting vulnerability in Movable Type versions prior to Ver. 6.3.1 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-ww3f-5c96-827w
   id: CPANSA-MT-2018-0672
@@ -298,7 +316,8 @@ advisories:
   - CVE-2016-5742
   description: |
     SQL injection vulnerability in the XML-RPC interface in Movable Type Pro and Advanced 6.x before 6.1.3 and 6.2.x before 6.2.6 and Movable Type Open Source 5.2.13 and earlier allows remote attackers to execute arbitrary SQL commands via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-w3hp-vvq9-qjxg
   id: CPANSA-MT-2016-5742
@@ -317,7 +336,8 @@ advisories:
   - CVE-2015-1592
   description: |
     Movable Type Pro, Open Source, and Advanced before 5.2.12 and Pro and Advanced 6.0.x before 6.0.7 does not properly use the Perl Storable::thaw function, which allows remote attackers to include and execute arbitrary local Perl files and possibly execute arbitrary code via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-j7c8-7vgp-wfmc
   id: CPANSA-MT-2015-1592
@@ -339,7 +359,8 @@ advisories:
   - CVE-2014-9057
   description: |
     SQL injection vulnerability in the XML-RPC interface in Movable Type before 5.18, 5.2.x before 5.2.11, and 6.x before 6.0.6 allows remote attackers to execute arbitrary SQL commands via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-57c4-v5cf-fvg9
   id: CPANSA-MT-2014-9057
@@ -356,7 +377,8 @@ advisories:
   - CVE-2013-2184
   description: |
     Movable Type before 5.2.6 does not properly use the Storable::thaw function, which allows remote attackers to execute arbitrary code via the comment_state parameter.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-cr72-56w8-rrw3
   id: CPANSA-MT-2013-2184
@@ -373,7 +395,8 @@ advisories:
   - CVE-2012-1503
   description: |
     Cross-site scripting (XSS) vulnerability in Six Apart (formerly Six Apart KK) Movable Type (MT) Pro 5.13 allows remote attackers to inject arbitrary web script or HTML via the comment section.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-crq9-rq4m-26gj
   id: CPANSA-MT-2012-1503
@@ -394,7 +417,8 @@ advisories:
   - CVE-2012-0320
   description: |
     Movable Type before 4.38, 5.0x before 5.07, and 5.1x before 5.13 allows remote attackers to take control of sessions via unspecified vectors related to the (1) commenting feature and (2) community script.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-qc2v-4qpc-hvf2
   id: CPANSA-MT-2012-0320
@@ -416,7 +440,8 @@ advisories:
   - CVE-2012-0317
   description: |
     Multiple cross-site request forgery (CSRF) vulnerabilities in Movable Type before 4.38, 5.0x before 5.07, and 5.1x before 5.13 allow remote attackers to hijack the authentication of arbitrary users for requests that modify data via the (1) commenting feature or (2) community script.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-q6pj-7m8h-843g
   id: CPANSA-MT-2012-0317
@@ -437,7 +462,8 @@ advisories:
   - CVE-2011-5085
   description: |
     Unspecified vulnerability in Movable Type 4.x before 4.36 and 5.x before 5.05 allows remote attackers to read or modify data via unknown vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-mjmj-j8r9-gjg6
   id: CPANSA-MT-2011-5085
@@ -453,7 +479,8 @@ advisories:
   - CVE-2011-5084
   description: |
     Cross-site scripting (XSS) vulnerability in Movable Type 4.x before 4.36 and 5.x before 5.05 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-8g7p-q74m-p945
   id: CPANSA-MT-2011-5084
@@ -468,7 +495,8 @@ advisories:
   - CVE-2010-1985
   description: |
     Multiple cross-site scripting (XSS) vulnerabilities in the administrative user interface in Six Apart Movable Type 5.0 and 5.01 allow remote attackers to inject arbitrary web script or HTML via unknown vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-8vh2-65q3-9g8m
   id: CPANSA-MT-2010-1985
@@ -487,7 +515,8 @@ advisories:
   - CVE-2009-2492
   description: |
     Cross-site scripting (XSS) vulnerability in mt-wizard.cgi in Six Apart Movable Type before 4.261 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, a different vulnerability than CVE-2009-2480.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-cvj4-9f98-hhj7
   id: CPANSA-MT-2009-2492
@@ -505,7 +534,8 @@ advisories:
   - CVE-2009-2481
   description: |
     mt-wizard.cgi in Six Apart Movable Type before 4.261, when global templates are not initialized, allows remote attackers to bypass access restrictions and (1) send e-mail to arbitrary addresses or (2) obtain sensitive information via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-6q93-7ff8-58mr
   id: CPANSA-MT-2009-2481
@@ -524,7 +554,8 @@ advisories:
   - CVE-2009-0752
   description: |
     Unspecified vulnerability in Movable Type Pro and Community Solution 4.x before 4.24 has unknown impact and attack vectors, possibly related to the password recovery mechanism.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-m3w7-436v-mfw5
   id: CPANSA-MT-2009-0752
@@ -538,7 +569,8 @@ advisories:
   - CVE-2008-5846
   description: |
     Six Apart Movable Type (MT) before 4.23 allows remote authenticated users with create permission for posts to bypass intended access restrictions and publish posts via a "system-wide entry listing screen."
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-x4g5-xjpp-2c3j
   id: CPANSA-MT-2008-5846
@@ -554,7 +586,8 @@ advisories:
   - CVE-2008-5845
   description: |
     Multiple cross-site scripting (XSS) vulnerabilities in Six Apart Movable Type (MT) before 4.23 allow remote attackers to inject arbitrary web script or HTML via a (1) MTEntryAuthorUsername, (2) MTAuthorDisplayName, (3) MTEntryAuthorDisplayName, or (4) MTCommenterName field in a Profile View template; a (5) listing screen or (6) edit screen in the CMS app; (7) a TrackBack title, related to the HTML sanitization library; or (8) a user archive name (aka archive title) on a published Community Blog template.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-q59j-r89m-6v8h
   id: CPANSA-MT-2008-5845
@@ -571,7 +604,8 @@ advisories:
   - CVE-2008-5808
   description: |
     Cross-site scripting (XSS) vulnerability in Six Apart Movable Type Enterprise (MTE) 1.x before 1.56; Movable Type (MT) 3.x before 3.38; and Movable Type, Movable Type Open Source (MTOS), and Movable Type Enterprise 4.x before 4.23 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, possibly related to "application management."
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-6mqh-j2cf-xpp5
   id: CPANSA-MT-2008-5808
@@ -590,7 +624,8 @@ advisories:
   - CVE-2021-20812
   description: |
     Cross-site scripting vulnerability in Setting screen of Server Sync of Movable Type (Movable Type Advanced 7 r.4903 and earlier (Movable Type Advanced 7 Series) and Movable Type Premium Advanced 1.44 and earlier) allows remote attackers to inject arbitrary script or HTML via unspecified vectors.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-2554-pph3-4jmx
   id: CPANSA-MT-2021-20812
@@ -605,7 +640,8 @@ advisories:
   - CVE-2022-43660
   description: |
     Improper neutralization of Server-Side Includes (SSW) within a web page in Movable Type series allows a remote authenticated attacker with Privilege of 'Manage of Content Types' may execute an arbitrary Perl script and/or an arbitrary OS command. Affected products/versions are as follows: Movable Type 7 r.5301 and earlier (Movable Type 7 Series), Movable Type Advanced 7 r.5301 and earlier (Movable Type Advanced 7 Series), Movable Type Premium 1.53 and earlier, and Movable Type Premium Advanced 1.53 and earlier.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-j8hc-rq6g-3f96
   id: CPANSA-MT-2022-43660

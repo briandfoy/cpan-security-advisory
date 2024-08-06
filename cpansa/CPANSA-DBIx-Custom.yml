@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.1641
+- affected_versions:
+  - <0.1641
   cves: []
   description: |
     SQL injection when passing special column names.
-  fixed_versions: '>=0.1641'
+  fixed_versions: 
+  - '>=0.1641'
   github_security_advisory: []
   id: CPANSA-DBIx-Custom-2011-01
   references:

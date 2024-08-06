@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.66
+- affected_versions:
+  - <0.66
   cves:
   - CVE-2023-7101
   description: |
     Spreadsheet::ParseExcel version 0.65 is a Perl module used for parsing Excel files. Spreadsheet::ParseExcel is vulnerable to an arbitrary code execution (ACE) vulnerability due to passing unvalidated input from a file into a string-type “eval”. Specifically, the issue stems from the evaluation of Number format strings (not to be confused with printf-style format strings) within the Excel parsing logic.
-  fixed_versions: '>=0.66'
+  fixed_versions: 
+  - '>=0.66'
   github_security_advisory:
   - GHSA-3c85-mx4x-435c
   id: CPANSA-Spreadsheet-ParseExcel-2023-7101

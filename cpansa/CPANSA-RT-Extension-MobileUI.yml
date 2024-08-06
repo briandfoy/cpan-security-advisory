@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.02
+- affected_versions:
+  - <1.02
   cves:
   - CVE-2012-2769
   description: |
     Multiple cross-site scripting (XSS) vulnerabilities in the topic administration page.
-  fixed_versions: '>=1.02'
+  fixed_versions: 
+  - '>=1.02'
   github_security_advisory:
   - GHSA-6gr3-vr3v-86j3
   id: CPANSA-RT-Extension-MobileUI-2012-01

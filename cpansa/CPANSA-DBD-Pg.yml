@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <2.19.0
+- affected_versions:
+  - <2.19.0
   cves:
   - CVE-2012-1151
   description: |
     Multiple format string vulnerabilities in dbdimp.c in DBD::Pg (aka DBD-Pg or libdbd-pg-perl) module before 2.19.0 for Perl allow remote PostgreSQL database servers to cause a denial of service (process crash) via format string specifiers in (1) a crafted database warning to the pg_warn function or (2) a crafted DBD statement to the dbd_st_prepare function.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-h6fj-j4mh-7x7h
   id: CPANSA-DBD-Pg-2012-1151
@@ -27,12 +29,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/73854
   reported: 2012-09-09
   severity: ~
-- affected_versions: =1.49
+- affected_versions:
+  - =1.49
   cves:
   - CVE-2009-0663
   description: |
     Heap-based buffer overflow in the DBD::Pg (aka DBD-Pg or libdbd-pg-perl) module 1.49 for Perl might allow context-dependent attackers to execute arbitrary code via unspecified input to an application that uses the getline and pg_getline functions to read database rows.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-q57m-cgxh-vv5j
   id: CPANSA-DBD-Pg-2009-0663
@@ -51,12 +55,14 @@ advisories:
   - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9499
   reported: 2009-04-30
   severity: ~
-- affected_versions: <2.0.0
+- affected_versions:
+  - <2.0.0
   cves:
   - CVE-2009-1341
   description: |
     Memory leak in the dequote_bytea function in quote.c in the DBD::Pg (aka DBD-Pg or libdbd-pg-perl) module before 2.0.0 for Perl allows context-dependent attackers to cause a denial of service (memory consumption) by fetching data with BYTEA columns.
-  fixed_versions: '>=2.0.0'
+  fixed_versions: 
+  - '>=2.0.0'
   github_security_advisory:
   - GHSA-h446-mfq3-hx7g
   id: CPANSA-DBD-Pg-2009-1341

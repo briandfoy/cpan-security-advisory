@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: '>=1.712,<=1.715'
+- affected_versions:
+  - '>=1.712,<=1.715'
   cves: []
   description: |
     The WithStackTrace proxy may expose sensitive information
-  fixed_versions: 1.716
+  fixed_versions: 
+  - 1.716
   github_security_advisory: []
   id: CPANSA-Log-Any-2023-001
   references:

@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.003
+- affected_versions:
+  - <1.003
   cves:
   - CVE-2011-4114
   description: |
     PAR packed files are extracted to unsafe and predictable temporary directories (this bug was originally reported against PAR::Packer, but it applies to PAR as well).
-  fixed_versions: '>=1.003'
+  fixed_versions: 
+  - '>=1.003'
   github_security_advisory:
   - GHSA-gxwf-286g-rc8g
   id: CPANSA-PAR-2011-01
@@ -13,12 +15,14 @@ advisories:
   - https://metacpan.org/changes/distribution/PAR
   - https://rt.cpan.org/Public/Bug/Display.html?id=69560
   reported: 2011-07-18
-- affected_versions: <1.003
+- affected_versions:
+  - <1.003
   cves:
   - CVE-2011-5060
   description: |
     The par_mktmpdir function in the PAR module before 1.003 for Perl creates temporary files in a directory with a predictable name without verifying ownership and permissions of this directory, which allows local users to overwrite files when another user extracts a PAR packed program, a different vulnerability in a different package than CVE-2011-4114.
-  fixed_versions: '>=1.003'
+  fixed_versions: 
+  - '>=1.003'
   github_security_advisory:
   - GHSA-hmhv-64cw-2g3m
   id: CPANSA-PAR-2011-5060

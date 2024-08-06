@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.5
+- affected_versions:
+  - <0.5
   cves:
   - CVE-2007-6342
   description: |
     A tainted cookie could be sent by a malicious user and it would be used in an SQL query without protection against SQL injection.
-  fixed_versions: '>=0.5'
+  fixed_versions: 
+  - '>=0.5'
   github_security_advisory:
   - GHSA-jfwf-chpc-fpf5
   id: CPANSA-Apache-AuthCAS-2007-01

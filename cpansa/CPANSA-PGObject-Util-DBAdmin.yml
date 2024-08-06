@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.6.0
+- affected_versions:
+  - <1.6.0
   cves:
   - CVE-2018-9246
   description: |
     The PGObject::Util::DBAdmin module before 0.120.0 for Perl, as used in LedgerSMB through 1.5.x, insufficiently sanitizes or escapes variable values used as part of shell command execution, resulting in shell code injection via the create(), run_file(), backup(), or restore() function. The vulnerability allows unauthorized users to execute code with the same privileges as the running application.
-  fixed_versions: '>=1.6.0'
+  fixed_versions: 
+  - '>=1.6.0'
   github_security_advisory:
   - GHSA-9f5v-36fp-5cv6
   id: CPANSA-PGObject-Util-DBAdmin-2018-01

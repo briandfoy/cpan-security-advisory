@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: '<0'
+- affected_versions:
+  - '<0'
   comment: |
     From the author: "I have reviewed Dropbear's usage of libtomcrypt, and the function in question for CVE-2019-17362, der_decode_utf8_string, is not used in Dropbear. None of the DER parsing from libtomcrypt is used in Dropbear at all, I have confirmed that the flag to include it is not set, and confirmed that the resultant Dropbear.so that is built by Net::Dropbear does not include any of the der_* symbols."
   cves:
@@ -11,7 +12,8 @@ advisories:
     affected_versions: '<0'
     distributed_version: 1.8.2
     name: libtomcrypt
-  fixed_versions: '>0'
+  fixed_versions:
+  - '>0'
   github_security_advisory:
   - GHSA-x32c-6j92-4hp9
   id: CPANSA-Net-Dropbear-2019-17362

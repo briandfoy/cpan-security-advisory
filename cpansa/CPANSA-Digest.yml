@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.17
+- affected_versions:
+  - <1.17
   cves:
   - CVE-2011-3597
   description: |
     Eval injection vulnerability in the Digest module before 1.17 for Perl allows context-dependent attackers to execute arbitrary commands via the new constructor.
-  fixed_versions: '>=0.17'
+  fixed_versions: 
+  - '>=0.17'
   github_security_advisory:
   - GHSA-42c5-x389-m7vp
   id: CPANSA-Digest-2011-3597
@@ -30,12 +32,14 @@ advisories:
     email: rrwo@cpan.org
     name: Robert Rothenberg
   severity: ~
-- affected_versions: <1.19
+- affected_versions:
+  - <1.19
   cves:
   - CVE-2016-1238
   description: |
     Includes . in @INC which might allow local users to gain privileges via a Trojan horse module under the current working directory.
-  fixed_versions: '>=1.19'
+  fixed_versions: 
+  - '>=1.19'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-Digest-2016-1238

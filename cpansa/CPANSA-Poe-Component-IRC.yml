@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <6.32
+- affected_versions:
+  - <6.32
   cves:
   - CVE-2010-3438
   description: |
     libpoe-component-irc-perl before v6.32 does not remove carriage returns and line feeds. This can be used to execute arbitrary IRC commands by passing an argument such as \"some text\\rQUIT\" to the 'privmsg' handler, which would cause the client to disconnect from the server.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-vqr8-85pj-78rw
   id: CPANSA-Poe-Component-IRC-2010-3438

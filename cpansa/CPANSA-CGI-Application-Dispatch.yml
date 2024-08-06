@@ -1,9 +1,11 @@
 ---
 advisories:
-- affected_versions: <1.02
+- affected_versions:
+  - <1.02
   cves: []
   description: "Untainted module names.\n"
-  fixed_versions: '>=1.02'
+  fixed_versions: 
+  - '>=1.02'
   github_security_advisory: []
   id: CPANSA-CGI-Application-Dispatch-2005-001
   references:

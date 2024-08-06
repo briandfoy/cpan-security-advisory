@@ -1,29 +1,35 @@
 ---
 advisories:
-- affected_versions: <1.0034
+- affected_versions:
+  - <1.0034
   cves: []
   description: |
     Fixed a possible directory traversal with Plack::App::File on Win32.
-  fixed_versions: '>=1.0034'
+  fixed_versions: 
+  - '>=1.0034'
   github_security_advisory: []
   id: CPANSA-Plack-2015-0202
   references: []
   reported: 2015-02-02
-- affected_versions: <1.0031
+- affected_versions:
+  - <1.0031
   cves: []
   description: |
     Plack::App::File would previously strip trailing slashes off provided paths. This in combination with the common pattern of serving files with Plack::Middleware::Static could allow an attacker to bypass a whitelist of generated files
-  fixed_versions: '>=1.0031'
+  fixed_versions: 
+  - '>=1.0031'
   github_security_advisory: []
   id: CPANSA-Plack-2014-0801
   references:
   - https://github.com/plack/Plack/pull/446
   reported: 2014-08-01
-- affected_versions: <1.0016
+- affected_versions:
+  - <1.0016
   cves: []
   description: |
     Fixed directory traversal bug in Plack::App::File on win32 environments
-  fixed_versions: '>=1.0016'
+  fixed_versions: 
+  - '>=1.0016'
   github_security_advisory: []
   id: CPANSA-Plack-2013-0131
   references: []

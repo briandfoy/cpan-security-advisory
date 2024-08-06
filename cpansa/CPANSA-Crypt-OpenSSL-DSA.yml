@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.14
+- affected_versions:
+  - <0.14
   cves:
   - CVE-2009-0129
   description: |
     Missing error check in do_verify, which might allow remote attackers to bypass validation of the certificate chain via a malformed SSL/TLS signature.
-  fixed_versions: '>=0.14'
+  fixed_versions: 
+  - '>=0.14'
   github_security_advisory:
   - GHSA-cvwp-gwp2-6xqh
   id: CPANSA-Crypt-OpenSSL-DSA-2009-01

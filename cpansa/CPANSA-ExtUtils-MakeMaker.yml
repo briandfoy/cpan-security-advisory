@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <7.22
+- affected_versions:
+  - <7.22
   cves:
   - CVE-2016-1238
   description: |
     Loading modules from . (current directory).
-  fixed_versions: '>=7.22'
+  fixed_versions: 
+  - '>=7.22'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-ExtUtils-MakeMaker-2016-01

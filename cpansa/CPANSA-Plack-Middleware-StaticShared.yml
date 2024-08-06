@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.04
+- affected_versions:
+  - <0.04
   cves: []
   description: |
     Vulnerability of directory traversal.
-  fixed_versions: '>=0.04'
+  fixed_versions: 
+  - '>=0.04'
   github_security_advisory: []
   id: CPANSA-Plack-Middleware-StaticShared-2012-01
   references:

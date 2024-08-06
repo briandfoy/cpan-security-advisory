@@ -1,23 +1,27 @@
 ---
 advisories:
-- affected_versions: <1.905
+- affected_versions:
+  - <1.905
   cves:
   - CVE-2014-0477
   description: |
     Inefficient regular expression, which allows remote attackers to cause a denial of service (CPU consumption) via an empty quoted string in an RFC 2822 address.
-  fixed_versions: '>=1.905'
+  fixed_versions: 
+  - '>=1.905'
   github_security_advisory:
   - GHSA-w2mf-888c-4wj5
   id: CPANSA-Email-Address-2014-01
   references:
   - https://metacpan.org/changes/distribution/Email-Address
   reported: 2014-07-03
-- affected_versions: <1.909
+- affected_versions:
+  - <1.909
   cves:
   - CVE-2018-12558
   description: |
     The parse() method in the Email::Address module through 1.909 for Perl is vulnerable to Algorithmic complexity on specially prepared input, leading to Denial of Service. Prepared special input that caused this problem contained 30 form-field characters ("\f").
-  fixed_versions: '>=1.909'
+  fixed_versions: 
+  - '>=1.909'
   github_security_advisory:
   - GHSA-c2fh-m553-m5hp
   id: CPANSA-Email-Address-2014-01
@@ -26,12 +30,14 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2018/06/19/3
   - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00012.html
   reported: 2018-06-19
-- affected_versions: <1.904
+- affected_versions:
+  - <1.904
   cves:
   - CVE-2014-4720
   description: |
     Email::Address module before 1.904 for Perl uses an inefficient regular expression, which allows remote attackers to cause a denial of service (CPU consumption) via vectors related to "backtracking into the phrase," a different vulnerability than CVE-2014-0477.
-  fixed_versions: '>=1.904'
+  fixed_versions: 
+  - '>=1.904'
   github_security_advisory:
   - GHSA-6jmv-rp6j-xp29
   id: CPANSA-Email-Address-2014-4720

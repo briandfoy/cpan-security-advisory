@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.011
+- affected_versions:
+  - <1.011
   cves:
   - CVE-2011-4114
   description: |
     PAR packed files are extracted to unsafe and predictable temporary directories.
-  fixed_versions: '>=1.011'
+  fixed_versions: 
+  - '>=1.011'
   github_security_advisory:
   - GHSA-gxwf-286g-rc8g
   id: CPANSA-PAR-Packer-2011-01

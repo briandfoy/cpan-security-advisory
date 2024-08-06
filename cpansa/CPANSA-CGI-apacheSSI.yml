@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.95
+- affected_versions:
+  - <0.95
   cves: []
   description: |
     Security and parsing problems with "include" calls.
-  fixed_versions: '>=0.95'
+  fixed_versions: 
+  - '>=0.95'
   github_security_advisory: []
   id: CPANSA-CGI-apacheSSI-2016-01
   references:

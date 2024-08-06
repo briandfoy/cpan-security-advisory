@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.601
+- affected_versions:
+  - <0.601
   cves:
   - CVE-2012-2143
   description: |
     The crypt_des (aka DES-based crypt) function does not process the complete cleartext password if this password contains a 0x80 character, which makes it easier for context-dependent attackers to obtain access via an authentication attempt with an initial substring of the intended password, as demonstrated by a Unicode password.
-  fixed_versions: '>=0.601'
+  fixed_versions: 
+  - '>=0.601'
   github_security_advisory:
   - GHSA-6rxj-38xv-j69g
   id: CPANSA-Crypt-Passwd-XS-2012-01

@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.97
+- affected_versions:
+  - <0.97
   cves: []
   description: |
     User-submitted data cab be executed if it is displayed on a page, if the data contains a string that can be interpreted as a Wyrd.
-  fixed_versions: '>=0.97'
+  fixed_versions: 
+  - '>=0.97'
   github_security_advisory: []
   id: CPANSA-Apache-Wyrd-2008-01
   references:

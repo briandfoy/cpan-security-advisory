@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <1.84
+- affected_versions:
+  - <1.84
   cves: []
   description: |
     Embedded HTML in JSON data was not escaped.
-  fixed_versions: '>=1.84'
+  fixed_versions: 
+  - '>=1.84'
   github_security_advisory: []
   id: CPANSA-XAO-Web-2020-01
   references:

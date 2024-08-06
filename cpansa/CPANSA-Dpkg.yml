@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.21.8
+- affected_versions:
+  - <1.21.8
   cves:
   - CVE-2022-1664
   description: |
     Dpkg::Source::Archive in dpkg, the Debian package management system, before version 1.21.8, 1.20.10, 1.19.8, 1.18.26 is prone to a directory traversal vulnerability. When extracting untrusted source packages in v2 and v3 source package formats that include a debian.tar, the in-place extraction can lead to directory traversal situations on specially crafted orig.tar and debian.tar tarballs.
-  fixed_versions: '>=1.21.8'
+  fixed_versions: 
+  - '>=1.21.8'
   github_security_advisory:
   - GHSA-q7pv-fjh6-6xq6
   id: CPANSA-Dpkg-2022-1664
@@ -18,12 +20,14 @@ advisories:
   - https://git.dpkg.org/cgit/dpkg/dpkg.git/commit/?id=1f23dddc17f69c9598477098c7fb9936e15fa495
   reported: 2022-05-26
   severity: critical
-- affected_versions: <1.18.24
+- affected_versions:
+  - <1.18.24
   cves:
   - CVE-2017-8283
   description: |
     dpkg-source in dpkg 1.3.0 through 1.18.23 is able to use a non-GNU patch program and does not offer a protection mechanism for blank-indented diff hunks, which allows remote attackers to conduct directory traversal attacks via a crafted Debian source package, as demonstrated by use of dpkg-source on NetBSD.
-  fixed_versions: '>=1.18.24'
+  fixed_versions: 
+  - '>=1.18.24'
   github_security_advisory:
   - GHSA-7cgr-cwf8-5c99
   id: CPANSA-Dpkg-2017-8283
@@ -32,12 +36,14 @@ advisories:
   - http://www.securityfocus.com/bid/98064
   reported: 2017-04-26
   severity: critical
-- affected_versions: <1.18.11
+- affected_versions:
+  - <1.18.11
   cves:
   - CVE-2016-1238
   description: |
     (1) cpan/Archive-Tar/bin/ptar, (2) cpan/Archive-Tar/bin/ptardiff, (3) cpan/Archive-Tar/bin/ptargrep, (4) cpan/CPAN/scripts/cpan, (5) cpan/Digest-SHA/shasum, (6) cpan/Encode/bin/enc2xs, (7) cpan/Encode/bin/encguess, (8) cpan/Encode/bin/piconv, (9) cpan/Encode/bin/ucmlint, (10) cpan/Encode/bin/unidump, (11) cpan/ExtUtils-MakeMaker/bin/instmodsh, (12) cpan/IO-Compress/bin/zipdetails, (13) cpan/JSON-PP/bin/json_pp, (14) cpan/Test-Harness/bin/prove, (15) dist/ExtUtils-ParseXS/lib/ExtUtils/xsubpp, (16) dist/Module-CoreList/corelist, (17) ext/Pod-Html/bin/pod2html, (18) utils/c2ph.PL, (19) utils/h2ph.PL, (20) utils/h2xs.PL, (21) utils/libnetcfg.PL, (22) utils/perlbug.PL, (23) utils/perldoc.PL, (24) utils/perlivp.PL, and (25) utils/splain.PL in Perl 5.x before 5.22.3-RC2 and 5.24 before 5.24.1-RC2 do not properly remove . (period) characters from the end of the includes directory array, which might allow local users to gain privileges via a Trojan horse module under the current working directory.
-  fixed_versions: '>=1.18.11'
+  fixed_versions: 
+  - '>=1.18.11'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-Dpkg-2016-1238
@@ -59,12 +65,14 @@ advisories:
   - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
   reported: 2016-08-02
   severity: high
-- affected_versions: <1.18.4
+- affected_versions:
+  - <1.18.4
   cves:
   - CVE-2015-0860
   description: |
     Off-by-one error in the extracthalf function in dpkg-deb/extract.c in the dpkg-deb component in Debian dpkg 1.16.x before 1.16.17 and 1.17.x before 1.17.26 allows remote attackers to execute arbitrary code via the archive magic version number in an "old-style" Debian binary package, which triggers a stack-based buffer overflow.
-  fixed_versions: '>=1.18.4'
+  fixed_versions: 
+  - '>=1.18.4'
   github_security_advisory:
   - GHSA-phx5-8jhp-4rwc
   id: CPANSA-Dpkg-2015-0860
@@ -77,12 +85,14 @@ advisories:
   - https://security.gentoo.org/glsa/201612-07
   reported: 2015-12-03
   severity: ~
-- affected_versions: <1.18.0
+- affected_versions:
+  - <1.18.0
   cves:
   - CVE-2015-0840
   description: |
     The dpkg-source command in Debian dpkg before 1.16.16 and 1.17.x before 1.17.25 allows remote attackers to bypass signature verification via a crafted Debian source control file (.dsc).
-  fixed_versions: '>=1.18.0'
+  fixed_versions: 
+  - '>=1.18.0'
   github_security_advisory:
   - GHSA-mrx8-xmg2-v94q
   id: CPANSA-Dpkg-2015-0840
@@ -93,12 +103,14 @@ advisories:
   - http://lists.fedoraproject.org/pipermail/package-announce/2015-May/157387.html
   reported: 2015-04-13
   severity: ~
-- affected_versions: <1.17.22
+- affected_versions:
+  - <1.17.22
   cves:
   - CVE-2014-8625
   description: |
     Multiple format string vulnerabilities in the parse_error_msg function in parsehelp.c in dpkg before 1.17.22 allow remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via format string specifiers in the (1) package or (2) architecture name.
-  fixed_versions: '>=1.17.22'
+  fixed_versions: 
+  - '>=1.17.22'
   github_security_advisory:
   - GHSA-rg28-4v7w-vh73
   id: CPANSA-Dpkg-2014-8625
@@ -112,12 +124,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/98551
   reported: 2015-01-20
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions:
+  - <1.17.10
   cves:
   - CVE-2014-0471
   description: |
     Directory traversal vulnerability in the unpacking functionality in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8 allows remote attackers to write arbitrary files via a crafted source package, related to "C-style filename quoting."
-  fixed_versions: '>=1.17.10'
+  fixed_versions: 
+  - '>=1.17.10'
   github_security_advisory:
   - GHSA-34xq-j8f4-r5cq
   id: CPANSA-Dpkg-2014-0471
@@ -127,12 +141,14 @@ advisories:
   - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions:
+  - <1.17.10
   cves:
   - CVE-2014-3127
   description: |
     dpkg 1.15.9 on Debian squeeze introduces support for the "C-style encoded filenames" feature without recognizing that the squeeze patch program lacks this feature, which triggers an interaction error that allows remote attackers to conduct directory traversal attacks and modify files outside of the intended directories via a crafted source package. NOTE: this can be considered a release engineering problem in the effort to fix CVE-2014-0471.
-  fixed_versions: '>=1.17.10'
+  fixed_versions: 
+  - '>=1.17.10'
   github_security_advisory:
   - GHSA-f267-j9wx-cwjf
   id: CPANSA-Dpkg-2014-3127
@@ -144,12 +160,14 @@ advisories:
   - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
   reported: 2014-05-14
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions:
+  - <1.17.10
   cves:
   - CVE-2014-3864
   description: |
     Directory traversal vulnerability in dpkg-source in dpkg-dev 1.3.0 allows remote attackers to modify files outside of the intended directories via a crafted source package that lacks a --- header line.
-  fixed_versions: '>=1.17.10'
+  fixed_versions: 
+  - '>=1.17.10'
   github_security_advisory:
   - GHSA-h5rp-2257-ffxj
   id: CPANSA-Dpkg-2014-3864
@@ -161,12 +179,14 @@ advisories:
   - http://www.debian.org/security/2014/dsa-2953
   reported: 2014-05-30
   severity: ~
-- affected_versions: <1.17.10
+- affected_versions:
+  - <1.17.10
   cves:
   - CVE-2014-3865
   description: |
     Multiple directory traversal vulnerabilities in dpkg-source in dpkg-dev 1.3.0 allow remote attackers to modify files outside of the intended directories via a source package with a crafted Index: pseudo-header in conjunction with (1) missing --- and +++ header lines or (2) a +++ header line with a blank pathname.
-  fixed_versions: '>=1.17.10'
+  fixed_versions: 
+  - '>=1.17.10'
   github_security_advisory:
   - GHSA-pm6q-6j5f-2hj8
   id: CPANSA-Dpkg-2014-3865
@@ -178,12 +198,14 @@ advisories:
   - http://www.debian.org/security/2014/dsa-2953
   reported: 2014-05-30
   severity: ~
-- affected_versions: <1.17.9
+- affected_versions:
+  - <1.17.9
   cves:
   - CVE-2014-0471
   description: |
     Directory traversal vulnerability in the unpacking functionality in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8 allows remote attackers to write arbitrary files via a crafted source package, related to "C-style filename quoting."
-  fixed_versions: '>=1.17.9'
+  fixed_versions: 
+  - '>=1.17.9'
   github_security_advisory:
   - GHSA-34xq-j8f4-r5cq
   id: CPANSA-Dpkg-2014-0471
@@ -193,12 +215,14 @@ advisories:
   - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.17.9
+- affected_versions:
+  - <1.17.9
   cves:
   - CVE-2014-3127
   description: |
     dpkg 1.15.9 on Debian squeeze introduces support for the "C-style encoded filenames" feature without recognizing that the squeeze patch program lacks this feature, which triggers an interaction error that allows remote attackers to conduct directory traversal attacks and modify files outside of the intended directories via a crafted source package. NOTE: this can be considered a release engineering problem in the effort to fix CVE-2014-0471.
-  fixed_versions: '>=1.17.9'
+  fixed_versions: 
+  - '>=1.17.9'
   github_security_advisory:
   - GHSA-f267-j9wx-cwjf
   id: CPANSA-Dpkg-2014-3127
@@ -210,12 +234,14 @@ advisories:
   - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
   reported: 2014-05-14
   severity: ~
-- affected_versions: <1.17.8
+- affected_versions:
+  - <1.17.8
   cves:
   - CVE-2014-0471
   description: |
     Directory traversal vulnerability in the unpacking functionality in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8 allows remote attackers to write arbitrary files via a crafted source package, related to "C-style filename quoting."
-  fixed_versions: '>=1.17.8'
+  fixed_versions: 
+  - '>=1.17.8'
   github_security_advisory:
   - GHSA-34xq-j8f4-r5cq
   id: CPANSA-Dpkg-2014-0471
@@ -225,12 +251,14 @@ advisories:
   - http://www.securityfocus.com/bid/67106
   reported: 2014-04-30
   severity: ~
-- affected_versions: <1.15.8.8
+- affected_versions:
+  - <1.15.8.8
   cves:
   - CVE-2010-1679
   description: |
     Directory traversal vulnerability in dpkg-source in dpkg before 1.14.31 and 1.15.x allows user-assisted remote attackers to modify arbitrary files via directory traversal sequences in a patch for a source-format 3.0 package.
-  fixed_versions: '>=1.15.8.8'
+  fixed_versions: 
+  - '>=1.15.8.8'
   github_security_advisory:
   - GHSA-4qj2-qwgp-vc99
   id: CPANSA-Dpkg-2010-1679
@@ -250,12 +278,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/64615
   reported: 2011-01-11
   severity: ~
-- affected_versions: <1.15.6
+- affected_versions:
+  - <1.15.6
   cves:
   - CVE-2010-0396
   description: |
     Directory traversal vulnerability in the dpkg-source component in dpkg before 1.14.29 allows remote attackers to modify arbitrary files via a crafted Debian source archive.
-  fixed_versions: '>=1.15.6'
+  fixed_versions: 
+  - '>=1.15.6'
   github_security_advisory:
   - GHSA-8p9h-cf62-j26q
   id: CPANSA-Dpkg-2010-0396
@@ -266,12 +296,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/56887
   reported: 2010-03-15
   severity: ~
-- affected_versions: =1.9.21
+- affected_versions:
+  - =1.9.21
   cves:
   - CVE-2004-2768
   description: |
     dpkg 1.9.21 does not properly reset the metadata of a file during replacement of the file in a package upgrade, which might allow local users to gain privileges by creating a hard link to a vulnerable (1) setuid file, (2) setgid file, or (3) device, a related issue to CVE-2010-2059.
-  fixed_versions: '>=1.9.22'
+  fixed_versions: 
+  - '>=1.9.22'
   github_security_advisory:
   - GHSA-qrp8-65v4-pc63
   id: CPANSA-Dpkg-2004-2768
@@ -283,12 +315,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/59428
   reported: 2010-06-08
   severity: ~
-- affected_versions: <1.15.10
+- affected_versions:
+  - <1.15.10
   cves:
   - CVE-2011-0402
   description: |
     dpkg-source in dpkg before 1.14.31 and 1.15.x allows user-assisted remote attackers to modify arbitrary files via a symlink attack on unspecified files in the .pc directory.
-  fixed_versions: '>=1.15.10'
+  fixed_versions: 
+  - '>=1.15.10'
   github_security_advisory:
   - GHSA-vw3j-pcrq-5hxc
   id: CPANSA-Dpkg-2011-0402

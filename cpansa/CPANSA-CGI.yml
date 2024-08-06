@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <3.63
+- affected_versions:
+  - <3.63
   cves:
   - CVE-2012-5526
   description: |
     CGI.pm module before 3.63 for Perl does not properly escape newlines in (1) Set-Cookie or (2) P3P headers, which might allow remote attackers to inject arbitrary headers into responses from applications that use CGI.pm.
-  fixed_versions: '>=3.63'
+  fixed_versions: 
+  - '>=3.63'
   github_security_advisory:
   - GHSA-9x3m-wmpr-vc58
   id: CPANSA-CGI-2012-5526
@@ -26,12 +28,14 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/80098
   reported: 2012-11-21
   severity: ~
-- affected_versions: <3.56
+- affected_versions:
+  - <3.56
   cves:
   - CVE-2011-2766
   description: |
     Usage of deprecated FCGI.pm API.
-  fixed_versions: '>=3.56'
+  fixed_versions: 
+  - '>=3.56'
   github_security_advisory:
   - GHSA-57h3-ccpr-f6f8
   id: CPANSA-CGI-2011-2766
@@ -39,26 +43,32 @@ advisories:
   - https://rt.cpan.org/Public/Bug/Display.html?id=68380
   - http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2766
   reported: 2011-11-08
-- affected_versions: <3.50
+- affected_versions:
+  - <3.50
   cves: []
   description: "Non-random MIME boundary.\n"
-  fixed_versions: '>=3.50'
+  fixed_versions: 
+  - '>=3.50'
   github_security_advisory: []
   id: CPANSA-CGI-2010-02
   reported: 2010-11-08
-- affected_versions: <3.49
+- affected_versions:
+  - <3.49
   cves: []
   description: "Newlines in headers.\n"
-  fixed_versions: '>=3.49'
+  fixed_versions: 
+  - '>=3.49'
   github_security_advisory: []
   id: CPANSA-CGI-2010-01
   reported: 2010-02-05
-- affected_versions: <3.50
+- affected_versions:
+  - <3.50
   cves:
   - CVE-2010-4411
   description: |
     Unspecified vulnerability in CGI.pm 3.50 and earlier allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via unknown vectors.  NOTE: this issue exists because of an incomplete fix for CVE-2010-2761.
-  fixed_versions: '>=3.50'
+  fixed_versions: 
+  - '>=3.50'
   github_security_advisory:
   - GHSA-wj7r-99wr-72wm
   id: CPANSA-CGI-2010-4411
@@ -80,12 +90,14 @@ advisories:
   - http://lists.opensuse.org/opensuse-security-announce/2011-04/msg00000.html
   reported: 2010-12-06
   severity: ~
-- affected_versions: <3.50
+- affected_versions:
+  - <3.50
   cves:
   - CVE-2010-2761
   description: |
     The multipart_init function in (1) CGI.pm before 3.50 and (2) Simple.pm in CGI::Simple 1.112 and earlier uses a hardcoded value of the MIME boundary string in multipart/x-mixed-replace content, which allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via crafted input that contains this value, a different vulnerability than CVE-2010-3172.
-  fixed_versions: '>=3.50'
+  fixed_versions: 
+  - '>=3.50'
   github_security_advisory:
   - GHSA-8x6h-gq6j-8x3j
   id: CPANSA-CGI-2010-2761

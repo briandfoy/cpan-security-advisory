@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <1.643
+- affected_versions:
+  - <1.643
   cves:
   - CVE-2020-14393
   description: |
     A buffer overflow was found in perl-DBI < 1.643 in DBI.xs. A local attacker who is able to supply a string longer than 300 characters could cause an out-of-bounds write, affecting the availability of the service or integrity of data.
-  fixed_versions: '>=1.643'
+  fixed_versions: 
+  - '>=1.643'
   github_security_advisory:
   - GHSA-g7gr-3q49-q5r9
   id: CPANSA-DBI-2020-01
@@ -14,12 +16,14 @@ advisories:
   - https://bugzilla.redhat.com/show_bug.cgi?id=1877409
   reported: 2020-09-16
   severity: high
-- affected_versions: <1.643
+- affected_versions:
+  - <1.643
   cves:
   - CVE-2020-14392
   description: |
     An untrusted pointer dereference flaw was found in Perl-DBI < 1.643. A local attacker who is able to manipulate calls to dbd_db_login6_sv() could cause memory corruption, affecting the service's availability.
-  fixed_versions: '>=1.643'
+  fixed_versions: 
+  - '>=1.643'
   github_security_advisory:
   - GHSA-xm43-qc4p-9f7j
   id: CPANSA-DBI-2020-03
@@ -34,12 +38,14 @@ advisories:
   - https://usn.ubuntu.com/4503-1/
   reported: 2020-06-17
   severity: high
-- affected_versions: <1.643
+- affected_versions:
+  - <1.643
   cves:
   - CVE-2019-20919
   description: |
     An issue was discovered in the DBI module before 1.643 for Perl. The hv_fetch() documentation requires checking for NULL and the code does that. But, shortly thereafter, it calls SvOK(profile), causing a NULL pointer dereference.
-  fixed_versions: '>=1.643'
+  fixed_versions: 
+  - '>=1.643'
   github_security_advisory:
   - GHSA-f5xq-vjwc-pqqj
   id: CPANSA-DBI-2020-02
@@ -55,11 +61,13 @@ advisories:
   - https://ubuntu.com/security/notices/USN-4534-1
   reported: 2020-09-17
   severity: high
-- affected_versions: <1.632
+- affected_versions:
+  - <1.632
   cves: []
   description: |
     DBD::File drivers open files from folders other than specifically passed using the f_dir attribute.
-  fixed_versions: '>=1.632'
+  fixed_versions: 
+  - '>=1.632'
   github_security_advisory: []
   id: CPANSA-DBI-2014-01
   references:
@@ -67,24 +75,28 @@ advisories:
   - https://rt.cpan.org/Public/Bug/Display.html?id=99508
   reported: 2014-10-15
   severity: high
-- affected_versions: <1.47
+- affected_versions:
+  - <1.47
   cves:
   - CVE-2005-0077
   description: |
     Allows local users to overwrite arbitrary files via a symlink attack on a temporary PID file.
-  fixed_versions: '>=1.47'
+  fixed_versions: 
+  - '>=1.47'
   github_security_advisory:
   - GHSA-wpm8-xxrr-cfh8
   id: CPANSA-DBI-2005-01
   references:
   - https://metacpan.org/changes/distribution/DBI
   reported: 2005-05-02
-- affected_versions: <1.643
+- affected_versions:
+  - <1.643
   cves:
   - CVE-2014-10402
   description: |
     An issue was discovered in the DBI module through 1.643 for Perl. DBD::File drivers can open files from folders other than those specifically passed via the f_dir attribute in the data source name (DSN). NOTE: this issue exists because of an incomplete fix for CVE-2014-10401.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-qc7v-jjp2-38r9
   id: CPANSA-DBI-2014-10402
@@ -92,12 +104,14 @@ advisories:
   - https://rt.cpan.org/Public/Bug/Display.html?id=99508#txn-1911590
   reported: 2020-09-16
   severity: medium
-- affected_versions: <1.632
+- affected_versions:
+  - <1.632
   cves:
   - CVE-2014-10401
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. DBD::File drivers can open files from folders other than those specifically passed via the f_dir attribute.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-9347-cf5g-8j34
   id: CPANSA-DBI-2014-10401
@@ -108,12 +122,14 @@ advisories:
   - https://usn.ubuntu.com/4509-1/
   reported: 2020-09-11
   severity: medium
-- affected_versions: <1.628
+- affected_versions:
+  - <1.628
   cves:
   - CVE-2013-7491
   description: |
     An issue was discovered in the DBI module before 1.628 for Perl. Stack corruption occurs when a user-defined function requires a non-trivial amount of memory and the Perl stack gets reallocated.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-grmf-5xw5-9cmx
   id: CPANSA-DBI-2013-7491
@@ -123,12 +139,14 @@ advisories:
   - https://rt.cpan.org/Public/Bug/Display.html?id=85562
   reported: 2020-09-11
   severity: medium
-- affected_versions: <1.632
+- affected_versions:
+  - <1.632
   cves:
   - CVE-2013-7490
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. Using many arguments to methods for Callbacks may lead to memory corruption.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-g483-mcjg-g334
   id: CPANSA-DBI-2013-7490

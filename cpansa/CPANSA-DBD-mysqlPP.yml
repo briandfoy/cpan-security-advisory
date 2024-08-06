@@ -1,9 +1,11 @@
 ---
 advisories:
-- affected_versions: <0.93
+- affected_versions:
+  - <0.93
   cves: []
   description: "SQL injection.\n"
-  fixed_versions: '>=0.03'
+  fixed_versions: 
+  - '>=0.03'
   github_security_advisory: []
   id: CPANSA-DBD-mysqlPP-2011-01
   references:

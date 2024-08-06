@@ -1,23 +1,27 @@
 ---
 advisories:
-- affected_versions: <0.63
+- affected_versions:
+  - <0.63
   cves:
   - CVE-2007-6341
   description: |
     Allows remote attackers to cause a denial of service (program "croak") via a crafted DNS response.
-  fixed_versions: '>=0.63'
+  fixed_versions: 
+  - '>=0.63'
   github_security_advisory:
   - GHSA-84q5-9px8-9m43
   id: CPANSA-Net-DNS-2008-01
   references:
   - https://metacpan.org/changes/distribution/Net-DNS
   reported: 2008-02-08
-- affected_versions: <0.60
+- affected_versions:
+  - <0.60
   cves:
   - CVE-2007-3409
   description: |
     Net::DNS before 0.60, a Perl module, allows remote attackers to cause a denial of service (stack consumption) via a malformed compressed DNS packet with self-referencing pointers, which triggers an infinite loop.
-  fixed_versions: '>=0.60'
+  fixed_versions: 
+  - '>=0.60'
   github_security_advisory:
   - GHSA-vf3x-8mv3-rv64
   id: CPANSA-Net-DNS-2007-3409
@@ -49,12 +53,14 @@ advisories:
   - http://www.securityfocus.com/archive/1/473871/100/0/threaded
   reported: 2007-06-26
   severity: ~
-- affected_versions: <0.60
+- affected_versions:
+  - <0.60
   cves:
   - CVE-2007-3377
   description: |
     Header.pm in Net::DNS before 0.60, a Perl module, (1) generates predictable sequence IDs with a fixed increment and (2) can use the same starting ID for all child processes of a forking server, which allows remote attackers to spoof DNS responses, as originally reported for qpsmtp and spamassassin.
-  fixed_versions: '>=0.60'
+  fixed_versions: 
+  - '>=0.60'
   github_security_advisory:
   - GHSA-2mqm-w9vq-9c5r
   id: CPANSA-Net-DNS-2007-3377

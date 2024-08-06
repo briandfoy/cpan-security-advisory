@@ -1,9 +1,11 @@
 ---
 advisories:
-- affected_versions: <1.11
+- affected_versions:
+  - <1.11
   cves: []
   description: "TBD\n"
-  fixed_versions: '>=1.11'
+  fixed_versions: 
+  - '>=1.11'
   github_security_advisory: []
   id: CPANSA-CGI-Auth-Basic-2007-01
   references:

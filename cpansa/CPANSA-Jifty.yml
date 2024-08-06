@@ -1,39 +1,47 @@
 ---
 advisories:
-- affected_versions: <1.10518
+- affected_versions:
+  - <1.10518
   cves: []
   description: |
     The path as passed in the fragment request data structure was used verbatim in the dispatcher and other locations.  This possibly allowed requests to walk around ACLs by requesting '/some/safe/place/../../../dangerous' as a fragment.
-  fixed_versions: '>=1.10518'
+  fixed_versions: 
+  - '>=1.10518'
   github_security_advisory: []
   id: CPANSA-Jifty-2011-01
   references:
   - https://metacpan.org/dist/Jifty/changes
   reported: 2011-03-17
-- affected_versions: <0.90409
+- affected_versions:
+  - <0.90409
   cves: []
   description: |
     The REST plugin would let you call any method on the model.
-  fixed_versions: '>=0.90409'
+  fixed_versions: 
+  - '>=0.90409'
   github_security_advisory: []
   id: CPANSA-Jifty-2009-01
   references:
   - https://metacpan.org/dist/Jifty/changes
   reported: 2009-04-09
-- affected_versions: <0.70408
+- affected_versions:
+  - <0.70408
   cves: []
   description: "Allowed all actions on GET.\n"
-  fixed_versions: '>=0.80408'
+  fixed_versions: 
+  - '>=0.80408'
   github_security_advisory: []
   id: CPANSA-Jifty-2008-01
   references:
   - https://metacpan.org/dist/Jifty/changes
   reported: 2009-04-08
-- affected_versions: <0.60706
+- affected_versions:
+  - <0.60706
   cves: []
   description: |
     Jifty did not protect users against a class of remote data access vulnerability. If an attacker knew the structure of your local filesystem and you were using the "standalone" webserver in production, the attacker could gain read only access to local files.
-  fixed_versions: '>=0.60706'
+  fixed_versions: 
+  - '>=0.60706'
   github_security_advisory: []
   id: CPANSA-Jifty-2006-01
   references:

@@ -1,13 +1,15 @@
 ---
 advisories:
-- affected_versions: "<0.083"
+- affected_versions:
+  - "<0.083"
   cves:
   - CVE-2023-31486
   description: |
     HTTP::Tiny v0.082, a Perl core module since v5.13.9 and available standalone on CPAN, does not verify TLS certs by default. Users must opt-in with the verify_SSL=>1 flag to verify certs when using HTTPS.
 
     Resulting in a CWE-1188: Insecure Default Initialization of Resource weakness.
-  fixed_versions: ">=0.083"
+  fixed_versions: 
+  - ">=0.083"
   github_security_advisory:
   - GHSA-g56r-phrf-6pc4
   id: CPANSA-HTTP-Tiny-2023-31486
@@ -24,12 +26,14 @@ advisories:
   - https://github.com/chansen/p5-http-tiny/issues/134
   - https://github.com/chansen/p5-http-tiny/issues/68
   reported: 2023-02-14
-- affected_versions: <0.059
+- affected_versions:
+  - <0.059
   cves:
   - CVE-2016-1238
   description: |
     Loading modules from . (current directory).
-  fixed_versions: '>=0.059'
+  fixed_versions: 
+  - '>=0.059'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-HTTP-Tiny-2016-1238
@@ -37,11 +41,13 @@ advisories:
   - https://metacpan.org/changes/distribution/HTTP-Tiny
   - https://github.com/chansen/p5-http-tiny/commit/b239c95ea7a256cfee9b8848f1bd4d1df6e66444
   reported: 2016-07-29
-- affected_versions: <0.039
+- affected_versions:
+  - <0.039
   cves: []
   description: |
     Temporary file creating during mirror()  not opened exclusively.
-  fixed_versions: '>=0.039'
+  fixed_versions: 
+  - '>=0.039'
   github_security_advisory: []
   id: CPANSA-HTTP-Tiny-2013-01
   references:

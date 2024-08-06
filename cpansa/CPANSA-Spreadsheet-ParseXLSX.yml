@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.28
+- affected_versions:
+  - <0.28
   cves:
   - CVE-2024-22368
   description: |
     The Spreadsheet::ParseXLSX package before 0.28 for Perl can encounter an out-of-memory condition during parsing of a crafted XLSX document. This occurs because the memoize implementation does not have appropriate constraints on merged cells.
-  fixed_versions: '>=0.28'
+  fixed_versions: 
+  - '>=0.28'
   github_security_advisory:
   - GHSA-x2hg-844v-frvh
   id: CPANSA-Spreadsheet-ParseXLSX-2024-22368
@@ -17,12 +19,14 @@ advisories:
   - https://metacpan.org/dist/Spreadsheet-ParseXLSX/changes
   - https://github.com/advisories/GHSA-x2hg-844v-frvh
   reported: 2024-01-03
-- affected_versions: <0.30
+- affected_versions:
+  - <0.30
   cves:
   - CVE-2024-23525
   description: |
     In default configuration of Spreadsheet::ParseXLSX, whenever we call Spreadsheet::ParseXLSX->new()->parse('user_input_file.xlsx'), we'd be vulnerable for XXE vulnerability if the XLSX file that we are parsing is from user input.
-  fixed_versions: '>=0.30'
+  fixed_versions: 
+  - '>=0.30'
   github_security_advisory:
   - GHSA-cxjh-j6f8-vrmf
   id: CPANSA-Spreadsheet-ParseXLSX-2024-23525

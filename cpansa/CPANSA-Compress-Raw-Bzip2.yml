@@ -1,23 +1,27 @@
 ---
 advisories:
-- affected_versions: <2.031
+- affected_versions:
+  - <2.031
   cves:
   - CVE-2010-0405
   description: |
     Integer overflow in the BZ2_decompress function in decompress.c in bzip2 and libbzip2 before 1.0.6 allows context-dependent attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted compressed file.
-  fixed_versions: '>=2.031'
+  fixed_versions: 
+  - '>=2.031'
   github_security_advisory:
   - GHSA-44gv-7gp8-m9mw
   id: CPANSA-Compress-Raw-Bzip2-2010-0405
   references:
   - https://metacpan.org/changes/distribution/Compress-Raw-Bzip2
   reported: 2010-01-27
-- affected_versions: <2.018
+- affected_versions:
+  - <2.018
   cves:
   - CVE-2009-1884
   description: |
     Off-by-one error in the bzinflate function in Bzip2.xs in the Compress-Raw-Bzip2 module before 2.018 for Perl allows context-dependent attackers to cause a denial of service (application hang or crash) via a crafted bzip2 compressed stream that triggers a buffer overflow, a related issue to CVE-2009-1391.
-  fixed_versions: '>=2.018'
+  fixed_versions: 
+  - '>=2.018'
   github_security_advisory:
   - GHSA-4x36-p66f-4f99
   id: CPANSA-Compress-Raw-Bzip2-2009-1884

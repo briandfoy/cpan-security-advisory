@@ -6,11 +6,13 @@ latest_version: '4.37'
 metacpan: https://metacpan.org/pod/Cpanel::JSON::XS
 repo: https://github.com/rurban/Cpanel-JSON-XS
 advisories:
-- affected_versions: <3.0225
+- affected_versions:
+  - <3.0225
   cves: []
   description: |
     Overflow during processing of ill-formed UTF-8 strings.
-  fixed_versions: '>=3.0225'
+  fixed_versions: 
+  - '>=3.0225'
   github_security_advisory: []
   id: CPANSA-Cpanel-JSON-XS-2016-02
   references:
@@ -18,23 +20,27 @@ advisories:
   - https://github.com/rurban/Cpanel-JSON-XS/commit/f71768984ba7f50b0476c17a4f3b3f2ca88a6951
   - https://github.com/dankogai/p5-encode/issues/64
   reported: 2016-11-23
-- affected_versions: <3.0218
+- affected_versions:
+  - <3.0218
   cves: []
   description: |
     Possible overflows in av and hv length types.
-  fixed_versions: '>=3.0218'
+  fixed_versions: 
+  - '>=3.0218'
   github_security_advisory: []
   id: CPANSA-Cpanel-JSON-XS-2016-01
   references:
   - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
   - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
   reported: 2016-10-06
-- affected_versions: <4.033
+- affected_versions:
+  - <4.033
   cves:
   - CVE-2022-48623
   description: |
     Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
-  fixed_versions: '>=4.033'
+  fixed_versions: 
+  - '>=4.033'
   github_security_advisory:
   - GHSA-44qr-8pf6-6q33
   id: CPANSA-Cpanel-JSON-XS-2023-01

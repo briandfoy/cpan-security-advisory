@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: '<1.954'
+- affected_versions:
+  - '<1.954'
   cves:
   - CVE-2024-4140
   description: >
@@ -8,7 +9,8 @@ advisories:
     before version 1.954, which can cause denial of service when parsing
     multipart MIME messages. The patch set (from 2020 and 2024) limits
     excessive depth and the total number of parts.
-  fixed_versions: '>=1.954'
+  fixed_versions: 
+  - '>=1.954'
   github_security_advisory: []
   id: CPANSA-Email-MIME-2024-4140
   references:

@@ -1,20 +1,24 @@
 ---
 advisories:
-- affected_versions: <5.90020
+- affected_versions:
+  - <5.90020
   cves: []
   description: |
     Passing a special host to the redirect page link makes it vulnerable to XSS attack.
-  fixed_versions: '>=5.90020'
+  fixed_versions: 
+  - '>=5.90020'
   github_security_advisory: []
   id: CPANSA-Catalyst-Runtime-2013-01
   references:
   - http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits/Catalyst-Runtime.git;a=commitdiff;h=7af54927870a7c6f89323ac1876d49f92e7841f5
   reported: 2013-01-23
-- affected_versions: <5.58
+- affected_versions:
+  - <5.58
   cves: []
   description: |
     Path traversal in Static::Simple plugin.
-  fixed_versions: '>=5.58'
+  fixed_versions: 
+  - '>=5.58'
   github_security_advisory: []
   id: CPANSA-Catalyst-Runtime-2005-01
   reported: 2005-11-24

@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: '>=9.25,<=9.26'
+- affected_versions:
+  - '>=9.25,<=9.26'
   cves:
   - CVE-2022-4170
   description: |
     The rxvt-unicode package is vulnerable to a remote code execution, in the Perl background extension, when an attacker can control the data written to the user's terminal and certain options are set.
-  fixed_versions: '>=9.29'
+  fixed_versions: 
+  - '>=9.29'
   github_security_advisory:
   - GHSA-v3h7-vj8g-6x3r
   id: CPANSA-urxvt-bgdsl-2022-4170

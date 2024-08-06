@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <1.12
+- affected_versions:
+  - <1.12
   cves: []
   description: |
     Invalid data input validation makes it possible to pass arbitrary strings to module loading eval.
-  fixed_versions: '>=1.12'
+  fixed_versions: 
+  - '>=1.12'
   github_security_advisory: []
   id: CPANSA-SVG-Sparkline-2017-01
   references:

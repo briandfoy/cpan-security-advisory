@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <0.15
+- affected_versions:
+  - <0.15
   cves:
   - CVE-2015-5667
   description: |
     Cross-site scripting (XSS) vulnerability in the HTML-Scrubber module before 0.15 for Perl, when the comment feature is enabled, allows remote attackers to inject arbitrary web script or HTML via a crafted comment.
-  fixed_versions: '>=0.15'
+  fixed_versions: 
+  - '>=0.15'
   github_security_advisory:
   - GHSA-4hf5-hm87-wm38
   id: CPANSA-HTML-Scrubber-2015-5667

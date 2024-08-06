@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <1.12
+- affected_versions:
+  - <1.12
   cves: []
   description: |
     A potential timing attack when checking signatures.
-  fixed_versions: '>=1.12'
+  fixed_versions: 
+  - '>=1.12'
   github_security_advisory: []
   id: CPANSA-Net-OpenID-Consumer-2010-01
   references:
@@ -12,11 +14,13 @@ advisories:
   - https://github.com/wrog/Net-OpenID-Consumer/commit/4e82c7e4b6ad4bc40571c5cfcaa58f9365b147a5
   - http://lists.openid.net/pipermail/openid-security/2010-July/001156.html
   reported: 2010-11-06
-- affected_versions: <0.06
+- affected_versions:
+  - <0.06
   cves: []
   description: |
     Incorrect comparison of system openssl status when doing DSA checks.
-  fixed_versions: '>=0.06'
+  fixed_versions: 
+  - '>=0.06'
   github_security_advisory: []
   id: CPANSA-Net-OpenID-Consumer-2015-05
   references:

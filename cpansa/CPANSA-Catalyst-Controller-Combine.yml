@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.12
+- affected_versions:
+  - <0.12
   cves: []
   description: |
     Allows to use url-encoded path-parts to crawl along the file system and read files outside the intended directory.
-  fixed_versions: '>=0.12'
+  fixed_versions: 
+  - '>=0.12'
   github_security_advisory: []
   id: CPANSA-Catalyst-Controller-Combine-2010-01
   references:

@@ -1,31 +1,37 @@
 ---
 advisories:
-- affected_versions: <1.11
+- affected_versions:
+  - <1.11
   cves: []
   description: |
     Allows remote attackers to execute arbitrary commands.
-  fixed_versions: '>=1.11'
+  fixed_versions: 
+  - '>=1.11'
   github_security_advisory: []
   id: CPANSA-UI-Dialog-2015-01
   references:
   - https://metacpan.org/changes/distribution/UI-Dialog
   reported: 2015-10-10
-- affected_versions: <1.03
+- affected_versions:
+  - <1.03
   cves: []
   description: |
     CDialog and Whiptail backends usage of the temp files.
-  fixed_versions: '>=1.03'
+  fixed_versions: 
+  - '>=1.03'
   github_security_advisory: []
   id: CPANSA-UI-Dialog-2004-01
   references:
   - https://metacpan.org/changes/distribution/UI-Dialog
   reported: 2004-02-18
-- affected_versions: <=1.09
+- affected_versions:
+  - <=1.09
   cves:
   - CVE-2008-7315
   description: |
     UI-Dialog 1.09 and earlier allows remote attackers to execute arbitrary commands.
-  fixed_versions: '>1.09'
+  fixed_versions: 
+  - '>1.09'
   github_security_advisory:
   - GHSA-3f84-j5xw-c967
   id: CPANSA-UI-Dialog-2008-7315

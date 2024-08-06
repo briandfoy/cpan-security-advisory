@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.11
+- affected_versions:
+  - <0.11
   cves: []
   description: |
     Testing for nonexistant access rights always returned true.
-  fixed_versions: '>=0.11'
+  fixed_versions: 
+  - '>=0.11'
   github_security_advisory: []
   id: CPANSA-PApp-2001-01
   references:

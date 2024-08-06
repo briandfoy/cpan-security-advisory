@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: []
+- affected_versions:
+  - []
   cves:
   - CVE-2005-4536
   description: |
     Mail::Audit module in libmail-audit-perl 2.1-5, when logging is enabled without a default log file specified, uses predictable log filenames, which allows local users to overwrite arbitrary files via a symlink attack on the [PID]-audit.log temporary file.
-  fixed_versions: []
+  fixed_versions: 
+  - []
   github_security_advisory:
   - GHSA-h7vp-qvfw-h2f3
   id: CPANSA-Mail-Audit-2005-4536

@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <2.85
+- affected_versions:
+  - <2.85
   cves:
   - CVE-2016-1238
   description: |
     Loading optional modules from . (current directory).
-  fixed_versions: '>=2.85'
+  fixed_versions: 
+  - '>=2.85'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-Encode-2016-01
@@ -20,7 +22,8 @@ advisories:
   - CVE-2021-36770
   description: |
     Encode.pm, as distributed in Perl through 5.34.0, allows local users to gain privileges via a Trojan horse Encode::ConfigLocal library (in the current working directory) that preempts dynamic module loading. Exploitation requires an unusual configuration, and certain 2021 versions of Encode.pm (3.05 through 3.11). This issue occurs because the || operator evaluates @INC in a scalar context, and thus @INC has only an integer value.
-  fixed_versions: '>3.11'
+  fixed_versions: 
+  - '>3.11'
   github_security_advisory:
   - GHSA-3gfh-9hwx-r3vr
   id: CPANSA-Encode-2021-01
@@ -34,12 +37,14 @@ advisories:
   - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6KOZYD7BH2DNIAEZ2ZL4PJ4QUVQI6Y33/
   - https://security-tracker.debian.org/tracker/CVE-2021-36770
   reported: 2021-07-17
-- affected_versions: <2.44
+- affected_versions:
+  - <2.44
   cves:
   - CVE-2011-2939
   description: |
     Off-by-one error in the decode_xs function in Unicode/Unicode.xs in the Encode module before 2.44, as used in Perl before 5.15.6, might allow context-dependent attackers to cause a denial of service (memory corruption) via a crafted Unicode string, which triggers a heap-based buffer overflow.
-  fixed_versions: '>=2.44'
+  fixed_versions: 
+  - '>=2.44'
   github_security_advisory:
   - GHSA-76hr-qp66-cq6j
   id: CPANSA-Encode-2011-2939

@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.68
+- affected_versions:
+  - <0.68
   cves: []
   description: |
     SQL injection in column names, operators, order and group by.
-  fixed_versions: '>=0.68'
+  fixed_versions: 
+  - '>=0.68'
   github_security_advisory: []
   id: CPANSA-Jifty-DBI-2011-01
   references:

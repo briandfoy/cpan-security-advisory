@@ -1,13 +1,15 @@
 ---
 advisories:
-- affected_versions: <0.016000
+- affected_versions:
+  - <0.016000
   comment: |
     This Alien module fetches libpcre2 sources from the network. It tries to get the latest unless you set environment variables to get a different version.
   cves:
   - CVE-2019-20454
   description: |
     An out-of-bounds read was discovered in PCRE before 10.34 when the pattern \X is JIT compiled and used to match specially crafted subjects in non-UTF mode. Applications that use PCRE to parse untrusted input may be vulnerable to this flaw, which would allow an attacker to crash the application. The flaw occurs in do_extuni_no_utf in pcre2_jit_compile.c.
-  fixed_versions: '>=0.016000'
+  fixed_versions: 
+  - '>=0.016000'
   github_security_advisory:
   - GHSA-6wcm-vmc4-h93p
   id: CPANSA-Alien-PCRE2-2019-20454

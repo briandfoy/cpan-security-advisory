@@ -1,10 +1,12 @@
 ---
 advisories:
-- affected_versions: <0.40
+- affected_versions:
+  - <0.40
   cves: []
   description: |
     Two-arg open with a possibility of running arbitrary commands.
-  fixed_versions: '>=0.40'
+  fixed_versions: 
+  - '>=0.40'
   github_security_advisory: []
   id: CPANSA-SVN-Look-2014-01
   references:
