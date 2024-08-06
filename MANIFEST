@@ -1,9 +1,6 @@
 Changes
 CONTRIBUTING.md
 cpan-audit-db/LICENSE
-cpanfile
-cpanfile-feed
-download_all.sh
 INSTALL.SKIP
 lib/CPAN/Audit/DB.pm
 lib/CPAN/Audit/DB.pm.gpg
