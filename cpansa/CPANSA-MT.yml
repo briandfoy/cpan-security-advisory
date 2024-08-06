@@ -227,6 +227,7 @@
     - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
+  darkpan: true
 - affected_versions: ~
   cves:
     - CVE-2020-5669
@@ -398,6 +399,7 @@
     - http://jvn.jp/en/jp/JVN65280626/index.html
   reported: 2019-12-26
   severity: medium
+  darkpan: true
 - affected_versions:
     - "=6.3.1"
   cves:
@@ -483,6 +485,7 @@
     - https://www.debian.org/security/2015/dsa-3183
   reported: 2014-12-16
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<5.2.6"
   cves:
@@ -609,6 +612,7 @@
     - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-04-02
   severity: ~
+  darkpan: true
 - affected_versions:
     - ">=5.0,<=5.01"
   cves:
@@ -630,6 +634,7 @@
     - http://jvn.jp/en/jp/JVN92854093/index.html
   reported: 2010-05-19
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<4.261"
   cves:
@@ -650,6 +655,7 @@
     - http://www.securityfocus.com/bid/35885
   reported: 2009-07-17
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<4.261"
   cves:
@@ -671,6 +677,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/51330
   reported: 2009-07-16
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<4.24"
   cves:
@@ -686,6 +693,7 @@
     - http://www.movabletype.com/blog/2009/02/movable-type-424-get-updated-with-better-password-recovery.html
   reported: 2009-03-03
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<4.23"
   cves:
@@ -704,6 +712,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/47759
   reported: 2009-01-05
   severity: ~
+  darkpan: true
 - affected_versions:
     - "<4.23"
   cves:
@@ -751,6 +760,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/47019
   reported: 2009-01-02
   severity: ~
+  darkpan: true
 - affected_versions:
     - ">=7,<=7.7.1"
   cves:
@@ -769,6 +779,7 @@
     - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
+  darkpan: true
 - affected_versions:
     - '<=7'
   cves:
