@@ -5,7 +5,7 @@ advisories:
   - CVE-2010-3845
   description: |
     libapache-authenhook-perl 2.00-04 stores usernames and passwords in plaintext in the vhost error log.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-7rxx-w8q3-rg72
   id: CPANSA-Apache-AuthenHook-2010-3845

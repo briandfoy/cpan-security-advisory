@@ -5,7 +5,7 @@ advisories:
   - CVE-2005-1349
   description: |
     Buffer overflow in Convert-UUlib (Convert::UUlib) before 1.051 allows remote attackers to execute arbitrary code via a malformed parameter to a read operation.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-4x75-6x49-vgw2
   id: CPANSA-Convert-UUlib-2005-1349

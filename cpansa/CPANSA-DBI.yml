@@ -84,7 +84,7 @@ advisories:
   - CVE-2014-10402
   description: |
     An issue was discovered in the DBI module through 1.643 for Perl. DBD::File drivers can open files from folders other than those specifically passed via the f_dir attribute in the data source name (DSN). NOTE: this issue exists because of an incomplete fix for CVE-2014-10401.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-qc7v-jjp2-38r9
   id: CPANSA-DBI-2014-10402
@@ -97,7 +97,7 @@ advisories:
   - CVE-2014-10401
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. DBD::File drivers can open files from folders other than those specifically passed via the f_dir attribute.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-9347-cf5g-8j34
   id: CPANSA-DBI-2014-10401
@@ -113,7 +113,7 @@ advisories:
   - CVE-2013-7491
   description: |
     An issue was discovered in the DBI module before 1.628 for Perl. Stack corruption occurs when a user-defined function requires a non-trivial amount of memory and the Perl stack gets reallocated.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-grmf-5xw5-9cmx
   id: CPANSA-DBI-2013-7491
@@ -128,7 +128,7 @@ advisories:
   - CVE-2013-7490
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. Using many arguments to methods for Callbacks may lead to memory corruption.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-g483-mcjg-g334
   id: CPANSA-DBI-2013-7490

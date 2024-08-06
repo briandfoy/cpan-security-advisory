@@ -8,7 +8,7 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-44r9-882w-xw5m
   id: CPANSA-Win32-File-Summary-2018-01
@@ -25,7 +25,7 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-rwhc-g7xj-h37q
   id: CPANSA-Win32-File-Summary-2007-4829
@@ -55,7 +55,7 @@ advisories:
   embedded_vulnerability:
     distributed_version: '0.072'
     name: Archive::Tar
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
   id: CPANSA-Win32-File-Summary-2016-1238

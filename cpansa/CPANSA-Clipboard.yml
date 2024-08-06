@@ -5,7 +5,7 @@ advisories:
   - CVE-2014-5509
   description: |
     clipedit in the Clipboard module for Perl allows local users to delete arbitrary files via a symlink attack on /tmp/clipedit$$.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-fxwp-mh6r-g9mm
   id: CPANSA-Clipboard-2014-5509

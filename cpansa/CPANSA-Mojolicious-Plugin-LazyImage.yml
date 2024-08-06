@@ -12,7 +12,7 @@ advisories:
   embedded_vulnerability:
     distributed_version: ~
     name: polyfill.io
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory: []
   id: CPANSA-Mojolicious-Plugin-LazyImage-2024-38526
   references:

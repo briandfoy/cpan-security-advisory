@@ -5,7 +5,7 @@ advisories:
   - CVE-2014-5260
   description: |
     The (1) mkxmltype and (2) mkdtskel scripts in XML-DT before 0.64 allow local users to overwrite arbitrary files via a symlink attack on a /tmp/_xml_##### temporary file.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-2f6x-v9qj-8f54
   id: CPANSA-XML-DT-2014-5260

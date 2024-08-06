@@ -5,7 +5,7 @@ advisories:
   - CVE-2013-7135
   description: |
     The Proc::Daemon module 0.14 for Perl uses world-writable permissions for a file that stores a process ID, which allows local users to have an unspecified impact by modifying this file.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-jr8v-35jh-58m6
   id: CPANSA-Proc-Daemon-2013-7135

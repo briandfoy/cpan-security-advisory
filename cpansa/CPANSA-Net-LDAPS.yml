@@ -5,7 +5,7 @@ advisories:
   - CVE-2020-16093
   description: |
     In LemonLDAP::NG (aka lemonldap-ng) through 2.0.8, validity of the X.509 certificate is not checked by default when connecting to remote LDAP backends, because the default configuration of the Net::LDAPS module for Perl is used.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-9c48-27fx-7952
   id: CPANSA-Net-LDAPS-2020-16093

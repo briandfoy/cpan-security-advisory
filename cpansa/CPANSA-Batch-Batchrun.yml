@@ -5,7 +5,7 @@ advisories:
   - CVE-2011-4117
   description: |
     The Batch::Batchrun module 1.03 for Perl does not properly handle temporary files.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-2mgm-x4fm-vrg8
   id: CPANSA-Batch-Batchrun-2011-4117

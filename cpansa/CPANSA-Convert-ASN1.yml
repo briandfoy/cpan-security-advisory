@@ -5,7 +5,7 @@ advisories:
   - CVE-2013-7488
   description: |
     perl-Convert-ASN1 (aka the Convert::ASN1 module for Perl) through 0.27 allows remote attackers to cause an infinite loop via unexpected input.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-8wqq-xrhr-w6mf
   id: CPANSA-Convert-ASN1-2013-7488

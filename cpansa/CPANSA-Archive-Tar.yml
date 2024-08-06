@@ -5,7 +5,7 @@ advisories:
   - CVE-2018-12015
   description: |
     In Perl through 5.26.2, the Archive::Tar module allows remote attackers to bypass a directory-traversal protection mechanism, and overwrite arbitrary files, via an archive file containing a symlink and a regular file with the same name.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-44r9-882w-xw5m
   id: CPANSA-Archive-Tar-2018-01

@@ -47,7 +47,7 @@ advisories:
   - CVE-2005-2811
   description: |
     Untrusted search path vulnerability in Net-SNMP 5.2.1.2 and earlier, on Gentoo Linux, installs certain Perl modules with an insecure DT_RPATH, which could allow local users to gain privileges.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-w7p9-h59x-gp43
   id: CPANSA-Net-SNMP-2005-2811
@@ -60,7 +60,7 @@ advisories:
   - CVE-2014-2285
   description: |
     The perl_trapd_handler function in perl/TrapReceiver/TrapReceiver.xs in Net-SNMP 5.7.3.pre3 and earlier, when using certain Perl versions, allows remote attackers to cause a denial of service (snmptrapd crash) via an empty community string in an SNMP trap, which triggers a NULL pointer dereference within the newSVpv function in Perl.
-  fixed_versions: ~
+  fixed_versions: []
   github_security_advisory:
   - GHSA-vjgw-84x2-wchq
   id: CPANSA-Net-SNMP-2014-2285
