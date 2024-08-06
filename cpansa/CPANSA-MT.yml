@@ -42,8 +42,8 @@
     are also affected by this vulnerability.
   distribution: MT
   fixed_versions:
-    - "7.9.5"
-    - "6.8.7"
+    - '>=7.9.5'
+    - '>=6.8.7,<7'
   id: CPANSA-MT-2022-38078
   references:
     - https://movabletype.org/news/2022/08/mt-795-687-released.html
