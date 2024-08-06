@@ -6,7 +6,7 @@
   comment: >
     This is a darkpan application.
   url: http://software.schmorp.de/pkg/rxvt-unicode.html
-  darkpan: true,
+  darkpan: true
   description: >
     The rxvt-unicode package is vulnerable to a remote code execution,
     in the Perl background extension, when an attacker can control the
