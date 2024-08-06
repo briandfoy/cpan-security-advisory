@@ -1,0 +1,19 @@
+Changes
+CONTRIBUTING.md
+cpan-audit-db/LICENSE
+cpanfile
+cpanfile-feed
+download_all.sh
+INSTALL.SKIP
+lib/CPAN/Audit/DB.pm
+lib/CPAN/Audit/DB.pm.gpg
+LICENSE
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+NO_CVES
+README.pod
+t/load.t
+t/pod.t
+t/pod_coverage.t
+t/test_manifest
