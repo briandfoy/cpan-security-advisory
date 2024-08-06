@@ -121,7 +121,7 @@ sub all_releases {
 }
 
 sub default_file () {
-	state $file = catfile(qw(cpan-audit-db lib CPAN Audit DB.pm));
+	state $file = catfile(qw(lib CPAN Audit DB.pm));
 	$file;
 }
 
@@ -376,6 +376,19 @@ sub stringify_data ( $db ) {
 		# created by $0 at @{[ scalar localtime]}
 		# cpan-security-advisory $commit
 		#
+
+		=encoding utf8
+
+		=head1 NAME
+
+		CPAN::Audit::DB - the CPAN Security Advisory data as a Perl data structure for CPAN::Audit
+
+		=head1 SYNOPSIS
+
+		=head1 DESCRIPTION
+
+		=cut
+
 		package CPAN::Audit::DB;
 
 		use strict;
@@ -383,10 +396,20 @@ sub stringify_data ( $db ) {
 
 		our \$VERSION = '$opts->{version}';
 
+		=over 4
+
+		=item * db
+
+		Returns the hashref of all the CPANSA reports
+
+		=back
+
+		=cut
+
 		sub db {
 			$dump
 		}
 
-		1;
+		__PACKAGE__;
 		EOF
 }
