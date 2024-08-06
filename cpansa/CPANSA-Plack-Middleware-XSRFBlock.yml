@@ -3,7 +3,6 @@
   fixed_versions: '>=0.0.19'
   cves:
     - CVE-2023-52431
-  url: ~
   description: >
     When not using signed cookies, it was possible to
     bypass XSRFBlock by POSTing an empty form value and
