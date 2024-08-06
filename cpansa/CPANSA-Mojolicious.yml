@@ -151,7 +151,8 @@
   affected_versions: "<1.16"
   fixed_versions: ~
 - id: CPANSA-Mojolicious-2011-01
-  cves: []
+  cves:
+    - CVE-2011-1841
   distribution: Mojolicious
   reported: 2011-03-10
   severity: high
