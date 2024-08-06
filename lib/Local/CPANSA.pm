@@ -97,6 +97,12 @@ sub report_path ( $package ) {
 	catfile( 'cpansa', "CPANSA-$package.yml" );
 	}
 
+sub get_all_reports ( $base_dir = 'cpansa' ) {
+	opendir( my $dh, $base_dir ) or die "Could not open <$base_dir>: $!";
+	my @files = map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
+	return \@files;
+	}
+
 sub get_ignored_cves ( $file = 'IGNORE_CVEs' ) {
 	open my $fh, '<:encoding(UTF-8)', $file or do {
 		warn "Could not open <$file>: $! - Skipping ignored CVEs\n";
@@ -114,15 +120,13 @@ sub get_ignored_cves ( $file = 'IGNORE_CVEs' ) {
 	}
 
 sub get_recorded_cves ( $base = 'cpansa' ) {
-	state $rc = require YAML::XS;
-
 	opendir( my $dh, $base ) or die "Could not open <$base>: $!";
 
 	my %found;
 	while( my $file = readdir($dh) ) {
 		next unless $file =~ /\.yml\z/;
 		my $path = catfile( $base, $file );
-		my $yaml = eval { YAML::XS::LoadFile( $path ) };
+		my $yaml = load_report($path);
 
 		unless( defined $yaml ) {
 			warn "$path: $@\n";
@@ -142,6 +146,11 @@ sub get_recorded_cves ( $base = 'cpansa' ) {
 		}
 
 	return \%found;
+	}
+
+sub load_report ( $report_path ) {
+	state $rc = require YAML::XS;
+	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
 	}
 
 sub cve_ignored ( $cve ) {
