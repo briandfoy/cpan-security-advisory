@@ -8,8 +8,7 @@ advisories:
   - CVE-2009-0912
   description: |
     perl-MDK-Common 1.1.11 and 1.1.24, 1.2.9 through 1.2.14, and possibly other versions, in Mandriva Linux does not properly handle strings when writing them to configuration files, which allows attackers to gain privileges via "special characters" in unspecified vectors.'
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-45w4-h5x7-85w7
   id: CPANSA-MDK-Common-2009-0912

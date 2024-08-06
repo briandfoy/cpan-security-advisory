@@ -133,7 +133,7 @@ my $advisories = {
 			affected_versions        => { type => '//arr', contents => { type => '//any', of => [ '//str', '//nil' ] } },
 			cves                     => { type => '//arr', contents => { type => "tag:example.com,EXAMPLE:rx/cve" }, },
 			description              => { type => '//str' },
-			fixed_versions           => { type => '//any', of => [ '//str', '//nil' ] },
+			fixed_versions           => { type => '//arr', contents => { type => '//any', of => [ '//str', '//nil' ] } },
 			github_security_advisory => { type => '//arr', contents => { type => "tag:example.com,EXAMPLE:rx/ghsa" }, },
 			id                       => { type => '//str' },
 			reported                 => { type => "//any", of => [ 'tag:example.com,EXAMPLE:rx/cpansa-date', '//nil' ] },

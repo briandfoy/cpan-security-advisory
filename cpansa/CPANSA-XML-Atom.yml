@@ -6,8 +6,7 @@ advisories:
   - CVE-2012-1102
   description: |
     It was discovered that the XML::Atom Perl module before version 0.39 did not disable external entities when parsing XML from potentially untrusted sources. This may allow attackers to gain read access to otherwise protected resources, depending on how the library is used.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-cwv6-3m5x-7f9p
   id: CPANSA-XML-Atom-2012-1102

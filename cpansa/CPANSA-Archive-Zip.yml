@@ -6,8 +6,7 @@ advisories:
   - CVE-2018-10860
   description: |
     perl-archive-zip is vulnerable to a directory traversal in Archive::Zip. It was found that the Archive::Zip module did not properly sanitize paths while extracting zip files. An attacker able to provide a specially crafted archive for processing could use this flaw to write or overwrite arbitrary files in the context of the perl interpreter.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-46vh-339r-h4rg
   id: CPANSA-Archive-Zip-2018-01
@@ -22,8 +21,7 @@ advisories:
   - CVE-2004-1096
   description: |
     Archive::Zip Perl module before 1.14, when used by antivirus programs such as amavisd-new, allows remote attackers to bypass antivirus protection via a compressed file with both local and global headers set to zero, which does not prevent the compressed file from being opened on a target system.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-wf22-9wqx-hv9r
   id: CPANSA-Archive-Zip-2004-1096

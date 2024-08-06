@@ -6,8 +6,7 @@ advisories:
   - CVE-2023-31485
   description: |
     GitLab::API::v4 is missing the verify_SSL=>1 flag in HTTP::Tiny, allowing a network attacker to MITM connections to the GitLab server.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-c2v8-3552-rp4m
   id: CPANSA-GitLab-API-v4-2023-31485

@@ -6,8 +6,7 @@ advisories:
   - CVE-2018-25099
   description: |
     A user can pass anything as the tag into gcm_decrypt_verify() and it will return decrypted plaintext.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory: []
   id: CPANSA-CryptX-2018-01
   references:

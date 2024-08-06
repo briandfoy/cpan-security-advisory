@@ -5,8 +5,7 @@ advisories:
   cves: []
   description: |
     The module is making use of the perl rand function for key and iv generation (for Crypt::Rijndael).
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory: []
   id: CPANSA-File-KeePass-2016-01
   references:

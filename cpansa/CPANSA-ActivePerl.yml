@@ -6,8 +6,7 @@ advisories:
   - CVE-2012-5377
   description: |
     Untrusted search path vulnerability in the installation functionality in ActivePerl 5.16.1.1601, when installed in the top-level C:\ directory, allows local users to gain privileges via a Trojan horse DLL in the C:\Perl\Site\bin directory, which is added to the PATH system environment variable, as demonstrated by a Trojan horse wlbsctrl.dll file used by the "IKE and AuthIP IPsec Keying Modules" system service in Windows Vista SP1, Windows Server 2008 SP2, Windows 7 SP1, and Windows 8 Release Preview.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-64cp-j7mg-j33g
   id: CPANSA-ActivePerl-2012-5377
@@ -22,8 +21,7 @@ advisories:
   - CVE-2006-2856
   description: |
     ActiveState ActivePerl 5.8.8.817 for Windows configures the site/lib directory with "Users" group permissions for changing files, which allows local users to gain privileges by creating a malicious sitecustomize.pl file in that directory.  NOTE: The provenance of this information is unknown; the details are obtained solely from third party information.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-8xc3-rg94-5c3f
   id: CPANSA-ActivePerl-2006-2856
@@ -36,13 +34,12 @@ advisories:
   reported: 2006-06-06
   severity: ~
 - affected_versions:
-  - []
+  - '<=5.8.1'
   cves:
   - CVE-2004-2286
   description: |
     Integer overflow in the duplication operator in ActivePerl allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a large multiplier, which may trigger a buffer overflow.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-8g3v-vx3x-982v
   id: CPANSA-ActivePerl-2004-2286
@@ -58,8 +55,7 @@ advisories:
   - CVE-2004-2022
   description: |
     ActivePerl 5.8.x and others, and Larry Wall's Perl 5.6.1 and others, when running on Windows systems, allows attackers to cause a denial of service (crash) and possibly execute arbitrary code via a long argument to the system command, which leads to a stack-based buffer overflow.  NOTE: it is unclear whether this bug is in Perl or the OS API that is used by Perl.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-6g7x-c8vf-63fq
   id: CPANSA-ActivePerl-2004-2022
@@ -75,14 +71,12 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/16169
   reported: 2004-12-31
   severity: ~
-- affected_versions:
-  - []
+- affected_versions: []
   cves:
   - CVE-2004-0377
   description: |
     Buffer overflow in the win32_stat function for (1) ActiveState's ActivePerl and (2) Larry Wall's Perl before 5.8.3 allows local or remote attackers to execute arbitrary commands via filenames that end in a backslash character.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-rm2p-jhqp-33q2
   id: CPANSA-ActivePerl-2004-0377
@@ -101,8 +95,7 @@ advisories:
   - CVE-2001-0815
   description: |
     Buffer overflow in PerlIS.dll in Activestate ActivePerl 5.6.1.629 and earlier allows remote attackers to execute arbitrary code via an HTTP request for a long filename that ends in a .pl extension.
-  fixed_versions: 
-  - []
+  fixed_versions: []
   github_security_advisory:
   - GHSA-c5px-j32w-fcqp
   id: CPANSA-ActivePerl-2001-0815
