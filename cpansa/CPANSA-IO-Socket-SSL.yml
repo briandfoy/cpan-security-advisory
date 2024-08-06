@@ -1,5 +1,6 @@
 ---
-- affected_versions: "<1.35"
+- affected_versions:
+    - "<=1.35"
   cves:
     - CVE-2010-4334
   description: >
@@ -8,7 +9,8 @@
     error when a ca_file/ca_path cannot be verified, which allows
     remote attackers to bypass intended certificate restrictions.
   distribution: IO-Socket-SSL
-  fixed_versions: ">=1.35"
+  fixed_versions:
+  - ">1.35"
   id: CPANSA-IO-Socket-SSL-2010-4334
   references:
     - http://osvdb.org/69626
@@ -36,7 +38,8 @@
     allows remote attackers to bypass the hostname check for a
     certificate.
   distribution: IO-Socket-SSL
-  fixed_versions: ">=1.26"
+  fixed_versions:
+  - ">=1.26"
   id: CPANSA-IO-Socket-SSL-2009-3024
   references:
     - http://www.openwall.com/lists/oss-security/2009/08/31/4
