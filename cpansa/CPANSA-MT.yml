@@ -11,7 +11,7 @@
     parameters, as demonstrated by an eval injection attack against
     the core_drop_meta_for_table function, leading to execution of
     arbitrary Perl code.
-  distribution: "MT"
+  distribution: MT
   fixed_versions: ~
   id: CPANSA-MT-2013-0209
   references:
