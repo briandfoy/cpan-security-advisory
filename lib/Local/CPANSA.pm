@@ -35,6 +35,8 @@ sub assemble_record ( $cve, $distribution = undef ) {
 
 	$hash{distribution} = $package unless defined $hash{distribution};
 	$hash{id} = sprintf 'CPANSA-%s-%s', $hash{distribution}, $serial;
+	my $author = guess_author($hash{distribution});
+	$hash{purl} = "pkg:cpan/$author/$hash{distribution}" if $author;
 
 	$hash{affected_versions} = undef;
 	$hash{fixed_versions} = undef;
@@ -60,6 +62,14 @@ sub guess_package ( $item ) {
 	if( $item->{cve}{description}{description_data}[0]{value} =~ /\b ( [A-Z][A-Z0-9_]+(?:::[A-Z][A-Z0-9_]+)+ ) \b/xi ) {
 		return $1
 		}
+	}
+
+sub guess_author ( $dist ) {
+	my $res = Mojo::UserAgent->new->get("https://metacpan.org/dist/$dist")->res;
+	return unless $res->is_success;
+	my $author_path = $res->dom->at('.author-name')->attr('href');
+	return $1 if $author_path =~ m</author/(\w+)>;
+	return;
 	}
 
 # This hasn't turned out so useful
