@@ -23,7 +23,7 @@ IGNORE_CVEs
 lib/Local
 Makefile.repo
 perl-cve-atom.xml
-README.md
+^README.md
 t/.last_run
 TO_DO
 util/
