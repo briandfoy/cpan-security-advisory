@@ -3,8 +3,6 @@
   fixed_versions: '>=9.29'
   cves:
     - CVE-2022-4170
-  comment: >
-    This is a darkpan application.
   url: http://software.schmorp.de/pkg/rxvt-unicode.html
   darkpan: true
   description: >
