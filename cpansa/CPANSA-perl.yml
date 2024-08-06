@@ -1000,7 +1000,7 @@
 - affected_versions: '<=5.38.0'
   cves:
     - CVE-2023-47039
-  description: >
+  description: |
     Perl for Windows relies on the system path environment variable to
     find the shell (cmd.exe). When running an executable which uses
     Windows Perl interpreter, Perl attempts to find and execute cmd.exe

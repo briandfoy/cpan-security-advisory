@@ -4,7 +4,7 @@
   fixed_versions: ">=0.083"
   distribution: HTTP-Tiny
   reported: 2023-02-14
-  description: >
+  description: |
     HTTP::Tiny v0.082, a Perl core module since v5.13.9 and available standalone
     on CPAN, does not verify TLS certs by default. Users must opt-in with the
     verify_SSL=>1 flag to verify certs when using HTTPS.
