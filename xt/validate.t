@@ -171,6 +171,7 @@ my $advisories = {
 						},
 					},
 				},
+			'x-commit' => { type => '//any', of => [ '//str', '//nil' ] },
 			},
 		},
 	};
