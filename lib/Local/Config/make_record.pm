@@ -9,6 +9,20 @@ use namespace::autoclean;
 use Carp qw(carp);
 use Local::CPANSA;
 
+=encoding utf8
+
+=head1 NAME
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+=over 4
+
+=item * getopts_spec
+
+=cut
+
 sub getopts_spec ( $self ) {
 	state %opts = (
 		affected           => { order => 4, getopt => "affected|a=s",          description => 'Affected versions' },
@@ -31,10 +45,18 @@ sub getopts_spec ( $self ) {
 	\%opts
 	}
 
+=item * guess_output_filename
+
+=cut
+
 sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) {
 	use File::Spec::Functions;
 	Local::CPANSA::report_path( $namespace =~ s/::/-/gr )
 	}
+
+=item * postprocess_args
+
+=cut
 
 sub postprocess_args ( $self ) {
 	my( $cve, $namespace ) = $self->leftover_args->@*;
@@ -57,6 +79,10 @@ sub postprocess_args ( $self ) {
 	$self;
 	}
 
+=item * prompt_for_values
+
+=cut
+
 sub prompt_for_values ( $self ) {
 	my $opts = $self->getopts_spec;
 	my @prompt_keys =
@@ -77,5 +103,9 @@ sub prompt_for_values ( $self ) {
 
 	$self;
 	}
+
+=back
+
+=cut
 
 __PACKAGE__;

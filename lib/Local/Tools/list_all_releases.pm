@@ -2,6 +2,8 @@ use v5.26;
 use utf8;
 use experimental qw(signatures);
 
+=encoding utf8
+
 =head1 NAME
 
 list_all_releases - output the URLs for all releases of a Perl module
