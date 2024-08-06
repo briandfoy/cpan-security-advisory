@@ -33,7 +33,9 @@
     - https://security-tracker.debian.org/tracker/CVE-2021-36770
   cves:
     - CVE-2021-36770
-  affected_versions: ">=3.05,<=3.11"
+  affected_versions:
+    - ">=3.05"
+    - "<=3.11"
   fixed_versions: ">3.11"
 - affected_versions: "<2.44"
   cves:
