@@ -6,7 +6,7 @@ advisories:
   - CVE-2013-2145
   description: |
     The cpansign verify functionality in the Module::Signature module before 0.72 for Perl allows attackers to bypass the signature check and execute arbitrary code via a SIGNATURE file with a "special unknown cipher" that references an untrusted module in Digest/.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.72'
   github_security_advisory:
   - GHSA-99g4-3v63-xpqx

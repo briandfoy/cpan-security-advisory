@@ -6,7 +6,7 @@ advisories:
   - CVE-2020-15358
   description: |
     In SQLite before 3.32.3, select.c mishandles query-flattener optimization, leading to a multiSelectOrderBy heap overflow because of misuse of transitive properties for constant propagation.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-rq2p-jfw7-2cj3
@@ -42,7 +42,7 @@ advisories:
   - CVE-2020-13632
   description: |
     ext/fts3/fts3_snippet.c in SQLite before 3.32.0 has a NULL pointer dereference via a crafted matchinfo() query.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-vqf7-574h-2gf3
@@ -67,7 +67,7 @@ advisories:
   - CVE-2020-13631
   description: |
     SQLite before 3.32.0 allows a virtual table to be renamed to the name of one of its shadow tables, related to alter.c and build.c.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-ggrr-j79r-pq3m
@@ -102,7 +102,7 @@ advisories:
   - CVE-2020-13630
   description: |
     ext/fts3/fts3.c in SQLite before 3.32.0 has a use-after-free in fts3EvalNextRow, related to the snippet feature.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-wgpm-4xgr-4mhp
@@ -137,7 +137,7 @@ advisories:
   - CVE-2020-13435
   description: |
     SQLite through 3.32.0 has a segmentation fault in sqlite3ExprCodeTarget in expr.c.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-4hxf-56qj-qrgf
@@ -169,7 +169,7 @@ advisories:
   - CVE-2020-13434
   description: |
     SQLite through 3.32.0 has an integer overflow in sqlite3_str_vappendf in printf.c.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-fjp7-rxx4-gq9h
@@ -205,7 +205,7 @@ advisories:
   - CVE-2020-11656
   description: |
     In SQLite through 3.31.1, the ALTER TABLE implementation has a use-after-free, as demonstrated by an ORDER BY clause that belongs to a compound SELECT statement.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-x2v5-p27f-53wp
@@ -230,7 +230,7 @@ advisories:
   - CVE-2020-11655
   description: |
     SQLite through 3.31.1 allows attackers to cause a denial of service (segmentation fault) via a malformed window-function query because the AggInfo object's initialization is mishandled.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-f86q-8q37-c2x4
@@ -258,7 +258,7 @@ advisories:
   - CVE-2020-9327
   description: |
     In SQLite 3.31.1, isAuxiliaryVtabOperator allows attackers to trigger a NULL pointer dereference and segmentation fault because of generated column optimizations.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-43wf-f579-3w62
@@ -283,7 +283,7 @@ advisories:
   - CVE-2019-20218
   description: |
     selectExpander in select.c in SQLite 3.30.1 proceeds with WITH stack unwinding even after a parsing error.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-vrgp-3vgj-937c
@@ -303,7 +303,7 @@ advisories:
   - CVE-2019-19959
   description: |
     ext/misc/zipfile.c in SQLite 3.30.1 mishandles certain uses of INSERT INTO in situations involving embedded '\\0' characters in filenames, leading to a memory-management error that can be detected by (for example) valgrind.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-8q6c-j3g3-gr6j
@@ -323,7 +323,7 @@ advisories:
   - CVE-2019-19880
   description: |
     multiSelect in select.c in SQLite 3.30.1 mishandles certain errors during parsing, as demonstrated by errors from sqlite3WindowRewrite() calls. NOTE: this vulnerability exists because of an incomplete fix for CVE-2019-19880.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-vjff-gpgv-hf96
@@ -349,7 +349,7 @@ advisories:
   - CVE-2019-8457
   description: |
     SQLite3 from 3.6.0 to and including 3.27.2 is vulnerable to heap out-of-bound read in the rtreenode() function when handling invalid rtree tables.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.63_04'
   github_security_advisory:
   - GHSA-p4jx-5p2x-4pq7
@@ -378,7 +378,7 @@ advisories:
   - CVE-2019-5018
   description: |
     An exploitable use after free vulnerability exists in the window function functionality of Sqlite3 3.26.0. A specially crafted SQL command can cause a use after free vulnerability, potentially resulting in remote code execution. An attacker can send a malicious SQL command to trigger this vulnerability.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.63_04'
   github_security_advisory:
   - GHSA-qgrg-5hv8-3w32
@@ -398,7 +398,7 @@ advisories:
   - CVE-2019-19925
   description: |
     zipfileUpdate in ext/misc/zipfile.c in SQLite 3.30.1 mishandles a NULL pathname during an update of a ZIP archive.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-wcjr-83cc-7pfq
@@ -422,7 +422,7 @@ advisories:
   - CVE-2019-19924
   description: |
     SQLite 3.30.1 mishandles certain parser-tree rewriting, related to expr.c, vdbeaux.c, and window.c. This is caused by incorrect sqlite3WindowRewrite() error handling.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-mp99-gxqh-6752
@@ -443,7 +443,7 @@ advisories:
   - CVE-2019-19923
   description: |
     flattenSubquery in select.c in SQLite 3.30.1 mishandles certain uses of SELECT DISTINCT involving a LEFT JOIN in which the right-hand side is a view. This can cause a NULL pointer dereference (or incorrect results).
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-5gmx-grg5-hh7x
@@ -467,7 +467,7 @@ advisories:
   - CVE-2019-19880
   description: |
     exprListAppendList in window.c in SQLite 3.30.1 allows attackers to trigger an invalid pointer dereference because constant integer values in ORDER BY clauses of window definitions are mishandled.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-mpvh-7x64-2fc7
@@ -491,7 +491,7 @@ advisories:
   - CVE-2019-19646
   description: |
     pragma.c in SQLite through 3.30.1 mishandles NOT NULL in an integrity_check PRAGMA command in certain cases of generated columns.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-g624-89xp-hmx8
@@ -512,7 +512,7 @@ advisories:
   - CVE-2019-19645
   description: |
     alter.c in SQLite through 3.30.1 allows attackers to trigger infinite recursion via certain types of self-referential views in conjunction with ALTER TABLE statements.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-g6wf-ch53-mgqf
@@ -532,7 +532,7 @@ advisories:
   - CVE-2019-19603
   description: |
     SQLite 3.30.1 mishandles certain SELECT statements with a nonexistent VIEW, leading to an application crash.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-cm5h-jfjm-77x3
@@ -553,7 +553,7 @@ advisories:
   - CVE-2019-19317
   description: |
     lookupName in resolve.c in SQLite 3.30.1 omits bits from the colUsed bitmask in the case of a generated column, which allows attackers to cause a denial of service or possibly have unspecified other impact.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-6283-q875-5qpp
@@ -572,7 +572,7 @@ advisories:
   - CVE-2019-19244
   description: |
     sqlite3Select in select.c in SQLite 3.30.1 allows a crash if a sub-select uses both DISTINCT and window functions, and also has certain ORDER BY usage.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-pfjf-vfqg-5r4q
@@ -590,7 +590,7 @@ advisories:
   - CVE-2019-19242
   description: |
     SQLite 3.30.1 mishandles pExpr->y.pTab, as demonstrated by the TK_COLUMN case in sqlite3ExprCodeTarget in expr.c.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.65_03'
   github_security_advisory:
   - GHSA-565m-5c74-6h7v
@@ -608,7 +608,7 @@ advisories:
   - CVE-2018-20506
   description: |
     SQLite before 3.25.3, when the FTS3 extension is enabled, encounters an integer overflow (and resultant buffer overflow) for FTS3 queries in a "merge" operation that occurs after crafted changes to FTS3 shadow tables, allowing remote attackers to execute arbitrary code by leveraging the ability to run arbitrary SQL statements (such as in certain WebSQL use cases). This is a different vulnerability than CVE-2018-20346.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.61_01'
   github_security_advisory:
   - GHSA-hfxx-8v8g-6rcx
@@ -649,7 +649,7 @@ advisories:
   - CVE-2018-20505
   description: |
     SQLite 3.25.2, when queries are run on a table with a malformed PRIMARY KEY, allows remote attackers to cause a denial of service (application crash) by leveraging the ability to run arbitrary SQL statements (such as in certain WebSQL use cases).
-  fixed_versions: 
+  fixed_versions:
   - '>=1.59_03'
   github_security_advisory:
   - GHSA-rx75-3g2g-6hp5
@@ -685,7 +685,7 @@ advisories:
   - CVE-2018-20346
   description: |
     SQLite before 3.25.3, when the FTS3 extension is enabled, encounters an integer overflow (and resultant buffer overflow) for FTS3 queries that occur after crafted changes to FTS3 shadow tables, allowing remote attackers to execute arbitrary code by leveraging the ability to run arbitrary SQL statements (such as in certain WebSQL use cases), aka Magellan.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.61_01'
   github_security_advisory:
   - GHSA-wpf6-c3rx-7xrj
@@ -732,7 +732,7 @@ advisories:
   - CVE-2018-8740
   description: |
     In SQLite through 3.22.0, databases whose schema is corrupted using a CREATE TABLE AS statement could cause a NULL pointer dereference, related to build.c and prepare.c.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.59_01'
   github_security_advisory:
   - GHSA-c753-vqf3-vjxh
@@ -760,7 +760,7 @@ advisories:
   - CVE-2017-10989
   description: |
     The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.55_07'
   github_security_advisory:
   - GHSA-rp6h-mxcc-96r2
@@ -790,7 +790,7 @@ advisories:
   - CVE-2016-6153
   description: |
     os_unix.c in SQLite before 3.13.0 improperly implements the temporary directory search algorithm, which might allow local users to obtain sensitive information, cause a denial of service (application crash), or have unspecified other impact by leveraging use of the current working directory for temporary files.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.51_05'
   github_security_advisory:
   - GHSA-c7vx-xpvf-fj57
@@ -816,7 +816,7 @@ advisories:
   - CVE-2015-3416
   description: |
     The sqlite3VXPrintf function in printf.c in SQLite before 3.8.9 does not properly handle precision and width values during floating-point conversions, which allows context-dependent attackers to cause a denial of service (integer overflow and stack-based buffer overflow) or possibly have unspecified other impact via large integers in a crafted printf function call in a SELECT statement.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.47_02'
   github_security_advisory:
   - GHSA-33jw-h57w-fr79
@@ -846,7 +846,7 @@ advisories:
   - CVE-2015-3415
   description: |
     The sqlite3VdbeExec function in vdbe.c in SQLite before 3.8.9 does not properly implement comparison operators, which allows context-dependent attackers to cause a denial of service (invalid free operation) or possibly have unspecified other impact via a crafted CHECK clause, as demonstrated by CHECK(0&O>O) in a CREATE TABLE statement.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.47_02'
   github_security_advisory:
   - GHSA-p88q-qx6q-mhv3
@@ -875,7 +875,7 @@ advisories:
   - CVE-2015-3414
   description: |
     SQLite before 3.8.9 does not properly implement the dequoting of collation-sequence names, which allows context-dependent attackers to cause a denial of service (uninitialized memory access and application crash) or possibly have unspecified other impact via a crafted COLLATE clause, as demonstrated by COLLATE"""""""" at the end of a SELECT statement.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.47_02'
   github_security_advisory:
   - GHSA-9qxq-827h-4w5v
@@ -904,7 +904,7 @@ advisories:
   - CVE-2013-7443
   description: |
     Buffer overflow in the skip-scan optimization in SQLite 3.8.2 allows remote attackers to cause a denial of service (crash) via crafted SQL statements.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.47_02'
   github_security_advisory:
   - GHSA-9ggj-hfcr-7pgp

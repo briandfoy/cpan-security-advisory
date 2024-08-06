@@ -10,7 +10,7 @@ use YAML::XS qw(LoadFile);
 
 my $YAMLLINT = find_yamllint();
 
-my $last_run_semaphore = catfile( 't', '.last_run' );
+my $last_run_semaphore = catfile( 'xt', '.last_run' );
 END {
 	open my $fh, '>', $last_run_semaphore;
 	print { $fh } $$;
@@ -59,7 +59,7 @@ subtest 'yamllint' => sub {
 		skip 'No yamllint' unless defined $YAMLLINT;
 		skip 'No new files' unless $files_to_test->@*;
 		foreach my $file ( $files_to_test->@* ) {
-			my $output = `$YAMLLINT -c t/yamllint.config $file`;
+			my $output = `$YAMLLINT -c xt/yamllint.config $file`;
 			is( $?, 0, "yamllint clean for $file" ) or diag( "$file: $output" );
 			}
 		}

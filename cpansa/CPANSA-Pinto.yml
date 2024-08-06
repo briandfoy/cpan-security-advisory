@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Pinto server allowed directory traveral.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.09995'
   github_security_advisory: []
   id: CPANSA-Pinto-2014-01

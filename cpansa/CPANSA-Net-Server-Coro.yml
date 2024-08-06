@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-0411
   description: |
     Remaining contents of the read buffer could allow plaintext injection attacks wherein attackers could cause nominally SSL-only commands to be executed by appending them to the end of a STARTTLS.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.0'
   github_security_advisory:
   - GHSA-2gf2-4wwm-4cm6

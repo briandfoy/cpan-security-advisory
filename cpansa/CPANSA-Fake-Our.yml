@@ -6,7 +6,7 @@ advisories:
   - CVE-2016-1238
   description: |
     Loading modules from . (current directory).
-  fixed_versions: 
+  fixed_versions:
   - '>=0.06'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp

@@ -6,7 +6,7 @@ advisories:
   - CVE-2015-8978
   description: |
     An example attack consists of defining 10 or more XML entities, each defined as consisting of 10 of the previous entity, with the document consisting of a single instance of the largest entity, which expands to one billion copies of the first entity. The amount of computer memory used for handling an external SOAP call would likely exceed that available to the process parsing the XML.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.15'
   github_security_advisory:
   - GHSA-9xh5-ghq7-m3c5
@@ -22,7 +22,7 @@ advisories:
   - CVE-2002-1742
   description: |
     Allows remote attackers to load arbitrary Perl functions by suppling a non-existent function in a script using a SOAP::Lite module, which causes the AUTOLOAD subroutine to trigger.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.55'
   github_security_advisory:
   - GHSA-42jw-jp69-7hjr
@@ -36,7 +36,7 @@ advisories:
   cves: []
   description: |
     Security problem on server side (no more details).
-  fixed_versions: 
+  fixed_versions:
   - '>=0.38'
   github_security_advisory: []
   id: CPANSA-SOAP-Lite-2000-01

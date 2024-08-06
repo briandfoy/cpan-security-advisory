@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-4363
   description: |
     ProcessTable.pm in the Proc::ProcessTable module 0.45 for Perl, when TTY information caching is enabled, allows local users to overwrite arbitrary files via a symlink attack on /tmp/TTYDEVS.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.47'
   github_security_advisory:
   - GHSA-rg46-xp9g-7m7c

@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     When running the API behind a reverse proxy on the same machine (like it is using the configuration example provided by the GUI) the remote ip might always be localhost even if the query was done from elsewher
-  fixed_versions: 
+  fixed_versions:
   - '>=7.0.0'
   github_security_advisory: []
   id: CPANSA-Zonemaster-Backend-2021-001
@@ -18,7 +18,7 @@ advisories:
   - <1.0.1
   cves: []
   description: "Potential SQL injection.\n"
-  fixed_versions: 
+  fixed_versions:
   - '>=1.0.1'
   github_security_advisory: []
   id: CPANSA-Zonemaster-Backend-2015-001

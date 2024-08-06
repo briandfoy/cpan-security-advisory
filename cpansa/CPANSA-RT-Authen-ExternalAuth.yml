@@ -6,7 +6,7 @@ advisories:
   - CVE-2017-5361
   description: |
     Timing sidechannel vulnerability in password checking.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.27'
   github_security_advisory:
   - GHSA-qpcq-vgjf-37f6

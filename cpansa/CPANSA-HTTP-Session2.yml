@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     HTTP::Session2 1.10 does not validate session id, this causes RCE depending on the session store you use.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.10'
   github_security_advisory: []
   id: CPANSA-HTTP-Session2-2018-01

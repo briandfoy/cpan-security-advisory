@@ -6,7 +6,7 @@ advisories:
   - CVE-2023-52431
   description: |
     When not using signed cookies, it was possible to bypass XSRFBlock by POSTing an empty form value and an empty cookie
-  fixed_versions: 
+  fixed_versions:
   - '>=0.0.19'
   github_security_advisory:
   - GHSA-895f-2fwm-hcv8

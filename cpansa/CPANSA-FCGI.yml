@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-2766
   description: |
     Leaking information across requests when using the deprecated and undocumented old FCGI interface.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.74'
   github_security_advisory:
   - GHSA-57h3-ccpr-f6f8

@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Possibility of denial-of-service attack.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.52'
   github_security_advisory: []
   id: CPANSA-HTML-Perlinfo-2008-01

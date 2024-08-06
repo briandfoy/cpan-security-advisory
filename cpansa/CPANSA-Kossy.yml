@@ -6,7 +6,7 @@ advisories:
   - CVE-2021-47157
   description: |
     Flaw in defense from JSON hijacking.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.60'
   github_security_advisory: []
   id: CPANSA-Kossy-2021-01

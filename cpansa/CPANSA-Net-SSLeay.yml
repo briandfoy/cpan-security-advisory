@@ -6,7 +6,7 @@ advisories:
   - CVE-2005-0106
   description: |
     SSLeay.pm in libnet-ssleay-perl before 1.25 uses the /tmp/entropy file for entropy if a source is not set in the EGD_PATH variable, which allows local users to reduce the cryptographic strength of certain operations by modifying the file.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.25'
   github_security_advisory:
   - GHSA-c8r4-w8p2-gf3q

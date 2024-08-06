@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     There was a potential security hole when outputting entities with recommended filenames.
-  fixed_versions: 
+  fixed_versions:
   - '>=4.109'
   github_security_advisory: []
   id: CPANSA-MIME-tools-1998-01

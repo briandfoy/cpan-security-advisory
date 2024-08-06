@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     X-Real-IP, X-Forwarded-Host and X-Remote-User headers were trusted and used in Kelp::Request
-  fixed_versions: 
+  fixed_versions:
   - '>=0.9001'
   github_security_advisory: []
   id: CPANSA-Kelp-2014-01

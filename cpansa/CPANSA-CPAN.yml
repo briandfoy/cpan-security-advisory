@@ -6,7 +6,7 @@ advisories:
   - CVE-2023-31484
   description: |
     The verify_SSL flag is missing from HTTP::Tiny, and allows a network attacker to MITM the connection if it is used by the CPAN client
-  fixed_versions: 
+  fixed_versions:
   - '>=2.35'
   github_security_advisory:
   - GHSA-5v8j-jfmm-6x86
@@ -24,7 +24,7 @@ advisories:
   cves: []
   description: |
     Archive::Tar preserves permissions in the tarball; extracted file permissions will be set from users umask instead.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.93'
   github_security_advisory: []
   id: CPANSA-CPAN-2009-01
@@ -37,7 +37,7 @@ advisories:
   cves:
   - CVE-2020-16156
   description: CPAN 2.28 allows Signature Verification Bypass.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.29'
   github_security_advisory:
   - GHSA-mx9v-6qg3-92rp

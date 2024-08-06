@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     A specially-named file may lead to HTML injection attacks.
-  fixed_versions: 
+  fixed_versions:
   - '>3.1.2'
   github_security_advisory: []
   id: CPANSA-Graphics-ColorNames-2010-02

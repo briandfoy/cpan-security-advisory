@@ -11,7 +11,7 @@ advisories:
   cves: []
   description: |
     Overflow during processing of ill-formed UTF-8 strings.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.0225'
   github_security_advisory: []
   id: CPANSA-Cpanel-JSON-XS-2016-02
@@ -25,7 +25,7 @@ advisories:
   cves: []
   description: |
     Possible overflows in av and hv length types.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.0218'
   github_security_advisory: []
   id: CPANSA-Cpanel-JSON-XS-2016-01
@@ -39,7 +39,7 @@ advisories:
   - CVE-2022-48623
   description: |
     Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
-  fixed_versions: 
+  fixed_versions:
   - '>=4.033'
   github_security_advisory:
   - GHSA-44qr-8pf6-6q33

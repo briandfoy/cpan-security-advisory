@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     A security bug allowed people to bypass the AllowDownload setting.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.15'
   github_security_advisory: []
   id: CPANSA-Apache-MP3-2001-01

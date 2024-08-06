@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Need SafeLoad and SafeDump analog to python
-  fixed_versions: 
+  fixed_versions:
   - '>=0.69'
   github_security_advisory: []
   id: CPANSA-YAML-LibYAML-2016-01
@@ -19,7 +19,7 @@ advisories:
   - CVE-2014-9130
   description: |
     scanner.c in LibYAML 0.1.5 and 0.1.6, as used in the YAML-LibYAML (aka YAML-XS) module for Perl, allows context-dependent attackers to cause a denial of service (assertion failure and crash) via vectors involving line-wrapping.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.54'
   github_security_advisory:
   - GHSA-wrq2-fvvw-grpm
@@ -64,7 +64,7 @@ advisories:
   - CVE-2012-1152
   description: |
     Multiple format string vulnerabilities in the error reporting functionality in the YAML::LibYAML (aka YAML-LibYAML and perl-YAML-LibYAML) module 0.38 for Perl allow remote attackers to cause a denial of service (process crash) via format string specifiers in a (1) YAML stream to the Load function, (2) YAML node to the load_node function, (3) YAML mapping to the load_mapping function, or (4) YAML sequence to the load_sequence function.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.57'
   github_security_advisory:
   - GHSA-3h7q-h379-g658

@@ -6,7 +6,7 @@ advisories:
   - CVE-2010-4524
   description: |
     Improper escaping of certain HTML sequences (XSS).
-  fixed_versions: 
+  fixed_versions:
   - '>=2.6.17'
   github_security_advisory:
   - GHSA-r98c-rm5p-j4fw
@@ -20,7 +20,7 @@ advisories:
   - CVE-2010-1677
   description: |
     DoS when processing html messages with deep tag nesting.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.6.17'
   github_security_advisory:
   - GHSA-7jx8-cpc3-f4pq

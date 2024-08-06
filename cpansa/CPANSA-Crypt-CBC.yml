@@ -6,7 +6,7 @@ advisories:
   - CVE-2006-0898
   description: |
     Crypt::CBC Perl module 2.16 and earlier, when running in RandomIV mode, uses an initialization vector (IV) of 8 bytes, which results in weaker encryption when used with a cipher that requires a larger block size than 8 bytes, such as Rijndael.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.17'
   github_security_advisory:
   - GHSA-qpjg-v8f6-cw7j

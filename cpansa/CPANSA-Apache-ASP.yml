@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     A bug would allow a malicious user possible writing of files in the same directory as the source.asp script.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.95'
   github_security_advisory: []
   id: CPANSA-Apache-ASP-2000-01

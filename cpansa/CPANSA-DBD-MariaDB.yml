@@ -6,7 +6,7 @@ advisories:
   - CVE-2018-2767
   description: |
     SSL problems of MySQL and MariaDB clients.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.00'
   github_security_advisory:
   - GHSA-qhg6-x5p3-8653
@@ -20,7 +20,7 @@ advisories:
   - CVE-2017-10788
   description: |
     Use-after-free after calling mysql_stmt_close().
-  fixed_versions: 
+  fixed_versions:
   - '>=1.00'
   github_security_advisory:
   - GHSA-hx52-v9vv-vhp2
@@ -33,7 +33,7 @@ advisories:
   cves:
   - CVE-2017-3302
   description: "Leaking dangling pointers.\n"
-  fixed_versions: 
+  fixed_versions:
   - '>=1.00'
   github_security_advisory:
   - GHSA-77pr-jpcv-9w4v

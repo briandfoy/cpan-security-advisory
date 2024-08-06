@@ -6,7 +6,7 @@ advisories:
   - CVE-2015-7686
   description: |
     Insecure dependency on Email::Address.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.3.3'
   github_security_advisory:
   - GHSA-24jp-cwv2-qjwh

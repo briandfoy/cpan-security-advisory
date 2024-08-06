@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Use of sysread treats any :encoding(...) as effectively :utf8.
-  fixed_versions: 
+  fixed_versions:
   - '>=9999.26'
   github_security_advisory: []
   id: CPANSA-File-Slurp-2013-01

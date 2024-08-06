@@ -4,7 +4,7 @@ advisories:
   - <1.05_03
   cves: []
   description: "find_link() uses eval().\n"
-  fixed_versions: 
+  fixed_versions:
   - '>=1.05_03'
   github_security_advisory: []
   id: CPANSA-WWW-Mechanize-2004-01

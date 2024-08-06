@@ -4,7 +4,7 @@ advisories:
   - <0.25
   cves: []
   description: "Allowed file schema\n"
-  fixed_versions: 
+  fixed_versions:
   - '>=0.25'
   github_security_advisory: []
   id: CPANSA-Moxy-2008-01

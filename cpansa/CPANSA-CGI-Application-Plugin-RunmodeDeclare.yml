@@ -4,7 +4,7 @@ advisories:
   - <0.03
   cves: []
   description: "Wrong order of arguments.\n"
-  fixed_versions: 
+  fixed_versions:
   - '>=0.03'
   github_security_advisory: []
   id: CPANSA-CGI-Application-Plugin-RunmodeDeclare-2008-01

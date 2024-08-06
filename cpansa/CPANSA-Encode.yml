@@ -6,7 +6,7 @@ advisories:
   - CVE-2016-1238
   description: |
     Loading optional modules from . (current directory).
-  fixed_versions: 
+  fixed_versions:
   - '>=2.85'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
@@ -22,7 +22,7 @@ advisories:
   - CVE-2021-36770
   description: |
     Encode.pm, as distributed in Perl through 5.34.0, allows local users to gain privileges via a Trojan horse Encode::ConfigLocal library (in the current working directory) that preempts dynamic module loading. Exploitation requires an unusual configuration, and certain 2021 versions of Encode.pm (3.05 through 3.11). This issue occurs because the || operator evaluates @INC in a scalar context, and thus @INC has only an integer value.
-  fixed_versions: 
+  fixed_versions:
   - '>3.11'
   github_security_advisory:
   - GHSA-3gfh-9hwx-r3vr
@@ -43,7 +43,7 @@ advisories:
   - CVE-2011-2939
   description: |
     Off-by-one error in the decode_xs function in Unicode/Unicode.xs in the Encode module before 2.44, as used in Perl before 5.15.6, might allow context-dependent attackers to cause a denial of service (memory corruption) via a crafted Unicode string, which triggers a heap-based buffer overflow.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.44'
   github_security_advisory:
   - GHSA-76hr-qp66-cq6j

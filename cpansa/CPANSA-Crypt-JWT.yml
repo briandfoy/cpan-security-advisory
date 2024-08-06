@@ -6,7 +6,7 @@ advisories:
   - CVE-2019-1010263
   description: |
     Perl Crypt::JWT prior to 0.023 is affected by: Incorrect Access Control. The impact is: allow attackers to bypass authentication by providing a token by crafting with hmac(). The component is: JWT.pm, line 614. The attack vector is: network connectivity. The fixed version is: after commit b98a59b42ded9f9e51b2560410106207c2152d6c.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.023'
   github_security_advisory:
   - GHSA-54vx-xvq8-jh85
@@ -22,7 +22,7 @@ advisories:
   - CVE-2019-1010161
   description: |
     perl-CRYPT-JWT 0.022 and earlier is affected by: Incorrect Access Control. The impact is: bypass authentication. The component is: JWT.pm for JWT security token, line 614 in _decode_jws(). The attack vector is: network connectivity(crafting user-controlled input to bypass authentication). The fixed version is: 0.023.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.022'
   github_security_advisory:
   - GHSA-75ff-mxv3-9xhw

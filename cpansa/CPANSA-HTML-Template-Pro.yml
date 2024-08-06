@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-4616
   description: |
     Cross-site scripting (XSS) vulnerability in the HTML-Template-Pro module before 0.9507 for Perl allows remote attackers to inject arbitrary web script or HTML via template parameters, related to improper handling of > (greater than) and < (less than) characters.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.9507'
   github_security_advisory:
   - GHSA-4w9w-9h3m-mg43

@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     A potential timing attack when checking signatures.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.12'
   github_security_advisory: []
   id: CPANSA-Net-OpenID-Consumer-2010-01
@@ -19,7 +19,7 @@ advisories:
   cves: []
   description: |
     Incorrect comparison of system openssl status when doing DSA checks.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.06'
   github_security_advisory: []
   id: CPANSA-Net-OpenID-Consumer-2015-05

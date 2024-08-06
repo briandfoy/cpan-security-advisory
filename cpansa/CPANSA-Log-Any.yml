@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     The WithStackTrace proxy may expose sensitive information
-  fixed_versions: 
+  fixed_versions:
   - 1.716
   github_security_advisory: []
   id: CPANSA-Log-Any-2023-001

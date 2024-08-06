@@ -12,7 +12,7 @@ advisories:
     returned to perl code by readlink() and readlinkat(). At the very least,
     this causes failures in any downstream code that attempts to access
     whatever filename (plus the erroneous garbage) was linked to.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.04'
   github_security_advisory: []
   id: CPANSA-POSIX-2008-001
@@ -25,7 +25,7 @@ advisories:
   cves: []
   description: >
     Fixed potential env buffer overflow in _execve50c()
-  fixed_versions: 
+  fixed_versions:
   - '>=0.24'
   github_security_advisory: []
   id: CPANSA-POSIX-2008-002

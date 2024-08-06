@@ -6,7 +6,7 @@ advisories:
   - CVE-2009-0129
   description: |
     Missing error check in do_verify, which might allow remote attackers to bypass validation of the certificate chain via a malformed SSL/TLS signature.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.14'
   github_security_advisory:
   - GHSA-cvwp-gwp2-6xqh

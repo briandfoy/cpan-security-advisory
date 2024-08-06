@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Arbitrary Perl methods could be called via HTTP like RPC.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.17'
   github_security_advisory: []
   id: CPANSA-Search-OpenSearch-Server-2012-01

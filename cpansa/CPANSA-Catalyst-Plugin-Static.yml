@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Serving files outside of $config->{root} directory.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.10'
   github_security_advisory: []
   id: CPANSA-Catalyst-Plugin-Static-2005-01

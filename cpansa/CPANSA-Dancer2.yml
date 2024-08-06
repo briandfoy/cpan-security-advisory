@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     There is a potential RCE with regards to Storable. We have added session ID validation to the session engine so that session backends based on Storable can reject malformed session IDs that may lead to exploitation of the RCE.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.206000'
   github_security_advisory: []
   id: CPANSA-Dancer2-2018-01

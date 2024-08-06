@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     An out-of bound sharedref or stringref index could cause an out of bounds access - might be exploitable. A decoding error during indefinite array or hash decoding could cause an endless loop.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.7'
   github_security_advisory: []
   id: CPANSA-CBOR-XS-2017-01

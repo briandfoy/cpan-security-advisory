@@ -6,7 +6,7 @@ advisories:
   - CVE-2013-1437
   description: |
     Eval injection vulnerability in the Module-Metadata module before 1.000015 for Perl allows remote attackers to execute arbitrary Perl code via the $Version value.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.000015'
   github_security_advisory:
   - GHSA-86v9-w7h5-78qj

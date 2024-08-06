@@ -6,7 +6,7 @@ advisories:
   - CVE-2021-29662
   description: |
     The Data::Validate::IP module through 0.29 for Perl does not properly consider extraneous zero characters at the beginning of an IP address string, which (in some situations) allows attackers to bypass access control that is based on IP addresses.
-  fixed_versions: 
+  fixed_versions:
   - '>0.29'
   github_security_advisory:
   - GHSA-r243-xrwf-w499

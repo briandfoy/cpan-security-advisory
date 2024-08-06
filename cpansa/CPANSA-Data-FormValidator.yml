@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-2201
   description: |
     The Data::FormValidator module 4.66 and earlier for Perl, when untaint_all_constraints is enabled, does not properly preserve the taint attribute of data, which might allow remote attackers to bypass the taint protection mechanism via form input.
-  fixed_versions: 
+  fixed_versions:
   - '>4.66'
   github_security_advisory:
   - GHSA-348p-57x3-vxc3

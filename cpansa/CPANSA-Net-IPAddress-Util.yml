@@ -9,7 +9,7 @@ advisories:
     properly consider extraneous zero characters in an IP address string,
     which (in some situations) allows attackers to bypass access control
     that is based on IP addresses.
-  fixed_versions: 
+  fixed_versions:
   - '>=5.000'
   github_security_advisory: []
   id: CPANSA-Net-IPAddress-Util-2021-47156

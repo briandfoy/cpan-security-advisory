@@ -7,7 +7,7 @@ advisories:
   cves: []
   description: |
     INADDR_ANY can be your external ip, IPC::Run should only listen on localhost.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.90'
   github_security_advisory: []
   id: CPANSA-IPC-Run-2009-01

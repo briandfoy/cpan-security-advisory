@@ -6,7 +6,7 @@ advisories:
   - CVE-2016-1238
   description: |
     Imager would search the default current directory entry in @INC when searching for file format support modules.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.006'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
@@ -40,7 +40,7 @@ advisories:
   - CVE-2008-1928
   description: |
     Buffer overflow in Imager 0.42 through 0.63 allows attackers to cause a denial of service (crash) via an image based fill in which the number of input channels is different from the number of output channels.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.64'
   github_security_advisory:
   - GHSA-27p3-v3ff-v3x4
@@ -67,7 +67,7 @@ advisories:
   - CVE-2007-2459
   description: |
     Heap-based buffer overflow in the BMP reader (bmp.c) in Imager perl module (libimager-perl) 0.45 through 0.56 allows remote attackers to cause a denial of service (application crash) and possibly execute arbitrary code via crafted 8-bit/pixel compressed BMP files.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.57'
   github_security_advisory:
   - GHSA-v92m-h6q5-w9gg
@@ -95,7 +95,7 @@ advisories:
   cves: []
   description: |
     When drawing on an image with an alpha channel where the source minimum is greater than zero, Imager would read from beyond the end of a malloc() allocated buffer.  In rare circumstances this could lead to some of the source image not being written to the target image, or possibly to a segmentation fault.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.98'
   github_security_advisory: []
   id: CPANSA-Imager-2014-01

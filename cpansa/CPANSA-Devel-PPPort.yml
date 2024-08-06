@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Function croak() takes first parameter printf-like format. Arbitrary string from the variable $@ can cause perl crash when contains one or more '%'.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.41'
   github_security_advisory: []
   id: CPANSA-Devel-PPPort-2017-01

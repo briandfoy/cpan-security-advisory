@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Non-word characters are allowed in runmode name.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.04'
   github_security_advisory: []
   id: CPANSA-CGI-Application-Plugin-AutoRunmode-2005-01

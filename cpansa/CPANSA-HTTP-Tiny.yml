@@ -8,7 +8,7 @@ advisories:
     HTTP::Tiny v0.082, a Perl core module since v5.13.9 and available standalone on CPAN, does not verify TLS certs by default. Users must opt-in with the verify_SSL=>1 flag to verify certs when using HTTPS.
 
     Resulting in a CWE-1188: Insecure Default Initialization of Resource weakness.
-  fixed_versions: 
+  fixed_versions:
   - ">=0.083"
   github_security_advisory:
   - GHSA-g56r-phrf-6pc4
@@ -32,7 +32,7 @@ advisories:
   - CVE-2016-1238
   description: |
     Loading modules from . (current directory).
-  fixed_versions: 
+  fixed_versions:
   - '>=0.059'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
@@ -46,7 +46,7 @@ advisories:
   cves: []
   description: |
     Temporary file creating during mirror()  not opened exclusively.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.039'
   github_security_advisory: []
   id: CPANSA-HTTP-Tiny-2013-01

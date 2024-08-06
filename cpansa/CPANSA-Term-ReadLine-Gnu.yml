@@ -11,7 +11,7 @@ advisories:
   external_vulnerability:
     distributed_version: <=6.3
     name: readline
-  fixed_versions: 
+  fixed_versions:
   - '>=1.27'
   github_security_advisory:
   - GHSA-hq65-wq6g-7mcc

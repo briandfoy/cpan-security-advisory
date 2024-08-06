@@ -6,7 +6,7 @@ advisories:
   - CVE-2011-4114
   description: |
     PAR packed files are extracted to unsafe and predictable temporary directories.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.011'
   github_security_advisory:
   - GHSA-gxwf-286g-rc8g

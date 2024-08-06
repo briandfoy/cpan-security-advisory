@@ -6,7 +6,7 @@ advisories:
   - CVE-2022-23935
   description: |
     lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file =~ /\|$/ check, leading to command injection.
-  fixed_versions: 
+  fixed_versions:
   - '>12.38'
   github_security_advisory:
   - GHSA-jx53-3cxj-386g

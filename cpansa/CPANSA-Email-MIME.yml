@@ -9,7 +9,7 @@ advisories:
     before version 1.954, which can cause denial of service when parsing
     multipart MIME messages. The patch set (from 2020 and 2024) limits
     excessive depth and the total number of parts.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.954'
   github_security_advisory: []
   id: CPANSA-Email-MIME-2024-4140

@@ -6,7 +6,7 @@ advisories:
   - CVE-2016-1238
   description: |
     Does not properly remove . (period) characters from the end of the includes directory array, which might allow local users to gain privileges via a Trojan horse module under the current working directory.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.65'
   github_security_advisory:
   - GHSA-hm5v-6984-hfqp
@@ -20,7 +20,7 @@ advisories:
   - CVE-2015-8607
   description: |
     Does not properly preserve the taint attribute of data, which might allow context-dependent attackers to bypass the taint protection mechanism via a crafted string.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.62'
   github_security_advisory:
   - GHSA-53pj-vpxm-m333

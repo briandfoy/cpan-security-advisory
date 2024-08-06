@@ -6,7 +6,7 @@ advisories:
   - CVE-2012-5572
   description: |
     CRLF injection vulnerability in the cookie method allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via a cookie name.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.3114'
   github_security_advisory:
   - GHSA-cqwv-qc24-9rvm
@@ -21,7 +21,7 @@ advisories:
   - CVE-2011-1589
   description: |
     Directory traversal vulnerability (Mojolicious report, but Dancer was vulnerable as well).
-  fixed_versions: 
+  fixed_versions:
   - '>=1.3051'
   github_security_advisory:
   - GHSA-vrwf-2wgx-949w

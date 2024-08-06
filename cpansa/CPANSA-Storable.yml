@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Malcrafted storable files or buffers.
-  fixed_versions: 
+  fixed_versions:
   - '>=3.05'
   github_security_advisory: []
   id: CPANSA-Storable-2017-01

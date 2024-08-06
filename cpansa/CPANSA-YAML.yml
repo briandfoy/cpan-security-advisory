@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Loading globs is easily exploitable.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.28'
   github_security_advisory: []
   id: CPANSA-YAML-2019-01
@@ -18,7 +18,7 @@ advisories:
   cves: []
   description: |
     YAML loader can run DESTROY method of object created with perl/* tag.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.25'
   github_security_advisory: []
   id: CPANSA-YAML-2017-01

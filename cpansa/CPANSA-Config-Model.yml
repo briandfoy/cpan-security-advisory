@@ -6,7 +6,7 @@ advisories:
   - CVE-2017-0373
   description: |
     The gen_class_pod implementation in lib/Config/Model/Utils/GenClassPod.pm in Config-Model (aka libconfig-model-perl) before 2.102 has a dangerous "use lib" line, which allows remote attackers to have an unspecified impact via a crafted Debian package file.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.102'
   github_security_advisory:
   - GHSA-pcw9-xjj5-7cp5
@@ -21,7 +21,7 @@ advisories:
   - CVE-2017-0374
   description: |
     Loads models from a local directory, making it possible to substitute the model.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.102'
   github_security_advisory:
   - GHSA-88hg-rvfq-4jp9
@@ -35,7 +35,7 @@ advisories:
   cves: []
   description: |
     YAML or YAML::XS can be loaded automatically making it possible to run arbitrary code loading a specially crafted YAML file.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.102'
   github_security_advisory: []
   id: CPANSA-Config-Model-2017-01

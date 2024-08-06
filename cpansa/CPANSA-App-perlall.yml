@@ -6,7 +6,7 @@ advisories:
   - CVE-2013-1667
   description: |
     The rehash mechanism in Perl 5.8.2 through 5.16.x allows context-dependent attackers to cause a denial of service (memory consumption and crash) via a crafted hash key.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.33'
   github_security_advisory:
   - GHSA-wv37-679q-qgxw

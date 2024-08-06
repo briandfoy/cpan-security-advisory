@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     When running on Apache with thread support setMacros and setGroups were not launched with the good datas.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.87'
   github_security_advisory: []
   id: CPANSA-Lemonldap-NG-Portal-2009-01

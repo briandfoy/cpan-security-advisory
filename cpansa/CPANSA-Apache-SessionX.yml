@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Problem in session_id validation, which allows creation of session with invalid ids.
-  fixed_versions: 
+  fixed_versions:
   - '>=2.01'
   github_security_advisory: []
   id: CPANSA-Apache-SessionX-2005-01

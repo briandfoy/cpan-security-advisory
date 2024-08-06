@@ -6,7 +6,7 @@ advisories:
   - CVE-2006-4484
   description: |
     Buffer overflow in the LWZReadByte_ function in the GD extension in allows remote attackers to have an unknown impact via a GIF file with input_code_size greater than MAX_LWZ_BITS, which triggers an overflow when initializing the table array.
-  fixed_versions: 
+  fixed_versions:
   - '>=804.029'
   github_security_advisory:
   - GHSA-6xv8-25r4-5mrf

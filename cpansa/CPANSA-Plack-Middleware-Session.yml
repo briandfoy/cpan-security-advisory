@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Plack::Middleware::Session::Cookie 0.21 has a security vulnerability where it allows an attacker to execute arbitrary code on the server, when the middleware is enabled without a secret.
-  fixed_versions: 
+  fixed_versions:
   - '>0.21'
   github_security_advisory: []
   id: CPANSA-Plack-Middleware-Session-2014-01

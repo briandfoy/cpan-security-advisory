@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Incorrect password check binds to the unauthenticated user.
-  fixed_versions: 
+  fixed_versions:
   - '>=1.013'
   github_security_advisory: []
   id: CPANSA-Catalyst-Authentication-Store-LDAP-2012-01

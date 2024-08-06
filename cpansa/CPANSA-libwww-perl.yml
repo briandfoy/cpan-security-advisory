@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     LWP::Protocol::file can open existent file from file:// scheme. However, current version of LWP uses open FILEHANDLE,EXPR and it has ability to execute arbitrary command
-  fixed_versions: 
+  fixed_versions:
   - '>=6.27'
   github_security_advisory: []
   id: CPANSA-libwww-perl-2017-01
@@ -22,7 +22,7 @@ advisories:
   - CVE-2011-0633
   description: |
     The Net::HTTPS module in libwww-perl (LWP) before 6.00, as used in WWW::Mechanize, LWP::UserAgent, and other products, when running in environments that do not set the If-SSL-Cert-Subject header, does not enable full validation of SSL certificates by default, which allows remote attackers to spoof servers via man-in-the-middle (MITM) attacks involving hostnames that are not properly validated.
-  fixed_versions: 
+  fixed_versions:
   - '>=6.00'
   github_security_advisory:
   - GHSA-3fhh-g5rg-6jpm
@@ -37,7 +37,7 @@ advisories:
   - CVE-2010-2253
   description: |
     lwp-download in libwww-perl before 5.835 does not reject downloads to filenames that begin with a . (dot) character, which allows remote servers to create or overwrite files via (1) a 3xx redirect to a URL with a crafted filename or (2) a Content-Disposition header that suggests a crafted filename, and possibly execute arbitrary code as a consequence of writing to a dotfile in a home directory.
-  fixed_versions: 
+  fixed_versions:
   - '>=5.835'
   github_security_advisory:
   - GHSA-mcrm-9w8r-c6w8
@@ -51,7 +51,7 @@ advisories:
   cves: []
   description: |
     If LWP::UserAgent::env_proxy is called in a CGI environment, the case-insensitivity when looking for "http_proxy" permits "HTTP_PROXY" to be found, but this can be trivially set by the web client using the "Proxy:" header.
-  fixed_versions: 
+  fixed_versions:
   - '>=5.51'
   github_security_advisory: []
   id: CPANSA-libwww-perl-2001-01
@@ -61,7 +61,7 @@ advisories:
   cves: []
   description: |
     There is a security hole with the implementation of getBasicCredentials().
-  fixed_versions: 
+  fixed_versions:
   - '>=0.04'
   github_security_advisory: []
   id: CPANSA-libwww-perl-1995-01

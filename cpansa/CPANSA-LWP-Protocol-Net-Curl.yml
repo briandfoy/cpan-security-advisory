@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Misconfiguration with libcurl v7.28.1 causes a HTTPS validation issues.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.009'
   github_security_advisory: []
   id: CPANSA-LWP-Protocol-Net-Curl-2012-01

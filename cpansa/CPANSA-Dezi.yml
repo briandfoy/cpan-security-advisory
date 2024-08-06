@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Bypassing authentication on the /index URL app with non-idempotent requests to /search URL.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.002002'
   github_security_advisory: []
   id: CPANSA-Dezi-2012-01

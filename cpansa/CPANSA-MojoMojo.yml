@@ -5,7 +5,7 @@ advisories:
   cves: []
   description: |
     Anonymous users can delete attachments.
-  fixed_versions: 
+  fixed_versions:
   - '>=0.999033'
   github_security_advisory: []
   id: CPANSA-MojoMojo-2009-01
