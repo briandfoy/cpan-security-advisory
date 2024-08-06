@@ -1,5 +1,5 @@
 my @classes = qw(
-	CPAN::Audit::DB
+	CPANSA::DB
 	);
 
 use Test::More;

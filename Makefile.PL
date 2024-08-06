@@ -1,10 +1,10 @@
-package CPAN::Audit::DB;
+package CPANSA::DB;
 use strict;
 use warnings;
 
 =encoding utf8
 
-=head1 The build file for CPAN::Audit::DB
+=head1 The build file for CPANSA::DB
 
 This build file is a modulino; it works as both a build script and
 a module.

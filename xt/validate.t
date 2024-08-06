@@ -7,7 +7,7 @@ use Mojo::Util;
 use YAML::XS;
 
 
-package CPAN::Audit::DB::Type::YYYYMMDD {
+package CPANSA::DB::Type::YYYYMMDD {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
@@ -25,7 +25,7 @@ package CPAN::Audit::DB::Type::YYYYMMDD {
 		}
 	}
 
-package CPAN::Audit::DB::Type::GHSA {
+package CPANSA::DB::Type::GHSA {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
@@ -42,7 +42,7 @@ package CPAN::Audit::DB::Type::GHSA {
 		}
 	}
 
-package CPAN::Audit::DB::Type::CVE {
+package CPANSA::DB::Type::CVE {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
@@ -59,7 +59,7 @@ package CPAN::Audit::DB::Type::CVE {
 		}
 	}
 
-package CPAN::Audit::DB::Type::URL {
+package CPANSA::DB::Type::URL {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
@@ -86,7 +86,7 @@ package CPAN::Audit::DB::Type::URL {
 		}
 	}
 
-package CPAN::Audit::DB::Type::VCS_URL {
+package CPANSA::DB::Type::VCS_URL {
 	use parent 'Data::Rx::CommonType::EasyNew';
 
 	sub type_uri {
@@ -117,11 +117,11 @@ my @files = glob("cpansa/*.yml");
 
 my $rx = Data::Rx->new({
   type_plugins => [qw(
-    CPAN::Audit::DB::Type::YYYYMMDD
-    CPAN::Audit::DB::Type::GHSA
-    CPAN::Audit::DB::Type::CVE
-    CPAN::Audit::DB::Type::URL
-	CPAN::Audit::DB::Type::VCS_URL
+    CPANSA::DB::Type::YYYYMMDD
+    CPANSA::DB::Type::GHSA
+    CPANSA::DB::Type::CVE
+    CPANSA::DB::Type::URL
+	CPANSA::DB::Type::VCS_URL
   )],	});
 
 
@@ -130,7 +130,7 @@ my $advisories = {
 	contents => {
 		type => '//rec',
 		required => {
-			affected_versions        => { type => '//any', of => [ '//str', '//nil' ] },
+			affected_versions        => { type => '//arr', contents => { type => '//any', of => [ '//str', '//nil' ] } },
 			cves                     => { type => '//arr', contents => { type => "tag:example.com,EXAMPLE:rx/cve" }, },
 			description              => { type => '//str' },
 			fixed_versions           => { type => '//any', of => [ '//str', '//nil' ] },

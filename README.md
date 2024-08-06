@@ -33,7 +33,7 @@ To run the various programs, you'll need some Perl modules. Install
 [cpanminus](https://github.com/miyagawa/cpanminus/tree/devel/App-cpanminus)
 if you don't already have it:
 
-	$ make setup
+	$ make -f Makefile.repo setup
 
 ## Finding a record
 
@@ -150,7 +150,7 @@ For command line checks take a look at [CPAN-Audit](https://metacpan.org/release
 
     $ cpan-audit module Catalyst '>7.0'
 
-To see your new report, you'll have to regenerate the `CPAN::Audit::DB` database since
+To see your new report, you'll have to regenerate the `CPANSA::DB` database since
 `CPAN::Audit` does everything locally. That happens in the [cpan-audit repo](https://github.com/briandfoy/cpan-audit),
 where this repo is a submodule.
 

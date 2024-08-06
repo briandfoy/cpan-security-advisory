@@ -31,3 +31,6 @@ external_reports/
 cpanfile
 cpanfile-feed
 download_all.sh
+NO_CVES
+cpan-audit-db/
+CONTRIBUTING.md

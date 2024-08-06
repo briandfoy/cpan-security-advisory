@@ -19,15 +19,15 @@ use subs qw(config message);
 
 =head1 NAME
 
-util/generate - create the data for lib/CPAN/Audit/DB.pm
+util/generate - create the data for lib/CPANSA/DB.pm
 
 =head1 SYNOPSIS
 
-	# usual operation, outputs to lib/CPAN/Audit/DB.pm
-	# gets data from cpan-security-advisory/cpansa/*.yml
+	# usual operation, outputs to lib/CPANSA/DB.pm
+	# gets data from .../cpansa/*.yml
 	% perl util/generate
 
-	# usual operation, outputs to lib/CPAN/Audit/DB.pm
+	# usual operation, outputs to lib/CPANSA/DB.pm
 	# gets data from other_source/*.yml
 	% perl util/generate other_source/*.yml
 
@@ -48,7 +48,9 @@ util/generate - create the data for lib/CPAN/Audit/DB.pm
 =head1 DESCRIPTION
 
 This program chews through the CPAN security advisory reports and
-makes the L<CPAN::Audit::DB> module.
+makes the L<CPANSA::DB> module. This is the same thing that
+L<CPAN::Audit::DB> used to be when it was in the L<CPAN::Audit>
+distribution.
 
 =head1 AUTHOR
 
@@ -58,7 +60,7 @@ Maintained by: brian d foy (C<briandfoy@pobox.com>)
 
 =head1 LICENSE
 
-L<CPAN::Audit> is dual-licensed under the GPL or the Artistic License.
+L<CPANSA::DB> is dual-licensed under the GPL or the Artistic License.
 See the included F<LICENSE> file for details.
 
 =cut
@@ -121,7 +123,7 @@ sub all_releases {
 }
 
 sub default_file () {
-	state $file = catfile(qw(lib CPAN Audit DB.pm));
+	state $file = catfile(qw(lib CPANSA DB.pm));
 	$file;
 }
 
@@ -154,7 +156,7 @@ sub get_file_list ( $args ) {
 }
 
 sub get_previous_date_serial ( $file ) {
-	open my $fh, '<:encoding(UTF-8)', $file or croak( "Could not read <$file>: $!" );
+	open my $fh, '<:encoding(UTF-8)', $file or return (-1, 0);
 	while( <$fh> ) {
 		next unless /VERSION\s*=\s*'(\d{8})\.(\d{3})'/;
 		return ( $1, $2 );
@@ -381,7 +383,7 @@ sub stringify_data ( $db ) {
 
 		=head1 NAME
 
-		CPAN::Audit::DB - the CPAN Security Advisory data as a Perl data structure for CPAN::Audit
+		CPANSA::DB - the CPAN Security Advisory data as a Perl data structure, mostly for CPAN::Audit
 
 		=head1 SYNOPSIS
 
@@ -389,7 +391,7 @@ sub stringify_data ( $db ) {
 
 		=cut
 
-		package CPAN::Audit::DB;
+		package CPANSA::DB;
 
 		use strict;
 		use warnings;

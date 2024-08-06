@@ -2,9 +2,12 @@
 
 =encoding utf8
 
-=head1 The CPAN::Audit::DB module
+=head1 The CPANSA::DB module
 
-This is the I<README> for the L<CPAN::Audit::DB> Perl module.
+This is the I<README> for the L<CPANSA::DB> Perl module. This is the
+database that L<CPAN::Audit> uses to do its work. The module was
+previously known as C<CPAN::Audit::DB> but moved to its own repo and
+distribution so you can update the database seperately.
 
 You're probably looking at this because you don't know where else to
 find what you're looking for. Read this once and you might never have
@@ -12,19 +15,24 @@ to read one again for any Perl module.
 
 =head2 Documentation
 
-To read about L<CPAN::Audit::DB>, look at the embedded documentation
+This module is a data pack for other modules, such as L<CPAN::Audit>,
+that need access to the digested form of the CPAN Security Advisories
+database. There's not much you need to read, but you can look at the
+data structure.
+
+To read about L<CPANSA::DB>, look at the embedded documentation
 in the module itself. Inside the distribution, you can format it
 with L<perldoc|http://perldoc.perl.org/perldoc.html>:
 
-	% perldoc lib/CPAN/Audit/DB.pm
+	% perldoc lib/CPANSA/DB.pm
 
 If you have already installed the module, you can specify the module
 name instead of the file location:
 
-	% perldoc CPAN::Audit::DB
+	% perldoc CPANSA::DB
 
 You can read the documentation and inspect the meta data on
-L<MetaCPAN|http://www.metacpan.org/module/CPAN::Audit::DB>.
+L<MetaCPAN|http://www.metacpan.org/module/CPANSA::DB>.
 
 The standard module documentation has example uses in the SYNOPSIS
 section, but you can also look in the I<examples/> directory (if it's
@@ -35,8 +43,8 @@ there), or look at the test files in I<t/>.
 You can install this module with a CPAN client, which will resolve
 and install the dependencies:
 
-	% cpan CPAN::Audit::DB
-	% cpanm CPAN::Audit::DB
+	% cpan CPANSA::DB
+	% cpanm CPANSA::DB
 
 You can also install directly from the distribution directory, which
 will also install the dependencies:
