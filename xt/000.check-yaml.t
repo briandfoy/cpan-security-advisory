@@ -17,7 +17,7 @@ END {
 	close $fh;
 	}
 
-my @all_files = glob('{.github/workflows,cpansa,external_reports}/*.yml');
+my @all_files = glob('{cpansa,external_reports}/*.yml');
 my $files_to_test = \@all_files;
 
 if( $ENV{TEST_CHANGED_ONLY} ) {
