@@ -12,6 +12,7 @@ advisories:
     distributed_version: ~
     name: polyfill.io
   fixed_versions: ~
+  github_security_advisory: []
   id: CPANSA-Mojo-DOM-Role-Analyzer-2024-38526
   references:
   - https://github.com/mitmproxy/pdoc/pull/703

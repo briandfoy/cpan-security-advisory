@@ -1,6 +1,7 @@
 ---
 advisories:
-- affected_versions: <=0.01
+- affected_versions:
+  - '<=0.01'
   cves:
   - CVE-2024-38526
   description: >
@@ -12,6 +13,7 @@ advisories:
     distributed_version: ~
     name: polyfill.io
   fixed_versions: ~
+  github_security_advisory: []
   id: CPANSA-Mojolicious-Plugin-LazyImage-2024-38526
   references:
   - https://github.com/mitmproxy/pdoc/pull/703
@@ -27,3 +29,4 @@ latest_version: '0.01'
 metacpan: https://metacpan.org/pod/Mojolicious::Plugin::LazyImage
 repo: https://github.com/jhthorsen/mojolicious-plugin-lazyimage
 comment: This appears to have been removed from CPAN and GitHub
+cpansa_version: 2
