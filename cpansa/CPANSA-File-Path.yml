@@ -91,7 +91,8 @@
     - http://www.securityfocus.com/archive/1/500210/100/0/threaded
   reported: 2008-12-01
   severity: ~
-- affected_versions: ">=2.04,<2.07"
+- affected_versions:
+    - ">=2.04,<2.07"
   cves:
     - CVE-2008-2827
   description: >
