@@ -37,6 +37,7 @@
     - https://github.com/advisories/GHSA-44qr-8pf6-6q33
   affected_versions: "<4.033"
   fixed_versions: ">=4.033"
-  github_advisory_database: https://github.com/advisories/GHSA-44qr-8pf6-6q33
+  github_security_advisory:
+    - GHSA-44qr-8pf6-6q33
   cves:
     - CVE-2022-48623
