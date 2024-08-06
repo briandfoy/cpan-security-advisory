@@ -1,5 +1,6 @@
 ---
-- affected_versions: ">=4.20,<=4.38"
+- affected_versions:
+    - ">=4.20,<=4.38"
   cves:
     - CVE-2013-0209
   description: >

@@ -11,9 +11,12 @@
     - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
   cves:
     - CVE-2017-6512
-  affected_versions: "<2.13"
-  fixed_versions: ">=2.13"
-- affected_versions: "<=1.08"
+  affected_versions:
+    - "<2.13"
+  fixed_versions:
+    - ">=2.13"
+- affected_versions:
+    - "<=1.08"
   cves:
     - CVE-2008-5303
   description: >
@@ -118,7 +121,8 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/43308
   reported: 2008-06-23
   severity: ~
-- affected_versions: "<1.07"
+- affected_versions:
+    - "<1.07"
   cves:
     - CVE-2005-0448
   description: >
@@ -150,7 +154,8 @@
     - https://usn.ubuntu.com/94-1/
   reported: 2005-05-02
   severity: ~
-- affected_versions: ">=1.06,<=1.404"
+- affected_versions:
+    - ">=1.06,<=1.404"
   cves:
     - CVE-2004-0452
   description: >
