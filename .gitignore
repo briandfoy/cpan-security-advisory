@@ -3,3 +3,6 @@ t/.last_run
 perl-cve-atom.xml
 downloads
 generated_reports
+MYMETA.*
+Makefile
+*.bak
