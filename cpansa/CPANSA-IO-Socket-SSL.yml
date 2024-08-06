@@ -24,7 +24,9 @@
     - http://www.mandriva.com/security/advisories?name=MDVSA-2011:092
   reported: 2011-01-14
   severity: ~
-- affected_versions: ">=1.14,<=1.15"
+- affected_versions:
+    - ">=1.14"
+    - "<=1.25"
   cves:
     - CVE-2009-3024
   description: >
