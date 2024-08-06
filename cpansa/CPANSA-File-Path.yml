@@ -1,11 +1,13 @@
 ---
 advisories:
-- affected_versions: <2.13
+- affected_versions:
+  - '<2.13'
   cves:
   - CVE-2017-6512
   description: |
     Race condition in the rmtree and remove_tree functions allows attackers to set the mode on arbitrary files via vectors involving directory-permission loosening logic.
-  fixed_versions: '>=2.13'
+  fixed_versions:
+  - '>=2.13'
   github_security_advisory:
   - GHSA-wf3v-xjg6-86hx
   id: CPANSA-File-Path-2017-01
@@ -13,7 +15,8 @@ advisories:
   - https://metacpan.org/changes/distribution/File-Path
   - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
   reported: 2017-05-02
-- affected_versions: <=1.08
+- affected_versions:
+  - '<=1.08'
   cves:
   - CVE-2008-5303
   description: |
@@ -46,7 +49,9 @@ advisories:
   - http://www.securityfocus.com/archive/1/500210/100/0/threaded
   reported: 2008-12-01
   severity: ~
-- affected_versions: "=1.08,=2.07"
+- affected_versions:
+  - "=1.08"
+  - "=2.07"
   cves:
   - CVE-2008-5302
   description: |
@@ -80,7 +85,8 @@ advisories:
   - http://www.securityfocus.com/archive/1/500210/100/0/threaded
   reported: 2008-12-01
   severity: ~
-- affected_versions: '>=2.04,<2.07'
+- affected_versions:
+  - '>=2.04,<2.07'
   cves:
   - CVE-2008-2827
   description: |
@@ -103,7 +109,8 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/43308
   reported: 2008-06-23
   severity: ~
-- affected_versions: <1.07
+- affected_versions:
+  - '<1.07'
   cves:
   - CVE-2005-0448
   description: |
@@ -133,7 +140,8 @@ advisories:
   - https://usn.ubuntu.com/94-1/
   reported: 2005-05-02
   severity: ~
-- affected_versions: '>=1.06,<=1.404'
+- affected_versions:
+  - '>=1.06,<=1.404'
   cves:
   - CVE-2004-0452
   description: |

@@ -21,4 +21,3 @@ last_checked: 1708150864
 latest_version: 0.0.19
 metacpan: https://metacpan.org/pod/Plack::Middleware::XSRFBlock
 repo: git://github.com/chiselwright/plack-middleware-xsrfblock.git
-url: ~

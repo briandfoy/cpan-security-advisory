@@ -10,6 +10,7 @@ advisories:
   - GHSA-8v7w-j6g2-p6j2
   id: CPANSA-HTTP-Body-2013-4407
   references:
+  - https://www.openwall.com/lists/oss-security/2024/04/07/1
   - https://security-tracker.debian.org/tracker/CVE-2013-4407
   - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=721634
   reported: 2013-09-02

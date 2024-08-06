@@ -697,7 +697,9 @@ advisories:
   - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
   reported: 2018-03-17
   severity: high
-- affected_versions: "=1.55_06,<=1.55_03"
+- affected_versions:
+  - "=1.55_06"
+  - "<=1.55_03"
   cves:
   - CVE-2017-10989
   description: |

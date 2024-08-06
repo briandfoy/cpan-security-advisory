@@ -126,7 +126,8 @@ advisories:
   reported: 2014-10-07
   severity: high
 - affected_versions: <1.16
-  cves: []
+  cves:
+  - CVE-2011-1589
   description: |
     Directory traversal vulnerability in Path.pm in Mojolicious before 1.16 allows remote attackers to read arbitrary files via a %2f..%2f (encoded slash dot dot slash) in a URI.
   fixed_versions: ~
@@ -139,7 +140,7 @@ advisories:
   severity: critical
 - affected_versions: <1.12
   cves:
-  - CVE-2011-1589
+  - CVE-2011-1841
   description: |
     Mojolicious is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by link_to helper. A remote attacker could exploit this vulnerability using a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.
   fixed_versions: ~

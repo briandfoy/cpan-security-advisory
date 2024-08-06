@@ -1,6 +1,9 @@
 ---
 advisories:
-- affected_versions: "<0.90,=0.90_01,=0.90_02"
+- affected_versions:
+  - "<0.90"
+  - "=0.90_01"
+  - "=0.90_02"
   cves: []
   description: |
     INADDR_ANY can be your external ip, IPC::Run should only listen on localhost.
