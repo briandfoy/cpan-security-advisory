@@ -19,6 +19,7 @@
     - http://osvdb.org/86177
   reported: 2012-10-11
   severity: ~
+  darkpan: true
 - affected_versions: "=5.8.8.817"
   cves:
     - CVE-2006-2856
@@ -40,6 +41,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/26915
   reported: 2006-06-06
   severity: ~
+  darkpan: true
 - affected_versions: ~
   cves:
     - CVE-2004-2286
@@ -57,6 +59,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/16224
   reported: 2004-12-31
   severity: ~
+  darkpan: true
 - affected_versions: "<5.10"
   cves:
     - CVE-2004-2022
@@ -82,6 +85,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/16169
   reported: 2004-12-31
   severity: ~
+  darkpan: true
 - affected_versions: ~
   cves:
     - CVE-2004-0377
@@ -102,6 +106,7 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/15732
   reported: 2004-05-04
   severity: ~
+  darkpan: true
 - affected_versions: "<=5.6.1.629"
   cves:
     - CVE-2001-0815
@@ -120,3 +125,4 @@
     - https://exchange.xforce.ibmcloud.com/vulnerabilities/7539
   reported: 2001-12-06
   severity: ~
+  darkpan: true
