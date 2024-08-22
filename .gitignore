@@ -3,3 +3,7 @@ t/.last_run
 perl-cve-atom.xml
 downloads
 generated_reports
+blib
+*.bak
+*.old
+pm_to_blib
