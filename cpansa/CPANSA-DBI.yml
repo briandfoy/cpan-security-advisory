@@ -95,10 +95,11 @@
     name (DSN). NOTE: this issue exists because of an incomplete fix
     for CVE-2014-10401.
   distribution: DBI
-  fixed_versions: ~
+  fixed_versions: ">=1.644"
   id: CPANSA-DBI-2014-10402
   references:
     - https://rt.cpan.org/Public/Bug/Display.html?id=99508#txn-1911590
+    - https://metacpan.org/release/HMBRAND/DBI-1.643_01/view/Changes
   reported: 2020-09-16
   severity: medium
 - affected_versions: "<1.632"
@@ -109,13 +110,14 @@
     DBD::File drivers can open files from folders other than those
     specifically passed via the f_dir attribute.
   distribution: DBI
-  fixed_versions: ~
+  fixed_versions: ">=1.644"
   id: CPANSA-DBI-2014-10401
   references:
     - https://rt.cpan.org/Public/Bug/Display.html?id=99508
     - https://metacpan.org/pod/distribution/DBI/Changes#Changes-in-DBI-1.632-9th-Nov-2014
     - https://github.com/perl5-dbi/dbi/commit/caedc0d7d602f5b2ae5efc1b00f39efeafb7b05a
     - https://usn.ubuntu.com/4509-1/
+    - https://metacpan.org/release/HMBRAND/DBI-1.643_01/view/Changes
   reported: 2020-09-11
   severity: medium
 - affected_versions: "<1.628"
