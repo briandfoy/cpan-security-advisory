@@ -61,7 +61,9 @@ my %WriteMakefile = (
 		},
 
 	'TEST_REQUIRES' => {
+		'Data::Rx'   => '0',
 		'Test::More' => '1',
+		'YAML::XS'   => '0',
 		},
 
 	'PREREQ_PM' => {
