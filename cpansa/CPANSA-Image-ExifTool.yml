@@ -17,28 +17,14 @@ advisories:
   reported: 2022-01-25
   severity: critical
 - affected_versions:
-  - "<=12.37"
-  cves:
-  - CVE-2022-23935
-  description: >
-    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file
-    =~ /\|$/ check, leading to command injection.
-  fixed_versions:
-  - ">12.38"
-  id: CPANSA-Image-ExifTool-2022-23935
-  references:
-  - https://github.com/exiftool/exiftool/commit/74dbab1d2766d6422bb05b033ac6634bf8d1f582
-  - https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429
-  reported: 2022-01-25
-  severity: critical
-- affected_versions:
   - '>=7.44,<=12.23'
   cves:
   - CVE-2021-22204
   description: |
     Improper neutralization of user data in the DjVu file format in ExifTool versions 7.44 and up allows arbitrary code execution when parsing the malicious image
-  distribution: "Image-ExifTool"
-  fixed_versions: '>12.23'
+  fixed_versions:
+  - '>12.23'
+  github_security_advisory: []
   id: CPANSA-Image-ExifTool-2021-22204
   references:
   - http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html
@@ -63,7 +49,9 @@ advisories:
   - CVE-2018-20211
   description: |
     ExifTool 8.32 allows local users to gain privileges by creating a %TEMP%\\par-%username%\\cache-exiftool-8.32 folder with a victim's username, and then copying a Trojan horse ws32_32.dll file into this new folder, aka DLL Hijacking. NOTE: 8.32 is an obsolete version from 2010 (9.x was released starting in 2012, and 10.x was released starting in 2015).
-  fixed_versions: '>8'
+  fixed_versions:
+  - '>8'
+  github_security_advisory: []
   id: CPANSA-Image-ExifTool-2018-20211
   references:
   - http://packetstormsecurity.com/files/150892/Exiftool-8.3.2.0-DLL-Hijacking.html
