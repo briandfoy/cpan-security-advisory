@@ -1,5 +1,3 @@
-use v5.30;
-
 use Test::More;
 
 use Data::Rx;
@@ -211,7 +209,7 @@ foreach my $file ( sort @files ) {
 			}
 		else {
 			fail( "Data for <$file> was not valid" );
-			foreach my $failure ( $at->failures->@* ) {
+			foreach my $failure ( @{ $at->failures } ) {
 				diag( $failure );
 				}
 			}
