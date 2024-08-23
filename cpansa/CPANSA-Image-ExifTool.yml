@@ -24,7 +24,6 @@
   fixed_versions: '>12.23'
   id: CPANSA-Image-ExifTool-2021-22204
   references:
-    - 'https://rt.cpan.org/Public/Bug/Display.html?id=>=7.44,<=12.23'
     - http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html
     - http://packetstormsecurity.com/files/164768/GitLab-Unauthenticated-Remote-ExifTool-Command-Injection.html
     - http://packetstormsecurity.com/files/164994/GitLab-13.10.2-Remote-Code-Execution.html
