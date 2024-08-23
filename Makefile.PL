@@ -60,6 +60,8 @@ my %WriteMakefile = (
 	'BUILD_REQUIRES' => {
 		},
 
+	# also update cpanfile because cpanm will ignore this since
+	# cpanfile exists
 	'TEST_REQUIRES' => {
 		'Data::Rx'   => '0',
 		'Mojo::Util' => '0',

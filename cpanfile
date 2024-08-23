@@ -1,3 +1,4 @@
+requires 'Data::Rx';
 requires 'Mojolicious', '9';
 requires 'Term::ANSIColor';
 requires 'Text::Format';
