@@ -33,4 +33,4 @@ jobs:
                 sudo cpan -T App::Cpan YAML::XS Mojolicious Data::Rx
             - name: 'prove'
               run: |
-                prove
+                prove -Ilib
