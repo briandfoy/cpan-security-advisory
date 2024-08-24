@@ -29,10 +29,10 @@ if( $ENV{TEST_CHANGED_ONLY} ) {
 	my @modified_since_last_run = grep { (stat)[9] > $last_run_time } @all_files;
 	diag( sprintf "Found %d files, %d modified since last run", scalar @all_files, scalar @modified_since_last_run );
 
-	note( <<~"HERE" );
-		Only testing files modified since last run.
-		Delete $last_run_semaphore or set TEST_ALL_YAML=1 to test all files
-		HERE
+	note( <<"HERE" );
+Only testing files modified since last run.
+Delete $last_run_semaphore or set TEST_ALL_YAML=1 to test all files
+HERE
 	$files_to_test = \@modified_since_last_run;
 	pass() unless @modified_since_last_run;
 	}
