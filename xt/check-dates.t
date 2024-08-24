@@ -1,4 +1,3 @@
-use v5.26;
 use strict;
 use warnings;
 use experimental qw(signatures);
@@ -28,7 +27,7 @@ sub test_dates ($yaml) {
 			}
 		};
 
-	foreach my $advisory ( $advisories->@* ) {
+	foreach my $advisory ( @$advisories ) {
 		next unless exists $advisory->{reported};
 		next unless defined $advisory->{reported};
 

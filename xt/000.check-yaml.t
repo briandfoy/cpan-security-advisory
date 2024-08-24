@@ -1,4 +1,3 @@
-use v5.26;
 use strict;
 use warnings;
 
@@ -43,8 +42,8 @@ subtest 'YAML::XS::LoadFile' => sub {
 	my $start = time;
 	diag( "Checking with YAML::XS" );
 	SKIP: {
-		skip 'No new files' unless $files_to_test->@*;
-		foreach my $file ( $files_to_test->@* ) {
+		skip 'No new files' unless @$files_to_test;
+		foreach my $file ( @$files_to_test ) {
 			my $yaml = eval { LoadFile($file) };
 			ok( defined $yaml, "$file is valid YAML" ) or diag( "$file: $@" );
 			}
@@ -57,8 +56,8 @@ subtest 'yamllint' => sub {
 	diag( "Checking with yamllint" );
 	SKIP: {
 		skip 'No yamllint' unless defined $YAMLLINT;
-		skip 'No new files' unless $files_to_test->@*;
-		foreach my $file ( $files_to_test->@* ) {
+		skip 'No new files' unless @$files_to_test;
+		foreach my $file ( @$files_to_test ) {
 			my $output = `$YAMLLINT -c xt/yamllint.config $file`;
 			is( $?, 0, "yamllint clean for $file" ) or diag( "$file: $output" );
 			}
