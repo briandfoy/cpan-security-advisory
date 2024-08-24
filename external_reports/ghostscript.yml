@@ -1,249 +1,224 @@
 ---
+advisories:
+- affected_versions: <=8.64
+  cve: CVE-2009-0583
+  description: |
+    Multiple integer overflows in icc.c in the International Color Consortium (ICC) Format library (aka icclib), as used in Ghostscript 8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and earlier, allow context-dependent attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly execute arbitrary code by using a device file for a translation request that operates on a crafted image file and targets a certain "native color space," related to an ICC profile in a (1) PostScript or (2) PDF file with embedded images.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-hc6x-m9mp-6xc2
+  references:
+  - http://secunia.com/advisories/34393
+  - https://bugzilla.redhat.com/show_bug.cgi?id=487742
+  - http://www.redhat.com/support/errata/RHSA-2009-0345.html
+  - http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0050
+  - http://securitytracker.com/id?1021868
+  - https://issues.rpath.com/browse/RPL-2991
+  - http://www.vupen.com/english/advisories/2009/0776
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00770.html
+  - http://secunia.com/advisories/34373
+  - http://secunia.com/advisories/34398
+  - http://www.debian.org/security/2009/dsa-1746
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00772.html
+  - http://www.vupen.com/english/advisories/2009/0777
+  - http://secunia.com/advisories/34381
+  - http://bugs.gentoo.org/show_bug.cgi?id=261087
+  - http://www.auscert.org.au/render.html?it=10666
+  - http://www.securityfocus.com/bid/34184
+  - http://www.gentoo.org/security/en/glsa/glsa-200903-37.xml
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-098.htm
+  - http://secunia.com/advisories/34437
+  - http://www.vupen.com/english/advisories/2009/0816
+  - http://www.ubuntu.com/usn/USN-743-1
+  - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00004.html
+  - http://secunia.com/advisories/34418
+  - http://secunia.com/advisories/34266
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00916.html
+  - http://secunia.com/advisories/34469
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00887.html
+  - http://secunia.com/advisories/34443
+  - http://secunia.com/advisories/34729
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
+  - http://www.vupen.com/english/advisories/2009/1708
+  - http://secunia.com/advisories/35569
+  - http://secunia.com/advisories/35559
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/49329
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10795
+  - https://usn.ubuntu.com/757-1/
+  - http://www.securityfocus.com/archive/1/501994/100/0/threaded
+  reported: 2009-03-23
+  severity: ~
+- affected_versions: <=8.64
+  cve: CVE-2009-0584
+  description: |
+    icc.c in the International Color Consortium (ICC) Format library (aka icclib), as used in Ghostscript 8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and earlier, allows context-dependent attackers to cause a denial of service (application crash) or possibly execute arbitrary code by using a device file for processing a crafted image file associated with large integer values for certain sizes, related to an ICC profile in a (1) PostScript or (2) PDF file with embedded images.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-3cwm-mjh6-3hwq
+  references:
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00772.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00770.html
+  - https://bugzilla.redhat.com/show_bug.cgi?id=487744
+  - http://secunia.com/advisories/34398
+  - http://www.redhat.com/support/errata/RHSA-2009-0345.html
+  - http://bugs.gentoo.org/show_bug.cgi?id=261087
+  - http://secunia.com/advisories/34393
+  - http://secunia.com/advisories/34381
+  - https://issues.rpath.com/browse/RPL-2991
+  - http://www.vupen.com/english/advisories/2009/0777
+  - http://www.debian.org/security/2009/dsa-1746
+  - http://www.auscert.org.au/render.html?it=10666
+  - http://securitytracker.com/id?1021868
+  - http://secunia.com/advisories/34373
+  - http://www.vupen.com/english/advisories/2009/0776
+  - http://www.securityfocus.com/bid/34184
+  - http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0050
+  - http://www.vupen.com/english/advisories/2009/0816
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-098.htm
+  - http://secunia.com/advisories/34437
+  - http://www.gentoo.org/security/en/glsa/glsa-200903-37.xml
+  - http://www.ubuntu.com/usn/USN-743-1
+  - http://secunia.com/advisories/34418
+  - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00004.html
+  - http://secunia.com/advisories/34443
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00916.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00887.html
+  - http://osvdb.org/52988
+  - http://secunia.com/advisories/34266
+  - http://secunia.com/advisories/34469
+  - http://secunia.com/advisories/34729
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
+  - http://secunia.com/advisories/35559
+  - http://secunia.com/advisories/35569
+  - http://www.vupen.com/english/advisories/2009/1708
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/49327
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10544
+  - https://usn.ubuntu.com/757-1/
+  - http://www.securityfocus.com/archive/1/501994/100/0/threaded
+  reported: 2009-03-23
+  severity: ~
+- affected_versions: <=8.64
+  cve: CVE-2009-0792
+  description: |
+    Multiple integer overflows in icc.c in the International Color Consortium (ICC) Format library (aka icclib), as used in Ghostscript 8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and earlier, allow context-dependent attackers to cause a denial of service (heap-based buffer overflow and application crash) or possibly execute arbitrary code by using a device file for a translation request that operates on a crafted image file and targets a certain "native color space," related to an ICC profile in a (1) PostScript or (2) PDF file with embedded images. NOTE: this issue exists because of an incomplete fix for CVE-2009-0583.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-c674-58j3-3v3w
+  references:
+  - https://bugzilla.redhat.com/show_bug.cgi?id=491853
+  - http://secunia.com/advisories/34711
+  - http://secunia.com/advisories/34373
+  - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00211.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00217.html
+  - http://www.redhat.com/support/errata/RHSA-2009-0420.html
+  - http://secunia.com/advisories/34726
+  - http://secunia.com/advisories/34732
+  - http://www.redhat.com/support/errata/RHSA-2009-0421.html
+  - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00460.html
+  - http://secunia.com/advisories/34667
+  - http://wiki.rpath.com/Advisories:rPSA-2009-0060
+  - http://secunia.com/advisories/34729
+  - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00461.html
+  - http://lists.opensuse.org/opensuse-security-announce/2009-04/msg00010.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
+  - http://support.avaya.com/elmodocs2/security/ASA-2009-155.htm
+  - http://lists.opensuse.org/opensuse-security-announce/2009-06/msg00003.html
+  - http://secunia.com/advisories/35416
+  - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
+  - http://www.vupen.com/english/advisories/2009/1708
+  - http://secunia.com/advisories/35559
+  - http://secunia.com/advisories/35569
+  - http://security.gentoo.org/glsa/glsa-201412-17.xml
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/50381
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11207
+  - https://usn.ubuntu.com/757-1/
+  - http://www.securityfocus.com/archive/1/502757/100/0/threaded
+  reported: 2009-04-14
+  severity: ~
+- affected_versions: <8.71
+  cve: CVE-2009-3743
+  description: |
+    Off-by-one error in the Ins_MINDEX function in the TrueType bytecode interpreter in Ghostscript before 8.71 allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via a malformed TrueType font in a document that trigger an integer overflow and a heap-based buffer overflow.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-3p47-jqhp-gxp9
+  references:
+  - http://www.kb.cert.org/vuls/id/JALR-87YGN8
+  - http://www.kb.cert.org/vuls/id/644319
+  - http://www.securitytracker.com/id?1024785
+  - https://rhn.redhat.com/errata/RHSA-2012-0095.html
+  - http://security.gentoo.org/glsa/glsa-201412-17.xml
+  - http://www.securityfocus.com/archive/1/514892/100/0/threaded
+  reported: 2010-08-26
+  severity: ~
+- affected_versions: <=8.64
+  cve: CVE-2009-4897
+  description: |
+    Buffer overflow in gs/psi/iscan.c in Ghostscript 8.64 and earlier allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted PDF document containing a long name.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-53pw-2446-9fc8
+  references:
+  - http://www.securityfocus.com/bid/41593
+  - http://bugs.ghostscript.com/show_bug.cgi?id=690523
+  - https://bugzilla.redhat.com/show_bug.cgi?id=613792
+  - http://www.ubuntu.com/usn/USN-961-1
+  - http://secunia.com/advisories/40580
+  - http://www.osvdb.org/66277
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:134
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:135
+  - http://security.gentoo.org/glsa/glsa-201412-17.xml
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/60380
+  reported: 2010-07-22
+  severity: ~
+- affected_versions: <=9.15
+  cve: CVE-2015-3228
+  description: |
+    Integer overflow in the gs_heap_alloc_bytes function in base/gsmalloc.c in Ghostscript 9.15 and earlier allows remote attackers to cause a denial of service (crash) via a crafted Postscript (ps) file, as demonstrated by using the ps2pdf command, which triggers an out-of-bounds read or write.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-jf9j-9gh2-gp45
+  references:
+  - http://www.ubuntu.com/usn/USN-2697-1
+  - http://www.debian.org/security/2015/dsa-3326
+  - http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0c0b0859
+  - http://bugs.ghostscript.com/show_bug.cgi?id=696041
+  - http://bugs.ghostscript.com/show_bug.cgi?id=696070
+  - http://openwall.com/lists/oss-security/2015/07/23/14
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1232805
+  - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+  - http://www.securityfocus.com/bid/76017
+  - https://security.gentoo.org/glsa/201612-33
+  - http://www.securitytracker.com/id/1033149
+  reported: 2015-08-11
+  severity: ~
+- affected_versions: <=9.21
+  cve: CVE-2016-9601
+  description: |
+    ghostscript before version 9.21 is vulnerable to a heap based buffer overflow that was found in the ghostscript jbig2_decode_gray_scale_image function which is used to decode halftone segments in a JBIG2 image. A document (PostScript or PDF) with an embedded, specially crafted, jbig2 image could trigger a segmentation fault in ghostscript.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-vf87-jj8q-h556
+  references:
+  - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9601
+  - https://bugs.ghostscript.com/show_bug.cgi?id=697457
+  - http://git.ghostscript.com/?p=jbig2dec.git;a=commit;h=e698d5c11d27212aa1098bc5b1673a3378563092
+  - https://www.debian.org/security/2017/dsa-3817
+  - https://security.gentoo.org/glsa/201706-24
+  - http://www.securityfocus.com/bid/97095
+  reported: 2018-04-24
+  severity: medium
+cpansa_version: 2
 name: jquery
 perl_distributions:
-  - name: Win32-Printer
-    affected:
-      - perl_module_versions: '>=0.7.0,<0.9.0'
-        distributed_library_version: '8.11'
-      - perl_module_versions: '>=0.9.0,<=0.9.1'
-        distributed_library_version: '8.5.0'
-advisories:
-  - cve: CVE-2009-0583
-    description: >
-      Multiple integer overflows in icc.c in the International Color
-      Consortium (ICC) Format library (aka icclib), as used in Ghostscript
-      8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and
-      earlier, allow context-dependent attackers to cause a denial of
-      service (heap-based buffer overflow and application crash) or possibly
-      execute arbitrary code by using a device file for a translation
-      request that operates on a crafted image file and targets a certain
-      "native color space," related to an ICC profile in a (1) PostScript or
-      (2) PDF file with embedded images.
-    affected_versions: '<=8.64'
-    fixed_versions: ~
-    references:
-      - http://secunia.com/advisories/34393
-      - https://bugzilla.redhat.com/show_bug.cgi?id=487742
-      - http://www.redhat.com/support/errata/RHSA-2009-0345.html
-      - http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0050
-      - http://securitytracker.com/id?1021868
-      - https://issues.rpath.com/browse/RPL-2991
-      - http://www.vupen.com/english/advisories/2009/0776
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00770.html
-      - http://secunia.com/advisories/34373
-      - http://secunia.com/advisories/34398
-      - http://www.debian.org/security/2009/dsa-1746
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00772.html
-      - http://www.vupen.com/english/advisories/2009/0777
-      - http://secunia.com/advisories/34381
-      - http://bugs.gentoo.org/show_bug.cgi?id=261087
-      - http://www.auscert.org.au/render.html?it=10666
-      - http://www.securityfocus.com/bid/34184
-      - http://www.gentoo.org/security/en/glsa/glsa-200903-37.xml
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-098.htm
-      - http://secunia.com/advisories/34437
-      - http://www.vupen.com/english/advisories/2009/0816
-      - http://www.ubuntu.com/usn/USN-743-1
-      - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00004.html
-      - http://secunia.com/advisories/34418
-      - http://secunia.com/advisories/34266
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00916.html
-      - http://secunia.com/advisories/34469
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00887.html
-      - http://secunia.com/advisories/34443
-      - http://secunia.com/advisories/34729
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
-      - http://www.vupen.com/english/advisories/2009/1708
-      - http://secunia.com/advisories/35569
-      - http://secunia.com/advisories/35559
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/49329
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10795
-      - https://usn.ubuntu.com/757-1/
-      - http://www.securityfocus.com/archive/1/501994/100/0/threaded
-    reported: 2009-03-23
-    severity: ~
-  - cve: CVE-2009-0584
-    description: >
-      icc.c in the International Color Consortium (ICC) Format library
-      (aka icclib), as used in Ghostscript 8.64 and earlier and Argyll Color
-      Management System (CMS) 1.0.3 and earlier, allows context-dependent
-      attackers to cause a denial of service (application crash) or possibly
-      execute arbitrary code by using a device file for processing a crafted
-      image file associated with large integer values for certain sizes,
-      related to an ICC profile in a (1) PostScript or (2) PDF file with
-      embedded images.
-    affected_versions: '<=8.64'
-    fixed_versions: ~
-    references:
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00772.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00770.html
-      - https://bugzilla.redhat.com/show_bug.cgi?id=487744
-      - http://secunia.com/advisories/34398
-      - http://www.redhat.com/support/errata/RHSA-2009-0345.html
-      - http://bugs.gentoo.org/show_bug.cgi?id=261087
-      - http://secunia.com/advisories/34393
-      - http://secunia.com/advisories/34381
-      - https://issues.rpath.com/browse/RPL-2991
-      - http://www.vupen.com/english/advisories/2009/0777
-      - http://www.debian.org/security/2009/dsa-1746
-      - http://www.auscert.org.au/render.html?it=10666
-      - http://securitytracker.com/id?1021868
-      - http://secunia.com/advisories/34373
-      - http://www.vupen.com/english/advisories/2009/0776
-      - http://www.securityfocus.com/bid/34184
-      - http://wiki.rpath.com/wiki/Advisories:rPSA-2009-0050
-      - http://www.vupen.com/english/advisories/2009/0816
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-098.htm
-      - http://secunia.com/advisories/34437
-      - http://www.gentoo.org/security/en/glsa/glsa-200903-37.xml
-      - http://www.ubuntu.com/usn/USN-743-1
-      - http://secunia.com/advisories/34418
-      - http://lists.opensuse.org/opensuse-security-announce/2009-03/msg00004.html
-      - http://secunia.com/advisories/34443
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00916.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-March/msg00887.html
-      - http://osvdb.org/52988
-      - http://secunia.com/advisories/34266
-      - http://secunia.com/advisories/34469
-      - http://secunia.com/advisories/34729
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
-      - http://secunia.com/advisories/35559
-      - http://secunia.com/advisories/35569
-      - http://www.vupen.com/english/advisories/2009/1708
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/49327
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10544
-      - https://usn.ubuntu.com/757-1/
-      - http://www.securityfocus.com/archive/1/501994/100/0/threaded
-    reported: 2009-03-23
-    severity: ~
-  - cve: CVE-2009-0792
-    description: >
-      Multiple integer overflows in icc.c in the International Color
-      Consortium (ICC) Format library (aka icclib), as used in Ghostscript
-      8.64 and earlier and Argyll Color Management System (CMS) 1.0.3 and
-      earlier, allow context-dependent attackers to cause a denial of
-      service (heap-based buffer overflow and application crash) or possibly
-      execute arbitrary code by using a device file for a translation
-      request that operates on a crafted image file and targets a certain
-      "native color space," related to an ICC profile in a (1) PostScript or
-      (2) PDF file with embedded images. NOTE: this issue exists because of
-      an incomplete fix for CVE-2009-0583.
-    affected_versions: '<=8.64'
-    fixed_versions: ~
-    references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=491853
-      - http://secunia.com/advisories/34711
-      - http://secunia.com/advisories/34373
-      - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00211.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00217.html
-      - http://www.redhat.com/support/errata/RHSA-2009-0420.html
-      - http://secunia.com/advisories/34726
-      - http://secunia.com/advisories/34732
-      - http://www.redhat.com/support/errata/RHSA-2009-0421.html
-      - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00460.html
-      - http://secunia.com/advisories/34667
-      - http://wiki.rpath.com/Advisories:rPSA-2009-0060
-      - http://secunia.com/advisories/34729
-      - https://www.redhat.com/archives/fedora-package-announce/2009-April/msg00461.html
-      - http://lists.opensuse.org/opensuse-security-announce/2009-04/msg00010.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:096
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:095
-      - http://support.avaya.com/elmodocs2/security/ASA-2009-155.htm
-      - http://lists.opensuse.org/opensuse-security-announce/2009-06/msg00003.html
-      - http://secunia.com/advisories/35416
-      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-262288-1
-      - http://www.vupen.com/english/advisories/2009/1708
-      - http://secunia.com/advisories/35559
-      - http://secunia.com/advisories/35569
-      - http://security.gentoo.org/glsa/glsa-201412-17.xml
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/50381
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11207
-      - https://usn.ubuntu.com/757-1/
-      - http://www.securityfocus.com/archive/1/502757/100/0/threaded
-    reported: 2009-04-14
-    severity: ~
-  - cve: CVE-2009-3743
-    description: >
-      Off-by-one error in the Ins_MINDEX function in the TrueType
-      bytecode interpreter in Ghostscript before 8.71 allows remote
-      attackers to execute arbitrary code or cause a denial of service (heap
-      memory corruption) via a malformed TrueType font in a document that
-      trigger an integer overflow and a heap-based buffer overflow.
-    affected_versions: '<8.71'
-    fixed_versions: ~
-    references:
-      - http://www.kb.cert.org/vuls/id/JALR-87YGN8
-      - http://www.kb.cert.org/vuls/id/644319
-      - http://www.securitytracker.com/id?1024785
-      - https://rhn.redhat.com/errata/RHSA-2012-0095.html
-      - http://security.gentoo.org/glsa/glsa-201412-17.xml
-      - http://www.securityfocus.com/archive/1/514892/100/0/threaded
-    reported: 2010-08-26
-    severity: ~
-  - cve: CVE-2009-4897
-    description: >
-      Buffer overflow in gs/psi/iscan.c in Ghostscript 8.64 and earlier
-      allows remote attackers to execute arbitrary code or cause a denial of
-      service (memory corruption) via a crafted PDF document containing a
-      long name.
-    affected_versions: '<=8.64'
-    fixed_versions: ~
-    references:
-      - http://www.securityfocus.com/bid/41593
-      - http://bugs.ghostscript.com/show_bug.cgi?id=690523
-      - https://bugzilla.redhat.com/show_bug.cgi?id=613792
-      - http://www.ubuntu.com/usn/USN-961-1
-      - http://secunia.com/advisories/40580
-      - http://www.osvdb.org/66277
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:134
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:135
-      - http://security.gentoo.org/glsa/glsa-201412-17.xml
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/60380
-    reported: 2010-07-22
-    severity: ~
-  - cve: CVE-2015-3228
-    description: >
-      Integer overflow in the gs_heap_alloc_bytes function in
-      base/gsmalloc.c in Ghostscript 9.15 and earlier allows remote
-      attackers to cause a denial of service (crash) via a crafted
-      Postscript (ps) file, as demonstrated by using the ps2pdf command,
-      which triggers an out-of-bounds read or write.
-    affected_versions: '<=9.15'
-    fixed_versions: ~
-    references:
-      - http://www.ubuntu.com/usn/USN-2697-1
-      - http://www.debian.org/security/2015/dsa-3326
-      - http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0c0b0859
-      - http://bugs.ghostscript.com/show_bug.cgi?id=696041
-      - http://bugs.ghostscript.com/show_bug.cgi?id=696070
-      - http://openwall.com/lists/oss-security/2015/07/23/14
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1232805
-      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
-      - http://www.securityfocus.com/bid/76017
-      - https://security.gentoo.org/glsa/201612-33
-      - http://www.securitytracker.com/id/1033149
-    reported: 2015-08-11
-    severity: ~
-  - cve: CVE-2016-9601
-    description: >
-      ghostscript before version 9.21 is vulnerable to a heap based
-      buffer overflow that was found in the ghostscript
-      jbig2_decode_gray_scale_image function which is used to decode
-      halftone segments in a JBIG2 image. A document (PostScript or PDF)
-      with an embedded, specially crafted, jbig2 image could trigger a
-      segmentation fault in ghostscript.
-    affected_versions: '<=9.21'
-    fixed_versions: ~
-    references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9601
-      - https://bugs.ghostscript.com/show_bug.cgi?id=697457
-      - http://git.ghostscript.com/?p=jbig2dec.git;a=commit;h=e698d5c11d27212aa1098bc5b1673a3378563092
-      - https://www.debian.org/security/2017/dsa-3817
-      - https://security.gentoo.org/glsa/201706-24
-      - http://www.securityfocus.com/bid/97095
-    reported: 2018-04-24
-    severity: medium
+- affected:
+  - distributed_library_version: '8.11'
+    perl_module_versions: '>=0.7.0,<0.9.0'
+  - distributed_library_version: 8.5.0
+    perl_module_versions: '>=0.9.0,<=0.9.1'
+  name: Win32-Printer

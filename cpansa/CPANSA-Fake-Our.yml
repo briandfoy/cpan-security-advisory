@@ -1,12 +1,22 @@
 ---
-- id: CPANSA-Fake-Our-2017-01
-  distribution: Fake-Our
-  reported: 2017-01-23
-  description: >
-    Loading modules from . (current directory).
-  references:
-    - https://metacpan.org/changes/distribution/Fake-Our
+advisories:
+- affected_versions:
+  - <0.06
   cves:
-    - CVE-2016-1238
-  affected_versions: "<0.06"
-  fixed_versions: ">=0.06"
+  - CVE-2016-1238
+  description: |
+    Loading modules from . (current directory).
+  fixed_versions:
+  - '>=0.06'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-Fake-Our-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/Fake-Our
+  reported: 2017-01-23
+cpansa_version: 2
+distribution: Fake-Our
+last_checked: 1708150847
+latest_version: '0.17'
+metacpan: https://metacpan.org/pod/Fake::Our
+repo: https://github.com/ina-cpan/Fake-Our

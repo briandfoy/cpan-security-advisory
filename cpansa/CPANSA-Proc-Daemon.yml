@@ -1,19 +1,26 @@
 ---
-- affected_versions: '<0.14'
+advisories:
+- affected_versions:
+  - <0.14
   cves:
-    - CVE-2013-7135
-  description: >
-    The Proc::Daemon module 0.14 for Perl uses world-writable
-    permissions for a file that stores a process ID, which allows
-    local users to have an unspecified impact by modifying this file.
-  distribution: Proc-Daemon
-  fixed_versions: ~
+  - CVE-2013-7135
+  description: |
+    The Proc::Daemon module 0.14 for Perl uses world-writable permissions for a file that stores a process ID, which allows local users to have an unspecified impact by modifying this file.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-jr8v-35jh-58m6
   id: CPANSA-Proc-Daemon-2013-7135
   references:
-    - http://www.openwall.com/lists/oss-security/2014/01/07/7
-    - http://www.openwall.com/lists/oss-security/2013/12/16/5
-    - http://www.openwall.com/lists/oss-security/2013/12/18/2
-    - https://rt.cpan.org/Public/Bug/Display.html?id=91450
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2014:021
+  - http://www.openwall.com/lists/oss-security/2014/01/07/7
+  - http://www.openwall.com/lists/oss-security/2013/12/16/5
+  - http://www.openwall.com/lists/oss-security/2013/12/18/2
+  - https://rt.cpan.org/Public/Bug/Display.html?id=91450
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2014:021
   reported: 2014-01-28
   severity: ~
+cpansa_version: 2
+distribution: Proc-Daemon
+last_checked: 1708150865
+latest_version: '0.23'
+metacpan: https://metacpan.org/pod/Proc::Daemon
+repo: https://github.com/akreal/Proc-Daemon.git

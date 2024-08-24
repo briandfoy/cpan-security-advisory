@@ -1,12 +1,21 @@
 ---
-- affected_versions: '<2.15'
+advisories:
+- affected_versions:
+  - <2.15
   cves: []
-  description: >
+  description: |
     A security bug allowed people to bypass the AllowDownload setting.
-  distribution: Apache-MP3
-  fixed_versions: '>=2.15'
+  fixed_versions:
+  - '>=2.15'
+  github_security_advisory: []
   id: CPANSA-Apache-MP3-2001-01
   references:
-    - https://metacpan.org/dist/Apache-MP3/changes
+  - https://metacpan.org/dist/Apache-MP3/changes
   reported: 2001-01-01
   severity: ~
+cpansa_version: 2
+distribution: Apache-MP3
+last_checked: 1708150828
+latest_version: '4.00'
+metacpan: https://metacpan.org/pod/Apache::MP3
+repo: ~

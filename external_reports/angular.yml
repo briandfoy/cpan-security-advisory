@@ -1,57 +1,56 @@
 ---
-name: angular
-url: https://github.com/angular/angular
-perl_distributions:
-  - name: Zonemaster-GUI
-    affected:
-      - perl_module_versions: '>=1.0.7,<=1.0.11'
-        distributed_library_version: '1.2.22'
 advisories:
-  - cve: CVE-2019-10768
-    description: >
-      In AngularJS before 1.7.9 the function `merge()` could be tricked
-      into adding or modifying properties of `Object.prototype` using a
-      `__proto__` payload.
-    affected_versions: '<=1.7.9'
-    fixed_versions: ~
-    references:
-      - https://snyk.io/vuln/SNYK-JS-ANGULAR-534884
-      - https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E
-    reported: 2019-11-19
-    severity: high
-  - cve: CVE-2019-14863
-    description: >
-      There is a vulnerability in all angular versions before
-      1.5.0-beta.0, where after escaping the context of the web application,
-      the web application delivers data to its users along with other
-      trusted dynamic content, without validating it.
-    affected_versions: '<1.5.1'
-    fixed_versions: ~
-    references:
-      - https://snyk.io/vuln/npm:angular:20150807
-      - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14863
-    reported: 2020-01-02
-    severity: medium
-  - cve: CVE-2020-7676
-    description: >
-      angular.js prior to 1.8.0 allows cross site scripting. The
-      regex-based input HTML replacement may turn sanitized code into
-      unsanitized one. Wrapping "<option>" elements in "<select>" ones
-      changes parsing behavior, leading to possibly unsanitizing code.
-    affected_versions: '<1.8.0'
-    fixed_versions: '>1.8.0'
-    references:
-      - https://github.com/angular/angular.js/pull/17028
-      - https://snyk.io/vuln/SNYK-JS-ANGULAR-570058
-      - https://lists.apache.org/thread.html/rda99599896c3667f2cc9e9d34c7b6ef5d2bbed1f4801e1d75a2b0679@%3Ccommits.nifi.apache.org%3E
-      - https://lists.apache.org/thread.html/r3f05cfd587c774ea83c18e59eda9fa37fa9bbf3421484d4ee1017a20@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r57383582dcad2305430321589dfaca6793f5174c55da6ce8d06fbf9b@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r198985c02829ba8285ed4f9b1de54a33b5f31b08bb38ac51fc86961b@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r79e3feaaf87b81e80da0e17a579015f6dcb94c95551ced398d50c8d7@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r455ebd83a1c69ae8fd897560534a079c70a483dbe1e75504f1ca499b@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/rb6423268b25db0f800359986867648e11dbd38e133b9383e85067f02@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r446c297cd6cda2bd7e345c9b0741d7f611df89902e5d515848c6f4b1@%3Cozone-issues.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/r80f210a5f4833d59c5d3de17dd7312f9daba0765ec7d4052469f13f1@%3Cozone-commits.hadoop.apache.org%3E
-      - https://lists.apache.org/thread.html/rfa2b19d01d10a8637dc319a7d5994c3dbdb88c0a8f9a21533403577a@%3Cozone-issues.hadoop.apache.org%3E
-    reported: 2020-06-08
-    severity: medium
+- affected_versions: <=1.7.9
+  cve: CVE-2019-10768
+  description: |
+    In AngularJS before 1.7.9 the function `merge()` could be tricked into adding or modifying properties of `Object.prototype` using a `__proto__` payload.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-89mq-4x47-5v83
+  references:
+  - https://snyk.io/vuln/SNYK-JS-ANGULAR-534884
+  - https://lists.apache.org/thread.html/rca37935d661f4689cb4119f1b3b224413b22be161b678e6e6ce0c69b@%3Ccommits.nifi.apache.org%3E
+  reported: 2019-11-19
+  severity: high
+- affected_versions: <1.5.1
+  cve: CVE-2019-14863
+  description: |
+    There is a vulnerability in all angular versions before 1.5.0-beta.0, where after escaping the context of the web application, the web application delivers data to its users along with other trusted dynamic content, without validating it.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-r5fx-8r73-v86c
+  references:
+  - https://snyk.io/vuln/npm:angular:20150807
+  - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-14863
+  reported: 2020-01-02
+  severity: medium
+- affected_versions: <1.8.0
+  cve: CVE-2020-7676
+  description: |
+    angular.js prior to 1.8.0 allows cross site scripting. The regex-based input HTML replacement may turn sanitized code into unsanitized one. Wrapping "<option>" elements in "<select>" ones changes parsing behavior, leading to possibly unsanitizing code.
+  fixed_versions: '>1.8.0'
+  github_security_advisory:
+  - GHSA-mhp6-pxh8-r675
+  references:
+  - https://github.com/angular/angular.js/pull/17028
+  - https://snyk.io/vuln/SNYK-JS-ANGULAR-570058
+  - https://lists.apache.org/thread.html/rda99599896c3667f2cc9e9d34c7b6ef5d2bbed1f4801e1d75a2b0679@%3Ccommits.nifi.apache.org%3E
+  - https://lists.apache.org/thread.html/r3f05cfd587c774ea83c18e59eda9fa37fa9bbf3421484d4ee1017a20@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r57383582dcad2305430321589dfaca6793f5174c55da6ce8d06fbf9b@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r198985c02829ba8285ed4f9b1de54a33b5f31b08bb38ac51fc86961b@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r79e3feaaf87b81e80da0e17a579015f6dcb94c95551ced398d50c8d7@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r455ebd83a1c69ae8fd897560534a079c70a483dbe1e75504f1ca499b@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/rb6423268b25db0f800359986867648e11dbd38e133b9383e85067f02@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r446c297cd6cda2bd7e345c9b0741d7f611df89902e5d515848c6f4b1@%3Cozone-issues.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/r80f210a5f4833d59c5d3de17dd7312f9daba0765ec7d4052469f13f1@%3Cozone-commits.hadoop.apache.org%3E
+  - https://lists.apache.org/thread.html/rfa2b19d01d10a8637dc319a7d5994c3dbdb88c0a8f9a21533403577a@%3Cozone-issues.hadoop.apache.org%3E
+  reported: 2020-06-08
+  severity: medium
+cpansa_version: 2
+name: angular
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.2.22
+    perl_module_versions: '>=1.0.7,<=1.0.11'
+  name: Zonemaster-GUI
+url: https://github.com/angular/angular

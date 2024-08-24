@@ -1,21 +1,29 @@
 ---
-- affected_versions: "<1.000015"
+advisories:
+- affected_versions:
+  - <1.000015
   cves:
-    - CVE-2013-1437
-  description: >
-    Eval injection vulnerability in the Module-Metadata module before
-    1.000015 for Perl allows remote attackers to execute arbitrary
-    Perl code via the $Version value.
-  distribution: Module-Metadata
-  fixed_versions: ">=1.000015"
+  - CVE-2013-1437
+  description: |
+    Eval injection vulnerability in the Module-Metadata module before 1.000015 for Perl allows remote attackers to execute arbitrary Perl code via the $Version value.
+  fixed_versions:
+  - '>=1.000015'
+  github_security_advisory:
+  - GHSA-86v9-w7h5-78qj
   id: CPANSA-Module-Metadata-2013-1437
   references:
-    - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114912.html
-    - https://metacpan.org/changes/distribution/Module-Metadata
-    - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114904.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114912.html
+  - https://metacpan.org/changes/distribution/Module-Metadata
+  - http://lists.fedoraproject.org/pipermail/package-announce/2013-August/114904.html
   reported: 2020-01-28
-  severity: critical
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-07-11
+  - date: 2022-07-11
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: critical
+cpansa_version: 2
+distribution: Module-Metadata
+last_checked: 1708150858
+latest_version: '1.000038'
+metacpan: https://metacpan.org/pod/Module::Metadata
+repo: https://github.com/Perl-Toolchain-Gang/Module-Metadata.git

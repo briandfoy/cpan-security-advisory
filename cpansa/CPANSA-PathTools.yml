@@ -1,28 +1,36 @@
 ---
-- id: CPANSA-PathTools-2016-02
-  distribution: PathTools
+advisories:
+- affected_versions:
+  - <3.65
+  cves:
+  - CVE-2016-1238
+  description: |
+    Does not properly remove . (period) characters from the end of the includes directory array, which might allow local users to gain privileges via a Trojan horse module under the current working directory.
+  fixed_versions:
+  - '>=3.65'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-PathTools-2016-02
+  references:
+  - https://metacpan.org/changes/distribution/PathTools
   reported: 2016-02-08
-  description: >
-    Does not properly remove . (period) characters from the end of the
-    includes directory array, which might allow local users to gain
-    privileges via a Trojan horse module under the current working
-    directory.
-  references:
-    - https://metacpan.org/changes/distribution/PathTools
+- affected_versions:
+  - <3.62
   cves:
-    - CVE-2016-1238
-  affected_versions: "<3.65"
-  fixed_versions: ">=3.65"
-- id: CPANSA-PathTools-2016-01
-  distribution: PathTools
+  - CVE-2015-8607
+  description: |
+    Does not properly preserve the taint attribute of data, which might allow context-dependent attackers to bypass the taint protection mechanism via a crafted string.
+  fixed_versions:
+  - '>=3.62'
+  github_security_advisory:
+  - GHSA-53pj-vpxm-m333
+  id: CPANSA-PathTools-2016-01
+  references:
+  - https://metacpan.org/changes/distribution/PathTools
   reported: 2016-01-11
-  description: >
-    Does not properly preserve the taint attribute of data, which
-    might allow context-dependent attackers to bypass the taint
-    protection mechanism via a crafted string.
-  references:
-    - https://metacpan.org/changes/distribution/PathTools
-  cves:
-    - CVE-2015-8607
-  affected_versions: "<3.62"
-  fixed_versions: ">=3.62"
+cpansa_version: 2
+distribution: PathTools
+last_checked: 1708150862
+latest_version: '3.75'
+metacpan: https://metacpan.org/pod/PathTools
+repo: git://perl5.git.perl.org/perl.git

@@ -1,12 +1,21 @@
 ---
-- id: CPANSA-Data-Dumper-2014-01
-  distribution: Data-Dumper
-  reported: 2014-09-30
-  description: >
-    Infinite recursion.
-  references:
-    - https://metacpan.org/changes/distribution/Data-Dumper
+advisories:
+- affected_versions:
+  - <2.154
   cves:
-    - CVE-2014-4330
-  affected_versions: "<2.154"
-  fixed_versions: ">=2.154"
+  - CVE-2014-4330
+  description: "Infinite recursion.\n"
+  fixed_versions:
+  - '>=2.154'
+  github_security_advisory:
+  - GHSA-gxvp-m937-jg9v
+  id: CPANSA-Data-Dumper-2014-01
+  references:
+  - https://metacpan.org/changes/distribution/Data-Dumper
+  reported: 2014-09-30
+cpansa_version: 2
+distribution: Data-Dumper
+last_checked: 1708150843
+latest_version: '2.183'
+metacpan: https://metacpan.org/pod/Data::Dumper
+repo: git://perl5.git.perl.org/perl.git

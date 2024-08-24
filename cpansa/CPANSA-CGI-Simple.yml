@@ -1,73 +1,82 @@
 ---
-- id: CPANSA-CGI-Simple-2010-02
-  distribution: CGI-Simple
-  reported: 2010-12-27
-  description: >
+advisories:
+- affected_versions:
+  - <1.113
+  cves:
+  - CVE-2010-4410
+  description: |
     Newlines in headers, which could lead to header injection attacks.
-  cves:
-    - CVE-2010-4410
+  fixed_versions:
+  - '>=1.113'
+  github_security_advisory:
+  - GHSA-63qf-cwcv-ff3r
+  id: CPANSA-CGI-Simple-2010-02
   references:
-    - https://metacpan.org/changes/distribution/CGI-Simple
-  affected_versions: "<1.113"
-  fixed_versions: ">=1.113"
-- id: CPANSA-CGI-Simple-2010-01
-  cves: []
-  distribution: CGI-Simple
+  - https://metacpan.org/changes/distribution/CGI-Simple
   reported: 2010-12-27
-  description: >
+- affected_versions:
+  - <1.113
+  cves: []
+  description: |
     Non-random multipart boundary.
+  fixed_versions:
+  - '>=1.113'
+  github_security_advisory: []
+  id: CPANSA-CGI-Simple-2010-01
   references:
-    - https://metacpan.org/changes/distribution/CGI-Simple
-  affected_versions: "<1.113"
-  fixed_versions: ">=1.113"
-- affected_versions: "<=1.112"
+  - https://metacpan.org/changes/distribution/CGI-Simple
+  reported: 2010-12-27
+- affected_versions:
+  - <=1.112
   cves:
-    - CVE-2010-2761
-  description: >
-    The multipart_init function in (1) CGI.pm before 3.50 and (2)
-    Simple.pm in CGI::Simple 1.112 and earlier uses a hardcoded value
-    of the MIME boundary string in multipart/x-mixed-replace content,
-    which allows remote attackers to inject arbitrary HTTP headers and
-    conduct HTTP response splitting attacks via crafted input that
-    contains this value, a different vulnerability than CVE-2010-3172.
-  distribution: CGI-Simple
-  fixed_versions: ~
+  - CVE-2010-2761
+  description: |
+    The multipart_init function in (1) CGI.pm before 3.50 and (2) Simple.pm in CGI::Simple 1.112 and earlier uses a hardcoded value of the MIME boundary string in multipart/x-mixed-replace content, which allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via crafted input that contains this value, a different vulnerability than CVE-2010-3172.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-8x6h-gq6j-8x3j
   id: CPANSA-CGI-Simple-2010-2761
   references:
-    - https://github.com/AndyA/CGI--Simple/commit/e4942b871a26c1317a175a91ebb7262eea59b380
-    - http://cpansearch.perl.org/src/LDS/CGI.pm-3.50/Changes
-    - http://openwall.com/lists/oss-security/2010/12/01/1
-    - http://www.nntp.perl.org/group/perl.perl5.changes/2010/11/msg28043.html
-    - http://perl5.git.perl.org/perl.git/blobdiff/a0b94c2432b1d8c20653453a0f6970cb10f59aec..84601d63a7e34958da47dad1e61e27cb3bd467d1:/cpan/CGI/lib/CGI.pm
-    - http://perl5.git.perl.org/perl.git/commit/84601d63a7e34958da47dad1e61e27cb3bd467d1
-    - http://openwall.com/lists/oss-security/2010/12/01/2
-    - http://openwall.com/lists/oss-security/2010/12/01/3
-    - https://bugzilla.mozilla.org/show_bug.cgi?id=600464
-    - http://osvdb.org/69588
-    - http://osvdb.org/69589
-    - http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:237
-    - http://www.vupen.com/english/advisories/2011/0076
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:250
-    - http://secunia.com/advisories/42877
-    - https://bugzilla.mozilla.org/show_bug.cgi?id=591165
-    - http://www.vupen.com/english/advisories/2011/0207
-    - http://www.bugzilla.org/security/3.2.9/
-    - http://secunia.com/advisories/43033
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-January/053591.html
-    - http://secunia.com/advisories/43147
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-January/053576.html
-    - http://www.vupen.com/english/advisories/2011/0249
-    - http://www.vupen.com/english/advisories/2011/0271
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053678.html
-    - http://www.vupen.com/english/advisories/2011/0212
-    - http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html
-    - http://secunia.com/advisories/43165
-    - http://secunia.com/advisories/43068
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053665.html
-    - http://www.redhat.com/support/errata/RHSA-2011-1797.html
-    - http://lists.opensuse.org/opensuse-security-announce/2011-04/msg00000.html
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+  - https://github.com/AndyA/CGI--Simple/commit/e4942b871a26c1317a175a91ebb7262eea59b380
+  - http://cpansearch.perl.org/src/LDS/CGI.pm-3.50/Changes
+  - http://openwall.com/lists/oss-security/2010/12/01/1
+  - http://www.nntp.perl.org/group/perl.perl5.changes/2010/11/msg28043.html
+  - http://perl5.git.perl.org/perl.git/blobdiff/a0b94c2432b1d8c20653453a0f6970cb10f59aec..84601d63a7e34958da47dad1e61e27cb3bd467d1:/cpan/CGI/lib/CGI.pm
+  - http://perl5.git.perl.org/perl.git/commit/84601d63a7e34958da47dad1e61e27cb3bd467d1
+  - http://openwall.com/lists/oss-security/2010/12/01/2
+  - http://openwall.com/lists/oss-security/2010/12/01/3
+  - https://bugzilla.mozilla.org/show_bug.cgi?id=600464
+  - http://osvdb.org/69588
+  - http://osvdb.org/69589
+  - http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00003.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:237
+  - http://www.vupen.com/english/advisories/2011/0076
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:250
+  - http://secunia.com/advisories/42877
+  - https://bugzilla.mozilla.org/show_bug.cgi?id=591165
+  - http://www.vupen.com/english/advisories/2011/0207
+  - http://www.bugzilla.org/security/3.2.9/
+  - http://secunia.com/advisories/43033
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-January/053591.html
+  - http://secunia.com/advisories/43147
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-January/053576.html
+  - http://www.vupen.com/english/advisories/2011/0249
+  - http://www.vupen.com/english/advisories/2011/0271
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053678.html
+  - http://www.vupen.com/english/advisories/2011/0212
+  - http://lists.opensuse.org/opensuse-security-announce/2011-01/msg00006.html
+  - http://secunia.com/advisories/43165
+  - http://secunia.com/advisories/43068
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-February/053665.html
+  - http://www.redhat.com/support/errata/RHSA-2011-1797.html
+  - http://lists.opensuse.org/opensuse-security-announce/2011-04/msg00000.html
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
   reported: 2010-12-06
   severity: ~
+cpansa_version: 2
+distribution: CGI-Simple
+last_checked: 1708150834
+latest_version: '1.281'
+metacpan: https://metacpan.org/pod/CGI::Simple
+repo: http://github.com/manwar/CGI--Simple.git

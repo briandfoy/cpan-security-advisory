@@ -1,14 +1,23 @@
 ---
-- id: CPANSA-PAR-Packer-2011-01
-  distribution: PAR-Packer
-  reported: 2011-07-18
-  description: >
-    PAR packed files are extracted to unsafe and predictable temporary
-    directories.
-  references:
-    - https://metacpan.org/changes/distribution/PAR-Packer
-    - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+advisories:
+- affected_versions:
+  - <1.011
   cves:
-    - CVE-2011-4114
-  affected_versions: "<1.011"
-  fixed_versions: ">=1.011"
+  - CVE-2011-4114
+  description: |
+    PAR packed files are extracted to unsafe and predictable temporary directories.
+  fixed_versions:
+  - '>=1.011'
+  github_security_advisory:
+  - GHSA-gxwf-286g-rc8g
+  id: CPANSA-PAR-Packer-2011-01
+  references:
+  - https://metacpan.org/changes/distribution/PAR-Packer
+  - https://rt.cpan.org/Public/Bug/Display.html?id=69560
+  reported: 2011-07-18
+cpansa_version: 2
+distribution: PAR-Packer
+last_checked: 1708150861
+latest_version: '1.061'
+metacpan: https://metacpan.org/pod/PAR::Packer
+repo: git://github.com/rschupp/PAR-Packer.git

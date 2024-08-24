@@ -147,22 +147,9 @@ package Local::CPANReports {
 
 	sub file_checks {
 		state @subs = qw(
-			check_distributions_match
 			);
 
 		return @subs;
-		}
-
-	sub check_distributions_match ($self, $data) {
-		my %Seen;
-
-		foreach my($n, $report) ( indexed($data->@*) ) {
-			$Seen{ $report->{distribution} }++;
-			}
-
-		my $key_count = keys %Seen;
-		return if $key_count == 1;
-		return "There are more than one distribution in the records: " . join( " ", keys %Seen );
 		}
 
 	sub check_id ($self, $record) {
@@ -220,7 +207,6 @@ package Local::CPANReports {
 		cves
 		affected_versions
 		fixed_versions
-		distribution
 		)
 		}
 
@@ -237,7 +223,7 @@ package Local::CPANReports {
 
 	sub run_record_checks ($class, $data) {
 		my %results;
-		foreach my($n, $report) ( indexed($data->@*) ) {
+		foreach my($n, $report) ( indexed($data->{advisories}->@*) ) {
 			print ".";
 			my $id = $report->{id} // "report $n";
 			foreach my $method ( $class->record_checks ) {

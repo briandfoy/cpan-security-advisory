@@ -1,18 +1,26 @@
 ---
-- affected_versions: ">0"
+advisories:
+- affected_versions:
+  - '>0'
   cves:
-    - CVE-2011-4116
-  description: >
-    _is_safe in the File::Temp module for Perl does not properly
-    handle symlinks.
-  distribution: File-Temp
-  fixed_versions: ~
+  - CVE-2011-4116
+  description: |
+    _is_safe in the File::Temp module for Perl does not properly handle symlinks.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-grqm-6jmc-2h46
   id: CPANSA-File-Temp-2011-4116
   references:
-    - http://www.openwall.com/lists/oss-security/2011/11/04/2
-    - https://rt.cpan.org/Public/Bug/Display.html?id=69106
-    - https://github.com/Perl-Toolchain-Gang/File-Temp/issues/14
-    - http://www.openwall.com/lists/oss-security/2011/11/04/4
-    - https://seclists.org/oss-sec/2011/q4/238
+  - http://www.openwall.com/lists/oss-security/2011/11/04/2
+  - https://rt.cpan.org/Public/Bug/Display.html?id=69106
+  - https://github.com/Perl-Toolchain-Gang/File-Temp/issues/14
+  - http://www.openwall.com/lists/oss-security/2011/11/04/4
+  - https://seclists.org/oss-sec/2011/q4/238
   reported: 2020-01-31
   severity: high
+cpansa_version: 2
+distribution: File-Temp
+last_checked: 1708150848
+latest_version: '0.2311'
+metacpan: https://metacpan.org/pod/File::Temp
+repo: https://github.com/Perl-Toolchain-Gang/File-Temp.git

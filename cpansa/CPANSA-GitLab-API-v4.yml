@@ -1,16 +1,24 @@
 ---
-- id: CPANSA-GitLab-API-v4-2023-31485
-  affected_versions: ">=0.26"
-  fixed_versions: ~
-  description: >
-    GitLab::API::v4 is missing the verify_SSL=>1 flag in HTTP::Tiny, allowing a
-    network attacker to MITM connections to the GitLab server.
-  distribution: GitLab-API-v4
-  references:
-    - https://github.com/bluefeet/GitLab-API-v4/pull/57
-    - https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/
-    - https://www.openwall.com/lists/oss-security/2023/04/18/14
-    - https://github.com/chansen/p5-http-tiny/pull/151
-  reported: 2023-02-28
+advisories:
+- affected_versions:
+  - '>=0.26'
   cves:
-    - CVE-2023-31485
+  - CVE-2023-31485
+  description: |
+    GitLab::API::v4 is missing the verify_SSL=>1 flag in HTTP::Tiny, allowing a network attacker to MITM connections to the GitLab server.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-c2v8-3552-rp4m
+  id: CPANSA-GitLab-API-v4-2023-31485
+  references:
+  - https://github.com/bluefeet/GitLab-API-v4/pull/57
+  - https://blog.hackeriet.no/perl-http-tiny-insecure-tls-default-affects-cpan-modules/
+  - https://www.openwall.com/lists/oss-security/2023/04/18/14
+  - https://github.com/chansen/p5-http-tiny/pull/151
+  reported: 2023-02-28
+cpansa_version: 2
+distribution: GitLab-API-v4
+last_checked: 1708150849
+latest_version: '0.27'
+metacpan: https://metacpan.org/pod/GitLab::API::v4
+repo: https://github.com/bluefeet/GitLab-API-v4.git

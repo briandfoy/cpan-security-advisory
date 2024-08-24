@@ -1,12 +1,21 @@
 ---
-- id: CPANSA-Jifty-DBI-2011-01
-  distribution: Jifty-DBI
-  reported: 2011-04-04
-  description: >
-    SQL injection in column names, operators, order and group by.
-  references:
-    - https://metacpan.org/dist/Jifty-DBI/changes
-    - https://metacpan.org/dist/Jifty/changes
-  affected_versions: "<0.68"
-  fixed_versions: ">=0.68"
+advisories:
+- affected_versions:
+  - <0.68
   cves: []
+  description: |
+    SQL injection in column names, operators, order and group by.
+  fixed_versions:
+  - '>=0.68'
+  github_security_advisory: []
+  id: CPANSA-Jifty-DBI-2011-01
+  references:
+  - https://metacpan.org/dist/Jifty-DBI/changes
+  - https://metacpan.org/dist/Jifty/changes
+  reported: 2011-04-04
+cpansa_version: 2
+distribution: Jifty-DBI
+last_checked: 1708150853
+latest_version: '0.78'
+metacpan: https://metacpan.org/pod/Jifty::DBI
+repo: https://github.com/bestpractical/jifty-dbi

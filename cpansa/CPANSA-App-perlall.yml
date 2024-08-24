@@ -1,36 +1,44 @@
 ---
-- affected_versions: '<0.33'
+advisories:
+- affected_versions:
+  - <0.33
   cves:
-    - CVE-2013-1667
-  description: >
-    The rehash mechanism in Perl 5.8.2 through 5.16.x allows
-    context-dependent attackers to cause a denial of service (memory
-    consumption and crash) via a crafted hash key.
-  distribution: App-perlall
-  fixed_versions: '>=0.33'
+  - CVE-2013-1667
+  description: |
+    The rehash mechanism in Perl 5.8.2 through 5.16.x allows context-dependent attackers to cause a denial of service (memory consumption and crash) via a crafted hash key.
+  fixed_versions:
+  - '>=0.33'
+  github_security_advisory:
+  - GHSA-wv37-679q-qgxw
   id: CPANSA-App-perlall-2013-1667
   references:
-    - http://www.securityfocus.com/bid/58311
-    - http://perl5.git.perl.org/perl.git/commitdiff/d59e31f
-    - http://perl5.git.perl.org/perl.git/commitdiff/9d83adc
-    - http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html
-    - http://www.debian.org/security/2013/dsa-2641
-    - http://secunia.com/advisories/52499
-    - http://secunia.com/advisories/52472
-    - https://bugzilla.redhat.com/show_bug.cgi?id=912276
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=702296
-    - http://perl5.git.perl.org/perl.git/commitdiff/6e79fe5
-    - http://osvdb.org/90892
-    - http://www.ubuntu.com/usn/USN-1770-1
-    - http://rhn.redhat.com/errata/RHSA-2013-0685.html
-    - http://lists.apple.com/archives/security-announce/2013/Oct/msg00004.html
-    - http://marc.info/?l=bugtraq&m=137891988921058&w=2
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2013:113
-    - https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0094
-    - http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/82598
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18771
+  - http://www.securityfocus.com/bid/58311
+  - http://perl5.git.perl.org/perl.git/commitdiff/d59e31f
+  - http://perl5.git.perl.org/perl.git/commitdiff/9d83adc
+  - http://www.nntp.perl.org/group/perl.perl5.porters/2013/03/msg199755.html
+  - http://www.debian.org/security/2013/dsa-2641
+  - http://secunia.com/advisories/52499
+  - http://secunia.com/advisories/52472
+  - https://bugzilla.redhat.com/show_bug.cgi?id=912276
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=702296
+  - http://perl5.git.perl.org/perl.git/commitdiff/6e79fe5
+  - http://osvdb.org/90892
+  - http://www.ubuntu.com/usn/USN-1770-1
+  - http://rhn.redhat.com/errata/RHSA-2013-0685.html
+  - http://lists.apple.com/archives/security-announce/2013/Oct/msg00004.html
+  - http://marc.info/?l=bugtraq&m=137891988921058&w=2
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2013:113
+  - https://wiki.mageia.org/en/Support/Advisories/MGASA-2013-0094
+  - http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/82598
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A18771
   reported: 2013-03-14
   severity: ~
+cpansa_version: 2
+distribution: App-perlall
+last_checked: 1708150830
+latest_version: '0.51'
+metacpan: https://metacpan.org/pod/App::perlall
+repo: git://github.com/rurban/App-perlall.git

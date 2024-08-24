@@ -1,0 +1,175 @@
+#!perl
+use v5.36;
+
+use FindBin qw($Bin);
+use MetaCPAN::Client;
+use Mojo::UserAgent;
+use Mojo::Util qw(dumper);
+use YAML::XS;
+
+my $url = 'https://api.github.com/advisories';
+
+my @files = glob( "external_reports/*.yml" );
+
+$|++;
+
+FILE: foreach my $file ( @files ) {
+	my $data = eval { YAML::XS::LoadFile( $file ) };
+
+	unless( defined $data ) {
+		warn "Could not read $file: $@\n";
+		next FILE;
+		}
+
+	my $advisories = do {
+		if( ref $data eq ref [] ) {
+			$data;
+			}
+		elsif( ref $data eq ref {} ) {
+			$data->{advisories};
+			}
+		else {
+			warn "Did not find advisories in $file. Skipping\n";
+			next FILE;
+			}
+		};
+
+	state $count = 0;
+	my $dist;
+	foreach my $advisory ( $advisories->@* ) {
+		$dist = delete $advisory->{distribution};
+		next if defined $advisory->{github_security_advisory};
+
+		my @cves;
+		push @cves, $advisory->{cves}->@* if exists $advisory->{cves};
+		push @cves, $advisory->{cve} if exists $advisory->{cve};
+
+		my @ghsa_ids;
+		foreach my $cve ( @cves ) {
+			$count++;
+			my $hash = cve_to_ghad($cve);
+			no warnings 'uninitialized';
+			printf "%d\t%s\t%s\t%s\t%s\n", $count, $hash->@{qw(cve ghsa_id type)}, $file;
+			push @ghsa_ids, $hash->{ghsa_id};
+			}
+
+		$advisory->{github_security_advisory} = \@ghsa_ids;
+		};
+
+	$data->{cpansa_version} = 2;
+
+	YAML::XS::DumpFile( $file, $data );
+	}
+
+sub cve_to_ghad ( $cve ) {
+	state $map_file = "$Bin/../data/cve_to_github.tsv";
+
+	state %Seen = do {
+		if( -s -e $map_file ) {
+			if( open my $fh, '<', $map_file ) {
+				my %hash;
+				while( <$fh> ) {
+					next if /\A\s*#/;
+					chomp;
+					my( $cve, $ghsa, $type, $file ) = split /\t/;
+					$hash{$cve}->@{qw(cve ghsa_id type file)} = ($cve, $ghsa, $type, $file);
+					}
+				%hash;
+				}
+			else {
+				warn "Could not open $map_file: $!";
+				();
+				}
+			}
+		else {
+			()
+			}
+		};
+
+	state $ua = do {
+		state $rc = require Mojo::UserAgent;
+		my $ua = Mojo::UserAgent->new;
+		$ua->on( start => sub ( $ua, $tx) {
+			$tx->req->headers->accept('application/vnd.github+json');
+			$tx->req->headers->header('X-GitHub-Api-Version' => '2022-11-28' );
+			$tx->req->headers->authorization("Bearer $ENV{GITHUB_TOKEN}" );
+			} );
+		$ua;
+		};
+	state $sleep_time = 0;
+
+	state $map_fh = do {
+		open my $fh, '>>', $map_file;
+		$fh;
+		};
+
+	state @types = qw(unreviewed reviewed malware);
+
+	return $Seen{$cve} if $Seen{$cve};
+
+	$Seen{$cve}->@{qw(cve ghsa_id type)} = ( $cve, undef, undef );
+
+	TYPE: foreach my $type ( @types ) {
+		my $query = { type => $type, cve_id => $cve };
+		sleep $sleep_time;
+		my $tx = $ua->get( $url => form => $query  );
+		my $code = $tx->res->code;
+		if( $tx->res->code =~ m/\A40[13]\z/ ) {
+			die "Request is unauthorized: check GITHUB_TOKEN value";
+			}
+		elsif( $tx->res->code eq '429' ) {
+			my $reset = $tx->res->headers->header('X-RateLimit-Reset');
+			my $interval = int($reset - time) + 1;
+			warn "Wating for rate limit to reset ($interval seconds)\n";
+			}
+		elsif( $tx->res->code eq '404' ) {
+			next TYPE;
+			}
+
+		$sleep_time = do {
+			my $limit   = $tx->res->headers->header('X-RateLimit-Limit');
+			my $remaining = $tx->res->headers->header('X-RateLimit-Remaining');
+			my $reset = $tx->res->headers->header('X-RateLimit-Reset');
+
+			my $interval = $reset - time;
+			1 + int( $interval /  $remaining );
+			};
+		warn "Sleep time in now $sleep_time\n";
+
+		my $json = eval { $tx->res->json };
+		next TYPE unless eval{ $json->@* > 0 };
+		$Seen{$cve}->@{qw(ghsa_id type)} = ( $tx->res->json->[0]{ghsa_id}, $type );
+		say { $map_fh } join "\t", $Seen{$cve}->@{qw(cve ghsa_id type)};
+		last TYPE;
+		}
+
+	return $Seen{$cve};
+	}
+
+__END__
+cpansa/CPANSA-ActivePerl.yml: ref: ARRAY
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: public, max-age=60, s-maxage=60
+Content-Length: 2
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Fri, 16 Feb 2024 04:34:34 GMT
+ETag: "74d1db57f0fec3481bb6b4d9bcdc020d656635ec6c53ee589d27a8831cbbe280"
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: GitHub.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept
+Vary: Accept-Encoding, Accept, X-Requested-With
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+x-github-api-version-selected: 2022-11-28
+X-GitHub-Media-Type: github.v3; format=json
+X-GitHub-Request-Id: DF97:29C0:4251485:858FC92:65CEE5D9
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 36
+X-RateLimit-Reset: 1708060022
+X-RateLimit-Resource: core
+X-RateLimit-Used: 24
+X-XSS-Protection: 0

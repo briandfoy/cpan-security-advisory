@@ -1,4 +1,3 @@
-use v5.26;
 use strict;
 use warnings;
 
@@ -10,14 +9,14 @@ use YAML::XS qw(LoadFile);
 
 my $YAMLLINT = find_yamllint();
 
-my $last_run_semaphore = catfile( 't', '.last_run' );
+my $last_run_semaphore = catfile( 'xt', '.last_run' );
 END {
 	open my $fh, '>', $last_run_semaphore;
 	print { $fh } $$;
 	close $fh;
 	}
 
-my @all_files = glob('{.github/workflows,cpansa,external_reports}/*.yml');
+my @all_files = glob('{cpansa,external_reports}/*.yml');
 my $files_to_test = \@all_files;
 
 if( $ENV{TEST_CHANGED_ONLY} ) {
@@ -30,10 +29,10 @@ if( $ENV{TEST_CHANGED_ONLY} ) {
 	my @modified_since_last_run = grep { (stat)[9] > $last_run_time } @all_files;
 	diag( sprintf "Found %d files, %d modified since last run", scalar @all_files, scalar @modified_since_last_run );
 
-	note( <<~"HERE" );
-		Only testing files modified since last run.
-		Delete $last_run_semaphore or set TEST_ALL_YAML=1 to test all files
-		HERE
+	note( <<"HERE" );
+Only testing files modified since last run.
+Delete $last_run_semaphore or set TEST_ALL_YAML=1 to test all files
+HERE
 	$files_to_test = \@modified_since_last_run;
 	pass() unless @modified_since_last_run;
 	}
@@ -43,8 +42,8 @@ subtest 'YAML::XS::LoadFile' => sub {
 	my $start = time;
 	diag( "Checking with YAML::XS" );
 	SKIP: {
-		skip 'No new files' unless $files_to_test->@*;
-		foreach my $file ( $files_to_test->@* ) {
+		skip 'No new files' unless @$files_to_test;
+		foreach my $file ( @$files_to_test ) {
 			my $yaml = eval { LoadFile($file) };
 			ok( defined $yaml, "$file is valid YAML" ) or diag( "$file: $@" );
 			}
@@ -57,9 +56,9 @@ subtest 'yamllint' => sub {
 	diag( "Checking with yamllint" );
 	SKIP: {
 		skip 'No yamllint' unless defined $YAMLLINT;
-		skip 'No new files' unless $files_to_test->@*;
-		foreach my $file ( $files_to_test->@* ) {
-			my $output = `$YAMLLINT -c t/yamllint.config $file`;
+		skip 'No new files' unless @$files_to_test;
+		foreach my $file ( @$files_to_test ) {
+			my $output = `$YAMLLINT -c xt/yamllint.config $file`;
 			is( $?, 0, "yamllint clean for $file" ) or diag( "$file: $output" );
 			}
 		}

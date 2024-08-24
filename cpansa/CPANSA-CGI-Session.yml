@@ -1,32 +1,39 @@
 ---
-- affected_versions: "<4.10"
+advisories:
+- affected_versions:
+  - <4.10
   cves:
-    - CVE-2006-1279
-  description: >
-    CGI::Session 4.03-1 allows local users to overwrite arbitrary
-    files via a symlink attack on temporary files used by
-    (1) Driver::File, (2) Driver::db_file, and possibly
-    (3) Driver::sqlite.
-  distribution: CGI-Session
-  fixed_versions: ~
+  - CVE-2006-1279
+  description: |
+    CGI::Session 4.03-1 allows local users to overwrite arbitrary files via a symlink attack on temporary files used by (1) Driver::File, (2) Driver::db_file, and possibly (3) Driver::sqlite.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-xxvm-h45q-hvv9
   id: CPANSA-CGI-Session-2006-1279
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=356555
-    - http://secunia.com/advisories/19211
-    - http://www.securityfocus.com/bid/17177
-    - http://www.osvdb.org/23865
-    - http://www.vupen.com/english/advisories/2006/0946
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/25285
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=356555
+  - http://secunia.com/advisories/19211
+  - http://www.securityfocus.com/bid/17177
+  - http://www.osvdb.org/23865
+  - http://www.vupen.com/english/advisories/2006/0946
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/25285
   reported: 2006-03-19
   severity: ~
-- affected_versions: "<4.12"
-  description: >
-    possible SQL injection attack
-  distribution: CGI-Session
-  fixed_versions: ">=4.12"
+- affected_versions:
+  - <4.12
+  cves: []
+  description: "possible SQL injection attack\n"
+  fixed_versions:
+  - '>=4.12'
+  github_security_advisory: []
   id: CPANSA-CGI-Session-2006-01
   references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=18578
+  - https://rt.cpan.org/Public/Bug/Display.html?id=18578
   reported: 2006-04-06
   severity: ~
-  cves: []
+cpansa_version: 2
+distribution: CGI-Session
+last_checked: 1708150833
+latest_version: '4.48'
+metacpan: https://metacpan.org/pod/CGI::Session
+repo: http://github.com/cromedome/cgi-session

@@ -1,12 +1,20 @@
 ---
-- id: CPANSA-Catalyst-Controller-Combine-2010-01
-  distribution: Catalyst-Controller-Combine
-  reported: 2010-05-21
-  description: >
-    Allows to use url-encoded path-parts to crawl along the file
-    system and read files outside the intended directory.
-  references:
-    - https://metacpan.org/changes/distribution/Catalyst-Controller-Combine
-  affected_versions: "<0.12"
-  fixed_versions: ">=0.12"
+advisories:
+- affected_versions:
+  - <0.12
   cves: []
+  description: |
+    Allows to use url-encoded path-parts to crawl along the file system and read files outside the intended directory.
+  fixed_versions:
+  - '>=0.12'
+  github_security_advisory: []
+  id: CPANSA-Catalyst-Controller-Combine-2010-01
+  references:
+  - https://metacpan.org/changes/distribution/Catalyst-Controller-Combine
+  reported: 2010-05-21
+cpansa_version: 2
+distribution: Catalyst-Controller-Combine
+last_checked: 1708150831
+latest_version: '0.15'
+metacpan: https://metacpan.org/pod/Catalyst::Controller::Combine
+repo: ~

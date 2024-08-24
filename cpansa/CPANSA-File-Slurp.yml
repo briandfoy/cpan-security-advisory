@@ -1,12 +1,21 @@
 ---
-- id: CPANSA-File-Slurp-2013-01
-  distribution: File-Slurp
-  reported: 2013-02-04
-  description: >
-    Use of sysread treats any :encoding(...) as effectively :utf8.
-  references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=83126
-    - https://rt.perl.org/Ticket/Display.html?id=121870
+advisories:
+- affected_versions:
+  - <9999.26
   cves: []
-  affected_versions: "<9999.26"
-  fixed_versions: ">=9999.26"
+  description: |
+    Use of sysread treats any :encoding(...) as effectively :utf8.
+  fixed_versions:
+  - '>=9999.26'
+  github_security_advisory: []
+  id: CPANSA-File-Slurp-2013-01
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=83126
+  - https://rt.perl.org/Ticket/Display.html?id=121870
+  reported: 2013-02-04
+cpansa_version: 2
+distribution: File-Slurp
+last_checked: 1708150848
+latest_version: '9999.32'
+metacpan: https://metacpan.org/pod/File::Slurp
+repo: https://github.com/perhunter/slurp.git

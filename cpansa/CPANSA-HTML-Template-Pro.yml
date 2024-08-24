@@ -1,25 +1,31 @@
 ---
-- affected_versions: "<0.9507"
+advisories:
+- affected_versions:
+  - <0.9507
   cves:
-    - CVE-2011-4616
-  description: >
-    Cross-site scripting (XSS) vulnerability in the HTML-Template-Pro
-    module before 0.9507 for Perl allows remote attackers to inject
-    arbitrary web script or HTML via template parameters, related to
-    improper handling of > (greater than) and < (less than)
-    characters.
-  distribution: HTML-Template-Pro
-  fixed_versions: ">=0.9507"
+  - CVE-2011-4616
+  description: |
+    Cross-site scripting (XSS) vulnerability in the HTML-Template-Pro module before 0.9507 for Perl allows remote attackers to inject arbitrary web script or HTML via template parameters, related to improper handling of > (greater than) and < (less than) characters.
+  fixed_versions:
+  - '>=0.9507'
+  github_security_advisory:
+  - GHSA-4w9w-9h3m-mg43
   id: CPANSA-HTML-Template-Pro-2011-4616
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=652587
-    - http://openwall.com/lists/oss-security/2011/12/19/1
-    - http://metacpan.org/diff/release/VIY/HTML-Template-Pro-0.9505/VIY/HTML-Template-Pro-0.9507
-    - http://secunia.com/advisories/47184
-    - http://cpansearch.perl.org/src/VIY/HTML-Template-Pro-0.9507/Changes
-    - http://www.securityfocus.com/bid/51117
-    - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089603.html
-    - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089889.html
-    - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089888.html
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=652587
+  - http://openwall.com/lists/oss-security/2011/12/19/1
+  - http://metacpan.org/diff/release/VIY/HTML-Template-Pro-0.9505/VIY/HTML-Template-Pro-0.9507
+  - http://secunia.com/advisories/47184
+  - http://cpansearch.perl.org/src/VIY/HTML-Template-Pro-0.9507/Changes
+  - http://www.securityfocus.com/bid/51117
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089603.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089889.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2012-October/089888.html
   reported: 2012-01-06
   severity: ~
+cpansa_version: 2
+distribution: HTML-Template-Pro
+last_checked: 1708150851
+latest_version: '0.9524'
+metacpan: https://metacpan.org/pod/HTML::Template::Pro
+repo: ~

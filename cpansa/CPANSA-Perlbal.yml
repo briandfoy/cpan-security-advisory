@@ -1,21 +1,25 @@
 ---
-- affected_versions: "<1.70"
+advisories:
+- affected_versions:
+  - <1.70
   cves:
-    - CVE-2008-1652
-  description: >
-    Directory traversal vulnerability in the _serve_request_multiple
-    function in lib/Perlbal/ClientHTTPBase.pm in Perlbal before 1.70,
-    when concat get is enabled, allows remote attackers to read
-    arbitrary files in a parent directory via a directory traversal
-    sequence in an unspecified parameter.  NOTE: some of these details
-    are obtained from third party information.
-  distribution: 'Perlbal'
-  fixed_versions: ~
+  - CVE-2008-1652
+  description: |
+    Directory traversal vulnerability in the _serve_request_multiple function in lib/Perlbal/ClientHTTPBase.pm in Perlbal before 1.70, when concat get is enabled, allows remote attackers to read arbitrary files in a parent directory via a directory traversal sequence in an unspecified parameter.  NOTE: some of these details are obtained from third party information.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-9chg-p5j8-vxvp
   id: CPANSA-Perlbal-2008-1652
   references:
-    - http://search.cpan.org/src/BRADFITZ/Perlbal-1.70/CHANGES
-    - http://secunia.com/advisories/29565
-    - http://www.vupen.com/english/advisories/2008/1045/references
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/41540
+  - http://search.cpan.org/src/BRADFITZ/Perlbal-1.70/CHANGES
+  - http://secunia.com/advisories/29565
+  - http://www.vupen.com/english/advisories/2008/1045/references
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/41540
   reported: 2008-04-02
   severity: ~
+cpansa_version: 2
+distribution: Perlbal
+last_checked: 1708150863
+latest_version: '1.80'
+metacpan: https://metacpan.org/pod/Perlbal
+repo: ~

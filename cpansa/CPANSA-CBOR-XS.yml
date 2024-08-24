@@ -1,14 +1,21 @@
 ---
-- id: CPANSA-CBOR-XS-2017-01
-  affected_versions: "<1.7"
+advisories:
+- affected_versions:
+  - <1.7
   cves: []
-  description: >
-    An out-of bound sharedref or stringref index could cause an out of
-    bounds access - might be exploitable. A decoding error during
-    indefinite array or hash decoding could cause an endless loop.
-  distribution: CBOR-XS
-  fixed_versions: ">=1.7"
+  description: |
+    An out-of bound sharedref or stringref index could cause an out of bounds access - might be exploitable. A decoding error during indefinite array or hash decoding could cause an endless loop.
+  fixed_versions:
+  - '>=1.7'
+  github_security_advisory: []
+  id: CPANSA-CBOR-XS-2017-01
   references:
-    - https://metacpan.org/dist/CBOR-XS/changes
+  - https://metacpan.org/dist/CBOR-XS/changes
   reported: 2017-07-27
   severity: ~
+cpansa_version: 2
+distribution: CBOR-XS
+last_checked: 1708150832
+latest_version: 1.87
+metacpan: https://metacpan.org/pod/CBOR::XS
+repo: ~

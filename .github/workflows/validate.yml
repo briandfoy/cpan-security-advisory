@@ -32,30 +32,34 @@ jobs:
                   yamllint_file_or_dir: 'cpansa'
                   yamllint_strict: false
                   yamllint_comment: true
-                  yamllint_config_filepath: t/yamllint.config
+                  yamllint_config_filepath: xt/yamllint.config
+              env:
+                  YAMLLINT_CONFIG_FILE: xt/yamllint.config
             - name: 'yamllint on external_reports'
               uses: karancode/yamllint-github-action@master
               with:
                   yamllint_file_or_dir: 'external_reports'
                   yamllint_strict: false
                   yamllint_comment: true
-                  yamllint_config_filepath: t/yamllint.config
+                  yamllint_config_filepath: xt/yamllint.config
+              env:
+                  YAMLLINT_CONFIG_FILE: xt/yamllint.config
     lint:
         runs-on: ${{ matrix.os }}
         strategy:
-          matrix:
-            os:
-                - ubuntu-20.04
-            perl-version:
-                - 'latest'
+            matrix:
+                os:
+                    - ubuntu-20.04
+                perl-version:
+                    - 'latest'
         container:
             image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v3
             - name: 'setup'
               run: |
-                cpan -T Mojolicious Term::ANSIColor YAML::XS IO::Interactive YAML CPAN::Audit
+                cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive MetaCPAN::Client YAML CPAN::Audit Data::Rx
             - name: "Lint reports"
               run: |
-                env PERL5LIB=./lib make invert
+                env PERL5LIB=./lib make -f Makefile.repo invert
                 perl util/lint_reports

@@ -1,19 +1,25 @@
 ---
-- affected_versions: ">0.24"
+advisories:
+- affected_versions:
+  - '>0.24'
   cves:
-    - CVE-2012-6143
-  description: >
-    Spoon::Cookie in the Spoon module 0.24 for Perl does not properly
-    use the Storable::thaw function, which allows remote attackers to
-    execute arbitrary code via a crafted request, which is not
-    properly handled when it is deserialized.
-  distribution: Spoon
-  fixed_versions: ~
+  - CVE-2012-6143
+  description: |
+    Spoon::Cookie in the Spoon module 0.24 for Perl does not properly use the Storable::thaw function, which allows remote attackers to execute arbitrary code via a crafted request, which is not properly handled when it is deserialized.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-xrpf-jjp4-8pmh
   id: CPANSA-Spoon-Cookie-2012-6143
   references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=85217
-    - http://www.securityfocus.com/bid/59834
-    - http://seclists.org/oss-sec/2013/q2/318
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/84197
+  - https://rt.cpan.org/Public/Bug/Display.html?id=85217
+  - http://www.securityfocus.com/bid/59834
+  - http://seclists.org/oss-sec/2013/q2/318
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/84197
   reported: 2014-06-04
   severity: ~
+cpansa_version: 2
+distribution: Spoon
+last_checked: 1708150867
+latest_version: '0.24'
+metacpan: https://metacpan.org/pod/Spoon
+repo: ~

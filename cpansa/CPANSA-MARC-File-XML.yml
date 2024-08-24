@@ -1,23 +1,29 @@
 ---
-- affected_versions: "<1.0.2"
+advisories:
+- affected_versions:
+  - <1.0.2
   cves:
-    - CVE-2014-1626
-  description: >
-    XML External Entity (XXE) vulnerability in MARC::File::XML module
-    before 1.0.2 for Perl, as used in Evergreen, Koha, perl4lib, and
-    possibly other products, allows context-dependent attackers to
-    read arbitrary files via a crafted XML file.
-  distribution: MARC-File-XML
-  fixed_versions: ~
+  - CVE-2014-1626
+  description: |
+    XML External Entity (XXE) vulnerability in MARC::File::XML module before 1.0.2 for Perl, as used in Evergreen, Koha, perl4lib, and possibly other products, allows context-dependent attackers to read arbitrary files via a crafted XML file.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-f8fm-jmgw-5232
   id: CPANSA-MARC-File-XML-2014-1626
   references:
-    - http://www.securityfocus.com/bid/65057
-    - http://www.nntp.perl.org/group/perl.perl4lib/2014/01/msg3073.html
-    - http://secunia.com/advisories/55404
-    - http://libmail.georgialibraries.org/pipermail/open-ils-general/2014-January/009442.html
-    - https://metacpan.org/source/GMCHARLT/MARC-XML-1.0.2/Changes
-    - http://lists.katipo.co.nz/pipermail/koha/2014-January/038430.html
-    - http://osvdb.org/102367
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/90620
+  - http://www.securityfocus.com/bid/65057
+  - http://www.nntp.perl.org/group/perl.perl4lib/2014/01/msg3073.html
+  - http://secunia.com/advisories/55404
+  - http://libmail.georgialibraries.org/pipermail/open-ils-general/2014-January/009442.html
+  - https://metacpan.org/source/GMCHARLT/MARC-XML-1.0.2/Changes
+  - http://lists.katipo.co.nz/pipermail/koha/2014-January/038430.html
+  - http://osvdb.org/102367
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/90620
   reported: 2014-01-26
   severity: ~
+cpansa_version: 2
+distribution: MARC-File-XML
+last_checked: 1708150856
+latest_version: v1.0.5
+metacpan: https://metacpan.org/pod/MARC::File::XML
+repo: ~

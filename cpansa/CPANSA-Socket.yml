@@ -1,15 +1,21 @@
 ---
-- affected_versions: "<2.026"
+advisories:
+- affected_versions:
+  - <2.026
   cves: []
-  description: >
-    The function croak is variadic which expects as a first parameter
-    printf-style format.  Passing arbitrary and string from the caller
-    as a printf format leads to the security problem CWE-134: Use of
-    Externally-Controlled Format String.
-  distribution: Socket
-  fixed_versions: ">=2.027"
+  description: |
+    The function croak is variadic which expects as a first parameter printf-style format.  Passing arbitrary and string from the caller as a printf format leads to the security problem CWE-134: Use of Externally-Controlled Format String.
+  fixed_versions:
+  - '>=2.027'
+  github_security_advisory: []
   id: CPANSA-Socket-2017-01
   references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=122830
+  - https://rt.cpan.org/Public/Bug/Display.html?id=122830
   reported: 2017-08-17
   severity: ~
+cpansa_version: 2
+distribution: Socket
+last_checked: 1708150866
+latest_version: '2.037'
+metacpan: https://metacpan.org/pod/Socket
+repo: ~

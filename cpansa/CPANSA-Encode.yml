@@ -1,69 +1,74 @@
 ---
-- id: CPANSA-Encode-2016-01
-  distribution: Encode
-  reported: 2016-07-27
-  description: >
+advisories:
+- affected_versions:
+  - <2.85
+  cves:
+  - CVE-2016-1238
+  description: |
     Loading optional modules from . (current directory).
+  fixed_versions:
+  - '>=2.85'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-Encode-2016-01
   references:
-    - https://metacpan.org/changes/distribution/Encode
-    - https://github.com/dankogai/p5-encode/pull/58/commits/12be15d64ce089154c4367dc1842cd0dc0993ec6
+  - https://metacpan.org/changes/distribution/Encode
+  - https://github.com/dankogai/p5-encode/pull/58/commits/12be15d64ce089154c4367dc1842cd0dc0993ec6
+  reported: 2016-07-27
+- affected_versions:
+  - '>=3.05'
+  - '<=3.11'
   cves:
-    - CVE-2016-1238
-  affected_versions: "<2.85"
-  fixed_versions: ">=2.85"
-- id: CPANSA-Encode-2021-01
-  distribution: Encode
+  - CVE-2021-36770
+  description: |
+    Encode.pm, as distributed in Perl through 5.34.0, allows local users to gain privileges via a Trojan horse Encode::ConfigLocal library (in the current working directory) that preempts dynamic module loading. Exploitation requires an unusual configuration, and certain 2021 versions of Encode.pm (3.05 through 3.11). This issue occurs because the || operator evaluates @INC in a scalar context, and thus @INC has only an integer value.
+  fixed_versions:
+  - '>3.11'
+  github_security_advisory:
+  - GHSA-3gfh-9hwx-r3vr
+  id: CPANSA-Encode-2021-01
+  references:
+  - https://github.com/Perl/perl5/commit/c1a937fef07c061600a0078f4cb53fe9c2136bb9
+  - https://github.com/dankogai/p5-encode/commit/527e482dc70b035d0df4f8c77a00d81f8d775c74
+  - https://metacpan.org/dist/Encode/changes
+  - https://news.cpanel.com/unscheduled-tsr-10-august-2021/
+  - https://security.netapp.com/advisory/ntap-20210909-0003/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5NDGQSGMEZ75FJGBKNYC75OTO7TF7XHB/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6KOZYD7BH2DNIAEZ2ZL4PJ4QUVQI6Y33/
+  - https://security-tracker.debian.org/tracker/CVE-2021-36770
   reported: 2021-07-17
-  description: >
-    Encode.pm, as distributed in Perl through 5.34.0, allows local
-    users to gain privileges via a Trojan horse Encode::ConfigLocal
-    library (in the current working directory) that preempts dynamic
-    module loading. Exploitation requires an unusual configuration,
-    and certain 2021 versions of Encode.pm (3.05 through 3.11). This
-    issue occurs because the || operator evaluates @INC in a scalar
-    context, and thus @INC has only an integer value.
-  references:
-    - https://github.com/Perl/perl5/commit/c1a937fef07c061600a0078f4cb53fe9c2136bb9
-    - https://github.com/dankogai/p5-encode/commit/527e482dc70b035d0df4f8c77a00d81f8d775c74
-    - https://metacpan.org/dist/Encode/changes
-    - https://news.cpanel.com/unscheduled-tsr-10-august-2021/
-    - https://security.netapp.com/advisory/ntap-20210909-0003/
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/5NDGQSGMEZ75FJGBKNYC75OTO7TF7XHB/
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6KOZYD7BH2DNIAEZ2ZL4PJ4QUVQI6Y33/
-    - https://security-tracker.debian.org/tracker/CVE-2021-36770
+- affected_versions:
+  - <2.44
   cves:
-    - CVE-2021-36770
-  affected_versions:
-    - ">=3.05"
-    - "<=3.11"
-  fixed_versions: ">3.11"
-- affected_versions: "<2.44"
-  cves:
-    - CVE-2011-2939
-  description: >
-    Off-by-one error in the decode_xs function in Unicode/Unicode.xs
-    in the Encode module before 2.44, as used in Perl before 5.15.6,
-    might allow context-dependent attackers to cause a denial of
-    service (memory corruption) via a crafted Unicode string, which
-    triggers a heap-based buffer overflow.
-  distribution: Encode
-  fixed_versions: ">=2.44"
+  - CVE-2011-2939
+  description: |
+    Off-by-one error in the decode_xs function in Unicode/Unicode.xs in the Encode module before 2.44, as used in Perl before 5.15.6, might allow context-dependent attackers to cause a denial of service (memory corruption) via a crafted Unicode string, which triggers a heap-based buffer overflow.
+  fixed_versions:
+  - '>=2.44'
+  github_security_advisory:
+  - GHSA-76hr-qp66-cq6j
   id: CPANSA-Encode-2011-2939
   references:
-    - http://perl5.git.perl.org/perl.git/commitdiff/e46d973584785af1f445c4dedbee4243419cb860#patch5
-    - https://bugzilla.redhat.com/show_bug.cgi?id=731246
-    - http://www.openwall.com/lists/oss-security/2011/08/19/17
-    - http://www.redhat.com/support/errata/RHSA-2011-1424.html
-    - http://www.openwall.com/lists/oss-security/2011/08/18/8
-    - http://secunia.com/advisories/46989
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2012:008
-    - http://secunia.com/advisories/51457
-    - http://www.ubuntu.com/usn/USN-1643-1
-    - http://www.securityfocus.com/bid/49858
-    - http://secunia.com/advisories/46172
-    - http://cpansearch.perl.org/src/FLORA/perl-5.14.2/pod/perldelta.pod
-    - http://secunia.com/advisories/55314
-    - http://search.cpan.org/~flora/perl-5.14.2/pod/perldelta.pod#Encode_decode_xs_n-byte_heap-overflow_(CVE-2011-2939)
+  - http://perl5.git.perl.org/perl.git/commitdiff/e46d973584785af1f445c4dedbee4243419cb860#patch5
+  - https://bugzilla.redhat.com/show_bug.cgi?id=731246
+  - http://www.openwall.com/lists/oss-security/2011/08/19/17
+  - http://www.redhat.com/support/errata/RHSA-2011-1424.html
+  - http://www.openwall.com/lists/oss-security/2011/08/18/8
+  - http://secunia.com/advisories/46989
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2012:008
+  - http://secunia.com/advisories/51457
+  - http://www.ubuntu.com/usn/USN-1643-1
+  - http://www.securityfocus.com/bid/49858
+  - http://secunia.com/advisories/46172
+  - http://cpansearch.perl.org/src/FLORA/perl-5.14.2/pod/perldelta.pod
+  - http://secunia.com/advisories/55314
+  - http://search.cpan.org/~flora/perl-5.14.2/pod/perldelta.pod#Encode_decode_xs_n-byte_heap-overflow_(CVE-2011-2939)
   reported: 2012-01-13
   severity: ~
   x-commit: 'Encode CVE-2011-2939 GitHub #13'
+cpansa_version: 2
+distribution: Encode
+last_checked: 1708150846
+latest_version: '3.20'
+metacpan: https://metacpan.org/pod/Encode
+repo: https://github.com/dankogai/p5-encode

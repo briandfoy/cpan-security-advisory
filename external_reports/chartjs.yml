@@ -1,42 +1,37 @@
 ---
-name: chartjs
-url: https://github.com/chartjs/Chart.js
-perl_distributions:
-  - name: Ukigumo-Server
-    latest_release: 2018-07-05
-    affected:
-      - perl_module_versions: '>=2.1.3,<=2.1.5'
-        distributed_library_version: "0.2.0"
-        needs_work: true
-        comment: >
-          To see that these 0.2.0, from the distributed version, remove
-          the comment at the top and take off the newline at the end.
-  - name: Wight-Chart
-    latest_release: 2013-08-27
-    affected:
-      - perl_module_versions: "==0.003"
-        distributed_library_version: "0.2.0"
-        needs_work: true
-        comment: >
-          This one was hard to track down. First, that are only so many
-          versions if good be becasise of its release date. But the text
-          didn't match any of them. But then I normalized white space!
 advisories:
-  - cve: CVE-2020-7746
-    description: >
-      This affects the package chart.js before 2.9.4. The options
-      parameter is not properly sanitized when it is processed. When the
-      options are processed, the existing options (or the defaults options)
-      are deeply merged with provided options. However, during this
-      operation, the keys of the object being set are not checked, leading
-      to a prototype pollution.
-    affected_versions: "<2.9.4"
-    fixed_versions: ">=2.9.4"
-    references:
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBCHARTJS-1019376
-      - https://github.com/chartjs/Chart.js/pull/7920
-      - https://snyk.io/vuln/SNYK-JS-CHARTJS-1018716
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1019375
-      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1019374
-    reported: 2020-10-29
-    severity: high
+- affected_versions: <2.9.4
+  cve: CVE-2020-7746
+  description: |
+    This affects the package chart.js before 2.9.4. The options parameter is not properly sanitized when it is processed. When the options are processed, the existing options (or the defaults options) are deeply merged with provided options. However, during this operation, the keys of the object being set are not checked, leading to a prototype pollution.
+  fixed_versions: '>=2.9.4'
+  github_security_advisory:
+  - GHSA-h68q-55jf-x68w
+  references:
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBCHARTJS-1019376
+  - https://github.com/chartjs/Chart.js/pull/7920
+  - https://snyk.io/vuln/SNYK-JS-CHARTJS-1018716
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1019375
+  - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1019374
+  reported: 2020-10-29
+  severity: high
+cpansa_version: 2
+name: chartjs
+perl_distributions:
+- affected:
+  - comment: |
+      To see that these 0.2.0, from the distributed version, remove the comment at the top and take off the newline at the end.
+    distributed_library_version: 0.2.0
+    needs_work: true
+    perl_module_versions: '>=2.1.3,<=2.1.5'
+  latest_release: 2018-07-05
+  name: Ukigumo-Server
+- affected:
+  - comment: |
+      This one was hard to track down. First, that are only so many versions if good be becasise of its release date. But the text didn't match any of them. But then I normalized white space!
+    distributed_library_version: 0.2.0
+    needs_work: true
+    perl_module_versions: ==0.003
+  latest_release: 2013-08-27
+  name: Wight-Chart
+url: https://github.com/chartjs/Chart.js

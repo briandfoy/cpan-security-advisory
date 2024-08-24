@@ -1,11 +1,20 @@
 ---
-- id: CPANSA-CGI-apacheSSI-2016-01
-  distribution: CGI-apacheSSI
-  reported: 2016-01-31
-  description: >
-    Security and parsing problems with "include" calls.
-  references:
-    - https://metacpan.org/changes/distribution/CGI-apacheSSI
-  affected_versions: "<0.95"
-  fixed_versions: ">=0.95"
+advisories:
+- affected_versions:
+  - <0.95
   cves: []
+  description: |
+    Security and parsing problems with "include" calls.
+  fixed_versions:
+  - '>=0.95'
+  github_security_advisory: []
+  id: CPANSA-CGI-apacheSSI-2016-01
+  references:
+  - https://metacpan.org/changes/distribution/CGI-apacheSSI
+  reported: 2016-01-31
+cpansa_version: 2
+distribution: CGI-apacheSSI
+last_checked: 1708150832
+latest_version: '0.96'
+metacpan: https://metacpan.org/pod/CGI::apacheSSI
+repo: ~

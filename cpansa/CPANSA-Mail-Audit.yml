@@ -1,22 +1,28 @@
 ---
-- affected_versions: ~
+advisories:
+- affected_versions:
+  - '>0'
   cves:
-    - CVE-2005-4536
-  description: >
-    Mail::Audit module in libmail-audit-perl 2.1-5, when logging is
-    enabled without a default log file specified, uses predictable log
-    filenames, which allows local users to overwrite arbitrary files
-    via a symlink attack on the [PID]-audit.log temporary file.
-  distribution: Mail-Audit
-  fixed_versions: ~
+  - CVE-2005-4536
+  description: |
+    Mail::Audit module in libmail-audit-perl 2.1-5, when logging is enabled without a default log file specified, uses predictable log filenames, which allows local users to overwrite arbitrary files via a symlink attack on the [PID]-audit.log temporary file.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-h7vp-qvfw-h2f3
   id: CPANSA-Mail-Audit-2005-4536
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=344029
-    - http://www.debian.org/security/2006/dsa-960
-    - http://secunia.com/advisories/18652
-    - http://secunia.com/advisories/18656
-    - http://www.securityfocus.com/bid/16434
-    - http://www.vupen.com/english/advisories/2006/0378
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/24380
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=344029
+  - http://www.debian.org/security/2006/dsa-960
+  - http://secunia.com/advisories/18652
+  - http://secunia.com/advisories/18656
+  - http://www.securityfocus.com/bid/16434
+  - http://www.vupen.com/english/advisories/2006/0378
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/24380
   reported: 2005-12-31
   severity: ~
+cpansa_version: 2
+distribution: Mail-Audit
+last_checked: 1708150856
+latest_version: '2.228'
+metacpan: https://metacpan.org/pod/Mail::Audit
+repo: https://github.com/rjbs/Mail-Audit.git

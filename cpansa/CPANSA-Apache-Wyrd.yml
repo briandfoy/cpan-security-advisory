@@ -1,13 +1,21 @@
 ---
-- affected_versions: '<0.97'
+advisories:
+- affected_versions:
+  - <0.97
   cves: []
-  description: >
-    User-submitted data cab be executed if it is displayed on a page,
-    if the data contains a string that can be interpreted as a Wyrd.
-  distribution: Apache-Wyrd
-  fixed_versions: '>=0.97'
+  description: |
+    User-submitted data cab be executed if it is displayed on a page, if the data contains a string that can be interpreted as a Wyrd.
+  fixed_versions:
+  - '>=0.97'
+  github_security_advisory: []
   id: CPANSA-Apache-Wyrd-2008-01
   references:
-    - https://metacpan.org/dist/Apache-Wyrd/changes
+  - https://metacpan.org/dist/Apache-Wyrd/changes
   reported: 2008-04-14
   severity: ~
+cpansa_version: 2
+distribution: Apache-Wyrd
+last_checked: 1708150829
+latest_version: '0.98'
+metacpan: https://metacpan.org/pod/Apache::Wyrd
+repo: ~

@@ -1,54 +1,56 @@
 ---
+advisories:
 - affected_versions:
-    - "<=1.35"
+  - '<=1.35'
   cves:
-    - CVE-2010-4334
-  description: >
-    The IO::Socket::SSL module 1.35 for Perl, when verify_mode is not
-    VERIFY_NONE, fails open to VERIFY_NONE instead of throwing an
-    error when a ca_file/ca_path cannot be verified, which allows
-    remote attackers to bypass intended certificate restrictions.
-  distribution: IO-Socket-SSL
+  - CVE-2010-4334
+  description: |
+    The IO::Socket::SSL module 1.35 for Perl, when verify_mode is not VERIFY_NONE, fails open to VERIFY_NONE instead of throwing an error when a ca_file/ca_path cannot be verified, which allows remote attackers to bypass intended certificate restrictions.
   fixed_versions:
-    - ">1.35"
+  - '>1.35'
+  github_security_advisory:
+  - GHSA-rgc7-283p-45vh
   id: CPANSA-IO-Socket-SSL-2010-4334
   references:
-    - http://osvdb.org/69626
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=606058
-    - http://www.securityfocus.com/bid/45189
-    - http://cpansearch.perl.org/src/SULLR/IO-Socket-SSL-1.35/Changes
-    - http://secunia.com/advisories/42508
-    - http://secunia.com/advisories/42757
-    - http://www.openwall.com/lists/oss-security/2010/12/09/8
-    - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052594.html
-    - http://www.openwall.com/lists/oss-security/2010/12/24/1
-    - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052601.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2011:092
+  - http://osvdb.org/69626
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=606058
+  - http://www.securityfocus.com/bid/45189
+  - http://cpansearch.perl.org/src/SULLR/IO-Socket-SSL-1.35/Changes
+  - http://secunia.com/advisories/42508
+  - http://secunia.com/advisories/42757
+  - http://www.openwall.com/lists/oss-security/2010/12/09/8
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052594.html
+  - http://www.openwall.com/lists/oss-security/2010/12/24/1
+  - http://lists.fedoraproject.org/pipermail/package-announce/2010-December/052601.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2011:092
   reported: 2011-01-14
   severity: ~
 - affected_versions:
-    - ">=1.14"
-    - "<=1.25"
+  - '>=1.14'
+  - '<=1.25'
   cves:
-    - CVE-2009-3024
-  description: >
-    The verify_hostname_of_cert function in the certificate checking
-    feature in IO-Socket-SSL (IO::Socket::SSL) 1.14 through 1.25 only
-    matches the prefix of a hostname when no wildcard is used, which
-    allows remote attackers to bypass the hostname check for a
-    certificate.
-  distribution: IO-Socket-SSL
+  - CVE-2009-3024
+  description: |
+    The verify_hostname_of_cert function in the certificate checking feature in IO-Socket-SSL (IO::Socket::SSL) 1.14 through 1.25 only matches the prefix of a hostname when no wildcard is used, which allows remote attackers to bypass the hostname check for a certificate.
   fixed_versions:
-    - ">=1.26"
+  - '>=1.26'
+  github_security_advisory:
+  - GHSA-5v53-7q2j-vjr2
   id: CPANSA-IO-Socket-SSL-2009-3024
   references:
-    - http://www.openwall.com/lists/oss-security/2009/08/31/4
-    - http://www.openwall.com/lists/oss-security/2009/08/28/1
-    - http://cpansearch.perl.org/src/SULLR/IO-Socket-SSL-1.30/Changes
-    - http://www.openwall.com/lists/oss-security/2009/08/29/1
-    - http://lists.opensuse.org/opensuse-security-announce/2009-09/msg00001.html
-    - http://www.vupen.com/english/advisories/2011/0118
-    - http://www.gentoo.org/security/en/glsa/glsa-201101-06.xml
-    - http://secunia.com/advisories/42893
+  - http://www.openwall.com/lists/oss-security/2009/08/31/4
+  - http://www.openwall.com/lists/oss-security/2009/08/28/1
+  - http://cpansearch.perl.org/src/SULLR/IO-Socket-SSL-1.30/Changes
+  - http://www.openwall.com/lists/oss-security/2009/08/29/1
+  - http://lists.opensuse.org/opensuse-security-announce/2009-09/msg00001.html
+  - http://www.vupen.com/english/advisories/2011/0118
+  - http://www.gentoo.org/security/en/glsa/glsa-201101-06.xml
+  - http://secunia.com/advisories/42893
   reported: 2009-08-31
   severity: ~
+cpansa_version: 2
+distribution: IO-Socket-SSL
+last_checked: 1708150853
+latest_version: '2.085'
+metacpan: https://metacpan.org/pod/IO::Socket::SSL
+repo: https://github.com/noxxi/p5-io-socket-ssl

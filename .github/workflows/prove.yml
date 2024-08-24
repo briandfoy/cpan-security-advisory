@@ -13,6 +13,8 @@ on:
             - 'cpansa/**.yml'
             - 'external_reports/**.yml'
             - '!.github/workflows/validate.yml'
+            - 'util/**'
+            - 't/*.t'
     pull_request:
         branches:
             - '**'
@@ -28,7 +30,7 @@ jobs:
             - uses: actions/checkout@v3
             - name: 'setup'
               run: |
-                sudo cpan -T App::Cpan YAML::XS Mojolicious
+                sudo cpan -T App::Cpan YAML::XS Mojolicious Data::Rx
             - name: 'prove'
               run: |
                 prove

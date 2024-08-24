@@ -1,12 +1,21 @@
 ---
-- affected_versions: '<1.20'
+advisories:
+- affected_versions:
+  - <1.20
   cves: []
-  description: >
+  description: |
     Elive::DAO->set() did not die on tainted data.
-  distribution: Elive
-  fixed_versions: '>=1.20'
+  fixed_versions:
+  - '>=1.20'
+  github_security_advisory: []
   id: CPANSA-Elive-2011-01
   references:
-    - https://metacpan.org/dist/Elive/changes
+  - https://metacpan.org/dist/Elive/changes
   reported: 2011-10-15
   severity: ~
+cpansa_version: 2
+distribution: Elive
+last_checked: 1708150846
+latest_version: '1.37'
+metacpan: https://metacpan.org/pod/Elive
+repo: https://github.com/dwarring/p5-Bb-Collaborate.git

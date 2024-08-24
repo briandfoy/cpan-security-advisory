@@ -1,5 +1,7 @@
 ---
-- affected_versions: '<0.04'
+advisories:
+- affected_versions:
+  - '<0.04'
   cves: []
   description: >
     POSIX::2008's implementation of readlink()
@@ -10,21 +12,30 @@
     returned to perl code by readlink() and readlinkat(). At the very least,
     this causes failures in any downstream code that attempts to access
     whatever filename (plus the erroneous garbage) was linked to.
-  distribution: POSIX-2008
-  fixed_versions: '>=0.04'
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory: []
   id: CPANSA-POSIX-2008-001
   references:
-    - https://rt.cpan.org/Public/Bug/Display.html?id=96644
+  - https://rt.cpan.org/Public/Bug/Display.html?id=96644
   reported: ~
   severity: ~
-- affected_versions: '<0.24'
+- affected_versions:
+  - '<0.24'
   cves: []
   description: >
     Fixed potential env buffer overflow in _execve50c()
-  distribution: POSIX-2008
-  fixed_versions: '>=0.24'
+  fixed_versions:
+  - '>=0.24'
+  github_security_advisory: []
   id: CPANSA-POSIX-2008-002
   references:
-    - https://metacpan.org/release/CGPAN/POSIX-2008-0.24/source/Changes
+  - https://metacpan.org/release/CGPAN/POSIX-2008-0.24/source/Changes
   reported: ~
   severity: ~
+cpansa_version: 2
+distribution: POSIX-2008
+last_checked: 1718428632
+latest_version: '0.24'
+metacpan: https://metacpan.org/pod/POSIX::2008
+repo: ~

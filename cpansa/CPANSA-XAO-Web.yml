@@ -1,13 +1,22 @@
 ---
-- affected_versions: "<1.84"
+advisories:
+- affected_versions:
+  - <1.84
   cves: []
-  description: >
+  description: |
     Embedded HTML in JSON data was not escaped.
-  distribution: XAO-Web
-  fixed_versions: ">=1.84"
+  fixed_versions:
+  - '>=1.84'
+  github_security_advisory: []
   id: CPANSA-XAO-Web-2020-01
   references:
-    - https://github.com/amaltsev/XAO-Web/commit/20dd1d3bc5b811503f5722a16037b60197fe7ef4
-    - https://metacpan.org/release/AMALTSEV/XAO-Web-1.84/changes
+  - https://github.com/amaltsev/XAO-Web/commit/20dd1d3bc5b811503f5722a16037b60197fe7ef4
+  - https://metacpan.org/release/AMALTSEV/XAO-Web-1.84/changes
   reported: 2020-09-18
   severity: ~
+cpansa_version: 2
+distribution: XAO-Web
+last_checked: 1708150869
+latest_version: '1.91'
+metacpan: https://metacpan.org/pod/XAO::Web
+repo: git://github.com/amaltsev/XAO-Web.git

@@ -1,24 +1,29 @@
 ---
-- affected_versions: "<3.63"
+advisories:
+- affected_versions:
+  - <3.63
   cves:
-    - CVE-2009-3627
-  description: >
-    The decode_entities function in util.c in HTML-Parser before 3.63
-    allows context-dependent attackers to cause a denial of service
-    (infinite loop) via an incomplete SGML numeric character
-    reference, which triggers generation of an invalid UTF-8
-    character.
-  distribution: HTML-Parser
-  fixed_versions: ~
+  - CVE-2009-3627
+  description: |
+    The decode_entities function in util.c in HTML-Parser before 3.63 allows context-dependent attackers to cause a denial of service (infinite loop) via an incomplete SGML numeric character reference, which triggers generation of an invalid UTF-8 character.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-r983-27x9-gfq4
   id: CPANSA-HTML-Parser-2009-3627
   references:
-    - https://issues.apache.org/SpamAssassin/show_bug.cgi?id=6225
-    - http://www.openwall.com/lists/oss-security/2009/10/23/9
-    - http://secunia.com/advisories/37155
-    - http://www.securityfocus.com/bid/36807
-    - https://bugzilla.redhat.com/show_bug.cgi?id=530604
-    - http://www.vupen.com/english/advisories/2009/3022
-    - http://github.com/gisle/html-parser/commit/b9aae1e43eb2c8e989510187cff0ba3e996f9a4c
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/53941
+  - https://issues.apache.org/SpamAssassin/show_bug.cgi?id=6225
+  - http://www.openwall.com/lists/oss-security/2009/10/23/9
+  - http://secunia.com/advisories/37155
+  - http://www.securityfocus.com/bid/36807
+  - https://bugzilla.redhat.com/show_bug.cgi?id=530604
+  - http://www.vupen.com/english/advisories/2009/3022
+  - http://github.com/gisle/html-parser/commit/b9aae1e43eb2c8e989510187cff0ba3e996f9a4c
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/53941
   reported: 2009-10-29
   severity: ~
+cpansa_version: 2
+distribution: HTML-Parser
+last_checked: 1708150850
+latest_version: '3.81'
+metacpan: https://metacpan.org/pod/HTML::Parser
+repo: https://github.com/libwww-perl/HTML-Parser.git

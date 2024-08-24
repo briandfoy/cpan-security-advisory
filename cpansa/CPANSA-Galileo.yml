@@ -1,19 +1,26 @@
 ---
-- affected_versions: '<0.043'
+advisories:
+- affected_versions:
+  - <0.043
   cves:
-    - CVE-2019-7410
-  description: >
-    There is stored cross site scripting (XSS) in Galileo CMS v0.042.
-    Remote authenticated users could inject arbitrary web script or HTML
-    via $page_title in /lib/Galileo/files/templates/page/show.html.ep (aka
-    the PAGE TITLE Field).
-  distribution: Galileo
-  fixed_versions: '>=0.043'
+  - CVE-2019-7410
+  description: |
+    There is stored cross site scripting (XSS) in Galileo CMS v0.042. Remote authenticated users could inject arbitrary web script or HTML via $page_title in /lib/Galileo/files/templates/page/show.html.ep (aka the PAGE TITLE Field).
+  fixed_versions:
+  - '>=0.043'
+  github_security_advisory:
+  - GHSA-qwxc-7842-42p6
   id: CPANSA-Galileo-2019-7410
   references:
-    - https://metamorfosec.com/Files/Commits/METC-2020-002-Escape_banner_in_Galileo_CMS_v0.042.txt
-    - https://metacpan.org/changes/distribution/Galileo
-    - https://github.com/jberger/Galileo/pull/55/files
-    - https://metamorfosec.com/Files/Advisories/METS-2020-002-A_Stored_XSS_Vulnerability_in_Galileo_CMS_v0.042.txt
+  - https://metamorfosec.com/Files/Commits/METC-2020-002-Escape_banner_in_Galileo_CMS_v0.042.txt
+  - https://metacpan.org/changes/distribution/Galileo
+  - https://github.com/jberger/Galileo/pull/55/files
+  - https://metamorfosec.com/Files/Advisories/METS-2020-002-A_Stored_XSS_Vulnerability_in_Galileo_CMS_v0.042.txt
   reported: 2020-08-14
   severity: medium
+cpansa_version: 2
+distribution: Galileo
+last_checked: 1708150848
+latest_version: '0.043'
+metacpan: https://metacpan.org/pod/Galileo
+repo: http://github.com/jberger/Galileo

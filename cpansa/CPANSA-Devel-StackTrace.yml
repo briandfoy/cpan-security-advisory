@@ -1,19 +1,26 @@
 ---
-- affected_versions: "<1.19"
+advisories:
+- affected_versions:
+  - '<1.19'
   cves:
-    - CVE-2008-3502
-  description: >
-    Unspecified vulnerability in Best Practical Solutions RT 3.0.0
-    through 3.6.6 allows remote authenticated users to cause a denial
-    of service (CPU or memory consumption) via unspecified vectors
-    related to the Devel::StackTrace module for Perl.
-  distribution: Devel-StackTrace
-  fixed_versions: ">=1.19"
+  - CVE-2008-3502
+  description: |
+    Unspecified vulnerability in Best Practical Solutions RT 3.0.0 through 3.6.6 allows remote authenticated users to cause a denial of service (CPU or memory consumption) via unspecified vectors related to the Devel::StackTrace module for Perl.
+  fixed_versions:
+  - '>=1.19'
+  github_security_advisory:
+  - GHSA-rx7v-38cm-3gxv
   id: CPANSA-Devel-StackTrace-2008-3502
   references:
-    - http://lists.bestpractical.com/pipermail/rt-announce/2008-June/000158.html
-    - http://www.securityfocus.com/bid/29925
-    - http://secunia.com/advisories/30830
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/43337
+  - http://lists.bestpractical.com/pipermail/rt-announce/2008-June/000158.html
+  - http://www.securityfocus.com/bid/29925
+  - http://secunia.com/advisories/30830
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/43337
   reported: 2008-08-06
   severity: ~
+cpansa_version: 2
+distribution: Devel-StackTrace
+last_checked: 1708150845
+latest_version: '2.05'
+metacpan: https://metacpan.org/pod/Devel::StackTrace
+repo: git://github.com/houseabsolute/Devel-StackTrace.git

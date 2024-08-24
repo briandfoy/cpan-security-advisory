@@ -1,39 +1,35 @@
 ---
-name: momentjs
-url: https://momentjs.com
-perl_distributions:
-  - name: App-Netdisco
-    last_version_checked: '2.055001'
-    affected:
-      - perl_module_versions: '>=2.028008,<=2.052002'
-        distributed_library_version: '2.1.0'
-      - perl_module_versions: '>=2.0520003,<=2.055001'
-        distributed_library_version: '2.29.2'
-    reviewed_by:
-      - name: brian d foy
-        date: 2022-09-03
 advisories:
-  - cve: CVE-2022-24785
-    description: >
-      Moment.js is a JavaScript date library for parsing, validating,
-      manipulating, and formatting dates. A path traversal vulnerability
-      impacts npm (server) users of Moment.js between versions 1.0.1 and
-      2.29.1, especially if a user-provided locale string is directly
-      used to switch moment locale. This problem is patched in 2.29.2,
-      and the patch can be applied to all affected versions. As a
-      workaround, sanitize the user-provided locale name before passing
-      it to Moment.js.
-    affected_versions:
-      - '>=1.0.1,<2.29.1'
-    fixed_versions: '>=2.29.1'
-    references:
-      - https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5
-      - https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4
-      - https://www.tenable.com/security/tns-2022-09
-      - https://security.netapp.com/advisory/ntap-20220513-0006/
-    reported: 2022-04-04
-    severity: high
-    reviewed_by:
-      - name: Robert Rothenberg
-        email: rrwo@cpan.org
-        date: 2022-06-28
+- affected_versions:
+  - '>=1.0.1,<2.29.1'
+  cve: CVE-2022-24785
+  description: |
+    Moment.js is a JavaScript date library for parsing, validating, manipulating, and formatting dates. A path traversal vulnerability impacts npm (server) users of Moment.js between versions 1.0.1 and 2.29.1, especially if a user-provided locale string is directly used to switch moment locale. This problem is patched in 2.29.2, and the patch can be applied to all affected versions. As a workaround, sanitize the user-provided locale name before passing it to Moment.js.
+  fixed_versions: '>=2.29.1'
+  github_security_advisory:
+  - GHSA-8hfj-j24r-96c4
+  references:
+  - https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5
+  - https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4
+  - https://www.tenable.com/security/tns-2022-09
+  - https://security.netapp.com/advisory/ntap-20220513-0006/
+  reported: 2022-04-04
+  reviewed_by:
+  - date: 2022-06-28
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: high
+cpansa_version: 2
+name: momentjs
+perl_distributions:
+- affected:
+  - distributed_library_version: 2.1.0
+    perl_module_versions: '>=2.028008,<=2.052002'
+  - distributed_library_version: 2.29.2
+    perl_module_versions: '>=2.0520003,<=2.055001'
+  last_version_checked: '2.055001'
+  name: App-Netdisco
+  reviewed_by:
+  - date: 2022-09-03
+    name: brian d foy
+url: https://momentjs.com

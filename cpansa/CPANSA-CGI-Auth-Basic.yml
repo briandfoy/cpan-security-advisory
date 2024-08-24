@@ -1,11 +1,19 @@
 ---
-- id: CPANSA-CGI-Auth-Basic-2007-01
-  distribution: CGI-Auth-Basic
-  reported: 2007-12-30
-  description: >
-      TBD
-  references:
-    - https://metacpan.org/changes/distribution/CGI-Auth-Basic
-  affected_versions: "<1.11"
-  fixed_versions: ">=1.11"
+advisories:
+- affected_versions:
+  - <1.11
   cves: []
+  description: "TBD\n"
+  fixed_versions:
+  - '>=1.11'
+  github_security_advisory: []
+  id: CPANSA-CGI-Auth-Basic-2007-01
+  references:
+  - https://metacpan.org/changes/distribution/CGI-Auth-Basic
+  reported: 2007-12-30
+cpansa_version: 2
+distribution: CGI-Auth-Basic
+last_checked: 1708150833
+latest_version: '1.24'
+metacpan: https://metacpan.org/pod/CGI::Auth::Basic
+repo: git://github.com/burak/CPAN-CGI-Auth-Basic.git

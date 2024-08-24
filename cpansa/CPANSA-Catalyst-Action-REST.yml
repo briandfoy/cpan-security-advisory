@@ -1,13 +1,21 @@
 ---
-- affected_versions: "<1.12"
+advisories:
+- affected_versions:
+  - <1.12
   cves: []
-  description: >
-    YAML and YAML::HTML parsers are a potential security hole, as they
-    may allow arbitrary Perl objects to be instantiated.
-  distribution: Catalyst-Action-REST
-  fixed_versions: ">=1.12"
+  description: |
+    YAML and YAML::HTML parsers are a potential security hole, as they may allow arbitrary Perl objects to be instantiated.
+  fixed_versions:
+  - '>=1.12'
+  github_security_advisory: []
   id: CPANSA-Catalyst-Action-REST-2013-01
   references:
-    - https://metacpan.org/dist/Catalyst-Action-REST/changes
+  - https://metacpan.org/dist/Catalyst-Action-REST/changes
   reported: 2013-09-03
   severity: ~
+cpansa_version: 2
+distribution: Catalyst-Action-REST
+last_checked: 1708150831
+latest_version: '1.21'
+metacpan: https://metacpan.org/pod/Catalyst::Action::REST
+repo: ~

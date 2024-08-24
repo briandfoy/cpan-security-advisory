@@ -1,39 +1,46 @@
 ---
-- id: CPANSA-Spreadsheet-ParseXLSX-2024-22368
-  distribution: Spreadsheet-ParseXLSX
+advisories:
+- affected_versions:
+  - <0.28
+  cves:
+  - CVE-2024-22368
+  description: |
+    The Spreadsheet::ParseXLSX package before 0.28 for Perl can encounter an out-of-memory condition during parsing of a crafted XLSX document. This occurs because the memoize implementation does not have appropriate constraints on merged cells.
+  fixed_versions:
+  - '>=0.28'
+  github_security_advisory:
+  - GHSA-x2hg-844v-frvh
+  id: CPANSA-Spreadsheet-ParseXLSX-2024-22368
+  references:
+  - https://github.com/haile01/perl_spreadsheet_excel_rce_poc/blob/main/parse_xlsx_bomb.md
+  - https://github.com/briandfoy/cpan-security-advisory/issues/131
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-22368
+  - https://github.com/haile01/perl_spreadsheet_excel_rce_poc/blob/main/parse_xlsx_bomb.md
+  - https://metacpan.org/dist/Spreadsheet-ParseXLSX/changes
+  - https://github.com/advisories/GHSA-x2hg-844v-frvh
   reported: 2024-01-03
-  description: >
-    The Spreadsheet::ParseXLSX package before 0.28 for Perl can
-    encounter an out-of-memory condition during parsing of a crafted
-    XLSX document. This occurs because the memoize implementation
-    does not have appropriate constraints on merged cells.
-  references:
-    - https://github.com/haile01/perl_spreadsheet_excel_rce_poc/blob/main/parse_xlsx_bomb.md
-    - https://github.com/briandfoy/cpan-security-advisory/issues/131
-    - https://nvd.nist.gov/vuln/detail/CVE-2024-22368
-    - https://github.com/haile01/perl_spreadsheet_excel_rce_poc/blob/main/parse_xlsx_bomb.md
-    - https://metacpan.org/dist/Spreadsheet-ParseXLSX/changes
-    - https://github.com/advisories/GHSA-x2hg-844v-frvh
-  affected_versions: "<0.28"
-  fixed_versions: ">=0.28"
+- affected_versions:
+  - <0.30
   cves:
-    - CVE-2024-22368
-- id: CPANSA-Spreadsheet-ParseXLSX-2024-23525
-  distribution: Spreadsheet-ParseXLSX
+  - CVE-2024-23525
+  description: |
+    In default configuration of Spreadsheet::ParseXLSX, whenever we call Spreadsheet::ParseXLSX->new()->parse('user_input_file.xlsx'), we'd be vulnerable for XXE vulnerability if the XLSX file that we are parsing is from user input.
+  fixed_versions:
+  - '>=0.30'
+  github_security_advisory:
+  - GHSA-cxjh-j6f8-vrmf
+  id: CPANSA-Spreadsheet-ParseXLSX-2024-23525
+  references:
+  - https://metacpan.org/release/NUDDLEGG/Spreadsheet-ParseXLSX-0.30/changes
+  - https://gist.github.com/phvietan/d1c95a88ab6e17047b0248d6bf9eac4a
+  - https://github.com/briandfoy/cpan-security-advisory/issues/134
+  - https://github.com/MichaelDaum/spreadsheet-parsexlsx/issues/10
+  - https://github.com/advisories/GHSA-cxjh-j6f8-vrmf
+  - https://nvd.nist.gov/vuln/detail/CVE-2024-23525
   reported: 2024-01-17
-  description: >
-    In default configuration of Spreadsheet::ParseXLSX, whenever we
-    call Spreadsheet::ParseXLSX->new()->parse('user_input_file.xlsx'),
-    we'd be vulnerable for XXE vulnerability if the XLSX file that we
-    are parsing is from user input.
-  references:
-    - https://metacpan.org/release/NUDDLEGG/Spreadsheet-ParseXLSX-0.30/changes
-    - https://gist.github.com/phvietan/d1c95a88ab6e17047b0248d6bf9eac4a
-    - https://github.com/briandfoy/cpan-security-advisory/issues/134
-    - https://github.com/MichaelDaum/spreadsheet-parsexlsx/issues/10
-    - https://github.com/advisories/GHSA-cxjh-j6f8-vrmf
-    - https://nvd.nist.gov/vuln/detail/CVE-2024-23525
-  affected_versions: "<0.30"
-  fixed_versions: ">=0.30"
-  cves:
-    - CVE-2024-23525
+cpansa_version: 2
+distribution: Spreadsheet-ParseXLSX
+last_checked: 1708150867
+latest_version: '0.31'
+metacpan: https://metacpan.org/pod/Spreadsheet::ParseXLSX
+repo: https://github.com/MichaelDaum/spreadsheet-parsexlsx

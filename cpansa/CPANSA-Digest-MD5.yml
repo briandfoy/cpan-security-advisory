@@ -1,19 +1,25 @@
 ---
-- affected_versions: "<2.25"
+advisories:
+- affected_versions:
+  - <2.25
   cves:
-    - CVE-2002-0703
-  description: >
-    An interaction between the Perl MD5 module (perl-Digest-MD5) and
-    Perl could produce incorrect MD5 checksums for UTF-8 data, which
-    could prevent a system from properly verifying the integrity of
-    the data.
-  distribution: Digest-MD5
-  fixed_versions: ~
+  - CVE-2002-0703
+  description: |
+    An interaction between the Perl MD5 module (perl-Digest-MD5) and Perl could produce incorrect MD5 checksums for UTF-8 data, which could prevent a system from properly verifying the integrity of the data.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-2c9p-4x2v-863c
   id: CPANSA-Digest-MD5-2002-0703
   references:
-    - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-035.php
-    - http://www.iss.net/security_center/static/9051.php
-    - http://www.securityfocus.com/bid/4716
-    - http://rhn.redhat.com/errata/RHSA-2002-081.html
+  - http://www.linux-mandrake.com/en/security/2002/MDKSA-2002-035.php
+  - http://www.iss.net/security_center/static/9051.php
+  - http://www.securityfocus.com/bid/4716
+  - http://rhn.redhat.com/errata/RHSA-2002-081.html
   reported: 2002-07-26
   severity: ~
+cpansa_version: 2
+distribution: Digest-MD5
+last_checked: 1708150846
+latest_version: '2.59'
+metacpan: https://metacpan.org/pod/Digest::MD5
+repo: https://github.com/dual-Life/digest-md5/

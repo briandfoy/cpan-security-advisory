@@ -1,17 +1,23 @@
 ---
-- id: CPANSA-Dancer2-2018-01
-  distribution: Dancer2
+advisories:
+- affected_versions:
+  - <0.206000
+  cves: []
+  description: |
+    There is a potential RCE with regards to Storable. We have added session ID validation to the session engine so that session backends based on Storable can reject malformed session IDs that may lead to exploitation of the RCE.
+  fixed_versions:
+  - '>=0.206000'
+  github_security_advisory: []
+  id: CPANSA-Dancer2-2018-01
+  references:
+  - https://metacpan.org/changes/distribution/Dancer2
+  - http://lists.preshweb.co.uk/pipermail/dancer-users/2018-April/005952.html
+  - https://github.com/PerlDancer/Dancer2/commit/3580f5d0874a9abf5483528f73bda9a7fd9ec7f1
   reported: 2018-01-30
   severity: critical
-  description: >
-    There is a potential RCE with regards to Storable. We have added
-    session ID validation to the session engine so that session
-    backends based on Storable can reject malformed session IDs that
-    may lead to exploitation of the RCE.
-  references:
-    - https://metacpan.org/changes/distribution/Dancer2
-    - http://lists.preshweb.co.uk/pipermail/dancer-users/2018-April/005952.html
-    - https://github.com/PerlDancer/Dancer2/commit/3580f5d0874a9abf5483528f73bda9a7fd9ec7f1
-  affected_versions: "<0.206000"
-  fixed_versions: ">=0.206000"
-  cves: []
+cpansa_version: 2
+distribution: Dancer2
+last_checked: 1708150843
+latest_version: 1.1.0
+metacpan: https://metacpan.org/pod/Dancer2
+repo: git://github.com/PerlDancer/Dancer2.git

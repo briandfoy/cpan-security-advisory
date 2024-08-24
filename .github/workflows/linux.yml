@@ -1,0 +1,144 @@
+# brian's standard GitHub Actions Ubuntu config for Perl 5 modules
+# version 20240731.001
+# https://github.com/briandfoy/github_workflows
+# https://github.com/features/actions
+# This file is licensed under the Artistic License 2.0
+#
+# This uses the AUTOMATED_TESTING environment that you can set up
+# in your repo settings. Or not. It still works if it isn't defined.
+# In that environment, add whatever environment variables or secrets
+# that you want.
+name: ubuntu
+
+# https://github.com/actions/checkout/issues/1590
+env:
+    ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
+# https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-concurrency
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
+  cancel-in-progress: true
+
+on:
+    push:
+        branches:
+            - '**'
+            - '!**appveyor**'
+            - '!**circleci**'
+            - '!**macos**'
+            - '!**notest**'
+            - '!**release**'
+            - '!**windows**'
+        tags-ignore:
+            # I tag release pushes but those should have already been tested
+            - 'release-*'
+        paths-ignore:
+            # list all the files which are irrelevant to the tests
+            # non-code, support files, docs, etc
+            - '.appveyor.yml'
+            - '.circleci'
+            - '.gitattributes'
+            - '.github/workflows/macos.yml'
+            - '.github/workflows/release.yml'
+            - '.github/workflows/windows.yml'
+            - '.gitignore'
+            - '.releaserc'
+            - 'Changes'
+            - 'LICENSE'
+            - 'README.pod'
+    pull_request:
+
+jobs:
+    perl:
+        environment: automated_testing
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os:
+                - ubuntu-22.04
+            perl-version:
+                - '5.20-buster'
+                - '5.22-buster'
+                - '5.24-buster'
+                - '5.26-buster'
+                - '5.28-buster'
+                - '5.30-bullseye'
+                - '5.32-bullseye'
+                - '5.34-bullseye'
+                - '5.36-bookworm'
+                - '5.38-bookworm'
+                - 'latest'
+        container:
+            image: perl:${{ matrix.perl-version }}
+        steps:
+            - uses: actions/checkout@v3
+            - name: Platform check
+              run: uname -a
+            - name: Perl version check
+              run: |
+                perl -V
+                perl -v | perl -0777 -ne 'm/(v5\.\d+)/ && print "PERL_VERSION=$1"' >> $GITHUB_ENV
+# Some older versions of Perl have trouble with hostnames in certs. I
+# haven't figured out why.
+            - name: Setup environment
+              run: |
+                echo "PERL_LWP_SSL_VERIFY_HOSTNAME=0" >> $GITHUB_ENV
+# I had some problems with openssl on Ubuntu, so I punted by installing
+# cpanm first, which is easy. I can install IO::Socket::SSL with that,
+# then switch back to cpan. I didn't explore this further, but what you
+# see here hasn't caused problems for me.
+# Need HTTP::Tiny 0.055 or later.
+            - name: Install cpanm and multiple modules
+              run: |
+                curl -L https://cpanmin.us | perl - App::cpanminus
+                cpanm --notest IO::Socket::SSL App::Cpan HTTP::Tiny ExtUtils::MakeMaker Test::Manifest Test::More
+# Install the dependencies, again not testing them. This installs the
+# module in the current directory, so we end up installing the module,
+# but that's not a big deal.
+            - name: Install dependencies
+              run: |
+                cpanm -v --notest --installdeps --with-suggests --with-recommends .
+            - name: Show cpanm failures
+              if:  ${{ failure() }}
+              run: |
+                cat /github/home/.cpanm/work/*/build.log
+            - name: Run tests
+              run: |
+                perl Makefile.PL
+                make test
+# Run author tests, but only if there's an xt/ directory
+            - name: Author tests
+              if: hashFiles('xt') != ''
+              run: |
+                cpanm --notest Test::CPAN::Changes
+                prove -r -b xt
+# Running tests in parallel should be faster, but it's also more
+# tricky in cases where different tests share a feature, such as a
+# file they want to write to. Parallel tests can stomp on each other.
+# Test in parallel to catch that, because other people will test your
+# stuff in parallel.
+            - name: Run tests in parallel
+              run: |
+                perl Makefile.PL
+                HARNESS_OPTIONS=j10 make test
+# The disttest target creates the distribution, unwraps it, changes
+# into the dist dir, then runs the tests there. That checks that
+# everything that should be in the dist is in the dist. If you forget
+# to update MANIFEST with new modules, data files, and so on, you
+# should notice the error.
+            - name: Run distribution tests
+              run: |
+                perl Makefile.PL
+                make disttest
+                make clean
+# And, coverage reports, but only under 5.12 and later since modern
+# Devel::Cover instances don't work with earlier versions as of
+# Devel::Cover 1.39
+            - name: Run coverage tests
+              if: env.PERL_VERSION != 'v5.8' && env.PERL_VERSION != 'v5.10'
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                cpanm --notest Devel::Cover Devel::Cover::Report::Coveralls
+                perl Makefile.PL
+                cover -test -report coveralls

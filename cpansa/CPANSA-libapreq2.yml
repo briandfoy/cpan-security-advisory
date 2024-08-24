@@ -1,16 +1,22 @@
 ---
-- id: CPANSA-libapreq2-2006-01
-  distribution: libapreq2
-  reported: 2007-04-17
-  description: >
-    Unspecified vulnerability in apreq_parse_headers and
-    apreq_parse_urlencoded functions in Apache2::Request (Libapreq2)
-    allows remote attackers to cause a denial of service (CPU
-    consumption) via unknown attack vectors that result in quadratic
-    computational complexity.
-  references:
-    - https://metacpan.org/changes/distribution/libapreq2
+advisories:
+- affected_versions:
+  - <2.07
   cves:
-    - CVE-2006-0042
-  affected_versions: "<2.07"
-  fixed_versions: ">=2.07"
+  - CVE-2006-0042
+  description: |
+    Unspecified vulnerability in apreq_parse_headers and apreq_parse_urlencoded functions in Apache2::Request (Libapreq2) allows remote attackers to cause a denial of service (CPU consumption) via unknown attack vectors that result in quadratic computational complexity.
+  fixed_versions:
+  - '>=2.07'
+  github_security_advisory:
+  - GHSA-67xr-x2j9-rc4g
+  id: CPANSA-libapreq2-2006-01
+  references:
+  - https://metacpan.org/changes/distribution/libapreq2
+  reported: 2007-04-17
+cpansa_version: 2
+distribution: libapreq2
+last_checked: 1708150855
+latest_version: '2.16'
+metacpan: https://metacpan.org/pod/libapreq2
+repo: ~

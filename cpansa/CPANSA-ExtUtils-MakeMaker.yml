@@ -1,13 +1,23 @@
 ---
-- id: CPANSA-ExtUtils-MakeMaker-2016-01
-  distribution: ExtUtils-MakeMaker
-  reported: 2016-08-07
-  description: >
-    Loading modules from . (current directory).
-  references:
-    - https://metacpan.org/changes/distribution/ExtUtils-MakeMaker
-    - https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/commit/3e9df17d11c40f2561c23ec79693c8c390e0ae88
+advisories:
+- affected_versions:
+  - <7.22
   cves:
-    - CVE-2016-1238
-  affected_versions: "<7.22"
-  fixed_versions: ">=7.22"
+  - CVE-2016-1238
+  description: |
+    Loading modules from . (current directory).
+  fixed_versions:
+  - '>=7.22'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-ExtUtils-MakeMaker-2016-01
+  references:
+  - https://metacpan.org/changes/distribution/ExtUtils-MakeMaker
+  - https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/commit/3e9df17d11c40f2561c23ec79693c8c390e0ae88
+  reported: 2016-08-07
+cpansa_version: 2
+distribution: ExtUtils-MakeMaker
+last_checked: 1708150847
+latest_version: '7.70'
+metacpan: https://metacpan.org/pod/ExtUtils::MakeMaker
+repo: https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker

@@ -1,27 +1,30 @@
 ---
-- affected_versions: '<0.016000'
+advisories:
+- affected_versions:
+  - <0.016000
+  comment: |
+    This Alien module fetches libpcre2 sources from the network. It tries to get the latest unless you set environment variables to get a different version.
   cves:
-    - CVE-2019-20454
-  description: >
-    An out-of-bounds read was discovered in PCRE before 10.34 when
-    the pattern \X is JIT compiled and used to match specially crafted
-    subjects in non-UTF mode. Applications that use PCRE to parse
-    untrusted input may be vulnerable to this flaw, which would allow an
-    attacker to crash the application. The flaw occurs in do_extuni_no_utf
-    in pcre2_jit_compile.c.
-  comment: >
-    This Alien module fetches libpcre2 sources from the network. It tries
-    to get the latest unless you set environment variables to get a
-    different version.
-  distribution: Alien-PCRE2
-  fixed_versions: '>=0.016000'
+  - CVE-2019-20454
+  description: |
+    An out-of-bounds read was discovered in PCRE before 10.34 when the pattern \X is JIT compiled and used to match specially crafted subjects in non-UTF mode. Applications that use PCRE to parse untrusted input may be vulnerable to this flaw, which would allow an attacker to crash the application. The flaw occurs in do_extuni_no_utf in pcre2_jit_compile.c.
+  fixed_versions:
+  - '>=0.016000'
+  github_security_advisory:
+  - GHSA-6wcm-vmc4-h93p
   id: CPANSA-Alien-PCRE2-2019-20454
   references:
-    - https://bugs.php.net/bug.php?id=78338
-    - https://bugs.exim.org/show_bug.cgi?id=2421
-    - https://bugzilla.redhat.com/show_bug.cgi?id=1735494
-    - https://vcs.pcre.org/pcre2?view=revision&revision=1092
-    - https://security.gentoo.org/glsa/202006-16
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OQRAHYHLRNMBTPR3KXVM27NSZP3KTOPI/
+  - https://bugs.php.net/bug.php?id=78338
+  - https://bugs.exim.org/show_bug.cgi?id=2421
+  - https://bugzilla.redhat.com/show_bug.cgi?id=1735494
+  - https://vcs.pcre.org/pcre2?view=revision&revision=1092
+  - https://security.gentoo.org/glsa/202006-16
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OQRAHYHLRNMBTPR3KXVM27NSZP3KTOPI/
   reported: 2020-02-14
   severity: high
+cpansa_version: 2
+distribution: Alien-PCRE2
+last_checked: 1708150827
+latest_version: '0.017000'
+metacpan: https://metacpan.org/pod/Alien::PCRE2
+repo: git://github.com/wbraswell/alien-pcre2.git

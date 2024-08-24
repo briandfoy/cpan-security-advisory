@@ -1,12 +1,21 @@
 ---
-- id: CPANSA-Search-OpenSearch-Server-2012-01
+advisories:
+- affected_versions:
+  - <0.17
   cves: []
-  distribution: Search-OpenSearch-Server
-  reported: 2012-08-31
-  description: >
-     Arbitrary Perl methods could be called via HTTP like RPC.
+  description: |
+    Arbitrary Perl methods could be called via HTTP like RPC.
+  fixed_versions:
+  - '>=0.17'
+  github_security_advisory: []
+  id: CPANSA-Search-OpenSearch-Server-2012-01
   references:
-    - https://metacpan.org/changes/distribution/Search-OpenSearch-Server
-    - https://github.com/karpet/search-opensearch-server/commit/69d53fde9d70fe12e1f592de482601c43c45a278
-  affected_versions: "<0.17"
-  fixed_versions: ">=0.17"
+  - https://metacpan.org/changes/distribution/Search-OpenSearch-Server
+  - https://github.com/karpet/search-opensearch-server/commit/69d53fde9d70fe12e1f592de482601c43c45a278
+  reported: 2012-08-31
+cpansa_version: 2
+distribution: Search-OpenSearch-Server
+last_checked: 1708150866
+latest_version: '0.301'
+metacpan: https://metacpan.org/pod/Search::OpenSearch::Server
+repo: http://github.com/karpet/search-opensearch-server

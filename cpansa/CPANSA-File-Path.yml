@@ -1,186 +1,176 @@
 ---
-- id: CPANSA-File-Path-2017-01
-  distribution: File-Path
-  reported: 2017-05-02
-  description: >
-    Race condition in the rmtree and remove_tree functions allows
-    attackers to set the mode on arbitrary files via vectors involving
-    directory-permission loosening logic.
-  references:
-    - https://metacpan.org/changes/distribution/File-Path
-    - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
-  cves:
-    - CVE-2017-6512
-  affected_versions:
-    - "<2.13"
-  fixed_versions:
-    - ">=2.13"
+advisories:
 - affected_versions:
-    - "<=1.08"
+  - '<2.13'
   cves:
-    - CVE-2008-5303
-  description: >
-    Race condition in the rmtree function in File::Path 1.08
-    (lib/File/Path.pm) in Perl 5.8.8 allows local users to to delete
-    arbitrary files via a symlink attack, a different vulnerability
-    than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this
-    is a regression error related to CVE-2005-0448. It is different
-    from CVE-2008-5302 due to affected versions.
-  distribution: File-Path
-  fixed_versions: ~
+  - CVE-2017-6512
+  description: |
+    Race condition in the rmtree and remove_tree functions allows attackers to set the mode on arbitrary files via vectors involving directory-permission loosening logic.
+  fixed_versions:
+  - '>=2.13'
+  github_security_advisory:
+  - GHSA-wf3v-xjg6-86hx
+  id: CPANSA-File-Path-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/File-Path
+  - https://github.com/jkeenan/File-Path/commit/e5ef95276ee8ad471c66ee574a5d42552b3a6af2
+  reported: 2017-05-02
+- affected_versions:
+  - '<=1.08'
+  cves:
+  - CVE-2008-5303
+  description: |
+    Race condition in the rmtree function in File::Path 1.08 (lib/File/Path.pm) in Perl 5.8.8 allows local users to to delete arbitrary files via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448. It is different from CVE-2008-5302 due to affected versions.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-4m3f-gxf5-6jm9
   id: CPANSA-File-Path-2008-5303
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
-    - http://www.openwall.com/lists/oss-security/2008/11/28/2
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
-    - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
-    - http://www.debian.org/security/2008/dsa-1678
-    - http://www.ubuntu.com/usn/usn-700-1
-    - http://secunia.com/advisories/33314
-    - http://wiki.rpath.com/Advisories:rPSA-2009-0011
-    - http://www.ubuntu.com/usn/usn-700-2
-    - http://secunia.com/advisories/32980
-    - http://support.apple.com/kb/HT4077
-    - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
-    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
-    - http://secunia.com/advisories/40052
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/47044
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9699
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6680
-    - http://www.securityfocus.com/archive/1/500210/100/0/threaded
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
+  - http://www.openwall.com/lists/oss-security/2008/11/28/2
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
+  - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
+  - http://www.debian.org/security/2008/dsa-1678
+  - http://www.ubuntu.com/usn/usn-700-1
+  - http://secunia.com/advisories/33314
+  - http://wiki.rpath.com/Advisories:rPSA-2009-0011
+  - http://www.ubuntu.com/usn/usn-700-2
+  - http://secunia.com/advisories/32980
+  - http://support.apple.com/kb/HT4077
+  - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+  - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+  - http://secunia.com/advisories/40052
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/47044
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9699
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6680
+  - http://www.securityfocus.com/archive/1/500210/100/0/threaded
   reported: 2008-12-01
   severity: ~
 - affected_versions:
-    - "=1.08"
-    - "=2.07"
+  - "=1.08"
+  - "=2.07"
   cves:
-    - CVE-2008-5302
-  description: >
-    Race condition in the rmtree function in File::Path 1.08 and 2.07
-    (lib/File/Path.pm) in Perl 5.8.8 and 5.10.0 allows local users to
-    create arbitrary setuid binaries via a symlink attack, a different
-    vulnerability than CVE-2005-0448, CVE-2004-0452, and
-    CVE-2008-2827. NOTE: this is a regression error related to
-    CVE-2005-0448.  It is different from CVE-2008-5303 due to affected
-    versions.
-  distribution: File-Path
-  fixed_versions: ~
+  - CVE-2008-5302
+  description: |
+    Race condition in the rmtree function in File::Path 1.08 and 2.07 (lib/File/Path.pm) in Perl 5.8.8 and 5.10.0 allows local users to create arbitrary setuid binaries via a symlink attack, a different vulnerability than CVE-2005-0448, CVE-2004-0452, and CVE-2008-2827. NOTE: this is a regression error related to CVE-2005-0448.  It is different from CVE-2008-5303 due to affected versions.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-8vc4-5x78-9hxf
   id: CPANSA-File-Path-2008-5302
   references:
-    - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
-    - http://www.openwall.com/lists/oss-security/2008/11/28/2
-    - http://www.debian.org/security/2008/dsa-1678
-    - http://secunia.com/advisories/33314
-    - http://www.ubuntu.com/usn/usn-700-1
-    - http://wiki.rpath.com/Advisories:rPSA-2009-0011
-    - http://www.ubuntu.com/usn/usn-700-2
-    - http://lists.opensuse.org/opensuse-security-announce/2009-02/msg00002.html
-    - http://secunia.com/advisories/32980
-    - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
-    - http://support.apple.com/kb/HT4077
-    - http://secunia.com/advisories/40052
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
-    - http://www.redhat.com/support/errata/RHSA-2010-0458.html
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
-    - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/47043
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6890
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11076
-    - http://www.securityfocus.com/archive/1/500210/100/0/threaded
+  - http://www.gossamer-threads.com/lists/perl/porters/233695#233695
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286922#36
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=286905
+  - http://www.openwall.com/lists/oss-security/2008/11/28/2
+  - http://www.debian.org/security/2008/dsa-1678
+  - http://secunia.com/advisories/33314
+  - http://www.ubuntu.com/usn/usn-700-1
+  - http://wiki.rpath.com/Advisories:rPSA-2009-0011
+  - http://www.ubuntu.com/usn/usn-700-2
+  - http://lists.opensuse.org/opensuse-security-announce/2009-02/msg00002.html
+  - http://secunia.com/advisories/32980
+  - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+  - http://support.apple.com/kb/HT4077
+  - http://secunia.com/advisories/40052
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2010:116
+  - http://www.redhat.com/support/errata/RHSA-2010-0458.html
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10735
+  - http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10705
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/47043
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A6890
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11076
+  - http://www.securityfocus.com/archive/1/500210/100/0/threaded
   reported: 2008-12-01
   severity: ~
 - affected_versions:
-    - ">=2.04,<2.07"
+  - '>=2.04,<2.07'
   cves:
-    - CVE-2008-2827
-  description: >
-    The rmtree function in lib/File/Path.pm in Perl 5.10 does not
-    properly check permissions before performing a chmod, which allows
-    local users to modify the permissions of arbitrary files via a
-    symlink attack, a different vulnerability than CVE-2005-0448 and
-    CVE-2004-0452.
-  distribution: File-Path
-  fixed_versions: ">=2.07"
+  - CVE-2008-2827
+  description: |
+    The rmtree function in lib/File/Path.pm in Perl 5.10 does not properly check permissions before performing a chmod, which allows local users to modify the permissions of arbitrary files via a symlink attack, a different vulnerability than CVE-2005-0448 and CVE-2004-0452.
+  fixed_versions:
+  - '>=2.07'
+  github_security_advisory:
+  - GHSA-h567-wg66-2v4f
   id: CPANSA-File-Path-2008-2827
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=487319
-    - http://rt.cpan.org/Public/Bug/Display.html?id=36982
-    - http://www.securityfocus.com/bid/29902
-    - http://secunia.com/advisories/30790
-    - http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00006.html
-    - http://www.mandriva.com/security/advisories?name=MDVSA-2008:165
-    - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg01025.html
-    - http://secunia.com/advisories/30837
-    - http://secunia.com/advisories/31687
-    - http://www.securitytracker.com/id?1020373
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/43308
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=487319
+  - http://rt.cpan.org/Public/Bug/Display.html?id=36982
+  - http://www.securityfocus.com/bid/29902
+  - http://secunia.com/advisories/30790
+  - http://lists.opensuse.org/opensuse-security-announce/2008-08/msg00006.html
+  - http://www.mandriva.com/security/advisories?name=MDVSA-2008:165
+  - https://www.redhat.com/archives/fedora-package-announce/2008-June/msg01025.html
+  - http://secunia.com/advisories/30837
+  - http://secunia.com/advisories/31687
+  - http://www.securitytracker.com/id?1020373
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/43308
   reported: 2008-06-23
   severity: ~
 - affected_versions:
-    - "<1.07"
+  - '<1.07'
   cves:
-    - CVE-2005-0448
-  description: >
-    Race condition in the rmtree function in File::Path.pm in Perl
-    before 5.8.4 allows local users to create arbitrary setuid
-    binaries in the tree being deleted, a different vulnerability than
-    CVE-2004-0452.
-  distribution: File-Path
-  fixed_versions: ~
+  - CVE-2005-0448
+  description: |
+    Race condition in the rmtree function in File::Path.pm in Perl before 5.8.4 allows local users to create arbitrary setuid binaries in the tree being deleted, a different vulnerability than CVE-2004-0452.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-2jcf-pv2j-gqvq
   id: CPANSA-File-Path-2005-0448
   references:
-    - http://www.debian.org/security/2005/dsa-696
-    - http://www.gentoo.org/security/en/glsa/glsa-200501-38.xml
-    - http://www.redhat.com/support/errata/RHSA-2005-881.html
-    - http://secunia.com/advisories/18075
-    - http://www.securityfocus.com/bid/12767
-    - ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U
-    - http://secunia.com/advisories/14531
-    - http://secunia.com/advisories/18517
-    - http://fedoranews.org/updates/FEDORA--.shtml
-    - http://www.redhat.com/support/errata/RHSA-2005-674.html
-    - http://secunia.com/advisories/17079
-    - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=001056
-    - http://www.mandriva.com/security/advisories?name=MDKSA-2005:079
-    - http://www.securityfocus.com/advisories/8704
-    - http://secunia.com/advisories/55314
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A728
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10475
-    - https://usn.ubuntu.com/94-1/
+  - http://www.debian.org/security/2005/dsa-696
+  - http://www.gentoo.org/security/en/glsa/glsa-200501-38.xml
+  - http://www.redhat.com/support/errata/RHSA-2005-881.html
+  - http://secunia.com/advisories/18075
+  - http://www.securityfocus.com/bid/12767
+  - ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U
+  - http://secunia.com/advisories/14531
+  - http://secunia.com/advisories/18517
+  - http://fedoranews.org/updates/FEDORA--.shtml
+  - http://www.redhat.com/support/errata/RHSA-2005-674.html
+  - http://secunia.com/advisories/17079
+  - http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=001056
+  - http://www.mandriva.com/security/advisories?name=MDKSA-2005:079
+  - http://www.securityfocus.com/advisories/8704
+  - http://secunia.com/advisories/55314
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A728
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10475
+  - https://usn.ubuntu.com/94-1/
   reported: 2005-05-02
   severity: ~
 - affected_versions:
-    - ">=1.06,<=1.404"
+  - '>=1.06,<=1.404'
   cves:
-    - CVE-2004-0452
-  description: >
-    Race condition in the rmtree function in the File::Path module in
-    Perl 5.6.1 and 5.8.4 sets read/write permissions for the world,
-    which allows local users to delete arbitrary files and
-    directories, and possibly read files and directories, via a
-    symlink attack.
-  distribution: File-Path
-  fixed_versions: ~
+  - CVE-2004-0452
+  description: |
+    Race condition in the rmtree function in the File::Path module in Perl 5.6.1 and 5.8.4 sets read/write permissions for the world, which allows local users to delete arbitrary files and directories, and possibly read files and directories, via a symlink attack.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-27g6-7ffq-cf4w
   id: CPANSA-File-Path-2004-0452
   references:
-    - http://www.debian.org/security/2004/dsa-620
-    - http://www.gentoo.org/security/en/glsa/glsa-200501-38.xml
-    - http://www.redhat.com/support/errata/RHSA-2005-103.html
-    - ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U
-    - http://www.securityfocus.com/bid/12072
-    - http://secunia.com/advisories/12991
-    - http://secunia.com/advisories/18517
-    - http://fedoranews.org/updates/FEDORA--.shtml
-    - http://www.redhat.com/support/errata/RHSA-2005-105.html
-    - http://secunia.com/advisories/55314
-    - http://marc.info/?l=bugtraq&m=110547693019788&w=2
-    - https://www.ubuntu.com/usn/usn-44-1/
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/18650
-    - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9938
+  - http://www.debian.org/security/2004/dsa-620
+  - http://www.gentoo.org/security/en/glsa/glsa-200501-38.xml
+  - http://www.redhat.com/support/errata/RHSA-2005-103.html
+  - ftp://patches.sgi.com/support/free/security/advisories/20060101-01-U
+  - http://www.securityfocus.com/bid/12072
+  - http://secunia.com/advisories/12991
+  - http://secunia.com/advisories/18517
+  - http://fedoranews.org/updates/FEDORA--.shtml
+  - http://www.redhat.com/support/errata/RHSA-2005-105.html
+  - http://secunia.com/advisories/55314
+  - http://marc.info/?l=bugtraq&m=110547693019788&w=2
+  - https://www.ubuntu.com/usn/usn-44-1/
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/18650
+  - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9938
   reported: 2004-12-21
   severity: ~
+cpansa_version: 2
+distribution: File-Path
+last_checked: 1708150848
+latest_version: '2.18'
+metacpan: https://metacpan.org/pod/File::Path
+repo: https://github.com/jkeenan/File-Path.git

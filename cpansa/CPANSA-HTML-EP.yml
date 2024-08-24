@@ -1,18 +1,24 @@
 ---
-- affected_versions: ">=0.2011"
+advisories:
+- affected_versions:
+  - '>=0.2011'
   cves:
-    - CVE-2012-6142
-  description: >
-    HTML::EP::Session::Cookie in the HTML::EP module 0.2011 for Perl
-    does not properly use the Storable::thaw function, which allows
-    remote attackers to execute arbitrary code via a crafted request,
-    which is not properly handled when it is deserialized.
-  distribution: HTML-EP
-  fixed_versions: ~
+  - CVE-2012-6142
+  description: |
+    HTML::EP::Session::Cookie in the HTML::EP module 0.2011 for Perl does not properly use the Storable::thaw function, which allows remote attackers to execute arbitrary code via a crafted request, which is not properly handled when it is deserialized.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-5f3x-vhw5-3rcg
   id: CPANSA-HTML-EP-2012-6142
   references:
-    - http://www.securityfocus.com/bid/59833
-    - http://seclists.org/oss-sec/2013/q2/318
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/84199
+  - http://www.securityfocus.com/bid/59833
+  - http://seclists.org/oss-sec/2013/q2/318
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/84199
   reported: 2014-06-04
   severity: ~
+cpansa_version: 2
+distribution: HTML-EP
+last_checked: 1708150850
+latest_version: '0.2011'
+metacpan: https://metacpan.org/pod/HTML::EP
+repo: ~

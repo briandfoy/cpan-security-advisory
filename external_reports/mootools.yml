@@ -1,19 +1,21 @@
 ---
-name: mootools
-url: https://github.com/mootools/mootools-core
-perl_distributions:
-  - name: Perldoc-Server
-    affected:
-      - perl_module_versions: '>=0.09,<=0.10'
-        distributed_library_version: '1.2.3'
 advisories:
-  - cve: CVE-2021-23432
-    description: >
-      This affects all versions of package mootools. This is due to the
-      ability to pass untrusted input to Object.merge()
-    affected_versions: '>=0'
-    fixed_versions: ~
-    references:
-      - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536
-    reported: 2021-08-24
-    severity: critical
+- affected_versions: '>=0'
+  cve: CVE-2021-23432
+  description: |
+    This affects all versions of package mootools. This is due to the ability to pass untrusted input to Object.merge()
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-x6hx-7gh3-3q98
+  references:
+  - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536
+  reported: 2021-08-24
+  severity: critical
+cpansa_version: 2
+name: mootools
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.2.3
+    perl_module_versions: '>=0.09,<=0.10'
+  name: Perldoc-Server
+url: https://github.com/mootools/mootools-core

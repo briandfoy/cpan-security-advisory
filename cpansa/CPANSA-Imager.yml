@@ -1,105 +1,111 @@
 ---
-- affected_versions: "<1.006"
+advisories:
+- affected_versions:
+  - <1.006
   cves:
-    - CVE-2016-1238
-  description: >
-    Imager would search the default current directory entry in @INC
-    when searching for file format support modules.
-  distribution: Imager
-  fixed_versions: ">=1.006"
+  - CVE-2016-1238
+  description: |
+    Imager would search the default current directory entry in @INC when searching for file format support modules.
+  fixed_versions:
+  - '>=1.006'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
   id: CPANSA-Imager-2016-1238
   references:
-    - https://metacpan.org/dist/Imager/changes
-    - http://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html
-    - http://www.securitytracker.com/id/1036440
-    - http://perl5.git.perl.org/perl.git/commit/cee96d52c39b1e7b36e1c62d38bcd8d86e9a41ab
-    - https://rt.perl.org/Public/Bug/Display.html?id=127834
-    - http://www.securityfocus.com/bid/92136
-    - http://www.debian.org/security/2016/dsa-3628
-    - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DOFRQWJRP2NQJEYEWOMECVW3HAMD5SYN/
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TZBNQH3DMI7HDELJAZ4TFJJANHXOEDWH/
-    - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2FBQOCV3GBAN2EYZUM3CFDJ4ECA3GZOK/
-    - https://security.gentoo.org/glsa/201701-75
-    - https://lists.apache.org/thread.html/7f6a16bc0fd0fd5e67c7fd95bd655069a2ac7d1f88e42d3c853e601c@%3Cannounce.apache.org%3E
-    - https://lists.debian.org/debian-lts-announce/2018/11/msg00016.html
-    - https://security.gentoo.org/glsa/201812-07
-    - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
+  - https://metacpan.org/dist/Imager/changes
+  - http://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html
+  - http://www.securitytracker.com/id/1036440
+  - http://perl5.git.perl.org/perl.git/commit/cee96d52c39b1e7b36e1c62d38bcd8d86e9a41ab
+  - https://rt.perl.org/Public/Bug/Display.html?id=127834
+  - http://www.securityfocus.com/bid/92136
+  - http://www.debian.org/security/2016/dsa-3628
+  - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/DOFRQWJRP2NQJEYEWOMECVW3HAMD5SYN/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TZBNQH3DMI7HDELJAZ4TFJJANHXOEDWH/
+  - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2FBQOCV3GBAN2EYZUM3CFDJ4ECA3GZOK/
+  - https://security.gentoo.org/glsa/201701-75
+  - https://lists.apache.org/thread.html/7f6a16bc0fd0fd5e67c7fd95bd655069a2ac7d1f88e42d3c853e601c@%3Cannounce.apache.org%3E
+  - https://lists.debian.org/debian-lts-announce/2018/11/msg00016.html
+  - https://security.gentoo.org/glsa/201812-07
+  - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
   reported: 2016-08-02
-  severity: high
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-23
-- affected_versions: ">=0.42,<=0.63"
+  - date: 2022-06-23
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: high
+- affected_versions:
+  - '>=0.42,<=0.63'
   cves:
-    - CVE-2008-1928
-  description: >
-    Buffer overflow in Imager 0.42 through 0.63 allows attackers to
-    cause a denial of service (crash) via an image based fill in which
-    the number of input channels is different from the number of
-    output channels.
-  distribution: Imager
-  fixed_versions: ">=0.64"
+  - CVE-2008-1928
+  description: |
+    Buffer overflow in Imager 0.42 through 0.63 allows attackers to cause a denial of service (crash) via an image based fill in which the number of input channels is different from the number of output channels.
+  fixed_versions:
+  - '>=0.64'
+  github_security_advisory:
+  - GHSA-27p3-v3ff-v3x4
   id: CPANSA-Imager-2008-1928
   references:
-    - https://metacpan.org/dist/Imager/changes
-    - http://rt.cpan.org/Public/Bug/Display.html?id=35324
-    - http://imager.perl.org/i/release064/Imager_0_64
-    - https://www.redhat.com/archives/fedora-package-announce/2008-April/msg00569.html
-    - http://www.securityfocus.com/bid/28980
-    - http://secunia.com/advisories/30030
-    - http://secunia.com/advisories/30011
-    - http://www.vupen.com/english/advisories/2008/1387/references
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/41986
+  - https://metacpan.org/dist/Imager/changes
+  - http://rt.cpan.org/Public/Bug/Display.html?id=35324
+  - http://imager.perl.org/i/release064/Imager_0_64
+  - https://www.redhat.com/archives/fedora-package-announce/2008-April/msg00569.html
+  - http://www.securityfocus.com/bid/28980
+  - http://secunia.com/advisories/30030
+  - http://secunia.com/advisories/30011
+  - http://www.vupen.com/english/advisories/2008/1387/references
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/41986
   reported: 2008-04-24
-  severity: ~
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-23
-- affected_versions: ">=0.21,<=0.56"
+  - date: 2022-06-23
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: ~
+- affected_versions:
+  - '>=0.21,<=0.56'
   cves:
-    - CVE-2007-2459
-  description: >
-    Heap-based buffer overflow in the BMP reader (bmp.c) in Imager
-    perl module (libimager-perl) 0.45 through 0.56 allows remote
-    attackers to cause a denial of service (application crash) and
-    possibly execute arbitrary code via crafted 8-bit/pixel compressed
-    BMP files.
-  distribution: Imager
-  fixed_versions: ">=0.57"
+  - CVE-2007-2459
+  description: |
+    Heap-based buffer overflow in the BMP reader (bmp.c) in Imager perl module (libimager-perl) 0.45 through 0.56 allows remote attackers to cause a denial of service (application crash) and possibly execute arbitrary code via crafted 8-bit/pixel compressed BMP files.
+  fixed_versions:
+  - '>=0.57'
+  github_security_advisory:
+  - GHSA-v92m-h6q5-w9gg
   id: CPANSA-Imager-2007-2459
   references:
-    - http://imager.perl.org/a/65.html
-    - http://rt.cpan.org/Public/Bug/Display.html?id=26811
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=421582
-    - http://www.debian.org/security/2008/dsa-1498
-    - http://www.securityfocus.com/bid/23711
-    - http://secunia.com/advisories/25038
-    - http://secunia.com/advisories/28868
-    - http://osvdb.org/39846
-    - http://www.vupen.com/english/advisories/2007/1587
-    - http://osvdb.org/35470
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/34010
+  - http://imager.perl.org/a/65.html
+  - http://rt.cpan.org/Public/Bug/Display.html?id=26811
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=421582
+  - http://www.debian.org/security/2008/dsa-1498
+  - http://www.securityfocus.com/bid/23711
+  - http://secunia.com/advisories/25038
+  - http://secunia.com/advisories/28868
+  - http://osvdb.org/39846
+  - http://www.vupen.com/english/advisories/2007/1587
+  - http://osvdb.org/35470
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/34010
   reported: 2007-05-02
-  severity: ~
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-23
-- affected_versions: "<0.98"
+  - date: 2022-06-23
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+  severity: ~
+- affected_versions:
+  - <0.98
   cves: []
-  description: >
-   When drawing on an image with an alpha channel where the source
-   minimum is greater than zero, Imager would read from beyond the end
-   of a malloc() allocated buffer.  In rare circumstances this could
-   lead to some of the source image not being written to the target
-   image, or possibly to a segmentation fault.
-  distribution: Imager
-  fixed_versions: ">=0.98"
+  description: |
+    When drawing on an image with an alpha channel where the source minimum is greater than zero, Imager would read from beyond the end of a malloc() allocated buffer.  In rare circumstances this could lead to some of the source image not being written to the target image, or possibly to a segmentation fault.
+  fixed_versions:
+  - '>=0.98'
+  github_security_advisory: []
   id: CPANSA-Imager-2014-01
   references:
-    - https://metacpan.org/dist/Imager/changes
+  - https://metacpan.org/dist/Imager/changes
   reported: 2014-01-03
   severity: ~
+cpansa_version: 2
+distribution: Imager
+last_checked: 1708150852
+latest_version: '1.023'
+metacpan: https://metacpan.org/pod/Imager
+repo: git://github.com/tonycoz/imager.git

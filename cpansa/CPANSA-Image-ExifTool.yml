@@ -1,60 +1,66 @@
 ---
-- affected_versions: "<=12.37"
+advisories:
+- affected_versions:
+  - <=12.37
   cves:
-    - CVE-2022-23935
-  description: >
-    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file
-    =~ /\|$/ check, leading to command injection.
-  distribution: "Image-ExifTool"
-  fixed_versions: ">12.38"
+  - CVE-2022-23935
+  description: |
+    lib/Image/ExifTool.pm in ExifTool before 12.38 mishandles a $file =~ /\|$/ check, leading to command injection.
+  fixed_versions:
+  - '>12.38'
+  github_security_advisory:
+  - GHSA-jx53-3cxj-386g
   id: CPANSA-Image-ExifTool-2022-23935
   references:
-    - https://github.com/exiftool/exiftool/commit/74dbab1d2766d6422bb05b033ac6634bf8d1f582
-    - https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429
+  - https://github.com/exiftool/exiftool/commit/74dbab1d2766d6422bb05b033ac6634bf8d1f582
+  - https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429
   reported: 2022-01-25
   severity: critical
-- affected_versions: '>=7.44,<=12.23'
+- affected_versions:
+  - '>=7.44,<=12.23'
   cves:
-    - CVE-2021-22204
-  description: >
-    Improper neutralization of user data in the DjVu file format in
-    ExifTool versions 7.44 and up allows arbitrary code execution when
-    parsing the malicious image
-  distribution: "Image-ExifTool"
-  fixed_versions: '>12.23'
+  - CVE-2021-22204
+  description: |
+    Improper neutralization of user data in the DjVu file format in ExifTool versions 7.44 and up allows arbitrary code execution when parsing the malicious image
+  fixed_versions:
+  - '>12.23'
+  github_security_advisory: []
   id: CPANSA-Image-ExifTool-2021-22204
   references:
-    - http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html
-    - http://packetstormsecurity.com/files/164768/GitLab-Unauthenticated-Remote-ExifTool-Command-Injection.html
-    - http://packetstormsecurity.com/files/164994/GitLab-13.10.2-Remote-Code-Execution.html
-    - http://packetstormsecurity.com/files/167038/ExifTool-12.23-Arbitrary-Code-Execution.html
-    - http://www.openwall.com/lists/oss-security/2021/05/09/1
-    - http://www.openwall.com/lists/oss-security/2021/05/10/5
-    - https://github.com/exiftool/exiftool/commit/cf0f4e7dcd024ca99615bfd1102a841a25dde031#diff-fa0d652d10dbcd246e6b1df16c1e992931d3bb717a7e36157596b76bdadb3800
-    - https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22204.json
-    - https://hackerone.com/reports/1154542
-    - https://lists.debian.org/debian-lts-announce/2021/05/msg00018.html
-    - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/DDKDLJLBTBBR66OOPXSXCG2PQRM5KCZL/
-    - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/F6UOBPU3LSHAPRRJNISNVXZ5DSUIALLV/
-    - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/U4RF6PJCJ6NQOVJJJF6HN6BORUQVIXY6/
-    - https://www.debian.org/security/2021/dsa-4910
+  - http://packetstormsecurity.com/files/162558/ExifTool-DjVu-ANT-Perl-Injection.html
+  - http://packetstormsecurity.com/files/164768/GitLab-Unauthenticated-Remote-ExifTool-Command-Injection.html
+  - http://packetstormsecurity.com/files/164994/GitLab-13.10.2-Remote-Code-Execution.html
+  - http://packetstormsecurity.com/files/167038/ExifTool-12.23-Arbitrary-Code-Execution.html
+  - http://www.openwall.com/lists/oss-security/2021/05/09/1
+  - http://www.openwall.com/lists/oss-security/2021/05/10/5
+  - https://github.com/exiftool/exiftool/commit/cf0f4e7dcd024ca99615bfd1102a841a25dde031#diff-fa0d652d10dbcd246e6b1df16c1e992931d3bb717a7e36157596b76bdadb3800
+  - https://gitlab.com/gitlab-org/cves/-/blob/master/2021/CVE-2021-22204.json
+  - https://hackerone.com/reports/1154542
+  - https://lists.debian.org/debian-lts-announce/2021/05/msg00018.html
+  - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/DDKDLJLBTBBR66OOPXSXCG2PQRM5KCZL/
+  - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/F6UOBPU3LSHAPRRJNISNVXZ5DSUIALLV/
+  - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/U4RF6PJCJ6NQOVJJJF6HN6BORUQVIXY6/
+  - https://www.debian.org/security/2021/dsa-4910
   reported: 2021-04-23
   severity: ~
-- affected_versions: =8.32
+- affected_versions:
+  - '=8.32'
   cves:
-    - CVE-2018-20211
-  description: >
-    ExifTool 8.32 allows local users to gain privileges by creating a
-    %TEMP%\\par-%username%\\cache-exiftool-8.32 folder with a victim's
-    username, and then copying a Trojan horse ws32_32.dll file into this
-    new folder, aka DLL Hijacking. NOTE: 8.32 is an obsolete version from
-    2010 (9.x was released starting in 2012, and 10.x was released
-    starting in 2015).
-  distribution: Image-ExifTool
-  fixed_versions: '>8'
+  - CVE-2018-20211
+  description: |
+    ExifTool 8.32 allows local users to gain privileges by creating a %TEMP%\\par-%username%\\cache-exiftool-8.32 folder with a victim's username, and then copying a Trojan horse ws32_32.dll file into this new folder, aka DLL Hijacking. NOTE: 8.32 is an obsolete version from 2010 (9.x was released starting in 2012, and 10.x was released starting in 2015).
+  fixed_versions:
+  - '>8'
+  github_security_advisory: []
   id: CPANSA-Image-ExifTool-2018-20211
   references:
-    - http://packetstormsecurity.com/files/150892/Exiftool-8.3.2.0-DLL-Hijacking.html
-    - http://seclists.org/fulldisclosure/2018/Dec/44
+  - http://packetstormsecurity.com/files/150892/Exiftool-8.3.2.0-DLL-Hijacking.html
+  - http://seclists.org/fulldisclosure/2018/Dec/44
   reported: 2019-01-02
   severity: ~
+cpansa_version: 2
+distribution: Image-ExifTool
+last_checked: 1708150852
+latest_version: '12.76'
+metacpan: https://metacpan.org/pod/Image::ExifTool
+repo: ~

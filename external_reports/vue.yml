@@ -1,19 +1,22 @@
 ---
-name: vue
-url: https://github.com/vuejs/vue
-perl_distributions:
-  - name: Yancy
-    last_version_checked: '1.088'
-    affected:
-      - perl_module_versions: '>=0.010,<=1.088'
-        distributed_library_version: '2.5.3'
 advisories:
-  - cve: xCVE-2018-vue-001
-    description: >
-      Regular Expression Denial of Service.
-    affected_versions: '<2.5.14'
-    fixed_versions: '>=2.5.14'
-    references:
-      - https://security.snyk.io/vuln/npm:vue:20180222
-    reported: 2018-02-21
-    severity: ~
+- affected_versions: <2.5.14
+  cve: xCVE-2018-vue-001
+  description: |
+    Regular Expression Denial of Service.
+  fixed_versions: '>=2.5.14'
+  github_security_advisory:
+  - ~
+  references:
+  - https://security.snyk.io/vuln/npm:vue:20180222
+  reported: 2018-02-21
+  severity: ~
+cpansa_version: 2
+name: vue
+perl_distributions:
+- affected:
+  - distributed_library_version: 2.5.3
+    perl_module_versions: '>=0.010,<=1.088'
+  last_version_checked: '1.088'
+  name: Yancy
+url: https://github.com/vuejs/vue

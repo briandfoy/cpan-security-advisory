@@ -1,46 +1,46 @@
 ---
-name: freeimage
-url: https://freeimage.sourceforge.io
-perl_distributions:
-  - name: Alien-FreeImage
-    last_version_checked: "1.001"
-    affected:
-      - perl_module_versions: ">=0.001,<=0.011"
-        distributed_library_version: '3.16.0'
-      - perl_module_versions: ">=1.000_1,<=1.001"
-        distributed_library_version: '3.17.0'
-  - name: Win32-Printer
-    last_version_checked: "0.9.1"
-    affected:
-      - perl_module_versions: '>=0.7.0,<=0.7.1'
-        distributed_library_version: '3.0.4'
-      - perl_module_versions: '>=0.8.0,<=0.8.3'
-        distributed_library_version: '3.2.1'
-      - perl_module_versions: '==0.8.4'
-        distributed_library_version: '3.4.0'
-      - perl_module_versions: '>=0.9.0,<=0.9.1'
-        distributed_library_version: '3.5.3'
 advisories:
-  - cve: CVE-2015-0852
-    description: >
-      Multiple integer underflows in PluginPCX.cpp in FreeImage 3.17.0
-      and earlier allow remote attackers to cause a denial of service
-      (heap memory corruption) via vectors related to the height and
-      width of a window.
-    affected_versions: '<=3.17.0'
-    fixed_versions: ~
-    references:
-      - https://github.com/kmx/alien-freeimage/issues/5
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167766.html
-      - http://www.openwall.com/lists/oss-security/2015/08/28/1
-      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=797165
-      - http://www.debian.org/security/2015/dsa-3392
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172491.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172583.html
-      - http://www.securitytracker.com/id/1034077
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168000.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168023.html
-      - https://security.gentoo.org/glsa/201701-68
-      - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
-    reported: 2015-09-29
-    severity: ~
+- affected_versions: <=3.17.0
+  cve: CVE-2015-0852
+  description: |
+    Multiple integer underflows in PluginPCX.cpp in FreeImage 3.17.0 and earlier allow remote attackers to cause a denial of service (heap memory corruption) via vectors related to the height and width of a window.
+  fixed_versions: ~
+  github_security_advisory:
+  - GHSA-vg9f-qf95-c67j
+  references:
+  - https://github.com/kmx/alien-freeimage/issues/5
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167766.html
+  - http://www.openwall.com/lists/oss-security/2015/08/28/1
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=797165
+  - http://www.debian.org/security/2015/dsa-3392
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172491.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172583.html
+  - http://www.securitytracker.com/id/1034077
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168000.html
+  - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168023.html
+  - https://security.gentoo.org/glsa/201701-68
+  - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+  reported: 2015-09-29
+  severity: ~
+cpansa_version: 2
+name: freeimage
+perl_distributions:
+- affected:
+  - distributed_library_version: 3.16.0
+    perl_module_versions: '>=0.001,<=0.011'
+  - distributed_library_version: 3.17.0
+    perl_module_versions: '>=1.000_1,<=1.001'
+  last_version_checked: '1.001'
+  name: Alien-FreeImage
+- affected:
+  - distributed_library_version: 3.0.4
+    perl_module_versions: '>=0.7.0,<=0.7.1'
+  - distributed_library_version: 3.2.1
+    perl_module_versions: '>=0.8.0,<=0.8.3'
+  - distributed_library_version: 3.4.0
+    perl_module_versions: ==0.8.4
+  - distributed_library_version: 3.5.3
+    perl_module_versions: '>=0.9.0,<=0.9.1'
+  last_version_checked: 0.9.1
+  name: Win32-Printer
+url: https://freeimage.sourceforge.io

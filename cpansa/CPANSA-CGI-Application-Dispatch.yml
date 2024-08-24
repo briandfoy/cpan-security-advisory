@@ -1,11 +1,19 @@
 ---
-- id: CPANSA-CGI-Application-Dispatch-2005-001
-  distribution: CGI-Application-Dispatch
-  reported: 2005-01-20
-  description: >
-    Untainted module names.
-  references:
-    - https://metacpan.org/changes/distribution/CGI-Application-Dispatch
-  affected_versions: "<1.02"
-  fixed_versions: ">=1.02"
+advisories:
+- affected_versions:
+  - <1.02
   cves: []
+  description: "Untainted module names.\n"
+  fixed_versions:
+  - '>=1.02'
+  github_security_advisory: []
+  id: CPANSA-CGI-Application-Dispatch-2005-001
+  references:
+  - https://metacpan.org/changes/distribution/CGI-Application-Dispatch
+  reported: 2005-01-20
+cpansa_version: 2
+distribution: CGI-Application-Dispatch
+last_checked: 1708150832
+latest_version: '3.12'
+metacpan: https://metacpan.org/pod/CGI::Application::Dispatch
+repo: https://github.com/markstos/CGI--Application--Dispatch

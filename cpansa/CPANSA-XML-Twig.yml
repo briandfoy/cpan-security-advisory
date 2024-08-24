@@ -1,20 +1,27 @@
 ---
-- affected_versions: ~
+advisories:
+- affected_versions:
+  - '<1.39'
   cves:
-    - CVE-2016-9180
-  description: >
-    perl-XML-Twig: The option to `expand_external_ents`, documented as
-    controlling external entity expansion in XML::Twig does not work.
-    External entities are always expanded, regardless of the option's
-    setting.
-  distribution: "XML-Twig"
-  fixed_versions: ~
+  - CVE-2016-9180
+  description: |
+    perl-XML-Twig: The option to `expand_external_ents`, documented as controlling external entity expansion in XML::Twig does not work. External entities are always expanded, regardless of the option's setting.
+  fixed_versions:
+  - '>=1.39'
+  github_security_advisory:
+  - GHSA-6wjc-jvcr-hcxw
   id: CPANSA-XML-Twig-2016-9180
   references:
-    - http://www.securityfocus.com/bid/94219
-    - http://www.openwall.com/lists/oss-security/2016/11/04/2
-    - http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00020.html
-    - http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00033.html
-    - https://rt.cpan.org/Public/Bug/Display.html?id=118097
+  - http://www.securityfocus.com/bid/94219
+  - http://www.openwall.com/lists/oss-security/2016/11/04/2
+  - http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00020.html
+  - http://lists.opensuse.org/opensuse-security-announce/2020-08/msg00033.html
+  - https://rt.cpan.org/Public/Bug/Display.html?id=118097
   reported: 2016-12-22
   severity: critical
+cpansa_version: 2
+distribution: XML-Twig
+last_checked: 1708150870
+latest_version: '3.52'
+metacpan: https://metacpan.org/pod/XML::Twig
+repo: http://github.com/mirod/xmltwig

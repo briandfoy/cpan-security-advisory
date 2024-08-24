@@ -1,18 +1,22 @@
 ---
-- id: CPANSA-PGObject-Util-DBAdmin-2018-01
-  distribution: PGObject-Util-DBAdmin
-  reported: 2018-06-18
-  description: >
-    The PGObject::Util::DBAdmin module before 0.120.0 for Perl, as
-    used in LedgerSMB through 1.5.x, insufficiently sanitizes or
-    escapes variable values used as part of shell command execution,
-    resulting in shell code injection via the create(), run_file(),
-    backup(), or restore() function. The vulnerability allows
-    unauthorized users to execute code with the same privileges as the
-    running application.
-  references:
-    - https://archive.ledgersmb.org/ledger-smb-announce/msg00280.html
+advisories:
+- affected_versions:
+  - <1.6.0
   cves:
-    - CVE-2018-9246
-  affected_versions: "<1.6.0"
-  fixed_versions: ">=1.6.0"
+  - CVE-2018-9246
+  description: |
+    The PGObject::Util::DBAdmin module before 0.120.0 for Perl, as used in LedgerSMB through 1.5.x, insufficiently sanitizes or escapes variable values used as part of shell command execution, resulting in shell code injection via the create(), run_file(), backup(), or restore() function. The vulnerability allows unauthorized users to execute code with the same privileges as the running application.
+  fixed_versions:
+  - '>=1.6.0'
+  github_security_advisory:
+  - GHSA-9f5v-36fp-5cv6
+  id: CPANSA-PGObject-Util-DBAdmin-2018-01
+  references:
+  - https://archive.ledgersmb.org/ledger-smb-announce/msg00280.html
+  reported: 2018-06-18
+cpansa_version: 2
+distribution: PGObject-Util-DBAdmin
+last_checked: 1708150863
+latest_version: v1.6.1
+metacpan: https://metacpan.org/pod/PGObject::Util::DBAdmin
+repo: https://github.com/ledgersmb/PGObject-Util-DBAdmin.git

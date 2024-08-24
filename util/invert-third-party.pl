@@ -3,6 +3,7 @@ use v5.26;
 use warnings;
 use experimental qw(signatures);
 
+use MetaCPAN::Client;
 use File::Spec::Functions;
 use IO::Interactive qw(interactive);
 
@@ -159,14 +160,33 @@ sub affected_version_hash ( $advisories ) {
 	}
 
 sub dump_reports ( $file, $data, $advisories, $perl_dist, $affected ) {
-	my @reports;
-	foreach my $advisory ( $advisories->@* ) {
-		my $report = make_report( $data->{name}, $advisory, $perl_dist->{name}, $affected );
-		$report->{generated}{from} = $file;
-		$report->{generated}{date} = scalar localtime;
-		push @reports, $report if defined $report;
+	my %report;
+	$report{generated}{from} = $file;
+	$report{generated}{date} = scalar localtime;
+	$report{generated}{by} = $0;
+	$report{advisories} = [];
+	$report{distribution} = $perl_dist->{name};
+
+	$report{cpansa_version} = 2;
+	$report{last_checked} = time;
+
+	state $mcpan  = MetaCPAN::Client->new();
+	my $mdist   = eval { $mcpan->release($perl_dist->{name}) };
+	if( $mdist ) {
+		# say dumper($mdist);
+		$report{repo} = $mdist->resources->{repository}{url} // $mdist->resources->{repository}{web};
+		$report{latest_version} = $mdist->version;
 		}
-	my $output_file = yaml_dump(\@reports);
+	else {
+		$report{repo} = $report{latest_version} = undef;
+		}
+
+	foreach my $advisory ( $advisories->@* ) {
+		my $advisory = make_report( $data->{name}, $perl_dist->{name}, $advisory, $affected );
+		push $report{advisories}->@*, $advisory if defined $advisory;
+		}
+
+	my $output_file = yaml_dump(\%report);
 	}
 
 sub dumper { state $rc = require Data::Dumper; Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump }
@@ -182,15 +202,15 @@ sub get_files (@args) {
 	my @files = glob( catfile($report_dir, '*.yml') );
 	}
 
-sub make_report ( $name, $advisory, $perl_dist_name, $affected ) {
-	state @copy_keys = qw(cve description references reported severity);
-	my %report = map { $_ => $advisory->{$_} } @copy_keys;
-	$report{cves} = delete $report{cve};
+sub make_report ( $name, $perl_dist_name, $advisory, $affected ) {
+	state @copy_keys = qw(cve description references reported severity github_security_advisory);
 
+	my %report = map { $_ => $advisory->{$_} } @copy_keys;
+	$report{cves} = [ delete $report{cve} ];
+
+	$report{id} = sprintf 'CPANSA-%s-%s-%s',
+		$perl_dist_name, $report{cves}[0] =~ s/\ACVE-//r, $name;
 	$report{affected_versions} = $affected->{perl_module_versions};
-	$report{distribution}      = $perl_dist_name;
-	$report{id}                = sprintf 'CPANSA-%s-%s-%s',
-		$perl_dist_name, $report{cves} =~ s/\ACVE-//r, $name;
 	error( "empty affected_versions in $report{id}" )
 		unless defined $report{affected_versions};
 
@@ -219,11 +239,11 @@ sub yaml_dump ( $report ) {
 	state $rc = require YAML;
 	state $n = 0;
 	my $file = sprintf '%s/report-%04d.yml', $Report_dir, ++$n;
+	say "==== $file\n", dumper($report);
 	my $result = eval { YAML::DumpFile($file, $report) };
 	if( $@ ) { error( "error dumping $file: $@" ) }
 	return $file;
 	}
-
 
 BEGIN {
 	my $original = select(STDOUT); $|++;

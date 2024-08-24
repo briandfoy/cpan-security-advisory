@@ -1,75 +1,76 @@
 ---
-- id: CPANSA-libwww-perl-2017-01
-  distribution: libwww-perl
+advisories:
+- affected_versions:
+  - <6.28
+  cves: []
+  description: |
+    LWP::Protocol::file can open existent file from file:// scheme. However, current version of LWP uses open FILEHANDLE,EXPR and it has ability to execute arbitrary command
+  fixed_versions:
+  - '>=6.27'
+  github_security_advisory: []
+  id: CPANSA-libwww-perl-2017-01
+  references:
+  - https://github.com/libwww-perl/libwww-perl/pull/270
   reported: 2017-11-06
-  description: >
-    LWP::Protocol::file can open existent file from file://
-    scheme. However, current version of LWP uses open FILEHANDLE,EXPR
-    and it has ability to execute arbitrary command
-  cves: []
-  references:
-    - https://github.com/libwww-perl/libwww-perl/pull/270
-  affected_versions: "<6.28"
-  fixed_versions: ">=6.27"
   reviewed_by:
-    - name: Robert Rothenberg
-      email: rrwo@cpan.org
-      date: 2022-06-23
-- id: CPANSA-libwww-perl-2011-01
-  distribution: libwww-perl
+  - date: 2022-06-23
+    email: rrwo@cpan.org
+    name: Robert Rothenberg
+- affected_versions:
+  - <6.00
+  cves:
+  - CVE-2011-0633
+  description: |
+    The Net::HTTPS module in libwww-perl (LWP) before 6.00, as used in WWW::Mechanize, LWP::UserAgent, and other products, when running in environments that do not set the If-SSL-Cert-Subject header, does not enable full validation of SSL certificates by default, which allows remote attackers to spoof servers via man-in-the-middle (MITM) attacks involving hostnames that are not properly validated.
+  fixed_versions:
+  - '>=6.00'
+  github_security_advisory:
+  - GHSA-3fhh-g5rg-6jpm
+  id: CPANSA-libwww-perl-2011-01
+  references:
+  - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
+  - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
   reported: 2011-01-20
-  description: >
-    The Net::HTTPS module in libwww-perl (LWP) before 6.00, as used in
-    WWW::Mechanize, LWP::UserAgent, and other products, when running
-    in environments that do not set the If-SSL-Cert-Subject header,
-    does not enable full validation of SSL certificates by default,
-    which allows remote attackers to spoof servers via
-    man-in-the-middle (MITM) attacks involving hostnames that are not
-    properly validated.
+- affected_versions:
+  - <5.835
   cves:
-    - CVE-2011-0633
+  - CVE-2010-2253
+  description: |
+    lwp-download in libwww-perl before 5.835 does not reject downloads to filenames that begin with a . (dot) character, which allows remote servers to create or overwrite files via (1) a 3xx redirect to a URL with a crafted filename or (2) a Content-Disposition header that suggests a crafted filename, and possibly execute arbitrary code as a consequence of writing to a dotfile in a home directory.
+  fixed_versions:
+  - '>=5.835'
+  github_security_advisory:
+  - GHSA-mcrm-9w8r-c6w8
+  id: CPANSA-libwww-perl-2010-01
   references:
-    - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
-    - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
-  affected_versions: "<6.00"
-  fixed_versions: ">=6.00"
-- id: CPANSA-libwww-perl-2010-01
-  distribution: libwww-perl
+  - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
+  - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
   reported: 2010-07-06
-  description: >
-    lwp-download in libwww-perl before 5.835 does not reject downloads
-    to filenames that begin with a . (dot) character, which allows
-    remote servers to create or overwrite files via (1) a 3xx redirect
-    to a URL with a crafted filename or (2) a Content-Disposition
-    header that suggests a crafted filename, and possibly execute
-    arbitrary code as a consequence of writing to a dotfile in a home
-    directory.
-  cves:
-    - CVE-2010-2253
-  references:
-    - http://vttynotes.blogspot.com/2010/12/man-in-middle-fun-with-perl-lwp.html
-    - http://vttynotes.blogspot.com/2011/03/quick-note-on-lwp-and-perl-security-cve.html
-  affected_versions: "<5.835"
-  fixed_versions: ">=5.835"
-- id: CPANSA-libwww-perl-2001-01
+- affected_versions:
+  - <5.51
   cves: []
-  distribution: libwww-perl
+  description: |
+    If LWP::UserAgent::env_proxy is called in a CGI environment, the case-insensitivity when looking for "http_proxy" permits "HTTP_PROXY" to be found, but this can be trivially set by the web client using the "Proxy:" header.
+  fixed_versions:
+  - '>=5.51'
+  github_security_advisory: []
+  id: CPANSA-libwww-perl-2001-01
   reported: 2001-03-14
-  description: >
-    If LWP::UserAgent::env_proxy is called in a CGI environment, the
-    case-insensitivity when looking for "http_proxy" permits
-    "HTTP_PROXY" to be found, but this can be trivially set by the web
-    client using the "Proxy:" header.
-  affected_versions: "<5.51"
-  fixed_versions: ">=5.51"
-- id: CPANSA-libwww-perl-1995-01
+- affected_versions:
+  - <0.04
   cves: []
-  distribution: libwww-perl
-  reported: 1995-09-06
-  description: >
-    There is a security hole with the implementation of
-    getBasicCredentials().
-  affected_versions: "<0.04"
-  fixed_versions: ">=0.04"
+  description: |
+    There is a security hole with the implementation of getBasicCredentials().
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory: []
+  id: CPANSA-libwww-perl-1995-01
   references:
-    - https://metacpan.org/dist/libwww-perl/changes
+  - https://metacpan.org/dist/libwww-perl/changes
+  reported: 1995-09-06
+cpansa_version: 2
+distribution: libwww-perl
+last_checked: 1708150855
+latest_version: '6.76'
+metacpan: https://metacpan.org/pod/libwww::perl
+repo: https://github.com/libwww-perl/libwww-perl.git

@@ -1,23 +1,30 @@
 ---
-- affected_versions: "<=4.66"
+advisories:
+- affected_versions:
+  - <=4.66
   cves:
-    - CVE-2011-2201
-  description: >
-    The Data::FormValidator module 4.66 and earlier for Perl, when
-    untaint_all_constraints is enabled, does not properly preserve the
-    taint attribute of data, which might allow remote attackers to
-    bypass the taint protection mechanism via form input.
-  distribution: Data-FormValidator
-  fixed_versions: ">4.66"
+  - CVE-2011-2201
+  description: |
+    The Data::FormValidator module 4.66 and earlier for Perl, when untaint_all_constraints is enabled, does not properly preserve the taint attribute of data, which might allow remote attackers to bypass the taint protection mechanism via form input.
+  fixed_versions:
+  - '>4.66'
+  github_security_advisory:
+  - GHSA-348p-57x3-vxc3
   id: CPANSA-Data-FormValidator-2011-2201
   references:
-    - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=629511
-    - http://www.openwall.com/lists/oss-security/2011/06/13/13
-    - https://bugzilla.redhat.com/show_bug.cgi?id=712694
-    - http://www.openwall.com/lists/oss-security/2011/06/12/3
-    - http://www.securityfocus.com/bid/48167
-    - https://rt.cpan.org/Public/Bug/Display.html?id=61792
-    - http://lists.fedoraproject.org/pipermail/package-announce/2011-September/065416.html
-    - http://www.openwall.com/lists/oss-security/2011/06/13/5
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=629511
+  - http://www.openwall.com/lists/oss-security/2011/06/13/13
+  - https://bugzilla.redhat.com/show_bug.cgi?id=712694
+  - http://www.openwall.com/lists/oss-security/2011/06/12/3
+  - http://www.securityfocus.com/bid/48167
+  - https://rt.cpan.org/Public/Bug/Display.html?id=61792
+  - http://lists.fedoraproject.org/pipermail/package-announce/2011-September/065416.html
+  - http://www.openwall.com/lists/oss-security/2011/06/13/5
   reported: 2011-09-14
   severity: ~
+cpansa_version: 2
+distribution: Data-FormValidator
+last_checked: 1708150843
+latest_version: 4.88
+metacpan: https://metacpan.org/pod/Data::FormValidator
+repo: https://github.com/dnmfarrell/Data-FormValidator

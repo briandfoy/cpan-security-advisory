@@ -1,12 +1,21 @@
 ---
-- id: CPANSA-Graphics-ColorNames-2010-02
-  distribution: Graphics-ColorNames
-  reported: 2010-02-11
-  description: >
-    A specially-named file may lead to HTML injection attacks.
-  affected_versions: ">=2.0_01,<=3.1.2"
-  fixed_versions: ">3.1.2"
-  references:
-    - https://metacpan.org/changes/distribution/Graphics-ColorNames
-    - https://rt.cpan.org/Public/Bug/Display.html?id=54500
+advisories:
+- affected_versions:
+  - '>=2.0_01,<=3.1.2'
   cves: []
+  description: |
+    A specially-named file may lead to HTML injection attacks.
+  fixed_versions:
+  - '>3.1.2'
+  github_security_advisory: []
+  id: CPANSA-Graphics-ColorNames-2010-02
+  references:
+  - https://metacpan.org/changes/distribution/Graphics-ColorNames
+  - https://rt.cpan.org/Public/Bug/Display.html?id=54500
+  reported: 2010-02-11
+cpansa_version: 2
+distribution: Graphics-ColorNames
+last_checked: 1708150850
+latest_version: v3.5.0
+metacpan: https://metacpan.org/pod/Graphics::ColorNames
+repo: git://github.com/robrwo/Graphics-ColorNames.git

@@ -1,13 +1,21 @@
 ---
-- id: CPANSA-Otogiri-2014-01
-  distribution: Otogiri
-  reported: 2014-07-03
-  description: >
-    A dependant module SQL::Maker without strict mode is vulnerable to
-    SQL injection.
-  references:
-    - https://github.com/ytnobody/Otogiri/commit/fac1592b3d153a6871ff1aed8016a6888cff9095
-    - https://metacpan.org/changes/distribution/Otogiri
-  affected_versions: "<0.13"
-  fixed_versions: ">=0.13"
+advisories:
+- affected_versions:
+  - <0.13
   cves: []
+  description: |
+    A dependant module SQL::Maker without strict mode is vulnerable to SQL injection.
+  fixed_versions:
+  - '>=0.13'
+  github_security_advisory: []
+  id: CPANSA-Otogiri-2014-01
+  references:
+  - https://github.com/ytnobody/Otogiri/commit/fac1592b3d153a6871ff1aed8016a6888cff9095
+  - https://metacpan.org/changes/distribution/Otogiri
+  reported: 2014-07-03
+cpansa_version: 2
+distribution: Otogiri
+last_checked: 1708150861
+latest_version: '0.22'
+metacpan: https://metacpan.org/pod/Otogiri
+repo: https://github.com/ytnobody/Otogiri.git

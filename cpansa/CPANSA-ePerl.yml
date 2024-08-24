@@ -1,19 +1,24 @@
 ---
-- affected_versions: "<=2.2.14"
+advisories:
+- affected_versions:
+  - <=2.2.14
   cves:
-    - CVE-2001-0733
-  description: >
-    The #sinclude directive in Embedded Perl (ePerl) 2.2.14 and
-    earlier allows a remote attacker to execute arbitrary code by
-    modifying the 'sinclude' file to point to another file that
-    contains a #include directive that references a file that contains
-    the code.
-  distribution: eperl
-  fixed_versions: ~
+  - CVE-2001-0733
+  description: |
+    The #sinclude directive in Embedded Perl (ePerl) 2.2.14 and earlier allows a remote attacker to execute arbitrary code by modifying the 'sinclude' file to point to another file that contains a #include directive that references a file that contains the code.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-q8cv-frx7-5xrc
   id: CPANSA-ePerl-2001-0733
   references:
-    - http://www.securityfocus.com/archive/1/192711
-    - http://www.securityfocus.com/bid/2912
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/6743
+  - http://www.securityfocus.com/archive/1/192711
+  - http://www.securityfocus.com/bid/2912
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/6743
   reported: 2001-10-18
   severity: ~
+cpansa_version: 2
+distribution: eperl
+last_checked: 1708150847
+latest_version: v2.2.13
+metacpan: https://metacpan.org/pod/eperl
+repo: ~

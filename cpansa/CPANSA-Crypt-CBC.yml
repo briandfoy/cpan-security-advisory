@@ -1,30 +1,37 @@
 ---
-- affected_versions: "<2.17"
+advisories:
+- affected_versions:
+  - <2.17
   cves:
-    - CVE-2006-0898
-  description: >
-    Crypt::CBC Perl module 2.16 and earlier, when running in RandomIV
-    mode, uses an initialization vector (IV) of 8 bytes, which results
-    in weaker encryption when used with a cipher that requires a
-    larger block size than 8 bytes, such as Rijndael.
-  distribution: Crypt-CBC
-  fixed_versions: ">=2.17"
+  - CVE-2006-0898
+  description: |
+    Crypt::CBC Perl module 2.16 and earlier, when running in RandomIV mode, uses an initialization vector (IV) of 8 bytes, which results in weaker encryption when used with a cipher that requires a larger block size than 8 bytes, such as Rijndael.
+  fixed_versions:
+  - '>=2.17'
+  github_security_advisory:
+  - GHSA-qpjg-v8f6-cw7j
   id: CPANSA-Crypt-CBC-2006-0898
   references:
-    - https://metacpan.org/changes/distribution/Crypt-CBC
-    - http://www.securityfocus.com/bid/16802
-    - http://secunia.com/advisories/18755
-    - http://www.debian.org/security/2006/dsa-996
-    - http://secunia.com/advisories/19187
-    - http://www.gentoo.org/security/en/glsa/glsa-200603-15.xml
-    - http://secunia.com/advisories/19303
-    - http://www.novell.com/linux/security/advisories/2006_38_security.html
-    - http://secunia.com/advisories/20899
-    - http://securityreason.com/securityalert/488
-    - http://www.redhat.com/support/errata/RHSA-2008-0261.html
-    - http://secunia.com/advisories/31493
-    - http://rhn.redhat.com/errata/RHSA-2008-0630.html
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/24954
-    - http://www.securityfocus.com/archive/1/425966/100/0/threaded
+  - https://metacpan.org/changes/distribution/Crypt-CBC
+  - http://www.securityfocus.com/bid/16802
+  - http://secunia.com/advisories/18755
+  - http://www.debian.org/security/2006/dsa-996
+  - http://secunia.com/advisories/19187
+  - http://www.gentoo.org/security/en/glsa/glsa-200603-15.xml
+  - http://secunia.com/advisories/19303
+  - http://www.novell.com/linux/security/advisories/2006_38_security.html
+  - http://secunia.com/advisories/20899
+  - http://securityreason.com/securityalert/488
+  - http://www.redhat.com/support/errata/RHSA-2008-0261.html
+  - http://secunia.com/advisories/31493
+  - http://rhn.redhat.com/errata/RHSA-2008-0630.html
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/24954
+  - http://www.securityfocus.com/archive/1/425966/100/0/threaded
   reported: 2006-02-25
   severity: ~
+cpansa_version: 2
+distribution: Crypt-CBC
+last_checked: 1708150840
+latest_version: '3.04'
+metacpan: https://metacpan.org/pod/Crypt::CBC
+repo: ~

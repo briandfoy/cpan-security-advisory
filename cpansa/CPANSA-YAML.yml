@@ -1,23 +1,34 @@
 ---
-- affected_versions: "<1.28"
+advisories:
+- affected_versions:
+  - <1.28
   cves: []
-  description: >
+  description: |
     Loading globs is easily exploitable.
-  distribution: YAML
-  fixed_versions: ">=1.28"
+  fixed_versions:
+  - '>=1.28'
+  github_security_advisory: []
   id: CPANSA-YAML-2019-01
   references:
-    - https://github.com/ingydotnet/yaml-pm/issues/212
+  - https://github.com/ingydotnet/yaml-pm/issues/212
   reported: 2019-04-27
   severity: ~
-- affected_versions: "<1.25"
+- affected_versions:
+  - <1.25
   cves: []
-  description: >
+  description: |
     YAML loader can run DESTROY method of object created with perl/* tag.
-  distribution: YAML
-  fixed_versions: ">=1.25"
+  fixed_versions:
+  - '>=1.25'
+  github_security_advisory: []
   id: CPANSA-YAML-2017-01
   references:
-    - https://github.com/ingydotnet/yaml-pm/issues/176
+  - https://github.com/ingydotnet/yaml-pm/issues/176
   reported: 2017-05-10
   severity: ~
+cpansa_version: 2
+distribution: YAML
+last_checked: 1708150870
+latest_version: '1.31'
+metacpan: https://metacpan.org/pod/YAML
+repo: https://github.com/ingydotnet/yaml-pm.git

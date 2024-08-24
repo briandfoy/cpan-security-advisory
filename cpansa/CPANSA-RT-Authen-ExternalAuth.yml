@@ -1,12 +1,22 @@
 ---
-- id: CPANSA-RT-Authen-ExternalAuth-2017-01
-  distribution: RT-Authen-ExternalAuth
-  reported: 2017-06-15
-  description: >
-    Timing sidechannel vulnerability in password checking.
-  references:
-    - https://metacpan.org/changes/distribution/RT-Authen-ExternalAuth
+advisories:
+- affected_versions:
+  - <0.27
   cves:
-    - CVE-2017-5361
-  affected_versions: "<0.27"
-  fixed_versions: ">=0.27"
+  - CVE-2017-5361
+  description: |
+    Timing sidechannel vulnerability in password checking.
+  fixed_versions:
+  - '>=0.27'
+  github_security_advisory:
+  - GHSA-qpcq-vgjf-37f6
+  id: CPANSA-RT-Authen-ExternalAuth-2017-01
+  references:
+  - https://metacpan.org/changes/distribution/RT-Authen-ExternalAuth
+  reported: 2017-06-15
+cpansa_version: 2
+distribution: RT-Authen-ExternalAuth
+last_checked: 1708150865
+latest_version: '0.27'
+metacpan: https://metacpan.org/pod/RT::Authen::ExternalAuth
+repo: https://github.com/bestpractical/rt-authen-externalauth

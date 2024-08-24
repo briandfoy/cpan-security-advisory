@@ -1,28 +1,38 @@
 ---
-- id: CPANSA-Dancer-2014-01
-  distribution: Dancer
+advisories:
+- affected_versions:
+  - <1.3114
+  cves:
+  - CVE-2012-5572
+  description: |
+    CRLF injection vulnerability in the cookie method allows remote attackers to inject arbitrary HTTP headers and conduct HTTP response splitting attacks via a cookie name.
+  fixed_versions:
+  - '>=1.3114'
+  github_security_advisory:
+  - GHSA-cqwv-qc24-9rvm
+  id: CPANSA-Dancer-2014-01
+  references:
+  - https://metacpan.org/changes/distribution/Dancer
+  - https://github.com/PerlDancer/Dancer/commit/46ef9124f3149f697455061499ac7cee40930349
   reported: 2014-05-30
-  description: >
-    CRLF injection vulnerability in the cookie method allows remote
-    attackers to inject arbitrary HTTP headers and conduct HTTP
-    response splitting attacks via a cookie name.
-  references:
-    - https://metacpan.org/changes/distribution/Dancer
-    - https://github.com/PerlDancer/Dancer/commit/46ef9124f3149f697455061499ac7cee40930349
+- affected_versions:
+  - <1.3051
   cves:
-    - CVE-2012-5572
-  affected_versions: "<1.3114"
-  fixed_versions: ">=1.3114"
-- id: CPANSA-Dancer-2011-01
-  distribution: Dancer
+  - CVE-2011-1589
+  description: |
+    Directory traversal vulnerability (Mojolicious report, but Dancer was vulnerable as well).
+  fixed_versions:
+  - '>=1.3051'
+  github_security_advisory:
+  - GHSA-vrwf-2wgx-949w
+  id: CPANSA-Dancer-2011-01
+  references:
+  - https://metacpan.org/changes/distribution/Dancer
+  - https://github.com/PerlDancer/Dancer/commit/91d0bf6a36705b0971b18f7d38fa2f3df8c7b994
   reported: 2011-04-05
-  description: >
-    Directory traversal vulnerability (Mojolicious report, but Dancer
-    was vulnerable as well).
-  references:
-    - https://metacpan.org/changes/distribution/Dancer
-    - https://github.com/PerlDancer/Dancer/commit/91d0bf6a36705b0971b18f7d38fa2f3df8c7b994
-  cves:
-    - CVE-2011-1589
-  affected_versions: "<1.3051"
-  fixed_versions: ">=1.3051"
+cpansa_version: 2
+distribution: Dancer
+last_checked: 1708150842
+latest_version: '1.3521'
+metacpan: https://metacpan.org/pod/Dancer
+repo: https://github.com/PerlDancer/Dancer.git
