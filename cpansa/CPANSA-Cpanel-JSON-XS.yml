@@ -32,11 +32,7 @@ advisories:
   references:
   - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
   - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
-  affected_versions:
-  - "<3.0218"
-  fixed_versions:
-  - ">=3.0218"
-  cves: []
+  reported: ~
 - affected_versions:
   - <4.033
   cves:

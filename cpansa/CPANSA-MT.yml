@@ -17,7 +17,6 @@ advisories:
   - http://www.sec-1.com/blog/?p=402
   reported: 2013-01-23
   severity: ~
-  darkpan: true
 - affected_versions:
   - '>=7,<=7.9.4'
   - '>=6,<=6.8.6'
@@ -37,7 +36,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN57728859/index.html
   reported: 2022-08-24
   severity: critical
-  darkpan: true
 - affected_versions:
   - '>=7,<=7.8.1'
   - '>=6,<=6.8.2'
@@ -57,7 +55,6 @@ advisories:
   - http://packetstormsecurity.com/files/164705/Movable-Type-7-r.5002-XMLRPC-API-Remote-Command-Injection.html
   reported: 2021-10-26
   severity: critical
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   cves:
@@ -73,7 +70,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   cves:
@@ -89,7 +85,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   - '>=6,<=6.8.0'
@@ -106,7 +101,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   - '>=6,<=6.8.0'
@@ -123,7 +117,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   - '>=6,<=6.8.0'
@@ -140,7 +133,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   - '>=6,<=6.8.0'
@@ -157,7 +149,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN97545738/index.html
   reported: 2021-08-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.8.0'
   - '>=6,<=6.8.0'
@@ -189,7 +180,6 @@ advisories:
   - https://jvn.jp/en/jp/JVN94245475/index.html
   reported: 2021-10-26
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.2.1'
   - '>=6,<=6.5.3'
@@ -206,7 +196,6 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: high
-  darkpan: true
 - affected_versions:
   - '>=7,<7.2.1'
   - '>=6,<=6.5.3'
@@ -223,7 +212,6 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: high
-  darkpan: true
 - affected_versions:
   - '>=7,<7.2.1'
   - '>=6,<=6.5.3'
@@ -240,7 +228,6 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.2.1'
   - '>=6,<=6.5.3'
@@ -257,7 +244,6 @@ advisories:
   - https://movabletype.org/news/2020/05/mt-730-660-6312-released.html
   reported: 2020-05-14
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.1.4'
   - '>=6,<=6.5.2'
@@ -274,7 +260,6 @@ advisories:
   - http://jvn.jp/en/jp/JVN94435544/index.html
   reported: 2020-02-06
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=7,<7.1.3'
   - '>=6.5.0,<=6.5.1'
@@ -306,7 +291,6 @@ advisories:
   - http://jvn.jp/en/jp/JVN89550319/index.html
   reported: 2018-09-04
   severity: medium
-  darkpan: true
 - affected_versions:
   - '>=6.0.0,<6.1.3'
   - '>=6.2.0,<6.2.6'
@@ -327,7 +311,6 @@ advisories:
   - http://www.securitytracker.com/id/1036160
   reported: 2017-01-23
   severity: critical
-  darkpan: true
 - affected_versions:
   - '<5.2.12'
   - '>=6.0.0,<=6.0.7'
@@ -349,7 +332,6 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/100912
   reported: 2015-02-19
   severity: ~
-  darkpan: true
 - affected_versions:
   - '<5.18'
   - '>=5.2.0,<5.2.11'
@@ -386,7 +368,6 @@ advisories:
   - http://seclists.org/oss-sec/2013/q2/560
   reported: 2015-03-27
   severity: ~
-  darkpan: true
 - affected_versions:
   - '=5.13'
   cves:
@@ -406,7 +387,6 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/79521
   reported: 2014-08-29
   severity: ~
-  darkpan: true
 - affected_versions:
   - '<4.38'
   - '>=5,<5.07'
@@ -429,7 +409,6 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-03-03
   severity: ~
-  darkpan: true
 - affected_versions:
   - '<4.38'
   - '>=5,<5.07'
@@ -452,7 +431,6 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-03-03
   severity: ~
-  darkpan: true
 - affected_versions:
   - '>=4,<4.36'
   - '>=5,<5.05'
@@ -469,7 +447,6 @@ advisories:
   - http://www.debian.org/security/2012/dsa-2423
   reported: 2012-04-02
   severity: ~
-  darkpan: true
 - affected_versions:
   - '>=4,<4.36'
   - '>=5,<5.05'
@@ -572,7 +549,6 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/47759
   reported: 2009-01-05
   severity: ~
-  darkpan: true
 - affected_versions:
   - '<4.23'
   cves:

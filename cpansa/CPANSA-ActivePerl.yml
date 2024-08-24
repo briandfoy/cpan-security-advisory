@@ -15,7 +15,6 @@ advisories:
   - http://osvdb.org/86177
   reported: 2012-10-11
   severity: ~
-  darkpan: true
 - affected_versions:
   - =5.8.8.817
   cves:
