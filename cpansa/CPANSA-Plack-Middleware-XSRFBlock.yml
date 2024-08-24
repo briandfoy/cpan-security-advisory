@@ -3,14 +3,6 @@ advisories:
 - affected_versions:
   - <0.0.19
   cves:
-<<<<<<< HEAD
-    - CVE-2023-52431
-  description: >
-    When not using signed cookies, it was possible to
-    bypass XSRFBlock by POSTing an empty form value and
-    an empty cookie
-  distribution: Plack-Middleware-XSRFBlock
-=======
   - CVE-2023-52431
   description: |
     When not using signed cookies, it was possible to bypass XSRFBlock by POSTing an empty form value and an empty cookie
@@ -18,7 +10,6 @@ advisories:
   - '>=0.0.19'
   github_security_advisory:
   - GHSA-895f-2fwm-hcv8
->>>>>>> briandfoy/github-advisory-database
   id: CPANSA-Plack-Middleware-XSRFBlock-20230714-01
   references:
   - https://metacpan.org/dist/Plack-Middleware-XSRFBlock/changes
