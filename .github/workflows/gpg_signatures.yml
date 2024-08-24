@@ -1,0 +1,31 @@
+name: gpg
+
+on:
+    push:
+        branches:
+            - '**'
+        paths:
+            - '.github/workflows/gpg_signatures.yml'
+            - 'lib/CPAN/Audit/DB.pm'
+            - 'briandfoy-gpg-key-selfie.jpeg'
+            - '**.gpg'
+    pull_request:
+
+jobs:
+    gpg:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: setup GPG
+              run: |
+                sudo apt-get update
+                sudo apt-get -y install gnupg
+                gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
+            - uses: actions/checkout@v3
+            - name: Check DB
+              run: |
+                gpg --verify lib/CPANSA/DB.pm.gpg lib/CPANSA/DB.pm
+                gpg --verify cpan-security-advisory.json.gpg cpan-security-advisory.json
+           - name: Check selfie
+              run: |
+                gpg --verify images/bdfoycpanorg-gpg-key-selfie.jpeg.gpg images/briandfoy-gpg-key-selfie.jpeg
+                gpg --verify images/briandfoypoboxcom-gpg-key-selfie.jpeg.gpg images/briandfoy-gpg-key-selfie.jpeg
