@@ -1,23 +1,26 @@
 ---
 advisories:
 - affected_versions:
-  - <20110914
-  cves: []
+  - '<20240730'
+  cves:
+  - CVE-2024-39689
   description: |
-    Google Chrome user alibo encountered an active "man in the middle" (MITM) attack on secure SSL connections to Google servers. The fraudulent certificate was mis-issued by DigiNotar, a Dutch Certificate Authority. DigiNotar has reported evidence that other fraudulent certificates were issued and in active use but the full extent of the compromise is not known.
+    ECM GlobalTrust 2000 root certificates have been distrusted
   fixed_versions:
-  - '>=20110914'
-  github_security_advisory: []
-  id: CPANSA-Mozilla-CA-2011-34
+  - '>=20240730'
+  github_security_advisory:
+  - GHSA-248v-346w-9cwc
+  id: CPANSA-Mozilla-CA-2024-39689
   references:
-  - https://rt.cpan.org/Public/Bug/Display.html?id=70967
-  - https://www.mozilla.org/en-US/security/advisories/mfsa2011-35/
-  - https://www.mozilla.org/en-US/security/advisories/mfsa2011-34/
-  reported: ~
-  severity: ~
+  - https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/XpknYMPO8dI
+  - https://groups.google.com/a/ccadb.org/g/public/c/wRs-zec8w7k/m/G_9QprJ2AQAJ
+  - https://github.com/certifi/python-certifi/security/advisories/GHSA-248v-346w-9cwc
+  - https://github.com/certifi/python-certifi/commit/bd8153872e9c6fc98f4023df9c2deaffea2fa463
+  reported: 2024-06-11
+  severity: low
 cpansa_version: 2
 distribution: Mozilla-CA
-last_checked: 1708150859
-latest_version: '20231213'
+last_checked: 1724646111
+latest_version: '20240730'
 metacpan: https://metacpan.org/pod/Mozilla::CA
-repo: https://github.com/libwww-perl/Mozilla-CA.git
+repo: ~
