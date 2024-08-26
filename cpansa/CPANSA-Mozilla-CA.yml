@@ -1,6 +1,21 @@
 ---
 advisories:
 - affected_versions:
+  - "<20110914"
+  cves: []
+  description: |
+    Google Chrome user alibo encountered an active "man in the middle" (MITM) attack on secure SSL connections to Google servers. The fraudulent certificate was mis-issued by DigiNotar, a Dutch Certificate Authority. DigiNotar has reported evidence that other fraudulent certificates were issued and in active use but the full extent of the compromise is not known.
+  fixed_versions:
+  - ">=20110914"
+  github_security_advisory: []
+  id: CPANSA-Mozilla-CA-MFSA-2011-34
+  references:
+    - https://rt.cpan.org/Public/Bug/Display.html?id=70967
+    - https://www.mozilla.org/en-US/security/advisories/mfsa2011-35/
+    - https://www.mozilla.org/en-US/security/advisories/mfsa2011-34/
+  reported: ~
+  severity: ~
+- affected_versions:
   - '<20240730'
   cves:
   - CVE-2024-39689
