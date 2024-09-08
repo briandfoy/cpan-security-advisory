@@ -20,6 +20,21 @@ advisories:
   - https://blogs.perl.org/users/neilb/2021/11/addressing-cpan-vulnerabilities-related-to-checksums.html
   - https://github.com/miyagawa/cpanminus/pull/638
   reported: 2020-07-30
+- affected_versions:
+  - <=1.7047
+  cves:
+  - CVE-2024-45321
+  description: |
+    The App::cpanminus package through 1.7047 for Perl downloads code via insecure HTTP, enabling code execution for network attackers.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-9mmm-86g7-vp9g
+  id: CPANSA-App-cpanminus-2024-01
+  references:
+  - https://github.com/miyagawa/cpanminus/issues/611
+  - https://github.com/miyagawa/cpanminus/pull/674
+  - https://security.metacpan.org/2024/08/26/cpanminus-downloads-code-using-insecure-http.html
+  reported: 2024-08-27
 cpansa_version: 2
 distribution: App-cpanminus
 last_checked: 1708150829
