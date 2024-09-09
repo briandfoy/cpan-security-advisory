@@ -29,7 +29,7 @@ advisories:
   fixed_versions: []
   github_security_advisory:
   - GHSA-9mmm-86g7-vp9g
-  id: CPANSA-App-cpanminus-2024-01
+  id: CPANSA-App-cpanminus-2024-45321
   references:
   - https://github.com/miyagawa/cpanminus/issues/611
   - https://github.com/miyagawa/cpanminus/pull/674
