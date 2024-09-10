@@ -943,7 +943,8 @@ advisories:
   reported: 1999-12-31
   severity: ~
 - affected_versions:
-  - '>=5.24.0,<=5.26.0'
+  - '>=5.24.0,<5.24.3'
+  - ==5.26.0
   cves:
   - CVE-2017-12814
   description: |
@@ -959,6 +960,8 @@ advisories:
   - http://www.securityfocus.com/bid/101051
   - https://security.netapp.com/advisory/ntap-20180426-0001/
   - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://perldoc.perl.org/perl5243delta
+  - https://github.com/Perl/perl5/issues/16051
   reported: 2017-09-28
   severity: critical
 - affected_versions:
