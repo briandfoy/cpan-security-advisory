@@ -69,7 +69,8 @@ advisories:
   reported: 2012-12-21
   severity: ~
 - affected_versions:
-  - <5.30.3
+  - '<5.28.3'
+  - '>=5.30.0,<5.30.3'
   cves:
   - CVE-2020-12723
   description: |
@@ -95,10 +96,14 @@ advisories:
   - https://www.oracle.com/security-alerts/cpuoct2021.html
   - https://www.oracle.com/security-alerts/cpujan2022.html
   - https://www.oracle.com/security-alerts/cpuapr2022.html
+  - https://perldoc.perl.org/perl5283delta
+  - https://perldoc.perl.org/perl5303delta
+  - https://perldoc.perl.org/perl5320delta
   reported: 2020-06-05
   severity: high
 - affected_versions:
-  - <5.30.3
+  - '<5.28.3'
+  - '>=5.30.0,<5.30.3'
   cves:
   - CVE-2020-10878
   description: |
@@ -123,10 +128,14 @@ advisories:
   - https://www.oracle.com/security-alerts/cpuoct2021.html
   - https://www.oracle.com/security-alerts/cpujan2022.html
   - https://www.oracle.com/security-alerts/cpuapr2022.html
+  - https://perldoc.perl.org/perl5283delta
+  - https://perldoc.perl.org/perl5303delta
+  - https://perldoc.perl.org/perl5320delta
   reported: 2020-06-05
   severity: high
 - affected_versions:
-  - <5.30.3
+  - '<5.28.3'
+  - '>=5.30.0,<5.30.3'
   cves:
   - CVE-2020-10543
   description: |
@@ -150,6 +159,9 @@ advisories:
   - https://www.oracle.com/security-alerts/cpuoct2021.html
   - https://www.oracle.com/security-alerts/cpujan2022.html
   - https://www.oracle.com/security-alerts/cpuapr2022.html
+  - https://perldoc.perl.org/perl5283delta
+  - https://perldoc.perl.org/perl5303delta
+  - https://perldoc.perl.org/perl5320delta
   reported: 2020-06-05
   severity: high
 - affected_versions:
@@ -289,7 +301,8 @@ advisories:
   reported: 2018-12-07
   severity: critical
 - affected_versions:
-  - <5.28.1
+  - ==5.28.0
+  - <5.26.3
   cves:
   - CVE-2018-18312
   description: |
@@ -314,10 +327,13 @@ advisories:
   - https://security.netapp.com/advisory/ntap-20190221-0003/
   - https://security.gentoo.org/glsa/201909-01
   - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://perldoc.perl.org/perl5281delta
+  - https://perldoc.perl.org/perl5263delta
   reported: 2018-12-05
   severity: critical
 - affected_versions:
-  - <5.28.1
+  - <5.26.3
+  - ==5.28.0
   cves:
   - CVE-2018-18311
   description: |
@@ -356,6 +372,8 @@ advisories:
   - https://security.gentoo.org/glsa/201909-01
   - https://www.oracle.com/security-alerts/cpuapr2020.html
   - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://perldoc.perl.org/perl5281delta
+  - https://perldoc.perl.org/perl5263delta
   reported: 2018-12-07
   severity: critical
 - affected_versions:
@@ -383,6 +401,8 @@ advisories:
   - https://www.oracle.com/security-alerts/cpujul2020.html
   - https://github.com/Perl/perl5/issues/16025
   - https://perldoc.perl.org/perl5243delta
+  - https://perldoc.perl.org/perl5280delta
+  - https://perldoc.perl.org/perl5261delta
   reported: 2017-09-19
   severity: critical
 - affected_versions:
@@ -393,7 +413,7 @@ advisories:
   description: |
     Heap-based buffer overflow in the S_regatom function in regcomp.c in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows remote attackers to cause a denial of service (out-of-bounds write) via a regular expression with a '\\N{}' escape and the case-insensitive modifier.
   fixed_versions:
-  - '>=5.28.1'
+  - '>=5.26.1'
   github_security_advisory:
   - GHSA-q52c-c9hv-jc77
   id: CPANSA-perl-2017-12837
@@ -409,6 +429,8 @@ advisories:
   - https://www.oracle.com/security-alerts/cpujul2020.html
   - https://github.com/Perl/perl5/issues/16021
   - https://perldoc.perl.org/perl5243delta
+  - https://perldoc.perl.org/perl5261delta
+  - https://perldoc.perl.org/perl5280delta
   reported: 2017-09-19
   severity: high
 - affected_versions:
@@ -973,6 +995,8 @@ advisories:
   - https://www.oracle.com/security-alerts/cpujul2020.html
   - https://perldoc.perl.org/perl5243delta
   - https://github.com/Perl/perl5/issues/16051
+  - https://perldoc.perl.org/perl5261delta
+  - https://perldoc.perl.org/perl5280delta
   reported: 2017-09-28
   severity: critical
 - affected_versions:
