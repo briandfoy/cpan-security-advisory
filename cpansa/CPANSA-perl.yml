@@ -377,8 +377,8 @@ advisories:
   reported: 2018-12-07
   severity: critical
 - affected_versions:
-  - ==5.26.0
-  - >=5.20.0,<5.24.3
+  - '==5.26.0'
+  - '>=5.20.0,<5.24.3'
   cves:
   - CVE-2017-12883
   description: |
@@ -406,8 +406,8 @@ advisories:
   reported: 2017-09-19
   severity: critical
 - affected_versions:
-  - >=5.18.0,<5.24.3
-  - ==5.26.0
+  - '>=5.18.0,<5.24.3'
+  - '==5.26.0'
   cves:
   - CVE-2017-12837
   description: |
@@ -434,7 +434,7 @@ advisories:
   reported: 2017-09-19
   severity: high
 - affected_versions:
-  - <5.24.0
+  - '<5.24.0'
   cves:
   - CVE-2015-8853
   description: |
@@ -960,7 +960,7 @@ advisories:
   reported: 2011-04-11
   severity: ~
 - affected_versions:
-  - <5.4.4
+  - '<5.4.4'
   cves:
   - CVE-1999-1386
   description: |
@@ -1026,9 +1026,9 @@ advisories:
   description: |
     A crafted regular expression when compiled by perl 5.30.0 through 5.38.0 can cause a one attacker controlled byte buffer overflow in a heap allocated buffer
   fixed_versions:
-  - 5.34.3
-  - 5.36.3
-  - 5.38.1
+  - '5.34.3'
+  - '5.36.3'
+  - '5.38.1'
   github_security_advisory:
   - GHSA-96fh-9q43-rmjh
   id: CPANSA-perl-2023-47038
@@ -1041,9 +1041,9 @@ advisories:
   reported: 2023-10-30
   severity: ~
 - affected_versions:
-  - <5.34.2
-  - >=5.36.0,<5.36.3
-  - ==5.38.0
+  - '<5.34.2'
+  - '>=5.36.0,<5.36.3'
+  - '==5.38.0'
   cves:
   - CVE-2023-47039
   description: |
