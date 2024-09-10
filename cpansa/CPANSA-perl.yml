@@ -348,7 +348,8 @@ advisories:
   reported: 2018-12-07
   severity: critical
 - affected_versions:
-  - <5.26.1
+  - ==5.26.0
+  - >=5.20.0,<5.24.3
   cves:
   - CVE-2017-12883
   description: |
@@ -369,11 +370,13 @@ advisories:
   - http://www.debian.org/security/2017/dsa-3982
   - https://security.netapp.com/advisory/ntap-20180426-0001/
   - https://www.oracle.com/security-alerts/cpujul2020.html
+  - https://github.com/Perl/perl5/issues/16025
+  - https://perldoc.perl.org/perl5243delta
   reported: 2017-09-19
   severity: critical
 - affected_versions:
   - >=5.18.0,<5.24.3
-  - ==5.26.1
+  - ==5.26.0
   cves:
   - CVE-2017-12837
   description: |
