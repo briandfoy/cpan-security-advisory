@@ -1020,7 +1020,7 @@ advisories:
 - affected_versions:
   - '>=5.30.0,<5.34.3'
   - '>=5.36.0,<5.36.3'
-  - '>=5.38.0,<5.38.2'
+  - '==5.38.0'
   cves:
   - CVE-2023-47038
   description: |
@@ -1028,15 +1028,22 @@ advisories:
   fixed_versions:
   - 5.34.3
   - 5.36.3
-  - 5.38.2
+  - 5.38.1
   github_security_advisory:
   - GHSA-96fh-9q43-rmjh
   id: CPANSA-perl-2023-47038
-  references: []
+  references:
+  - https://perldoc.perl.org/perl5342delta
+  - https://perldoc.perl.org/perl5363delta
+  - https://perldoc.perl.org/perl5381delta
+  - https://perldoc.perl.org/perl5382delta
+  - https://perldoc.perl.org/perl5400delta
   reported: 2023-10-30
   severity: ~
 - affected_versions:
-  - <=5.38.0
+  - <5.34.2
+  - >=5.36.0,<5.36.3
+  - ==5.38.0
   cves:
   - CVE-2023-47039
   description: |
@@ -1047,7 +1054,13 @@ advisories:
   github_security_advisory:
   - GHSA-44qm-928x-6p3g
   id: CPANSA-perl-2023-47039
-  references: []
+  references:
+  - https://github.com/ycdxsb/WindowsPrivilegeEscalation
+  - https://perldoc.perl.org/perl5342delta
+  - https://perldoc.perl.org/perl5363delta
+  - https://perldoc.perl.org/perl5381delta
+  - https://perldoc.perl.org/perl5382delta
+  - https://perldoc.perl.org/perl5400delta
   reported: 2023-10-30
   severity: ~
 - affected_versions:
