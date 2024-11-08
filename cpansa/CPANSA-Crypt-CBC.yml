@@ -1,6 +1,20 @@
 ---
 advisories:
 - affected_versions:
+  - '<3.04'
+  cves: []
+  description: |
+    Fixed bug involving manually-specified IV not being used in some circumstances.
+  fixed_versions:
+  - '>=3.04'
+  github_security_advisory: []
+  id: CPANSA-Crypt-CBC-2021-0001
+  references:
+  - https://metacpan.org/changes/distribution/Crypt-CBC
+  - https://github.com/briandfoy/cpan-security-advisory/issues/165
+  reported: 2021-05-17
+  severity: ~
+- affected_versions:
   - <2.17
   cves:
   - CVE-2006-0898
