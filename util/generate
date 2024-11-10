@@ -93,21 +93,8 @@ sub all_releases {
 	FETCH: {
 		sleep $tries * 10;
 		debug( "Try $tries for $distribution" );
-		my $response = HTTP::Tiny->new->post(
-			'http://fastapi.metacpan.org/v1/release/_search',
-			{
-				headers => { 'Content-Type' => 'application/json' },
-				content => JSON::encode_json(
-					{
-						size   => 5000,
-						fields => [ qw(date version status main_module) ],
-						filter => {
-							term => { distribution => $distribution }
-						},
-						sort => ['date'],
-					}
-				)
-			}
+		my $response = HTTP::Tiny->new->get(
+			'http://fastapi.metacpan.org/v1/release/versions/'.$distribution
 		);
 
 		$content_json = eval { JSON::decode_json( $response->{content} ) };
@@ -115,7 +102,7 @@ sub all_releases {
 		redo FETCH unless $tries++ > 3;
 		}
 
-	my @results = map  { $_->{fields} } @{ $content_json->{hits}->{hits} };
+	my @results = sort { $a->{date} cmp $b->{date} } @{ $content_json->{releases} };
 	return unless @results;
 
 	return @results;
