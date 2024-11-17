@@ -1,4 +1,6 @@
 Changes
+cpan-security-advisory.json
+cpan-security-advisory.json.gpg
 GPG_README.md
 images/bdfoycpanorg-gpg-key-selfie.jpeg.gpg
 images/briandfoy-gpg-key-selfie.jpeg
@@ -17,3 +19,4 @@ t/load.t
 t/pod.t
 t/pod_coverage.t
 t/test_manifest
+t/yamllint.config
