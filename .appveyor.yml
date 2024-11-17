@@ -1,0 +1,41 @@
+# brian's standard Appveyor config for Perl 5 modules
+# https://github.com/briandfoy/brians_perl_modules_appveyor_config
+# This file is licensed under the Artistic License 2.0
+# version 20230308
+---
+image:
+  - Visual Studio 2019
+  - Visual Studio 2022
+  - ubuntu2004
+
+environment:
+  PERL5LIB: /home/appveyor/perl5/lib/perl5
+  DEBIAN_FRONTEND: noninteractive
+  SP: C:\strawberry
+
+platform: x64
+
+branches:
+  only:
+    - master
+    - appveyor
+
+skip_tags: true
+
+install:
+  - cmd: if not exist "C:\strawberry" cinst strawberryperl
+  - cmd: set PATH=%SP%\perl\bin;%SP%\perl\site\bin;%SP%\c\bin;%PATH%
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+  - sh: sudo apt-get update --allow-releaseinfo-change
+  - sh: sudo env apt-get -yq install build-essential git libssl-dev
+  - sh: sudo apt-get install -y perl
+  - sh: export PATH=/home/appveyor/perl5/bin:$PATH
+  - perl -v
+  - cpan -M https://www.cpan.org -T App::cpanminus ExtUtils::MakeMaker
+  - cmd: cpanm --notest --installdeps .
+  - sh: cpanm --local-lib=/home/appveyor/perl5 --notest --installdeps .
+
+build_script:
+  - perl Makefile.PL
+  - cmd: gmake test
+  - sh: make test
