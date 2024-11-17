@@ -117,4 +117,5 @@ jobs:
                   files: |
                     ${{ env.ASSET_NAME }}
                     ${{ steps.attestation.outputs.bundle-path }}
+                    ${{ env.EXTRA_RELEASE_PATHS }}
                   token: ${{ secrets.RELEASE_ACTION_TOKEN }}
