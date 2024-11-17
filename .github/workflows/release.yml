@@ -111,7 +111,7 @@ jobs:
               uses: softprops/action-gh-release@v1
               with:
                 body_path: Changes-latest
-              draft: false
+                draft: false
                 prerelease: false
                 name: ${{ steps.version.outputs.name }}
                 files: |
