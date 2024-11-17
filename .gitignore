@@ -43,3 +43,4 @@ blib
 *.bak
 *.old
 MYMETA.*
+xt/.last_run
