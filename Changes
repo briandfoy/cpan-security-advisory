@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20241117.002 2024-11-17T21:01:42Z
+	* test release
+
 20241117.001 2024-11-17T20:14:34Z
 	* initial release. This breaks out the data portion of CPAN::Audit
 	into a separate dist that can be updated independently. This maintains
