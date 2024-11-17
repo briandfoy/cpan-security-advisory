@@ -1,5 +1,5 @@
 # brian's standard GitHub Actions Ubuntu config for Perl 5 modules
-# version 20240824.001
+# version 20240923.001
 # https://github.com/briandfoy/github_workflows
 # https://github.com/features/actions
 # This file is licensed under the Artistic License 2.0
@@ -48,7 +48,9 @@ on:
             - 'LICENSE'
             - 'README.pod'
     pull_request:
-
+    # weekly build on the master branch just to see what CPAN is doing
+    schedule:
+        - cron: "37 3 * * 0"
 jobs:
     perl:
         environment: automated_testing
@@ -84,6 +86,26 @@ jobs:
             - name: Setup environment
               run: |
                 echo "PERL_LWP_SSL_VERIFY_HOSTNAME=0" >> $GITHUB_ENV
+# HTML::Tagset bumped its minimum version to v5.10 for no good reason
+# but this is a prereq to LWP, which runs on v5.8. To get around this,
+# download the tarball and fix it for v5.8. Install it before we try
+# to install things that depend on it. More recent versions will
+# install it normally.
+# 1. remove the META files which have references to v5.10 and ignore
+# the warnings
+# 2. fix Makefile.PL to remove two references to v5.10
+# https://github.com/libwww-perl/HTML-Tagset/pull/14
+            - name: fix html-tagset for v5.8
+              if: env.PERL_VERSION == 'v5.8'
+              run: |
+                curl -L -O https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.24.tar.gz
+                tar -xzf HTML-Tagset-3.24.tar.gz
+                cd HTML-Tagset-3.24
+                rm META.*
+                mv Makefile.PL Makefile.PL.orig
+                perl -n -e 'next if /(^use 5)|(MIN_PERL)/; print' Makefile.PL.orig > Makefile.PL
+                cpan -T .
+                cd ..
 # I had some problems with openssl on Ubuntu, so I punted by installing
 # cpanm first, which is easy. I can install IO::Socket::SSL with that,
 # then switch back to cpan. I didn't explore this further, but what you
@@ -92,7 +114,7 @@ jobs:
             - name: Install cpanm and multiple modules
               run: |
                 curl -L https://cpanmin.us | perl - App::cpanminus
-                cpanm --notest IO::Socket::SSL App::Cpan HTTP::Tiny ExtUtils::MakeMaker Test::Manifest Test::More
+                cpanm --notest IO::Socket::SSL LWP::Protocol::https App::Cpan HTTP::Tiny ExtUtils::MakeMaker Test::Manifest Test::More
 # Install the dependencies, again not testing them. This installs the
 # module in the current directory, so we end up installing the module,
 # but that's not a big deal.
