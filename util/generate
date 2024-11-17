@@ -120,12 +120,12 @@ sub json_file () {
 	$file;
 }
 
-sub default_version () {
+sub default_version ($output_file) {
 	my $opts = config();
 	my( $year, $month, $day ) = (localtime)[5,4,3];
 
 	my $date = sprintf '%4d%02d%02d', $year + 1900, $month + 1, $day;
-	my( $previous_date, $previous_serial ) = get_previous_date_serial( $opts->{output_file} );
+	my( $previous_date, $previous_serial ) = get_previous_date_serial( $output_file );
 	debug "PREVIOUS DATE: $previous_date PREVIOUS SERIAL: $previous_serial";
 
 	my $serial = sprintf '%03d', $previous_date == $date ? $previous_serial + 1 : 1;
@@ -265,7 +265,7 @@ sub process_options ( @args ) {
 
 	debug "Options: " . dumper( \%results );
 
-	$results{version} //= default_version();
+	$results{version} //= default_version( perl_module_file('CPANSA::DB') );
 
 	\@args;
 }
