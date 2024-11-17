@@ -106,16 +106,16 @@ jobs:
               id: attestation
               uses: actions/attest-build-provenance@v1
               with:
-                  subject-path: ${{ env.ASSET_NAME }}
+                subject-path: ${{ env.ASSET_NAME }}
             - name: upload
               uses: softprops/action-gh-release@v1
               with:
-                  body_path: Changes-latest
-                  draft: false
-                  prerelease: false
-                  name: ${{ steps.version.outputs.name }}
-                  files: |
-                    ${{ env.ASSET_NAME }}
-                    ${{ steps.attestation.outputs.bundle-path }}
-                    ${{ env.EXTRA_RELEASE_PATHS }}
-                  token: ${{ secrets.RELEASE_ACTION_TOKEN }}
+                body_path: Changes-latest
+              draft: false
+                prerelease: false
+                name: ${{ steps.version.outputs.name }}
+                files: |
+                  ${{ env.ASSET_NAME }}
+                  ${{ steps.attestation.outputs.bundle-path }}
+                  ${{ vars.EXTRA_RELEASE_PATHS }}
+                token: ${{ secrets.RELEASE_ACTION_TOKEN }}
