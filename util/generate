@@ -108,9 +108,11 @@ sub all_releases {
 	return @results;
 }
 
-sub perl_module_file () {
-	state $file = catfile(qw(lib CPANSA DB.pm));
-	$file;
+sub perl_module_file ($package) {
+	my @parts = split /::/, $package;
+	$parts[-1] .= '.pm';
+
+	catfile('lib', @parts);
 }
 
 sub json_file () {
@@ -253,9 +255,7 @@ sub process_options ( @args ) {
 		'debug|d'          => \ $results{debug},
 		'dry-run|n'        => \ $results{dry_run},
 		'gpg-key|g=s'      => \ $results{gpg_key},
-		'json|j'           => \ $results{json},
 		'module-version'   => \ $results{version},
-		'perl-module|pm|p' => \ $results{perl_module},
 		'quiet|q'          => \ $results{quiet},
 	);
 
@@ -266,8 +266,6 @@ sub process_options ( @args ) {
 	debug "Options: " . dumper( \%results );
 
 	$results{version} //= default_version();
-
-	$results{perl_module} = 1 unless $results{json};
 
 	\@args;
 }
@@ -330,19 +328,23 @@ sub run ( @args ) {
 
 	add_meta( $db );
 
-	if( $opts->{perl_module} ) {
-		my $string = stringify_data($db);
-		my $filename = perl_module_file();
+	my @packages = qw(CPAN::Audit::DB CPANSA::DB);
+
+	PERL_MODULE: foreach my $package  ( @packages ) {
+		say "Creating Perl module $package ...";
+		my $string = stringify_data($db, $package);
+		my $filename = perl_module_file($package);
 		debug "Outputting perl module <$filename>";
 		open my $fh, '>:encoding(UTF-8)', $filename;
 		print {$fh} $string;
 		close $fh;
 		output_gpg_signature( $string, $filename );
-	}
+		}
 
-	if( $opts->{json} ) {
-		my $string = JSON::encode_json($db);
+	JSON: {
 		my $filename = json_file();
+		say "Creating JSON $filename...";
+		my $string = JSON::encode_json($db);
 		debug "Outputting JSON file <$filename>";
 		open my $fh, '>:encoding(UTF-8)', $filename;
 		print {$fh} $string;
@@ -377,7 +379,7 @@ sub get_repo {
 	$repo;
 }
 
-sub stringify_data ( $db ) {
+sub stringify_data ( $db, $package ) {
 	my $opts = config();
 
 	state $rc = require Data::Dumper;
@@ -399,7 +401,7 @@ sub stringify_data ( $db ) {
 
 		=head1 NAME
 
-		CPANSA::DB - the CPAN Security Advisory data as a Perl data structure, mostly for CPAN::Audit
+		$package - the CPAN Security Advisory data as a Perl data structure, mostly for CPAN::Audit
 
 		=head1 SYNOPSIS
 
@@ -407,7 +409,7 @@ sub stringify_data ( $db ) {
 
 		=cut
 
-		package CPANSA::DB;
+		package $package;
 
 		use strict;
 		use warnings;
