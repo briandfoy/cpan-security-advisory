@@ -1,8 +1,7 @@
 GENERATED=t/.last_run perl-cve-atom.xml generated_reports
 CVE_FEED_FILE=perl-cve-atom.xml
 
-all: ## does nothing yet (reserved)
-	@ echo "There is no default target"
+.DEFAULT_GOAL := help
 
 .PHONY: invert
 invert: ## turn the external_reports into CPANSA-style reports
