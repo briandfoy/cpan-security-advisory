@@ -32,7 +32,7 @@ name instead of the file location:
 	% perldoc CPANSA::DB
 
 You can read the documentation and inspect the meta data on
-L<MetaCPAN|http://www.metacpan.org/module/CPANSA::DB>.
+L<MetaCPAN|https://www.metacpan.org/pod/CPANSA::DB>.
 
 The standard module documentation has example uses in the SYNOPSIS
 section, but you can also look in the I<examples/> directory (if it's
@@ -71,18 +71,12 @@ the source repository:
 
 =over 4
 
-=item *	L<https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory>
+=item *	L<https://github.com/briandfoy/cpan-security-advisory>
 
 =back
 
 If you find a problem, file a ticket in the L<issue
-tracker|https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory/issues>:
-
-=over 4
-
-=item *	L<https://github.com/briandfoy/https://github.com/briandfoy/cpan-security-advisory/issues>
-
-=back
+tracker|https://github.com/briandfoy/cpan-security-advisory/issues>.
 
 =head2 Getting help
 
