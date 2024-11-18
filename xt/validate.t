@@ -1,7 +1,6 @@
 use Test::More;
 
 use Data::Rx;
-use Mojo::Util;
 use YAML::XS;
 
 
@@ -199,7 +198,6 @@ foreach my $file ( sort @files ) {
 	subtest $file => sub {
 		my $data = eval { YAML::XS::LoadFile( $file ) };
 		ok defined $data, "Loaded YAML data";
-		# diag( Mojo::Util::dumper($data) );
 		isa_ok $data, ref {};
 
 		eval { $schema->assert_valid($data) };
