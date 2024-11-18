@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20241118.001 2024-11-18T15:48:04Z
+	* Regenerate dist to fix some metadata issues (#169)
+
 20241117.003 2024-11-17T21:06:07Z
 	* test release
 
