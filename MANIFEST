@@ -8,8 +8,10 @@ images/briandfoypoboxcom-gpg-key-selfie.jpeg.gpg
 INSTALL.SKIP
 lib/CPAN/Audit/DB.pm
 lib/CPAN/Audit/DB.pm.gpg
+lib/CPAN/Audit/DB.pod
 lib/CPANSA/DB.pm
 lib/CPANSA/DB.pm.gpg
+lib/CPANSA/DB.pod
 LICENSE
 Makefile.PL
 MANIFEST			This list of files

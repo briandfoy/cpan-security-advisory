@@ -78,6 +78,27 @@ the source repository:
 If you find a problem, file a ticket in the L<issue
 tracker|https://github.com/briandfoy/cpan-security-advisory/issues>.
 
+This distribution now uses
+L<GitHub Attestations|https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/>,
+which allow you to verify that the archive file you have was made from
+the official repo.
+
+You need a GitHub account and the L<gh tool|https://github.com/larsks/ghcli>.
+
+	# download the distro file from GitHub, MetaCPAN, or a CPAN mirror
+	$ gh auth login
+	...follow instructions...
+	$ gh attestation verify CPANSA-DB-20241111.tar.gz --owner briandfoy
+
+Additionally, each release codes with GPG signature that allows you to
+verify that this. The key is the same one used when the database was
+distributed with L<CPAN::Audit>:
+
+	$ gpg --verify lib/CPANSA/DB.pm.gpg lib/CPANSA/DB.pm
+	gpg: Signature made Mon Nov 18 11:00:10 2024 EST
+	gpg:                using RSA key 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041
+	gpg: Good signature from "CPAN::Audit (brian d foy) (https://github.com/briandfoy/cpan-audit) <bdfoy@cpan.org>" [ultimate]
+
 =head2 Getting help
 
 Although I'm happy to hear from module users in private email,
