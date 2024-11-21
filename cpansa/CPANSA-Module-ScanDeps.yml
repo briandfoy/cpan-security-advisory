@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - '<1.36'
+  cves:
+  - CVE-2024-10224
+  description: >
+    Qualys discovered that if unsanitized input was used with the library Modules::ScanDeps, before version 1.36 a local attacker could possibly execute arbitrary shell commands by open()ing a "pesky pipe" (such as passing "commands|" as a filename) or by passing arbitrary strings to eval().
+  distribution: Module-ScanDeps
+  fixed_versions:
+  - '>=1.36'
+  github_security_advisory:
+  - GHSA-g597-359q-v529
+  id: CPANSA-Module-ScanDeps-2024-10224
+  references:
+  - https://github.com/rschupp/Module-ScanDeps/security/advisories/GHSA-g597-359q-v529
+  - https://www.cve.org/CVERecord?id=CVE-2024-10224
+  - https://www.qualys.com/2024/11/19/needrestart/needrestart.txt
+  - https://lists.debian.org/debian-lts-announce/2024/11/msg00015.html
+  - https://ubuntu.com/security/CVE-2024-10224
+  reported: 2024-11-19
+  severity: ~
+cpansa_version: 2
+distribution: CGI
+last_checked: 1708150834
+latest_version: '4.61'
+metacpan: https://metacpan.org/pod/CGI
+repo: https://github.com/leejo/CGI.pm
