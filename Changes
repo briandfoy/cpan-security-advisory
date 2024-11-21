@@ -1,5 +1,10 @@
 # Changes for CPANSA::DB
 
+20241121.002 2024-11-21T21:18:26Z
+	* data update for 2024-11-21
+	* includes CVE-2024-10224 for Module::ScanDeps (#170)
+	* Pod broken out to separate files since MetaCPAN doesn't like large files
+
 20241118.002 2024-11-18T16:01:32Z
 	* Remove Mojo::Util as a pre-requisite (#168)
 
