@@ -352,7 +352,6 @@ sub run ( @args ) {
 		open my $fh, '>:encoding(UTF-8)', $pod_file;
 		print {$fh} $pod;
 		close $fh;
-		output_gpg_signature( $string, $pod_file );
 		}
 
 		}
