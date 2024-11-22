@@ -44,3 +44,4 @@ blib
 *.old
 MYMETA.*
 xt/.last_run
+CPANSA-DB-*
