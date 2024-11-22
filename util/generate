@@ -371,8 +371,8 @@ sub add_meta ( $db ) {
 	$db->{meta} = {
 		repo      => $repo,
 		generator => $0,
-		date      => @{[scalar gmtime]},
-		epoch     => gmtime(),
+		date      => scalar gmtime,
+		epoch     => time,
 		commit    => $commit,
 	};
 }
