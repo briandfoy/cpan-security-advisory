@@ -175,6 +175,9 @@ sub output_gpg_signature ( $string, $file ) {
 	print { $gpg_fh } $octets;
 
 	close $gpg_fh or croak "Problem making GPG signature: $!";
+	if( $? ) {
+		croak "Problem making GPG signature: $?";
+	}
 
 	return 1;
 }
@@ -340,6 +343,7 @@ sub run ( @args ) {
 		open my $fh, '>:encoding(UTF-8)', $filename;
 		print {$fh} $string;
 		close $fh;
+		output_gpg_signature( $string, $filename );
 		}
 
 		{
@@ -348,6 +352,7 @@ sub run ( @args ) {
 		open my $fh, '>:encoding(UTF-8)', $pod_file;
 		print {$fh} $pod;
 		close $fh;
+		output_gpg_signature( $string, $pod_file );
 		}
 
 		}
