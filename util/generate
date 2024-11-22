@@ -449,7 +449,7 @@ sub stringify_data ( $db, $package ) {
 
 		=back
 
-		=head1 VERFIYING
+		=head1 VERIFYING
 
 		This distribution now uses
 		L<GitHub Attestations|https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/>,
