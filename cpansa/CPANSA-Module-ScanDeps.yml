@@ -22,6 +22,6 @@ advisories:
 cpansa_version: 2
 distribution: Module-ScanDeps
 last_checked: 1708150834
-latest_version: '4.61'
-metacpan: https://metacpan.org/pod/CGI
-repo: https://github.com/leejo/CGI.pm
+latest_version: '1.37'
+metacpan: https://metacpan.org/pod/Module::ScanDeps
+repo: https://github.com/rschupp/Module-ScanDeps
