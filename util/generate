@@ -420,7 +420,7 @@ sub stringify_data ( $db, $package ) {
 
 			use $package;
 
-			my $db = $package->db;
+			my \$db = $package->db;
 
 		=head1 DESCRIPTION
 
