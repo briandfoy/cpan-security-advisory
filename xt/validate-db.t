@@ -1,4 +1,5 @@
 use v5.26;
+use experimental qw(signatures);
 
 use FindBin qw($RealBin);
 use lib "$RealBin/lib";
@@ -7,12 +8,13 @@ use Test::More;
 
 use YAML::XS;
 
-my $class    = 'CPANSA::DB';
+my @modules  = qw( CPANSA::DB CPAN::Audit::DB );
+my $class    = $modules[0];
 my $rx_class = 'Local::Rx';
 
 subtest 'sanity' => sub {
 	my @classes = (
-		[ $class, 'db' ],
+		( map { [ $_, 'db' ] } @modules ),
 		[ $rx_class, 'new' ],
 		);
 
@@ -42,17 +44,28 @@ subtest 'make schema' => sub {
 subtest 'check db' => sub {
 	my $method = 'assert_valid';
 	can_ok $schema, $method;
-	eval { $schema->$method($class->db) };
-	my $at = $@;
-	if( ! ref $at ) {
-		pass "$class has valid data";
+
+	foreach my $module ( @modules ) {
+		validate_data( $schema, $module->db, $module );
 		}
-	else {
-		fail( "Data for <$class> was not valid" );
-		foreach my $failure ( @{ $at->failures } ) {
-			diag( $failure );
-			}
-		}
+	};
+
+subtest 'check JSON' => sub {
+	use_ok 'JSON' or return;
+
+	my $data;
+	subtest 'JSON data' => sub {
+		my $json_file = 'cpan-security-advisory.json';
+		ok -e $json_file or return;
+		$data = do { local(@ARGV, $/) = $json_file; <> };
+		ok defined $data, 'JSON data is defined';
+		$data = eval { JSON::decode_json($data) };
+		ok defined $data, 'data decoded';
+		};
+
+	subtest 'validate JSON' => sub {
+		validate_data( $schema, $data, 'JSON file' );
+		};
 	};
 
 done_testing();
@@ -160,5 +173,23 @@ sub get_rx () {
 	  },
 	};
 }
+
+sub validate_data ($schema, $data, $label) {
+	subtest $label => sub {
+		ok defined $data, 'data is defined';
+		eval { $schema->assert_valid($data) };
+		my $at = $@;
+		if( ! ref $at ) {
+			pass "data validates with Rx";
+			}
+		else {
+			fail( "data fails with Rx" );
+			foreach my $failure ( @{ $at->failures } ) {
+				diag( $failure );
+				}
+			diag( dumper($data) );
+			}
+		};
+	}
 
 __END__
