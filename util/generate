@@ -219,6 +219,8 @@ sub process_files ( $files ) {
 		my @releases = all_releases($dist);
 		if (!@releases) {
 			warn "no releases found on CPAN for '$dist'\n";
+			$db{dists}{$dist}{versions} = [];
+			$db{dists}{$dist}{main_module} = '';
 			next;
 		}
 
