@@ -206,7 +206,6 @@ sub process_files ( $files ) {
 		foreach my $advisory ( $yaml->{advisories}->@* ) {
 			$advisory->{distribution} = $dist;
 			$advisory->{darkpan} = 'true' if( exists $yaml->{darkpan} && $yaml->{darkpan} eq 'true' );
-			$advisory->{url} = $yaml->{url} if defined $yaml->{url};
 
 			delete $advisory->{github_security_advisory};
 			push $db{dists}{$dist}{advisories}->@*, $advisory;
