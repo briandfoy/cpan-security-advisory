@@ -1,4 +1,4 @@
-use v5.26;
+use v5.20;
 use experimental qw(signatures);
 
 use FindBin qw($RealBin);
@@ -19,7 +19,7 @@ subtest 'sanity' => sub {
 		);
 
 	foreach my $row ( @classes ) {
-		my( $c, @m ) = $row->@*;
+		my( $c, @m ) = @$row;
 
 		use_ok $c or BAIL_OUT( "$c did not compile" );
 		can_ok $c, @m;
