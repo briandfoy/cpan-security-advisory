@@ -120,7 +120,7 @@ jobs:
 # but that's not a big deal.
             - name: Install dependencies
               run: |
-                cpanm --notest --installdeps --with-suggests --with-recommends .
+                cpanm --notest --installdeps --with-suggests --with-recommends . ${{ vars.EXTRA_CPAN_MODULES }}
             - name: Show cpanm failures
               if: ${{ failure() }}
               run: |
