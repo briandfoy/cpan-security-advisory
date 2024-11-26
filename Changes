@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20241126.001 2024-11-26T23:05:31Z
+	* data update
+	* the stuff using Data::Rx moves to xt/, which is not distributed (#172)
+
 20241125.001 2024-11-25T20:15:46Z
 	* data update
 
