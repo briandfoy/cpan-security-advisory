@@ -1,0 +1,19 @@
+---
+- affected_versions: <0.02
+  cves: []
+  description: >
+    A malicious programmer creating an application to use the service can just have his application send along a cookie that he has created himself, and with that supply an appropriate verification string for his cookie. To avoid that you need to include som kind of hidden server-side password in the string being encrypted, and also include it when you verify.
+  fixed_versions: '>=0.02'
+  id: CPANSA-CGI-Application-Plugin-CAPTCHA-2024-001
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=30759
+  - https://metacpan.org/release/CROMEDOME/CGI-Application-Plugin-CAPTCHA-0.02/changes
+  - https://github.com/cromedome/cgi-application-plugin-captcha/commit/9acb5b6561a9983787ad85f55b01c69a895014e6
+  reported: ~
+  severity: ~
+cpansa_version: 2
+distribution: CGI-Application-Plugin-CAPTCHA
+last_checked: 1733273222
+latest_version: '0.04'
+metacpan: https://metacpan.org/pod/CGI::Application::Plugin::CAPTCHA
+repo: https://github.com/cromedome/cgi-application-plugin-captcha
