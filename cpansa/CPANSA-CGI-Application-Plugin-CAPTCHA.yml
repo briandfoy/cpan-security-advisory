@@ -1,10 +1,13 @@
 ---
 advisories:
-- affected_versions: '<0.02'
+- affected_versions:
+  - '<0.02'
   cves: []
   description: >
     A malicious programmer creating an application to use the service can just have his application send along a cookie that he has created himself, and with that supply an appropriate verification string for his cookie. To avoid that you need to include som kind of hidden server-side password in the string being encrypted, and also include it when you verify.
-  fixed_versions: '>=0.02'
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory: []
   id: CPANSA-CGI-Application-Plugin-CAPTCHA-2024-001
   references:
   - https://rt.cpan.org/Public/Bug/Display.html?id=30759
