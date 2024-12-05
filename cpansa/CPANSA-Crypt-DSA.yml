@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <=1.17
+  - <1.18
   cves:
   - CVE-2011-3599
   description: |
@@ -23,6 +23,6 @@ advisories:
 cpansa_version: 2
 distribution: Crypt-DSA
 last_checked: 1708150841
-latest_version: '1.17'
+latest_version: '1.19'
 metacpan: https://metacpan.org/pod/Crypt::DSA
 repo: http://svn.ali.as/cpan/trunk/Crypt-DSA
