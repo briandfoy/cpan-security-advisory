@@ -1,0 +1,22 @@
+---
+advisories:
+  - affected_versions:
+      - '<0.002011'
+    cves: []
+    description: |
+      closed potential security issue with deeply nested paramters in the DBIC glue code.  This was a hack that could let someone create a child record if you were allowing find_by_unique rather than find by primary key.
+    fixed_versions:
+      - '>=0.002011'
+    github_security_advisory: []
+    id: CPANSA-Valiant-2024-001
+    references:
+      - https://github.com/briandfoy/cpan-security-advisory/issues/175
+      - https://github.com/jjn1056/Valiant/commit/242348776cc01e736397767f11f86cc4055817c4
+    reported: ~
+    severity: ~
+cpansa_version: 2
+distribution: Valiant
+last_checked: 1733650659
+latest_version: 0.002011
+metacpan: https://metacpan.org/pod/Valiant
+repo: https://github.com/jjn1056/Valiant
