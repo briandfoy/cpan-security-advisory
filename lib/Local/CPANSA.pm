@@ -16,48 +16,62 @@ Local::CPANSA - tools for working within the repo
 
 =cut
 
-=item * assemble_record
+=item * assemble_advisory
 
 =cut
 
-sub assemble_record ( $cve, $distribution = undef ) {
+sub assemble_advisory ( $config ) {
 	state $base = 'https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=';
 	state $rc = require Mojo::UserAgent;
 
 	my %hash;
-	$hash{cves}  = $cve // die "Need CVE argument\n";
-	$hash{distribution}  = $distribution;
-	$hash{distribution} =~ s/::/-/g;
+	push $hash{cves}->@*, $config->cve if $config->cve;
 
 	my $serial = $hash{cves} =~ s/\ACVE-//r;
 
 	my $url = "$base$hash{cves}";
 
-	my $json = Mojo::UserAgent->new->get( $url )->result->json;
+	$hash{description} = undef;
+	$hash{references} = [];
+	$hash{reported} = undef;
+	$hash{severity} = undef;
+	$hash{github_security_advisory} = [];
+	$hash{affected_versions} = [];
+	$hash{fixed_versions} =  [];
 
-	my $item = $json->{vulnerabilities}[0]{cve};
+	if( $config->cve ) {
+		my $json = Mojo::UserAgent->new->get( $url )->result->json;
+		my $item = $json->{vulnerabilities}[0]{cve};
 
-	$hash{description}  = (map { $_->{value} } grep { $_->{lang} eq 'en' } $item->{descriptions}->@* )[0] // '';
-	$hash{description}  =~ s/\v/ /g;
+		$hash{description}  = (map { $_->{value} } grep { $_->{lang} eq 'en' } $item->{descriptions}->@* )[0] // '';
+		$hash{description}  =~ s/\v/ /g;
 
-	my @references = map { $_->{url} } $item->{references}->@*;
-	$hash{references} = \@references;
+		my @references = map { $_->{url} } $item->{references}->@*;
+		$hash{references} = \@references;
 
-	$hash{reported} = $item->{published} =~ s/T.*//r;
-	$hash{cves} = [ $hash{cves} ];
+		$hash{reported} = $item->{published} =~ s/T.*//r;
 
-	$hash{severity} = eval { lc $item->{metrics}{cvssMetricV31}{cvssData}{baseSeverity} } || undef;
+		$hash{severity} = eval { lc $item->{metrics}{cvssMetricV31}{cvssData}{baseSeverity} } || undef;
+		}
 
-	my $package = guess_package( $item );
-	$package =~ s/::/-/g;
+#	my $package = guess_package( $item );
+#	$package =~ s/::/-/g;
 
-	$hash{distribution} = $package unless defined $hash{distribution};
 	$hash{id} = sprintf 'CPANSA-%s-%s', $hash{distribution}, $serial;
 
-	$hash{affected_versions} = undef;
-	$hash{fixed_versions} = undef;
-
 	$hash{embedded_vulnerability} = { name => undef, distributed_version => undef };
+
+	unshift $hash{references}->@*, rt_n_to_url($config->rt) if $config->rt;
+
+	push $hash{affected_versions}->@*,  $config->affected if $config->affected;
+	push $hash{fixed_versions}->@*,  $config->fixed if $config->fixed;
+
+	$hash{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
+	$hash{embedded_vulnerability}{name}                //= $config->embedded_name;
+
+	delete $hash{embedded_vulnerability} unless(
+		defined $config->embedded_version or defined $config->embedded_name
+		);
 
 	return \%hash
 	}

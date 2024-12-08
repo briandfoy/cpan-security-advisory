@@ -7,6 +7,7 @@ use vars qw($AUTOLOAD);
 use namespace::autoclean;
 use Carp qw(carp croak);
 use Local::CPANSA;
+use Mojo::Util qw(dumper);
 
 =encoding utf8
 
@@ -56,12 +57,13 @@ sub dump ( $self ) {
 =cut
 
 sub getopts_args ( $self ) {
-	state $opts = $self->getopts_spec;
+	state $spec = $self->getopts_spec;
+	$self->{spec} =  $spec;
 	my %getopts_args =
-		map  { $opts->{$_}{getopt} => \$opts->{$_}{value} }
-		grep { exists $opts->{$_}{getopt} }
-		keys $opts->%*;
-	%getopts_args;
+		map  { $spec->{$_}{getopt} => \$spec->{$_}{value} }
+		grep { exists $spec->{$_}{getopt} }
+		keys $spec->%*;
+	\%getopts_args;
 	}
 
 =item * getopts_spec
@@ -106,7 +108,8 @@ sub postprocess_args ( $self ) {
 sub process_args ( $self ) {
 	use Getopt::Long qw(:config no_ignore_case);
 	my $args = $self->deep_cloned_args;
-	my $ret = Getopt::Long::GetOptionsFromArray( $args, $self->getopts_args );
+	$self->{getopts_args} = $self->getopts_args;
+	my $ret = Getopt::Long::GetOptionsFromArray( $args, $self->{getopts_args}->%* );
 	$self->leftover_args( $args );
 	$self;
 	}
@@ -141,7 +144,7 @@ sub value_for ( $self, $key ) {
 		return;
 		}
 
-	$self->getopts_spec->{$key}{value}
+	$self->{spec}{$key}{value}
 	}
 
 =item * set_value_for

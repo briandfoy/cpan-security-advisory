@@ -174,21 +174,25 @@ run( @ARGV ) unless caller;
 sub run ( @args ) {
 	my $config = Local::Config::make_record->new( @args );
 
-	my $hash = Local::CPANSA::assemble_record( $config->cve, $config->namespace );
+#	say Mojo::Util::dumper($config);
 
-	unshift $hash->{references}->@*, rt_n_to_url($config->rt) if $config->rt;
+	my $report_path = $config->output_filename;
 
-	$hash->{affected_versions}                           //= $config->affected;
-	$hash->{fixed_versions}                              //= $config->fixed;
-	$hash->{embedded_vulnerability}{distributed_version} //= $config->embedded_version;
-	$hash->{embedded_vulnerability}{name}                //= $config->embedded_name;
+	my $existing;
+	if( -e $report_path ) {
+		say "Path <$report_path> exists";
+		$existing = eval { YAML::LoadFile( $report_path ) };
+		}
+	else {
+		say "Path <$report_path> does not exist";
+		$existing = Local::Config::make_record->new_meta($config);
+		}
 
-	delete $hash->{embedded_vulnerability} unless(
-		defined $config->embedded_version or defined $config->embedded_name
-		);
+	my $advisory = Local::CPANSA::assemble_advisory( $config );
 
-	my $string = YAML::Dump( [ $hash ] );
+	push $existing->{advisories}->@*, $advisory;
 
+=pod
 	# We want the folded form to avoid yamllint warnings, but YAML
 	# no longer supports this. We can cheat a little because we know
 	# exactly where this shows up and we don't have to handle arbitrary
@@ -209,13 +213,13 @@ sub run ( @args ) {
 		"$field>\n$wrapped";
 		/em;
 
+=cut
 
 	# If we want to redirect into an existing file, take out the YAML
 	# header, unless we have -s to force the header
 	my $fh = do {
 		if( $config->output_filename eq '-' ) { \*STDOUT }
 		else {
-			my $report_path = Local::CPANSA::report_path( $hash->{distribution} );
 			$config->include_yaml_start_line(0) if( -e $report_path and ! $config->yes_yaml_start );
 			open my $fh, '>>:encoding(UTF-8)', $report_path
 				or die "Could not open <$report_path>: $!\n";
@@ -223,7 +227,10 @@ sub run ( @args ) {
 			}
 		};
 
+	my $string = YAML::Dump($existing);
 	$string =~ s/\A---\R// unless $config->include_yaml_start_line;
+
+	print STDOUT $string;
 
 	print { $fh } $string;
 	}

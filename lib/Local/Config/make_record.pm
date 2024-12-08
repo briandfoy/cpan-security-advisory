@@ -8,10 +8,13 @@ use experimental qw(signatures);
 use namespace::autoclean;
 use Carp qw(carp);
 use Local::CPANSA;
+use MetaCPAN::Client;
 
 =encoding utf8
 
 =head1 NAME
+
+Local::Config::make_record -
 
 =head1 SYNOPSIS
 
@@ -54,19 +57,44 @@ sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) 
 	Local::CPANSA::report_path( $namespace =~ s/::/-/gr )
 	}
 
+=item * new_meta( CONFIG )
+
+=cut
+
+sub new_meta ( $self, $config ) {
+	my %hash;
+
+	my $mcpan = MetaCPAN::Client->new;
+	my $package = $mcpan->package($config->namespace);
+	my $dist = $mcpan->distribution($package->distribution);
+
+	$hash{cpansa_version} = 2;
+	$hash{darkpan} = 'false';
+	$hash{distribution} = $package->distribution;
+	$hash{last_checked} = time;
+	$hash{latest_version} = $package->version;
+	$hash{metacpan} = "https://metacpan.org/pod/" . $config->namespace;
+	$hash{advisories} = [];
+
+	$hash{repo} = $dist->github->{source} if keys  $dist->github->%*;
+
+	\%hash;
+	}
+
 =item * postprocess_args
 
 =cut
 
 sub postprocess_args ( $self ) {
-	my( $cve, $namespace ) = $self->leftover_args->@*;
+	my $cve = $self->cve;
 	$self->cve( $cve ) if defined $cve;
+
 
 	$self->output_filename( $self->stdout_name )
 		if( ! $self->output_filename and $self->no_guess_filename );
 
+	my $namespace = $self->namespace;
 	if( defined $namespace ) {
-		$self->namespace($namespace);
 		$self->output_filename( $self->guess_output_filename($namespace) )
 			if( ! $self->no_guess_filename and ! $self->output_filename );
 		}
