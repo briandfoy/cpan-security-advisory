@@ -8,7 +8,6 @@ use experimental qw(signatures);
 use namespace::autoclean;
 use Carp qw(carp);
 use Local::CPANSA;
-use MetaCPAN::Client;
 
 =encoding utf8
 
@@ -62,6 +61,8 @@ sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) 
 =cut
 
 sub new_meta ( $self, $config ) {
+	state $rc = require MetaCPAN::Client;
+
 	my %hash;
 
 	my $mcpan = MetaCPAN::Client->new;
