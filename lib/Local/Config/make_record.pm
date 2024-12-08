@@ -13,7 +13,7 @@ use Local::CPANSA;
 
 =head1 NAME
 
-Local::Config::make_record -
+Local::Config::make_record - stuff to create an advisory file
 
 =head1 SYNOPSIS
 
