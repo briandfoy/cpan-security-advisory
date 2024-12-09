@@ -22,7 +22,8 @@ advisories:
   severity: ~
 - affected_versions:
   - '<0.24'
-  cves: []
+  cves:
+  - CVE-2024-55564
   description: >
     Fixed potential env buffer overflow in _execve50c()
   fixed_versions:
