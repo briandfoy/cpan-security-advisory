@@ -2,7 +2,8 @@
 advisories:
 - affected_versions:
   - '>=2.0_01,<=3.1.2'
-  cves: []
+  cves:
+  - CVE-2024-55918
   description: |
     A specially-named file may lead to HTML injection attacks.
   fixed_versions:
