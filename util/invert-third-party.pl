@@ -239,7 +239,7 @@ sub yaml_dump ( $report ) {
 	state $rc = require YAML;
 	state $n = 0;
 	my $file = sprintf '%s/report-%04d.yml', $Report_dir, ++$n;
-	say "==== $file\n", dumper($report);
+	#say "==== $file\n", dumper($report);
 	my $result = eval { YAML::DumpFile($file, $report) };
 	if( $@ ) { error( "error dumping $file: $@" ) }
 	return $file;
