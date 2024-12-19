@@ -1,0 +1,23 @@
+---
+advisories:
+- affected_versions:
+  - <0.2400
+  cves: []
+  description: |
+    App-genpass before v0.2400 generated passwords using build in rand()
+  fixed_versions:
+  - '>=0.2400'
+  github_security_advisory: []
+  id: CPANSA-App-Genpass-2024-001
+  references:
+  - https://metacpan.org/dist/App-Genpass/changes
+  - https://github.com/xsawyerx/app-genpass/pull/5
+  - https://github.com/briandfoy/cpan-security-advisory/issues/178
+  reported: ~
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: App-Genpass
+last_checked: 1734567944
+latest_version: 2.401
+metacpan: https://metacpan.org/pod/App::Genpass
