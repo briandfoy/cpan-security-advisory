@@ -187,7 +187,7 @@ sub validate_data ($schema, $data, $label) {
 			foreach my $failure ( @{ $at->failures } ) {
 				diag( $failure );
 				}
-			diag( dumper($data) );
+			diag( explain($data->{meta}) );
 			}
 		};
 	}
