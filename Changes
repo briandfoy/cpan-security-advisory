@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20241218.005 2024-12-19T01:22:10Z
+	* Add report for App::Genpass (#178)
+	* regenerate data
+
 20241208.003 2024-12-08T21:47:48Z
 	* data update for 2024-12-08
 
