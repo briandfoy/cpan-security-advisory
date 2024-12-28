@@ -58,7 +58,7 @@ sub assemble_advisory ( $config ) {
 #	my $package = guess_package( $item );
 #	$package =~ s/::/-/g;
 
-	$hash{id} = sprintf 'CPANSA-%s-%s', $config{distribution}, $serial;
+	$hash{id} = sprintf 'CPANSA-%s-%s', $config->distribution, $serial;
 
 	$hash{embedded_vulnerability} = { name => undef, distributed_version => undef };
 
