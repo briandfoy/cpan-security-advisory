@@ -25,10 +25,11 @@ sub assemble_advisory ( $config ) {
 	state $rc = require Mojo::UserAgent;
 
 	my %hash;
+	$hash{cves} = [];
 	push $hash{cves}->@*, $config->cve if $config->cve;
 
 	my $serial = $hash{cves} =~ s/\ACVE-//r;
-
+	$serial //= sprintf '%s-%s', (localtime)[5] + 1900, '001';
 	my $url = "$base$hash{cves}";
 
 	$hash{description} = undef;
@@ -57,7 +58,7 @@ sub assemble_advisory ( $config ) {
 #	my $package = guess_package( $item );
 #	$package =~ s/::/-/g;
 
-	$hash{id} = sprintf 'CPANSA-%s-%s', $hash{distribution}, $serial;
+	$hash{id} = sprintf 'CPANSA-%s-%s', $config{distribution}, $serial;
 
 	$hash{embedded_vulnerability} = { name => undef, distributed_version => undef };
 
