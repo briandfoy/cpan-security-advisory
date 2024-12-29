@@ -2,12 +2,14 @@
 advisories:
 - affected_versions:
   - '<=0.12'
-  cves: []
+  cves:
+  - CVE-2018-25107
   description: |
     In versions prior to 0.13, rand could be used as a result of calling get_weak, or get, if no random device was available. This implies that not explicitly asking for get_strong on a non POSIX operating system (e.g. Win32 without the Win32 backend) could have resulted in non cryptographically random data.
   fixed_versions:
   - '>=0.13'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-r3m8-7h2r-2mp6
   id: CPANSA-Crypt-Random-Source-2024-001
   references:
   - https://metacpan.org/dist/Crypt-Random-Source/changes
