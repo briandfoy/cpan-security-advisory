@@ -148,19 +148,16 @@ distribution name should be, run it again with the distribution name:
 
 	$ perl util/make_record CVE-2022-1234 Some-Package
 
+With no arguments, `util/make_record` will prompt your for the info
+it needs.
+
 Add that record to `cpansa/CPANSA-Some-Package.yml`. If that file already
 exists, you'll probably have to strip the leading `---` line from the
 `util/make_record` output since you aren't starting the YAML structure.
 
-Once you add the new record, verify that the YAML is valid. Test all
-the files:
+To test the YAML files, run the the author tests:
 
-	$ make test_all
-
-While you are working, you may want to test just the new files because
-there are so many:
-
-	$ make test_new
+	$ prove -Ilib xt
 
 The tests use `yamllint` if it is available. You can do this yourself
 to ensure it doesn't warn about anything. We accept the default settings
