@@ -28,9 +28,9 @@ sub assemble_advisory ( $config ) {
 	$hash{cves} = [];
 	push $hash{cves}->@*, $config->cve if $config->cve;
 
-	my $serial = $hash{cves} =~ s/\ACVE-//r;
+	my $serial = $hash{cves}[0] =~ s/\ACVE-//r;
 	$serial //= sprintf '%s-%s', (localtime)[5] + 1900, '001';
-	my $url = "$base$hash{cves}";
+	my $url = "$base$hash{cves}[0]";
 
 	$hash{description} = undef;
 	$hash{references} = [];
@@ -58,7 +58,9 @@ sub assemble_advisory ( $config ) {
 #	my $package = guess_package( $item );
 #	$package =~ s/::/-/g;
 
-	$hash{id} = sprintf 'CPANSA-%s-%s', $config->distribution, $serial;
+	my $meta = Local::Config::make_record->new_meta($config);
+
+	$hash{id} = sprintf 'CPANSA-%s-%s', $meta->{distribution}, $serial;
 
 	$hash{embedded_vulnerability} = { name => undef, distributed_version => undef };
 
