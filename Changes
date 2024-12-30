@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20241229.001 2024-12-30T23:31:49Z
+	* data update
+	* Adds reports for Crypt::Prime, Crypt::Random, and EasyTCP
+
 20241227.001 2024-12-28T03:47:58Z
 	* data update
 	* new report for Crypt::Random::Source (#179)
