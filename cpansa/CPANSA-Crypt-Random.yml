@@ -1,0 +1,21 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves: []
+  description: |
+    The makerandom program that comes with Crypt::Randon adds module search paths in its shebang line, potentially leading to issues with unexpected modules being loaded
+  fixed_versions: []
+  github_security_advisory: []
+  id: CPANSA-Crypt-Random-2024-001
+  references:
+  - https://metacpan.org/dist/Crypt-Random/changes
+  - https://rt.cpan.org/Ticket/Display.html?id=128062
+  - https://github.com/atoomic/Crypt-Random/pull/1
+  reported: ~
+  severity: ~
+cpansa_version: 2
+distribution: Crypt-Random
+last_checked: 1735587356
+latest_version: 1.54
+metacpan: https://metacpan.org/pod/Crypt::Random
