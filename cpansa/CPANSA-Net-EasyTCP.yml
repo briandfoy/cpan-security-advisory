@@ -1,0 +1,18 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves: []
+  description: |
+    EasyTCP will use Perl's builtin rand() if no strong randomization module is present. Prior to v0.15, it always used rand()
+  fixed_versions: []
+  github_security_advisory: []
+  id: CPANSA-EasyTCP-2024-001
+  references: []
+  reported: ~
+  severity: ~
+cpansa_version: 2
+distribution: EasyTCP
+last_checked: 1735585299
+latest_version: 0.26
+metacpan: https://metacpan.org/pod/Net::EasyTCP
