@@ -13,6 +13,9 @@ advisories:
   id: CPANSA-Crypt-Random-Source-2024-001
   references:
   - https://metacpan.org/dist/Crypt-Random-Source/changes
+  - https://nvd.nist.gov/vuln/detail/CVE-2018-25107
+  - https://github.com/karenetheridge/Crypt-Random-Source/pull/3
+  - https://metacpan.org/release/ETHER/Crypt-Random-Source-0.13/changes
   reported: ~
   severity: ~
 cpansa_version: 2
