@@ -31,7 +31,7 @@ instance of each.
 use File::Spec::Functions qw(catfile);
 use YAML::XS qw(LoadFile);
 
-my %cves_to_find = map { $_, 1 } @ARGV;
+my %cves_to_find = map { $_, [] } @ARGV;
 
 my $base = 'cpansa';
 opendir( my $dh, $base ) or die "Could not open <$base>: $!";
@@ -53,14 +53,18 @@ while( my $file = readdir($dh) ) {
 				() }
 			}
 		grep { exists $_->{cves} }
-		$yaml->@*;
+		$yaml->{advisories}->@*;
 
 	foreach my $cve ( @found_cves ) {
 		next unless exists $cves_to_find{$cve};
-		say "$cve --> $path";
-		delete $cves_to_find{$cve};
+		push $cves_to_find{$cve}->@*, $file
 		}
-
-	last unless keys %cves_to_find;
 	}
 
+foreach my $key ( sort keys %cves_to_find ) {
+	if( 0 == $cves_to_find{$key}->@* ) {
+		push $cves_to_find{$key}->@*, '<No records found>';
+		}
+
+	say join "\n\t", $key, sort $cves_to_find{$key}->@*;
+	}
