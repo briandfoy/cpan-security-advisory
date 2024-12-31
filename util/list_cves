@@ -50,6 +50,7 @@ my $tx = Mojo::UserAgent
 		$array->[1] = substr( $array->[-1], 0, 70 ) . '...';
 		$array;
 		} )
+	->reverse
 	->grep( sub { length $_->[0] } ) # first is a header row
 	->each( sub {
 		my $cve = $_->[0];
