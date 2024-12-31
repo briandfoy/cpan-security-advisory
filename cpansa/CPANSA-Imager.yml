@@ -119,6 +119,36 @@ advisories:
   - https://github.com/tonycoz/imager/issues/534
   reported: 2024-11-17
   severity: moderate
+- affected_versions:
+  - '<0.50'
+  cves:
+  - CVE-2006-0053
+  description: |
+    Imager (libimager-perl) before 0.50 allows user-assisted attackers to cause a denial of service (segmentation fault) by writing a 2- or 4-channel JPEG image (or a 2-channel TGA image) to a scalar, which triggers a NULL pointer dereference.
+  fixed_versions:
+  - '>=0.50'
+  github_security_advisory:
+  - GHSA-727c-8vjf-pv2j
+  id: CPANSA-Imager-2006-0053
+  references:
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=359661
+  - http://rt.cpan.org/Public/Bug/Display.html?id=18397
+  - http://secunia.com/advisories/19575
+  - http://secunia.com/advisories/19577
+  - http://www.debian.org/security/2006/dsa-1028
+  - http://www.securityfocus.com/bid/17415
+  - http://www.vupen.com/english/advisories/2006/1294
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/25717
+  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=359661
+  - http://rt.cpan.org/Public/Bug/Display.html?id=18397
+  - http://secunia.com/advisories/19575
+  - http://secunia.com/advisories/19577
+  - http://www.debian.org/security/2006/dsa-1028
+  - http://www.securityfocus.com/bid/17415
+  - http://www.vupen.com/english/advisories/2006/1294
+  - https://exchange.xforce.ibmcloud.com/vulnerabilities/25717
+  reported: 2006-04-10
+  severity: ~
 cpansa_version: 2
 distribution: Imager
 last_checked: 1708150852
