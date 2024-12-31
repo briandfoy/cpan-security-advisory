@@ -25,7 +25,7 @@ my %Seen;
 foreach my $file ( glob('cpansa/*.yml' ) ) {
 	local $@;
 	my $rc = eval {
-		my @keys = map { $_->{cves}->@* } grep { exists $_->{cves} } LoadFile($file)->@*;
+		my @keys = map { $_->{cves}->@* } grep { exists $_->{cves} } LoadFile($file)->{advisories}->@*;
 		@Seen{@keys} = (1) x @keys;
 		1;
 		};
