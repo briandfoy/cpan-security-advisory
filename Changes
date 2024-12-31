@@ -1,5 +1,10 @@
 # Changes for CPANSA::DB
 
+20241231.001 2024-12-31T16:40:38Z
+	* data update for 2024-12-31
+	* CVE-2006-0053 for Imager
+	* CVE-2020-36827 for XAO::Web
+
 20241229.001 2024-12-30T23:31:49Z
 	* data update
 	* Adds reports for Crypt::Prime, Crypt::Random, and EasyTCP
