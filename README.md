@@ -16,6 +16,14 @@ but there are other copies:
 If you want to mirror a copy, clone the repo and send me the link. Let's
 make this more resilient by keeping the data in several places.
 
+## Report new issues to the CPAN Security Group
+
+For new issues without a CVE report, first [report
+issues](https://security.metacpan.org/docs/report.html) to the [CPAN
+Security Group](https://security.metacpan.org), which can analyze an
+issue, collect additional information, and request a CVE. Once a CVE
+is issued, we can add it to the CPAN Security Advisories.
+
 ## Sources
 
 - metacpan.org - modules Changes files with security fixes
