@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - <5.96
+  cves:
+  - CVE-2016-1238
+  description: |
+    Digest::SHA before 5.96 with perls earlier than v5.26 included the current working directory in the module search path, which could lead to the inadvernant loading of unexpected versions of a module. The current directory was removed from the default module search path in perls from v5.26 and later.
+  fixed_versions:
+  - '>=5.96'
+  github_security_advisory:
+  - GHSA-hm5v-6984-hfqp
+  id: CPANSA-Digest-SHA-2016-1238
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=116513
+  - https://github.com/advisories/GHSA-hm5v-6984-hfqp
+  - https://metacpan.org/release/MSHELOR/Digest-SHA-5.96/diff/MSHELOR/Digest-SHA-5.95
+  - https://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html
+  - https://lists.debian.org/debian-security-announce/2016/msg00206.html
+  - https://security.gentoo.org/glsa/201701-75
+  reported: ~
+  severity: ~
+cpansa_version: 2
+distribution: Digest-SHA
+last_checked: 1735612439
+latest_version: 6.04
+metacpan: https://metacpan.org/pod/Digest::SHA
