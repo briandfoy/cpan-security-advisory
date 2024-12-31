@@ -2,12 +2,14 @@
 advisories:
 - affected_versions:
   - <1.84
-  cves: []
+  cves:
+  - CVE-2020-36827
   description: |
     Embedded HTML in JSON data was not escaped.
   fixed_versions:
   - '>=1.84'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-5w28-7mvj-3c7j
   id: CPANSA-XAO-Web-2020-01
   references:
   - https://github.com/amaltsev/XAO-Web/commit/20dd1d3bc5b811503f5722a16037b60197fe7ef4
