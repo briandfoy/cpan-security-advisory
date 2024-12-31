@@ -106,13 +106,13 @@ advisories:
 - affected_versions:
   - '<=1.024'
   cves:
-  - 'CVE-2024-53901'
+  - CVE-2024-53901
   description: |
     "invalid next size" backtrace on use of trim on certain images
   fixed_versions:
   - '>1.024'
   github_security_advisory:
-  - 'GHSA-cwgj-pq49-6x66'
+  - GHSA-cwgj-pq49-6x66
   id: CPANSA-Imager-2024-001
   references:
   - https://metacpan.org/dist/Imager/changes
