@@ -19,7 +19,7 @@ advisories:
   - https://lists.debian.org/debian-security-announce/2016/msg00206.html
   - https://security.gentoo.org/glsa/201701-75
   reported: ~
-  severity: ~
+  severity: high
 cpansa_version: 2
 distribution: Digest-SHA
 last_checked: 1735612439
