@@ -42,7 +42,7 @@ advisories:
   - https://security.gentoo.org/glsa/201701-75
   - https://security.gentoo.org/glsa/201812-07
   reported: 2016-08-02
-  severity: ~
+  severity: high
 cpansa_version: 2
 distribution: ExtUtils-ParseXS
 last_checked: 1735615869

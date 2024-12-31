@@ -15,6 +15,7 @@ advisories:
   - https://metacpan.org/changes/distribution/ExtUtils-MakeMaker
   - https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker/commit/3e9df17d11c40f2561c23ec79693c8c390e0ae88
   reported: 2016-08-07
+  severity: high
 cpansa_version: 2
 distribution: ExtUtils-MakeMaker
 last_checked: 1708150847

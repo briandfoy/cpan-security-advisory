@@ -15,6 +15,7 @@ advisories:
   - https://metacpan.org/changes/distribution/Encode
   - https://github.com/dankogai/p5-encode/pull/58/commits/12be15d64ce089154c4367dc1842cd0dc0993ec6
   reported: 2016-07-27
+  severity: high
 - affected_versions:
   - '>=3.05'
   - '<=3.11'
