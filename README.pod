@@ -79,6 +79,19 @@ the source repository:
 
 =back
 
+There are also backup repositories hosted on other services. These
+reflect the state of the main repo and exist only for redundancy:
+
+=over 4
+
+=item * L<https://bitbucket.com/briandfoy/cpan-security-advisory>
+
+=item * L<https://gitlab.com/briandfoy/cpan-security-advisory>
+
+=item * L<https://codeberg.org/briandfoy/cpan-security-advisory>
+
+=back
+
 If you find a problem, file a ticket in the L<issue
 tracker|https://github.com/briandfoy/cpan-security-advisory/issues>.
 
