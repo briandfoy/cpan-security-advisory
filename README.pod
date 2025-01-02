@@ -4,6 +4,10 @@
 
 =head1 The CPANSA::DB module
 
+**Report Perl security problems to [CPAN Security
+Group](https://security.metacpan.org), not here**. This is not a
+primary source of security information.
+
 This is the I<README> for the L<CPANSA::DB> Perl module. This is the
 database that L<CPAN::Audit> uses to do its work. The module was
 previously known as C<CPAN::Audit::DB> but moved to its own repo and
