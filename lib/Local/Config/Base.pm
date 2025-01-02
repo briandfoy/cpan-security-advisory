@@ -93,6 +93,19 @@ sub new ( $class, @args ) {
 	$self;
 	}
 
+=item * leftover_args
+
+=cut
+
+sub leftover_args ( $self, $args = undef ) {
+	if( defined $args ) {
+		$self->{spec}{leftover_args} = $args
+		}
+	else {
+		$self->{spec}{leftover_args};
+		}
+	}
+
 =item * postprocess_args
 
 =cut

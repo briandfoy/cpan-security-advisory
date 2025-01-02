@@ -45,9 +45,10 @@ The output will go to standard output:
 	  reported: 2020-01-31
 	  severity: high
 
-It might be easier to respond to prompts to enter input:
+It might be easier to respond to prompts to enter input by not giving
+it any arguments:
 
-	$ perl util/make_record -p
+	$ perl util/make_record
 
 No argument implies C<-p>:
 
@@ -137,26 +138,21 @@ all three places, so C<v5.34> is C<5.034>.
 
 The report format looks like this:
 
-	---
-	- affected_versions: ~
-	  cves:
-		- CVE-2011-4117
-	  description: >
-		The Batch::BatchRun module 1.03 for Perl does not properly handle
-		temporary files.
-	  distribution: Some-Package
-	  embedded_vulnerability:
-		distributed_version: ~
-		name: ~
-	  fixed_versions: ~
-	  id: CPANSA-Some-Package-2011-4117
-	  references:
-		- http://www.openwall.com/lists/oss-security/2011/11/04/2
-		- http://www.openwall.com/lists/oss-security/2011/11/04/4
-		- https://rt.cpan.org/Public/Bug/Display.html?id=69594
-	  reported: 2020-01-31
-	  severity: high
-
+    ---
+    - affected_versions: ~
+      cves:
+      - CVE-2011-4117
+      description: >
+      The Batch::BatchRun module 1.03 for Perl does not properly handle
+      temporary files.
+      fixed_versions: ~
+      id: CPANSA-Some-Package-2011-4117
+      references:
+      - http://www.openwall.com/lists/oss-security/2011/11/04/2
+      - http://www.openwall.com/lists/oss-security/2011/11/04/4
+      - https://rt.cpan.org/Public/Bug/Display.html?id=69594
+      reported: 2020-01-31
+      severity: high
 
 =cut
 
@@ -166,7 +162,7 @@ use lib "$FindBin::Bin/../lib";
 use Local::CPANSA;
 use Local::Config::make_record;
 
-use Mojo::Util;
+use Mojo::Util qw(dumper);
 use YAML;
 
 run( @ARGV ) unless caller;
@@ -174,21 +170,30 @@ run( @ARGV ) unless caller;
 sub run ( @args ) {
 	my $config = Local::Config::make_record->new( @args );
 
-#	say Mojo::Util::dumper($config);
-
 	my $report_path = $config->output_filename;
+	say STDERR "Report path is <$report_path>";
 
-	my $existing;
-	if( -e $report_path ) {
-		say "Path <$report_path> exists";
-		$existing = eval { YAML::LoadFile( $report_path ) };
-		}
-	else {
-		say "Path <$report_path> does not exist";
-		$existing = Local::Config::make_record->new_meta($config);
-		}
+	my $existing = do {
+		if( -e $report_path ) {
+			say "Path <$report_path> exists";
+			eval { YAML::LoadFile( $report_path ) };
+			}
+		else {
+			say "Path <$report_path> does not exist";
+			Local::Config::make_record->new_meta($config);
+			}
+		};
 
 	my $advisory = Local::CPANSA::assemble_advisory( $config );
+	say STDERR "ADVISORY: " . dumper( $advisory );
+
+	my $new_id = $advisory->{id};
+	my $new_id_exists = grep { $_->{id} eq $new_id } $existing->{advisories}->@*;
+
+	if( $new_id_exists ) {
+		say STDERR "ID $new_id already exists";
+		exit 1;
+		}
 
 	push $existing->{advisories}->@*, $advisory;
 
@@ -217,11 +222,12 @@ sub run ( @args ) {
 
 	# If we want to redirect into an existing file, take out the YAML
 	# header, unless we have -s to force the header
+
 	my $fh = do {
 		if( $config->output_filename eq '-' ) { \*STDOUT }
 		else {
 			$config->include_yaml_start_line(0) if( -e $report_path and ! $config->yes_yaml_start );
-			open my $fh, '>>:encoding(UTF-8)', $report_path
+			open my $fh, '>:encoding(UTF-8)', $report_path
 				or die "Could not open <$report_path>: $!\n";
 			$fh;
 			}

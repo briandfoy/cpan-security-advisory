@@ -87,9 +87,11 @@ sub new_meta ( $self, $config ) {
 =cut
 
 sub postprocess_args ( $self ) {
-	my $cve = $self->cve;
-	$self->cve( $cve ) if defined $cve;
+	my ($cve_arg, $package_arg ) = $self->leftover_args->@*;
+	say "Leftover: CVE: $cve_arg PACKAGE: $package_arg";
 
+	$self->cve( $cve_arg ) if defined $cve_arg;
+	$self->namespace( $package_arg ) if defined $package_arg;
 
 	$self->output_filename( $self->stdout_name )
 		if( ! $self->output_filename and $self->no_guess_filename );
