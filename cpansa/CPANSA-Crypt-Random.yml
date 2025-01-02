@@ -4,7 +4,7 @@ advisories:
   - '>0'
   cves: []
   description: |
-    The makerandom program that comes with Crypt::Randon adds module search paths in its shebang line, potentially leading to issues with unexpected modules being loaded
+    The makerandom program that comes with Crypt::Random adds module search paths in its shebang line, potentially leading to issues with unexpected modules being loaded
   fixed_versions: []
   github_security_advisory: []
   id: CPANSA-Crypt-Random-2024-001
