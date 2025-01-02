@@ -1,16 +1,36 @@
----
 advisories:
-- affected_versions:
-  - '>0'
-  cves: []
-  description: |
-    EasyTCP will use Perl's builtin rand() if no strong randomization module is present. Prior to v0.15, it always used rand()
-  fixed_versions: []
-  github_security_advisory: []
-  id: CPANSA-EasyTCP-2024-001
-  references: []
-  reported: ~
-  severity: ~
+  - affected_versions:
+      - '<0.15'
+    cves:
+      - CVE-2002-20002
+    description: |
+      The Net::EasyTCP package before 0.15 for Perl always uses Perl's builtin rand(), which is not a strong random number generator, for cryptographic keys.
+    fixed_versions:
+      - '>=0.,15'
+    github_security_advisory:
+      - GHSA-pm3j-mqcc-rjqr
+    id: CPANSA-EasyTCP-2002-20002
+    references:
+      - https://github.com/briandfoy/cpan-security-advisory/issues/184
+      - https://metacpan.org/release/MNAGUIB/EasyTCP-0.15/view/EasyTCP.pm
+      - https://metacpan.org/release/MNAGUIB/EasyTCP-0.26/changes
+    reported: 2025-01-02
+    severity: moderate
+  - affected_versions:
+      - '>=0.15'
+    cves:
+      - CVE-2024-56830
+    description: |
+      The Net::EasyTCP package 0.15 through 0.26 for Perl uses Perl's builtin rand() if no strong randomization module is present.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-99f2-vhmm-9fw8
+    id: CPANSA-EasyTCP-2024-56830
+    references:
+      - https://github.com/briandfoy/cpan-security-advisory/issues/184
+      - https://metacpan.org/release/MNAGUIB/EasyTCP-0.26/changes
+    reported: 2025-01-02
+    severity: moderate
 cpansa_version: 2
 distribution: EasyTCP
 last_checked: 1735585299
