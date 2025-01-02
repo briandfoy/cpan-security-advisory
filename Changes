@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250102.001 2025-01-02T19:54:21Z
+	* data update
+	* CVEs assigned for Net::EasyTCP
+
 20241231.001 2024-12-31T16:40:38Z
 	* data update for 2024-12-31
 	* CVE-2006-0053 for Imager
