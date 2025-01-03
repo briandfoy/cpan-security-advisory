@@ -85,13 +85,7 @@ module and only want to run the tests without installing anything.
 The meta data, such as the source repository and bug tracker, is in
 I<Makefile.PL> or the I<META.*> files it creates. You can find that on
 those CPAN web interfaces, but you can also look at files directly in
-the source repository:
-
-=over 4
-
-=item *	L<https://github.com/briandfoy/cpan-security-advisory>
-
-=back
+the source repository: L<https://github.com/briandfoy/cpan-security-advisory>
 
 If you find a problem, file a ticket in the L<issue
 tracker|https://github.com/briandfoy/cpan-security-advisory/issues>.
