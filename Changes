@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250103.001 2025-01-03T06:30:10Z
+	* data update
+
 20250102.001 2025-01-02T19:54:21Z
 	* data update
 	* CVEs assigned for Net::EasyTCP
