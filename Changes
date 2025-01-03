@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250103.002 2025-01-03T12:56:48Z
+	* data update for DBD::SQLite for CVE-2006-6153
+
 20250103.001 2025-01-03T06:30:10Z
 	* data update
 
