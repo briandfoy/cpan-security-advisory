@@ -2,6 +2,20 @@
 
 =encoding utf8
 
+=for HTML <a href="https://www.github.com/briandfoy/cpan-security-advisory/actions?query=workflow%3Amacos"><img src="https://www.github.com/briandfoy/cpan-security-advisory/workflows/macos/badge.svg"></a>
+
+=for HTML <a href="https://www.github.com/briandfoy/cpan-security-advisory/actions?query=workflow%3Aubuntu"><img src="https://www.github.com/briandfoy/cpan-security-advisory/workflows/ubuntu/badge.svg"></a>
+
+=for HTML <a href="https://www.github.com/briandfoy/cpan-security-advisory/actions?query=workflow%3Awindows"><img src="https://www.github.com/briandfoy/cpan-security-advisory/workflows/windows/badge.svg"></a>
+
+=for HTML <a href='https://ci.appveyor.com/project/briandfoy/cpan-security-advisory'><img src='https://ci.appveyor.com/api/projects/status/bmve9x6oe8npv9q6?svg=true'></a>
+
+=for HTML <a href='https://coveralls.io/github/briandfoy/cpan-security-advisory?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/cpan-security-advisory/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+=for HTML <a href="https://github.com/briandfoy/cpan-security-advisory/blob/master/LICENSE"><img src="https://img.shields.io/cpan/l/CPANSA-DB.svg" /></a>
+
+=for HTML <a href="https://metacpan.org/pod/CPANSA::DB"><img src="https://img.shields.io/cpan/v/CPANSA-DB.svg" /></A>
+
 =head1 The CPANSA::DB module
 
 **Report Perl security problems to [CPAN Security
