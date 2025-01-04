@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250104.001 2025-01-04T17:10:28Z
+	* data update
+	* CVE-2025-22376 for Net::OAuth
+
 20250103.002 2025-01-03T12:56:48Z
 	* data update for DBD::SQLite for CVE-2006-6153
 
