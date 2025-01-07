@@ -52,7 +52,7 @@ on:
     pull_request:
     # weekly build on the master branch just to see what CPAN is doing
     schedule:
-        - cron: "37 3 * * 0"
+        - cron: "54 11 * * 2"
 jobs:
     perl:
         environment: automated_testing
@@ -108,6 +108,9 @@ jobs:
                 perl -n -e 'next if /(^use 5)|(MIN_PERL)/; print' Makefile.PL.orig > Makefile.PL
                 cpan -T .
                 cd ..
+                pwd
+                ls
+                rm -rfv HTML-Tagset-*
 # I had some problems with openssl on Ubuntu, so I punted by installing
 # cpanm first, which is easy. I can install IO::Socket::SSL with that,
 # then switch back to cpan. I didn't explore this further, but what you
