@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250109.001 2025-01-10T04:38:37Z
+	* data update for 2025-01-09
+
 20250104.001 2025-01-04T17:10:28Z
 	* data update
 	* CVE-2025-22376 for Net::OAuth
