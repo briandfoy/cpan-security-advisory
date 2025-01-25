@@ -1,16 +1,18 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<0.52'
   cves: []
   description: |
     bin/largeprimes uses a custom shebang, which allows it to load modules from several locations: '..', '../lib', 'lib'. This could lead to load modules from an unpredictable location depending from where the script is run and what user is running it.
-  fixed_versions: []
+  fixed_versions:
+  - '>=0.52'
   github_security_advisory: []
   id: CPANSA-Crypt-Primes-2024-001
   references:
   - https://rt.cpan.org/Public/Bug/Display.html?id=128058
   - https://github.com/atoomic/Crypt-Primes/pull/2
+  - https://github.com/perl-Crypt-OpenPGP/Crypt-Primes/blob/main/Changes
   reported: ~
   severity: ~
 cpansa_version: 2
