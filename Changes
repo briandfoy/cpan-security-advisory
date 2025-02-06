@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250206.001 2025-02-06T05:41:55Z
+	* data update
+
 20250125.001 2025-01-25T16:16:57Z
 	* data update for 2025-01-05
 	* Crypt::Primes 0.52 fixes its report (#189)
