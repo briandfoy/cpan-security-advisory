@@ -71,6 +71,19 @@ sub _message ( $fh, $message ) {
 	say {$fh} $message
 }
 
+sub add_meta ( $db ) {
+	my $commit = get_commit();
+	my $repo = get_repo();
+
+	$db->{meta} = {
+		repo      => $repo,
+		generator => $0,
+		date      => scalar gmtime,
+		epoch     => time,
+		commit    => $commit,
+	};
+}
+
 sub info ( $message ) {
 	_message *STDOUT, $message;
 }
@@ -108,18 +121,6 @@ sub all_releases {
 	return @results;
 }
 
-sub perl_module_file ($package) {
-	my @parts = split /::/, $package;
-	$parts[-1] .= '.pm';
-
-	catfile('lib', @parts);
-}
-
-sub json_file () {
-	state $file = 'cpan-security-advisory.json';
-	$file;
-}
-
 sub default_version ($output_file) {
 	my $opts = config();
 	my( $year, $month, $day ) = (localtime)[5,4,3];
@@ -135,6 +136,12 @@ sub default_version ($output_file) {
 	my $version = join '.', $date, $serial;
 	debug "NEW VERSION: $version";
 	return $version;
+}
+
+sub get_commit {
+	my( $commit ) = `git rev-parse HEAD`;
+	chomp ($commit);
+	$commit;
 }
 
 sub get_file_list ( $args ) {
@@ -155,6 +162,18 @@ sub get_previous_date_serial ( $file ) {
 		return ( $1, $2 );
 	}
 	return;
+}
+
+sub get_repo {
+	my $repo = `git config --get remote.origin.url`;
+	chomp($repo);
+	$repo =~ s|\Agit\@github.com:|https://github.com/|;
+	$repo;
+}
+
+sub json_file () {
+	state $file = 'cpan-security-advisory.json';
+	$file;
 }
 
 sub output_gpg_signature ( $string, $file ) {
@@ -180,6 +199,13 @@ sub output_gpg_signature ( $string, $file ) {
 	}
 
 	return 1;
+}
+
+sub perl_module_file ($package) {
+	my @parts = split /::/, $package;
+	$parts[-1] .= '.pm';
+
+	catfile('lib', @parts);
 }
 
 sub process_files ( $files ) {
@@ -367,32 +393,6 @@ sub run ( @args ) {
 		close $fh;
 		output_gpg_signature( $string, $filename );
 	}
-}
-
-sub add_meta ( $db ) {
-	my $commit = get_commit();
-	my $repo = get_repo();
-
-	$db->{meta} = {
-		repo      => $repo,
-		generator => $0,
-		date      => scalar gmtime,
-		epoch     => time,
-		commit    => $commit,
-	};
-}
-
-sub get_commit {
-	my( $commit ) = `git rev-parse HEAD`;
-	chomp ($commit);
-	$commit;
-}
-
-sub get_repo {
-	my $repo = `git config --get remote.origin.url`;
-	chomp($repo);
-	$repo =~ s|\Agit\@github.com:|https://github.com/|;
-	$repo;
 }
 
 sub stringify_data ( $db, $package ) {
