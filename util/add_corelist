@@ -1,5 +1,6 @@
 #!perl
 use v5.26;
+use experimental qw(signatures);
 
 use MetaCPAN::Client;
 use Module::CoreList;
@@ -13,66 +14,104 @@ use lib ("$Bin/../lib");
 use CPANSA::DB;
 my $DB = CPANSA::DB::db();
 
-my $mcpan = MetaCPAN::Client->new;
+my $Dists = add_corelist_versions($DB);
+say dumper( $Dists );
 
-my %Dists;
-my %Versions_inverted;
-my $MainModule;
-my $MetaCPAN_calls = 0;
+#say "MetaCPAN calls: $MetaCPAN_calls";
 
-my $main_module_file = 'main-modules.json';
-if( -e $main_module_file ) {
-	say STDERR "restoring MainModule";
-	$MainModule = decode_json( Mojo::File->new($main_module_file)->slurp );
-	}
+sub _message ( $fh, $message ) {
+	$message =~ s/\v+\z//;
+	say {$fh} $message
+}
 
-# Get all namespaces from all corelist entries
-# Get version history and perl release for each
-foreach my $perl_version ( sort { $a <=> $b } keys %Module::CoreList::version ) {
-	my $v_hash = $Module::CoreList::version{$perl_version};
-	foreach my $module ( sort keys $v_hash->%* ) {
-		next unless exists $DB->{module2dist}{$module};
-		my $dist = $DB->{module2dist}{$module};
+sub add_meta ( $db ) {
+	my $commit = get_commit();
+	my $repo = get_repo();
 
-		next if $dist eq 'perl';
+	$db->{meta} = {
+		repo      => $repo,
+		generator => $0,
+		date      => scalar gmtime,
+		epoch     => time,
+		commit    => $commit,
+	};
+}
 
-		my $module_version = $v_hash->{$module};
+sub info ( $message ) {
+	_message *STDOUT, $message;
+}
 
-		# We need the main module so we can get its version, which
-		# will be the dist version
-		unless( exists $MainModule->{$module} ) {
-			$MetaCPAN_calls++;
-			$MainModule->{$module} = eval { $mcpan->release($dist)->main_module } // '<undef>';
-			}
+sub debug ( $message ) {
+	return unless config()->{debug};
+	_message *STDERR, $message;
+}
 
-		my $dist_version = $v_hash->{ $MainModule->{$module} };
-		# printf STDERR "    %-25s %-25s %-25s %6f\n", $module, $dist, $MainModule->{$module}, $dist_version // '<undef>';
 
-		unless( exists $Versions_inverted{$dist} ) {
-			foreach my $tuple ( $DB->{dists}{$dist}{versions}->@* ) {
-				$Versions_inverted{$dist}{$tuple->{'version'}}++;
-				}
-			}
+sub add_corelist_versions ($db) {
+	my $mcpan = MetaCPAN::Client->new;
 
-		next if exists $Versions_inverted{$dist}{$dist_version};
+	my %Dists;
+	my %Versions_inverted;
+	my $MainModule;
+	my $MetaCPAN_calls = 0;
 
-		$Dists{$dist}{$dist_version} //= {
-			dual_lived   => 1,
-			perl_release => $perl_version,
-			date         => $Module::CoreList::released{$perl_version} . 'T00:00:00',
-			version      => $dist_version,
-			};
+	my $main_module_file = 'main-modules.json';
+	if( -e $main_module_file ) {
+		info "restoring MainModule";
+		$MainModule = decode_json( Mojo::File->new($main_module_file)->slurp );
 		}
-	}
 
-say STDERR "saving MainModule";
-Mojo::File->new($main_module_file)->spew(
-	encode_json($MainModule)
-	);
+	# Get all namespaces from all corelist entries
+	# Get version history and perl release for each
+	foreach my $perl_version ( sort { $a <=> $b } keys %Module::CoreList::version ) {
+		info "Going through Perl version $perl_version";
+		my $v_hash = $Module::CoreList::version{$perl_version};
+		foreach my $module ( sort keys $v_hash->%* ) {
+			info "Checking module $module";
+			next unless exists $DB->{module2dist}{$module};
+			my $dist = $DB->{module2dist}{$module};
+			info "Dist for $module is $dist";
 
-say dumper( \%Dists );
+			next if $dist eq 'perl';
 
-say "MetaCPAN calls: $MetaCPAN_calls";
+			my $module_version = $v_hash->{$module};
+
+			# We need the main module so we can get its version, which
+			# will be the dist version
+			unless( exists $MainModule->{modules}{$module} ) {
+				info "Looking up release for $module";
+				$MetaCPAN_calls++;
+				$MainModule->{modules}{$module} = eval { $mcpan->release($dist)->main_module } // '<undef>';
+				}
+
+			my $dist_version = $v_hash->{ $MainModule->{modules}{$module} };
+			# printf STDERR "    %-25s %-25s %-25s %6f\n", $module, $dist, $MainModule->{$module}, $dist_version // '<undef>';
+
+			unless( exists $Versions_inverted{$dist} ) {
+				foreach my $tuple ( $DB->{dists}{$dist}{versions}->@* ) {
+					$Versions_inverted{$dist}{$tuple->{'version'}}++;
+					}
+				}
+
+			next if exists $Versions_inverted{$dist}{$dist_version};
+
+			$Dists{$dist}{$dist_version} //= {
+				dual_lived   => 1,
+				perl_release => $perl_version,
+				date         => $Module::CoreList::released{$perl_version} . 'T00:00:00',
+				version      => $dist_version,
+				};
+			}
+		}
+
+	info "saving MainModule";
+	Mojo::File->new($main_module_file)->spew(
+		encode_json($MainModule)
+		);
+
+	return \%Dists;
+}
+
 
 __END__
 {
