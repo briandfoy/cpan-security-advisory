@@ -201,6 +201,49 @@ sub output_gpg_signature ( $string, $file ) {
 	return 1;
 }
 
+sub packages_provides {
+	my ($db) = @_;
+
+	my $ua = HTTP::Tiny->new;
+
+	my $tmpdir = File::Temp::tempdir();
+	my $details_file = catfile($tmpdir, '02packages.details.txt.gz');
+	message "Downloading 02packages.details.txt.gz (this may take awhile)";
+	$ua->mirror( 'http://www.cpan.org/modules/02packages.details.txt.gz',
+		$details_file );
+	message "Downloaded 02packages.details.txt.gz";
+	message "Digesting 02packages.details.txt.gz (this may take awhile)";
+
+	open my $fh, '<:gzip', $details_file
+	  or die "Can't open '$details_file': $!";
+
+	while ( defined( my $line = <$fh> ) ) {
+		chomp $line;
+
+		last if $line eq '';
+	}
+
+	while ( defined( my $line = <$fh> ) ) {
+		my ( $module, $version, $pathname ) = split /\s+/, $line;
+		next unless $module && $pathname;
+
+		my $dist_info = CPAN::DistnameInfo->new($pathname);
+		next unless $dist_info;
+
+		my $author = $dist_info->cpanid;
+		my $dist   = $dist_info->dist;
+		my $name   = $dist_info->distvname;
+
+		next unless $dist;
+
+		next unless $db->{dists}->{$dist};
+
+		$db->{module2dist}->{$module} = $dist;
+	}
+
+	close $fh;
+}
+
 sub perl_module_file ($package) {
 	my @parts = split /::/, $package;
 	$parts[-1] .= '.pm';
@@ -238,7 +281,7 @@ sub process_files ( $files ) {
 		}
 	}
 
-	provides( \%db );
+	packages_provides( \%db );
 
 	foreach my $dist ( sort keys $db{dists}->%* ) {
 		message "Processing $dist";
@@ -298,49 +341,6 @@ sub process_options ( @args ) {
 	$results{version} //= default_version( perl_module_file('CPANSA::DB') );
 
 	\@args;
-}
-
-sub provides {
-	my ($db) = @_;
-
-	my $ua = HTTP::Tiny->new;
-
-	my $tmpdir = File::Temp::tempdir();
-	my $details_file = catfile($tmpdir, '02packages.details.txt.gz');
-	message "Downloading 02packages.details.txt.gz (this may take awhile)";
-	$ua->mirror( 'http://www.cpan.org/modules/02packages.details.txt.gz',
-		$details_file );
-	message "Downloaded 02packages.details.txt.gz";
-	message "Digesting 02packages.details.txt.gz (this may take awhile)";
-
-	open my $fh, '<:gzip', $details_file
-	  or die "Can't open '$details_file': $!";
-
-	while ( defined( my $line = <$fh> ) ) {
-		chomp $line;
-
-		last if $line eq '';
-	}
-
-	while ( defined( my $line = <$fh> ) ) {
-		my ( $module, $version, $pathname ) = split /\s+/, $line;
-		next unless $module && $pathname;
-
-		my $dist_info = CPAN::DistnameInfo->new($pathname);
-		next unless $dist_info;
-
-		my $author = $dist_info->cpanid;
-		my $dist   = $dist_info->dist;
-		my $name   = $dist_info->distvname;
-
-		next unless $dist;
-
-		next unless $db->{dists}->{$dist};
-
-		$db->{module2dist}->{$module} = $dist;
-	}
-
-	close $fh;
 }
 
 sub run ( @args ) {
