@@ -5,13 +5,24 @@ use experimental qw(signatures);
 use strict;
 use warnings;
 
+use FindBin qw($Bin);
+use lib ("$Bin/../lib");
+
+use Antsy qw(:all);
 use Carp qw(croak);
 use CPAN::DistnameInfo;
 use File::Basename qw(basename);
 use File::Spec::Functions qw(catfile);
 use HTTP::Tiny;
 use JSON ();
+use MetaCPAN::Client;
+use Module::CoreList;
+use Mojo::Util qw(dumper);
+use Mojo::File;
+use Mojo::JSON qw(decode_json encode_json);
 use PerlIO::gzip;
+use Ref::Util qw(is_plain_arrayref);
+
 use YAML::Tiny;
 use File::Temp;
 
@@ -64,11 +75,14 @@ See the included F<LICENSE> file for details.
 
 =cut
 
+$|++;
+
 run(@ARGV) unless caller;
 
-sub _message ( $fh, $message ) {
+sub _message ( $fh, $message, $indent = 0 ) {
+	state $p = ' ' x 2;
 	$message =~ s/\v+\z//;
-	say {$fh} $message
+	say {$fh} $p x $indent, $message
 }
 
 sub add_meta ( $db ) {
@@ -84,18 +98,138 @@ sub add_meta ( $db ) {
 	};
 }
 
-sub info ( $message ) {
-	_message *STDOUT, $message;
+sub debug ( $message, $indent = 0 ) {
+	return unless config()->{debug};
+	_message *STDERR,
+		text_cyan() . $message . reset(),
+		$indent;
 }
 
-sub debug ( $message ) {
-	return unless config()->{debug};
-	_message *STDERR, $message;
+sub info ( $message, $indent = 0 ) {
+	_message *STDOUT,
+		$message,
+		$indent;
+}
+
+sub unexpected ( $message, $indent = 0 ) {
+	_message *STDERR,
+		text_bright_red() . $message . reset(),
+		$indent;
 }
 
 sub dumper {
 	state $rc = require Data::Dumper;
 	Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump
+}
+
+
+
+sub add_corelist_versions ($db) {
+	info "Adding modules from corelist";
+	my $indent = 1;
+
+	my $mcpan = MetaCPAN::Client->new;
+
+	my %Dists;
+	my %Versions_inverted;
+	my $MainModule;
+	my $MetaCPAN_calls = 0;
+
+	my $main_module_file = 'main-modules.json';
+	if( -e $main_module_file ) {
+		info "restoring MainModule", $indent;
+		$MainModule = decode_json( Mojo::File->new($main_module_file)->slurp );
+		}
+
+	# Get all namespaces from all corelist entries
+	# Get version history and perl release for each
+	foreach my $perl_version ( sort { $a <=> $b } keys %Module::CoreList::version ) {
+		info "Perl $perl_version", $indent;
+		$indent++;
+		my $v_hash = $Module::CoreList::version{$perl_version};
+		foreach my $module ( sort keys $v_hash->%* ) {
+			info "Checking module $module", $indent;
+			$indent++;
+			unless( exists $db->{module2dist}{$module} ) {
+				$indent--;
+				next;
+				}
+			my $dist = $db->{module2dist}{$module};
+			info "Dist for $module is $dist", $indent;
+
+			if( $dist eq 'perl' ) {
+				$indent--;
+				next;
+				}
+
+			my $module_version = $v_hash->{$module};
+
+			# We need the main module so we can get its version, which
+			# will be the dist version
+			unless( exists $MainModule->{modules}{$module} ) {
+				info "Looking up release for $module", $indent;
+				$MetaCPAN_calls++;
+				$MainModule->{modules}{$module} = eval { $mcpan->release($dist)->main_module } // '<undef>';
+				}
+
+			my $dist_version = $v_hash->{ $MainModule->{modules}{$module} };
+			# printf STDERR "    %-25s %-25s %-25s %6f\n", $module, $dist, $MainModule->{$module}, $dist_version // '<undef>';
+
+			unless( exists $Versions_inverted{$dist} ) {
+				foreach my $tuple ( $db->{dists}{$dist}{versions}->@* ) {
+					$Versions_inverted{$dist}{$tuple->{'version'}}++;
+					}
+				}
+
+			# skip versions already in the list in $db
+			no warnings 'uninitialized';
+
+			if( exists $Versions_inverted{$dist}{$dist_version} ) {
+				$indent--;
+				next;
+				}
+
+			$Versions_inverted{$dist}{$dist_version}++;
+
+			info "Adding $dist $dist_version", $indent;
+
+			die "dists key does not exist" unless exists $db->{dists};
+			unless( exists $db->{dists}{$dist} ) {
+				unexpected "dists does not have a <$dist> key (but now it does)", $indent;
+				$db->{dists}{$dist} = {
+					advisories  => [],
+					main_module => $MainModule->{modules}{$module},
+					versions    => [],
+					};
+				}
+
+			unless( exists $db->{dists}{$dist}{'versions'} ) {
+				unexpected "<$dist> does not have a versions key (but now it does)", $indent;
+				$db->{dists}{$dist}{'versions'} = [];
+				}
+
+			unexpected "dists <$dist> 'versions' value is not an array ref"
+				unless is_plain_arrayref $db->{dists}{$dist}{'versions'};
+
+			push $db->{dists}{$dist}{'versions'}->@*, {
+				dual_lived   => 1,
+				perl_release => $perl_version,
+				date         => $Module::CoreList::released{$perl_version} . 'T00:00:00',
+				version      => $dist_version,
+				};
+
+			$indent--;
+			}
+
+		$indent--;
+		}
+
+	info "saving MainModule", $indent;
+	Mojo::File->new($main_module_file)->spew(
+		encode_json($MainModule)
+		);
+
+	return \%Dists;
 }
 
 sub all_releases {
@@ -105,7 +239,7 @@ sub all_releases {
 	my $content_json;
 	FETCH: {
 		sleep $tries * 10;
-		debug( "Try $tries for $distribution" );
+		debug "Try $tries for $distribution";
 		my $response = HTTP::Tiny->new->get(
 			'http://fastapi.metacpan.org/v1/release/versions/'.$distribution
 		);
@@ -201,25 +335,25 @@ sub output_gpg_signature ( $string, $file ) {
 	return 1;
 }
 
-sub packages_provides {
-	my ($db) = @_;
-
+sub packages_provides ($db) {
+	info "extracting 02packages data";
+	my $indent = 1;
 	my $ua = HTTP::Tiny->new;
 
 	my $tmpdir = File::Temp::tempdir();
 	my $details_file = catfile($tmpdir, '02packages.details.txt.gz');
-	message "Downloading 02packages.details.txt.gz (this may take awhile)";
+	info "Downloading 02packages.details.txt.gz (this may take awhile)", $indent;
 	$ua->mirror( 'http://www.cpan.org/modules/02packages.details.txt.gz',
 		$details_file );
-	message "Downloaded 02packages.details.txt.gz";
-	message "Digesting 02packages.details.txt.gz (this may take awhile)";
+	info "Downloaded 02packages.details.txt.gz", $indent;
+	info "Digesting 02packages.details.txt.gz (this may take awhile)", $indent;
 
 	open my $fh, '<:gzip', $details_file
 	  or die "Can't open '$details_file': $!";
 
+	# skip over the header. Read until there's a black line
 	while ( defined( my $line = <$fh> ) ) {
 		chomp $line;
-
 		last if $line eq '';
 	}
 
@@ -252,21 +386,31 @@ sub perl_module_file ($package) {
 }
 
 sub process_files ( $files ) {
+	my $indent = 1;
+	info "Processing files", $indent;
+
 	my %db;
 	foreach my $file ( $files->@* ) {
-		message "Reading $file";
+		$indent++;
+		info "Reading $file", $indent;
 		my $yaml = YAML::Tiny->read($file)->[0];
-		message sprintf "\tFound %d reports", scalar $yaml->{advisories}->@*;
+		debug sprintf( "Found %d reports", scalar $yaml->{advisories}->@* ), $indent;
 		my %dists_in_file;
 		my $n = 0;
 
-		warn "Missing distribution key in $file\n" unless exists $yaml->{distribution};
-		warn "Undefined distribution key in $file\n" unless defined $yaml->{distribution};
-		warn "Empty distribution key in $file\n" unless length $yaml->{distribution};
+		my $message = do {
+			my $key = 'distribution';
+			   if( ! exists  $yaml->{$key} ) { "Missing $key key in $file\n"    }
+			elsif( ! defined $yaml->{$key} ) { "Undefined $key key in $file\n"  }
+			elsif( ! length  $yaml->{$key} ) { "Empty $key key in $file\n"      }
+			else { undef }
+			};
+		unexpected $message, $indent if defined $message;
+
 		my $dist = $yaml->{distribution};
 
 		if( exists $db{dists}{$dist}{advisories} ) {
-			warn "\tAlready have advisories for $dist\n";
+			unexpected "Already have advisories for $dist", $indent;
 		}
 		else {
 			$db{dists}{$dist}{advisories} = [];
@@ -279,17 +423,21 @@ sub process_files ( $files ) {
 			delete $advisory->{github_security_advisory};
 			push $db{dists}{$dist}{advisories}->@*, $advisory;
 		}
+		$indent--;
 	}
 
 	packages_provides( \%db );
 
 	foreach my $dist ( sort keys $db{dists}->%* ) {
-		message "Processing $dist";
+		info "Processing $dist", $indent;
+		$indent++;
+
 		my @releases = all_releases($dist);
 		if (!@releases) {
-			warn "no releases found on CPAN for '$dist'\n";
+			unexpected "no releases found on CPAN for '$dist'", $indent;
 			$db{dists}{$dist}{versions} = [];
 			$db{dists}{$dist}{main_module} = '';
+			$indent--;
 			next;
 		}
 
@@ -307,6 +455,8 @@ sub process_files ( $files ) {
 
 		$db{dists}{$dist}{versions} = \@versions;
 		$db{dists}{$dist}{main_module} = $main_module;
+
+		$indent--;
 	}
 
 	# XXX: need to investigate why this shows up as utf8
@@ -355,8 +505,9 @@ sub run ( @args ) {
 	exit if $opts->{dry_run};
 
 	my $db = process_files( $files );
-
 	add_meta( $db );
+
+	add_corelist_versions( $db );
 
 	my @packages = qw(CPAN::Audit::DB CPANSA::DB);
 
