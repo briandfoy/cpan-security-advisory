@@ -77,8 +77,18 @@ sub get_rx () {
 			type => '//rec',
 			required => {
 				date    => { type => '//str', },
-				version => { type => '//str', },
-				}
+				version => {
+					type => '//any',
+					of => [
+						'//str',
+						'//nil',
+						],
+					},
+				},
+			optional => {
+				dual_lived   => { type => '//str', },
+				perl_release => { type => '//str', },
+				},
 			},
 		};
 
