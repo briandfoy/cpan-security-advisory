@@ -1,0 +1,2364 @@
+#!perl
+use v5.26;
+
+use MetaCPAN::Client;
+use Module::CoreList;
+use Mojo::Util qw(dumper);
+use Mojo::File;
+use Mojo::JSON qw(decode_json encode_json);
+
+use FindBin qw($Bin);
+use lib ("$Bin/../lib");
+
+use CPANSA::DB;
+my $DB = CPANSA::DB::db();
+
+my $mcpan = MetaCPAN::Client->new;
+
+my %Dists;
+my %Versions_inverted;
+my $MainModule;
+my $MetaCPAN_calls = 0;
+
+my $main_module_file = 'main-modules.json';
+if( -e $main_module_file ) {
+	say STDERR "restoring MainModule";
+	$MainModule = decode_json( Mojo::File->new($main_module_file)->slurp );
+	}
+
+# Get all namespaces from all corelist entries
+# Get version history and perl release for each
+foreach my $perl_version ( sort { $a <=> $b } keys %Module::CoreList::version ) {
+	my $v_hash = $Module::CoreList::version{$perl_version};
+	foreach my $module ( sort keys $v_hash->%* ) {
+		next unless exists $DB->{module2dist}{$module};
+		my $dist = $DB->{module2dist}{$module};
+
+		next if $dist eq 'perl';
+
+		my $module_version = $v_hash->{$module};
+
+		# We need the main module so we can get its version, which
+		# will be the dist version
+		unless( exists $MainModule->{$module} ) {
+			$MetaCPAN_calls++;
+			$MainModule->{$module} = eval { $mcpan->release($dist)->main_module } // '<undef>';
+			}
+
+		my $dist_version = $v_hash->{ $MainModule->{$module} };
+		# printf STDERR "    %-25s %-25s %-25s %6f\n", $module, $dist, $MainModule->{$module}, $dist_version // '<undef>';
+
+		unless( exists $Versions_inverted{$dist} ) {
+			foreach my $tuple ( $DB->{dists}{$dist}{versions}->@* ) {
+				$Versions_inverted{$dist}{$tuple->{'version'}}++;
+				}
+			}
+
+		next if exists $Versions_inverted{$dist}{$dist_version};
+
+		$Dists{$dist}{$dist_version} //= {
+			dual_lived   => 1,
+			perl_release => $perl_version,
+			date         => $Module::CoreList::released{$perl_version} . 'T00:00:00',
+			version      => $dist_version,
+			};
+		}
+	}
+
+say STDERR "saving MainModule";
+Mojo::File->new($main_module_file)->spew(
+	encode_json($MainModule)
+	);
+
+say dumper( \%Dists );
+
+say "MetaCPAN calls: $MetaCPAN_calls";
+
+__END__
+{
+  "Archive-Tar" => {
+    "1.26_01" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "1.26_01"
+    },
+    "1.30_01" => {
+      "date" => "2006-08-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009004",
+      "version" => "1.30_01"
+    },
+    "2.04_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "2.04_01"
+    },
+    "2.24_01" => {
+      "date" => "2018-11-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.026003",
+      "version" => "2.24_01"
+    },
+    "3.02_001" => {
+      "date" => "2023-12-30T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039006",
+      "version" => "3.02_001"
+    }
+  },
+  "CGI" => {
+    "3.15_01" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "3.15_01"
+    }
+  },
+  "CPAN" => {
+    "1.2401" => {
+      "date" => "1997-05-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.004",
+      "version" => "1.2401"
+    },
+    "1.3901" => {
+      "date" => "1998-07-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.005",
+      "version" => "1.3901"
+    },
+    "1.59_56" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "1.59_56"
+    },
+    "1.76_02" => {
+      "date" => "2006-01-31T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008008",
+      "version" => "1.76_02"
+    },
+    "1.94_5301" => {
+      "date" => "2009-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011003",
+      "version" => "1.94_5301"
+    },
+    "1.9600_01" => {
+      "date" => "2011-09-26T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014002",
+      "version" => "1.9600_01"
+    },
+    "2.03" => {
+      "date" => "2013-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019004",
+      "version" => "2.03"
+    },
+    "2.04" => {
+      "date" => "2014-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01901",
+      "version" => "2.04"
+    },
+    "2.11" => {
+      "date" => "2015-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021011",
+      "version" => "2.11"
+    },
+    "2.11_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "2.11_01"
+    },
+    "2.14_01" => {
+      "date" => "2016-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025004",
+      "version" => "2.14_01"
+    },
+    "2.17" => {
+      "date" => "2017-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.02501",
+      "version" => "2.17"
+    },
+    "2.18" => {
+      "date" => "2017-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025012",
+      "version" => "2.18"
+    },
+    "2.20" => {
+      "date" => "2017-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027007",
+      "version" => "2.20"
+    },
+    "2.21" => {
+      "date" => "2018-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029004",
+      "version" => "2.21"
+    }
+  },
+  "Compress-Raw-Bzip2" => {
+    "2.05201" => {
+      "date" => "2012-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017002",
+      "version" => "2.05201"
+    },
+    "2.204_001" => {
+      "date" => "2023-07-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.038000",
+      "version" => "2.204_001"
+    }
+  },
+  "Compress-Raw-Zlib" => {
+    "2.027_01" => {
+      "date" => "2010-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013003",
+      "version" => "2.027_01"
+    },
+    "2.05401" => {
+      "date" => "2012-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017002",
+      "version" => "2.05401"
+    },
+    "2.068_01" => {
+      "date" => "2015-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023003",
+      "version" => "2.068_01"
+    },
+    "2.204_001" => {
+      "date" => "2023-07-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.038000",
+      "version" => "2.204_001"
+    }
+  },
+  "Data-Dumper" => {
+    "2.102" => {
+      "date" => "2001-04-08T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006001",
+      "version" => "2.102"
+    },
+    "2.12" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "2.12"
+    },
+    "2.121_02" => {
+      "date" => "2004-11-27T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008006",
+      "version" => "2.121_02"
+    },
+    "2.121_04" => {
+      "date" => "2005-05-30T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008007",
+      "version" => "2.121_04"
+    },
+    "2.121_08" => {
+      "date" => "2006-01-31T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008008",
+      "version" => "2.121_08"
+    },
+    "2.121_13" => {
+      "date" => "2007-07-07T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009005",
+      "version" => "2.121_13"
+    },
+    "2.121_14" => {
+      "date" => "2007-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01",
+      "version" => "2.121_14"
+    },
+    "2.121_17" => {
+      "date" => "2008-12-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008009",
+      "version" => "2.121_17"
+    },
+    "2.129" => {
+      "date" => "2010-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013006",
+      "version" => "2.129"
+    },
+    "2.130_01" => {
+      "date" => "2010-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013007",
+      "version" => "2.130_01"
+    },
+    "2.130_02" => {
+      "date" => "2010-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013008",
+      "version" => "2.130_02"
+    },
+    "2.132" => {
+      "date" => "2011-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015002",
+      "version" => "2.132"
+    },
+    "2.134" => {
+      "date" => "2011-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015003",
+      "version" => "2.134"
+    },
+    "2.135_03" => {
+      "date" => "2012-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015007",
+      "version" => "2.135_03"
+    },
+    "2.135_05" => {
+      "date" => "2012-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015008",
+      "version" => "2.135_05"
+    },
+    "2.135_06" => {
+      "date" => "2012-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015009",
+      "version" => "2.135_06"
+    },
+    "2.137" => {
+      "date" => "2012-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017006",
+      "version" => "2.137"
+    },
+    "2.141" => {
+      "date" => "2013-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017008",
+      "version" => "2.141"
+    },
+    "2.142" => {
+      "date" => "2013-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017009",
+      "version" => "2.142"
+    },
+    "2.146" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "2.146"
+    },
+    "2.147" => {
+      "date" => "2013-07-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019002",
+      "version" => "2.147"
+    },
+    "2.148" => {
+      "date" => "2013-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019003",
+      "version" => "2.148"
+    },
+    "2.149" => {
+      "date" => "2013-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019004",
+      "version" => "2.149"
+    },
+    "2.150" => {
+      "date" => "2013-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019007",
+      "version" => "2.150"
+    },
+    "2.151_01" => {
+      "date" => "2015-02-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.020002",
+      "version" => "2.151_01"
+    },
+    "2.152" => {
+      "date" => "2014-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021001",
+      "version" => "2.152"
+    },
+    "2.155" => {
+      "date" => "2014-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021007",
+      "version" => "2.155"
+    },
+    "2.156" => {
+      "date" => "2015-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021008",
+      "version" => "2.156"
+    },
+    "2.157" => {
+      "date" => "2015-02-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021009",
+      "version" => "2.157"
+    },
+    "2.158" => {
+      "date" => "2015-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021010",
+      "version" => "2.158"
+    },
+    "2.159" => {
+      "date" => "2015-12-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023006",
+      "version" => "2.159"
+    },
+    "2.162" => {
+      "date" => "2016-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025006",
+      "version" => "2.162"
+    },
+    "2.165" => {
+      "date" => "2016-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025007",
+      "version" => "2.165"
+    },
+    "2.166" => {
+      "date" => "2016-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025008",
+      "version" => "2.166"
+    },
+    "2.167" => {
+      "date" => "2017-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025009",
+      "version" => "2.167"
+    },
+    "2.169" => {
+      "date" => "2017-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027007",
+      "version" => "2.169"
+    },
+    "2.170" => {
+      "date" => "2018-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027008",
+      "version" => "2.170"
+    },
+    "2.171" => {
+      "date" => "2018-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029002",
+      "version" => "2.171"
+    },
+    "2.174" => {
+      "date" => "2019-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029010",
+      "version" => "2.174"
+    },
+    "2.174_01" => {
+      "date" => "2021-01-23T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.032001",
+      "version" => "2.174_01"
+    },
+    "2.175" => {
+      "date" => "2020-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033001",
+      "version" => "2.175"
+    },
+    "2.176" => {
+      "date" => "2020-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033003",
+      "version" => "2.176"
+    },
+    "2.177" => {
+      "date" => "2021-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033008",
+      "version" => "2.177"
+    },
+    "2.178" => {
+      "date" => "2021-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033009",
+      "version" => "2.178"
+    },
+    "2.179" => {
+      "date" => "2021-05-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.034000",
+      "version" => "2.179"
+    },
+    "2.184" => {
+      "date" => "2022-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035008",
+      "version" => "2.184"
+    },
+    "2.185" => {
+      "date" => "2022-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037001",
+      "version" => "2.185"
+    },
+    "2.186" => {
+      "date" => "2022-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037002",
+      "version" => "2.186"
+    },
+    "2.187" => {
+      "date" => "2022-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037006",
+      "version" => "2.187"
+    },
+    "2.188" => {
+      "date" => "2023-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.03701",
+      "version" => "2.188"
+    },
+    "2.189" => {
+      "date" => "2023-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039003",
+      "version" => "2.189"
+    }
+  },
+  "Devel-PPPort" => {
+    "2.0002" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "2.0002"
+    },
+    "2.007" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "2.007"
+    },
+    "2.008" => {
+      "date" => "2003-10-27T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009000",
+      "version" => "2.008"
+    },
+    "2.009" => {
+      "date" => "2003-11-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008002",
+      "version" => "2.009"
+    },
+    "2.011" => {
+      "date" => "2004-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008003",
+      "version" => "2.011"
+    },
+    "2.011_01" => {
+      "date" => "2004-03-16T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009001",
+      "version" => "2.011_01"
+    },
+    "3.37" => {
+      "date" => "2017-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027007",
+      "version" => "3.37"
+    },
+    "3.38" => {
+      "date" => "2018-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027008",
+      "version" => "3.38"
+    },
+    "3.39" => {
+      "date" => "2018-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027009",
+      "version" => "3.39"
+    },
+    "3.40" => {
+      "date" => "2018-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027011",
+      "version" => "3.40"
+    },
+    "3.69" => {
+      "date" => "2022-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037006",
+      "version" => "3.69"
+    },
+    "3.70" => {
+      "date" => "2023-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037009",
+      "version" => "3.70"
+    },
+    "3.71" => {
+      "date" => "2023-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037011",
+      "version" => "3.71"
+    },
+    "3.72" => {
+      "date" => "2023-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039003",
+      "version" => "3.72"
+    }
+  },
+  "Digest" => {
+    "1.16_01" => {
+      "date" => "2012-10-12T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014003",
+      "version" => "1.16_01"
+    },
+    "1.17_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "1.17_01"
+    }
+  },
+  "Digest-MD5" => {
+    "2.36_01" => {
+      "date" => "2007-07-07T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009005",
+      "version" => "2.36_01"
+    },
+    "2.55_01" => {
+      "date" => "2019-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031005",
+      "version" => "2.55_01"
+    },
+    "2.58_01" => {
+      "date" => "2023-07-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.038000",
+      "version" => "2.58_01"
+    }
+  },
+  "Digest-SHA" => {
+    "5.84_01" => {
+      "date" => "2013-08-12T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.018001",
+      "version" => "5.84_01"
+    },
+    "5.84_02" => {
+      "date" => "2014-10-01T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.018003",
+      "version" => "5.84_02"
+    },
+    "5.95_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "5.95_01"
+    }
+  },
+  "Encode" => {
+    "0.40" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "0.40"
+    },
+    "1.9801" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "1.9801"
+    },
+    "1.99_01" => {
+      "date" => "2004-04-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008004",
+      "version" => "1.99_01"
+    },
+    "2.18_01" => {
+      "date" => "2006-08-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009004",
+      "version" => "2.18_01"
+    },
+    "2.39_01" => {
+      "date" => "2012-11-10T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.012005",
+      "version" => "2.39_01"
+    },
+    "2.42_01" => {
+      "date" => "2011-09-26T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014002",
+      "version" => "2.42_01"
+    },
+    "2.42_02" => {
+      "date" => "2013-03-10T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014004",
+      "version" => "2.42_02"
+    },
+    "2.44_01" => {
+      "date" => "2013-03-11T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.016003",
+      "version" => "2.44_01"
+    },
+    "2.72_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "2.72_01"
+    },
+    "2.80_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "2.80_01"
+    },
+    "3.08_01" => {
+      "date" => "2022-03-13T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.034001",
+      "version" => "3.08_01"
+    }
+  },
+  "ExtUtils-MakeMaker" => {
+    "" => {
+      "date" => "1994-10-17T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.000",
+      "version" => undef
+    },
+    "5.21" => {
+      "date" => "1996-02-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.002",
+      "version" => "5.21"
+    },
+    "5.38" => {
+      "date" => "1996-10-10T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00307",
+      "version" => "5.38"
+    },
+    "5.4002" => {
+      "date" => "1997-05-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.004",
+      "version" => "5.4002"
+    },
+    "5.42" => {
+      "date" => "1999-04-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00405",
+      "version" => "5.42"
+    },
+    "5.4301" => {
+      "date" => "1998-07-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.005",
+      "version" => "5.4301"
+    },
+    "5.4302" => {
+      "date" => "1999-03-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00503",
+      "version" => "5.4302"
+    },
+    "5.45" => {
+      "date" => "2000-03-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006",
+      "version" => "5.45"
+    },
+    "6.21_02" => {
+      "date" => "2004-03-16T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009001",
+      "version" => "6.21_02"
+    },
+    "6.5601" => {
+      "date" => "2010-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013000",
+      "version" => "6.5601"
+    },
+    "7.04_01" => {
+      "date" => "2015-06-01T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022",
+      "version" => "7.04_01"
+    },
+    "7.04_02" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "7.04_02"
+    },
+    "7.10_01" => {
+      "date" => "2016-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023008",
+      "version" => "7.10_01"
+    },
+    "7.10_02" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "7.10_02"
+    }
+  },
+  "ExtUtils-ParseXS" => {
+    "2.15_02" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "2.15_02"
+    },
+    "2.18_02" => {
+      "date" => "2007-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01",
+      "version" => "2.18_02"
+    },
+    "2.2207" => {
+      "date" => "2010-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013004",
+      "version" => "2.2207"
+    },
+    "2.2208" => {
+      "date" => "2010-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013008",
+      "version" => "2.2208"
+    },
+    "2.2209" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "2.2209"
+    },
+    "2.2210" => {
+      "date" => "2011-05-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014000",
+      "version" => "2.2210"
+    },
+    "3.03_01" => {
+      "date" => "2011-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015002",
+      "version" => "3.03_01"
+    },
+    "3.12" => {
+      "date" => "2012-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015007",
+      "version" => "3.12"
+    },
+    "3.16" => {
+      "date" => "2012-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015008",
+      "version" => "3.16"
+    },
+    "3.17" => {
+      "date" => "2012-05-26T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017",
+      "version" => "3.17"
+    },
+    "3.19" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "3.19"
+    },
+    "3.23" => {
+      "date" => "2013-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019004",
+      "version" => "3.23"
+    },
+    "3.25" => {
+      "date" => "2014-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021001",
+      "version" => "3.25"
+    },
+    "3.26" => {
+      "date" => "2014-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021006",
+      "version" => "3.26"
+    },
+    "3.27" => {
+      "date" => "2014-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021007",
+      "version" => "3.27"
+    },
+    "3.28" => {
+      "date" => "2015-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021011",
+      "version" => "3.28"
+    },
+    "3.29" => {
+      "date" => "2015-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023002",
+      "version" => "3.29"
+    },
+    "3.31" => {
+      "date" => "2016-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023007",
+      "version" => "3.31"
+    },
+    "3.32" => {
+      "date" => "2016-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025002",
+      "version" => "3.32"
+    },
+    "3.33" => {
+      "date" => "2016-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025003",
+      "version" => "3.33"
+    },
+    "3.34" => {
+      "date" => "2017-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025011",
+      "version" => "3.34"
+    },
+    "3.36" => {
+      "date" => "2017-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027006",
+      "version" => "3.36"
+    },
+    "3.38" => {
+      "date" => "2018-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027009",
+      "version" => "3.38"
+    },
+    "3.39" => {
+      "date" => "2018-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.02701",
+      "version" => "3.39"
+    },
+    "3.40" => {
+      "date" => "2018-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029006",
+      "version" => "3.40"
+    },
+    "3.41" => {
+      "date" => "2020-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033001",
+      "version" => "3.41"
+    },
+    "3.42" => {
+      "date" => "2020-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033005",
+      "version" => "3.42"
+    },
+    "3.43" => {
+      "date" => "2021-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033009",
+      "version" => "3.43"
+    },
+    "3.45" => {
+      "date" => "2022-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.03501",
+      "version" => "3.45"
+    },
+    "3.46" => {
+      "date" => "2022-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037004",
+      "version" => "3.46"
+    },
+    "3.48" => {
+      "date" => "2022-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037006",
+      "version" => "3.48"
+    },
+    "3.49" => {
+      "date" => "2022-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037007",
+      "version" => "3.49"
+    },
+    "3.50" => {
+      "date" => "2023-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037011",
+      "version" => "3.50"
+    }
+  },
+  "File-Path" => {
+    "" => {
+      "date" => "1995-03-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.001",
+      "version" => undef
+    },
+    "1.01" => {
+      "date" => "1996-02-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.002",
+      "version" => "1.01"
+    },
+    "1.04" => {
+      "date" => "1997-05-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.004",
+      "version" => "1.04"
+    },
+    "1.0401" => {
+      "date" => "1998-07-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.005",
+      "version" => "1.0401"
+    },
+    "1.0402" => {
+      "date" => "1999-04-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00405",
+      "version" => "1.0402"
+    },
+    "1.0403" => {
+      "date" => "2000-03-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006",
+      "version" => "1.0403"
+    },
+    "1.0404" => {
+      "date" => "2001-04-08T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006001",
+      "version" => "1.0404"
+    },
+    "1.05" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "1.05"
+    },
+    "1.06" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "1.06"
+    },
+    "1.07" => {
+      "date" => "2005-05-30T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008007",
+      "version" => "1.07"
+    },
+    "1.08" => {
+      "date" => "2006-01-31T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008008",
+      "version" => "1.08"
+    },
+    "2.07_02" => {
+      "date" => "2008-12-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008009",
+      "version" => "2.07_02"
+    },
+    "2.08_01" => {
+      "date" => "2009-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011003",
+      "version" => "2.08_01"
+    },
+    "2.12_01" => {
+      "date" => "2016-05-09T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024000",
+      "version" => "2.12_01"
+    }
+  },
+  "File-Temp" => {
+    "0.16_01" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "0.16_01"
+    }
+  },
+  "HTTP-Tiny" => {
+    "0.054_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "0.054_01"
+    },
+    "0.056_001" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "0.056_001"
+    }
+  },
+  "IO-Compress" => {
+    "" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => undef
+    }
+  },
+  "IPC-Cmd" => {
+    "0.36_01" => {
+      "date" => "2007-07-07T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009005",
+      "version" => "0.36_01"
+    },
+    "0.40_1" => {
+      "date" => "2007-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01",
+      "version" => "0.40_1"
+    },
+    "0.84_01" => {
+      "date" => "2013-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019005",
+      "version" => "0.84_01"
+    },
+    "0.92_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "0.92_01"
+    }
+  },
+  "Locale-Maketext" => {
+    "1.10_01" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "1.10_01"
+    },
+    "1.14" => {
+      "date" => "2009-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011002",
+      "version" => "1.14"
+    },
+    "1.15" => {
+      "date" => "2010-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013003",
+      "version" => "1.15"
+    },
+    "1.18" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "1.18"
+    },
+    "1.20" => {
+      "date" => "2011-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015005",
+      "version" => "1.20"
+    },
+    "1.24" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "1.24"
+    },
+    "1.26_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "1.26_01"
+    }
+  },
+  "Module-Metadata" => {
+    "1.000005_01" => {
+      "date" => "2011-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015002",
+      "version" => "1.000005_01"
+    }
+  },
+  "PathTools" => {
+    "" => {
+      "date" => "1994-10-17T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.000",
+      "version" => undef
+    },
+    "2.00" => {
+      "date" => "1997-05-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.004",
+      "version" => "2.00"
+    },
+    "2.01" => {
+      "date" => "1999-04-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00405",
+      "version" => "2.01"
+    },
+    "2.02" => {
+      "date" => "2000-03-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006",
+      "version" => "2.02"
+    },
+    "2.04" => {
+      "date" => "2001-04-08T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006001",
+      "version" => "2.04"
+    },
+    "2.06" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "2.06"
+    },
+    "2.08" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "2.08"
+    },
+    "2.12" => {
+      "date" => "2004-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008003",
+      "version" => "2.12"
+    },
+    "2.17" => {
+      "date" => "2004-04-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008004",
+      "version" => "2.17"
+    },
+    "2.19" => {
+      "date" => "2004-07-19T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008005",
+      "version" => "2.19"
+    },
+    "3.3002" => {
+      "date" => "2009-10-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011",
+      "version" => "3.3002"
+    },
+    "3.34" => {
+      "date" => "2010-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013006",
+      "version" => "3.34"
+    },
+    "3.35" => {
+      "date" => "2010-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013008",
+      "version" => "3.35"
+    },
+    "3.36" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "3.36"
+    },
+    "3.37" => {
+      "date" => "2011-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01301",
+      "version" => "3.37"
+    },
+    "3.38" => {
+      "date" => "2011-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015006",
+      "version" => "3.38"
+    },
+    "3.39_02" => {
+      "date" => "2012-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015008",
+      "version" => "3.39_02"
+    },
+    "3.39_03" => {
+      "date" => "2012-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017007",
+      "version" => "3.39_03"
+    },
+    "3.41" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "3.41"
+    },
+    "3.44" => {
+      "date" => "2013-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019003",
+      "version" => "3.44"
+    },
+    "3.45" => {
+      "date" => "2013-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019005",
+      "version" => "3.45"
+    },
+    "3.48" => {
+      "date" => "2014-09-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.020001",
+      "version" => "3.48"
+    },
+    "3.48_01" => {
+      "date" => "2015-02-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.020002",
+      "version" => "3.48_01"
+    },
+    "3.49" => {
+      "date" => "2014-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021002",
+      "version" => "3.49"
+    },
+    "3.50" => {
+      "date" => "2014-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021004",
+      "version" => "3.50"
+    },
+    "3.51" => {
+      "date" => "2014-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021005",
+      "version" => "3.51"
+    },
+    "3.54" => {
+      "date" => "2014-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021007",
+      "version" => "3.54"
+    },
+    "3.55" => {
+      "date" => "2015-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021010",
+      "version" => "3.55"
+    },
+    "3.56" => {
+      "date" => "2015-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021011",
+      "version" => "3.56"
+    },
+    "3.57" => {
+      "date" => "2015-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023002",
+      "version" => "3.57"
+    },
+    "3.58" => {
+      "date" => "2015-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023003",
+      "version" => "3.58"
+    },
+    "3.63" => {
+      "date" => "2016-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023008",
+      "version" => "3.63"
+    },
+    "3.63_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "3.63_01"
+    },
+    "3.64" => {
+      "date" => "2016-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025002",
+      "version" => "3.64"
+    },
+    "3.65" => {
+      "date" => "2016-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025004",
+      "version" => "3.65"
+    },
+    "3.66" => {
+      "date" => "2016-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025007",
+      "version" => "3.66"
+    },
+    "3.67" => {
+      "date" => "2017-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025011",
+      "version" => "3.67"
+    },
+    "3.68" => {
+      "date" => "2017-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027002",
+      "version" => "3.68"
+    },
+    "3.70" => {
+      "date" => "2017-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027006",
+      "version" => "3.70"
+    },
+    "3.71" => {
+      "date" => "2017-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027007",
+      "version" => "3.71"
+    },
+    "3.72" => {
+      "date" => "2018-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027008",
+      "version" => "3.72"
+    },
+    "3.76" => {
+      "date" => "2018-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029005",
+      "version" => "3.76"
+    },
+    "3.77" => {
+      "date" => "2019-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029007",
+      "version" => "3.77"
+    },
+    "3.78" => {
+      "date" => "2019-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029010",
+      "version" => "3.78"
+    },
+    "3.79" => {
+      "date" => "2020-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033004",
+      "version" => "3.79"
+    },
+    "3.80" => {
+      "date" => "2020-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033005",
+      "version" => "3.80"
+    },
+    "3.81" => {
+      "date" => "2021-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035001",
+      "version" => "3.81"
+    },
+    "3.82" => {
+      "date" => "2021-07-23T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035002",
+      "version" => "3.82"
+    },
+    "3.83" => {
+      "date" => "2021-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035007",
+      "version" => "3.83"
+    },
+    "3.84" => {
+      "date" => "2022-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.03501",
+      "version" => "3.84"
+    },
+    "3.85" => {
+      "date" => "2022-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037001",
+      "version" => "3.85"
+    },
+    "3.86" => {
+      "date" => "2022-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037002",
+      "version" => "3.86"
+    },
+    "3.88" => {
+      "date" => "2022-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037007",
+      "version" => "3.88"
+    },
+    "3.89" => {
+      "date" => "2023-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.03701",
+      "version" => "3.89"
+    },
+    "3.90" => {
+      "date" => "2023-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039002",
+      "version" => "3.90"
+    }
+  },
+  "Pod-Perldoc" => {
+    "3.15_02" => {
+      "date" => "2010-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011005",
+      "version" => "3.15_02"
+    },
+    "3.15_03" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "3.15_03"
+    },
+    "3.15_04" => {
+      "date" => "2011-06-16T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.014001",
+      "version" => "3.15_04"
+    },
+    "3.15_05" => {
+      "date" => "2011-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015",
+      "version" => "3.15_05"
+    },
+    "3.15_06" => {
+      "date" => "2011-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015001",
+      "version" => "3.15_06"
+    },
+    "3.15_07" => {
+      "date" => "2011-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015003",
+      "version" => "3.15_07"
+    },
+    "3.25_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "3.25_01"
+    },
+    "3.25_03" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "3.25_03"
+    },
+    "3.2801" => {
+      "date" => "2017-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027005",
+      "version" => "3.2801"
+    }
+  },
+  "Safe" => {
+    "1.00" => {
+      "date" => "1996-02-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.002",
+      "version" => "1.00"
+    },
+    "2.06" => {
+      "date" => "1996-10-10T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00307",
+      "version" => "2.06"
+    },
+    "2.07" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "2.07"
+    },
+    "2.10" => {
+      "date" => "2003-11-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006002",
+      "version" => "2.10"
+    },
+    "2.12" => {
+      "date" => "2006-01-31T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008008",
+      "version" => "2.12"
+    },
+    "2.18" => {
+      "date" => "2009-08-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.010001",
+      "version" => "2.18"
+    },
+    "2.31" => {
+      "date" => "2012-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015008",
+      "version" => "2.31"
+    },
+    "2.31_01" => {
+      "date" => "2012-05-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.016",
+      "version" => "2.31_01"
+    },
+    "2.33_01" => {
+      "date" => "2012-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017001",
+      "version" => "2.33_01"
+    },
+    "2.34" => {
+      "date" => "2013-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017008",
+      "version" => "2.34"
+    },
+    "2.36" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "2.36"
+    },
+    "2.37" => {
+      "date" => "2013-07-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019002",
+      "version" => "2.37"
+    },
+    "2.38" => {
+      "date" => "2014-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021003",
+      "version" => "2.38"
+    },
+    "2.39" => {
+      "date" => "2015-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021008",
+      "version" => "2.39"
+    },
+    "2.40" => {
+      "date" => "2017-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025012",
+      "version" => "2.40"
+    },
+    "2.41" => {
+      "date" => "2019-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031005",
+      "version" => "2.41"
+    },
+    "2.41_01" => {
+      "date" => "2021-01-23T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.032001",
+      "version" => "2.41_01"
+    },
+    "2.42" => {
+      "date" => "2020-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033001",
+      "version" => "2.42"
+    },
+    "2.43" => {
+      "date" => "2020-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033002",
+      "version" => "2.43"
+    },
+    "2.44" => {
+      "date" => "2022-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037004",
+      "version" => "2.44"
+    },
+    "2.45" => {
+      "date" => "2023-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039002",
+      "version" => "2.45"
+    },
+    "2.46" => {
+      "date" => "2024-02-23T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.039008",
+      "version" => "2.46"
+    }
+  },
+  "Socket" => {
+    "" => {
+      "date" => "1994-10-17T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.000",
+      "version" => undef
+    },
+    "1.6" => {
+      "date" => "1997-05-15T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.004",
+      "version" => "1.6"
+    },
+    "1.7" => {
+      "date" => "1999-04-29T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.00405",
+      "version" => "1.7"
+    },
+    "1.72" => {
+      "date" => "2000-03-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006",
+      "version" => "1.72"
+    },
+    "1.75" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "1.75"
+    },
+    "1.76" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "1.76"
+    },
+    "1.77" => {
+      "date" => "2004-04-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008004",
+      "version" => "1.77"
+    },
+    "1.78" => {
+      "date" => "2006-01-31T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008008",
+      "version" => "1.78"
+    },
+    "1.79" => {
+      "date" => "2007-07-07T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009005",
+      "version" => "1.79"
+    },
+    "1.80" => {
+      "date" => "2007-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01",
+      "version" => "1.80"
+    },
+    "1.81" => {
+      "date" => "2008-12-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008009",
+      "version" => "1.81"
+    },
+    "1.82" => {
+      "date" => "2009-08-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.010001",
+      "version" => "1.82"
+    },
+    "1.84" => {
+      "date" => "2009-10-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011",
+      "version" => "1.84"
+    },
+    "1.85" => {
+      "date" => "2009-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011001",
+      "version" => "1.85"
+    },
+    "1.86" => {
+      "date" => "2010-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011005",
+      "version" => "1.86"
+    },
+    "1.87" => {
+      "date" => "2010-04-12T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.012",
+      "version" => "1.87"
+    },
+    "1.87_01" => {
+      "date" => "2011-01-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.012003",
+      "version" => "1.87_01"
+    },
+    "1.88" => {
+      "date" => "2010-05-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013001",
+      "version" => "1.88"
+    },
+    "1.89" => {
+      "date" => "2010-06-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013002",
+      "version" => "1.89"
+    },
+    "1.90" => {
+      "date" => "2010-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013006",
+      "version" => "1.90"
+    },
+    "1.91" => {
+      "date" => "2010-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013007",
+      "version" => "1.91"
+    },
+    "1.92" => {
+      "date" => "2010-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013008",
+      "version" => "1.92"
+    },
+    "1.93" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "1.93"
+    },
+    "1.94" => {
+      "date" => "2011-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.01301",
+      "version" => "1.94"
+    },
+    "1.94_01" => {
+      "date" => "2011-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015003",
+      "version" => "1.94_01"
+    },
+    "1.94_02" => {
+      "date" => "2011-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015005",
+      "version" => "1.94_02"
+    },
+    "2.006_001" => {
+      "date" => "2012-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017007",
+      "version" => "2.006_001"
+    },
+    "2.020_01" => {
+      "date" => "2015-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023003",
+      "version" => "2.020_01"
+    },
+    "2.020_02" => {
+      "date" => "2015-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023004",
+      "version" => "2.020_02"
+    },
+    "2.020_03" => {
+      "date" => "2016-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023009",
+      "version" => "2.020_03"
+    },
+    "2.020_04" => {
+      "date" => "2017-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027006",
+      "version" => "2.020_04"
+    }
+  },
+  "Storable" => {
+    "1.015" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "1.015"
+    },
+    "2.15_02" => {
+      "date" => "2006-01-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009003",
+      "version" => "2.15_02"
+    },
+    "2.19" => {
+      "date" => "2008-12-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008009",
+      "version" => "2.19"
+    },
+    "2.22" => {
+      "date" => "2009-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.011001",
+      "version" => "2.22"
+    },
+    "2.26" => {
+      "date" => "2011-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013009",
+      "version" => "2.26"
+    },
+    "2.27" => {
+      "date" => "2011-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.013011",
+      "version" => "2.27"
+    },
+    "2.28" => {
+      "date" => "2011-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015",
+      "version" => "2.28"
+    },
+    "2.31" => {
+      "date" => "2011-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015001",
+      "version" => "2.31"
+    },
+    "2.32" => {
+      "date" => "2011-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015003",
+      "version" => "2.32"
+    },
+    "2.33" => {
+      "date" => "2011-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015005",
+      "version" => "2.33"
+    },
+    "2.34" => {
+      "date" => "2011-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.015006",
+      "version" => "2.34"
+    },
+    "2.36" => {
+      "date" => "2012-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017001",
+      "version" => "2.36"
+    },
+    "2.37" => {
+      "date" => "2012-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017002",
+      "version" => "2.37"
+    },
+    "2.40" => {
+      "date" => "2012-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017007",
+      "version" => "2.40"
+    },
+    "2.41" => {
+      "date" => "2013-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.017011",
+      "version" => "2.41"
+    },
+    "2.42" => {
+      "date" => "2013-05-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019000",
+      "version" => "2.42"
+    },
+    "2.43" => {
+      "date" => "2013-06-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019001",
+      "version" => "2.43"
+    },
+    "2.46" => {
+      "date" => "2013-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019003",
+      "version" => "2.46"
+    },
+    "2.47" => {
+      "date" => "2013-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019004",
+      "version" => "2.47"
+    },
+    "2.48" => {
+      "date" => "2013-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019007",
+      "version" => "2.48"
+    },
+    "2.49" => {
+      "date" => "2014-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.019011",
+      "version" => "2.49"
+    },
+    "2.49_01" => {
+      "date" => "2015-02-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.020002",
+      "version" => "2.49_01"
+    },
+    "2.52" => {
+      "date" => "2014-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021007",
+      "version" => "2.52"
+    },
+    "2.53" => {
+      "date" => "2015-02-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.021009",
+      "version" => "2.53"
+    },
+    "2.53_01" => {
+      "date" => "2015-12-13T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022001",
+      "version" => "2.53_01"
+    },
+    "2.53_02" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "2.53_02"
+    },
+    "2.54" => {
+      "date" => "2015-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023001",
+      "version" => "2.54"
+    },
+    "2.55" => {
+      "date" => "2016-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023008",
+      "version" => "2.55"
+    },
+    "2.56" => {
+      "date" => "2016-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.023009",
+      "version" => "2.56"
+    },
+    "2.56_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.024001",
+      "version" => "2.56_01"
+    },
+    "2.57" => {
+      "date" => "2016-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025004",
+      "version" => "2.57"
+    },
+    "2.58" => {
+      "date" => "2016-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025006",
+      "version" => "2.58"
+    },
+    "2.59" => {
+      "date" => "2016-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025007",
+      "version" => "2.59"
+    },
+    "2.61" => {
+      "date" => "2017-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025009",
+      "version" => "2.61"
+    },
+    "2.62" => {
+      "date" => "2017-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.02501",
+      "version" => "2.62"
+    },
+    "2.63" => {
+      "date" => "2017-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027001",
+      "version" => "2.63"
+    },
+    "2.64" => {
+      "date" => "2017-08-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027003",
+      "version" => "2.64"
+    },
+    "2.65" => {
+      "date" => "2017-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.027006",
+      "version" => "2.65"
+    },
+    "3.08_01" => {
+      "date" => "2019-04-19T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.028002",
+      "version" => "3.08_01"
+    },
+    "3.12" => {
+      "date" => "2018-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029002",
+      "version" => "3.12"
+    },
+    "3.13" => {
+      "date" => "2018-09-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029003",
+      "version" => "3.13"
+    },
+    "3.14" => {
+      "date" => "2018-12-18T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.029006",
+      "version" => "3.14"
+    },
+    "3.16" => {
+      "date" => "2019-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031001",
+      "version" => "3.16"
+    },
+    "3.17" => {
+      "date" => "2019-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031003",
+      "version" => "3.17"
+    },
+    "3.18" => {
+      "date" => "2019-12-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031007",
+      "version" => "3.18"
+    },
+    "3.19" => {
+      "date" => "2020-02-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031009",
+      "version" => "3.19"
+    },
+    "3.20" => {
+      "date" => "2020-04-28T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.031011",
+      "version" => "3.20"
+    },
+    "3.21" => {
+      "date" => "2020-06-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.032",
+      "version" => "3.21"
+    },
+    "3.22" => {
+      "date" => "2020-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033001",
+      "version" => "3.22"
+    },
+    "3.23" => {
+      "date" => "2020-10-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.033003",
+      "version" => "3.23"
+    },
+    "3.24" => {
+      "date" => "2021-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035003",
+      "version" => "3.24"
+    },
+    "3.26" => {
+      "date" => "2022-04-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.035011",
+      "version" => "3.26"
+    },
+    "3.27" => {
+      "date" => "2022-07-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037002",
+      "version" => "3.27"
+    },
+    "3.28" => {
+      "date" => "2022-11-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037006",
+      "version" => "3.28"
+    },
+    "3.29" => {
+      "date" => "2023-01-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.037008",
+      "version" => "3.29"
+    },
+    "3.31" => {
+      "date" => "2023-03-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.03701",
+      "version" => "3.31"
+    },
+    "3.32" => {
+      "date" => "2023-07-02T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.038000",
+      "version" => "3.32"
+    }
+  },
+  "Sys-Syslog" => {
+    "" => {
+      "date" => "1994-10-17T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.000",
+      "version" => undef
+    },
+    "0.01" => {
+      "date" => "2000-03-22T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.006",
+      "version" => "0.01"
+    },
+    "0.02" => {
+      "date" => "2002-03-05T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.007003",
+      "version" => "0.02"
+    },
+    "0.03" => {
+      "date" => "2002-07-19T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008000",
+      "version" => "0.03"
+    },
+    "0.04" => {
+      "date" => "2003-09-25T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008001",
+      "version" => "0.04"
+    },
+    "0.05" => {
+      "date" => "2004-04-21T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008004",
+      "version" => "0.05"
+    },
+    "0.06" => {
+      "date" => "2005-05-30T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.008007",
+      "version" => "0.06"
+    },
+    "0.18_01" => {
+      "date" => "2007-07-07T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.009005",
+      "version" => "0.18_01"
+    },
+    "0.33_01" => {
+      "date" => "2017-01-14T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.022003",
+      "version" => "0.33_01"
+    },
+    "0.34_01" => {
+      "date" => "2016-08-20T00:00:00",
+      "dual_lived" => 1,
+      "perl_release" => "5.025004",
+      "version" => "0.34_01"
+    }
+  }
+}
+
