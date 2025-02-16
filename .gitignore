@@ -45,3 +45,4 @@ blib
 MYMETA.*
 xt/.last_run
 CPANSA-DB-*
+main-modules*
