@@ -4,7 +4,7 @@ advisories:
   cve: CVE-2021-46322
   description: |
     Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the component duk_push_tval in duktape/duk_api_stack.c.
-  fixed_versions: ~
+  fixed_versions: '>=0.000081'
   github_security_advisory:
   - GHSA-hmgv-4jwm-xc9x
   references:
