@@ -2,7 +2,7 @@
 
 20250304.001 2025-03-04T15:02:27Z
 	* data update for 2025-03-04
-	* version data for modules now includes version that only show up
+	* version data for modules now includes versions that only show up
 	in perl core (dual-lived versions not on CPAN) (GitHub #190)
 
 20250206.001 2025-02-06T05:41:55Z
