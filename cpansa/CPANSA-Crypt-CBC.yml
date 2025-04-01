@@ -41,20 +41,6 @@ advisories:
     reported: 2006-02-25
     severity: ~
   - affected_versions:
-      - '>1.21'
-    cves:
-      - CVE-2025-2814
-    description: "Crypt::CBC versions between 1.21 and 3.04 for Perl may use the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.  This issue affects operating systems where \"/dev/urandom'\" is unavailable.  In that case, Crypt::CBC will fallback to use the insecure rand() function."
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-xpfq-7j72-x4px
-    id: CPANSA-Crypt-CBC-2025-2814
-    references:
-      - https://metacpan.org/dist/Crypt-CBC/source/lib/Crypt/CBC.pm#L777
-      - https://perldoc.perl.org/functions/rand
-      - https://security.metacpan.org/docs/guides/random-data-for-security.html
-    reported: 2025-04-13
-    severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-CBC
