@@ -199,7 +199,7 @@ sub get_recorded_cves ( $base = 'cpansa' ) {
 					() }
 				}
 			grep { exists $_->{cves} }
-			$yaml->@*;
+			$yaml->{advisories}->@*;
 
 		@found{@found_cves} = (1)x@found_cves;
 		}

@@ -88,7 +88,7 @@ sub new_meta ( $self, $config ) {
 
 sub postprocess_args ( $self ) {
 	my ($cve_arg, $package_arg ) = $self->leftover_args->@*;
-	say "Leftover: CVE: $cve_arg PACKAGE: $package_arg";
+	say "Leftover: CVE: $cve_arg PACKAGE: " . $package_arg // '<undef>';
 
 	$self->cve( $cve_arg ) if defined $cve_arg;
 	$self->namespace( $package_arg ) if defined $package_arg;
@@ -118,7 +118,7 @@ sub prompt_for_values ( $self ) {
 	my $opts = $self->getopts_spec;
 	my @prompt_keys =
 		sort { $opts->{$a}{order} <=> $opts->{$b}{order} }
-		grep { $opts->{$_}{order} }
+		grep { eval{ $opts->{$_}{order} } }
 		keys $opts->%*;
 
 	foreach my $key ( @prompt_keys ) {
