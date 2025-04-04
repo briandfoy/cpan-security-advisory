@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - <=0.007
+    cves:
+      - CVE-2025-1860
+    description: 'Data::Entropy for Perl 0.007 and earlier use the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.'
+    fixed_versions:
+      - '>0.007'
+    github_security_advisory:
+      - GHSA-g3hm-j3wc-jcg9
+    id: CPANSA-Data-Entropy-2025-1860
+    references:
+      - https://metacpan.org/release/ZEFRAM/Data-Entropy-0.007/source/lib/Data/Entropy.pm#L80
+      - https://perldoc.perl.org/functions/rand
+      - https://lists.debian.org/debian-lts-announce/2025/03/msg00026.html
+    reported: 2025-03-28
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Data-Entropy
+last_checked: 1743737480
+latest_version: 0.008
+metacpan: https://metacpan.org/pod/Data::Entropy
