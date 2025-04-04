@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - <0.0701
+    cves:
+      - CVE-2025-3051
+    description: "Linux::Statm::Tiny for Perl before 0.0701 allows untrusted code from the current working directory ('.') to be loaded similar to CVE-2016-1238.  If an attacker can place a malicious file in current working directory, it may be loaded instead of the intended file, potentially leading to arbitrary code execution.  Linux::Statm::Tiny uses Mite to produce the affected code section due to CVE-2025-30672"
+    fixed_versions:
+      - '>=0.0701'
+    github_security_advisory:
+      - GHSA-q2hm-mp4x-64qg
+    id: CPANSA-Linux-Statm-Tiny-2025-3051
+    references:
+      - https://blogs.perl.org/users/todd_rinaldo/2016/11/what-happened-to-dot-in-inc.html
+      - https://metacpan.org/release/RRWO/Linux-Statm-Tiny-0.0700/source/lib/Linux/Statm/Tiny/Mite.pm#L82
+      - https://metacpan.org/release/RRWO/Linux-Statm-Tiny-0.0701/changes
+    reported: 2025-04-01
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Linux-Statm-Tiny
+last_checked: 1743737671
+latest_version: 0.0701
+metacpan: https://metacpan.org/pod/Linux::Statm::Tiny
+repo: git://github.com/robrwo/Linux-Statm-Tiny.git
