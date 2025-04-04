@@ -1,21 +1,36 @@
----
 advisories:
-- affected_versions:
-  - '>0'
-  cves: []
-  description: |
-    The makerandom program that comes with Crypt::Random adds module search paths in its shebang line, potentially leading to issues with unexpected modules being loaded
-  fixed_versions: []
-  github_security_advisory: []
-  id: CPANSA-Crypt-Random-2024-001
-  references:
-  - https://metacpan.org/dist/Crypt-Random/changes
-  - https://rt.cpan.org/Ticket/Display.html?id=128062
-  - https://github.com/atoomic/Crypt-Random/pull/1
-  reported: ~
-  severity: ~
+  - affected_versions:
+      - '>0'
+    cves: []
+    description: "The makerandom program that comes with Crypt::Random adds module search paths in its shebang line, potentially leading to issues with unexpected modules being loaded\n"
+    fixed_versions: []
+    github_security_advisory: []
+    id: CPANSA-Crypt-Random-2024-001
+    references:
+      - https://metacpan.org/dist/Crypt-Random/changes
+      - https://rt.cpan.org/Ticket/Display.html?id=128062
+      - https://github.com/atoomic/Crypt-Random/pull/1
+    reported: ~
+    severity: ~
+  - affected_versions:
+      - '>=1.05,<=1.55'
+    cves:
+      - CVE-2025-1828
+    description: 'Crypt::Random Perl package 1.05 through 1.55 may use rand() function, which is not cryptographically strong, for cryptographic functions.  If the Provider is not specified and /dev/urandom or an Entropy Gathering Daemon (egd) service is not available Crypt::Random will default to use the insecure Crypt::Random::rand provider.  In particular, Windows versions of perl will encounter this issue by default.'
+    fixed_versions:
+      - '>1.55'
+    github_security_advisory:
+      - GHSA-jqxq-7f92-m7ww
+    id: CPANSA-Crypt-Random-2025-1828
+    references:
+      - https://github.com/perl-Crypt-OpenPGP/Crypt-Random/commit/1f8b29e9e89d8d083fd025152e76ec918136cc05
+      - https://github.com/perl-Crypt-OpenPGP/Crypt-Random/pull/1
+      - https://perldoc.perl.org/functions/rand
+    reported: 2025-03-11
+    severity: ~
 cpansa_version: 2
+darkpan: ~
 distribution: Crypt-Random
-last_checked: 1735587356
-latest_version: 1.54
+last_checked: 1743737239
+latest_version: 1.57
 metacpan: https://metacpan.org/pod/Crypt::Random
