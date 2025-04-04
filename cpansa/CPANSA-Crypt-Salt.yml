@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - <=0.01
+    cves:
+      - CVE-2025-1805
+    description: Crypt::Salt for Perl version 0.01 uses insecure rand() function when generating salts for cryptographic purposes.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-cc4w-4629-8rc3
+    id: CPANSA-Crypt-Salt-2025-1805
+    references:
+      - https://metacpan.org/release/HACHI/Crypt-Salt-0.01/source/lib/Crypt/Salt.pm#L76
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-04-02
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-Salt
+last_checked: 1743736733
+latest_version: 0.01
+metacpan: https://metacpan.org/pod/Crypt::Salt
