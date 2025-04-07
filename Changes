@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250407.003 2025-04-07T15:58:44Z
+	* replace earlier release that had testing problem (#194)
+
 20250407.002 2025-04-07T08:47:37Z
 	* data update for 2025-04-07
 
