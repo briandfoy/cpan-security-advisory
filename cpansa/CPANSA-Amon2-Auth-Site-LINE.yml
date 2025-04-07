@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>0'
+    cves:
+      - CVE-2024-57835
+    description: "Amon2::Auth::Site::LINE uses the String::Random module to generate nonce values.   String::Random defaults to Perl's built-in predictable random number generator, the rand() function, which is not cryptographically secure"
+    fixed_versions: []
+    github_security_advisory: []
+    id: CPANSA-Amon2-Auth-Site-LINE-2024-57835
+    references:
+      - https://metacpan.org/release/SHLOMIF/String-Random-0.32/source/lib/String/Random.pm#L377
+      - https://metacpan.org/release/TANIGUCHI/Amon2-Auth-Site-LINE-0.04/source/lib/Amon2/Auth/Site/LINE.pm#L235
+      - https://metacpan.org/release/TANIGUCHI/Amon2-Auth-Site-LINE-0.04/source/lib/Amon2/Auth/Site/LINE.pm#L255
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-04-05
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Amon2-Auth-Site-LINE
+last_checked: 1744009618
+latest_version: 0.04
+metacpan: https://metacpan.org/pod/Amon2::Auth::Site::LINE
+repo: git://github.com/nipotan/p5-Amon2-Auth-Site-LINE.git
