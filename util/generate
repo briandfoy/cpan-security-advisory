@@ -418,6 +418,7 @@ sub process_files ( $files ) {
 
 		foreach my $advisory ( $yaml->{advisories}->@* ) {
 			$advisory->{distribution} = $dist;
+			no warnings 'uninitialized';
 			$advisory->{darkpan} = 'true' if( exists $yaml->{darkpan} && $yaml->{darkpan} eq 'true' );
 
 			delete $advisory->{github_security_advisory};
