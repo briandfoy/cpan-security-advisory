@@ -106,7 +106,7 @@ sub guess_package ( $item ) {
 
 # This hasn't turned out so useful
 sub parse_cpe23uri ( $cpe23uri ) {
-	state @keys = qw(
+	state $keys = [ qw(
 		prefix
 		version
 		part
@@ -120,7 +120,7 @@ sub parse_cpe23uri ( $cpe23uri ) {
 		target_sw
 		target_hw
 		other
-		);
+		) ];
 
 	state $pattern = qr{  # colons not escaped
 		(?<!
@@ -130,7 +130,7 @@ sub parse_cpe23uri ( $cpe23uri ) {
 		}x;
 
 	my %hash;
-	@hash{@keys} = map { s|\\||gr } split /$pattern/, $cpe23uri;
+	@hash{$keys->@*} = map { s|\\||gr } split /$pattern/, $cpe23uri;
 	return \%hash;
 	}
 
