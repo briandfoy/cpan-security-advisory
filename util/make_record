@@ -184,8 +184,8 @@ sub run ( @args ) {
 			}
 		};
 
+
 	my $advisory = Local::CPANSA::assemble_advisory( $config );
-	say STDERR "ADVISORY: " . dumper( $advisory );
 
 	my $new_id = $advisory->{id};
 	my $new_id_exists = grep { $_->{id} eq $new_id } $existing->{advisories}->@*;

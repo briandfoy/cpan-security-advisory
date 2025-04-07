@@ -21,16 +21,12 @@ Local::CPANSA - tools for working within the repo
 =cut
 
 sub assemble_advisory ( $config ) {
-	state $base = 'https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=';
-	state $rc = require Mojo::UserAgent;
-
 	my %hash;
 	$hash{cves} = [];
 	push $hash{cves}->@*, $config->cve if $config->cve;
 
 	my $serial = $hash{cves}[0] =~ s/\ACVE-//r;
 	$serial //= sprintf '%s-%s', (localtime)[5] + 1900, '001';
-	my $url = "$base$hash{cves}[0]";
 
 	$hash{description} = undef;
 	$hash{references} = [];
@@ -40,10 +36,8 @@ sub assemble_advisory ( $config ) {
 	$hash{affected_versions} = [];
 	$hash{fixed_versions} =  [];
 
-	if( $config->cve ) {
-		my $json = Mojo::UserAgent->new->get( $url )->result->json;
-		my $item = $json->{vulnerabilities}[0]{cve};
-
+	if( $hash{cves}->@* ) {
+		my $item = get_cve_data($hash{cves}[0]);
 		$hash{description}  = (map { $_->{value} } grep { $_->{lang} eq 'en' } $item->{descriptions}->@* )[0] // '';
 		$hash{description}  =~ s/\v/ /g;
 
@@ -53,6 +47,11 @@ sub assemble_advisory ( $config ) {
 		$hash{reported} = $item->{published} =~ s/T.*//r;
 
 		$hash{severity} = eval { lc $item->{metrics}{cvssMetricV31}{cvssData}{baseSeverity} } || undef;
+
+		push $hash{github_security_advisory}->@*,
+			grep { defined }
+			map { get_github_advisories($_)->@* }
+			$hash{cves}->@*;
 		}
 
 #	my $package = guess_package( $item );
@@ -154,6 +153,72 @@ sub get_all_reports ( $base_dir = 'cpansa' ) {
 	return \@files;
 	}
 
+=item * get_cve_data
+
+=cut
+
+sub get_cve_data ( $cve ) {
+	state $rc = require Mojo::URL;
+	state $base = Mojo::URL->new('https://services.nvd.nist.gov/rest/json/cves/2.0');
+	return {} unless $cve;
+
+	my $url = $base->clone->query( cveId => $cve );
+	get_ua()->get($url)->result->json->{vulnerabilities}[0]{cve};
+	}
+
+=item * get_cve_description
+
+=cut
+
+sub get_cve_description ( $cve ) {
+	my $item = get_cve_data($cve);
+
+	my( $desc ) =
+		map { $_->{value} }
+		grep { $_->{lang} eq 'en' }
+		$item->{descriptions}->@*;
+
+	$desc
+	}
+
+=item * get_github_advisories
+
+=cut
+
+# https://docs.github.com/en/rest/security-advisories/global-advisories?apiVersion=2022-11-28#list-global-security-advisories
+sub get_github_advisories ( $cve ) {
+	state $rc = require Mojo::UserAgent;
+
+	$cve = uc($cve);
+	$cve = "CVE-$cve" if $cve =~ /\A\d+-\d+\z/a;
+
+	my $url = Mojo::URL->new('https://api.github.com/advisories');
+	my $headers = {
+		Authorization          => join( ' ', 'token', get_github_token() ),
+		Accept                 => 'application/vnd.github+json',
+		'X-GitHub-Api-Version' => '2022-11-28',
+		};
+	my $query = {
+		cve_id => $cve
+		};
+
+	my $tx = get_ua()->get(
+		$url => $headers => form => $query
+		);
+
+	return [] unless $tx->res->is_success;
+
+	my $ghsa_ids =  [ map { $_->{ghsa_id} } $tx->res->json->@* ];
+	}
+
+=item * get_github_token
+
+=cut
+
+sub get_github_token () {
+	$ENV{CPANSA_GITHUB_TOKEN}
+	}
+
 =item * get_ignored_cves
 
 =cut
@@ -206,6 +271,21 @@ sub get_recorded_cves ( $base = 'cpansa' ) {
 
 	return \%found;
 	}
+
+=item * get_ua
+
+=cut
+
+sub get_ua () {
+	state $rc = require Mojo::UserAgent;
+	state $ua = do {
+		my $ua = Mojo::UserAgent->new;
+		$ua->max_redirects(3);
+		$ua;
+		};
+
+	$ua
+	};
 
 =item * load_report
 

@@ -123,12 +123,17 @@ sub prompt_for_values ( $self ) {
 
 	foreach my $key ( @prompt_keys ) {
 		printf $opts->{$key}{description} . ' [%s]> ', $self->$key();
+
 		chomp( my $value = scalar <STDIN> );
 		$value =~ s/\A\s+|\s+\z//g;
-		next unless length $value;
-		$self->$key($value);
+		$self->$key($value) if length $value;
+
 		if( $key eq 'namespace' and  ! $self->output_filename ) {
 			$self->output_filename( $self->guess_output_filename($value) )
+			}
+		elsif( $key eq 'cve' ) {
+			my $desc = Local::CPANSA::get_cve_description( $self->cve );
+			say "=== CVE ===\n" . $desc . "\n===========\n";
 			}
 		}
 
