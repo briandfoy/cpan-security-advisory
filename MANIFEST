@@ -18,6 +18,7 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 README.pod
 SECURITY.md
+t/ghsa.t
 t/load.t
 t/pod.t
 t/pod_coverage.t
