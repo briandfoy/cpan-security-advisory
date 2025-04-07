@@ -2,6 +2,8 @@ use Test::More;
 
 use lib qw(lib);
 
+plan skip_all => 'This need v5.26 or later' unless $] >= 5.026;
+
 subtest 'sanity' => sub {
 	use_ok Local::CPANSA;
 	ok defined &Local::CPANSA::get_github_advisories, 'function is defined';
