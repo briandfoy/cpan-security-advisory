@@ -1,0 +1,38 @@
+advisories:
+  - affected_versions:
+      - <0.11
+    cves:
+      - CVE-2025-27551
+    description: 'DBIx::Class::EncodedColumn use the rand() function, which is not cryptographically secure to salt password hashes.  This vulnerability is associated with program files lib/DBIx/Class/EncodedColumn/Digest.pm.  This issue affects DBIx::Class::EncodedColumn until 0.00032.'
+    fixed_versions:
+      - '>=0.11'
+    github_security_advisory:
+      - GHSA-46f3-rc2x-p4jv
+    id: CPANSA-DBIx-Class-EncodedColumn-2025-27551
+    references:
+      - https://metacpan.org/release/WREIS/DBIx-Class-EncodedColumn-0.00032/changes
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-03-26
+    severity: ~
+  - affected_versions:
+      - <0.11
+    cves:
+      - CVE-2025-27552
+    description: 'DBIx::Class::EncodedColumn use the rand() function, which is not cryptographically secure to salt password hashes.  This vulnerability is associated with program files Crypt/Eksblowfish/Bcrypt.pm.  This issue affects DBIx::Class::EncodedColumn until 0.00032.'
+    fixed_versions:
+      - '>=0.11'
+    github_security_advisory:
+      - GHSA-9x23-xcrx-fq3q
+    id: CPANSA-DBIx-Class-EncodedColumn-2025-27552
+    references:
+      - https://metacpan.org/release/WREIS/DBIx-Class-EncodedColumn-0.00032/changes
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-03-26
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: DBIx-Class-EncodedColumn
+last_checked: 1744010588
+latest_version: 0.11
+metacpan: https://metacpan.org/pod/DBIx::Class::EncodedColumn
+repo: https://github.com/wreis/DBIx-Class-EncodedColumn
