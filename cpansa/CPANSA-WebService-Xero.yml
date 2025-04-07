@@ -1,0 +1,26 @@
+---
+advisories:
+  - affected_versions:
+      - '>0'
+    cves:
+      - CVE-2024-52322
+    description: 'WebService::Xero 0.11 and earlier for Perl uses the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.  Specifically WebService::Xero uses the Data::Random library which specifically states that it is "Useful mostly for test programs". Data::Random uses the rand() function.'
+    fixed_versions: []
+    github_security_advisory: []
+    id: CPANSA-WebService-Xero-2024-52322
+    references:
+      - https://metacpan.org/release/BAREFOOT/Data-Random-0.13/source/lib/Data/Random.pm#L537
+      - https://metacpan.org/release/LOCALSHOP/WebService-Xero-0.11/source/lib/WebService/Xero/Agent.pm#L17
+      - https://metacpan.org/release/LOCALSHOP/WebService-Xero-0.11/source/lib/WebService/Xero/Agent.pm#L178
+      - https://metacpan.org/release/LOCALSHOP/WebService-Xero-0.11/source/lib/WebService/Xero/Agent/PublicApplication.pm#L13
+      - https://metacpan.org/release/LOCALSHOP/WebService-Xero-0.11/source/lib/WebService/Xero/Agent/PublicApplication.pm#L93
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-04-05
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: WebService-Xero
+last_checked: 1744009782
+latest_version: 0.11
+metacpan: https://metacpan.org/pod/WebService::Xero
