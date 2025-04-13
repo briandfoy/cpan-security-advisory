@@ -6,7 +6,7 @@ advisories:
     description: |
       The Net::EasyTCP package before 0.15 for Perl always uses Perl's builtin rand(), which is not a strong random number generator, for cryptographic keys.
     fixed_versions:
-      - '>=0.,15'
+      - '>=0.15'
     github_security_advisory:
       - GHSA-pm3j-mqcc-rjqr
     id: CPANSA-EasyTCP-2002-20002
