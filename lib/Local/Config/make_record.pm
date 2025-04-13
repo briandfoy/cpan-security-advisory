@@ -61,23 +61,30 @@ sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) 
 =cut
 
 sub new_meta ( $self, $config ) {
-	state $rc = require MetaCPAN::Client;
-
 	my %hash;
 
-	my $mcpan = MetaCPAN::Client->new;
-	my $package = $mcpan->package($config->namespace);
-	my $dist = $mcpan->distribution($package->distribution);
+	my( $package, $dist, $latest_version, $repo ) = do {
+		if( $config->namespace eq 'perl' ) {
+			( 'perl', 'perl', undef, 'https://github.com/Perl/perl5' )
+			}
+		else {
+			state $rc = require MetaCPAN::Client;
+			my $mcpan = MetaCPAN::Client->new;
+			my $package = $mcpan->package($config->namespace);
+			my $dist = $mcpan->distribution($package->distribution);
+			my $repo;
+			$repo = $dist->github->{source} if keys  $dist->github->%*;
+			($package, $dist, $package->version, $dist->github->{source} );
+			}
+		};
 
 	$hash{cpansa_version} = 2;
 	$hash{darkpan} = 'false';
-	$hash{distribution} = $package->distribution;
+	$hash{distribution} = $dist;
 	$hash{last_checked} = time;
-	$hash{latest_version} = $package->version;
+	$hash{latest_version} = $latest_version;
 	$hash{metacpan} = "https://metacpan.org/pod/" . $config->namespace;
 	$hash{advisories} = [];
-
-	$hash{repo} = $dist->github->{source} if keys  $dist->github->%*;
 
 	\%hash;
 	}
