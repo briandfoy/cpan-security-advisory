@@ -79,7 +79,7 @@ sub new_meta ( $self, $config ) {
 		};
 
 	$hash{cpansa_version} = 2;
-	$hash{darkpan} = 'false';
+	$hash{darkpan} = undef;
 	$hash{distribution} = $dist;
 	$hash{last_checked} = time;
 	$hash{latest_version} = $latest_version;
