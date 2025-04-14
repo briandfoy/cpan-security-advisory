@@ -1,51 +1,64 @@
----
 advisories:
-- affected_versions:
-  - '<3.04'
-  cves: []
-  description: |
-    Fixed bug involving manually-specified IV not being used in some circumstances.
-  fixed_versions:
-  - '>=3.04'
-  github_security_advisory: []
-  id: CPANSA-Crypt-CBC-2021-0001
-  references:
-  - https://metacpan.org/changes/distribution/Crypt-CBC
-  - https://github.com/briandfoy/cpan-security-advisory/issues/165
-  reported: 2021-05-17
-  severity: ~
-- affected_versions:
-  - <2.17
-  cves:
-  - CVE-2006-0898
-  description: |
-    Crypt::CBC Perl module 2.16 and earlier, when running in RandomIV mode, uses an initialization vector (IV) of 8 bytes, which results in weaker encryption when used with a cipher that requires a larger block size than 8 bytes, such as Rijndael.
-  fixed_versions:
-  - '>=2.17'
-  github_security_advisory:
-  - GHSA-qpjg-v8f6-cw7j
-  id: CPANSA-Crypt-CBC-2006-0898
-  references:
-  - https://metacpan.org/changes/distribution/Crypt-CBC
-  - http://www.securityfocus.com/bid/16802
-  - http://secunia.com/advisories/18755
-  - http://www.debian.org/security/2006/dsa-996
-  - http://secunia.com/advisories/19187
-  - http://www.gentoo.org/security/en/glsa/glsa-200603-15.xml
-  - http://secunia.com/advisories/19303
-  - http://www.novell.com/linux/security/advisories/2006_38_security.html
-  - http://secunia.com/advisories/20899
-  - http://securityreason.com/securityalert/488
-  - http://www.redhat.com/support/errata/RHSA-2008-0261.html
-  - http://secunia.com/advisories/31493
-  - http://rhn.redhat.com/errata/RHSA-2008-0630.html
-  - https://exchange.xforce.ibmcloud.com/vulnerabilities/24954
-  - http://www.securityfocus.com/archive/1/425966/100/0/threaded
-  reported: 2006-02-25
-  severity: ~
+  - affected_versions:
+      - <3.04
+    cves: []
+    description: "Fixed bug involving manually-specified IV not being used in some circumstances.\n"
+    fixed_versions:
+      - '>=3.04'
+    github_security_advisory: []
+    id: CPANSA-Crypt-CBC-2021-0001
+    references:
+      - https://metacpan.org/changes/distribution/Crypt-CBC
+      - https://github.com/briandfoy/cpan-security-advisory/issues/165
+    reported: 2021-05-17
+    severity: ~
+  - affected_versions:
+      - <2.17
+    cves:
+      - CVE-2006-0898
+    description: "Crypt::CBC Perl module 2.16 and earlier, when running in RandomIV mode, uses an initialization vector (IV) of 8 bytes, which results in weaker encryption when used with a cipher that requires a larger block size than 8 bytes, such as Rijndael.\n"
+    fixed_versions:
+      - '>=2.17'
+    github_security_advisory:
+      - GHSA-qpjg-v8f6-cw7j
+    id: CPANSA-Crypt-CBC-2006-0898
+    references:
+      - https://metacpan.org/changes/distribution/Crypt-CBC
+      - http://www.securityfocus.com/bid/16802
+      - http://secunia.com/advisories/18755
+      - http://www.debian.org/security/2006/dsa-996
+      - http://secunia.com/advisories/19187
+      - http://www.gentoo.org/security/en/glsa/glsa-200603-15.xml
+      - http://secunia.com/advisories/19303
+      - http://www.novell.com/linux/security/advisories/2006_38_security.html
+      - http://secunia.com/advisories/20899
+      - http://securityreason.com/securityalert/488
+      - http://www.redhat.com/support/errata/RHSA-2008-0261.html
+      - http://secunia.com/advisories/31493
+      - http://rhn.redhat.com/errata/RHSA-2008-0630.html
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/24954
+      - http://www.securityfocus.com/archive/1/425966/100/0/threaded
+    reported: 2006-02-25
+    severity: ~
+  - affected_versions:
+      - '>1.21'
+    cves:
+      - CVE-2025-2814
+    description: "Crypt::CBC versions between 1.21 and 3.04 for Perl may use the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.  This issue affects operating systems where \"/dev/urandom'\" is unavailable.  In that case, Crypt::CBC will fallback to use the insecure rand() function."
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-xpfq-7j72-x4px
+    id: CPANSA-Crypt-CBC-2025-2814
+    references:
+      - https://metacpan.org/dist/Crypt-CBC/source/lib/Crypt/CBC.pm#L777
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-04-13
+    severity: ~
 cpansa_version: 2
+darkpan: ~
 distribution: Crypt-CBC
 last_checked: 1708150840
-latest_version: '3.04'
+latest_version: 3.04
 metacpan: https://metacpan.org/pod/Crypt::CBC
 repo: ~
