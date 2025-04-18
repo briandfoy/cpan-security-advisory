@@ -74,7 +74,7 @@ sub new_meta ( $self, $config ) {
 			my $dist = $mcpan->distribution($package->distribution);
 			my $repo;
 			$repo = $dist->github->{source} if keys  $dist->github->%*;
-			($package, $dist, $package->version, $dist->github->{source} );
+			($package, $dist->name, $package->version, $dist->github->{source} );
 			}
 		};
 
