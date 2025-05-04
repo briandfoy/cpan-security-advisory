@@ -52,6 +52,11 @@ my %WriteMakefile = (
 	'LICENSE'       => 'artistic_2',
 	'AUTHOR'        => 'brian d foy <briandfoy@pobox.com>',
 
+	'PM'            => {
+		'lib/CPAN/Audit/DB.pm' => '$(INST_LIB)/CPAN/Audit/DB.pm',
+		'lib/CPANSA/DB.pm'       => '$(INST_LIB)/CPANSA/DB.pm',
+		},
+
 	'CONFIGURE_REQUIRES' => {
 		'ExtUtils::MakeMaker'   => '6.64',
 		'File::Spec::Functions' => '0',
