@@ -54,7 +54,7 @@ my %WriteMakefile = (
 
 	'PM'            => {
 		'lib/CPAN/Audit/DB.pm' => '$(INST_LIB)/CPAN/Audit/DB.pm',
-		'lib/CPANSA/DB.pm'       => '$(INST_LIB)/CPANSA/DB.pm',
+		'lib/CPANSA/DB.pm'     => '$(INST_LIB)/CPANSA/DB.pm',
 		},
 
 	'CONFIGURE_REQUIRES' => {
