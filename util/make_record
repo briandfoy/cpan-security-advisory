@@ -226,7 +226,6 @@ sub run ( @args ) {
 	my $fh = do {
 		if( $config->output_filename eq '-' ) { \*STDOUT }
 		else {
-			$config->include_yaml_start_line(0) if( -e $report_path and ! $config->yes_yaml_start );
 			open my $fh, '>:encoding(UTF-8)', $report_path
 				or die "Could not open <$report_path>: $!\n";
 			$fh;
@@ -234,9 +233,6 @@ sub run ( @args ) {
 		};
 
 	my $string = YAML::Dump($existing);
-	$string =~ s/\A---\R// unless $config->include_yaml_start_line;
-
-	print STDOUT $string;
 
 	print { $fh } $string;
 	}
