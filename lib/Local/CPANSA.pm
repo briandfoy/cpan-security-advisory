@@ -25,7 +25,6 @@ sub assemble_advisory ( $config ) {
 	$hash{cves} = [];
 	push $hash{cves}->@*, $config->cve if $config->cve;
 
-say dumper( \%hash );
 	my $serial = $hash{cves}[0] =~ s/\ACVE-//r;
 	$serial //= sprintf '%s-%s', (localtime)[5] + 1900, '001';
 
