@@ -253,9 +253,28 @@ advisories:
       - https://www.cve.org/CVERecord?id=CVE-2024-58134
     reported: 2025-05-03
     severity: ~
+  - affected_versions:
+      - '>=7.28'
+    cves:
+      - CVE-2024-58135
+    description: "Mojolicious versions from 7.28 through 9.39 for Perl may generate weak HMAC session secrets.  When creating a default app with the \"mojo generate app\" tool, a weak secret is written to the application's configuration file using the insecure rand() function, and used for authenticating and protecting the integrity of the application's sessions. This may allow an attacker to brute force the application's session keys."
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-3r5v-gmfp-3mh9
+    id: CPANSA-Mojolicious-2024-58135
+    references:
+      - https://github.com/hashcat/hashcat/pull/4090
+      - https://github.com/mojolicious/mojo/pull/2200
+      - https://metacpan.org/release/SRI/Mojolicious-7.28/source/lib/Mojolicious/Command/generate/app.pm#L220
+      - https://metacpan.org/release/SRI/Mojolicious-9.38/source/lib/Mojolicious/Command/Author/generate/app.pm#L202
+      - https://metacpan.org/release/SRI/Mojolicious-9.39/source/lib/Mojo/Util.pm#L181
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-05-03
+    severity: ~
 cpansa_version: 2
 distribution: Mojolicious
 last_checked: 1746467931
-latest_version: '9.39'
+latest_version: 9.39
 metacpan: https://metacpan.org/pod/Mojolicious
 repo: https://github.com/mojolicious/mojo.git
