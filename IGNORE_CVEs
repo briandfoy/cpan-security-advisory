@@ -198,3 +198,4 @@ CVE-2024-10979    Incorrect control of environment variables in PostgreSQL PL/Pe
 CVE-2024-23793 OTRS - not at all about Perl
 CVE-2024-25021    IBM AIX 7.3, VIOS 4.1's Perl implementation could allow a non-privileg...
 CVE-2024-50151    In the Linux kernel, the following vulnerability has been resolved: sm
+CVE-2015-2079   Usermin RCE
