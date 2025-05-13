@@ -86,7 +86,10 @@ jobs:
                   Mojo::File \
                   Mojo::JSON \
                   PerlIO::gzip \
-                  Ref::Util \
+                  Ref::Util
+            - name: install more dependencies
+              run: |
+                cpan -T -M http://www.cpan.org \
                   YAML::Tiny \
                   YAML::XS
             - name: install latest
