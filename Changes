@@ -1,5 +1,10 @@
 # Changes for CPANSA::DB
 
+20250512.001 2025-05-13T01:14:07Z
+	* fix smart-quote that was causing CPAN::Audit tests to fail with
+	wide-character warnings
+	* data update for 2025-05-12
+
 20250506.001 2025-05-06T12:23:42Z
 	* data update for 2025-05-06
 
