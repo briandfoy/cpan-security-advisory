@@ -70,9 +70,9 @@ jobs:
             - name: show setup
               run: |
                 which git
-                giv rev-parse HEAD
+                git rev-parse HEAD
                 git remote show
-                git config --get remote.origin.url`
+                git config --get remote.origin.url
             - name: update toolchain
               run: |
                 cpan App::Cpan
