@@ -81,15 +81,15 @@ jobs:
                   HTTP::Tiny \
                   JSON \
                   MetaCPAN::Client \
-                  Module::CoreList \
+                  Module::CoreList
+            - name: install more dependencies
+              run: |
+                cpan -T -M http://www.cpan.org \
                   Mojo::Util \
                   Mojo::File \
                   Mojo::JSON \
                   PerlIO::gzip \
-                  Ref::Util
-            - name: install more dependencies
-              run: |
-                cpan -T -M http://www.cpan.org \
+                  Ref::Util \
                   YAML::Tiny \
                   YAML::XS
             - name: install latest
