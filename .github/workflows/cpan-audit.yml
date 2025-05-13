@@ -65,9 +65,11 @@ jobs:
             image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v3
-            - name: install latest
+            - name: update toolchain
               run: |
                 cpan App::CPAN
+            - name: install latest
+              run: |
                 cpan -T -M http://www.cpan.org .
             - name: Run tests
               run: |
