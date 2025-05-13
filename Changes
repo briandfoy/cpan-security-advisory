@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250513.001 2025-05-13T15:23:15Z
+	* data update for 2025-05-13
+	* new report for Plack-Middleware-Statsd
+
 20250512.001 2025-05-13T01:14:07Z
 	* fix smart-quote that was causing CPAN::Audit tests to fail with
 	wide-character warnings
