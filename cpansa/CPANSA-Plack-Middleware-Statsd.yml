@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - <0.8.0
+    cves: []
+    description: "Stats for request methods are only counted for ASCII words, anything else is counted as 'other'. Stats for content types are only counted for well-formed types."
+    fixed_versions:
+      - '>=0.8.0'
+    github_security_advisory:
+      - GHSA-m5mc-hhfv-6rjf
+    id: CPANSA-Plack-Middleware-Statsd-2025-001
+    references:
+      - https://github.com/robrwo/Plack-Middleware-Statsd/security/advisories/GHSA-m5mc-hhfv-6rjf
+      - https://github.com/briandfoy/cpan-security-advisory/issues/198
+      - https://metacpan.org/dist/Plack-Middleware-Statsd/changes
+    reported: 2025-05-13
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Plack-Middleware-Statsd
+last_checked: 1747142116
+latest_version: v0.8.0
+metacpan: https://metacpan.org/pod/Plack::Middleware::Statsd
