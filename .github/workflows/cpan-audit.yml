@@ -37,8 +37,8 @@ on:
             - 'README.pod'
             - 'README.md'
             - 'SECURITY.md'
-     pull_request:
-    # weekly build on the master branch just to see what CPAN is doing
+    pull_request:
+    workflow_dispatch:
     schedule:
         - cron: "37 3 * * 0"
 jobs:
