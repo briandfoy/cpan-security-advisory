@@ -67,12 +67,18 @@ jobs:
             image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v3
+            - name: show setup
+              run: |
+                which git
+                giv rev-parse HEAD
+                git remote show
+                git config --get remote.origin.url`
             - name: update toolchain
               run: |
                 cpan App::Cpan
                 cpan -v
             - name: install local dependencies
-              run: >
+              run: |
                 cpan -T -M http://www.cpan.org Antsy CPAN::DistnameInfo Data::Rx HTTP::Tiny JSON MetaCPAN::Client Module::CoreList Mojo::Util Mojo::File Mojo::JSON PerlIO::gzip Ref::Util YAML::Tiny YAML::XS || true
             - name: install latest
               run: |
