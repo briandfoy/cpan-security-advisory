@@ -70,6 +70,8 @@ jobs:
             - name: show setup
               run: |
                 which git
+                pwd
+                git config --global --add safe.directory /__w/cpan-security-advisory/cpan-security-advisory
                 git rev-parse HEAD
                 git remote show
                 git config --get remote.origin.url
