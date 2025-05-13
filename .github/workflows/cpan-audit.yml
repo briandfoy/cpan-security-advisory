@@ -77,7 +77,7 @@ jobs:
                 cpan -v
             - name: install local dependencies
               run: |
-                cpan -T -M http://www.cpan.org Antsy
+                cpan -T -M http://www.cpan.org Antsy CPAN::DistnameInfo
             - name: install latest
               run: |
                 cpan -T -M http://www.cpan.org .
