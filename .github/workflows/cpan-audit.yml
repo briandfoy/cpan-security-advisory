@@ -37,7 +37,7 @@ on:
             - 'README.pod'
             - 'README.md'
             - 'SECURITY.md'
-    pull_request:
+     pull_request:
     # weekly build on the master branch just to see what CPAN is doing
     schedule:
         - cron: "37 3 * * 0"
@@ -67,6 +67,7 @@ jobs:
             - uses: actions/checkout@v3
             - name: install latest
               run: |
+                cpan App::CPAN
                 cpan -T -M http://www.cpan.org .
             - name: Run tests
               run: |
