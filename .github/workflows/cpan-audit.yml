@@ -94,4 +94,4 @@ jobs:
                 prove -r -b xt
             - name: check CPAN::Audit
               run: |
-                cpan -T -M http://www.cpan.org CPAN::Audit
+                cpan -M http://www.cpan.org CPAN::Audit
