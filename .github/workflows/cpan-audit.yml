@@ -76,7 +76,7 @@ jobs:
                 cpan -v
             - name: install local dependencies
               run: >
-                cpan -T -M http://www.cpan.org Antsy CPAN::DistnameInfo HTTP::Tiny JSON MetaCPAN::Client Module::CoreList Mojo::Util Mojo::File Mojo::JSON PerlIO::gzip Ref::Util YAML::Tiny YAML::XS
+                cpan -T -M http://www.cpan.org Antsy CPAN::DistnameInfo HTTP::Tiny JSON MetaCPAN::Client Module::CoreList Mojo::Util Mojo::File Mojo::JSON PerlIO::gzip Ref::Util YAML::Tiny YAML::XS || true
             - name: install latest
               run: |
                 cpan -T -M http://www.cpan.org .
