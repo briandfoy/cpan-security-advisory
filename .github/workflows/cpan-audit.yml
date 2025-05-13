@@ -1,0 +1,78 @@
+---
+name: cpan-audit
+
+# https://github.com/actions/checkout/issues/1590
+env:
+    ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
+# https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-concurrency
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
+    cancel-in-progress: true
+
+on:
+    push:
+        branches:
+            - '**'
+            - '!**appveyor**'
+            - '!**circleci**'
+            - '!**macos**'
+            - '!**notest**'
+            - '!**release**'
+            - '!**windows**'
+        tags-ignore:
+            # I tag release pushes but those should have already been tested
+            - 'release-*'
+        paths-ignore:
+            # list all the files which are irrelevant to the tests
+            # non-code, support files, docs, etc
+            - '.appveyor.yml'
+            - '.circleci'
+            - '.gitattributes'
+            - '.github/'
+            - '.gitignore'
+            - '.releaserc'
+            - 'Changes'
+            - 'LICENSE'
+            - 'README.pod'
+            - 'README.md'
+            - 'SECURITY.md'
+    pull_request:
+    # weekly build on the master branch just to see what CPAN is doing
+    schedule:
+        - cron: "37 3 * * 0"
+jobs:
+    perl:
+        environment: automated_testing
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os:
+                    - ubuntu-latest
+                perl-version:
+                    - '5.20-buster'
+                    - '5.22-buster'
+                    - '5.24-buster'
+                    - '5.26-buster'
+                    - '5.28-buster'
+                    - '5.30-bullseye'
+                    - '5.32-bullseye'
+                    - '5.34-bullseye'
+                    - '5.36-bookworm'
+                    - '5.38-bookworm'
+                    - 'latest'
+        container:
+            image: perl:${{ matrix.perl-version }}
+        steps:
+            - uses: actions/checkout@v3
+            - name: install latest
+              run: |
+                cpan -T -M http://www.cpan.org .
+            - name: Run tests
+              run: |
+                perl Makefile.PL
+                make test
+                prove -r -b xt
+            - name: check CPAN::Audit
+              run: |
+                cpan -T -M http://www.cpan.org CPAN::Audit
