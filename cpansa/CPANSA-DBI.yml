@@ -147,7 +147,7 @@ advisories:
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. Using many arguments to methods for Callbacks may lead to memory corruption.
   fixed_versions:
-  - '>+1.632'
+  - '>=1.632'
   github_security_advisory:
   - GHSA-g483-mcjg-g334
   id: CPANSA-DBI-2013-7490
