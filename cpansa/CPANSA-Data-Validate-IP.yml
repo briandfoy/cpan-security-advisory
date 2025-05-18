@@ -21,7 +21,7 @@ advisories:
   reported: 2021-03-31
 cpansa_version: 2
 distribution: Data-Validate-IP
-last_checked: 1708150843
+last_checked: 1747589679
 latest_version: '0.31'
 metacpan: https://metacpan.org/pod/Data::Validate::IP
 repo: https://github.com/houseabsolute/Data-Validate-IP
