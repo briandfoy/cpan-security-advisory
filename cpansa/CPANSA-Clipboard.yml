@@ -22,4 +22,4 @@ distribution: Clipboard
 last_checked: 1747589679
 latest_version: '0.32'
 metacpan: https://metacpan.org/pod/Clipboard
-repo: git://github.com/shlomif/Clipboard.git
+repo: https://github.com/shlomif/Clipboard

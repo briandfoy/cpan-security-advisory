@@ -19,4 +19,4 @@ distribution: Image-Info
 last_checked: 1747589679
 latest_version: '1.45'
 metacpan: https://metacpan.org/pod/Image::Info
-repo: git://github.com/eserte/image-info.git
+repo: https://github.com/eserte/image-info

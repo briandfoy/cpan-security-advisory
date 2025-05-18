@@ -34,4 +34,4 @@ distribution: IO-Compress
 last_checked: 1708150852
 latest_version: '2.213'
 metacpan: https://metacpan.org/pod/IO::Compress
-repo: git://github.com/pmqs/IO-Compress.git
+repo: https://github.com/pmqs/IO-Compress

@@ -58,4 +58,4 @@ distribution: HTTP-Tiny
 last_checked: 1747589679
 latest_version: '0.090'
 metacpan: https://metacpan.org/pod/HTTP::Tiny
-repo: https://github.com/Perl-Toolchain-Gang/HTTP-Tiny.git
+repo: https://github.com/Perl-Toolchain-Gang/HTTP-Tiny

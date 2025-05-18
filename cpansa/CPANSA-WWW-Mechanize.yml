@@ -17,4 +17,4 @@ distribution: WWW-Mechanize
 last_checked: 1708150869
 latest_version: '2.19'
 metacpan: https://metacpan.org/pod/WWW::Mechanize
-repo: https://github.com/libwww-perl/WWW-Mechanize.git
+repo: https://github.com/libwww-perl/WWW-Mechanize

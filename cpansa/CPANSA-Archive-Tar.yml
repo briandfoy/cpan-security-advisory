@@ -78,4 +78,4 @@ distribution: Archive-Tar
 last_checked: 1708150830
 latest_version: '3.04'
 metacpan: https://metacpan.org/pod/Archive::Tar
-repo: https://github.com/jib/archive-tar-new.git
+repo: https://github.com/jib/archive-tar-new

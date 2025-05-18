@@ -21,3 +21,4 @@ distribution: Net-OAuth
 last_checked: 1735944333
 latest_version: 0.31
 metacpan: https://metacpan.org/pod/Net::OAuth
+repo: https://github.com/keeth/Net-OAuth
