@@ -74,82 +74,48 @@ Id format: `CPANSA-<dist-name>-<year>-<sequence>`
 Database is in YAML format with a simple structure.
 
 ```yaml
-- id: CPANSA-Mojolicious-2011-01
-  distribution: Mojolicious
-  reported: 2011-04-05
-  severity: critical
-  description: >
-    Directory traversal vulnerability in Path.pm in Mojolicious
-    before 1.16 allows remote attackers to read arbitrary files via a
-    %2f..%2f (encoded slash dot dot slash) in a URI.
-  cves:
-    - CVE-2011-1589
-  references:
-    - https://github.com/mojolicious/mojo/commit/b09854988c5b5b6a2ba53cc8661c4b2677da3818
-    - https://www.cvedetails.com/cve/CVE-2011-1589/
-  affected_versions: "< 1.16"
-  fixed_versions: ">= 1.16"
+---
+advisories:
+  - affected_versions:
+      - <9.31
+    cves: []
+    description: "Mojo::DOM did not correctly parse <script> tags.\n"
+    fixed_versions:
+      - '>=9.31'
+    github_security_advisory: []
+    id: CPANSA-Mojolicious-2022-03
+    references:
+      - https://github.com/mojolicious/mojo/commit/6f195d85db6756022d3599f7d2634975688c9550
+      - https://github.com/mojolicious/mojo/issues/2014
+      - https://github.com/mojolicious/mojo/issues/2015
+    reported: 2022-12-10
+    severity: ~
+cpansa_version: 2
+distribution: Mojolicious
+last_checked: 1747589679
+latest_version: 9.40
+metacpan: https://metacpan.org/pod/Mojolicious
+repo: https://github.com/mojolicious/mojo
 ```
 
 There may be an additional `comments` key with more information about
 the advisory, especially if the `description` comes from an external
 source, such as a CVE report.
 
-If the vulnerability is due to an embedded external library, add the
-`embedded_vulnerability` key, e.g.
-
-```yaml
-- affected_versions: ">=2.0.0"
-  cves:
-    - CVE-2021-46322
-  description: >
-    Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the
-    component duk_push_tval in duktape/duk_api_stack.c.
-  distribution: JavaScript-Duktape
-  fixed_versions: ~
-  id: CPANSA-JavaScript-Duktape-2021-46322
-  references:
-    - https://github.com/svaarala/duktape/issues/2448
-    - https://github.com/mamod/JavaScript-Duktape/issues/41
-  reported: 2022-01-20
-  severity: medium
-  embedded_vulnerability:
-    name: duktape
-    distributed_version: "2.2.0"
-```
-
-In some cases, the embedded external library may be part of another
-library. Add the parent library in brackets, e.g.
-```yaml
-  embedded_vulnerability:
-     distributed_version: "1.2.11"
-     name: zlib[libgit2]
-```
-
-There may be cases whether the Perl distribution relies on a
-particular version of another library with a security vulnerability
-that is installed on the host system, rather than embedded. This may
-be indicayed with the `external_vulnerability` key:
-```yaml
-  external_vulnerability:
-     distributed_version: "<=6.3"
-     name: readline
-```
-
 ## Check the results
 
 Check all the files for basic YAML:
 
-	$ make test_all
+	$ make -f Makefile.repo test_all
 
 Checking all the files can take a minute, so you can also just check
 the files that have changed:
 
-	$ make test_new
+	$ make -f Makefile.repo test_new
 
 Run the `lint` target to check all of the report files:
 
-	$ make lint
+	$ make -f Makefile.repo lint
 
 ## Command-line checks
 
