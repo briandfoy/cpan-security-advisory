@@ -1,96 +1,104 @@
 ---
 advisories:
-- affected_versions:
-  - <0.69
-  cves: []
-  description: |
-    Need SafeLoad and SafeDump analog to python
-  fixed_versions:
-  - '>=0.69'
-  github_security_advisory: []
-  id: CPANSA-YAML-LibYAML-2016-01
-  references:
-  - https://github.com/ingydotnet/yaml-libyaml-pm/issues/45
-  reported: 2016-03-10
-  severity: ~
-- affected_versions:
-  - <0.53
-  cves:
-  - CVE-2014-9130
-  description: |
-    scanner.c in LibYAML 0.1.5 and 0.1.6, as used in the YAML-LibYAML (aka YAML-XS) module for Perl, allows context-dependent attackers to cause a denial of service (assertion failure and crash) via vectors involving line-wrapping.
-  fixed_versions:
-  - '>=0.54'
-  github_security_advisory:
-  - GHSA-wrq2-fvvw-grpm
-  id: CPANSA-YAML-LibYAML-2014-9130
-  references:
-  - http://www.openwall.com/lists/oss-security/2014/11/29/3
-  - http://www.openwall.com/lists/oss-security/2014/11/28/8
-  - https://bitbucket.org/xi/libyaml/commits/2b9156756423e967cfd09a61d125d883fca6f4f2
-  - http://www.securityfocus.com/bid/71349
-  - http://secunia.com/advisories/59947
-  - https://bitbucket.org/xi/libyaml/issue/10/wrapped-strings-cause-assert-failure
-  - http://secunia.com/advisories/60944
-  - http://www.openwall.com/lists/oss-security/2014/11/28/1
-  - http://linux.oracle.com/errata/ELSA-2015-0100.html
-  - http://secunia.com/advisories/62723
-  - http://secunia.com/advisories/62705
-  - http://secunia.com/advisories/62774
-  - http://www.ubuntu.com/usn/USN-2461-2
-  - http://www.ubuntu.com/usn/USN-2461-3
-  - http://www.ubuntu.com/usn/USN-2461-1
-  - http://rhn.redhat.com/errata/RHSA-2015-0100.html
-  - http://www.debian.org/security/2014/dsa-3103
-  - http://rhn.redhat.com/errata/RHSA-2015-0112.html
-  - http://www.debian.org/security/2014/dsa-3102
-  - http://www.debian.org/security/2014/dsa-3115
-  - http://rhn.redhat.com/errata/RHSA-2015-0260.html
-  - http://lists.opensuse.org/opensuse-updates/2015-02/msg00078.html
-  - http://www.mandriva.com/security/advisories?name=MDVSA-2015:060
-  - http://www.mandriva.com/security/advisories?name=MDVSA-2014:242
-  - http://advisories.mageia.org/MGASA-2014-0508.html
-  - http://lists.opensuse.org/opensuse-updates/2016-04/msg00050.html
-  - http://secunia.com/advisories/62176
-  - http://secunia.com/advisories/62174
-  - http://secunia.com/advisories/62164
-  - https://exchange.xforce.ibmcloud.com/vulnerabilities/99047
-  - https://puppet.com/security/cve/cve-2014-9130
-  reported: 2014-12-08
-  severity: ~
-- affected_versions:
-  - '>0.38,<0.57'
-  cves:
-  - CVE-2012-1152
-  description: |
-    Multiple format string vulnerabilities in the error reporting functionality in the YAML::LibYAML (aka YAML-LibYAML and perl-YAML-LibYAML) module 0.38 for Perl allow remote attackers to cause a denial of service (process crash) via format string specifiers in a (1) YAML stream to the Load function, (2) YAML node to the load_node function, (3) YAML mapping to the load_mapping function, or (4) YAML sequence to the load_sequence function.
-  fixed_versions:
-  - '>=0.57'
-  github_security_advisory:
-  - GHSA-3h7q-h379-g658
-  id: CPANSA-YAML-LibYAML-2012-1152
-  references:
-  - https://bugzilla.redhat.com/show_bug.cgi?id=801738
-  - https://rt.cpan.org/Public/Bug/Display.html?id=46507
-  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077023.html
-  - http://www.openwall.com/lists/oss-security/2012/03/10/4
-  - http://www.openwall.com/lists/oss-security/2012/03/09/6
-  - http://www.debian.org/security/2012/dsa-2432
-  - http://www.securityfocus.com/bid/52381
-  - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=661548
-  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077782.html
-  - https://rt.cpan.org/Public/Bug/Display.html?id=75365
-  - http://secunia.com/advisories/48317
-  - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077004.html
-  - http://lists.opensuse.org/opensuse-updates/2012-08/msg00029.html
-  - http://secunia.com/advisories/50277
-  - http://lists.opensuse.org/opensuse-updates/2015-02/msg00078.html
-  - https://exchange.xforce.ibmcloud.com/vulnerabilities/73856
-  reported: 2012-09-09
-  severity: ~
+  - affected_versions:
+      - <0.69
+    cves: []
+    description: "Need SafeLoad and SafeDump analog to python\n"
+    fixed_versions:
+      - '>=0.69'
+    github_security_advisory: []
+    id: CPANSA-YAML-LibYAML-2016-01
+    references:
+      - https://github.com/ingydotnet/yaml-libyaml-pm/issues/45
+    reported: 2016-03-10
+    severity: ~
+  - affected_versions:
+      - <0.53
+    cves:
+      - CVE-2014-9130
+    description: "scanner.c in LibYAML 0.1.5 and 0.1.6, as used in the YAML-LibYAML (aka YAML-XS) module for Perl, allows context-dependent attackers to cause a denial of service (assertion failure and crash) via vectors involving line-wrapping.\n"
+    fixed_versions:
+      - '>=0.54'
+    github_security_advisory:
+      - GHSA-wrq2-fvvw-grpm
+    id: CPANSA-YAML-LibYAML-2014-9130
+    references:
+      - http://www.openwall.com/lists/oss-security/2014/11/29/3
+      - http://www.openwall.com/lists/oss-security/2014/11/28/8
+      - https://bitbucket.org/xi/libyaml/commits/2b9156756423e967cfd09a61d125d883fca6f4f2
+      - http://www.securityfocus.com/bid/71349
+      - http://secunia.com/advisories/59947
+      - https://bitbucket.org/xi/libyaml/issue/10/wrapped-strings-cause-assert-failure
+      - http://secunia.com/advisories/60944
+      - http://www.openwall.com/lists/oss-security/2014/11/28/1
+      - http://linux.oracle.com/errata/ELSA-2015-0100.html
+      - http://secunia.com/advisories/62723
+      - http://secunia.com/advisories/62705
+      - http://secunia.com/advisories/62774
+      - http://www.ubuntu.com/usn/USN-2461-2
+      - http://www.ubuntu.com/usn/USN-2461-3
+      - http://www.ubuntu.com/usn/USN-2461-1
+      - http://rhn.redhat.com/errata/RHSA-2015-0100.html
+      - http://www.debian.org/security/2014/dsa-3103
+      - http://rhn.redhat.com/errata/RHSA-2015-0112.html
+      - http://www.debian.org/security/2014/dsa-3102
+      - http://www.debian.org/security/2014/dsa-3115
+      - http://rhn.redhat.com/errata/RHSA-2015-0260.html
+      - http://lists.opensuse.org/opensuse-updates/2015-02/msg00078.html
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2015:060
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2014:242
+      - http://advisories.mageia.org/MGASA-2014-0508.html
+      - http://lists.opensuse.org/opensuse-updates/2016-04/msg00050.html
+      - http://secunia.com/advisories/62176
+      - http://secunia.com/advisories/62174
+      - http://secunia.com/advisories/62164
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/99047
+      - https://puppet.com/security/cve/cve-2014-9130
+    reported: 2014-12-08
+    severity: ~
+  - affected_versions:
+      - '>0.38,<0.57'
+    cves:
+      - CVE-2012-1152
+    description: "Multiple format string vulnerabilities in the error reporting functionality in the YAML::LibYAML (aka YAML-LibYAML and perl-YAML-LibYAML) module 0.38 for Perl allow remote attackers to cause a denial of service (process crash) via format string specifiers in a (1) YAML stream to the Load function, (2) YAML node to the load_node function, (3) YAML mapping to the load_mapping function, or (4) YAML sequence to the load_sequence function.\n"
+    fixed_versions:
+      - '>=0.57'
+    github_security_advisory:
+      - GHSA-3h7q-h379-g658
+    id: CPANSA-YAML-LibYAML-2012-1152
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=801738
+      - https://rt.cpan.org/Public/Bug/Display.html?id=46507
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077023.html
+      - http://www.openwall.com/lists/oss-security/2012/03/10/4
+      - http://www.openwall.com/lists/oss-security/2012/03/09/6
+      - http://www.debian.org/security/2012/dsa-2432
+      - http://www.securityfocus.com/bid/52381
+      - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=661548
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077782.html
+      - https://rt.cpan.org/Public/Bug/Display.html?id=75365
+      - http://secunia.com/advisories/48317
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077004.html
+      - http://lists.opensuse.org/opensuse-updates/2012-08/msg00029.html
+      - http://secunia.com/advisories/50277
+      - http://lists.opensuse.org/opensuse-updates/2015-02/msg00078.html
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/73856
+    reported: 2012-09-09
+    severity: ~
+  - affected_versions:
+      - <0.903.0
+    cves: []
+    description: ~
+    fixed_versions:
+      - '>=0.904.0'
+    github_security_advisory: []
+    id: CPANSA-YAML-LibYAML-2025-001
+    references: []
+    reported: ~
+    severity: ~
 cpansa_version: 2
 distribution: YAML-LibYAML
 last_checked: 1708150870
-latest_version: '0.904.0'
+latest_version: 0.904.0
 metacpan: https://metacpan.org/pod/YAML::LibYAML
 repo: https://github.com/ingydotnet/yaml-libyaml-pm
