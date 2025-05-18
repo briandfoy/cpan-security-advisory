@@ -23,4 +23,4 @@ distribution: Mite
 last_checked: 1744005551
 latest_version: 0.013000
 metacpan: https://metacpan.org/pod/Mite
-repo: git://github.com/tobyink/p5-mite.git
+repo: https://github.com/tobyink/p5-mite

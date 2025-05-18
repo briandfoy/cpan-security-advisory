@@ -22,4 +22,4 @@ distribution: Linux-Statm-Tiny
 last_checked: 1743737671
 latest_version: 0.0701
 metacpan: https://metacpan.org/pod/Linux::Statm::Tiny
-repo: git://github.com/robrwo/Linux-Statm-Tiny.git
+repo: https://github.com/robrwo/Linux-Statm-Tiny

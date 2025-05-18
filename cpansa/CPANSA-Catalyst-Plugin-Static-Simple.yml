@@ -20,4 +20,4 @@ distribution: Catalyst-Plugin-Static-Simple
 last_checked: 1708150832
 latest_version: '0.37'
 metacpan: https://metacpan.org/pod/Catalyst::Plugin::Static::Simple
-repo: git://git.shadowcat.co.uk/catagits/Catalyst-Plugin-Static-Simple.git
+repo: https://git.shadowcat.co.uk/catagits/Catalyst-Plugin-Static-Simple

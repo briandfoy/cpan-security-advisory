@@ -19,4 +19,4 @@ distribution: SVN-Look
 last_checked: 1708150868
 latest_version: '0.43'
 metacpan: https://metacpan.org/pod/SVN::Look
-repo: git://github.com/gnustavo/SVN-Look.git
+repo: https://github.com/gnustavo/SVN-Look

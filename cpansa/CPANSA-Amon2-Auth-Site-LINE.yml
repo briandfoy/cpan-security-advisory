@@ -21,4 +21,4 @@ distribution: Amon2-Auth-Site-LINE
 last_checked: 1744009618
 latest_version: 0.04
 metacpan: https://metacpan.org/pod/Amon2::Auth::Site::LINE
-repo: git://github.com/nipotan/p5-Amon2-Auth-Site-LINE.git
+repo: https://github.com/nipotan/p5-Amon2-Auth-Site-LINE

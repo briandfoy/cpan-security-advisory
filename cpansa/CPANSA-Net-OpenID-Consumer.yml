@@ -31,4 +31,4 @@ distribution: Net-OpenID-Consumer
 last_checked: 1708150860
 latest_version: '1.18'
 metacpan: https://metacpan.org/pod/Net::OpenID::Consumer
-repo: git://github.com/wrog/Net-OpenID-Consumer.git
+repo: https://github.com/wrog/Net-OpenID-Consumer

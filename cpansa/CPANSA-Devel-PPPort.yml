@@ -19,4 +19,4 @@ distribution: Devel-PPPort
 last_checked: 1708150845
 latest_version: '3.68'
 metacpan: https://metacpan.org/pod/Devel::PPPort
-repo: git://github.com/Dual-Life/Devel-PPPort.git
+repo: https://github.com/Dual-Life/Devel-PPPort

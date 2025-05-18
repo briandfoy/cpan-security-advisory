@@ -22,4 +22,4 @@ distribution: HTTP-Body
 last_checked: 1747589679
 latest_version: '1.23'
 metacpan: https://metacpan.org/pod/HTTP::Body
-repo: git://git.shadowcat.co.uk/catagits/HTTP-Body.git
+repo: https://git.shadowcat.co.uk/catagits/HTTP-Body

@@ -22,4 +22,4 @@ distribution: Sub-HandlesVia
 last_checked: 1744010839
 latest_version: 0.050002
 metacpan: https://metacpan.org/pod/Sub::HandlesVia
-repo: git://github.com/tobyink/p5-sub-handlesvia.git
+repo: https://github.com/tobyink/p5-sub-handlesvia

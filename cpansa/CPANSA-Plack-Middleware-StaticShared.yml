@@ -18,4 +18,4 @@ distribution: Plack-Middleware-StaticShared
 last_checked: 1708150863
 latest_version: '0.06'
 metacpan: https://metacpan.org/pod/Plack::Middleware::StaticShared
-repo: git://github.com/cho45/Plack-Middleware-StaticShared.git
+repo: https://github.com/cho45/Plack-Middleware-StaticShared

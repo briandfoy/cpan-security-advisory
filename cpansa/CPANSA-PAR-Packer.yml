@@ -20,4 +20,4 @@ distribution: PAR-Packer
 last_checked: 1747589679
 latest_version: '1.063'
 metacpan: https://metacpan.org/pod/PAR::Packer
-repo: git://github.com/rschupp/PAR-Packer.git
+repo: https://github.com/rschupp/PAR-Packer

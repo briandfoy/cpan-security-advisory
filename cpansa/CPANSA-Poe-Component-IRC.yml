@@ -21,4 +21,4 @@ distribution: POE-Component-IRC
 last_checked: 1708150865
 latest_version: '6.93'
 metacpan: https://metacpan.org/pod/POE::Component::IRC
-repo: git://github.com/bingos/poe-component-irc.git
+repo: https://github.com/bingos/poe-component-irc

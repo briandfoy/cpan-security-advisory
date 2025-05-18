@@ -19,4 +19,4 @@ distribution: File-DataClass
 last_checked: 1708150847
 latest_version: 0.73.1
 metacpan: https://metacpan.org/pod/File::DataClass
-repo: git://github.com/pjfl/p5-file-dataclass.git
+repo: https://github.com/pjfl/p5-file-dataclass

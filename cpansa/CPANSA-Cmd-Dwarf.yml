@@ -17,4 +17,4 @@ distribution: Cmd-Dwarf
 last_checked: 1708150837
 latest_version: '1.83'
 metacpan: https://metacpan.org/pod/Cmd::Dwarf
-repo: git://github.com/seagirl/dwarf.git
+repo: https://github.com/seagirl/dwarf

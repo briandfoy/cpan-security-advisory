@@ -24,4 +24,4 @@ distribution: Data-Validate-IP
 last_checked: 1708150843
 latest_version: '0.31'
 metacpan: https://metacpan.org/pod/Data::Validate::IP
-repo: git://github.com/houseabsolute/Data-Validate-IP.git
+repo: https://github.com/houseabsolute/Data-Validate-IP

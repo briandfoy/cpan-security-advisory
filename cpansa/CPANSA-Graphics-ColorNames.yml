@@ -19,4 +19,4 @@ distribution: Graphics-ColorNames
 last_checked: 1708150850
 latest_version: v3.5.0
 metacpan: https://metacpan.org/pod/Graphics::ColorNames
-repo: git://github.com/robrwo/Graphics-ColorNames.git
+repo: https://github.com/robrwo/Graphics-ColorNames

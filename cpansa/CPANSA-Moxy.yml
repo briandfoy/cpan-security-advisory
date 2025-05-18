@@ -17,4 +17,4 @@ distribution: Moxy
 last_checked: 1708150859
 latest_version: '0.70'
 metacpan: https://metacpan.org/pod/Moxy
-repo: git://github.com/kan/moxy.git
+repo: https://github.com/kan/moxy

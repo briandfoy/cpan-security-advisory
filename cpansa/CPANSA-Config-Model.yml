@@ -48,4 +48,4 @@ distribution: Config-Model
 last_checked: 1747589679
 latest_version: '2.155'
 metacpan: https://metacpan.org/pod/Config::Model
-repo: git://github.com/dod38fr/config-model.git
+repo: https://github.com/dod38fr/config-model

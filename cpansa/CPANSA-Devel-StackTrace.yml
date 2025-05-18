@@ -23,4 +23,4 @@ distribution: Devel-StackTrace
 last_checked: 1708150845
 latest_version: '2.05'
 metacpan: https://metacpan.org/pod/Devel::StackTrace
-repo: git://github.com/houseabsolute/Devel-StackTrace.git
+repo: https://github.com/houseabsolute/Devel-StackTrace

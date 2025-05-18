@@ -22,4 +22,4 @@ distribution: Pinto
 last_checked: 1708150863
 latest_version: '0.14'
 metacpan: https://metacpan.org/pod/Pinto
-repo: git://github.com/thaljef/Pinto.git
+repo: https://github.com/thaljef/Pinto

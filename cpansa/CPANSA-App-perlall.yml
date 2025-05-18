@@ -41,4 +41,4 @@ distribution: App-perlall
 last_checked: 1708150830
 latest_version: '0.51'
 metacpan: https://metacpan.org/pod/App::perlall
-repo: git://github.com/rurban/App-perlall.git
+repo: https://github.com/rurban/App-perlall

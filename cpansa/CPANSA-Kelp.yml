@@ -22,4 +22,4 @@ distribution: Kelp
 last_checked: 1747589679
 latest_version: '2.21'
 metacpan: https://metacpan.org/pod/Kelp
-repo: git://github.com/sgnix/kelp.git
+repo: https://github.com/sgnix/kelp

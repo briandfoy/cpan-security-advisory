@@ -27,4 +27,4 @@ distribution: Alien-PCRE2
 last_checked: 1708150827
 latest_version: '0.017000'
 metacpan: https://metacpan.org/pod/Alien::PCRE2
-repo: git://github.com/wbraswell/alien-pcre2.git
+repo: https://github.com/wbraswell/alien-pcre2

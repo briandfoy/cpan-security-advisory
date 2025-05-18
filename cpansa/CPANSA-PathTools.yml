@@ -33,4 +33,4 @@ distribution: PathTools
 last_checked: 1708150862
 latest_version: '3.75'
 metacpan: https://metacpan.org/pod/PathTools
-repo: git://perl5.git.perl.org/perl.git
+repo: https://perl5.git.perl.org/perl

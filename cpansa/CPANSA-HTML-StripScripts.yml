@@ -21,4 +21,4 @@ distribution: HTML-StripScripts
 last_checked: 1708150851
 latest_version: '1.06'
 metacpan: https://metacpan.org/pod/HTML::StripScripts
-repo: git://github.com/clintongormley/perl-html-stripscripts.git
+repo: https://github.com/clintongormley/perl-html-stripscripts

@@ -18,4 +18,4 @@ distribution: LWP-Protocol-Net-Curl
 last_checked: 1747589679
 latest_version: '0.027'
 metacpan: https://metacpan.org/pod/LWP::Protocol::Net::Curl
-repo: git://github.com/creaktive/LWP-Protocol-Net-Curl.git
+repo: https://github.com/creaktive/LWP-Protocol-Net-Curl

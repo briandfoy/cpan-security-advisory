@@ -21,4 +21,4 @@ distribution: CPAN-Checksums
 last_checked: 1708150840
 latest_version: '2.14'
 metacpan: https://metacpan.org/pod/CPAN::Checksums
-repo: git://github.com/andk/cpan-checksums.git
+repo: https://github.com/andk/cpan-checksums

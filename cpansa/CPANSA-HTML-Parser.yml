@@ -27,4 +27,4 @@ distribution: HTML-Parser
 last_checked: 1747589679
 latest_version: '3.83'
 metacpan: https://metacpan.org/pod/HTML::Parser
-repo: https://github.com/libwww-perl/HTML-Parser.git
+repo: https://github.com/libwww-perl/HTML-Parser

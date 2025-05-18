@@ -19,4 +19,4 @@ distribution: HTTP-Session2
 last_checked: 1708150851
 latest_version: '1.10'
 metacpan: https://metacpan.org/pod/HTTP::Session2
-repo: git://github.com/tokuhirom/HTTP-Session2.git
+repo: https://github.com/tokuhirom/HTTP-Session2

@@ -29,4 +29,4 @@ distribution: Config-IniFiles
 last_checked: 1708150839
 latest_version: '3.000003'
 metacpan: https://metacpan.org/pod/Config::IniFiles
-repo: git://github.com/shlomif/perl-Config-IniFiles.git
+repo: https://github.com/shlomif/perl-Config-IniFiles

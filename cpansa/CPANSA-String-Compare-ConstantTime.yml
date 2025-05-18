@@ -19,4 +19,4 @@ distribution: String-Compare-ConstantTime
 last_checked: 1743736186
 latest_version: 0.321
 metacpan: https://metacpan.org/pod/String::Compare::ConstantTime
-repo: git://github.com/hoytech/String-Compare-ConstantTime.git
+repo: https://github.com/hoytech/String-Compare-ConstantTime

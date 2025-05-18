@@ -21,5 +21,5 @@ distribution: perl-ldap
 last_checked: 1708150860
 latest_version: '0.68'
 metacpan: https://metacpan.org/pod/perl::ldap
-repo: git://github.com/perl-ldap/perl-ldap.git
+repo: https://github.com/perl-ldap/perl-ldap
 main_module: Net::LDAP
