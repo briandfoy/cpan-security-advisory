@@ -1,0 +1,39 @@
+---
+advisories:
+  - affected_versions:
+      - '<=0.8.4'
+    cves:
+      - CVE-2025-40906
+      - CVE-2017-14227
+      - CVE-2018-16790
+      - CVE-2023-0437
+      - CVE-2024-6381
+      - CVE-2024-6383
+      - CVE-2025-0755
+    description: >
+        BSON::XS versions 0.8.4 and earlier for Perl includes a bundled libbson 1.1.7, which has several vulnerabilities.
+
+        Those include CVE-2017-14227, CVE-2018-16790, CVE-2023-0437, CVE-2024-6381, CVE-2024-6383, and CVE-2025-0755.
+
+        BSON-XS was the official Perl XS implementation of MongoDB's BSON serialization, but this distribution has reached its end of life as of August 13, 2020 and is no longer supported.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-5pww-x83q-7gjh
+      - GHSA-98vg-qmpv-23vr
+      - GHSA-vmg6-94hc-5vqp
+      - GHSA-8549-4c5j-x7g2
+      - GHSA-vc2m-fm8c-xx2j
+      - GHSA-w25p-2jj3-j5vr
+      - GHSA-x43h-8pfv-xx24
+    id: CPANSA-BSON-XS-2025-40906
+    references:
+      - https://lists.debian.org/debian-lts-announce/2025/05/msg00012.html
+      - https://www.mongodb.com/community/forums/t/mongodb-perl-driver-end-of-life/7890
+    reported: 2025-05-16
+    severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: BSON-XS
+last_checked: 1747578660
+latest_version: v0.8.4
+metacpan: https://metacpan.org/pod/BSON::XS
