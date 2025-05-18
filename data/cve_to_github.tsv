@@ -334,46 +334,46 @@ CVE-2017-10672	GHSA-v3c8-h936-vqgh	unreviewed	cpansa/CPANSA-XML-LibXML.yml
 CVE-2016-9180	GHSA-6wjc-jvcr-hcxw	unreviewed	cpansa/CPANSA-XML-Twig.yml
 CVE-2014-9130	GHSA-wrq2-fvvw-grpm	unreviewed	cpansa/CPANSA-YAML-LibYAML.yml
 CVE-2012-1152	GHSA-3h7q-h379-g658	unreviewed	cpansa/CPANSA-YAML-LibYAML.yml
-CVE-2019-10768	GHSA-89mq-4x47-5v83	reviewed
-CVE-2019-14863	GHSA-r5fx-8r73-v86c	reviewed
-CVE-2020-7676	GHSA-mhp6-pxh8-r675	reviewed
-CVE-2008-0171	GHSA-mc8j-3vrc-57vf	unreviewed
-CVE-2008-0172	GHSA-6rjv-3558-988c	unreviewed
-CVE-2019-20921	GHSA-7c82-mp33-r854	reviewed
-CVE-2018-14040	GHSA-3wqf-4x89-9g79	reviewed
-CVE-2018-14041	GHSA-pj7m-g53m-7638	reviewed
-CVE-2018-14042	GHSA-7mvr-5x2g-wfc8	reviewed
-CVE-2018-20676	GHSA-3mgp-fx93-9xv5	reviewed
-CVE-2018-20677	GHSA-ph58-4vrj-w6hr	reviewed
-CVE-2019-8331	GHSA-9v3m-8fp8-mj99	reviewed
-CVE-2016-10735	GHSA-4p24-vmcr-4gqj	reviewed
-CVE-2020-8927	GHSA-5v8v-66v8-mwm7	reviewed
-CVE-2020-7746	GHSA-h68q-55jf-x68w	reviewed
-CVE-2020-36254	GHSA-36m7-j2mr-5864	unreviewed
-CVE-2019-12953	GHSA-6hj9-w8vp-p698	unreviewed
-CVE-2018-15599	GHSA-g4h3-rm2q-r287	unreviewed
-CVE-2021-46322	GHSA-hmgv-4jwm-xc9x	unreviewed
-CVE-2015-0852	GHSA-vg9f-qf95-c67j	unreviewed
-CVE-2009-0583	GHSA-hc6x-m9mp-6xc2	unreviewed
-CVE-2009-0584	GHSA-3cwm-mjh6-3hwq	unreviewed
-CVE-2009-0792	GHSA-c674-58j3-3v3w	unreviewed
-CVE-2009-3743	GHSA-3p47-jqhp-gxp9	unreviewed
-CVE-2009-4897	GHSA-53pw-2446-9fc8	unreviewed
-CVE-2015-3228	GHSA-jf9j-9gh2-gp45	unreviewed
-CVE-2016-9601	GHSA-vf87-jj8q-h556	unreviewed
-CVE-2020-7105	GHSA-cjp9-9h2g-g3x5	unreviewed
-CVE-2018-7159	GHSA-87vg-5pwm-8x6w	unreviewed
-CVE-2018-12121	GHSA-2p2c-vwq7-7vg6	unreviewed
-CVE-2020-11022	GHSA-gxr4-xjj5-5px2	reviewed
-CVE-2020-11023	GHSA-jpcq-cgw6-v4j6	reviewed
-CVE-2019-11358	GHSA-6c3j-c64m-qhgq	reviewed
-CVE-2015-9251	GHSA-rmxg-73gg-4p98	reviewed
-CVE-2011-4969	GHSA-579v-mp3v-rrw5	reviewed
-CVE-2012-6708	GHSA-2pqj-h3vj-pqgw	reviewed
-CVE-2020-7656	GHSA-q4m3-2j7h-f7xw	reviewed
-CVE-2019-5428	GHSA-wv67-q8rr-grjp	reviewed
-CVE-2014-6071	GHSA-q44p-q588-242q	unreviewed
-CVE-2010-5312	GHSA-wcm2-9c89-wmfm	reviewed
+CVE-2019-10768	GHSA-89mq-4x47-5v83	reviewed	?
+CVE-2019-14863	GHSA-r5fx-8r73-v86c	reviewed	?
+CVE-2020-7676	GHSA-mhp6-pxh8-r675	reviewed	?
+CVE-2008-0171	GHSA-mc8j-3vrc-57vf	unreviewed	?
+CVE-2008-0172	GHSA-6rjv-3558-988c	unreviewed	?
+CVE-2019-20921	GHSA-7c82-mp33-r854	reviewed	?
+CVE-2018-14040	GHSA-3wqf-4x89-9g79	reviewed	?
+CVE-2018-14041	GHSA-pj7m-g53m-7638	reviewed	?
+CVE-2018-14042	GHSA-7mvr-5x2g-wfc8	reviewed	?
+CVE-2018-20676	GHSA-3mgp-fx93-9xv5	reviewed	?
+CVE-2018-20677	GHSA-ph58-4vrj-w6hr	reviewed	?
+CVE-2019-8331	GHSA-9v3m-8fp8-mj99	reviewed	?
+CVE-2016-10735	GHSA-4p24-vmcr-4gqj	reviewed	?
+CVE-2020-8927	GHSA-5v8v-66v8-mwm7	reviewed	?
+CVE-2020-7746	GHSA-h68q-55jf-x68w	reviewed	?
+CVE-2020-36254	GHSA-36m7-j2mr-5864	unreviewed	?
+CVE-2019-12953	GHSA-6hj9-w8vp-p698	unreviewed	?
+CVE-2018-15599	GHSA-g4h3-rm2q-r287	unreviewed	?
+CVE-2021-46322	GHSA-hmgv-4jwm-xc9x	unreviewed	?
+CVE-2015-0852	GHSA-vg9f-qf95-c67j	unreviewed	?
+CVE-2009-0583	GHSA-hc6x-m9mp-6xc2	unreviewed	?
+CVE-2009-0584	GHSA-3cwm-mjh6-3hwq	unreviewed	?
+CVE-2009-0792	GHSA-c674-58j3-3v3w	unreviewed	?
+CVE-2009-3743	GHSA-3p47-jqhp-gxp9	unreviewed	?
+CVE-2009-4897	GHSA-53pw-2446-9fc8	unreviewed	?
+CVE-2015-3228	GHSA-jf9j-9gh2-gp45	unreviewed	?
+CVE-2016-9601	GHSA-vf87-jj8q-h556	unreviewed	?
+CVE-2020-7105	GHSA-cjp9-9h2g-g3x5	unreviewed	?
+CVE-2018-7159	GHSA-87vg-5pwm-8x6w	unreviewed	?
+CVE-2018-12121	GHSA-2p2c-vwq7-7vg6	unreviewed	?
+CVE-2020-11022	GHSA-gxr4-xjj5-5px2	reviewed	?
+CVE-2020-11023	GHSA-jpcq-cgw6-v4j6	reviewed	?
+CVE-2019-11358	GHSA-6c3j-c64m-qhgq	reviewed	?
+CVE-2015-9251	GHSA-rmxg-73gg-4p98	reviewed	?
+CVE-2011-4969	GHSA-579v-mp3v-rrw5	reviewed	?
+CVE-2012-6708	GHSA-2pqj-h3vj-pqgw	reviewed	?
+CVE-2020-7656	GHSA-q4m3-2j7h-f7xw	reviewed	?
+CVE-2019-5428	GHSA-wv67-q8rr-grjp	reviewed	?
+CVE-2014-6071	GHSA-q44p-q588-242q	unreviewed	?
+CVE-2010-5312	GHSA-wcm2-9c89-wmfm	reviewed	?
 CVE-2016-7103	GHSA-hpcf-8vf9-q4gj	reviewed
 CVE-2021-41182	GHSA-9gj3-hwp5-pmwc	reviewed
 CVE-2021-41183	GHSA-j7qv-pgf6-hvh4	reviewed
