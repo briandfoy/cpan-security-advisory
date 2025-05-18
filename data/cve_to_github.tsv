@@ -1,4 +1,4 @@
-# CVE GHSA TYPE FILE
+#CVE	GHSA	TYPE	FILE
 CVE-2012-5377	GHSA-64cp-j7mg-j33g	unreviewed	cpansa/CPANSA-ActivePerl.yml
 CVE-2006-2856	GHSA-8xc3-rg94-5c3f	unreviewed	cpansa/CPANSA-ActivePerl.yml
 CVE-2004-2286	GHSA-8g3v-vx3x-982v	unreviewed	cpansa/CPANSA-ActivePerl.yml
