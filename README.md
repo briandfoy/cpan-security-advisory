@@ -59,10 +59,6 @@ the distribution name you want:
 
 	$ perl util/make_record CVE-2022-1234 Some-Package
 
-Then, add the report to the file `cpansa/CPANSA-Some-Package.yml`. If
-there are already reports in that file, remember to strip the `---` from
-the top of the output you just created.
-
 ### Record format
 
 Id format: `CPANSA-<dist-name>-<year>-<sequence>`
