@@ -11,7 +11,8 @@ advisories:
     that is based on IP addresses.
   fixed_versions:
   - '>=5.000'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-42vc-w257-pp26
   id: CPANSA-Net-IPAddress-Util-2021-47156
   references:
   - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
