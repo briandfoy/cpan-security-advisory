@@ -274,7 +274,7 @@ advisories:
     severity: ~
 cpansa_version: 2
 distribution: Mojolicious
-last_checked: 1746467931
-latest_version: 9.39
+last_checked: 1747589679
+latest_version: 9.40
 metacpan: https://metacpan.org/pod/Mojolicious
 repo: https://github.com/mojolicious/mojo.git

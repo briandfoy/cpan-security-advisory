@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Apache-Session-Browseable
-last_checked: 1708150828
-latest_version: v1.3.13
+last_checked: 1747589679
+latest_version: v1.3.16
 metacpan: https://metacpan.org/pod/Apache::Session::Browseable
 repo: https://github.com/LemonLDAPNG/Apache-Session-Browseable

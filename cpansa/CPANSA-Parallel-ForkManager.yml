@@ -19,6 +19,6 @@ advisories:
 cpansa_version: 2
 distribution: Parallel-ForkManager
 last_checked: 1708150862
-latest_version: '2.02'
+latest_version: '2.03'
 metacpan: https://metacpan.org/pod/Parallel::ForkManager
 repo: https://github.com/dluxhu/perl-parallel-forkmanager.git

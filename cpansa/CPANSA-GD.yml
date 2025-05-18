@@ -36,7 +36,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: GD
-last_checked: 1708150849
-latest_version: '2.78'
+last_checked: 1747589679
+latest_version: '2.83'
 metacpan: https://metacpan.org/pod/GD
 repo: git://github.com/lstein/Perl-GD.git

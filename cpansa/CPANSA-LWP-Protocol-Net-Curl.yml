@@ -15,7 +15,7 @@ advisories:
   reported: 2012-11-28
 cpansa_version: 2
 distribution: LWP-Protocol-Net-Curl
-last_checked: 1708150856
-latest_version: '0.026'
+last_checked: 1747589679
+latest_version: '0.027'
 metacpan: https://metacpan.org/pod/LWP::Protocol::Net::Curl
 repo: git://github.com/creaktive/LWP-Protocol-Net-Curl.git

@@ -19,7 +19,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: Clipboard
-last_checked: 1708150834
-latest_version: '0.28'
+last_checked: 1747589679
+latest_version: '0.32'
 metacpan: https://metacpan.org/pod/Clipboard
 repo: git://github.com/shlomif/Clipboard.git

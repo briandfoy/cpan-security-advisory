@@ -21,7 +21,7 @@ advisories:
   reported: 2021-03-29
 cpansa_version: 2
 distribution: Net-Netmask
-last_checked: 1708150860
-latest_version: '2.0002'
+last_checked: 1747589679
+latest_version: '2.0003'
 metacpan: https://metacpan.org/pod/Net::Netmask
 repo: git://github.com/jmaslak/Net-Netmask.git

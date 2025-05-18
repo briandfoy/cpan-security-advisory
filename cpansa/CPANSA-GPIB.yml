@@ -19,6 +19,7 @@ advisories:
 cpansa_version: 2
 distribution: GPIB
 last_checked: 1708150849
-latest_version: 0.30
+latest_version: 0_30
+comment: dist version is 0_30 by mistake
 metacpan: https://metacpan.org/pod/GPIB
 repo: ~

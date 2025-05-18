@@ -91,6 +91,6 @@ advisories:
 cpansa_version: 2
 distribution: YAML-LibYAML
 last_checked: 1708150870
-latest_version: '0.89'
+latest_version: '0.904.0'
 metacpan: https://metacpan.org/pod/YAML::LibYAML
 repo: https://github.com/ingydotnet/yaml-libyaml-pm.git

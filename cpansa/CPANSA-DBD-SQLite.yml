@@ -923,7 +923,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: DBD-SQLite
-last_checked: 1708150844
-latest_version: '1.74'
+last_checked: 1747589679
+latest_version: '1.76'
 metacpan: https://metacpan.org/pod/DBD::SQLite
 repo: https://github.com/DBD-SQLite/DBD-SQLite

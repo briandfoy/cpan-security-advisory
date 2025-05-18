@@ -16,7 +16,7 @@ advisories:
   reported: 2018-06-18
 cpansa_version: 2
 distribution: PGObject-Util-DBAdmin
-last_checked: 1708150863
-latest_version: v1.6.1
+last_checked: 1747589679
+latest_version: v1.6.2
 metacpan: https://metacpan.org/pod/PGObject::Util::DBAdmin
 repo: https://github.com/ledgersmb/PGObject-Util-DBAdmin.git

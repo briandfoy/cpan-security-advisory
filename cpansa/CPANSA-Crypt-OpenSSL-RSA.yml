@@ -23,7 +23,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Crypt-OpenSSL-RSA
-last_checked: 1714517322
-latest_version: '0.33'
+last_checked: 1747589679
+latest_version: '0.35'
 metacpan: https://metacpan.org/pod/Crypt::OpenSSL::RSA
 repo: https://github.com/toddr/Crypt-OpenSSL-RSA

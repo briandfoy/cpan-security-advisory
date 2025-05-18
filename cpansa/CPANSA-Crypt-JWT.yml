@@ -33,7 +33,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Crypt-JWT
-last_checked: 1708150841
-latest_version: '0.035'
+last_checked: 1747589679
+latest_version: '0.037'
 metacpan: https://metacpan.org/pod/Crypt::JWT
 repo: https://github.com/DCIT/perl-Crypt-JWT

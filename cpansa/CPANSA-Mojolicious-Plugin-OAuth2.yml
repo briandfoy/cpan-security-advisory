@@ -15,7 +15,7 @@ advisories:
   reported: 2014-10-07
 cpansa_version: 2
 distribution: Mojolicious-Plugin-OAuth2
-last_checked: 1708150858
+last_checked: 1747589679
 latest_version: '2.02'
 metacpan: https://metacpan.org/pod/Mojolicious::Plugin::OAuth2
 repo: https://github.com/marcusramberg/Mojolicious-Plugin-OAuth2.git

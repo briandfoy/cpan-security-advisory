@@ -20,7 +20,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: LWP-Protocol-https
-last_checked: 1708150856
-latest_version: '6.13'
+last_checked: 1747589679
+latest_version: '6.14'
 metacpan: https://metacpan.org/pod/LWP::Protocol::https
 repo: https://github.com/libwww-perl/LWP-Protocol-https.git

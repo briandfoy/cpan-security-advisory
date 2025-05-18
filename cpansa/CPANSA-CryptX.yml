@@ -16,7 +16,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CryptX
-last_checked: 1708150842
-latest_version: '0.080'
+last_checked: 1747589679
+latest_version: '0.086'
 metacpan: https://metacpan.org/pod/CryptX
 repo: https://github.com/DCIT/perl-CryptX

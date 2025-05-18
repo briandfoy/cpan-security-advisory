@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: XAO-Web
-last_checked: 1708150869
-latest_version: '1.91'
+last_checked: 1747589679
+latest_version: '1.93'
 metacpan: https://metacpan.org/pod/XAO::Web
 repo: git://github.com/amaltsev/XAO-Web.git

@@ -15,7 +15,7 @@ advisories:
   reported: 2014-02-12
 cpansa_version: 2
 distribution: Perl-Version
-last_checked: 1708150862
-latest_version: '1.016'
+last_checked: 1747589679
+latest_version: '1.018'
 metacpan: https://metacpan.org/pod/Perl::Version
 repo: https://github.com/briandfoy/perl-version

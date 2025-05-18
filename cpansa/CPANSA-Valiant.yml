@@ -17,6 +17,6 @@ advisories:
 cpansa_version: 2
 distribution: Valiant
 last_checked: 1733650659
-latest_version: 0.002011
+latest_version: 0.002017
 metacpan: https://metacpan.org/pod/Valiant
 repo: https://github.com/jjn1056/Valiant

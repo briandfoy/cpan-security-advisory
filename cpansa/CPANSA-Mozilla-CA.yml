@@ -35,7 +35,7 @@ advisories:
   severity: low
 cpansa_version: 2
 distribution: Mozilla-CA
-last_checked: 1724646111
-latest_version: '20240730'
+last_checked: 1747589679
+latest_version: '20250202'
 metacpan: https://metacpan.org/pod/Mozilla::CA
 repo: ~

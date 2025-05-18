@@ -41,6 +41,6 @@ advisories:
 cpansa_version: 2
 distribution: Spreadsheet-ParseXLSX
 last_checked: 1708150867
-latest_version: '0.31'
+latest_version: '0.36'
 metacpan: https://metacpan.org/pod/Spreadsheet::ParseXLSX
 repo: https://github.com/MichaelDaum/spreadsheet-parsexlsx

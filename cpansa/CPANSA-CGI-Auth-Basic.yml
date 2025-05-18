@@ -13,7 +13,7 @@ advisories:
   reported: 2007-12-30
 cpansa_version: 2
 distribution: CGI-Auth-Basic
-last_checked: 1708150833
+last_checked: 1747589679
 latest_version: '1.24'
 metacpan: https://metacpan.org/pod/CGI::Auth::Basic
 repo: git://github.com/burak/CPAN-CGI-Auth-Basic.git

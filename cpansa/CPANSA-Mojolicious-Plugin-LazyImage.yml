@@ -24,7 +24,7 @@ advisories:
   reported: 2024-06-26
   severity: ~
 distribution: Mojolicious-Plugin-LazyImage
-last_checked: 1722937056
+last_checked: 1747589679
 latest_version: '0.01'
 metacpan: https://metacpan.org/pod/Mojolicious::Plugin::LazyImage
 repo: https://github.com/jhthorsen/mojolicious-plugin-lazyimage
