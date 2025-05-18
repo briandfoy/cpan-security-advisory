@@ -54,6 +54,7 @@ advisories:
       - https://metacpan.org/dist/Crypt-CBC/source/lib/Crypt/CBC.pm#L777
       - https://perldoc.perl.org/functions/rand
       - https://security.metacpan.org/docs/guides/random-data-for-security.html
+      - https://github.com/lstein/Lib-Crypt-CBC/issues/9
     reported: 2025-04-13
     severity: ~
 cpansa_version: 2
