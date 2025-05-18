@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250518.002 2025-05-18T20:23:11Z
+	* data update for 2025-05-18
+
 20250513.001 2025-05-13T15:23:15Z
 	* data update for 2025-05-13
 	* new report for Plack-Middleware-Statsd
