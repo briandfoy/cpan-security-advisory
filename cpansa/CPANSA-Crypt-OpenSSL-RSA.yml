@@ -11,9 +11,10 @@ advisories:
     achieve successful decryption, an attacker would have to be able to
     send a large number of trial messages. The vulnerability affects the
     legacy PKCS#1v1.5 RSA encryption padding mode.
-  github_security_advisory: []
   fixed_versions:
   - '>=0.35'
+  github_security_advisory:
+  - GHSA-974v-c5m7-m9wc
   id: CPANSA-Crypt-OpenSSL-RSA-2024-2467
   references:
   - https://access.redhat.com/security/cve/CVE-2024-2467

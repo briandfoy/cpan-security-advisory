@@ -11,7 +11,8 @@ advisories:
     control that is based on IP addresses.
   fixed_versions:
   - '>=0.22'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-gpvh-42rv-p6wg
   id: CPANSA-Net-CIDR-Lite-2021-47154
   references:
   - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
