@@ -1,0 +1,25 @@
+#!/usr/bin/env perl
+use v5.26;
+use strict;
+
+use lib qw(lib);
+use Local::CPANSA qw(:cpan :reports);
+
+foreach my $file ( get_all_reports()->@* ) {
+	say STDERR "Processing <$file>";
+	my $data = 	load_report($file);
+
+	my $unfixed = grep { ! defined $_->{fixed_versions} or $_->{fixed_versions}->@* == 0 } $data->{advisories}->@*;
+
+	my $latest_on_cpan = latest_on_cpan( $data->{distribution} );
+	next unless defined $latest_on_cpan; # some things disappear
+	next if $data->{latest_version} eq $latest_on_cpan;
+
+	say <<~"HERE";
+			Unfixed: $unfixed
+			Report latest: $data->{latest_version}
+			CPAN latest:   $latest_on_cpan
+			Last checked:  $data->{last_checked}
+			Distribution:  $data->{distribution}
+		HERE
+	}

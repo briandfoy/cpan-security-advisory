@@ -2,6 +2,31 @@ package Local::CPANSA;
 use v5.26;
 use experimental qw(signatures);
 
+use Exporter qw(import);
+
+our @EXPORT = qw(
+	);
+
+our @EXPORT_OK = qw(
+	get_all_reports
+	get_dist_info
+	latest_on_cpan
+	load_report
+	);
+
+our %EXPORT_TAGS = (
+	all => \@EXPORT_OK,
+	cpan    => [qw(
+		latest_on_cpan
+		get_dist_info
+		)],
+	default => \@EXPORT,
+	reports => [qw(
+		get_all_reports
+		load_report
+		)],
+	);
+
 =encoding utf8
 
 =head1 NAME
@@ -78,6 +103,55 @@ sub assemble_advisory ( $config ) {
 	return \%hash
 	}
 
+=item * cve_ignored
+
+=cut
+
+sub cve_ignored ( $cve ) {
+	state $hash = get_ignored_cves();
+	exists $hash->{$cve};
+	}
+
+=item * cve_recorded
+
+=cut
+
+sub cve_recorded ( $cve ) {
+	state $hash = get_recorded_cves();
+	exists $hash->{$cve};
+	}
+
+=item * get_dist_info( DIST )
+
+=cut
+
+sub get_dist_info ( $package_or_dist ) {
+	state $rc = do {
+		unless( eval { require MetaCPAN::Client } ) {
+			die <<~'HERE';
+				Could not load MetaCPAN::Client. Do you need to install
+				it or set PERL5LIB to find it?
+				HERE
+			}
+		};
+	state $mcpan = MetaCPAN::Client->new;
+
+	my $dist = $package_or_dist =~ s/::/-/gr;
+	my $query = {
+		all => [ { distribution => $dist }, ],
+		};
+
+	my $releases = $mcpan->release( $query );
+	my $total = $releases->total;
+
+	my @items;
+	while( my $item = $releases->next ) {
+		push @items, $item;
+		}
+	Dumper(\@items); use Data::Dumper;
+	return \@items;
+	}
+
 =item * guess_package
 
 =cut
@@ -134,22 +208,28 @@ sub parse_cpe23uri ( $cpe23uri ) {
 	return \%hash;
 	}
 
-=item * report_path
+=item * report_path(PACKAGE)
+
+Return the report path for a given package. If a report path does not
+exist, returns the empty list.
 
 =cut
 
 sub report_path ( $package ) {
 	use File::Spec::Functions qw(catfile);
-	catfile( 'cpansa', "CPANSA-$package.yml" );
+	my $try = catfile( 'cpansa', "CPANSA-$package.yml" );
+	-e $try ? $try : ()
 	}
 
 =item * get_all_reports
+
+Returns an arrayref of paths for every CPANSA report.
 
 =cut
 
 sub get_all_reports ( $base_dir = 'cpansa' ) {
 	opendir( my $dh, $base_dir ) or die "Could not open <$base_dir>: $!";
-	my @files = map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
+	my @files = sort map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
 	return \@files;
 	}
 
@@ -287,31 +367,28 @@ sub get_ua () {
 	$ua
 	};
 
-=item * load_report
+=item * latest_on_cpan( DIST )
+
+Returns the latest version on CPAN.
+
+=cut
+
+sub latest_on_cpan ($dist) {
+	my $d = get_dist_info($dist);
+	my($latest) = grep { $_->status eq 'latest' } $d->@*;
+	defined $latest ? $latest->version : undef;
+	}
+
+=item * load_report( PATH )
+
+Load the data for the report and return a Perl hash. Using this means
+you never need to know the details about how the report is stored.
 
 =cut
 
 sub load_report ( $report_path ) {
 	state $rc = require YAML::XS;
 	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
-	}
-
-=item * cve_ignored
-
-=cut
-
-sub cve_ignored ( $cve ) {
-	state $hash = get_ignored_cves();
-	exists $hash->{$cve};
-	}
-
-=item * cve_recorded
-
-=cut
-
-sub cve_recorded ( $cve ) {
-	state $hash = get_recorded_cves();
-	exists $hash->{$cve};
 	}
 
 =back
