@@ -62,4 +62,4 @@ distribution: Crypt-CBC
 last_checked: 1708150840
 latest_version: 3.04
 metacpan: https://metacpan.org/pod/Crypt::CBC
-repo: ~
+repo: https://github.com/lstein/Lib-Crypt-CBC
