@@ -10,7 +10,8 @@ advisories:
     which (in some situations) allows attackers to bypass access control
     that is based on IP addresses.
   fixed_versions: []
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-v6xp-w49h-9cmc
   id: CPANSA-Net-IPV4Addr-2021-47155
   references:
   - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
@@ -20,11 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-IPv4Addr
-last_checked: 1708150854
-latest_version: '0.63'
-metacpan: https://metacpan.org/pod/Kossy
-repo: https://github.com/kazeburo/Kossy.git
-repo: ~
-repo: ~
-repo: ~
+last_checked: 1747589679
+latest_version: '0.10'
 metacpan: https://metacpan.org/pod/Net::IPv4Addr
+repo: ~
