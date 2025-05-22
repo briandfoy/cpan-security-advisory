@@ -90,7 +90,7 @@ advisories:
     cves: []
     description: "Security fix: Use 3-arg form of open in LoadFile (issue#120 PR#121)"
     fixed_versions:
-      - '>=0.904.0'
+      - '>=0.903.0'
     github_security_advisory: []
     id: CPANSA-YAML-LibYAML-2025-001
     references:
