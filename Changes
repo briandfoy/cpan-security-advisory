@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250521.001 2025-05-22T02:41:43Z
+	* data update to fix latest YAML::LibYAML report (#200)
+
 20250520.001 2025-05-20T15:30:43Z
 	* data update for 2025-05-20
 
