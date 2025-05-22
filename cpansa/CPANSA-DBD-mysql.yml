@@ -106,4 +106,4 @@ distribution: DBD-mysql
 last_checked: 1747914343
 latest_version: '5.012'
 metacpan: https://metacpan.org/pod/DBD::mysql
-repo: https://github.com/perl5-dbi/DBD-mysql.git
+repo: https://github.com/perl5-dbi/DBD-mysql

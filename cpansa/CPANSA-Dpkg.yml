@@ -347,4 +347,4 @@ distribution: Dpkg
 last_checked: 1747914343
 latest_version: v1.22.19
 metacpan: https://metacpan.org/pod/Dpkg
-repo: https://git.dpkg.org/git/dpkg/dpkg.git
+repo: https://git.dpkg.org/git/dpkg/dpkg
