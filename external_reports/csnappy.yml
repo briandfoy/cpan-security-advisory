@@ -18,4 +18,32 @@ perl_distributions:
     perl_module_versions: '>=0.06,<3.002_002'
   last_version_checked: '5.003'
   name: Sereal-Decoder
+- affected:
+  - distributed_library_version: '5'
+    perl_module_versions: '>=0.21'
+  - distributed_library_version: '4'
+    perl_module_versions: '>=0.11,<0.20'
+  - distributed_library_version: '2'
+    perl_module_versions: '>=0.09,<0.11'
+  - distributed_library_version: '1'
+    perl_module_versions: '>=0.06,<0.09'
+  - distributed_library_version: ~
+    perl_module_versions: '<0.06'
+  last_version_checked: '0.25'
+  name: Compress-Snappy
+- affected:
+  - distributed_library_version: '4'
+    perl_module_versions: '>=0.52'
+  last_version_checked: '0.53'
+  name: Devel-StatProfiler
+- affected:
+  - distributed_library_version: '5'
+    perl_module_versions: '>=0.001'
+  last_version_checked: '0.001'
+  name: Sereal-Merger
+- affected:
+  - distributed_library_version: '5'
+    perl_module_versions: '>=0.800'
+  last_version_checked: '0.840'
+  name: Sereal-Splitter
 url: https://github.com/zeevt/csnappy
