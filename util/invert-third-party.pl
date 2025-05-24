@@ -85,8 +85,10 @@ versions.
       - cve: CVE-2037-1234
         description: >
           This is just an awful piece of insecure software
-        affected_versions: "<2.9.4"
-        fixed_versions: ">=2.9.4"
+        affected_versions:
+          - "<2.9.4"
+        fixed_versions:
+          - ">=2.9.4"
         references: []
         reported: 2020-10-29
         severity: high
@@ -102,6 +104,7 @@ or C<EXTRA> to get additional info:
 
 my $Report_dir = 'generated_reports';
 mkdir $Report_dir unless -d $Report_dir;
+$|++;
 
 FILE: foreach my $file ( get_files(@ARGV) ) {
 	info( "Processing $file" );
@@ -210,13 +213,13 @@ sub make_report ( $name, $perl_dist_name, $advisory, $affected ) {
 
 	$report{id} = sprintf 'CPANSA-%s-%s-%s',
 		$perl_dist_name, $report{cves}[0] =~ s/\ACVE-//r, $name;
-	$report{affected_versions} = $affected->{perl_module_versions};
+	$report{affected_versions} = [ $affected->{perl_module_versions} ];
 	error( "empty affected_versions in $report{id}" )
-		unless defined $report{affected_versions};
+		unless $report{affected_versions}->@*;
 
 	# we don't quite handle this yet, which is no bother because nothing
 	# really uses it.
-	$report{fixed_versions}    = undef;
+	$report{fixed_versions}    = [];
 
 	return \%report;
 	}
