@@ -20,7 +20,8 @@ lint_reports - look from problems in cpansa reports
 
 =head1 SYNOPSIS
 
-In top-level directory, it looks in cpansa/
+In top-level directory, it looks in F<cpansa/>, F<generated_reports>,
+and F<external_reports>.
 
 	% perl util/lint_reports
 

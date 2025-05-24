@@ -281,7 +281,7 @@ sub get_commit {
 sub get_file_list ( $args ) {
 	unless( @$args and -e 'cpansa' ) {
 		debug 'No arguments given for source directory: looking in cpansa/';
-		@$args = glob( 'cpansa/*.yml' );
+		@$args = glob( '{cpansa,generated_reports}/*.yml' );
 	}
 
 	my @files = ($^O eq 'MSWin32') ? map { glob } @$args : @$args;
