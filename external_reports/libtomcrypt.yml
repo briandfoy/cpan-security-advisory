@@ -43,5 +43,13 @@ advisories:
   severity: high
 cpansa_version: 2
 name: libtomcrypt
-perl_distributions: []
+perl_distributions:
+- affected:
+  - distributed_library_version: '1.18.2'
+    perl_module_versions: '>=0.14'
+  - distributed_library_version: '1.18.1'
+    perl_module_versions: '>=0.11,<=0.13'
+  - distributed_library_version: '1.17'
+    perl_module_versions: '>=0.01,<=0.10'
+  name: Net-Dropbear
 url: https://github.com/libtom/libtomcrypt
