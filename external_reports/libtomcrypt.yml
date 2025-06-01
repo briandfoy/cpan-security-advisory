@@ -52,4 +52,8 @@ perl_distributions:
   - distributed_library_version: '1.17'
     perl_module_versions: '>=0.01,<=0.10'
   name: Net-Dropbear
+- affected:
+  - distributed_library_version: '1.18.2-develop'
+    perl_module_versions: '0.900'
+  name: File-KDBX-XS
 url: https://github.com/libtom/libtomcrypt
