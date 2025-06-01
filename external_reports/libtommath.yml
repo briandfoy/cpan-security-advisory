@@ -27,5 +27,5 @@ advisories:
     - distributed_library_version: '1.0.1'
       perl_module_versions: '>=0.11,<0.13'
     - distributed_library_version: '0.40'
-      perl_module_versions: >=0.01,'<0.11'
+      perl_module_versions: '>=0.01,<0.11'
     name: Net-Dropbear
