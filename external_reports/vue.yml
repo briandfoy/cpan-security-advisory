@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions: <2.5.14
-  cve: x-CVE-2018-vue-001
+  cve: X-CVE-2018-vue-001
   description: |
     Regular Expression Denial of Service.
   fixed_versions: '>=2.5.14'
