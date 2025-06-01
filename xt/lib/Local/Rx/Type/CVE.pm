@@ -82,6 +82,7 @@ sub type_uri {
 
 sub assert_valid {
 	my ($self, $value) = @_;
+	return 1 if $value =~ /\AX-/;
 	$value =~ /\ACVE-\d+-\d+\z/a or $self->fail({
 		error => [ qw(type) ],
 		message => "value <$value> is not a valid CVE identifier",
