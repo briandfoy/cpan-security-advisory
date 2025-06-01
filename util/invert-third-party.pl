@@ -221,6 +221,8 @@ sub make_report ( $name, $perl_dist_name, $advisory, $affected ) {
 	# really uses it.
 	$report{fixed_versions}    = [];
 
+	$report{github_security_advisory} = [ $report{github_security_advisory} ] unless ref $report{github_security_advisory};
+
 	return \%report;
 	}
 
