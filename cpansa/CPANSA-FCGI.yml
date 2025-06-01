@@ -1,23 +1,38 @@
 ---
 advisories:
-- affected_versions:
-  - <0.74
-  cves:
-  - CVE-2011-2766
-  description: |
-    Leaking information across requests when using the deprecated and undocumented old FCGI interface.
-  fixed_versions:
-  - '>=0.74'
-  github_security_advisory:
-  - GHSA-57h3-ccpr-f6f8
-  id: CPANSA-FCGI-2011-01
-  references:
-  - https://metacpan.org/changes/distribution/FCGI
-  - https://github.com/perl-catalyst/FCGI/commit/297693dc8362d25bb25e473899c72508a0f71d2e
-  reported: 2011-09-24
+  - affected_versions:
+      - <0.74
+    cves:
+      - CVE-2011-2766
+    description: "Leaking information across requests when using the deprecated and undocumented old FCGI interface.\n"
+    fixed_versions:
+      - '>=0.74'
+    github_security_advisory:
+      - GHSA-57h3-ccpr-f6f8
+    id: CPANSA-FCGI-2011-01
+    references:
+      - https://metacpan.org/changes/distribution/FCGI
+      - https://github.com/perl-catalyst/FCGI/commit/297693dc8362d25bb25e473899c72508a0f71d2e
+    reported: 2011-09-24
+  - affected_versions: []
+    cves:
+      - CVE-2025-40907
+    description: 'FCGI versions 0.44 through 0.82, for Perl, include a vulnerable version of the FastCGI fcgi2 (aka fcgi) library.  The included FastCGI library is affected by  CVE-2025-23016, causing an integer overflow (and resultant heap-based buffer overflow) via crafted nameLen or valueLen values in data to the IPC socket. This occurs in ReadParams in fcgiapp.c.'
+    fixed_versions: []
+    github_security_advisory: []
+    id: CPANSA-FCGI-2025-40907
+    references:
+      - http://www.openwall.com/lists/oss-security/2025/04/23/4
+      - https://github.com/FastCGI-Archives/fcgi2/issues/67
+      - https://github.com/FastCGI-Archives/fcgi2/releases/tag/2.4.5
+      - https://github.com/perl-catalyst/FCGI/issues/14
+      - https://patch-diff.githubusercontent.com/raw/FastCGI-Archives/fcgi2/pull/74.patch
+      - https://www.synacktiv.com/en/publications/cve-2025-23016-exploiting-the-fastcgi-library
+    reported: 2025-05-16
+    severity: ~
 cpansa_version: 2
 distribution: FCGI
 last_checked: 1708150847
-latest_version: '0.82'
+latest_version: 0.82
 metacpan: https://metacpan.org/pod/FCGI
 repo: https://github.com/perl-catalyst/FCGI.git
