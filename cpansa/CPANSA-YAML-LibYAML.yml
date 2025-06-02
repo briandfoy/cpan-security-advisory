@@ -87,18 +87,21 @@ advisories:
     severity: ~
   - affected_versions:
       - <0.903.0
-    cves: []
-    description: "Security fix: Use 3-arg form of open in LoadFile (issue#120 PR#121)"
+    cves:
+      - CVE-2025-40908
+    description: 'YAML-LibYAML prior to 0.903.0 for Perl uses 2-args open, allowing existing files to be modified'
     fixed_versions:
       - '>=0.903.0'
-    github_security_advisory: []
+    github_security_advisory:
+      - GHSA-jh9m-3m95-c6hp
     id: CPANSA-YAML-LibYAML-2025-001
     references:
+      - https://www.cve.org/CVERecord?id=CVE-2025-40908
       - https://github.com/ingydotnet/yaml-libyaml-pm/issues/120
       - https://github.com/ingydotnet/yaml-libyaml-pm/pull/121
       - https://github.com/ingydotnet/yaml-libyaml-pm/pull/122
-    reported: ~
-    severity: ~
+    reported: 2025-06-01
+    severity: critical
 cpansa_version: 2
 distribution: YAML-LibYAML
 last_checked: 1708150870
