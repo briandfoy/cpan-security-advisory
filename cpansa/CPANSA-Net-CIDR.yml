@@ -1,0 +1,22 @@
+---
+advisories:
+  - affected_versions:
+      - <0.25
+    cves:
+      - CVE-2021-4456
+    description: 'addr2cidr may output dotted decimal IP address with leading zeros, that some older tools may interpret as octal values.'
+    fixed_versions:
+      - '>=0.25'
+    github_security_advisory: []
+    id: CPANSA-Net-CIDR-2021-4456
+    references:
+      - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
+      - https://github.com/svarshavchik/Net-CIDR/pull/4
+    reported: ~
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-CIDR
+last_checked: 1748821803
+latest_version: 0.25
+metacpan: https://metacpan.org/pod/Net::CIDR
