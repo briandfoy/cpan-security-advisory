@@ -12,6 +12,10 @@ advisories:
     references:
       - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
       - https://github.com/svarshavchik/Net-CIDR/pull/4
+      - https://github.com/briandfoy/cpan-security-advisory/issues/199
+      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28918
+      - https://github.com/advisories/GHSA-pch5-whg9-qr2r
+      - https://sick.codes/universal-netmask-npm-package-used-by-270000-projects-vulnerable-to-octal-input-data-server-side-request-forgery-remote-file-inclusion-local-file-inclusion-and-more-cve-2021-28918/
     reported: ~
     severity: ~
 cpansa_version: 2
