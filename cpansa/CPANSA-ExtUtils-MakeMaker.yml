@@ -19,6 +19,6 @@ advisories:
 cpansa_version: 2
 distribution: ExtUtils-MakeMaker
 last_checked: 1749751661
-latest_version: '7.74'
+latest_version: '7.76'
 metacpan: https://metacpan.org/pod/ExtUtils::MakeMaker
 repo: https://github.com/Perl-Toolchain-Gang/ExtUtils-MakeMaker

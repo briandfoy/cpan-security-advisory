@@ -22,6 +22,6 @@ advisories:
 cpansa_version: 2
 distribution: XML-Twig
 last_checked: 1749751661
-latest_version: '3.53'
+latest_version: '3.54'
 metacpan: https://metacpan.org/pod/XML::Twig
 repo: http://github.com/mirod/xmltwig
