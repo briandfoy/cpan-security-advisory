@@ -16,7 +16,7 @@ advisories:
   reported: 2017-04-01
 cpansa_version: 2
 distribution: File-DataClass
-last_checked: 1708150847
+last_checked: 1749751661
 latest_version: 0.73.1
 metacpan: https://metacpan.org/pod/File::DataClass
 repo: https://github.com/pjfl/p5-file-dataclass

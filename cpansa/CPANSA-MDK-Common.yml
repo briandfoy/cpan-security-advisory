@@ -21,7 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: MDK-Common
-last_checked: 1708150856
+last_checked: 1749751661
 latest_version: v1.2.34.2
 metacpan: https://metacpan.org/pod/MDK::Common
 repo: https://git.mageia.org/software/perl/perl-MDK-Common

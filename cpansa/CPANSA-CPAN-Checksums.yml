@@ -18,7 +18,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: CPAN-Checksums
-last_checked: 1708150840
+last_checked: 1749751661
 latest_version: '2.14'
 metacpan: https://metacpan.org/pod/CPAN::Checksums
 repo: https://github.com/andk/cpan-checksums

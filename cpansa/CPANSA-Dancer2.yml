@@ -17,7 +17,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: Dancer2
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: 1.1.2
 metacpan: https://metacpan.org/pod/Dancer2
 repo: https://github.com/PerlDancer/Dancer2

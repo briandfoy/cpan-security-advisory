@@ -48,7 +48,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Email-Address
-last_checked: 1708150846
+last_checked: 1749751661
 latest_version: '1.913'
 metacpan: https://metacpan.org/pod/Email::Address
 repo: https://github.com/Perl-Email-Project/Email-Address.git

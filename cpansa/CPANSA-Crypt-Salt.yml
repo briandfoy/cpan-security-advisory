@@ -18,6 +18,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-Salt
-last_checked: 1743736733
+last_checked: 1749751661
 latest_version: 0.01
 metacpan: https://metacpan.org/pod/Crypt::Salt

@@ -21,7 +21,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: XML-Twig
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '3.53'
 metacpan: https://metacpan.org/pod/XML::Twig
 repo: http://github.com/mirod/xmltwig

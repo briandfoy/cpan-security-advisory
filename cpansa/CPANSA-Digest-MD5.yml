@@ -19,7 +19,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Digest-MD5
-last_checked: 1708150846
+last_checked: 1749751661
 latest_version: '2.59'
 metacpan: https://metacpan.org/pod/Digest::MD5
 repo: https://github.com/dual-Life/digest-md5/

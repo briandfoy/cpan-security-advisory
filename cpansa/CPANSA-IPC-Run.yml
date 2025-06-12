@@ -17,7 +17,7 @@ advisories:
   reported: 2009-09-14
 cpansa_version: 2
 distribution: IPC-Run
-last_checked: 1708150853
+last_checked: 1749751661
 latest_version: '20231003.0'
 metacpan: https://metacpan.org/pod/IPC::Run
 repo: https://github.com/toddr/IPC-Run

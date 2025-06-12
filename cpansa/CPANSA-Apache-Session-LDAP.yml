@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Apache-Session-LDAP
-last_checked: 1708150828
+last_checked: 1749751661
 latest_version: '0.2'
 metacpan: https://metacpan.org/pod/Apache::Session::LDAP
 repo: ~

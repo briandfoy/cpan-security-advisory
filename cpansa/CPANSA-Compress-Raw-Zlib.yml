@@ -34,7 +34,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Compress-Raw-Zlib
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '2.213'
 metacpan: https://metacpan.org/pod/Compress::Raw::Zlib
 repo: https://github.com/pmqs/Compress-Raw-Zlib

@@ -15,7 +15,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Elive
-last_checked: 1708150846
+last_checked: 1749751661
 latest_version: '1.37'
 metacpan: https://metacpan.org/pod/Elive
 repo: https://github.com/dwarring/p5-Bb-Collaborate.git

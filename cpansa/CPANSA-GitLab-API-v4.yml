@@ -18,7 +18,7 @@ advisories:
   reported: 2023-02-28
 cpansa_version: 2
 distribution: GitLab-API-v4
-last_checked: 1708150849
+last_checked: 1749751661
 latest_version: '0.27'
 metacpan: https://metacpan.org/pod/GitLab::API::v4
 repo: https://github.com/bluefeet/GitLab-API-v4.git

@@ -36,7 +36,7 @@ advisories:
   reported: 2003-08-23
 cpansa_version: 2
 distribution: GBrowse
-last_checked: 1708150849
+last_checked: 1749751661
 latest_version: '2.56'
 metacpan: https://metacpan.org/pod/GBrowse
 repo: ~

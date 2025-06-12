@@ -29,7 +29,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: Net-Dropbear
-last_checked: 1708150859
+last_checked: 1749751661
 latest_version: '0.16'
 metacpan: https://metacpan.org/pod/Net::Dropbear
 repo: https://github.com/atrodo/Net-Dropbear.git

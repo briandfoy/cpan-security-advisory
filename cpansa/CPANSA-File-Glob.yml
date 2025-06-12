@@ -23,7 +23,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: perl
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '5.040001'
 metacpan: https://metacpan.org/pod/perl
 repo: https://github.com/Perl/perl5

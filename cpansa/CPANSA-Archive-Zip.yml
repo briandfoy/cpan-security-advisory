@@ -37,7 +37,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Archive-Zip
-last_checked: 1708150831
+last_checked: 1749751661
 latest_version: '1.68'
 metacpan: https://metacpan.org/pod/Archive::Zip
 repo: https://github.com/redhotpenguin/perl-Archive-Zip.git

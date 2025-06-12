@@ -36,7 +36,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: POSIX-2008
-last_checked: 1718428632
+last_checked: 1749751661
 latest_version: '0.24'
 metacpan: https://metacpan.org/pod/POSIX::2008
 repo: ~

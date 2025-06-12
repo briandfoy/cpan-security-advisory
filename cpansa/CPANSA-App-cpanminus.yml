@@ -37,7 +37,7 @@ advisories:
   reported: 2024-08-27
 cpansa_version: 2
 distribution: App-cpanminus
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '1.7048'
 metacpan: https://metacpan.org/pod/App::cpanminus
 repo: https://github.com/miyagawa/cpanminus

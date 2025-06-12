@@ -83,7 +83,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: DBD-Pg
-last_checked: 1708150844
+last_checked: 1749751661
 latest_version: 3.18.0
 metacpan: https://metacpan.org/pod/DBD::Pg
 repo: https://github.com/bucardo/dbdpg

@@ -21,7 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-IPv4Addr
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '0.10'
 metacpan: https://metacpan.org/pod/Net::IPv4Addr
 repo: ~

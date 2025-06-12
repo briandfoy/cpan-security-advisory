@@ -15,7 +15,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Catalyst-Authentication-Store-LDAP
-last_checked: 1708150831
+last_checked: 1749751661
 latest_version: '1.017'
 metacpan: https://metacpan.org/pod/Catalyst::Authentication::Store::LDAP
 repo: https://git.shadowcat.co.uk/catagits/Catalyst-Authentication-Store-LDAP

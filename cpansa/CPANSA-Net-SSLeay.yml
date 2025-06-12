@@ -20,7 +20,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-SSLeay
-last_checked: 1708150861
+last_checked: 1749751661
 latest_version: '1.94'
 metacpan: https://metacpan.org/pod/Net::SSLeay
 repo: https://github.com/radiator-software/p5-net-ssleay

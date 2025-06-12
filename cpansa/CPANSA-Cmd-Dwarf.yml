@@ -14,7 +14,7 @@ advisories:
   reported: 2014-12-03
 cpansa_version: 2
 distribution: Cmd-Dwarf
-last_checked: 1708150837
+last_checked: 1749751661
 latest_version: '1.83'
 metacpan: https://metacpan.org/pod/Cmd::Dwarf
 repo: https://github.com/seagirl/dwarf

@@ -76,7 +76,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CGI-Simple
-last_checked: 1708150834
+last_checked: 1749751661
 latest_version: '1.281'
 metacpan: https://metacpan.org/pod/CGI::Simple
 repo: http://github.com/manwar/CGI--Simple.git

@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-Server-Coro
-last_checked: 1708150860
+last_checked: 1749751661
 latest_version: '1.3'
 metacpan: https://metacpan.org/pod/Net::Server::Coro
 repo: ~

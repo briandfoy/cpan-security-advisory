@@ -21,7 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Module-ScanDeps
-last_checked: 1708150834
+last_checked: 1749751661
 latest_version: '1.37'
 metacpan: https://metacpan.org/pod/Module::ScanDeps
 repo: https://github.com/rschupp/Module-ScanDeps

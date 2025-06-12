@@ -29,7 +29,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Zonemaster-Backend
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: 11.4.0
 metacpan: https://metacpan.org/pod/Zonemaster::Backend
 repo: https://github.com/zonemaster/zonemaster-backend

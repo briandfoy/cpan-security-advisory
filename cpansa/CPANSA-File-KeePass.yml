@@ -14,7 +14,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: File-KeePass
-last_checked: 1708150848
+last_checked: 1749751661
 latest_version: '2.03'
 metacpan: https://metacpan.org/pod/File::KeePass
 repo: ~

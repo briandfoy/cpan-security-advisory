@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: HTML-EP
-last_checked: 1708150850
+last_checked: 1749751661
 latest_version: '0.2011'
 metacpan: https://metacpan.org/pod/HTML::EP
 repo: ~

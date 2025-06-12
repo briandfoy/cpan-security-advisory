@@ -18,7 +18,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Batch-Batchrun
-last_checked: 1708150831
+last_checked: 1749751661
 latest_version: '1.03'
 metacpan: https://metacpan.org/pod/Batch::Batchrun
 repo: ~

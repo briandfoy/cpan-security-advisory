@@ -32,7 +32,7 @@ advisories:
   reported: 2011-04-05
 cpansa_version: 2
 distribution: Dancer
-last_checked: 1708150842
+last_checked: 1749751661
 latest_version: '1.3521'
 metacpan: https://metacpan.org/pod/Dancer
 repo: https://github.com/PerlDancer/Dancer.git

@@ -23,7 +23,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: Data-UUID
-last_checked: 1710811790
+last_checked: 1749751661
 latest_version: '1.227'
 metacpan: https://metacpan.org/pod/Data::UUID
 repo: https://github.com/rjbs/Data-UUID

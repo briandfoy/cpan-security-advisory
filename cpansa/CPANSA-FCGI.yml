@@ -34,7 +34,7 @@ advisories:
     severity: ~
 cpansa_version: 2
 distribution: FCGI
-last_checked: 1708150847
+last_checked: 1749751661
 latest_version: 0.82
 metacpan: https://metacpan.org/pod/FCGI
 repo: https://github.com/perl-catalyst/FCGI.git

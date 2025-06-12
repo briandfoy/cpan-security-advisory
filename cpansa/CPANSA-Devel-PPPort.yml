@@ -16,7 +16,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Devel-PPPort
-last_checked: 1708150845
+last_checked: 1749751661
 latest_version: '3.68'
 metacpan: https://metacpan.org/pod/Devel::PPPort
 repo: https://github.com/Dual-Life/Devel-PPPort

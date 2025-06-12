@@ -16,7 +16,7 @@ advisories:
   reported: 2007-04-17
 cpansa_version: 2
 distribution: libapreq2
-last_checked: 1708150855
+last_checked: 1749751661
 latest_version: '2.16'
 metacpan: https://metacpan.org/pod/libapreq2
 repo: ~

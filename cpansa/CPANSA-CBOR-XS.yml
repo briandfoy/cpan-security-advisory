@@ -15,7 +15,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CBOR-XS
-last_checked: 1708150832
+last_checked: 1749751661
 latest_version: 1.87
 metacpan: https://metacpan.org/pod/CBOR::XS
 repo: ~

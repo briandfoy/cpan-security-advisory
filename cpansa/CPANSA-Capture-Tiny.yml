@@ -29,7 +29,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Capture-Tiny
-last_checked: 1747589679
+last_checked: 1749751661
 latest_version: '0.50'
 metacpan: https://metacpan.org/pod/Capture::Tiny
 repo: https://github.com/dagolden/Capture-Tiny.git

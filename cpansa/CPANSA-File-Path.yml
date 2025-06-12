@@ -170,7 +170,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: File-Path
-last_checked: 1708150848
+last_checked: 1749751661
 latest_version: '2.18'
 metacpan: https://metacpan.org/pod/File::Path
 repo: https://github.com/jkeenan/File-Path.git

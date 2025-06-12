@@ -21,6 +21,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-CIDR
-last_checked: 1748821803
+last_checked: 1749751661
 latest_version: 0.25
 metacpan: https://metacpan.org/pod/Net::CIDR

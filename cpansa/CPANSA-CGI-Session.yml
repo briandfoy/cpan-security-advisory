@@ -33,7 +33,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CGI-Session
-last_checked: 1708150833
+last_checked: 1749751661
 latest_version: '4.48'
 metacpan: https://metacpan.org/pod/CGI::Session
 repo: http://github.com/cromedome/cgi-session

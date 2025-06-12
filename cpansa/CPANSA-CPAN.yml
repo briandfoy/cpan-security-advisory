@@ -52,7 +52,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: CPAN
-last_checked: 1708150840
+last_checked: 1749751661
 latest_version: '2.38'
 metacpan: https://metacpan.org/pod/CPAN
 repo: https://github.com/andk/cpanpm

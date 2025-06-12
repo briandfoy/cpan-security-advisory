@@ -23,7 +23,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Spreadsheet-ParseExcel
-last_checked: 1708150867
+last_checked: 1749751661
 latest_version: '0.66'
 metacpan: https://metacpan.org/pod/Spreadsheet::ParseExcel
 repo: http://github.com/jmcnamara/spreadsheet-parseexcel

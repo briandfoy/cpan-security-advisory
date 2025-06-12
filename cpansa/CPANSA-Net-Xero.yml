@@ -20,6 +20,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-Xero
-last_checked: 1744009666
+last_checked: 1749751661
 latest_version: 0.44
 metacpan: https://metacpan.org/pod/Net::Xero

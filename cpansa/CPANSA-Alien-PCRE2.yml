@@ -24,7 +24,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Alien-PCRE2
-last_checked: 1708150827
+last_checked: 1749751661
 latest_version: '0.017000'
 metacpan: https://metacpan.org/pod/Alien::PCRE2
 repo: https://github.com/wbraswell/alien-pcre2

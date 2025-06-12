@@ -26,7 +26,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Mojo-DOM-Role-Analyzer
-last_checked: 1722937056
+last_checked: 1749751661
 latest_version: '0.015'
 metacpan: https://metacpan.org/pod/Mojo::DOM::Role::Analyzer
 repo: https://github.com/sdondley/Mojo-DOM-Role-Analyzer

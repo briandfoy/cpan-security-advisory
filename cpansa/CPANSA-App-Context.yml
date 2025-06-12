@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: App-Context
-last_checked: 1708150829
+last_checked: 1749751661
 latest_version: '0.968'
 metacpan: https://metacpan.org/pod/App::Context
 repo: ~

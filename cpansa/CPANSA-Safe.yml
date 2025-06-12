@@ -98,7 +98,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Safe
-last_checked: 1708150866
+last_checked: 1749751661
 latest_version: '2.35'
 metacpan: https://metacpan.org/pod/Safe
 repo: ~

@@ -16,7 +16,7 @@ advisories:
   reported: 2017-01-23
 cpansa_version: 2
 distribution: Fake-Encode
-last_checked: 1708150847
+last_checked: 1749751661
 latest_version: '0.11'
 metacpan: https://metacpan.org/pod/Fake::Encode
 repo: https://github.com/ina-cpan/Fake-Encode

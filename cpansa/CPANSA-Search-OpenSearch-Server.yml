@@ -15,7 +15,7 @@ advisories:
   reported: 2012-08-31
 cpansa_version: 2
 distribution: Search-OpenSearch-Server
-last_checked: 1708150866
+last_checked: 1749751661
 latest_version: '0.301'
 metacpan: https://metacpan.org/pod/Search::OpenSearch::Server
 repo: http://github.com/karpet/search-opensearch-server

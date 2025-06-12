@@ -16,7 +16,7 @@ advisories:
   reported: 2008-10-01
 cpansa_version: 2
 distribution: Tk
-last_checked: 1708150869
+last_checked: 1749751661
 latest_version: '804.036'
 metacpan: https://metacpan.org/pod/Tk
 repo: http://github.com/eserte/perl-tk

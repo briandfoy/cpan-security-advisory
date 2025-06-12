@@ -25,7 +25,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: HTML-Template-Pro
-last_checked: 1708150851
+last_checked: 1749751661
 latest_version: '0.9524'
 metacpan: https://metacpan.org/pod/HTML::Template::Pro
 repo: ~

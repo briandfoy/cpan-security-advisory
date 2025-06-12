@@ -14,7 +14,7 @@ advisories:
   reported: 2005-03-04
 cpansa_version: 2
 distribution: CGI-Application-Plugin-AutoRunmode
-last_checked: 1708150833
+last_checked: 1749751661
 latest_version: '0.18'
 metacpan: https://metacpan.org/pod/CGI::Application::Plugin::AutoRunmode
 repo: ~

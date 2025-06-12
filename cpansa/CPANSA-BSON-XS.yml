@@ -34,6 +34,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: BSON-XS
-last_checked: 1747578660
+last_checked: 1749751661
 latest_version: v0.8.4
 metacpan: https://metacpan.org/pod/BSON::XS

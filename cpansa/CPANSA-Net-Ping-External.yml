@@ -19,7 +19,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: Net-Ping-External
-last_checked: 1708150860
+last_checked: 1749751661
 latest_version: '0.15'
 metacpan: https://metacpan.org/pod/Net::Ping::External
 repo: http://github.com/chorny/Net-Ping-External

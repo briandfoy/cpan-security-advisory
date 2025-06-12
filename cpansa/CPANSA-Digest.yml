@@ -63,7 +63,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Digest
-last_checked: 1708150846
+last_checked: 1749751661
 latest_version: '1.20'
 metacpan: https://metacpan.org/pod/Digest
 repo: https://github.com/Dual-Life/digest.git

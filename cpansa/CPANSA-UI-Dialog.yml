@@ -45,7 +45,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: UI-Dialog
-last_checked: 1708150869
+last_checked: 1749751661
 latest_version: '1.21'
 metacpan: https://metacpan.org/pod/UI::Dialog
 repo: ~

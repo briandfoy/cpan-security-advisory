@@ -13,7 +13,7 @@ advisories:
   reported: 2011-12-01
 cpansa_version: 2
 distribution: RTMP-Client
-last_checked: 1708150866
+last_checked: 1749751661
 latest_version: '0.04'
 metacpan: https://metacpan.org/pod/RTMP::Client
 repo: ~

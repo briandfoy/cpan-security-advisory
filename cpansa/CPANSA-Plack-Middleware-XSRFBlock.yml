@@ -19,7 +19,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Plack-Middleware-XSRFBlock
-last_checked: 1708150864
+last_checked: 1749751661
 latest_version: 0.0.19
 metacpan: https://metacpan.org/pod/Plack::Middleware::XSRFBlock
 repo: https://github.com/chiselwright/plack-middleware-xsrfblock

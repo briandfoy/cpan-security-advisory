@@ -24,7 +24,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Proc-ProcessTable
-last_checked: 1708150865
+last_checked: 1749751661
 latest_version: '0.636'
 metacpan: https://metacpan.org/pod/Proc::ProcessTable
 repo: https://github.com/jwbargsten/perl-proc-processtable

@@ -23,7 +23,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: MARC-File-XML
-last_checked: 1708150856
+last_checked: 1749751661
 latest_version: v1.0.5
 metacpan: https://metacpan.org/pod/MARC::File::XML
 repo: ~

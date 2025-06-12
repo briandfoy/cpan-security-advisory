@@ -16,7 +16,7 @@ advisories:
   reported: 2010-02-11
 cpansa_version: 2
 distribution: Graphics-ColorNames
-last_checked: 1708150850
+last_checked: 1749751661
 latest_version: v3.5.0
 metacpan: https://metacpan.org/pod/Graphics::ColorNames
 repo: https://github.com/robrwo/Graphics-ColorNames

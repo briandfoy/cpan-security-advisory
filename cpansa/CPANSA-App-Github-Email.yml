@@ -17,7 +17,7 @@ advisories:
   reported: 2018-01-20
 cpansa_version: 2
 distribution: App-Github-Email
-last_checked: 1708150829
+last_checked: 1749751661
 latest_version: 0.3.3
 metacpan: https://metacpan.org/pod/App::Github::Email
 repo: https://github.com/faraco/App-Github-Email.git

@@ -20,7 +20,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: File-Temp
-last_checked: 1708150848
+last_checked: 1749751661
 latest_version: '0.2311'
 metacpan: https://metacpan.org/pod/File::Temp
 repo: https://github.com/Perl-Toolchain-Gang/File-Temp.git

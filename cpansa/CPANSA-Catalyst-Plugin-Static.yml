@@ -12,7 +12,7 @@ advisories:
   reported: 2005-11-14
 cpansa_version: 2
 distribution: Catalyst-Plugin-Static
-last_checked: 1708150832
+last_checked: 1749751661
 latest_version: '0.11'
 metacpan: https://metacpan.org/pod/Catalyst::Plugin::Static
 repo: ~

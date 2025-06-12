@@ -15,7 +15,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Apache-Wyrd
-last_checked: 1708150829
+last_checked: 1749751661
 latest_version: '0.98'
 metacpan: https://metacpan.org/pod/Apache::Wyrd
 repo: ~

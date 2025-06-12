@@ -13,7 +13,7 @@ advisories:
   reported: 2008-10-20
 cpansa_version: 2
 distribution: CGI-Application-Plugin-RunmodeDeclare
-last_checked: 1708150833
+last_checked: 1749751661
 latest_version: '0.10'
 metacpan: https://metacpan.org/pod/CGI::Application::Plugin::RunmodeDeclare
 repo: http://github.com/rhesa/cgi-application-plugin-runmodedeclare

@@ -18,7 +18,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: perl-ldap
-last_checked: 1708150860
+last_checked: 1749751661
 latest_version: '0.68'
 metacpan: https://metacpan.org/pod/perl::ldap
 repo: https://github.com/perl-ldap/perl-ldap

@@ -14,7 +14,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: MySQL-Admin
-last_checked: 1708150859
+last_checked: 1749751661
 latest_version: '1.18'
 metacpan: https://metacpan.org/pod/MySQL::Admin
 repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/
