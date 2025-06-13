@@ -1,24 +1,63 @@
 ---
 advisories:
-- affected_versions:
-  - <0.062
-  cves:
-  - CVE-2018-25099
-  description: |
-    A user can pass anything as the tag into gcm_decrypt_verify() and it will return decrypted plaintext.
-  fixed_versions:
-  - '>=0.062'
-  github_security_advisory:
-  - GHSA-c39g-93pm-r85m
-  id: CPANSA-CryptX-2018-01
-  references:
-  - https://github.com/DCIT/perl-CryptX/issues/47
-  - https://github.com/libtom/libtomcrypt/pull/451
-  reported: 2018-10-26
-  severity: ~
+  - affected_versions:
+      - <0.062
+    cves:
+      - CVE-2018-25099
+    description: "A user can pass anything as the tag into gcm_decrypt_verify() and it will return decrypted plaintext.\n"
+    fixed_versions:
+      - '>=0.062'
+    github_security_advisory:
+      - GHSA-c39g-93pm-r85m
+    id: CPANSA-CryptX-2018-01
+    references:
+      - https://github.com/DCIT/perl-CryptX/issues/47
+      - https://github.com/libtom/libtomcrypt/pull/451
+    reported: 2018-10-26
+    severity: ~
+  - affected_versions:
+      - <0.065
+    cves:
+      - CVE-2025-40912
+      - CVE-2019-17362
+    description: CryptX for Perl before version 0.065 contains a dependency that may be susceptible to malformed unicode.  CryptX embeds the tomcrypt library. The versions of that library in CryptX before 0.065 may be susceptible to CVE-2019-17362.
+    embedded_vulnerability:
+      distributed_version: ~
+      name: libtomcrypt
+    fixed_versions:
+      - "'>=0.065'"
+    github_security_advisory:
+      - GHSA-w3qg-5chj-8g9g
+      - GHSA-x32c-6j92-4hp9
+    id: CPANSA-CryptX-2025-40912
+    references:
+      - https://github.com/libtom/libtomcrypt/issues/507
+    reported: 2025-06-11
+    severity: ~
+  - affected_versions:
+      - <0.087
+    cves:
+      - CVE-2025-40914
+      - CVE-2023-36328
+    description: Perl CryptX before version 0.087 contains a dependency that may be susceptible to an integer overflow.  CryptX embeds a version of the libtommath library that is susceptible to an integer overflow associated with CVE-2023-36328.
+    embedded_vulnerability:
+      distributed_version: ~
+      name: libtommath
+    fixed_versions:
+      - '>=0.087'
+    github_security_advisory:
+      - GHSA-j3xv-6967-cv88
+    id: CPANSA-CryptX-2025-40914
+    references:
+      - https://github.com/advisories/GHSA-j3xv-6967-cv88
+      - https://github.com/libtom/libtommath/pull/546
+      - https://metacpan.org/release/MIK/CryptX-0.086/source/src/ltm/bn_mp_grow.c
+      - https://www.cve.org/CVERecord?id=CVE-2023-36328
+    reported: 2025-06-11
+    severity: ~
 cpansa_version: 2
 distribution: CryptX
 last_checked: 1749751661
-latest_version: '0.087'
+latest_version: 0.087
 metacpan: https://metacpan.org/pod/CryptX
 repo: https://github.com/DCIT/perl-CryptX
