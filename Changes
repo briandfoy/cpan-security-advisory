@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250612.001 2025-06-13T18:02:40Z
+	* data update for 2025-06-12
+	* includes CVE-2025-40911 for Net::CIDR::Set
+
 20250521.001 2025-05-22T02:41:43Z
 	* data update to fix latest YAML::LibYAML report (#200)
 
