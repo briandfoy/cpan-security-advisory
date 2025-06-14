@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250613.001 2025-06-14T02:18:40Z
+	* data udpate for 2025-06-12
+	* included CVE-2025-40912 and 40914 for CryptX
+
 20250612.001 2025-06-13T18:02:40Z
 	* data update for 2025-06-12
 	* includes CVE-2025-40911 for Net::CIDR::Set
