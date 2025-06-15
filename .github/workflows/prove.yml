@@ -10,11 +10,26 @@ on:
             # I tag release pushes but those should have already been tested
             - 'release-*'
         paths:
+            - '!.github/workflows/validate.yml'
+            - '.appveyor.yml'
+            - '.circleci'
+            - '.gitattributes'
+            - '.github/workflows/gpg_signatures.yml'
+            - '.github/workflows/linux.yml'
+            - '.github/workflows/prove.yml'
+            - '.github/workflows/release.yml'
+            - '.github/workflows/windows.yml'
+            - '.gitignore'
+            - '.releaserc'
+            - 'Changes'
             - 'cpansa/**.yml'
             - 'external_reports/**.yml'
-            - '!.github/workflows/validate.yml'
-            - 'util/**'
+            - 'LICENSE'
+            - 'README.md'
+            - 'README.pod'
+            - 'SECURITY.md'
             - 't/*.t'
+            - 'util/**'
     pull_request:
         branches:
             - '**'
