@@ -102,6 +102,7 @@ jobs:
                 apt-get -y update
                 apt-get -y upgrade
                 apt-get -y install curl ${{ vars.UBUNTU_EXTRA_APT_GET }}
+                git config --global --add safe.directory $(pwd)
             - name: Perl version check
               run: |
                 perl -V
