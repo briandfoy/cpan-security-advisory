@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - 0.82
+    cves:
+      - CVE-2019-19791
+    description: "Apache access rules and SOAP/REST endpoints\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-c639-6g37-r8wm
+    id: CPANSA-Lemonldap-NG-Portal-2019-19791-lemonldap
+    references:
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/1943
+    reported: ~
+    severity: medium
+cpansa_version: 2
+distribution: Lemonldap-NG-Portal
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:30 2025
+  from: external_reports/lemonldap.yml
+last_checked: 1749751661
+latest_version: v2.21.0
+repo: ~

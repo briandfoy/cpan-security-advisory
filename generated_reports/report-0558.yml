@@ -1,0 +1,62 @@
+---
+advisories:
+  - affected_versions:
+      - ==1.8.11.0
+    cves:
+      - CVE-2015-0248
+    description: "The (1) mod_dav_svn and (2) svnserve servers in Subversion 1.6.0 through 1.7.19 and 1.8.0 through 1.8.11 allow remote attackers to cause a denial of service (assertion failure and abort) via crafted parameter combinations related to dynamically evaluated revision numbers.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-8pfv-rvrh-7fhw
+    id: CPANSA-Alien-SVN-2015-0248-subversion
+    references:
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2015:192
+      - http://subversion.apache.org/security/CVE-2015-0248-advisory.txt
+      - http://lists.opensuse.org/opensuse-updates/2015-04/msg00008.html
+      - http://rhn.redhat.com/errata/RHSA-2015-1633.html
+      - https://support.apple.com/HT205217
+      - http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html
+      - http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html
+      - http://www.securityfocus.com/bid/74260
+      - http://rhn.redhat.com/errata/RHSA-2015-1742.html
+      - http://www.ubuntu.com/usn/USN-2721-1
+      - http://www.debian.org/security/2015/dsa-3231
+      - https://security.gentoo.org/glsa/201610-05
+      - http://www.securitytracker.com/id/1033214
+    reported: 2015-04-08
+    severity: ~
+  - affected_versions:
+      - ==1.8.11.0
+    cves:
+      - CVE-2015-0251
+    description: "The mod_dav_svn server in Subversion 1.5.0 through 1.7.19 and 1.8.0 through 1.8.11 allows remote authenticated users to spoof the svn:author property via a crafted v1 HTTP protocol request sequences.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-7c78-p7xr-4r2p
+    id: CPANSA-Alien-SVN-2015-0251-subversion
+    references:
+      - http://subversion.apache.org/security/CVE-2015-0251-advisory.txt
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2015:192
+      - http://lists.opensuse.org/opensuse-updates/2015-04/msg00008.html
+      - http://rhn.redhat.com/errata/RHSA-2015-1633.html
+      - https://support.apple.com/HT205217
+      - http://lists.apple.com/archives/security-announce/2015/Sep/msg00002.html
+      - http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html
+      - http://www.securityfocus.com/bid/74259
+      - http://rhn.redhat.com/errata/RHSA-2015-1742.html
+      - http://www.ubuntu.com/usn/USN-2721-1
+      - http://seclists.org/fulldisclosure/2015/Jun/32
+      - http://www.debian.org/security/2015/dsa-3231
+      - https://security.gentoo.org/glsa/201610-05
+      - http://www.securitytracker.com/id/1033214
+    reported: 2015-04-08
+    severity: ~
+cpansa_version: 2
+distribution: Alien-SVN
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:36 2025
+  from: external_reports/subversion.yml
+last_checked: 1749751661
+latest_version: v1.8.11.0
+repo: https://github.com/evalEmpire/Alien-SVN/

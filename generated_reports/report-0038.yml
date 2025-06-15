@@ -1,0 +1,29 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.7.0,<0.9.0'
+    cves:
+      - CVE-2009-3743
+    description: "Off-by-one error in the Ins_MINDEX function in the TrueType bytecode interpreter in Ghostscript before 8.71 allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via a malformed TrueType font in a document that trigger an integer overflow and a heap-based buffer overflow.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-3p47-jqhp-gxp9
+    id: CPANSA-Win32-Printer-2009-3743-jquery
+    references:
+      - http://www.kb.cert.org/vuls/id/JALR-87YGN8
+      - http://www.kb.cert.org/vuls/id/644319
+      - http://www.securitytracker.com/id?1024785
+      - https://rhn.redhat.com/errata/RHSA-2012-0095.html
+      - http://security.gentoo.org/glsa/glsa-201412-17.xml
+      - http://www.securityfocus.com/archive/1/514892/100/0/threaded
+    reported: 2010-08-26
+    severity: ~
+cpansa_version: 2
+distribution: Win32-Printer
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:18 2025
+  from: external_reports/ghostscript.yml
+last_checked: 1749751661
+latest_version: v0.9.1
+repo: ~

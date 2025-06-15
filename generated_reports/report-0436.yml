@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=5.002_001'
+    cves:
+      - CVE-2018-12913
+    description: "In Miniz 2.0.7, tinfl_decompress in miniz_tinfl.c has an infinite loop because sym2 and counter can both remain equal to zero.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-prfm-chh2-jj5h
+    id: CPANSA-Sereal-Decoder-2018-12913-miniz
+    references:
+      - https://github.com/richgel999/miniz/issues/90
+    reported: 2018-06-27
+    severity: high
+cpansa_version: 2
+distribution: Sereal-Decoder
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:08 2025
+  from: external_reports/miniz.yml
+last_checked: 1749751661
+latest_version: 5.004
+repo: git://github.com/Sereal/Sereal.git

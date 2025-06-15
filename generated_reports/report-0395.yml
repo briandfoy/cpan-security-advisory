@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.2.0,<=0.8.4'
+    cves:
+      - CVE-2024-6383
+    description: "The bson_string_append function in MongoDB C Driver may be vulnerable to a buffer overflow where the function might attempt to allocate too small of buffer and may lead to memory corruption of neighbouring heap memory. This issue affects libbson versions prior to 1.27.1\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-w25p-2jj3-j5vr
+    id: CPANSA-BSON-XS-2024-6383-libbson
+    references:
+      - https://nvd.nist.gov/vuln/detail/CVE-2024-6383
+      - https://jira.mongodb.org/browse/CDRIVER-5628
+    reported: 2024-07-03
+    severity: moderate
+cpansa_version: 2
+distribution: BSON-XS
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:46 2025
+  from: external_reports/libbson.yml
+last_checked: 1749751661
+latest_version: v0.8.4
+repo: https://github.com/mongodb-labs/mongo-perl-bson-xs.git

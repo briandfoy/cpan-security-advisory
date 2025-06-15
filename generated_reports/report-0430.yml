@@ -1,0 +1,26 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.14'
+    cves:
+      - CVE-2016-6129
+    description: "The rsa_verify_hash_ex function in rsa_verify_hash.c in LibTomCrypt, as used in OP-TEE before 2.2.0, does not validate that the message length is equal to the ASN.1 encoded data length, which makes it easier for remote attackers to forge RSA signatures or public certificates by leveraging a Bleichenbacher signature forgery attack.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - ~
+    id: CPANSA-Net-Dropbear-2016-6129-libtomcrypt
+    references:
+      - https://www.op-tee.org/advisories/
+      - https://github.com/libtom/libtomcrypt/commit/5eb9743410ce4657e9d54fef26a2ee31a1b5dd0
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1370955
+    reported: 2017-02-13
+    severity: high
+cpansa_version: 2
+distribution: Net-Dropbear
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:07 2025
+  from: external_reports/libtomcrypt.yml
+last_checked: 1749751661
+latest_version: 0.16
+repo: https://github.com/atrodo/Net-Dropbear.git

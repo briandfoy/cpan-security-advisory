@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.61,<=0.74'
+    cves:
+      - X-libgit2-2015-0001
+    description: "On the heels of CVE 2014-9390, we are announcing another round of security updates to libgit2. Similar to the prior vulnerability, an attacker can construct a git commit that, when checked out, may cause files to be written to your .git directory which may lead to arbitrary code execution.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - ~
+    id: CPANSA-Git-Raw-X-libgit2-2015-0001-libgit2
+    references:
+      - https://www.edwardthomson.com/blog/another-libgit2-security-update.html
+    reported: 2015-01-20
+    severity: critical
+cpansa_version: 2
+distribution: Git-Raw
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:49 2025
+  from: external_reports/libgit2.yml
+last_checked: 1749751661
+latest_version: 0.90
+repo: git://github.com/jacquesg/p5-Git-Raw.git

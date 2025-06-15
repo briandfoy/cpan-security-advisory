@@ -1,0 +1,27 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.6.2.0,<=1.6.2.1'
+    cves:
+      - CVE-2021-40528
+    description: "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-8m2v-68m9-q2c7
+    id: CPANSA-Alien-GCrypt-2021-40528-libgcrypt
+    references:
+      - https://ibm.github.io/system-security-research-updates/2021/07/20/insecurity-elgamal-pt1
+      - https://ibm.github.io/system-security-research-updates/2021/09/06/insecurity-elgamal-pt2
+      - https://eprint.iacr.org/2021/923
+      - https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=3462280f2e23e16adf3ed5176e0f2413d8861320
+    reported: 2021-09-06
+    severity: medium
+cpansa_version: 2
+distribution: Alien-GCrypt
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:47 2025
+  from: external_reports/libgcrypt.yml
+last_checked: 1749751661
+latest_version: 1.6.5.0
+repo: git://github.com/ajgb/alien-gcrypt.git

@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.010,<=1.088'
+    cves:
+      - X-CVE-2018-vue-001
+    description: "Regular Expression Denial of Service.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - ~
+    id: CPANSA-Yancy-X-CVE-2018-vue-001-vue
+    references:
+      - https://security.snyk.io/vuln/npm:vue:20180222
+    reported: 2018-02-21
+    severity: ~
+cpansa_version: 2
+distribution: Yancy
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:45 2025
+  from: external_reports/vue.yml
+last_checked: 1749751661
+latest_version: 1.088
+repo: https://github.com/preaction/Yancy.git

@@ -1,0 +1,28 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.01,<=0.07'
+    cves:
+      - CVE-2019-9423
+    description: "In opencv calls that use libpng, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges required. User interaction is not required for exploitation. Product: AndroidVersions: Android-10Android ID: A-110986616\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-8849-5h85-98qw
+    id: CPANSA-Image-PNG-Simple-2019-9423-libpng
+    references:
+      - https://source.android.com/security/bulletin/android-10
+      - http://www.openwall.com/lists/oss-security/2019/10/25/17
+      - http://www.openwall.com/lists/oss-security/2019/10/27/1
+      - http://www.openwall.com/lists/oss-security/2019/11/07/1
+      - http://www.openwall.com/lists/oss-security/2020/12/05/1
+    reported: 2019-09-27
+    severity: high
+cpansa_version: 2
+distribution: Image-PNG-Simple
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:05 2025
+  from: external_reports/libpng.yml
+last_checked: 1749751661
+latest_version: 0.07
+repo: ~

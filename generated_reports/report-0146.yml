@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - 2.0.12
+    cves:
+      - CVE-2021-40874
+    description: "An issue was discovered in LemonLDAP::NG (aka lemonldap-ng) 2.0.13. When using the RESTServer plug-in to operate a REST password validation service (for another LemonLDAP::NG instance, for example) and using the Kerberos authentication method combined with another method with the Combination authentication plug-in, any password will be recognized as valid for an existing user.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-gvrq-49rv-2rq7
+    id: CPANSA-Lemonldap-NG-Common-2021-40874-lemonldap
+    references:
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2612
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+    reported: 2022-07-18
+    severity: ~
+cpansa_version: 2
+distribution: Lemonldap-NG-Common
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:46 2025
+  from: external_reports/lemonldap.yml
+last_checked: 1749751661
+latest_version: v2.21.0
+repo: ~

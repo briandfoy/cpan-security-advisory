@@ -1,0 +1,31 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.121700,<=0.140290'
+    cves:
+      - CVE-2016-4566
+    description: "Cross-site scripting (XSS) vulnerability in plupload.flash.swf in Plupload before 2.1.9, as used in WordPress before 4.5.2, allows remote attackers to inject arbitrary web script or HTML via a Same-Origin Method Execution (SOME) attack.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-cv88-x229-26m4
+    id: CPANSA-Yukki-2016-4566-plupload
+    references:
+      - http://www.plupload.com/punbb/viewtopic.php?pid=28690
+      - https://wordpress.org/news/2016/05/wordpress-4-5-2/
+      - http://www.openwall.com/lists/oss-security/2016/05/07/2
+      - https://codex.wordpress.org/Version_4.5.2
+      - https://core.trac.wordpress.org/changeset/37382/
+      - https://gist.github.com/cure53/09a81530a44f6b8173f545accc9ed07e
+      - https://wpvulndb.com/vulnerabilities/8489
+      - http://www.securitytracker.com/id/1035818
+    reported: 2016-05-22
+    severity: medium
+cpansa_version: 2
+distribution: Yukki
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:13 2025
+  from: external_reports/plupload.yml
+last_checked: 1749751661
+latest_version: 0.140290
+repo: git://github.com/zostay/Yukki.git

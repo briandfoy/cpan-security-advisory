@@ -1,0 +1,35 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.9.0,<=0.9.1'
+    cves:
+      - CVE-2015-0852
+    description: "Multiple integer underflows in PluginPCX.cpp in FreeImage 3.17.0 and earlier allow remote attackers to cause a denial of service (heap memory corruption) via vectors related to the height and width of a window.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-vg9f-qf95-c67j
+    id: CPANSA-Win32-Printer-2015-0852-freeimage
+    references:
+      - https://github.com/kmx/alien-freeimage/issues/5
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167766.html
+      - http://www.openwall.com/lists/oss-security/2015/08/28/1
+      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=797165
+      - http://www.debian.org/security/2015/dsa-3392
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172491.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172583.html
+      - http://www.securitytracker.com/id/1034077
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168000.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168023.html
+      - https://security.gentoo.org/glsa/201701-68
+      - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
+    reported: 2015-09-29
+    severity: ~
+cpansa_version: 2
+distribution: Win32-Printer
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:18 2025
+  from: external_reports/freeimage.yml
+last_checked: 1749751661
+latest_version: v0.9.1
+repo: ~

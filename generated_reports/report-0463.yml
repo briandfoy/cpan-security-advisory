@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.01,<=0.19'
+    cves:
+      - CVE-2020-8127
+    description: "Insufficient validation in cross-origin communication (postMessage) in reveal.js version 3.9.1 and earlier allow attackers to perform cross-site scripting attacks.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-6vwx-mwp8-fh44
+    id: CPANSA-App-revealup-2020-8127-revealjs
+    references:
+      - https://hackerone.com/reports/691977
+    reported: 2020-02-28
+    severity: medium
+cpansa_version: 2
+distribution: App-revealup
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:14 2025
+  from: external_reports/reveal.yml
+last_checked: 1749751661
+latest_version: 0.23
+repo: https://github.com/yusukebe/App-revealup.git

@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.11,<=0.13'
+    cves:
+      - CVE-2020-36254
+    description: "scp.c in Dropbear before 2020.79 mishandles the filename of . or an empty filename, a related issue to CVE-2018-20685.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-36m7-j2mr-5864
+    id: CPANSA-Net-Dropbear-2020-36254-dropbear
+    references:
+      - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
+      - https://github.com/mkj/dropbear/commit/8f8a3dff705fad774a10864a2e3dbcfa9779ceff
+    reported: 2021-02-25
+    severity: high
+cpansa_version: 2
+distribution: Net-Dropbear
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:15 2025
+  from: external_reports/dropbear.yml
+last_checked: 1749751661
+latest_version: 0.16
+repo: https://github.com/atrodo/Net-Dropbear.git

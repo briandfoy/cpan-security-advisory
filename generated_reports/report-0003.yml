@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.14,<=1.18'
+    cves:
+      - X-CVE-2014-0001
+    description: "Affected versions of the package are vulnerable to Cross-site Scripting (XSS) via the editor box.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - ~
+    id: CPANSA-MySQL-Admin-X-CVE-2014-0001-bootstrap-markdown-editor
+    references:
+      - https://security.snyk.io/vuln/npm:bootstrap-markdown:20140826
+      - https://cwe.mitre.org/data/definitions/79.html
+    reported: 2014-08-25
+    severity: ~
+cpansa_version: 2
+distribution: MySQL-Admin
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:10 2025
+  from: external_reports/bootstrap-markdown.yml
+last_checked: 1749751661
+latest_version: 1.18
+repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/

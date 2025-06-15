@@ -1,0 +1,62 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.01,<=0.02_02'
+    cves:
+      - CVE-2014-8141
+    description: "Heap-based buffer overflow in the getZip64Data function in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-3gfx-c6cm-vch8
+    id: CPANSA-Archive-Unzip-Burst-2014-8141-unzip
+    references:
+      - https://rt.cpan.org/Ticket/Display.html?id=143547
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1174856
+      - http://www.securitytracker.com/id/1031433
+      - http://www.ocert.org/advisories/ocert-2014-011.html
+      - https://access.redhat.com/errata/RHSA-2015:0700
+    reported: 2020-01-31
+    severity: high
+  - affected_versions:
+      - '>=0.01,<=0.02_02'
+    cves:
+      - CVE-2014-8140
+    description: "Heap-based buffer overflow in the test_compr_eb function in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-fhf3-rjhh-4c23
+    id: CPANSA-Archive-Unzip-Burst-2014-8140-unzip
+    references:
+      - https://rt.cpan.org/Ticket/Display.html?id=143547
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1174851
+      - http://www.securitytracker.com/id/1031433
+      - http://www.ocert.org/advisories/ocert-2014-011.html
+      - https://access.redhat.com/errata/RHSA-2015:0700
+    reported: 2020-01-31
+    severity: high
+  - affected_versions:
+      - '>=0.01,<=0.02_02'
+    cves:
+      - CVE-2014-8139
+    description: "Heap-based buffer overflow in the CRC32 verification in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-fhcq-p46p-2xvm
+    id: CPANSA-Archive-Unzip-Burst-2014-8139-unzip
+    references:
+      - https://rt.cpan.org/Ticket/Display.html?id=143547
+      - http://www.securitytracker.com/id/1031433
+      - http://www.ocert.org/advisories/ocert-2014-011.html
+      - https://access.redhat.com/errata/RHSA-2015:0700
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1174844
+    reported: 2020-01-31
+    severity: high
+cpansa_version: 2
+distribution: Archive-Unzip-Burst
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:45 2025
+  from: external_reports/unzip.yml
+last_checked: 1749751661
+latest_version: 0.09
+repo: git://github.com/mohawk2/Archive-Unzip-Burst

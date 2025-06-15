@@ -1,0 +1,29 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.053,<2.0.10'
+    cves:
+      - CVE-2019-20454
+    description: "An out-of-bounds read was discovered in PCRE before 10.34 when the pattern \\X is JIT compiled and used to match specially crafted subjects in non-UTF mode. Applications that use PCRE to parse untrusted input may be vulnerable to this flaw, which would allow an attacker to crash the application. The flaw occurs in do_extuni_no_utf in pcre2_jit_compile.c.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-6wcm-vmc4-h93p
+    id: CPANSA-MarpaX-ESLIF-2019-20454-libpcre2
+    references:
+      - https://bugs.php.net/bug.php?id=78338
+      - https://bugs.exim.org/show_bug.cgi?id=2421
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1735494
+      - https://vcs.pcre.org/pcre2?view=revision&revision=1092
+      - https://security.gentoo.org/glsa/202006-16
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OQRAHYHLRNMBTPR3KXVM27NSZP3KTOPI/
+    reported: 2020-02-14
+    severity: high
+cpansa_version: 2
+distribution: MarpaX-ESLIF
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:54 2025
+  from: external_reports/libpcre2.yml
+last_checked: 1749751661
+latest_version: 6.0.35.1
+repo: git://github.com/jddurand/c-marpaESLIFPerl.git

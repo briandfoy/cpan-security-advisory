@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.09,<=0.10'
+    cves:
+      - CVE-2021-23432
+    description: "This affects all versions of package mootools. This is due to the ability to pass untrusted input to Object.merge()\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-x6hx-7gh3-3q98
+    id: CPANSA-Perldoc-Server-2021-23432-mootools
+    references:
+      - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536
+    reported: 2021-08-24
+    severity: critical
+cpansa_version: 2
+distribution: Perldoc-Server
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:08 2025
+  from: external_reports/mootools.yml
+last_checked: 1749751661
+latest_version: 0.10
+repo: ~

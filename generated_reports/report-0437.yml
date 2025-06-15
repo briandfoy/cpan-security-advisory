@@ -1,0 +1,27 @@
+---
+advisories:
+  - affected_versions:
+      - '>=2.028008,<=2.052002'
+    cves:
+      - CVE-2022-24785
+    description: "Moment.js is a JavaScript date library for parsing, validating, manipulating, and formatting dates. A path traversal vulnerability impacts npm (server) users of Moment.js between versions 1.0.1 and 2.29.1, especially if a user-provided locale string is directly used to switch moment locale. This problem is patched in 2.29.2, and the patch can be applied to all affected versions. As a workaround, sanitize the user-provided locale name before passing it to Moment.js.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-8hfj-j24r-96c4
+    id: CPANSA-App-Netdisco-2022-24785-momentjs
+    references:
+      - https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5
+      - https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4
+      - https://www.tenable.com/security/tns-2022-09
+      - https://security.netapp.com/advisory/ntap-20220513-0006/
+    reported: 2022-04-04
+    severity: high
+cpansa_version: 2
+distribution: App-Netdisco
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:08 2025
+  from: external_reports/momentjs.yml
+last_checked: 1749751661
+latest_version: 2.085003
+repo: https://github.com/netdisco/netdisco

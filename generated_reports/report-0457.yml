@@ -1,0 +1,29 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.99_01,<=0.991_006'
+    cves:
+      - CVE-2021-23562
+    description: "This affects the package plupload before 2.3.9. A file name containing JavaScript code could be uploaded and run. An attacker would need to trick a user to upload this kind of file.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-rp2c-jrgp-cvr8
+    id: CPANSA-Yukki-2021-23562-plupload
+    references:
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBMOXIECODE-2306664
+      - https://github.com/moxiecode/plupload/commit/d12175d4b5fa799b994ee1bb17bfbeec55b386fb
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-2306665
+      - https://github.com/moxiecode/plupload/blob/master/js/jquery.plupload.queue/jquery.plupload.queue.js%23L226
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-2306663
+      - https://snyk.io/vuln/SNYK-JS-PLUPLOAD-1583909
+    reported: 2021-12-03
+    severity: high
+cpansa_version: 2
+distribution: Yukki
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:12 2025
+  from: external_reports/plupload.yml
+last_checked: 1749751661
+latest_version: 0.140290
+repo: git://github.com/zostay/Yukki.git

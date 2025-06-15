@@ -1,0 +1,27 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.16,<=1.18'
+    cves:
+      - CVE-2019-20921
+    description: "bootstrap-select before 1.13.6 allows Cross-Site Scripting (XSS). It does not escape title values in OPTION elements. This may allow attackers to execute arbitrary JavaScript in a victim's browser.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-7c82-mp33-r854
+    id: CPANSA-MySQL-Admin-2019-20921-bootstrap-select
+    references:
+      - https://github.com/advisories/GHSA-9r7h-6639-v5mw
+      - https://github.com/snapappointments/bootstrap-select/issues/2199
+      - https://www.npmjs.com/advisories/1522
+      - https://snyk.io/vuln/SNYK-JS-BOOTSTRAPSELECT-570457
+    reported: 2020-09-30
+    severity: medium
+cpansa_version: 2
+distribution: MySQL-Admin
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:10 2025
+  from: external_reports/bootstrap-select.yml
+last_checked: 1749751661
+latest_version: 1.18
+repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/

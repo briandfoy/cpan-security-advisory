@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - '>=2.1.0,<=2.1.1'
+    cves:
+      - CVE-2021-46322
+    description: "Duktape v2.99.99 was discovered to contain a SEGV vulnerability via the component duk_push_tval in duktape/duk_api_stack.c.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-hmgv-4jwm-xc9x
+    id: CPANSA-JavaScript-Duktape-2021-46322-duktape
+    references:
+      - https://github.com/svaarala/duktape/issues/2448
+      - https://github.com/gonzus/JavaScript-Duktape-XS/issues/33
+    reported: 2022-01-20
+    severity: medium
+cpansa_version: 2
+distribution: JavaScript-Duktape
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:15 2025
+  from: external_reports/duktape.yml
+last_checked: 1749751661
+latest_version: v2.5.0
+repo: git://github.com/mamod/JavaScript-Duktape.git

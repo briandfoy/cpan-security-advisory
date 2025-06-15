@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.03,<=0.10'
+    cves:
+      - CVE-2020-7693
+    description: "Incorrect handling of Upgrade header with the value websocket leads in crashing of containers hosting sockjs apps. This affects the package sockjs before 0.3.20.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-c9g6-9335-x697
+    id: CPANSA-SockJS-2020-7693-sockjs
+    references:
+      - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
+    reported: 2020-07-09
+    severity: ~
+cpansa_version: 2
+distribution: SockJS
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:15 2025
+  from: external_reports/sockjs.yml
+last_checked: 1749751661
+latest_version: 0.10
+repo: git://github.com/vti/sockjs-perl.git

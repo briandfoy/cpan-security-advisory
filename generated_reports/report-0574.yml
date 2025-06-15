@@ -1,0 +1,42 @@
+---
+advisories:
+  - affected_versions:
+      - '>=804.025,<=804.027'
+    cves:
+      - CVE-2003-0107
+    description: "Buffer overflow in the gzprintf function in zlib 1.1.4, when zlib is compiled without vsnprintf or when long inputs are truncated using vsnprintf, allows attackers to cause a denial of service or possibly execute arbitrary code.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-c9pj-8qx8-ccrw
+    id: CPANSA-Tk-2003-0107-zlib
+    references:
+      - http://online.securityfocus.com/archive/1/312869
+      - http://www.iss.net/security_center/static/11381.php
+      - http://lists.apple.com/mhonarc/security-announce/msg00038.html
+      - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2003-011.0.txt
+      - http://distro.conectiva.com/atualizacoes/?id=a&anuncio=000619
+      - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2003:033
+      - ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2003-004.txt.asc
+      - http://www.redhat.com/support/errata/RHSA-2003-079.html
+      - http://www.redhat.com/support/errata/RHSA-2003-081.html
+      - http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F57405
+      - http://www.kb.cert.org/vuls/id/142121
+      - http://www.securityfocus.com/bid/6913
+      - http://www.osvdb.org/6599
+      - http://marc.info/?l=bugtraq&m=104620610427210&w=2
+      - http://marc.info/?l=bugtraq&m=104887247624907&w=2
+      - http://marc.info/?l=bugtraq&m=104610536129508&w=2
+      - http://marc.info/?l=bugtraq&m=104610337726297&w=2
+      - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000066.html
+      - http://jvn.jp/en/jp/JVN78689801/index.html
+    reported: 2003-03-07
+    severity: ~
+cpansa_version: 2
+distribution: Tk
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:46 2025
+  from: external_reports/zlib.yml
+last_checked: 1749751661
+latest_version: 804.036
+repo: http://github.com/eserte/perl-tk

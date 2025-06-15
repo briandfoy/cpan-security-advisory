@@ -1,0 +1,43 @@
+---
+advisories:
+  - affected_versions:
+      - 2.0.10
+    cves:
+      - CVE-2021-35472
+    description: "An issue was discovered in LemonLDAP::NG before 2.0.12. Session cache corruption can lead to authorization bypass or spoofing. By running a loop that makes many authentication attempts, an attacker might alternately be authenticated as one of two different users.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-9v87-664x-72qc
+    id: CPANSA-Lemonldap-NG-Portal-2021-35472-lemonldap
+    references:
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2539
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/tags
+      - https://www.debian.org/security/2021/dsa-4943
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/commit/8d3b763b6af2b8a9c4ad2765fbfabffec8a73af5
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+    reported: 2021-07-30
+    severity: high
+  - affected_versions:
+      - 2.0.10
+    cves:
+      - CVE-2021-35473
+    description: "OAuth2 handler does not verify access token validity\n"
+    fixed_versions: []
+    github_security_advisory:
+      - ~
+    id: CPANSA-Lemonldap-NG-Portal-2021-35473-lemonldap
+    references:
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2549
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+    reported: ~
+    severity: low
+cpansa_version: 2
+distribution: Lemonldap-NG-Portal
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:32:44 2025
+  from: external_reports/lemonldap.yml
+last_checked: 1749751661
+latest_version: v2.21.0
+repo: ~

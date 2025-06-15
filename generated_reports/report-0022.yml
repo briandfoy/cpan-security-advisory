@@ -1,0 +1,28 @@
+---
+advisories:
+  - affected_versions:
+      - ==0.003
+    cves:
+      - CVE-2020-7746
+    description: "This affects the package chart.js before 2.9.4. The options parameter is not properly sanitized when it is processed. When the options are processed, the existing options (or the defaults options) are deeply merged with provided options. However, during this operation, the keys of the object being set are not checked, leading to a prototype pollution.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-h68q-55jf-x68w
+    id: CPANSA-Wight-Chart-2020-7746-chartjs
+    references:
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBCHARTJS-1019376
+      - https://github.com/chartjs/Chart.js/pull/7920
+      - https://snyk.io/vuln/SNYK-JS-CHARTJS-1018716
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1019375
+      - https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1019374
+    reported: 2020-10-29
+    severity: high
+cpansa_version: 2
+distribution: Wight-Chart
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:15 2025
+  from: external_reports/chartjs.yml
+last_checked: 1749751661
+latest_version: 0.003
+repo: git://github.com/papercreatures/wight-chart.git

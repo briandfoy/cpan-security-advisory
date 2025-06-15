@@ -1,0 +1,45 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.00,<=1.10'
+    cves:
+      - CVE-2016-4570
+    description: "The mxmlDelete function in mxml-node.c in mxml 2.9, 2.7, and possibly earlier allows remote attackers to cause a denial of service (stack consumption) via crafted xml file.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-73qc-88cx-hqmh
+    id: CPANSA-Win32-File-Summary-2016-4570-mxml
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
+      - http://www.openwall.com/lists/oss-security/2016/05/11/14
+      - http://www.openwall.com/lists/oss-security/2016/05/09/16
+      - http://www.securityfocus.com/bid/90315
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
+    reported: 2017-02-03
+    severity: medium
+  - affected_versions:
+      - '>=1.00,<=1.10'
+    cves:
+      - CVE-2016-4571
+    description: "The mxml_write_node function in mxml-file.c in mxml 2.9, 2.7, and possibly earlier allows remote attackers to cause a denial of service (stack consumption) via crafted xml file.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-r5m9-xhw7-f4vr
+    id: CPANSA-Win32-File-Summary-2016-4571-mxml
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
+      - http://www.openwall.com/lists/oss-security/2016/05/11/14
+      - http://www.openwall.com/lists/oss-security/2016/05/09/16
+      - http://www.securityfocus.com/bid/90315
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
+    reported: 2017-02-03
+    severity: medium
+cpansa_version: 2
+distribution: Win32-File-Summary
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:09 2025
+  from: external_reports/mxml.yml
+last_checked: 1749751661
+latest_version: 0.01
+repo: ~

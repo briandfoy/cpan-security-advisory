@@ -1,0 +1,27 @@
+---
+advisories:
+  - affected_versions:
+      - ==0.10.2
+    cves:
+      - CVE-2020-7105
+    description: "async.c and dict.c in libhiredis.a in hiredis through 0.14.0 allow a NULL pointer dereference because malloc return values are unchecked.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-cjp9-9h2g-g3x5
+    id: CPANSA-Redis-hiredis-2020-7105-hiredis
+    references:
+      - https://github.com/redis/hiredis/issues/747
+      - https://lists.debian.org/debian-lts-announce/2020/01/msg00028.html
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/76ZDGWBV3YEEQ2YC65ZJEQLKQFVFBZHX/
+      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZKOTCIYFEWJJILUGL4JQ3CJAM3TWYZ2A/
+    reported: 2020-01-16
+    severity: high
+cpansa_version: 2
+distribution: Redis-hiredis
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:31:19 2025
+  from: external_reports/hiredis.yml
+last_checked: 1749751661
+latest_version: v0.11.0
+repo: ~

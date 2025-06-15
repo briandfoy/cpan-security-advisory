@@ -1,0 +1,26 @@
+---
+advisories:
+  - affected_versions:
+      - '>=4.001_001,<4.009_002'
+    cves:
+      - CVE-2021-24031
+    description: "In the Zstandard command-line utility prior to v1.4.1, output files were created with default permissions. Correct file permissions (matching the input) would only be set at completion time. Output files could therefore be readable or writable to unintended parties.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-5mqj-v3fr-pg3x
+    id: CPANSA-Sereal-Decoder-2021-24031-zstd
+    references:
+      - https://www.facebook.com/security/advisories/cve-2021-24031
+      - https://github.com/facebook/zstd/issues/1630
+      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=981404
+    reported: 2021-03-04
+    severity: medium
+cpansa_version: 2
+distribution: Sereal-Decoder
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:51 2025
+  from: external_reports/zstd.yml
+last_checked: 1749751661
+latest_version: 5.004
+repo: git://github.com/Sereal/Sereal.git

@@ -1,0 +1,48 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.01,<=1.02'
+    cves:
+      - CVE-2011-3045
+    description: "Integer signedness error in the png_inflate function in pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome before 17.0.963.83 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file, a different vulnerability than CVE-2011-3026.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-w4pv-vqp3-f753
+    id: CPANSA-Prima-codecs-win64-2011-3045-libpng
+    references:
+      - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
+      - http://code.google.com/p/chromium/issues/detail?id=116162
+      - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
+      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
+      - https://bugzilla.redhat.com/show_bug.cgi?id=799000
+      - http://secunia.com/advisories/48485
+      - http://secunia.com/advisories/48512
+      - http://secunia.com/advisories/48554
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
+      - http://secunia.com/advisories/48320
+      - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
+      - http://secunia.com/advisories/49660
+      - http://security.gentoo.org/glsa/glsa-201206-15.xml
+      - http://www.securitytracker.com/id?1026823
+      - http://rhn.redhat.com/errata/RHSA-2012-0488.html
+      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
+      - http://www.debian.org/security/2012/dsa-2439
+      - http://rhn.redhat.com/errata/RHSA-2012-0407.html
+      - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
+    reported: 2012-03-22
+    severity: ~
+cpansa_version: 2
+distribution: Prima-codecs-win64
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:05 2025
+  from: external_reports/libpng.yml
+last_checked: 1749751661
+latest_version: ~
+repo: ~

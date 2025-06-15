@@ -1,0 +1,60 @@
+---
+advisories:
+  - affected_versions:
+      - =1.65_02
+    cves:
+      - CVE-2020-11656
+    description: "In SQLite through 3.31.1, the ALTER TABLE implementation has a use-after-free, as demonstrated by an ORDER BY clause that belongs to a compound SELECT statement.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-x2v5-p27f-53wp
+    id: CPANSA-DBD-SQLite-2020-11656-sqlite
+    references:
+      - https://www3.sqlite.org/cgi/src/info/b64674919f673602
+      - https://www.sqlite.org/src/info/d09f8c3621d5f7f8
+      - https://security.netapp.com/advisory/ntap-20200416-0001/
+      - https://www.oracle.com/security-alerts/cpujul2020.html
+      - https://security.gentoo.org/glsa/202007-26
+      - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+      - https://www.oracle.com/security-alerts/cpuoct2020.html
+      - https://www.oracle.com/security-alerts/cpujan2021.html
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
+      - https://www.tenable.com/security/tns-2021-14
+      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+    reported: 2020-04-09
+    severity: critical
+  - affected_versions:
+      - =1.65_02
+    cves:
+      - CVE-2020-11655
+    description: "SQLite through 3.31.1 allows attackers to cause a denial of service (segmentation fault) via a malformed window-function query because the AggInfo object's initialization is mishandled.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-f86q-8q37-c2x4
+    id: CPANSA-DBD-SQLite-2020-11655-sqlite
+    references:
+      - https://www3.sqlite.org/cgi/src/info/4a302b42c7bf5e11
+      - https://www3.sqlite.org/cgi/src/tktview?name=af4556bb5c
+      - https://security.netapp.com/advisory/ntap-20200416-0001/
+      - https://lists.debian.org/debian-lts-announce/2020/05/msg00006.html
+      - https://usn.ubuntu.com/4394-1/
+      - https://www.oracle.com/security-alerts/cpujul2020.html
+      - https://security.gentoo.org/glsa/202007-26
+      - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
+      - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
+      - https://www.oracle.com/security-alerts/cpuoct2020.html
+      - https://www.oracle.com/security-alerts/cpujan2021.html
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
+      - https://www.tenable.com/security/tns-2021-14
+      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+    reported: 2020-04-09
+    severity: high
+cpansa_version: 2
+distribution: DBD-SQLite
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:29 2025
+  from: external_reports/sqlite.yml
+last_checked: 1749751661
+latest_version: 1.76
+repo: https://github.com/DBD-SQLite/DBD-SQLite

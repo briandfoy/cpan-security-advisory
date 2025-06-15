@@ -1,0 +1,29 @@
+---
+advisories:
+  - affected_versions:
+      - '>=1.7.3.0,<=1.17.3.0'
+    cves:
+      - CVE-2016-8734
+    description: "Apache Subversion's mod_dontdothat module and HTTP clients 1.4.0 through 1.8.16, and 1.9.0 through 1.9.4 are vulnerable to a denial-of-service attack caused by exponential XML entity expansion. The attack can cause the targeted process to consume an excessive amount of CPU resources or memory.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-x5mc-4p5h-grh2
+    id: CPANSA-Alien-SVN-2016-8734-subversion
+    references:
+      - https://subversion.apache.org/security/CVE-2016-8734-advisory.txt
+      - https://lists.apache.org/thread.html/7798f5cda1b2a3c70db4be77694b12dec8fcc1a441b00009d44f0e09@%3Cannounce.apache.org%3E
+      - http://www.securitytracker.com/id/1037361
+      - http://www.securityfocus.com/bid/94588
+      - http://www.debian.org/security/2017/dsa-3932
+      - https://www.oracle.com/security-alerts/cpuoct2020.html
+    reported: 2017-10-16
+    severity: medium
+cpansa_version: 2
+distribution: Alien-SVN
+generated:
+  by: util/invert-third-party.pl
+  date: Mon Jun  2 18:33:36 2025
+  from: external_reports/subversion.yml
+last_checked: 1749751661
+latest_version: v1.8.11.0
+repo: https://github.com/evalEmpire/Alien-SVN/
