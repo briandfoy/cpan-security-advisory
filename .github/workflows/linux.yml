@@ -140,6 +140,13 @@ jobs:
 # then switch back to cpan. I didn't explore this further, but what you
 # see here hasn't caused problems for me.
 # Need HTTP::Tiny 0.055 or later.
+            - name: Load cache
+              id: perl-modules-cache-restore
+              uses: actions/cache/restore@v4
+              with:
+                path: |
+                  /usr/local/lib/perl5
+              key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
             - name: Install cpanm and multiple modules
               run: |
                 curl -L https://cpanmin.us | perl - App::cpanminus
@@ -195,3 +202,11 @@ jobs:
                 cpanm --notest Devel::Cover Devel::Cover::Report::Coveralls
                 perl Makefile.PL
                 cover -test -report coveralls
+            - name: Save cache
+              id: perl-modules-cache-save
+              uses: actions/cache/restore@v4
+              if: always()
+              with:
+                path: |
+                  /usr/local/lib/perl5
+              key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
