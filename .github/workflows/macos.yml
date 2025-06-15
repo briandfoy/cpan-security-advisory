@@ -81,6 +81,15 @@ jobs:
                 perl -v | perl -0777 -ne 'm/(v5\.\d+)/ && print "PERL_VERSION=$1"' >> $GITHUB_ENV
             - name: Perl version check
               run: perl -V
+# reload the cache so we don't need to reinstall modules
+            - name: Load cache
+              id: perl-modules-cache-restore
+              uses: actions/cache/restore@v4
+              with:
+                key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
+                path: |
+                  /opt/homebrew/Cellar/perl/*/lib
+                  /opt/homebrew/Cellar/perl/*/bin
 # cpan can operate with https, but we need IO::SSL::Socket, which
 # does not come with Perl.
 #
@@ -140,3 +149,13 @@ jobs:
                 cpan -M https://www.cpan.org -T Devel::Cover Devel::Cover::Report::Coveralls
                 perl Makefile.PL
                 cover -test -report coveralls
+# Now always save the Perl modules in case we updated some versions
+            - name: Save cache
+              id: perl-modules-cache-save
+              uses: actions/cache/save@v4
+              if: always()
+              with:
+                key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
+                path: |
+                  /opt/homebrew/Cellar/perl/*/lib
+                  /opt/homebrew/Cellar/perl/*/bin
