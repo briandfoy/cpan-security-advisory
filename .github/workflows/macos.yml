@@ -81,7 +81,8 @@ jobs:
                 perl -v | perl -0777 -ne 'm/(v5\.\d+)/ && print "PERL_VERSION=$1"' >> $GITHUB_ENV
             - name: Perl version check
               run: perl -V
-# reload the cache so we don't need to reinstall modules
+# reload the cache so we don't need to reinstall modules, This can save
+# several minutes.
             - name: Load cache
               id: perl-modules-cache-restore
               uses: actions/cache/restore@v4
