@@ -87,7 +87,7 @@ jobs:
               id: perl-modules-cache-restore
               uses: actions/cache/restore@v4
               with:
-                key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
+                key: ${{ runner.os }}-perl-modules
                 path: |
                   /opt/homebrew/Cellar/perl/*/lib
                   /opt/homebrew/Cellar/perl/*/bin
