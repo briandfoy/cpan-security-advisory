@@ -76,6 +76,14 @@ jobs:
                 git rev-parse HEAD
                 git remote show
                 git config --get remote.origin.url
+            - name: Load cache
+              id: perl-modules-cache-restore
+              uses: actions/cache/restore@v4
+              with:
+                key: cpan-audit-${{ runner.os }}-${{ matrix.perl-version }}-modules
+                path: |
+                  /usr/local/lib/perl5
+                  /usr/local/bin/cover
             - name: update toolchain
               run: |
                 cpan App::Cpan
@@ -96,3 +104,12 @@ jobs:
             - name: check CPAN::Audit
               run: |
                 cpan -M http://www.cpan.org CPAN::Audit
+            - name: Save cache
+              id: perl-modules-cache-save
+              uses: actions/cache/save@v4
+              if: always()
+              with:
+                key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
+                path: |
+                  /usr/local/lib/perl5
+                  /usr/local/bin/cover
