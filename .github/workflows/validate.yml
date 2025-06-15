@@ -61,6 +61,13 @@ jobs:
             image: perl:${{ matrix.perl-version }}
         steps:
             - uses: actions/checkout@v3
+            - name: Load cache
+              id: perl-modules-cache-restore
+              uses: actions/cache/restore@v4
+              with:
+                key: validate-${{ runner.os }}-${{ matrix.perl-version }}-modules
+                path: |
+                  /usr/local/lib/perl5
             - name: 'setup'
               run: |
                 cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive MetaCPAN::Client YAML CPAN::Audit Data::Rx
@@ -68,3 +75,11 @@ jobs:
               run: |
                 env PERL5LIB=./lib make -f Makefile.repo invert
                 perl util/lint_reports
+            - name: Save cache
+              id: perl-modules-cache-save
+              uses: actions/cache/save@v4
+              if: always()
+              with:
+                key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
+                path: |
+                  /usr/local/lib/perl5
