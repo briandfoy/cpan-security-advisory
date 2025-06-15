@@ -202,6 +202,7 @@ jobs:
                 cpanm --notest Devel::Cover Devel::Cover::Report::Coveralls
                 perl Makefile.PL
                 cover -test -report coveralls
+# Now always save the Perl modules in case we updated some versions
             - name: Save cache
               id: perl-modules-cache-save
               uses: actions/cache/save@v4
