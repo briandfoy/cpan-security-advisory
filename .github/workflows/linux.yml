@@ -147,6 +147,7 @@ jobs:
                 key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
                 path: |
                   /usr/local/lib/perl5
+                  /usr/local/bin/cover
             - name: Install cpanm and multiple modules
               run: |
                 curl -L https://cpanmin.us | perl - App::cpanminus
@@ -211,3 +212,4 @@ jobs:
                 key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
                 path: |
                   /usr/local/lib/perl5
+                  /usr/local/bin/cover
