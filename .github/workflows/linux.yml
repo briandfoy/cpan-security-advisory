@@ -135,11 +135,6 @@ jobs:
                 pwd
                 ls
                 rm -rfv HTML-Tagset-*
-# I had some problems with openssl on Ubuntu, so I punted by installing
-# cpanm first, which is easy. I can install IO::Socket::SSL with that,
-# then switch back to cpan. I didn't explore this further, but what you
-# see here hasn't caused problems for me.
-# Need HTTP::Tiny 0.055 or later.
             - name: Load cache
               id: perl-modules-cache-restore
               uses: actions/cache/restore@v4
@@ -148,6 +143,11 @@ jobs:
                 path: |
                   /usr/local/lib/perl5
                   /usr/local/bin/cover
+# I had some problems with openssl on Ubuntu, so I punted by installing
+# cpanm first, which is easy. I can install IO::Socket::SSL with that,
+# then switch back to cpan. I didn't explore this further, but what you
+# see here hasn't caused problems for me.
+# Need HTTP::Tiny 0.055 or later.
             - name: Install cpanm and multiple modules
               run: |
                 curl -L https://cpanmin.us | perl - App::cpanminus
