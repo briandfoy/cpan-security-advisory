@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - ==1.03
+    cves:
+      - CVE-2025-40915
+    description: 'Mojolicious::Plugin::CSRF 1.03 for Perl uses a weak random number source for generating CSRF tokens.  That version of the module generates tokens as an MD5 of the process id, the current time, and a single call to the built-in rand() function.'
+    fixed_versions:
+      - '>=1.03'
+    github_security_advisory:
+      - GHSA-mqr9-mgqq-52rq
+    id: CPANSA-Mojolicious-Plugin-CSRF-2025-40915
+    references:
+      - https://metacpan.org/release/GRYPHON/Mojolicious-Plugin-CSRF-1.04/changes
+      - https://metacpan.org/release/GRYPHON/Mojolicious-Plugin-CSRF-1.04/diff/GRYPHON/Mojolicious-Plugin-CSRF-1.03
+    reported: 2025-06-11
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Mojolicious-Plugin-CSRF
+last_checked: 1750201875
+latest_version: 1.05
+metacpan: https://metacpan.org/pod/Mojolicious::Plugin::CSRF
