@@ -73,7 +73,6 @@ jobs:
                 cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive MetaCPAN::Client YAML CPAN::Audit Data::Rx
             - name: "Lint reports"
               run: |
-                env PERL5LIB=./lib make -f Makefile.repo invert
                 perl util/lint_reports
             - name: Save cache
               id: perl-modules-cache-save
