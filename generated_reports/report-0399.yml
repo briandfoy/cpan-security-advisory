@@ -3,22 +3,40 @@ advisories:
   - affected_versions:
       - '>=0.25,<=0.28'
     cves:
-      - X-libgit2-2015-0001
-    description: "On the heels of CVE 2014-9390, we are announcing another round of security updates to libgit2. Similar to the prior vulnerability, an attacker can construct a git commit that, when checked out, may cause files to be written to your .git directory which may lead to arbitrary code execution.\n"
+      - CVE-2018-8098
+    description: "Integer overflow in the index.c:read_entry() function while decompressing a compressed prefix length in libgit2 before v0.26.2 allows an attacker to cause a denial of service (out-of-bounds read) via a crafted repository index file.\n"
     fixed_versions: []
     github_security_advisory:
-      - ~
-    id: CPANSA-Git-Raw-X-libgit2-2015-0001-libgit2
+      - GHSA-m334-hpp6-wjh3
+    id: CPANSA-Git-Raw-2018-8098-libgit2
     references:
-      - https://www.edwardthomson.com/blog/another-libgit2-security-update.html
-    reported: 2015-01-20
-    severity: critical
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/3db1af1f370295ad5355b8f64b865a2a357bcac0
+      - https://github.com/libgit2/libgit2/commit/3207ddb0103543da8ad2139ec6539f590f9900c1
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
+    severity: medium
+  - affected_versions:
+      - '>=0.25,<=0.28'
+    cves:
+      - CVE-2018-8099
+    description: "Incorrect returning of an error code in the index.c:read_entry() function leads to a double free in libgit2 before v0.26.2, which allows an attacker to cause a denial of service via a crafted repository index file.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-mhmm-r9x5-v638
+    id: CPANSA-Git-Raw-2018-8099-libgit2
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/58a6fe94cb851f71214dbefac3f9bffee437d6fe
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
+    severity: medium
 cpansa_version: 2
 distribution: Git-Raw
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:48 2025
+  date: Mon Jun 16 21:56:25 2025
   from: external_reports/libgit2.yml
-last_checked: 1749751661
+last_checked: 1750125385
 latest_version: 0.90
 repo: git://github.com/jacquesg/p5-Git-Raw.git

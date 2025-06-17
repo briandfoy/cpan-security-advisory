@@ -3,48 +3,37 @@ advisories:
   - affected_versions:
       - =1.51_06
     cves:
-      - CVE-2018-20506
-    description: "SQLite before 3.25.3, when the FTS3 extension is enabled, encounters an integer overflow (and resultant buffer overflow) for FTS3 queries in a \"merge\" operation that occurs after crafted changes to FTS3 shadow tables, allowing remote attackers to execute arbitrary code by leveraging the ability to run arbitrary SQL statements (such as in certain WebSQL use cases). This is a different vulnerability than CVE-2018-20346.\n"
+      - CVE-2017-10989
+    description: "The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-hfxx-8v8g-6rcx
-    id: CPANSA-DBD-SQLite-2018-20506-sqlite
+      - GHSA-rp6h-mxcc-96r2
+    id: CPANSA-DBD-SQLite-2017-10989-sqlite
     references:
-      - https://support.apple.com/kb/HT209451
-      - https://support.apple.com/kb/HT209450
-      - https://support.apple.com/kb/HT209448
-      - https://support.apple.com/kb/HT209447
-      - https://support.apple.com/kb/HT209446
-      - https://support.apple.com/kb/HT209443
-      - https://sqlite.org/src/info/940f2adc8541a838
-      - https://seclists.org/bugtraq/2019/Jan/39
-      - https://seclists.org/bugtraq/2019/Jan/33
-      - https://seclists.org/bugtraq/2019/Jan/32
-      - https://seclists.org/bugtraq/2019/Jan/31
-      - https://seclists.org/bugtraq/2019/Jan/29
-      - https://seclists.org/bugtraq/2019/Jan/28
-      - http://www.securityfocus.com/bid/106698
-      - http://seclists.org/fulldisclosure/2019/Jan/69
-      - http://seclists.org/fulldisclosure/2019/Jan/68
-      - http://seclists.org/fulldisclosure/2019/Jan/67
-      - http://seclists.org/fulldisclosure/2019/Jan/66
-      - http://seclists.org/fulldisclosure/2019/Jan/64
-      - http://seclists.org/fulldisclosure/2019/Jan/62
-      - http://lists.opensuse.org/opensuse-security-announce/2019-04/msg00070.html
-      - https://security.netapp.com/advisory/ntap-20190502-0004/
+      - https://sqlite.org/src/info/66de6f4a
+      - https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1700937
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=2405
+      - https://sqlite.org/src/vpatch?from=0db20efe201736b3&to=66de6f4a9504ec26
+      - http://marc.info/?l=sqlite-users&m=149933696214713&w=2
+      - http://www.securityfocus.com/bid/99502
+      - http://www.securitytracker.com/id/1039427
+      - https://support.apple.com/HT208144
+      - https://support.apple.com/HT208115
+      - https://support.apple.com/HT208113
+      - https://support.apple.com/HT208112
+      - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00009.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00050.html
       - https://usn.ubuntu.com/4019-1/
       - https://usn.ubuntu.com/4019-2/
-      - https://www.oracle.com/security-alerts/cpuapr2020.html
-      - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
-      - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
-    reported: 2019-04-03
-    severity: high
+    reported: 2017-07-07
+    severity: critical
 cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:26 2025
+  date: Mon Jun 16 21:57:12 2025
   from: external_reports/sqlite.yml
-last_checked: 1749751661
+last_checked: 1750125432
 latest_version: 1.76
 repo: https://github.com/DBD-SQLite/DBD-SQLite

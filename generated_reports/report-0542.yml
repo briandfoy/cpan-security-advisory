@@ -3,58 +3,43 @@ advisories:
   - affected_versions:
       - '>=1.65_03,<=1.66'
     cves:
-      - CVE-2019-19242
-    description: "SQLite 3.30.1 mishandles pExpr->y.pTab, as demonstrated by the TK_COLUMN case in sqlite3ExprCodeTarget in expr.c.\n"
+      - CVE-2020-15358
+    description: "In SQLite before 3.32.3, select.c mishandles query-flattener optimization, leading to a multiSelectOrderBy heap overflow because of misuse of transitive properties for constant propagation.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-565m-5c74-6h7v
-    id: CPANSA-DBD-SQLite-2019-19242-sqlite
+      - GHSA-rq2p-jfw7-2cj3
+    id: CPANSA-DBD-SQLite-2020-15358-sqlite
     references:
-      - https://github.com/sqlite/sqlite/commit/57f7ece78410a8aae86aa4625fb7556897db384c
-      - https://usn.ubuntu.com/4205-1/
-      - https://www.oracle.com/security-alerts/cpuapr2020.html
-      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
-    reported: 2019-11-27
-    severity: medium
-  - affected_versions:
-      - '>=1.65_03,<=1.66'
-    cves:
-      - CVE-2018-3906
-    description: "An exploitable stack-based buffer overflow vulnerability exists in the retrieval of a database field in video-core's HTTP server of Samsung SmartThings Hub. The video-core process insecurely extracts the shard.videoHostURL field from its SQLite database, leading to a buffer overflow on the stack. An attacker can send an HTTP request to trigger this vulnerability.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-q22m-9gr4-fmwj
-    id: CPANSA-DBD-SQLite-2018-3906-sqlite
-    references:
-      - https://talosintelligence.com/vulnerability_reports/TALOS-2018-0576
-    reported: 2018-09-21
-    severity: high
-  - affected_versions:
-      - '>=1.65_03,<=1.66'
-    cves:
-      - CVE-2021-20227
-    description: "A flaw was found in SQLite's SELECT query functionality (src/select.c). This flaw allows an attacker who is capable of running SQL queries locally on the SQLite database to cause a denial of service or possible code execution by triggering a use-after-free. The highest threat from this vulnerability is to system availability.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-w586-cvch-p9ch
-    id: CPANSA-DBD-SQLite-2021-20227-sqlite
-    references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1924886
-      - https://www.sqlite.org/releaselog/3_34_1.html
-      - https://security.gentoo.org/glsa/202103-04
-      - https://security.netapp.com/advisory/ntap-20210423-0010/
+      - https://www.sqlite.org/src/info/10fa79d00f8091e5
+      - https://www.sqlite.org/src/timeline?p=version-3.32.3&bt=version-3.32.2
+      - https://www.sqlite.org/src/tktview?name=8f157e8010
+      - https://security.netapp.com/advisory/ntap-20200709-0001/
+      - https://security.gentoo.org/glsa/202007-26
+      - https://usn.ubuntu.com/4438-1/
+      - https://www.oracle.com/security-alerts/cpuoct2020.html
+      - https://support.apple.com/kb/HT211931
+      - https://support.apple.com/kb/HT211844
+      - https://support.apple.com/kb/HT211850
+      - https://support.apple.com/kb/HT211843
+      - https://support.apple.com/kb/HT211847
+      - http://seclists.org/fulldisclosure/2020/Nov/19
+      - http://seclists.org/fulldisclosure/2020/Nov/22
+      - http://seclists.org/fulldisclosure/2020/Nov/20
+      - http://seclists.org/fulldisclosure/2020/Dec/32
+      - https://www.oracle.com/security-alerts/cpujan2021.html
+      - https://support.apple.com/kb/HT212147
+      - http://seclists.org/fulldisclosure/2021/Feb/14
       - https://www.oracle.com/security-alerts/cpuApr2021.html
-      - https://www.oracle.com//security-alerts/cpujul2021.html
-      - https://www.oracle.com/security-alerts/cpuoct2021.html
-      - https://security.gentoo.org/glsa/202210-40
-    reported: 2021-03-23
+      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
+      - https://www.oracle.com/security-alerts/cpuapr2022.html
+    reported: 2020-06-27
     severity: medium
 cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:29 2025
+  date: Mon Jun 16 21:57:15 2025
   from: external_reports/sqlite.yml
-last_checked: 1749751661
+last_checked: 1750125435
 latest_version: 1.76
 repo: https://github.com/DBD-SQLite/DBD-SQLite

@@ -3,23 +3,22 @@ advisories:
   - affected_versions:
       - '>=0.01,<=0.06'
     cves:
-      - X-nginx-2012-0001
-    description: "content of previously freed memory might be sent to a client if backend returned specially crafted response.\n"
+      - X-nginx-2012-0002
+    description: "nginx/Windows does not ignore trailing dot in URI path component, and allows URIs with \":$\" in it.\n"
     fixed_versions: []
     github_security_advisory:
       - ~
-    id: CPANSA-Nginx-Engine-X-nginx-2012-0001-nginx
+    id: CPANSA-Nginx-Engine-X-nginx-2012-0002-nginx
     references:
-      - https://metacpan.org/dist/Nginx-Perl/changes
-      - https://mailman.nginx.org/pipermail/nginx-announce/2012/000075.html
-    reported: 2012-03-15
+      - https://github.com/nginx/nginx/blob/master/docs/xml/nginx/changes.xml
+    reported: 2012-04-17
     severity: ~
 cpansa_version: 2
 distribution: Nginx-Engine
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:09 2025
+  date: Mon Jun 16 21:56:35 2025
   from: external_reports/nginx.yml
-last_checked: 1749751661
+last_checked: 1750125395
 latest_version: ~
 repo: ~

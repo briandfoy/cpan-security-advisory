@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Plack-Debugger
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:24 2025
+  date: Mon Jun 16 21:54:11 2025
   from: external_reports/jquery.yml
-last_checked: 1749751661
+last_checked: 1750125251
 latest_version: 0.03
 repo: https://github.com/stevan/p5-plack-debugger.git

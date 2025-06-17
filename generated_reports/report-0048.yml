@@ -21,8 +21,8 @@ cpansa_version: 2
 distribution: Redis-Fast
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:20 2025
+  date: Mon Jun 16 21:54:07 2025
   from: external_reports/hiredis.yml
-last_checked: 1749751661
+last_checked: 1750125247
 latest_version: 0.37
 repo: https://github.com/shogo82148/Redis-Fast.git

@@ -3,26 +3,25 @@ advisories:
   - affected_versions:
       - '>=0.01,<=3.0.3'
     cves:
-      - CVE-2019-9423
-    description: "In opencv calls that use libpng, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges required. User interaction is not required for exploitation. Product: AndroidVersions: Android-10Android ID: A-110986616\n"
+      - CVE-2014-0333
+    description: "The png_push_read_chunk function in pngpread.c in the progressive decoder in libpng 1.6.x through 1.6.9 allows remote attackers to cause a denial of service (infinite loop and CPU consumption) via an IDAT chunk with a length of zero.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-8849-5h85-98qw
-    id: CPANSA-cppAdaptive2-2019-9423-libpng
+      - GHSA-fpgr-xxq4-wvw4
+    id: CPANSA-cppAdaptive2-2014-0333-libpng
     references:
-      - https://source.android.com/security/bulletin/android-10
-      - http://www.openwall.com/lists/oss-security/2019/10/25/17
-      - http://www.openwall.com/lists/oss-security/2019/10/27/1
-      - http://www.openwall.com/lists/oss-security/2019/11/07/1
-      - http://www.openwall.com/lists/oss-security/2020/12/05/1
-    reported: 2019-09-27
-    severity: high
+      - ftp://ftp.simplesystems.org/pub/png/src/libpng16/patch-libpng16-vu684412.diff
+      - http://www.kb.cert.org/vuls/id/684412
+      - https://sourceforge.net/projects/libpng/files/libpng16/patch-libpng16-vu684412.diff
+      - http://lists.opensuse.org/opensuse-updates/2014-03/msg00029.html
+    reported: 2014-02-27
+    severity: ~
 cpansa_version: 2
 distribution: cppAdaptive2
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:04 2025
+  date: Mon Jun 16 21:56:30 2025
   from: external_reports/libpng.yml
-last_checked: 1749751661
+last_checked: 1750125390
 latest_version: v3.0.3
 repo: ~

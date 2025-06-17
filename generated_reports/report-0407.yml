@@ -3,22 +3,30 @@ advisories:
   - affected_versions:
       - '>=0.76,<=0.82'
     cves:
-      - X-libgit2-2015-0001
-    description: "On the heels of CVE 2014-9390, we are announcing another round of security updates to libgit2. Similar to the prior vulnerability, an attacker can construct a git commit that, when checked out, may cause files to be written to your .git directory which may lead to arbitrary code execution.\n"
+      - CVE-2014-9390
+    description: "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Windows and OS X; Mercurial before 3.2.3 on Windows and OS X; Apple Xcode before 6.2 beta 3; mine all versions before 08-12-2014; libgit2 all versions up to 0.21.2; Egit all versions before 08-12-2014; and JGit all versions before 08-12-2014 allow remote Git servers to execute arbitrary commands via a tree containing a crafted .git/config file with (1) an ignorable Unicode codepoint, (2) a git~1/config representation, or (3) mixed case that is improperly handled on a case-insensitive filesystem.\n"
     fixed_versions: []
     github_security_advisory:
-      - ~
-    id: CPANSA-Git-Raw-X-libgit2-2015-0001-libgit2
+      - GHSA-6vvc-c2m3-cjf3
+    id: CPANSA-Git-Raw-2014-9390-libgit2
     references:
-      - https://www.edwardthomson.com/blog/another-libgit2-security-update.html
-    reported: 2015-01-20
+      - https://news.ycombinator.com/item?id=8769667
+      - http://git-blame.blogspot.com/2014/12/git-1856-195-205-214-and-221-and.html
+      - https://github.com/blog/1938-git-client-vulnerability-announced
+      - http://securitytracker.com/id?1031404
+      - http://article.gmane.org/gmane.linux.kernel/1853266
+      - http://mercurial.selenic.com/wiki/WhatsNew
+      - http://support.apple.com/kb/HT204147
+      - https://libgit2.org/security/
+      - https://github.com/libgit2/libgit2/commit/928429c5c96a701bcbcafacb2421a82602b36915
+    reported: 2020-02-12
     severity: critical
 cpansa_version: 2
 distribution: Git-Raw
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:50 2025
+  date: Mon Jun 16 21:56:27 2025
   from: external_reports/libgit2.yml
-last_checked: 1749751661
+last_checked: 1750125387
 latest_version: 0.90
 repo: git://github.com/jacquesg/p5-Git-Raw.git

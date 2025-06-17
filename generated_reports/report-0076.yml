@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Kossy
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:27 2025
+  date: Mon Jun 16 21:54:14 2025
   from: external_reports/jquery.yml
-last_checked: 1749751661
+last_checked: 1750125254
 latest_version: 0.63
 repo: https://github.com/kazeburo/Kossy.git

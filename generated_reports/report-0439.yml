@@ -38,8 +38,8 @@ cpansa_version: 2
 distribution: Win32-File-Summary
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:09 2025
+  date: Mon Jun 16 21:56:35 2025
   from: external_reports/mxml.yml
-last_checked: 1749751661
+last_checked: 1750125395
 latest_version: 0.01
 repo: ~

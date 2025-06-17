@@ -3,24 +3,27 @@ advisories:
   - affected_versions:
       - '>=0.14'
     cves:
-      - CVE-2016-6129
-    description: "The rsa_verify_hash_ex function in rsa_verify_hash.c in LibTomCrypt, as used in OP-TEE before 2.2.0, does not validate that the message length is equal to the ASN.1 encoded data length, which makes it easier for remote attackers to forge RSA signatures or public certificates by leveraging a Bleichenbacher signature forgery attack.\n"
+      - CVE-2019-17362
+    description: "In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c) does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers to cause a denial of service (out-of-bounds read and crash) or read information from other memory locations via carefully crafted DER-encoded data.\n"
     fixed_versions: []
     github_security_advisory:
-      - ~
-    id: CPANSA-Net-Dropbear-2016-6129-libtomcrypt
+      - GHSA-x32c-6j92-4hp9
+    id: CPANSA-Net-Dropbear-2019-17362-libtomcrypt
     references:
-      - https://www.op-tee.org/advisories/
-      - https://github.com/libtom/libtomcrypt/commit/5eb9743410ce4657e9d54fef26a2ee31a1b5dd0
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1370955
-    reported: 2017-02-13
-    severity: high
+      - https://github.com/libtom/libtomcrypt/pull/508
+      - https://github.com/libtom/libtomcrypt/issues/507
+      - https://vuldb.com/?id.142995
+      - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
+    reported: 2019-10-09
+    severity: critical
 cpansa_version: 2
 distribution: Net-Dropbear
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:07 2025
+  date: Mon Jun 16 21:56:32 2025
   from: external_reports/libtomcrypt.yml
-last_checked: 1749751661
+last_checked: 1750125392
 latest_version: 0.16
 repo: https://github.com/atrodo/Net-Dropbear.git

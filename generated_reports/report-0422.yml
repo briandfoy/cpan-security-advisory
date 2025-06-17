@@ -3,46 +3,40 @@ advisories:
   - affected_versions:
       - '>=1.00,<=1.01'
     cves:
-      - CVE-2011-3045
-    description: "Integer signedness error in the png_inflate function in pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome before 17.0.963.83 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file, a different vulnerability than CVE-2011-3026.\n"
+      - CVE-2015-8540
+    description: "Integer underflow in the png_check_keyword function in pngwutil.c in libpng 0.90 through 0.99, 1.0.x before 1.0.66, 1.1.x and 1.2.x before 1.2.56, 1.3.x and 1.4.x before 1.4.19, and 1.5.x before 1.5.26 allows remote attackers to have unspecified impact via a space character as a keyword in a PNG image, which triggers an out-of-bounds read.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-w4pv-vqp3-f753
-    id: CPANSA-Prima-codecs-win32-2011-3045-libpng
+      - GHSA-7qhq-6293-wrx3
+    id: CPANSA-Prima-codecs-win32-2015-8540-libpng
     references:
-      - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
-      - http://code.google.com/p/chromium/issues/detail?id=116162
-      - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
-      - https://bugzilla.redhat.com/show_bug.cgi?id=799000
-      - http://secunia.com/advisories/48485
-      - http://secunia.com/advisories/48512
-      - http://secunia.com/advisories/48554
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
-      - http://secunia.com/advisories/48320
-      - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://www.securitytracker.com/id?1026823
-      - http://rhn.redhat.com/errata/RHSA-2012-0488.html
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
-      - http://www.debian.org/security/2012/dsa-2439
-      - http://rhn.redhat.com/errata/RHSA-2012-0407.html
-      - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
-    reported: 2012-03-22
-    severity: ~
+      - http://sourceforge.net/projects/libpng/files/libpng10/1.0.66/
+      - http://www.openwall.com/lists/oss-security/2015/12/10/7
+      - http://www.openwall.com/lists/oss-security/2015/12/11/2
+      - http://sourceforge.net/projects/libpng/files/libpng12/1.2.56/
+      - http://sourceforge.net/p/libpng/bugs/244/
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-December/174435.html
+      - http://sourceforge.net/projects/libpng/files/libpng15/1.5.26/
+      - http://sourceforge.net/projects/libpng/files/libpng14/1.4.19/
+      - http://www.securityfocus.com/bid/80592
+      - http://sourceforge.net/p/libpng/code/ci/d9006f683c641793252d92254a75ae9b815b42ed/
+      - http://www.openwall.com/lists/oss-security/2015/12/10/6
+      - http://www.openwall.com/lists/oss-security/2015/12/17/10
+      - http://www.openwall.com/lists/oss-security/2015/12/11/1
+      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+      - https://access.redhat.com/errata/RHSA-2016:1430
+      - https://security.gentoo.org/glsa/201611-08
+      - http://www.debian.org/security/2016/dsa-3443
+      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
+      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
+    reported: 2016-04-14
+    severity: high
 cpansa_version: 2
 distribution: Prima-codecs-win32
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:05 2025
+  date: Mon Jun 16 21:56:31 2025
   from: external_reports/libpng.yml
-last_checked: 1749751661
+last_checked: 1750125391
 latest_version: ~
 repo: ~

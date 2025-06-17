@@ -3,25 +3,26 @@ advisories:
   - affected_versions:
       - '>=0.15,<=0.16'
     cves:
-      - CVE-2020-7105
-    description: "async.c and dict.c in libhiredis.a in hiredis through 0.14.0 allow a NULL pointer dereference because malloc return values are unchecked.\n"
+      - CVE-2021-32765
+    description: "Hiredis is a minimalistic C client library for the Redis database. In affected versions Hiredis is vulnurable to integer overflow if provided maliciously crafted or corrupted `RESP` `mult-bulk` protocol data. When parsing `multi-bulk` (array-like) replies, hiredis fails to check if `count * sizeof(redisReply*)` can be represented in `SIZE_MAX`. If it can not, and the `calloc()` call doesn't itself make this check, it would result in a short allocation and subsequent buffer overflow. Users of hiredis who are unable to update may set the [maxelements](https://github.com/redis/hiredis#reader-max-array-elements) context option to a value small enough that no overflow is possible.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-cjp9-9h2g-g3x5
-    id: CPANSA-Redis-Fast-2020-7105-hiredis
+      - ~
+    id: CPANSA-Redis-Fast-2021-32765-hiredis
     references:
-      - https://github.com/redis/hiredis/issues/747
-      - https://lists.debian.org/debian-lts-announce/2020/01/msg00028.html
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/76ZDGWBV3YEEQ2YC65ZJEQLKQFVFBZHX/
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZKOTCIYFEWJJILUGL4JQ3CJAM3TWYZ2A/
-    reported: 2020-01-16
+      - https://wiki.sei.cmu.edu/confluence/display/c/MEM07-C.+Ensure+that+the+arguments+to+calloc%28%29%2C+when+multiplied%2C+do+not+wrap
+      - https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2
+      - https://github.com/redis/hiredis/commit/76a7b10005c70babee357a7d0f2becf28ec7ed1e
+      - https://lists.debian.org/debian-lts-announce/2021/10/msg00007.html
+      - https://security.netapp.com/advisory/ntap-20211104-0003/
+    reported: 2021-10-04
     severity: high
 cpansa_version: 2
 distribution: Redis-Fast
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:20 2025
+  date: Mon Jun 16 21:54:07 2025
   from: external_reports/hiredis.yml
-last_checked: 1749751661
+last_checked: 1750125247
 latest_version: 0.37
 repo: https://github.com/shogo82148/Redis-Fast.git

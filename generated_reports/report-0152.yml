@@ -3,41 +3,42 @@ advisories:
   - affected_versions:
       - 2.0.7
     cves:
-      - CVE-2021-35472
-    description: "An issue was discovered in LemonLDAP::NG before 2.0.12. Session cache corruption can lead to authorization bypass or spoofing. By running a loop that makes many authentication attempts, an attacker might alternately be authenticated as one of two different users.\n"
+      - CVE-2020-16093
+    description: "In LemonLDAP::NG (aka lemonldap-ng) through 2.0.8, validity of the X.509 certificate is not checked by default when connecting to remote LDAP backends, because the default configuration of the Net::LDAPS module for Perl is used.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-9v87-664x-72qc
-    id: CPANSA-Lemonldap-NG-Common-2021-35472-lemonldap
+      - GHSA-9c48-27fx-7952
+    id: CPANSA-Lemonldap-NG-Common-2020-16093-lemonldap
     references:
-      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2539
-      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/tags
-      - https://www.debian.org/security/2021/dsa-4943
-      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/commit/8d3b763b6af2b8a9c4ad2765fbfabffec8a73af5
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2250
+      - https://rt.cpan.org/Ticket/Display.html?id=131045
       - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
-    reported: 2021-07-30
-    severity: high
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
+    reported: 2022-07-18
+    severity: ~
   - affected_versions:
       - 2.0.7
     cves:
-      - CVE-2021-35473
-    description: "OAuth2 handler does not verify access token validity\n"
+      - CVE-2020-24660
+    description: "An issue was discovered in LemonLDAP::NG through 2.0.8, when NGINX is used. An attacker may bypass URL-based access control to protected Virtual Hosts by submitting a non-normalized URI. This also affects versions before 0.5.2 of the \"Lemonldap::NG handler for Node.js\" package.\n"
     fixed_versions: []
     github_security_advisory:
-      - ~
-    id: CPANSA-Lemonldap-NG-Common-2021-35473-lemonldap
+      - GHSA-x44x-r84w-8v67
+    id: CPANSA-Lemonldap-NG-Common-2020-24660-lemonldap
     references:
-      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2549
+      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/issues/2290
+      - https://www.debian.org/security/2020/dsa-4762
+      - https://github.com/LemonLDAPNG/node-lemonldap-ng-handler/releases/tag/0.5.2
+      - https://github.com/LemonLDAPNG/node-lemonldap-ng-handler/security/advisories/GHSA-x44x-r84w-8v67
       - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
-      - https://gitlab.ow2.org/lemonldap-ng/lemonldap-ng/-/blob/master/changelog
-    reported: ~
-    severity: low
+    reported: 2020-09-14
+    severity: critical
 cpansa_version: 2
 distribution: Lemonldap-NG-Common
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:47 2025
+  date: Mon Jun 16 21:54:46 2025
   from: external_reports/lemonldap.yml
-last_checked: 1749751661
-latest_version: v2.21.0
+last_checked: 1750125286
+latest_version: v2.21.1
 repo: ~

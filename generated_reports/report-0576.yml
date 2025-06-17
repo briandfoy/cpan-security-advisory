@@ -39,8 +39,8 @@ cpansa_version: 2
 distribution: SPVM-Resource-Zlib-V1_2_11
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:47 2025
+  date: Mon Jun 16 21:57:23 2025
   from: external_reports/zlib.yml
-last_checked: 1749751661
+last_checked: 1750125443
 latest_version: 0.03
 repo: ~

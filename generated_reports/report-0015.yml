@@ -3,54 +3,27 @@ advisories:
   - affected_versions:
       - '>=1.14,<=1.18'
     cves:
-      - CVE-2018-14041
-    description: "In Bootstrap before 4.1.2, XSS is possible in the data-target property of scrollspy.\n"
+      - CVE-2018-14040
+    description: "Prototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as _proto_, constructor and prototype. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values. Properties on the Object.prototype are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-pj7m-g53m-7638
-    id: CPANSA-MySQL-Admin-2018-14041-bootstrap
+      - GHSA-3wqf-4x89-9g79
+    id: CPANSA-MySQL-Admin-2018-14040-bootstrap
     references:
       - https://github.com/twbs/bootstrap/pull/26630
-      - https://github.com/twbs/bootstrap/issues/26627
+      - https://github.com/twbs/bootstrap/issues/26625
       - https://github.com/twbs/bootstrap/issues/26423
       - https://blog.getbootstrap.com/2018/07/12/bootstrap-4-1-2/
+      - https://lists.debian.org/debian-lts-announce/2018/08/msg00027.html
       - https://seclists.org/bugtraq/2019/May/18
       - http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html
       - http://seclists.org/fulldisclosure/2019/May/13
       - http://seclists.org/fulldisclosure/2019/May/11
       - http://seclists.org/fulldisclosure/2019/May/10
-      - https://access.redhat.com/errata/RHSA-2019:1456
       - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
       - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
-      - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
       - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
-      - http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html
-      - https://lists.apache.org/thread.html/r3dc0cac8d856bca02bd6997355d7ff83027dcfc82f8646a29b89b714@%3Cissues.hbase.apache.org%3E
-      - https://www.oracle.com/security-alerts/cpuApr2021.html
-    reported: 2018-07-13
-    severity: medium
-  - affected_versions:
-      - '>=1.14,<=1.18'
-    cves:
-      - CVE-2018-14042
-    description: "In Bootstrap before 4.1.2, XSS is possible in the data-container property of tooltip.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-7mvr-5x2g-wfc8
-    id: CPANSA-MySQL-Admin-2018-14042-bootstrap
-    references:
-      - https://github.com/twbs/bootstrap/pull/26630
-      - https://github.com/twbs/bootstrap/issues/26628
-      - https://github.com/twbs/bootstrap/issues/26423
-      - https://blog.getbootstrap.com/2018/07/12/bootstrap-4-1-2/
-      - https://seclists.org/bugtraq/2019/May/18
-      - http://seclists.org/fulldisclosure/2019/May/13
-      - http://seclists.org/fulldisclosure/2019/May/11
-      - http://seclists.org/fulldisclosure/2019/May/10
-      - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
-      - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
       - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
-      - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
       - http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html
       - https://lists.apache.org/thread.html/r3dc0cac8d856bca02bd6997355d7ff83027dcfc82f8646a29b89b714@%3Cissues.hbase.apache.org%3E
       - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
@@ -62,8 +35,8 @@ cpansa_version: 2
 distribution: MySQL-Admin
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:13 2025
+  date: Mon Jun 16 21:54:00 2025
   from: external_reports/bootstrap.yml
-last_checked: 1749751661
+last_checked: 1750125240
 latest_version: 1.18
 repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/

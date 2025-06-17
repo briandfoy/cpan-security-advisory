@@ -3,27 +3,32 @@ advisories:
   - affected_versions:
       - ==1.7.19.0
     cves:
-      - CVE-2016-8734
-    description: "Apache Subversion's mod_dontdothat module and HTTP clients 1.4.0 through 1.8.16, and 1.9.0 through 1.9.4 are vulnerable to a denial-of-service attack caused by exponential XML entity expansion. The attack can cause the targeted process to consume an excessive amount of CPU resources or memory.\n"
+      - CVE-2015-3187
+    description: "The svn_repos_trace_node_locations function in Apache Subversion before 1.7.21 and 1.8.x before 1.8.14, when path-based authorization is used, allows remote authenticated users to obtain sensitive path information by reading the history of a node that has been moved from a hidden path.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-x5mc-4p5h-grh2
-    id: CPANSA-Alien-SVN-2016-8734-subversion
+      - GHSA-c79q-h5wc-3724
+    id: CPANSA-Alien-SVN-2015-3187-subversion
     references:
-      - https://subversion.apache.org/security/CVE-2016-8734-advisory.txt
-      - https://lists.apache.org/thread.html/7798f5cda1b2a3c70db4be77694b12dec8fcc1a441b00009d44f0e09@%3Cannounce.apache.org%3E
-      - http://www.securitytracker.com/id/1037361
-      - http://www.securityfocus.com/bid/94588
-      - http://www.debian.org/security/2017/dsa-3932
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-    reported: 2017-10-16
-    severity: medium
+      - http://www.securitytracker.com/id/1033215
+      - http://subversion.apache.org/security/CVE-2015-3187-advisory.txt
+      - http://www.debian.org/security/2015/dsa-3331
+      - http://lists.opensuse.org/opensuse-updates/2015-08/msg00022.html
+      - http://rhn.redhat.com/errata/RHSA-2015-1633.html
+      - https://support.apple.com/HT206172
+      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00003.html
+      - http://www.securityfocus.com/bid/76273
+      - http://rhn.redhat.com/errata/RHSA-2015-1742.html
+      - http://www.ubuntu.com/usn/USN-2721-1
+      - https://security.gentoo.org/glsa/201610-05
+    reported: 2015-08-12
+    severity: ~
 cpansa_version: 2
 distribution: Alien-SVN
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:36 2025
+  date: Mon Jun 16 21:57:19 2025
   from: external_reports/subversion.yml
-last_checked: 1749751661
+last_checked: 1750125439
 latest_version: v1.8.11.0
 repo: https://github.com/evalEmpire/Alien-SVN/

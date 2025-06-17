@@ -3,22 +3,25 @@ advisories:
   - affected_versions:
       - '>=0.01,<=0.19'
     cves:
-      - CVE-2020-8127
-    description: "Insufficient validation in cross-origin communication (postMessage) in reveal.js version 3.9.1 and earlier allow attackers to perform cross-site scripting attacks.\n"
+      - CVE-2022-0776
+    description: "Cross-site Scripting (XSS) - DOM in GitHub repository hakimel/reveal.js prior to 4.3.0.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-6vwx-mwp8-fh44
-    id: CPANSA-App-revealup-2020-8127-revealjs
+      - GHSA-hhqj-cfjx-vj25
+    id: CPANSA-App-revealup-2022-0776-revealjs
     references:
-      - https://hackerone.com/reports/691977
-    reported: 2020-02-28
+      - https://github.com/hakimel/reveal.js/commit/32cdd3b1872ba8e2267c9e87ae216cb55f40f4d2
+      - https://huntr.dev/bounties/be2b7ee4-f487-42e1-874a-6bcc410e4001
+      - https://github.com/yusukebe/App-revealup/issues/12#issuecomment-1169417411
+      - https://github.com/yusukebe/App-revealup/commit/c8fea67994b1aa6d734066bff9ada4e834b09cb7
+    reported: 2022-03-01
     severity: medium
 cpansa_version: 2
 distribution: App-revealup
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:14 2025
+  date: Mon Jun 16 21:56:40 2025
   from: external_reports/reveal.yml
-last_checked: 1749751661
+last_checked: 1750125400
 latest_version: 0.23
 repo: https://github.com/yusukebe/App-revealup.git

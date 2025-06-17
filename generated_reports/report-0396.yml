@@ -3,25 +3,43 @@ advisories:
   - affected_versions:
       - '>=1.6.2.0,<=1.6.2.1'
     cves:
-      - CVE-2021-40528
-    description: "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.\n"
+      - CVE-2014-3591
+    description: "Libgcrypt before 1.6.3 and GnuPG before 1.4.19 does not implement ciphertext blinding for Elgamal decryption, which allows physically proximate attackers to obtain the server's private key by determining factors using crafted ciphertext and the fluctuations in the electromagnetic field during multiplication.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-8m2v-68m9-q2c7
-    id: CPANSA-Alien-GCrypt-2021-40528-libgcrypt
+      - GHSA-5p8v-2xvp-pwmc
+    id: CPANSA-Alien-GCrypt-2014-3591-libgcrypt
     references:
-      - https://ibm.github.io/system-security-research-updates/2021/07/20/insecurity-elgamal-pt1
-      - https://ibm.github.io/system-security-research-updates/2021/09/06/insecurity-elgamal-pt2
-      - https://eprint.iacr.org/2021/923
-      - https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=3462280f2e23e16adf3ed5176e0f2413d8861320
-    reported: 2021-09-06
+      - https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html
+      - http://www.debian.org/security/2015/dsa-3185
+      - http://www.cs.tau.ac.il/~tromer/radioexp/
+      - https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html
+      - http://www.debian.org/security/2015/dsa-3184
+    reported: 2019-11-29
+    severity: medium
+  - affected_versions:
+      - '>=1.6.2.0,<=1.6.2.1'
+    cves:
+      - CVE-2015-0837
+    description: "The mpi_powm function in Libgcrypt before 1.6.3 and GnuPG before 1.4.19 allows attackers to obtain sensitive information by leveraging timing differences when accessing a pre-computed table during modular exponentiation, related to a \"Last-Level Cache Side-Channel Attack.\"\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-3ccv-3j4f-926q
+    id: CPANSA-Alien-GCrypt-2015-0837-libgcrypt
+    references:
+      - http://www.debian.org/security/2015/dsa-3185
+      - https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000363.html
+      - https://ieeexplore.ieee.org/document/7163050
+      - http://www.debian.org/security/2015/dsa-3184
+      - https://lists.gnupg.org/pipermail/gnupg-announce/2015q1/000364.html
+    reported: 2019-11-29
     severity: medium
 cpansa_version: 2
 distribution: Alien-GCrypt
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:47 2025
+  date: Mon Jun 16 21:56:25 2025
   from: external_reports/libgcrypt.yml
-last_checked: 1749751661
+last_checked: 1750125385
 latest_version: 1.6.5.0
 repo: git://github.com/ajgb/alien-gcrypt.git

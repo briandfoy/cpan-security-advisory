@@ -20,8 +20,8 @@ cpansa_version: 2
 distribution: App-Netdisco
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:08 2025
+  date: Mon Jun 16 21:56:34 2025
   from: external_reports/momentjs.yml
-last_checked: 1749751661
-latest_version: 2.085003
+last_checked: 1750125394
+latest_version: 2.086001
 repo: https://github.com/netdisco/netdisco
