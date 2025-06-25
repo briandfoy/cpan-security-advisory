@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20250617.001 2025-06-18T04:18:55Z
+	* data update for 2025-06-17
+	* includes CVE-2025-40915 for Mojolicious::Plugin::CSRF
+
 20250613.001 2025-06-14T02:18:40Z
 	* data udpate for 2025-06-12
 	* included CVE-2025-40912 and 40914 for CryptX
