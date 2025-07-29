@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250729.001 2025-07-29T11:38:21Z
+	* data update for 2025-07-29
+
 20250703.001 2025-07-03T17:08:02Z
 	* data update for 2025-07-03
 	* includes CVE-2025-40910 for Net::IP::LPM
