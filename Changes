@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250730.001 2025-07-30T12:30:22Z
+	* Crypt::CBC 3.07 fixes 2025-2814
+
 20250729.001 2025-07-29T11:38:21Z
 	* data update for 2025-07-29
 
