@@ -47,7 +47,7 @@ advisories:
       - CVE-2025-2814
     description: "Crypt::CBC versions between 1.21 and 3.04 for Perl may use the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.  This issue affects operating systems where \"/dev/urandom'\" is unavailable.  In that case, Crypt::CBC will fallback to use the insecure rand() function."
     fixed_versions:
-      - '>=3.06'
+      - '>=3.07'
     github_security_advisory:
       - GHSA-xpfq-7j72-x4px
     id: CPANSA-Crypt-CBC-2025-2814
