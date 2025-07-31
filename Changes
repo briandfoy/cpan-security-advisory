@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250731.002 2025-07-31T14:03:10Z
+	* catch up on Mojolicious fixing its session cookie encryption
+
 20250730.001 2025-07-30T12:30:22Z
 	* Crypt::CBC 3.07 fixes 2025-2814
 
