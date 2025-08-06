@@ -56,8 +56,6 @@ jobs:
                 os:
                     - ubuntu-latest
                 perl-version:
-                    - '5.26-buster'
-                    - '5.28-buster'
                     - '5.30-bullseye'
                     - '5.32-bullseye'
                     - '5.34-bullseye'
