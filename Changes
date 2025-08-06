@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250806.001 2025-08-06T17:26:11Z
+	* data update for 2025-08-06, including perl fixes for CVE-2025-40909
+
 20250731.002 2025-07-31T14:03:10Z
 	* catch up on Mojolicious fixing its session cookie encryption
 
