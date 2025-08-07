@@ -286,7 +286,10 @@ sub get_github_advisories ( $cve ) {
 		$url => $headers => form => $query
 		);
 
-	return [] unless $tx->res->is_success;
+	unless( $tx->res->is_success ) {
+		warn "Could not get GHSA ID: " . $tx->res->body;
+		return [];
+		}
 
 	my $ghsa_ids =  [ map { $_->{ghsa_id} } $tx->res->json->@* ];
 	}
