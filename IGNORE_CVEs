@@ -201,3 +201,4 @@ CVE-2024-25021    IBM AIX 7.3, VIOS 4.1's Perl implementation could allow a non-
 CVE-2024-50151    In the Linux kernel, the following vulnerability has been resolved: sm
 CVE-2025-33112    IBM AIX 7.3 and IBM VIOS 4.1.1 Perl implementation
 CVE-2025-27614    Gitk (Tcl/Tk) allows arbirtary execution
+CVE-2025-34300    Sawtooth Software’s Lighthouse Studio CGI program
