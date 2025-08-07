@@ -185,7 +185,6 @@ sub run ( @args ) {
 			}
 		};
 
-
 	my $advisory = Local::CPANSA::assemble_advisory( $config );
 
 	my $new_id = $advisory->{id};
