@@ -2,7 +2,8 @@ use v5.20;
 use experimental qw(signatures);
 
 use FindBin qw($RealBin);
-use lib "$RealBin/lib";
+use lib ("$RealBin/lib", "lib");
+BEGIN { say "LIBS: @INC" };
 
 use Test::More;
 
