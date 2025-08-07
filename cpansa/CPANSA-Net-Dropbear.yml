@@ -1,35 +1,52 @@
 ---
 advisories:
-- affected_versions:
-  - '<0'
-  comment: |
-    From the author: "I have reviewed Dropbear's usage of libtomcrypt, and the function in question for CVE-2019-17362, der_decode_utf8_string, is not used in Dropbear. None of the DER parsing from libtomcrypt is used in Dropbear at all, I have confirmed that the flag to include it is not set, and confirmed that the resultant Dropbear.so that is built by Net::Dropbear does not include any of the der_* symbols."
-  cves:
-  - CVE-2019-17362
-  description: |
-    In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c) does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers to cause a denial of service (out-of-bounds read and crash) or read information from other memory locations via carefully crafted DER-encoded data.
-  embedded_vulnerability:
-    affected_versions: '<0'
-    distributed_version: 1.8.2
-    name: libtomcrypt
-  fixed_versions:
-  - '>0'
-  github_security_advisory:
-  - GHSA-x32c-6j92-4hp9
-  id: CPANSA-Net-Dropbear-2019-17362
-  references:
-  - https://github.com/atrodo/Net-Dropbear/issues/6
-  - https://github.com/libtom/libtomcrypt/pull/508
-  - https://github.com/libtom/libtomcrypt/issues/507
-  - https://vuldb.com/?id.142995
-  - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
-  - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
-  - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
-  reported: 2019-10-09
-  severity: critical
+  - affected_versions:
+      - <0
+    comment: "From the author: \"I have reviewed Dropbear's usage of libtomcrypt, and the function in question for CVE-2019-17362, der_decode_utf8_string, is not used in Dropbear. None of the DER parsing from libtomcrypt is used in Dropbear at all, I have confirmed that the flag to include it is not set, and confirmed that the resultant Dropbear.so that is built by Net::Dropbear does not include any of the der_* symbols.\"\n"
+    cves:
+      - CVE-2019-17362
+    description: "In LibTomCrypt through 1.18.2, the der_decode_utf8_string function (in der_decode_utf8_string.c) does not properly detect certain invalid UTF-8 sequences. This allows context-dependent attackers to cause a denial of service (out-of-bounds read and crash) or read information from other memory locations via carefully crafted DER-encoded data.\n"
+    embedded_vulnerability:
+      affected_versions: <0
+      distributed_version: 1.8.2
+      name: libtomcrypt
+    fixed_versions:
+      - '>0'
+    github_security_advisory:
+      - GHSA-x32c-6j92-4hp9
+    id: CPANSA-Net-Dropbear-2019-17362
+    references:
+      - https://github.com/atrodo/Net-Dropbear/issues/6
+      - https://github.com/libtom/libtomcrypt/pull/508
+      - https://github.com/libtom/libtomcrypt/issues/507
+      - https://vuldb.com/?id.142995
+      - https://lists.debian.org/debian-lts-announce/2019/10/msg00010.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00020.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-11/msg00041.html
+    reported: 2019-10-09
+    severity: critical
+  - affected_versions:
+      - '>0'
+    cves:
+      - CVE-2025-40913
+      - CVE-2023-36328
+    description: Net::Dropbear versions through 0.16 for Perl contains a dependency that may be susceptible to an integer overflow.  Net::Dropbear embeds a version of the libtommath library that is susceptible to an integer overflow associated with CVE-2023-36328.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-x86q-3xjx-wg89
+      - GHSA-j3xv-6967-cv88
+    id: CPANSA-Net-Dropbear-2025-40913
+    references:
+      - https://github.com/advisories/GHSA-j3xv-6967-cv88
+      - https://github.com/libtom/libtommath/pull/546
+      - https://metacpan.org/release/ATRODO/Net-Dropbear-0.16/source/dropbear/libtommath/bn_mp_grow.c
+      - https://www.cve.org/CVERecord?id=CVE-2023-36328
+    reported: 2025-07-16
+    severity: ~
+    comment: embedded library is libtommath
 cpansa_version: 2
 distribution: Net-Dropbear
 last_checked: 1749751661
-latest_version: '0.16'
+latest_version: 0.16
 metacpan: https://metacpan.org/pod/Net::Dropbear
 repo: https://github.com/atrodo/Net-Dropbear.git
