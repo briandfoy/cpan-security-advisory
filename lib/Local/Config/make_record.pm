@@ -103,9 +103,8 @@ sub postprocess_args ( $self ) {
 		if( ! $self->output_filename and $self->no_guess_filename );
 
 	my $namespace = $self->namespace;
-	if( defined $namespace ) {
-		$self->output_filename( $self->guess_output_filename($namespace) )
-			if( ! $self->no_guess_filename and ! $self->output_filename );
+	if( defined $namespace and ! $self->no_guess_filename and ! $self->output_filename ) {
+		$self->output_filename( $self->guess_output_filename($namespace) );
 		}
 
 	$self->prompt_for_values if $self->prompt;
