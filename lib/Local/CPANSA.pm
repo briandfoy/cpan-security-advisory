@@ -293,10 +293,12 @@ sub get_github_advisories ( $cve ) {
 
 =item * get_github_token
 
+Returns the value of the CPANSA_GITHUB_TOKEN or GITHUB_TOKEN environment variable.
+
 =cut
 
 sub get_github_token () {
-	$ENV{CPANSA_GITHUB_TOKEN}
+	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN}
 	}
 
 =item * get_ignored_cves
