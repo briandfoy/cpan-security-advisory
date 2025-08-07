@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20250807.001 2025-08-07T10:16:28Z
+	* data update for 2025-08-07
+
 20250806.001 2025-08-06T17:26:11Z
 	* data update for 2025-08-06, including perl fixes for CVE-2025-40909
 
