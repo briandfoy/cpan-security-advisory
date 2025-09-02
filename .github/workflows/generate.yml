@@ -38,6 +38,8 @@ jobs:
             - name: git corrections
               run: |
                 git config --global --add safe.directory `pwd`
+                git config --global user.email "briandfoy@pobox.com"
+                git config --global user.name "brian d foy"
 # Some older versions of Perl have trouble with hostnames in certs. I
 # haven't figured out why.
             - name: Setup environment
@@ -97,7 +99,10 @@ jobs:
             - name: commit
               run: |
                 echo VERSION $CPANSA_VERSION
-                git commit -m "data update for $CPANSA_VERSION" cpan-security-advisory.json lib
+                git checkout -b test-${CPANSA_VERSION}
+                git add  cpan-security-advisory.json lib
+                git commit -m "data update for $CPANSA_VERSION"
+                git push origin HEAD
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save
