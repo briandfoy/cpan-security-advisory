@@ -99,7 +99,7 @@ jobs:
             - name: commit
               run: |
                 echo VERSION $CPANSA_VERSION
-                git checkout -b test-${CPANSA_VERSION}
+                git checkout -b notest-${CPANSA_VERSION}
                 git add  cpan-security-advisory.json lib
                 git commit -m "data update for $CPANSA_VERSION"
                 git push origin HEAD
