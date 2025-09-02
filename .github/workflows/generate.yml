@@ -6,6 +6,7 @@ env:
     ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 permissions:
+    actions: write
     contents: write
     id-token: write
     attestations: write
@@ -92,6 +93,11 @@ jobs:
               run: |
                 perl util/generate > /dev/null
                 git status
+                perl -Ilib -MCPANSA::DB -E 'say q(CPANSA_VERSION=) . CPANSA::DB->VERSION' >> $GITHUB_ENV
+            - name: commit
+              run: |
+                echo VERSION $CPANSA_VERSION
+                git commit -m "data update for $CPANSA_VERSION" cpan-security-advisory.json lib
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save
