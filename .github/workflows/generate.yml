@@ -90,7 +90,8 @@ jobs:
                 cpanm --notest --installdeps --with-suggests --with-recommends .
             - name: generate
               run: |
-                perl util/generate
+                perl util/generate > /dev/null
+                git status
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save
