@@ -17,7 +17,6 @@ use HTTP::Tiny;
 use JSON ();
 use MetaCPAN::Client;
 use Module::CoreList;
-use Mojo::Util qw(dumper);
 use Mojo::File;
 use Mojo::JSON qw(decode_json encode_json);
 use PerlIO::gzip;
