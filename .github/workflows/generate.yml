@@ -6,12 +6,14 @@ env:
     ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 permissions:
+    actions: write
     contents: write
     id-token: write
     attestations: write
 
 on:
-    push:
+    schedule:
+        - cron: "37 3 * * 0"
     workflow_dispatch:
 
 jobs:
@@ -37,6 +39,8 @@ jobs:
             - name: git corrections
               run: |
                 git config --global --add safe.directory `pwd`
+                git config --global user.email ${{ vars.GIT_USER_EMAIL }}
+                git config --global user.name  ${{ vars.GIT_USER_NAME  }}
 # Some older versions of Perl have trouble with hostnames in certs. I
 # haven't figured out why.
             - name: Setup environment
@@ -90,8 +94,23 @@ jobs:
                 cpanm --notest --installdeps --with-suggests --with-recommends .
             - name: generate
               run: |
-                perl util/generate > /dev/null
+                perl util/generate --quiet
                 git status
+                perl -Ilib -MCPANSA::DB -E 'say q(CPANSA_VERSION=) . CPANSA::DB->VERSION' >> $GITHUB_ENV
+            - name: test
+              run: |
+                perl Makefile.PL
+                make test
+            - name: commit
+              run: |
+                git add  cpan-security-advisory.json lib
+                git commit -m "data update for $CPANSA_VERSION"
+                git tag release-${CPANSA_VERSION}
+                git push origin HEAD
+                git push --tags
+            - name: upload to CPAN
+              run: |
+
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save

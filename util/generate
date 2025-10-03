@@ -17,7 +17,6 @@ use HTTP::Tiny;
 use JSON ();
 use MetaCPAN::Client;
 use Module::CoreList;
-use Mojo::Util qw(dumper);
 use Mojo::File;
 use Mojo::JSON qw(decode_json encode_json);
 use PerlIO::gzip;
@@ -106,6 +105,7 @@ sub debug ( $message, $indent = 0 ) {
 }
 
 sub info ( $message, $indent = 0 ) {
+	return if config()->{quiet};
 	_message *STDOUT,
 		$message,
 		$indent;
@@ -121,8 +121,6 @@ sub dumper {
 	state $rc = require Data::Dumper;
 	Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump
 }
-
-
 
 sub add_corelist_versions ($db) {
 	info "Adding modules from corelist";
