@@ -105,6 +105,7 @@ sub debug ( $message, $indent = 0 ) {
 }
 
 sub info ( $message, $indent = 0 ) {
+	return if config()->{quiet};
 	_message *STDOUT,
 		$message,
 		$indent;
