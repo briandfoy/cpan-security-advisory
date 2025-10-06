@@ -97,20 +97,37 @@ jobs:
                 perl util/generate --quiet
                 git status
                 perl -Ilib -MCPANSA::DB -E 'say q(CPANSA_VERSION=) . CPANSA::DB->VERSION' >> $GITHUB_ENV
+                perl -Ilib -MCPANSA::DB -E 'say q(PR_BRANCH_NAME=) . CPANSA::DB->VERSION' >> $GITHUB_ENV
             - name: test
               run: |
                 perl Makefile.PL
                 make test
             - name: commit
               run: |
-                git add  cpan-security-advisory.json lib
-                git commit -m "data update for $CPANSA_VERSION"
-                git tag release-${CPANSA_VERSION}
-                git push origin HEAD
-                git push --tags
-            - name: upload to CPAN
+                git add cpan-security-advisory.json lib/
+                git commit -m "data update for ${{ env.CPANSA_VERSION }}"
+                git tag release-${{ env.CPANSA_VERSION }}
+            - name: Create Pull Request
+              id: pull-request
+              uses: peter-evans/create-pull-request@v6
+              with:
+                token: ${{ github.token }}
+                assignees: briandfoy
+                labels: "Type: data update"
+                title: Data update for ${{env.CPANSA_VERSION}}
+                delete-branch: true
+                branch: ${{env.PR_BRANCH_NAME}}
+                base: master
+            - name: Merge the pull request
+              env:
+                GH_TOKEN: ${{ github.token }}
+              shell: bash
               run: |
-
+                echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
+                gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
+            - name: Clean up
+              run: |
+                git push origin :${{env.PR_BRANCH_NAME}}
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save
