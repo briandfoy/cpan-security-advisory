@@ -39,8 +39,8 @@ jobs:
             - uses: actions/checkout@v3
             - name: setup packages
               run: |
-                sudo apt-get update
-                sudo apt -y install gh jq
+                apt-get update
+                apt -y install gh jq
             - name: git corrections
               run: |
                 git config --global --add safe.directory `pwd`
