@@ -129,7 +129,7 @@ jobs:
               shell: bash
               run: |
                 echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
-                gh pr review  ${{ steps.pull-request.outputs.pull-request-number }} --aprove 'approved by GitHub Action'
+                gh pr review  ${{ steps.pull-request.outputs.pull-request-number }} --approve 'approved by GitHub Action'
                 gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
             - name: Clean up
               run: |
