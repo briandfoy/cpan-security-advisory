@@ -40,7 +40,7 @@ jobs:
               run: |
                 git config --global --add safe.directory `pwd`
                 git config --global user.email ${{ vars.GIT_USER_EMAIL }}
-                git config --global user.name  ${{ vars.GIT_USER_NAME  }}
+                git config --global user.name  '${{ vars.GIT_USER_NAME  }}'
 # Some older versions of Perl have trouble with hostnames in certs. I
 # haven't figured out why.
             - name: Setup environment
