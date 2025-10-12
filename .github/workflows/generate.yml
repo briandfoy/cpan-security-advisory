@@ -40,7 +40,11 @@ jobs:
             - name: setup packages
               run: |
                 apt-get update
-                apt -y install gh jq
+                apt -y install gh gnupg jq
+            - name: setup GPG
+              run: |
+                gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
+                echo {{ secrets.GPG_SECRET_KEY_ARMORED }} | gpg --import
             - name: git corrections
               run: |
                 git config --global --add safe.directory `pwd`
@@ -109,7 +113,7 @@ jobs:
                 make test
             - name: commit
               run: |
-                git add cpan-security-advisory.json lib/
+                git add cpan-security-advisory.json cpan-security-advisory.json.gpg lib/
                 git commit -m "data update for ${{ env.CPANSA_VERSION }}"
                 git tag release-${{ env.CPANSA_VERSION }}
             - name: Create Pull Request
