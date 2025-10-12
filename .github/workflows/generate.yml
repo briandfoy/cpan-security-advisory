@@ -42,10 +42,12 @@ jobs:
                 apt-get update
                 apt -y install gh gnupg jq
             - name: setup GPG
+              env:
+                GPG_TTY:
               run: |
                 gpg --version
                 gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
-                echo "${{ secrets.GPG_SECRET_KEY_ARMORED }}" | gpg --import
+                echo "${{ secrets.GPG_SECRET_KEY_ARMORED }}" | gpg --batch --yes --import
                 KEYID=$(gpg --list-keys --with-colons | awk -F: '/^pub/ {print $5; exit}')
                 echo "$KEYID:6:" | gpg --import-ownertrust
             - name: git corrections
