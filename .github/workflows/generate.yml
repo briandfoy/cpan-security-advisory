@@ -131,7 +131,7 @@ jobs:
                 echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
                 gh pr review  ${{ steps.pull-request.outputs.pull-request-number }} --approve 'approved by GitHub Action'
                 gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
-            - name: Clean up
+            - name: Push tags
               run: |
                 git push origin :${{env.PR_BRANCH_NAME}}
 # Now always save the Perl modules in case we updated some versions
