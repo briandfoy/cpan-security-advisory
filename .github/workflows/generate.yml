@@ -125,13 +125,13 @@ jobs:
                 base: master
             - name: Merge the pull request
               env:
-                GH_TOKEN: ${{ github.token }}
+                GH_TOKEN: ${{ secrets.APPROVE_TOKEN }}
               shell: bash
               run: |
                 echo "Reviewing pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
                 gh pr review  ${{ steps.pull-request.outputs.pull-request-number }} --approve --body 'approved by GitHub Action'
-#                echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
-#                gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
+                echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
+                gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
             - name: Push tags
               run: |
                 git push origin :${{env.PR_BRANCH_NAME}}
