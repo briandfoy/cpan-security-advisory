@@ -328,6 +328,7 @@ sub output_gpg_signature ( $string, $file ) {
 
 	my @command = (
 		'gpg', '--batch', '--yes', '-o', $gpg_file, '-sb',
+		'--pinentry-mode', 'loopback', '--passphrase', $ENV{GPG_PASSPHRASE},
 		'--armor', '-u', $opts->{gpg_key}
 		);
 	debug "COMMAND is @command";
