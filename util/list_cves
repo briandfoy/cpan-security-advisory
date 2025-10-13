@@ -7,8 +7,6 @@ use Mojo::Util qw(dumper);
 use Term::ANSIColor;
 use YAML::XS   qw(LoadFile);
 
-my $url = "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl";
-
 my %Ignore;
 
 my $ignore_file = 'IGNORE_CVEs';
@@ -36,36 +34,96 @@ foreach my $file ( glob('cpansa/*.yml' ) ) {
 
 my %Count;
 use Mojo::UserAgent;
-my $tx = Mojo::UserAgent
+my $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Perl";
+my $json = Mojo::UserAgent
 	->new->get($url)
 	->res
-	->dom->find( 'div#TableWithRules table tr' )
-	->map( sub {
-		my $dom = $_;
-		my $array = $dom->find( 'td' )->map( sub {
-			my $text =  $_->all_text;
-			$text =~ s/\v+/ /gr;
-			} )->to_array;
+	->json;
 
-		$array->[1] = substr( $array->[-1], 0, 70 ) . '...';
-		$array;
-		} )
-	->reverse
-	->grep( sub { length $_->[0] } ) # first is a header row
-	->each( sub {
-		my $cve = $_->[0];
-		my( $mark, $color ) = do {
-			   if( exists $Seen{$cve}   ) { ( '✔', 'bold green' )  }
-			elsif( exists $Ignore{$cve} ) { ('*', 'red' ) }
-			else { ( '?', 'bold cyan' ) }
-			};
-		$Count{$mark}++;
-		print colored(
-			[ $color ],
-			sprintf "%s  %-17s %s\n", $mark, $_->@*
-			);
-		} )
-	;
+foreach my $v ( $json->{vulnerabilities}->@* ) {
+	my $cve  = $v->{cve}{id};
+	my( $desc ) =
+		map { substr $_-> {'value'}, 0, 75 }
+		grep { $_->{'lang'} eq 'en' }
+		$v->{cve}{descriptions}->@*;
+
+	my( $mark, $color ) = do {
+		   if( exists $Seen{$cve}   ) { ( '✔', 'bold green' )  }
+		elsif( exists $Ignore{$cve} ) { ('*', 'red' ) }
+		else { ( '?', 'bold cyan' ) }
+		};
+	$Count{$mark}++;
+	print colored(
+		[ $color ],
+		sprintf "%s  %-17s %s\n", $mark, $cve, $desc
+		);
+	}
 
 say dumper(\%Count);
-__DATA__
+
+__END__
+    {
+      "cve": {
+        "id": "CVE-1999-0509",
+        "sourceIdentifier": "cve@mitre.org",
+        "published": "1996-05-29T04:00:00.000",
+        "lastModified": "2025-04-03T01:03:51.193",
+        "vulnStatus": "Deferred",
+        "cveTags": [],
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Perl, sh, csh, or other shell interpreters are installed in the cgi-bin directory on a WWW site, which allows remote attackers to execute arbitrary commands."
+          }
+        ],
+        "metrics": {
+          "cvssMetricV2": [
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "cvssData": {
+                "version": "2.0",
+                "vectorString": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+                "baseScore": 10,
+                "accessVector": "NETWORK",
+                "accessComplexity": "LOW",
+                "authentication": "NONE",
+                "confidentialityImpact": "COMPLETE",
+                "integrityImpact": "COMPLETE",
+                "availabilityImpact": "COMPLETE"
+              },
+              "baseSeverity": "HIGH",
+              "exploitabilityScore": 10,
+              "impactScore": 10,
+              "acInsufInfo": false,
+              "obtainAllPrivilege": true,
+              "obtainUserPrivilege": false,
+              "obtainOtherPrivilege": false,
+              "userInteractionRequired": false
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "nvd@nist.gov",
+            "type": "Primary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-94"
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/146",
+            "source": "cve@mitre.org"
+          },
+          {
+            "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/146",
+            "source": "af854a3a-2127-422b-91ae-364da2661108"
+          }
+        ]
+      }
+    },
