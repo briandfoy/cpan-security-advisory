@@ -54,7 +54,7 @@ sub getopts_spec ( $self ) {
 sub guess_output_filename ( $self, $namespace = $self->value_for('namespace') ) {
 	Local::CPANSA::report_path( $namespace =~ s/::/-/gr )
 		//
-	sprintf 'CPANSA-%s.yml', $namespace =~ s/::/-/gr
+	sprintf 'cpansa/CPANSA-%s.yml', $namespace =~ s/::/-/gr
 	}
 
 =item * new_meta( CONFIG )
