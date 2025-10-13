@@ -1,0 +1,26 @@
+---
+advisories:
+  - affected_versions:
+      - <=2.01
+    cves:
+      - CVE-2020-10674
+    description: "PerlSpeak through 2.01 allows attackers to execute arbitrary OS commands, as demonstrated by use of system and 2-argument open."
+    fixed_versions:
+      - '>2.01'
+    github_security_advisory:
+      - GHSA-rf58-pvq5-m9jf
+    id: CPANSA-PerlSpeak-2011-10007
+    references:
+      - https://nvd.nist.gov/vuln/detail/CVE-2020-10674
+      - https://metacpan.org/source/JKAMPHAUS/PerlSpeak-2.01/Changes
+      - https://rt.cpan.org/Public/Bug/Display.html?id=132173
+      - https://github.com/gitpan/PerlSpeak
+    reported: 2025-06-05
+    severity: ~
+cpansa_version: 2
+darkpan: true
+distribution: PerlSpeak
+last_checked: 1760358094
+latest_version: 2.01
+comment: This was removed from PAUSE, but it is still in BackPAN
+metacpan: ~

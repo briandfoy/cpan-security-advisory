@@ -1,0 +1,21 @@
+---
+advisories:
+  - affected_versions:
+      - '>0'
+    cves:
+      - CVE-2025-40933
+    description: 'Apache::AuthAny::Cookie v0.201 or earlier for Perl generates session ids insecurely.  Session ids are generated using an MD5 hash of the epoch time and a call to the built-in rand function. The epoch time may be guessed, if it is not leaked from the HTTP Date header. The built-in rand function is unsuitable for cryptographic usage.  Predicable session ids could allow an attacker to gain access to systems.'
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-gvxx-2pm7-7h2r
+    id: CPANSA-Apache2-AuthAny-2025-40933
+    references:
+      - https://metacpan.org/release/KGOLDOV/Apache2-AuthAny-0.201/source/lib/Apache2/AuthAny/Cookie.pm
+    reported: 2025-09-17
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Apache2-AuthAny
+last_checked: 1760357182
+latest_version: 0.201
+metacpan: https://metacpan.org/pod/Apache2::AuthAny

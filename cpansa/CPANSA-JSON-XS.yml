@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - <4.04
+    cves:
+      - CVE-2025-40928
+    description: 'JSON::XS before version 4.04 for Perl has an integer buffer overflow causing a segfault when parsing crafted JSON, enabling denial-of-service attacks or other unspecified impact'
+    fixed_versions:
+      - '>=4.04'
+    github_security_advisory:
+      - GHSA-v8qr-gpx9-78rm
+    id: CPANSA-JSON-XS-2025-40928
+    references:
+      - https://metacpan.org/release/MLEHMANN/JSON-XS-4.03/source/XS.xs#L256
+      - https://security.metacpan.org/patches/J/JSON-XS/4.03/CVE-2025-40928-r1.patch
+    reported: 2025-09-08
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: JSON-XS
+last_checked: 1760357395
+latest_version: 4.04
+metacpan: https://metacpan.org/pod/JSON::XS

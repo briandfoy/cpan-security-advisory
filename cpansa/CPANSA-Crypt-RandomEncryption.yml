@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.01'
+    cves:
+      - CVE-2024-58040
+    description: Crypt::RandomEncryption for Perl version 0.01 uses insecure rand() function during encryption.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-3fwq-4gv2-9v92
+    id: CPANSA-Crypt-RandomEncryption-2024-58040
+    references:
+      - https://metacpan.org/release/QWER/Crypt-RandomEncryption-0.01/source/lib/Crypt/RandomEncryption.pm#L33
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-09-30
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-RandomEncryption
+last_checked: 1760356250
+latest_version: 0.01
+metacpan: https://metacpan.org/pod/Crypt::RandomEncryption

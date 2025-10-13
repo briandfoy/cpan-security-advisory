@@ -1,0 +1,30 @@
+---
+advisories:
+  - affected_versions:
+      - <=0.34
+    cves:
+      - CVE-2011-10007
+    description: "File::Find::Rule through 0.34 for Perl is vulnerable to Arbitrary Code Execution when `grep()` encounters a crafted filename.  A file handle is opened with the 2 argument form of `open()` allowing an attacker controlled filename to provide the MODE parameter to `open()`, turning the filename into a command to be executed.  Example:  $ mkdir /tmp/poc; echo > \"/tmp/poc/|id\" $ perl -MFile::Find::Rule \\     -E 'File::Find::Rule->grep(\"foo\")->in(\"/tmp/poc\")' uid=1000(user) gid=1000(user) groups=1000(user),100(users)"
+    fixed_versions:
+      - '>=0.35'
+    github_security_advisory:
+      - GHSA-cvg9-q978-4569
+    id: CPANSA-File-Find-Rule-2011-10007
+    references:
+      - https://github.com/richardc/perl-file-find-rule/commit/df58128bcee4c1da78c34d7f3fe1357e575ad56f.patch
+      - https://github.com/richardc/perl-file-find-rule/pull/4
+      - https://metacpan.org/release/RCLAMP/File-Find-Rule-0.34/source/lib/File/Find/Rule.pm#L423
+      - https://rt.cpan.org/Public/Bug/Display.html?id=64504
+      - http://www.openwall.com/lists/oss-security/2025/06/05/4
+      - http://www.openwall.com/lists/oss-security/2025/06/06/1
+      - http://www.openwall.com/lists/oss-security/2025/06/06/3
+      - https://lists.debian.org/debian-lts-announce/2025/06/msg00006.html
+      - https://github.com/richardc/perl-file-find-rule/pull/4
+    reported: 2025-06-05
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: File-Find-Rule
+last_checked: 1760358094
+latest_version: 0.35
+metacpan: https://metacpan.org/pod/File::Find::Rule

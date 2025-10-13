@@ -1,22 +1,38 @@
 ---
 advisories:
-- affected_versions:
-  - <=0.21
-  cves: []
-  description: |
-    Plack::Middleware::Session::Cookie 0.21 has a security vulnerability where it allows an attacker to execute arbitrary code on the server, when the middleware is enabled without a secret.
-  fixed_versions:
-  - '>0.21'
-  github_security_advisory: []
-  id: CPANSA-Plack-Middleware-Session-2014-01
-  references:
-  - https://gist.github.com/miyagawa/2b8764af908a0dacd43d
-  - https://metacpan.org/changes/distribution/Plack-Middleware-Session
-  reported: 2014-08-11
-  severity: critical
+  - affected_versions:
+      - <=0.21
+    cves: []
+    description: "Plack::Middleware::Session::Cookie 0.21 has a security vulnerability where it allows an attacker to execute arbitrary code on the server, when the middleware is enabled without a secret.\n"
+    fixed_versions:
+      - '>0.21'
+    github_security_advisory: []
+    id: CPANSA-Plack-Middleware-Session-2014-01
+    references:
+      - https://gist.github.com/miyagawa/2b8764af908a0dacd43d
+      - https://metacpan.org/changes/distribution/Plack-Middleware-Session
+    reported: 2014-08-11
+    severity: critical
+  - affected_versions:
+      - <0.35
+    cves:
+      - CVE-2025-40923
+    description: 'Plack-Middleware-Session before version 0.35 for Perl generates session ids insecurely.  The default session id generator returns a SHA-1 hash seeded with the built-in rand function, the epoch time, and the PID. The PID will come from a small set of numbers, and the epoch time may be guessed, if it is not leaked from the HTTP Date header. The built-in rand function is unsuitable for cryptographic usage.  Predicable session ids could allow an attacker to gain access to systems.'
+    fixed_versions:
+      - '>=0.35'
+    github_security_advisory:
+      - GHSA-868p-jhqw-wrgr
+    id: CPANSA-Plack-Middleware-Session-2025-40923
+    references:
+      - https://github.com/plack/Plack-Middleware-Session/commit/1fbfbb355e34e7f4b3906f66cf958cedadd2b9be.patch
+      - https://github.com/plack/Plack-Middleware-Session/pull/52
+      - https://metacpan.org/release/MIYAGAWA/Plack-Middleware-Session-0.34/source/lib/Plack/Session/State.pm#L22
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+    reported: 2025-07-16
+    severity: ~
 cpansa_version: 2
 distribution: Plack-Middleware-Session
 last_checked: 1749751661
-latest_version: '0.34'
+latest_version: 0.34
 metacpan: https://metacpan.org/pod/Plack::Middleware::Session
 repo: https://github.com/plack/Plack-Middleware-Session.git

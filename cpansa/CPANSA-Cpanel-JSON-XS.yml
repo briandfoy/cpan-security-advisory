@@ -1,54 +1,67 @@
 ---
+advisories:
+  - affected_versions:
+      - <3.0225
+    cves: []
+    description: "Overflow during processing of ill-formed UTF-8 strings.\n"
+    fixed_versions:
+      - '>=3.0225'
+    github_security_advisory: []
+    id: CPANSA-Cpanel-JSON-XS-2016-02
+    references:
+      - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
+      - https://github.com/rurban/Cpanel-JSON-XS/commit/f71768984ba7f50b0476c17a4f3b3f2ca88a6951
+      - https://github.com/dankogai/p5-encode/issues/64
+    reported: 2016-11-23
+  - affected_versions:
+      - <3.0218
+    cves: []
+    description: "Possible overflows in av and hv length types.\n"
+    fixed_versions:
+      - '>=3.0218'
+    github_security_advisory: []
+    id: CPANSA-Cpanel-JSON-XS-2016-01
+    references:
+      - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
+      - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
+    reported: ~
+  - affected_versions:
+      - <4.033
+    cves:
+      - CVE-2022-48623
+    description: "Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode\n"
+    fixed_versions:
+      - '>=4.033'
+    github_security_advisory:
+      - GHSA-44qr-8pf6-6q33
+    id: CPANSA-Cpanel-JSON-XS-2023-01
+    references:
+      - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
+      - https://github.com/rurban/Cpanel-JSON-XS/issues/208
+      - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.33/changes
+      - https://nvd.nist.gov/vuln/detail/CVE-2022-48623
+      - https://github.com/rurban/Cpanel-JSON-XS/commit/41f32396eee9395a40f9ed80145c37622560de9b
+      - https://github.com/advisories/GHSA-44qr-8pf6-6q33
+    reported: 2023-02-21
+  - affected_versions:
+      - <4.40
+    cves:
+      - CVE-2025-40929
+    description: 'Cpanel::JSON::XS before version 4.40 for Perl has an integer buffer overflow causing a segfault when parsing crafted JSON, enabling denial-of-service attacks or other unspecified impact'
+    fixed_versions:
+      - '>=4.40'
+    github_security_advisory:
+      - GHSA-q7gx-445j-xwq8
+    id: CPANSA-Cpanel-JSON-XS-2025-40929
+    references:
+      - https://github.com/rurban/Cpanel-JSON-XS/commit/378236219eaa35742c3962ecbdee364903b0a1f2.patch
+      - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.39/source/XS.xs#L713
+      - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.40/changes
+    reported: 2025-09-08
+    severity: ~
 cpansa_version: 2
 distribution: Cpanel-JSON-XS
 last_checked: 1749751661
-latest_version: '4.39'
+latest_version: 4.39
 metacpan: https://metacpan.org/pod/Cpanel::JSON::XS
 repo: https://github.com/rurban/Cpanel-JSON-XS
-advisories:
-- affected_versions:
-  - <3.0225
-  cves: []
-  description: |
-    Overflow during processing of ill-formed UTF-8 strings.
-  fixed_versions:
-  - '>=3.0225'
-  github_security_advisory: []
-  id: CPANSA-Cpanel-JSON-XS-2016-02
-  references:
-  - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
-  - https://github.com/rurban/Cpanel-JSON-XS/commit/f71768984ba7f50b0476c17a4f3b3f2ca88a6951
-  - https://github.com/dankogai/p5-encode/issues/64
-  reported: 2016-11-23
-- affected_versions:
-  - <3.0218
-  cves: []
-  description: |
-    Possible overflows in av and hv length types.
-  fixed_versions:
-  - '>=3.0218'
-  github_security_advisory: []
-  id: CPANSA-Cpanel-JSON-XS-2016-01
-  references:
-  - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
-  - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
-  reported: ~
-- affected_versions:
-  - <4.033
-  cves:
-  - CVE-2022-48623
-  description: |
-    Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
-  fixed_versions:
-  - '>=4.033'
-  github_security_advisory:
-  - GHSA-44qr-8pf6-6q33
-  id: CPANSA-Cpanel-JSON-XS-2023-01
-  references:
-  - https://metacpan.org/changes/distribution/Cpanel-JSON-XS
-  - https://github.com/rurban/Cpanel-JSON-XS/issues/208
-  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.33/changes
-  - https://nvd.nist.gov/vuln/detail/CVE-2022-48623
-  - https://github.com/rurban/Cpanel-JSON-XS/commit/41f32396eee9395a40f9ed80145c37622560de9b
-  - https://github.com/advisories/GHSA-44qr-8pf6-6q33
-  reported: 2023-02-21

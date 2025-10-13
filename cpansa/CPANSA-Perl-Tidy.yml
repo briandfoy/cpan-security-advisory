@@ -1,0 +1,41 @@
+---
+advisories:
+  - affected_versions:
+      - <=20160302
+    cves:
+      - CVE-2016-10374
+    description: 'perltidy through 20160302, as used by perlcritic, check-all-the-things, and other software, relies on the current working directory for certain output files and does not have a symlink-attack protection mechanism, which allows local users to overwrite arbitrary files by creating a symlink, as demonstrated by creating a perltidy.ERR symlink that the victim cannot delete.'
+    fixed_versions:
+      - '>20160302'
+    github_security_advisory:
+      - GHSA-hxj7-36fx-62r2
+    id: CPANSA-Perl-Tidy-2016-10374
+    references:
+      - https://bugs.debian.org/862667
+    reported: 2017-05-17
+    severity: ~
+  - affected_versions:
+      - '>0'
+    comment: 'This was reported a long time ago, but the latest versions still use tmpnam. The reported version was probably the latest at the time.'
+    cves:
+      - CVE-2014-2277
+    description: 'The make_temporary_filename function in perltidy 20120701-1 and earlier allows local users to obtain sensitive information or write to arbitrary files via a symlink attack, related to use of the tmpnam function.'
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-g7r2-wjmp-vjj6
+    id: CPANSA-Perl-Tidy-2014-2277
+    references:
+      - http://lists.fedoraproject.org/pipermail/package-announce/2014-March/130464.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2014-March/130479.html
+      - http://www.openwall.com/lists/oss-security/2014/03/09/1
+      - http://www.securityfocus.com/bid/66139
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1074720
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/92104
+    reported: 2017-10-17
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Perl-Tidy
+last_checked: 1760360883
+latest_version: 20250912
+metacpan: https://metacpan.org/pod/Perl::Tidy

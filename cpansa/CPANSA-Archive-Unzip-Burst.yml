@@ -1,0 +1,22 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.01'
+    comment: '0.09 is the latest version, so all versions are affected'
+    cves:
+      - CVE-2022-4976
+    description: 'Archive::Unzip::Burst from 0.01 through 0.09 for Perl contains a bundled InfoZip library that is affected by several vulnerabilities.  The bundled library is affected by CVE-2014-8139, CVE-2014-8140 and CVE-2014-8141.'
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-x95w-6xxq-wrf2
+    id: CPANSA-Archive-Unzip-Burst-2022-4976
+    references:
+      - https://rt.cpan.org/Public/Bug/Display.html?id=143547
+    reported: 2025-06-12
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Archive-Unzip-Burst
+last_checked: 1760358026
+latest_version: 0.09
+metacpan: https://metacpan.org/pod/Archive::Unzip::Burst
