@@ -323,7 +323,8 @@ sub output_gpg_signature ( $string, $file ) {
 
 	open my $gpg_fh, '|-', @command;
 
-	print { $gpg_fh } $octets;
+	my $success = print { $gpg_fh } $octets;
+	debug "SUCCESS $success";
 
 	close $gpg_fh or croak "Problem making GPG signature: $!";
 	if( $? ) {
@@ -468,7 +469,7 @@ sub process_options ( @args ) {
 	state $rc = require Getopt::Long;
 
 	my %results = (
-		debug       => 0,
+		debug       => $ENV{CPAN_AUDIT_DEBUG} // 0,
 		gpg_key     => $ENV{CPAN_AUDIT_GPG_KEY_FINGERPRINT},
 		);
 	*config = sub () { \%results };
