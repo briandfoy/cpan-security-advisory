@@ -44,9 +44,12 @@ jobs:
                 apt -y install gh gnupg jq
             - name: setup GPG
               env:
+                GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
                 GPG_TTY:
               run: |
                 gpg --version
+                echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+                echo "use-agent" >> ~/.gnupg/gpg.conf
                 gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
                 echo "${{ secrets.GPG_SECRET_KEY_ARMORED }}" | gpg --batch --yes --import
                 gpg --list-keys --with-colons
@@ -112,6 +115,7 @@ jobs:
               env:
                 CPAN_AUDIT_DEBUG: ${{ vars.CPAN_AUDIT_DEBUG }}
                 CPAN_AUDIT_GPG_KEY_FINGERPRINT: ${{ secrets.CPAN_AUDIT_GPG_KEY_FINGERPRINT }}
+                GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
                 GPG_TTY:
               run: |
                 perl util/generate --quiet
