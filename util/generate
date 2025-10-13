@@ -309,9 +309,11 @@ sub json_file () {
 }
 
 sub output_gpg_signature ( $string, $file ) {
+	debug "Outputting GPG sig for <$file>";
 	my $opts = config();
 
 	return unless defined $opts->{gpg_key};
+	debug "Still going with GPG sig for <$file>";
 
 	my $gpg_file = $file . '.gpg';
 
