@@ -11,6 +11,7 @@ use lib ("$Bin/../lib");
 use Antsy qw(:all);
 use Carp qw(croak);
 use CPAN::DistnameInfo;
+use Cwd qw(getcwd);
 use File::Basename qw(basename);
 use File::Spec::Functions qw(catfile);
 use HTTP::Tiny;
@@ -310,12 +311,17 @@ sub json_file () {
 
 sub output_gpg_signature ( $string, $file ) {
 	debug "Outputting GPG sig for <$file>";
+	debug "PWD: " . getcwd();
+
 	my $opts = config();
 
 	return unless defined $opts->{gpg_key};
 	debug "Still going with GPG sig for <$file>";
 
 	my $gpg_file = $file . '.gpg';
+
+	my $dir = dirname($gpg_file);
+	debug "DIR $dir exists: " . !! -e $dir;
 
 	state $rc = require Encode;
 	my $octets = Encode::encode("UTF-8", $string);
