@@ -12,7 +12,7 @@ use Antsy qw(:all);
 use Carp qw(croak);
 use CPAN::DistnameInfo;
 use Cwd qw(getcwd);
-use File::Basename qw(basename);
+use File::Basename qw(basename dirname);
 use File::Spec::Functions qw(catfile);
 use HTTP::Tiny;
 use JSON ();
