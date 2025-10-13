@@ -43,7 +43,7 @@ jobs:
                 apt -y install gh gnupg jq
             - name: setup GPG
               env:
-                GPG_TTY:
+                GPG_TTY: $(tty)
               run: |
                 gpg --version
                 gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
@@ -111,7 +111,7 @@ jobs:
               env:
                 CPAN_AUDIT_DEBUG: ${{ vars.CPAN_AUDIT_DEBUG }}
                 CPAN_AUDIT_GPG_KEY_FINGERPRINT: ${{ secrets.CPAN_AUDIT_GPG_KEY_FINGERPRINT }}
-                GPG_TTY:
+                GPG_TTY: $(tty)
               run: |
                 perl util/generate --quiet
                 git status
