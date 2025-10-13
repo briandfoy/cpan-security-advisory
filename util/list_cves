@@ -43,7 +43,7 @@ my $json = Mojo::UserAgent
 foreach my $v ( $json->{vulnerabilities}->@* ) {
 	my $cve  = $v->{cve}{id};
 	my( $desc ) =
-		map { substr $_-> {'value'}, 0, 75 }
+		map { substr( $_-> {'value'}, 0, 75 ) =~ s/\v+/ /gr }
 		grep { $_->{'lang'} eq 'en' }
 		$v->{cve}{descriptions}->@*;
 
