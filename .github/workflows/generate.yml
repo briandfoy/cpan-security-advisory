@@ -111,6 +111,7 @@ jobs:
               env:
                 CPAN_AUDIT_DEBUG: ${{ vars.CPAN_AUDIT_DEBUG }}
                 CPAN_AUDIT_GPG_KEY_FINGERPRINT: ${{ secrets.CPAN_AUDIT_GPG_KEY_FINGERPRINT }}
+                GPG_TTY:
               run: |
                 perl util/generate --quiet
                 git status
