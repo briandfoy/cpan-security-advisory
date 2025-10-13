@@ -48,8 +48,10 @@ jobs:
                 GPG_TTY:
               run: |
                 gpg --version
-                echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
-                echo "use-agent" >> ~/.gnupg/gpg.conf
+                mkdir -p $HOME/.gnupg
+                chmod 700 $HOME/.gnupg
+                echo "allow-loopback-pinentry" >> $HOME/.gnupg/gpg-agent.conf
+                echo "use-agent" >> $HOME/.gnupg/gpg.conf
                 gpg --keyserver keys.openpgp.org --recv-keys 75AAB42CBA0D7F37F0D6886DF83F8D5E878B6041 867D53B08E433DF401A06EF49A9C0FE7F64876BF
                 echo "${{ secrets.GPG_SECRET_KEY_ARMORED }}" | gpg --batch --yes --import
                 gpg --list-keys --with-colons
