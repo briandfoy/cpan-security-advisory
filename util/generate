@@ -320,7 +320,7 @@ sub output_gpg_signature ( $string, $file ) {
 	state $rc = require Encode;
 	my $octets = Encode::encode("UTF-8", $string);
 
-	my @command = ( 'gpg', '--yes', '-o', $gpg_file, '-sb', '--armor', '-u', $opts->{gpg_key} );
+	my @command = ( 'gpg', '--batch', '--yes', '-o', $gpg_file, '-sb', '--armor', '-u', $opts->{gpg_key} );
 	debug "COMMAND is @command";
 
 	open my $gpg_fh, '|-', @command;
