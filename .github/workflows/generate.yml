@@ -109,7 +109,7 @@ jobs:
                 cpanm --notest --installdeps --with-suggests --with-recommends .
             - name: generate
               env:
-                CPAN_AUDIT_DEBUG: 1
+                CPAN_AUDIT_DEBUG: ${{ vars.CPAN_AUDIT_DEBUG }}
               run: |
                 perl util/generate --quiet
                 git status
