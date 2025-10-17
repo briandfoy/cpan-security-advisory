@@ -1,12 +1,12 @@
 ---
 advisories:
   - affected_versions:
-      - <=20160302
+      - <20170521
     cves:
       - CVE-2016-10374
     description: 'perltidy through 20160302, as used by perlcritic, check-all-the-things, and other software, relies on the current working directory for certain output files and does not have a symlink-attack protection mechanism, which allows local users to overwrite arbitrary files by creating a symlink, as demonstrated by creating a perltidy.ERR symlink that the victim cannot delete.'
     fixed_versions:
-      - '>20160302'
+      - '>=20170521'
     github_security_advisory:
       - GHSA-hxj7-36fx-62r2
     id: CPANSA-Perl-Tidy-2016-10374
