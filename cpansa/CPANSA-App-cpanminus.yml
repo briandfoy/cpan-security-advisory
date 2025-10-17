@@ -21,7 +21,7 @@ advisories:
   - https://github.com/miyagawa/cpanminus/pull/638
   reported: 2020-07-30
 - affected_versions:
-  - <=1.7047
+  - '>0'
   cves:
   - CVE-2024-45321
   description: |
