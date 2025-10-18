@@ -15,12 +15,13 @@ advisories:
     reported: 2017-05-17
     severity: ~
   - affected_versions:
-      - '>0'
-    comment: 'This was reported a long time ago, but the latest versions still use tmpnam. The reported version was probably the latest at the time.'
+      - '<20140328'
+    comment: "This issue is actually about a temporary file with a a particular, known name (perltidy.TMP), and that expression of the problem was fixed. This does not mean that all similar problems are solved."
     cves:
       - CVE-2014-2277
     description: 'The make_temporary_filename function in perltidy 20120701-1 and earlier allows local users to obtain sensitive information or write to arbitrary files via a symlink attack, related to use of the tmpnam function.'
-    fixed_versions: []
+    fixed_versions:
+      - '>=20140328'
     github_security_advisory:
       - GHSA-g7r2-wjmp-vjj6
     id: CPANSA-Perl-Tidy-2014-2277
@@ -31,6 +32,7 @@ advisories:
       - http://www.securityfocus.com/bid/66139
       - https://bugzilla.redhat.com/show_bug.cgi?id=1074720
       - https://exchange.xforce.ibmcloud.com/vulnerabilities/92104
+      - https://github.com/perltidy/perltidy/issues/193
     reported: 2017-10-17
     severity: ~
 cpansa_version: 2
