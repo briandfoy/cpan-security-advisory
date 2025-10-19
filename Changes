@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20251018.003 2025-10-19T01:32:27Z
+	* data update for 2025-10-18
+
 20251017.001 2025-10-17T16:51:12Z
 	* data update for 2025-10-17
 	* CVE-2024-45321 is judged to be still affected (#361)
