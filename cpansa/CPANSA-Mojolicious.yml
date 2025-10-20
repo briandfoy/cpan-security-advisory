@@ -239,9 +239,7 @@ advisories:
       - '>=0.999922'
     cves:
       - CVE-2024-58134
-    description: "Mojolicious versions from 0.999922 through 9.39 for Perl uses a hard coded string, or the application's class name, as a HMAC session secret by default.  These predictable default secrets can be exploited to forge session cookies. An attacker who knows or guesses the secret could compute valid HMAC signatures for the session cookie, allowing them to tamper with or hijack another user's session."
-    fixed_versions:
-      - '>=9.40'
+    description: "Mojolicious versions from 0.999922 for Perl uses a hard coded string, or the application's class name, as a HMAC session secret by default.  These predictable default secrets can be exploited to forge session cookies. An attacker who knows or guesses the secret could compute valid HMAC signatures for the session cookie, allowing them to tamper with or hijack another user's session."
     github_security_advisory:
       - GHSA-3g23-7g3r-898j
     id: CPANSA-Mojolicious-2024-58134
@@ -259,9 +257,7 @@ advisories:
       - '>=7.28'
     cves:
       - CVE-2024-58135
-    description: "Mojolicious versions from 7.28 through 9.39 for Perl may generate weak HMAC session secrets.  When creating a default app with the \"mojo generate app\" tool, a weak secret is written to the application's configuration file using the insecure rand() function, and used for authenticating and protecting the integrity of the application's sessions. This may allow an attacker to brute force the application's session keys."
-    fixed_versions:
-      - '>=9.40'
+    description: "Mojolicious versions from 7.28 for Perl may generate weak HMAC session secrets.  When creating a default app with the \"mojo generate app\" tool, a weak secret is written to the application's configuration file using the insecure rand() function, and used for authenticating and protecting the integrity of the application's sessions. This may allow an attacker to brute force the application's session keys."
     github_security_advisory:
       - GHSA-3r5v-gmfp-3mh9
     id: CPANSA-Mojolicious-2024-58135
