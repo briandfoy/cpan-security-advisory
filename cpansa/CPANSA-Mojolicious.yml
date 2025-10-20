@@ -258,6 +258,7 @@ advisories:
       - '>=7.28'
     cves:
       - CVE-2024-58135
+    comment: "Mojolicious will CryptX if it is installed, but it falls back to the default behavior otherwise"
     description: "Mojolicious versions from 7.28 for Perl may generate weak HMAC session secrets.  When creating a default app with the \"mojo generate app\" tool, a weak secret is written to the application's configuration file using the insecure rand() function, and used for authenticating and protecting the integrity of the application's sessions. This may allow an attacker to brute force the application's session keys."
     fixed_versions: []
     github_security_advisory:
