@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20251020.002 2025-10-20T23:44:27Z
+	* Two reports for Mojolicious have been judged to not be resolved:
+	CVE-2024-58134 and CVE-2024-58135
+
 20251019.001 2025-10-20T13:37:49Z
 	* data update for 2025-10-19
 
