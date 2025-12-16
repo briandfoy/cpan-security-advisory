@@ -211,7 +211,8 @@ CVE-2024-23793    OTRS - not at all about Perl
 CVE-2024-25021    IBM AIX 7.3, VIOS 4.1's Perl implementation could allow a non-privileg...
 CVE-2024-48760    An issue in GestioIP v3.5.7 allows a remote attacker to execute arbitrary c
 CVE-2024-50151    In the Linux kernel, the following vulnerability has been resolved: sm
-CVE-2025-33112    IBM AIX 7.3 and IBM VIOS 4.1.1 Perl implementation
 CVE-2025-27614    Gitk (Tcl/Tk) allows arbirtary execution
+CVE-2025-33112    IBM AIX 7.3 and IBM VIOS 4.1.1 Perl implementation
 CVE-2025-34300    Sawtooth Software’s Lighthouse Studio CGI program
+CVE-2025-43881    Improper validation of specified quantity in input issue exists in Real-time Bus Tracking System
 CVE-2025-54769    An authenticated, read-only user can upload a file and perform a directory
