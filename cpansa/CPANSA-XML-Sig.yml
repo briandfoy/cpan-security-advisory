@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.27,<=0.67'
+    cves:
+      - CVE-2025-40934
+    description: XML-Sig versions 0.27 through 0.67 for Perl incorrectly validates XML files if signatures are omitted.  An attacker can remove the signature from the XML document to make it pass the verification check.  XML-Sig is a Perl module to validate signatures on XML files.  An unsigned XML file should return an error message.  The affected versions return true when attempting to validate an XML file that contains no signatures.
+    fixed_versions:
+      - '>=0.68'
+    github_security_advisory:
+      - GHSA-v825-mc9m-64qr
+    id: CPANSA-XML-Sig-2025-40934
+    references:
+      - https://github.com/perl-net-saml2/perl-XML-Sig/issues/63
+      - https://github.com/perl-net-saml2/perl-XML-Sig/pull/64
+    reported: 2025-11-26
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: XML-Sig
+last_checked: 1765868731
+latest_version: 0.68
+metacpan: https://metacpan.org/pod/XML::Sig
