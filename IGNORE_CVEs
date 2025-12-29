@@ -192,6 +192,7 @@ CVE-2017-14867    Git before 2.10.5, 2.11.x before 2.11.4, 2.12.x before 2.12.5,
 CVE-2018-11189    Quest DR Series Disk Backup software version befor
 CVE-2018-20911    cPanel before 70.0.23 allows code execution becaus
 CVE-2019-20327    Insecure permissions in cwrapper_perl
+CVE-2019-25256    VideoFlow Digital Video Protection DVP 2.10 contains an authenticated direc
 CVE-2020-24045    A sandbox escape issue was discovered in TitanHQ S
 CVE-2020-26574    ** UNSUPPORTED WHEN ASSIGNED ** Leostream Connecti
 CVE-2020-36163    An issue was discovered in Veritas NetBackup and O
@@ -211,6 +212,8 @@ CVE-2024-23793    OTRS - not at all about Perl
 CVE-2024-25021    IBM AIX 7.3, VIOS 4.1's Perl implementation could allow a non-privileg...
 CVE-2024-48760    An issue in GestioIP v3.5.7 allows a remote attacker to execute arbitrary c
 CVE-2024-50151    In the Linux kernel, the following vulnerability has been resolved: sm
+CVE-2024-58278    perl2exe <= V30.10C contains an arbitrary code execution vulnerability that
+CVE-2025-8769     Telenium Online Web Application is vulnerable due to a Perl script that  is
 CVE-2025-27614    Gitk (Tcl/Tk) allows arbirtary execution
 CVE-2025-33112    IBM AIX 7.3 and IBM VIOS 4.1.1 Perl implementation
 CVE-2025-34300    Sawtooth Software’s Lighthouse Studio CGI program
