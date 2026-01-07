@@ -35,3 +35,5 @@ NO_CVES
 cpan-audit-db/
 CONTRIBUTING.md
 main-modules
+
+.downstream.json
