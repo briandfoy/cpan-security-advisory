@@ -81,7 +81,7 @@ brian d foy, C<< <brian d foy> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2022, brian d foy, All Rights Reserved.
+Copyright © 2022-2026, brian d foy, All Rights Reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
