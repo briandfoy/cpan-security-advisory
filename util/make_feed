@@ -29,70 +29,33 @@ an RSS feed. This way, interested people can track new results that
 we should add to the database.
 
 If there are no new results for a day, this adds an item in the RSS
-to note there was nothing new. That we, we notice that it's still
+to note that there was nothing new. That we, we notice that it's still
 running.
-
-
 
 =cut
 
-my $search_url = Mojo::URL->new("https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=perl");
-
-my $map_sub = sub {
-	state $header = 1;
-	if( $header ) { $header = 0; return () }
-	my $dom = $_;
-
-	my $array = $dom->find( 'td' )->map( sub {
-		my $text =  $_->all_text;
-		$text =~ s/\v+/ /gr;
-		} )->to_array;
-
-	my $url = eval { $dom->at( 'td > a' )->attr('href') };
-	$url =  Mojo::URL->new($url)->to_abs($search_url);
-
-	my $hash = {
-		cve         => $array->[0],
-		description => $array->[1],
-		url         => $url,
-		};
-	};
-
-my $assemble_sub = sub {
-	my $hash = $_;
-	sleep 2;
-	$hash->{record} = eval { Local::CPANSA::assemble_record( $hash->{cve} ) };
-	$hash
-	};
-
 my $feed = start_xml();
 
-my $items = Mojo::UserAgent
-	->new->get($search_url)
-	->res
-	->dom->find( 'div#TableWithRules table tr' )
-	->head(25)
-	->map( $map_sub )
-	->grep( sub { length $_->{cve} } ) # first is a header row
-	->grep( sub { ! Local::CPANSA::cve_recorded( $_->{cve} ) } )
-	->grep( sub { ! Local::CPANSA::cve_ignored( $_->{cve} ) } )
-	->grep( sub { defined } ) # don't know whose making the undef element
-	->map( $assemble_sub )
-	->map( sub {
-		my $entry = tag('entry')->at('entry');
-		$entry->append_content( tag( id      => $_->{cve}         ) );
-		$entry->append_content( tag( title   => $_->{cve}         ) );
-		$entry->append_content( tag( content => $_->{description} ) );
-		$entry->append_content( tag( 'link' ) );
+my $no_reports = 1;
+foreach my $v ( get_json()->{vulnerabilities}->@* ) {
+	my $cve  = $v->{cve}{id};
+	next if Local::CPANSA::cve_recorded( $cve ) || Local::CPANSA::cve_ignored( $cve );
 
-		$entry->at('link')->attr( rel => 'alternate', href => $_->{url} );
+	$no_reports = 0;
 
-		$feed->append_content($entry);
-		} )
-	->to_array
-	;
+	my( $desc ) =
+		map { substr( $_-> {'value'}, 0, 75 ) =~ s/\v+/ /gr }
+		grep { $_->{'lang'} eq 'en' }
+		$v->{cve}{descriptions}->@*;
 
-add_default_item($feed) unless $items->@*;
+	my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
+	say "URL: $url";
+
+	my $hash = { cve => $cve, description => $desc, url => $url};
+	add_item( $feed, $hash );
+	}
+
+add_default_item( $feed ) if $no_reports;
 
 say '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' . $feed;
 
@@ -104,6 +67,26 @@ sub add_default_item ( $feed ) {
 	$entry->append_content( tag( content => $message ) );
 
 	$feed->append_content($entry);
+	}
+
+sub add_item ( $feed, $hash ) {
+	my $entry = tag('entry')->at('entry');
+	$entry->append_content( tag( id      => $hash->{cve}         ) );
+	$entry->append_content( tag( title   => $hash->{cve}         ) );
+	$entry->append_content( tag( content => $hash->{description} ) );
+	$entry->append_content( tag( 'link' ) );
+
+	$entry->at('link')->attr( rel => 'alternate', href => $hash->{url} );
+
+	$feed->append_content($entry);
+	}
+
+sub get_json () {
+	my $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Perl";
+	my $json = Mojo::UserAgent
+		->new->get($url)
+		->res
+		->json;
 	}
 
 sub now { # 2003-12-13T18:30:02Z
