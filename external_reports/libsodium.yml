@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions: <=1.0.20
+  cve: CVE-2025-69277
+  description: |
+    libsodium before ad3004e, in atypical use cases involving certain custom cryptography or untrusted data to crypto_core_ed25519_is_valid_point, mishandles checks for whether an elliptic curve point is valid because it sometimes allows points that aren't in the main cryptographic group.
+  github_security_advisory:
+  - GHSA-mrfv-m5wm-5w6w
+  references:
+  - https://00f.net/2025/12/30/libsodium-vulnerability/
+  - https://github.com/jedisct1/libsodium/commit/ad3004ec8731730e93fcfbbc824e67eadc1c1bae
+  - https://github.com/pyca/pynacl/commit/96314884d88d1089ff5f336dba61d7abbcddbbf7
+  - https://github.com/pyca/pynacl/commit/ecf41f55a3d8f1e10ce89c61c4b4d67f3f4467cf
+  - https://github.com/pyca/pynacl/issues/920
+  - https://ianix.com/pub/ed25519-deployment.html
+  - https://lists.debian.org/debian-lts-announce/2026/01/msg00004.html
+  - https://news.ycombinator.com/item?id=46435614
+  reported: 2025-12-31
+  severity: medium
+comment: ~
+cpansa_version: 2
+name: libsodium
+perl_distributions:
+- affected:
+  - distributed_library_version: 1.0.19
+    perl_module_versions: '>=0.000018,<=0.000027'
+  - distributed_library_version: 1.0.20
+    perl_module_versions: '>=0.000028,<=0.000041'
+  - distributed_library_version: 1.0.20-stable
+    perl_module_versions: '>=0.000042'
+  last_version_checked: '0.000042'
+  name: Crypt-Sodium-XS
+url: ~
