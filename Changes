@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260120.002 2026-01-20T18:31:24Z
+	* data update for 2026-01-20
+
 20260110.003 2026-01-11T02:05:40Z
 	* data update for 2025-01-10
 	* includes CVE-2025-15444 for Crypt::Sodium::XS
