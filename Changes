@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260120.004 2026-01-20T23:56:34Z
+	* make the databases smaller with a terse data structure (#376)
+
 20260120.002 2026-01-20T18:31:24Z
 	* data update for 2026-01-20
 
