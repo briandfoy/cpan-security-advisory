@@ -120,7 +120,7 @@ sub unexpected ( $message, $indent = 0 ) {
 
 sub dumper {
 	state $rc = require Data::Dumper;
-	Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump
+	Data::Dumper->new([@_])->Indent(0)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump
 }
 
 sub add_corelist_versions ($db) {
@@ -566,7 +566,7 @@ sub stringify_data ( $db, $package ) {
 
 	no warnings 'once';
 	local $Data::Dumper::Sortkeys = 1;
-	my $dump = Data::Dumper::Dumper( $db );
+	my $dump = dumper( $db );
 	$dump =~ s{^\$VAR1\s*=\s*}{};
 	$dump =~ s{}{};
 
