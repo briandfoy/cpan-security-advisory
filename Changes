@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260129.001 2026-01-29T18:57:25Z
+	* data update for 2026-01-29
+	* adds HarfBuzz::Shaper
+
 20260125.001 2026-01-26T00:34:11Z
 	* data update for 2026-01-24
 
