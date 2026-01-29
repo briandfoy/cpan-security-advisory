@@ -1,0 +1,27 @@
+---
+advisories:
+  - affected_versions:
+      - <0.032
+    cves:
+      - CVE-2026-0943
+    description: 'HarfBuzz::Shaper versions before 0.032 for Perl contains a bundled library with a null pointer dereference vulnerability.   Versions before 0.032 contain HarfBuzz 8.4.0 or earlier bundled as hb_src.tar.gz in the source tarball, which is affected by CVE-2026-22693.'
+    embedded_vulnerability:
+      distributed_version: 8.4.0
+      name: harfbuzz
+    fixed_versions:
+      - '>=0.032'
+    github_security_advisory:
+      - GHSA-hmr2-524c-vv28
+    id: CPANSA-HarfBuzz-Shaper-2026-0943
+    references:
+      - https://bugzilla.redhat.com/show_bug.cgi?id=2429296
+      - https://metacpan.org/release/JV/HarfBuzz-Shaper-0.032/changes
+      - https://www.cve.org/CVERecord?id=CVE-2026-22693
+    reported: 2026-01-19
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: HarfBuzz-Shaper
+last_checked: 1769704652
+latest_version: 0.033
+metacpan: https://metacpan.org/pod/HarfBuzz::Shaper

@@ -1,0 +1,190 @@
+---
+advisories:
+  - affected_versions: '<1.0.5'
+    cves:
+      - CVE-2015-8947
+    description: 'hb-ot-layout-gpos-table.hh in HarfBuzz before 1.0.5 allows remote attackers to cause a denial of service (buffer over-read) or possibly have unspecified other impact via crafted data, a different vulnerability than CVE-2016-2052.'
+    fixed_versions: '>=1.0.5'
+    github_security_advisory:
+      - GHSA-8w8v-wf57-7pwq
+    references:
+      - http://lists.opensuse.org/opensuse-updates/2016-08/msg00070.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0072.html
+      - http://www.securityfocus.com/bid/92039
+      - http://www.ubuntu.com/usn/USN-3067-1
+      - https://github.com/behdad/harfbuzz/commit/f96664974774bfeb237a7274f512f64aaafb201e
+      - https://github.com/behdad/harfbuzz/issues/139#issuecomment-146984679
+      - https://lists.debian.org/debian-lts-announce/2019/12/msg00022.html
+      - https://security.gentoo.org/glsa/201701-76
+      - http://lists.opensuse.org/opensuse-updates/2016-08/msg00070.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0072.html
+      - http://www.securityfocus.com/bid/92039
+      - http://www.ubuntu.com/usn/USN-3067-1
+      - https://github.com/behdad/harfbuzz/commit/f96664974774bfeb237a7274f512f64aaafb201e
+      - https://github.com/behdad/harfbuzz/issues/139#issuecomment-146984679
+      - https://lists.debian.org/debian-lts-announce/2019/12/msg00022.html
+      - https://security.gentoo.org/glsa/201701-76
+    reported: 2016-07-19
+    severity: ~
+  - affected_versions: '<1.0.4'
+    cves:
+      - CVE-2015-9274
+    description: 'HarfBuzz before 1.0.4 allows remote attackers to cause a denial of service (invalid read of two bytes and application crash) because of GPOS and GSUB table mishandling, related to hb-ot-layout-gpos-table.hh, hb-ot-layout-gsub-table.hh, and hb-ot-layout-gsubgpos-private.hh.'
+    fixed_versions: '>1.0.4'
+    github_security_advisory:
+      - GHSA-95rc-6f28-2jcq
+    references:
+      - https://github.com/harfbuzz/harfbuzz/commit/c917965b9e6fe2b21ed6c51559673288fa3af4b7
+      - https://github.com/harfbuzz/harfbuzz/commit/c917965b9e6fe2b21ed6c51559673288fa3af4b7
+    reported: 2018-11-15
+    severity: ~
+  - affected_versions: '<1.0.6'
+    cves:
+      - CVE-2016-2052
+    description: 'Multiple unspecified vulnerabilities in HarfBuzz before 1.0.6, as used in Google Chrome before 48.0.2564.82, allow attackers to cause a denial of service or possibly have other impact via crafted data, as demonstrated by a buffer over-read resulting from an inverted length check in hb-ot-font.cc, a different issue than CVE-2015-8947.'
+    fixed_versions: '>=1.0.6'
+    github_security_advisory:
+      - GHSA-vx72-qhm5-54jj
+    references:
+      - http://googlechromereleases.blogspot.com/2016/01/stable-channel-update_20.html
+      - http://lists.opensuse.org/opensuse-updates/2016-08/msg00070.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0072.html
+      - http://www.securityfocus.com/bid/81812
+      - http://www.securitytracker.com/id/1034801
+      - http://www.ubuntu.com/usn/USN-2877-1
+      - http://www.ubuntu.com/usn/USN-3067-1
+      - https://code.google.com/p/chromium/issues/detail?id=544270
+      - https://code.google.com/p/chromium/issues/detail?id=579625
+      - https://github.com/behdad/harfbuzz/commit/63ef0b41dc48d6112d1918c1b1de9de8ea90adb5
+      - https://github.com/behdad/harfbuzz/issues/139#issuecomment-148289957
+      - https://security.gentoo.org/glsa/201701-76
+      - http://googlechromereleases.blogspot.com/2016/01/stable-channel-update_20.html
+      - http://lists.opensuse.org/opensuse-updates/2016-08/msg00070.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0072.html
+      - http://www.securityfocus.com/bid/81812
+      - http://www.securitytracker.com/id/1034801
+      - http://www.ubuntu.com/usn/USN-2877-1
+      - http://www.ubuntu.com/usn/USN-3067-1
+      - https://code.google.com/p/chromium/issues/detail?id=544270
+      - https://code.google.com/p/chromium/issues/detail?id=579625
+      - https://github.com/behdad/harfbuzz/commit/63ef0b41dc48d6112d1918c1b1de9de8ea90adb5
+      - https://github.com/behdad/harfbuzz/issues/139#issuecomment-148289957
+      - https://security.gentoo.org/glsa/201701-76
+    reported: 2016-01-25
+    severity: ~
+  - affected_versions: '<2.9.1'
+    cves:
+      - CVE-2021-45931
+    description: 'HarfBuzz 2.9.0 has an out-of-bounds write in hb_bit_set_invertible_t::set (called from hb_sparseset_t<hb_bit_set_invertible_t>::set and hb_set_copy).'
+    fixed_versions: '>=2.9.1'
+    github_security_advisory:
+      - GHSA-77w9-6m5g-vpj2
+    references:
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=37425
+      - https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2021-1159.yaml
+      - https://github.com/harfbuzz/harfbuzz/commit/d3e09bf4654fe5478b6dbf2b26ebab6271317d81
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4EAIZKL4O67FN2CWJYHYKZEMNYWNWO3D/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5A7TCR2MY46YK3NHQZB3SLESUH354IEA/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/DI6247WOAKB46CZZ6SCDSJVWWCW3GMZH/
+      - https://security.gentoo.org/glsa/202209-11
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=37425
+      - https://github.com/google/oss-fuzz-vulns/blob/main/vulns/harfbuzz/OSV-2021-1159.yaml
+      - https://github.com/harfbuzz/harfbuzz/commit/d3e09bf4654fe5478b6dbf2b26ebab6271317d81
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/4EAIZKL4O67FN2CWJYHYKZEMNYWNWO3D/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/5A7TCR2MY46YK3NHQZB3SLESUH354IEA/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/DI6247WOAKB46CZZ6SCDSJVWWCW3GMZH/
+      - https://security.gentoo.org/glsa/202209-11
+    reported: 2022-01-01
+    severity: ~
+  - affected_versions: '<4.4.0'
+    cves:
+      - CVE-2022-33068
+    description: 'An integer overflow in the component hb-ot-shape-fallback.cc of Harfbuzz v4.3.0 allows attackers to cause a Denial of Service (DoS) via unspecified vectors.'
+    fixed_versions: '>=4.4.0'
+    github_security_advisory:
+      - GHSA-cq67-chj5-8385
+    references:
+      - https://github.com/harfbuzz/harfbuzz/commit/62e803b36173fd096d7ad460dd1d1db9be542593
+      - https://github.com/harfbuzz/harfbuzz/issues/3557
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FQBJ24W6TXLSAQWCFW7IBGUMX4AJI3S4/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QQMEXOVDL3T2UXKBCON7JSOCE646G7HG/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/W56WTC5IY4EIUHVUIHMCXA3BSBZLSZCI/
+      - https://security.gentoo.org/glsa/202209-11
+      - https://github.com/harfbuzz/harfbuzz/commit/62e803b36173fd096d7ad460dd1d1db9be542593
+      - https://github.com/harfbuzz/harfbuzz/issues/3557
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FQBJ24W6TXLSAQWCFW7IBGUMX4AJI3S4/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QQMEXOVDL3T2UXKBCON7JSOCE646G7HG/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/W56WTC5IY4EIUHVUIHMCXA3BSBZLSZCI/
+      - https://security.gentoo.org/glsa/202209-11
+    reported: 2022-06-23
+    severity: ~
+  - affected_versions: '<7.0.0'
+    cves:
+      - CVE-2023-25193
+    description: hb-ot-layout-gsubgpos.hh in HarfBuzz through 6.0.0 allows attackers to trigger O(n^2) growth via consecutive marks during the process of looking back for base glyphs when attaching marks.
+    fixed_versions: '>=7.0.0'
+    github_security_advisory:
+      - GHSA-v8ff-vmc3-wr4m
+    references:
+      - https://chromium.googlesource.com/chromium/src/+/e1f324aa681af54101c1f2d173d92adb80e37088/DEPS#361
+      - https://github.com/harfbuzz/harfbuzz/blob/2822b589bc837fae6f66233e2cf2eef0f6ce8470/src/hb-ot-layout-gsubgpos.hh
+      - https://github.com/harfbuzz/harfbuzz/commit/85be877925ddbf34f74a1229f3ca1716bb6170dc
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/KWCHWSICWVZSAXP2YAXM65JC2GR53547/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YZ5M2GSAIHFPLHYJXUPQ2QDJCLWXUGO3/
+      - https://security.netapp.com/advisory/ntap-20230725-0006/
+      - https://chromium.googlesource.com/chromium/src/+/e1f324aa681af54101c1f2d173d92adb80e37088/DEPS#361
+      - https://github.com/harfbuzz/harfbuzz/blob/2822b589bc837fae6f66233e2cf2eef0f6ce8470/src/hb-ot-layout-gsubgpos.hh
+      - https://github.com/harfbuzz/harfbuzz/commit/85be877925ddbf34f74a1229f3ca1716bb6170dc
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/KWCHWSICWVZSAXP2YAXM65JC2GR53547/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YZ5M2GSAIHFPLHYJXUPQ2QDJCLWXUGO3/
+      - https://security.netapp.com/advisory/ntap-20230725-0006/
+    reported: 2023-02-04
+    severity: ~
+  - affected_versions: '>=8.5.0,<=10.0.1'
+    cves:
+      - CVE-2024-56732
+    description: 'HarfBuzz is a text shaping engine. Starting with 8.5.0 through 10.0.1, there is a heap-based buffer overflow in the hb_cairo_glyphs_from_buffer function.'
+    fixed_versions: '>10.0.1'
+    github_security_advisory: []
+    references:
+      - https://github.com/harfbuzz/harfbuzz/commit/1767f99e2e2196c3fcae27db6d8b60098d3f6d26
+      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-qmp9-xqm5-jh6m
+    reported: 2024-12-27
+    severity: ~
+  - affected_versions: '<=12.3.0'
+    cves:
+      - CVE-2026-22693
+    description: 'HarfBuzz is a text shaping engine. Prior to version 12.3.0, a null pointer dereference vulnerability exists in the SubtableUnicodesCache::create function located in src/hb-ot-cmap-table.hh. The function fails to check if hb_malloc returns NULL before using placement new to construct an object at the returned pointer address. When hb_malloc fails to allocate memory (which can occur in low-memory conditions or when using custom allocators that simulate allocation failures), it returns NULL. The code then attempts to call the constructor on this null pointer using placement new syntax, resulting in undefined behavior and a Segmentation Fault. This issue has been patched in version 12.3.0.'
+    fixed_versions: '>=12.3.1'
+    github_security_advisory: []
+    references:
+      - https://github.com/harfbuzz/harfbuzz/commit/1265ff8d990284f04d8768f35b0e20ae5f60daae
+      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-xvjr-f2r9-c7ww
+      - http://www.openwall.com/lists/oss-security/2026/01/11/1
+      - http://www.openwall.com/lists/oss-security/2026/01/12/1
+    reported: 2026-01-10
+    severity: ~
+  - affected_versions: '<=11.2.1'
+    cves: []
+    description: 'When debug messaging is enabled using hb_buffer_set_message_func, a maliciously crafted font can trigger a buffer overflow using a complicated sequence lookup, leading to unauthorised overwriting of other data.'
+    fixed_versions: '>11.2.1'
+    github_security_advisory: []
+    references:
+      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-p965-5rr7-9mhq
+    reported: ~
+    severity: ~
+cpansa_version: 2
+name: harfbuzz
+perl_distributions:
+  - affected:
+      - distributed_library_version: '2.6.4'
+        perl_module_versions: '>0.017.1,<0.018.1'
+      - distributed_library_version: '2.6.4i'
+        perl_module_versions: '>0.018,<0.027'
+      - distributed_library_version:
+        perl_module_versions: '>=0.027,<0.32'
+      - distributed_library_version: '12.3.0i'
+        perl_module_versions: '==0.32'
+    last_version_checked: '0.033'
+    name: HarfBuzz-Shaper
+url: https://github.com/harfbuzz/harfbuzz
