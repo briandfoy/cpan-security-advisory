@@ -49,7 +49,6 @@ foreach my $v ( get_json()->{vulnerabilities}->@* ) {
 		$v->{cve}{descriptions}->@*;
 
 	my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
-	say "URL: $url";
 
 	my $hash = { cve => $cve, description => $desc, url => $url};
 	add_item( $feed, $hash );
