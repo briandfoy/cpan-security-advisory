@@ -1,0 +1,26 @@
+---
+advisories:
+  - affected_versions:
+      - '>=0.8.1,<0.8.5'
+    cves:
+      - CVE-2026-2439
+    description: "Concierge::Sessions versions from 0.8.1 before 0.8.5 for Perl generate insecure session ids. The generate_session_id function in Concierge::Sessions::Base defaults to using the uuidgen command to generate a UUID, with a fallback to using Perl's built-in rand function. Neither of these methods are secure, and attackers are able to guess session_ids that can grant them access to systems. Specifically,    *  There is no warning when uuidgen fails. The software can be quietly using the fallback rand() function with no warnings if the command fails for any reason.   *  The uuidgen command will generate a time-based UUID if the system does not have a high-quality random number source, because the call does not explicitly specify the --random option. Note that the system time is shared in HTTP responses.   *  UUIDs are identifiers whose mere possession grants access, as per RFC 9562.   *  The output of the built-in rand() function is predictable and unsuitable for security applications."
+    fixed_versions:
+      - '>=0.8.5'
+    github_security_advisory:
+      - GHSA-9gww-cr64-679c
+    id: CPANSA-Concierge-Sessions-2026-2439
+    references:
+      - https://github.com/bwva/Concierge-Sessions/commit/20bb28e92e8fba307c4ff8264701c215be65e73b
+      - https://metacpan.org/release/BVA/Concierge-Sessions-v0.8.4/diff/BVA/Concierge-Sessions-v0.8.5#lib/Concierge/Sessions/Base.pm
+      - https://perldoc.perl.org/5.42.0/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+      - https://www.rfc-editor.org/rfc/rfc9562.html#name-security-considerations
+    reported: 2026-02-16
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Concierge-Sessions
+last_checked: 1771628068
+latest_version: v0.11.0
+metacpan: https://metacpan.org/pod/Concierge::Sessions
