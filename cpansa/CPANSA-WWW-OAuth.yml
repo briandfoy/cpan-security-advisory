@@ -1,0 +1,25 @@
+---
+advisories:
+  - affected_versions:
+      - <=1.000
+    cves:
+      - CVE-2025-40905
+    description: 'WWW::OAuth 1.000 and earlier for Perl uses the rand() function as the default source of entropy, which is not cryptographically secure, for cryptographic functions.'
+    fixed_versions:
+      - '>=1.001'
+    github_security_advisory:
+      - GHSA-869w-qxf5-5q39
+    id: CPANSA-WWW-OAuth-2025-40905
+    references:
+      - https://metacpan.org/release/DBOOK/WWW-OAuth-1.000/source/lib/WWW/OAuth.pm#L86
+      - https://perldoc.perl.org/functions/rand
+      - https://security.metacpan.org/docs/guides/random-data-for-security.html
+      - http://www.openwall.com/lists/oss-security/2026/02/13/1
+    reported: 2026-02-13
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: WWW-OAuth
+last_checked: 1771628379
+latest_version: 1.003
+metacpan: https://metacpan.org/pod/WWW::OAuth
