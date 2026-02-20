@@ -1,0 +1,21 @@
+---
+advisories:
+  - affected_versions:
+      - '>=2.10'
+    cves:
+      - CVE-2025-15578
+    description: 'Maypole versions from 2.10 through 2.13 for Perl generates session ids insecurely. The session id is seeded with the system time (which is available from HTTP response headers), a call to the built-in rand() function, and the PID.'
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-m76j-7jh6-jxj5
+    id: CPANSA-Maypole-2025-15578
+    references:
+      - https://metacpan.org/dist/Maypole/source/lib/Maypole/Session.pm#L43
+    reported: 2026-02-16
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Maypole
+last_checked: 1771628240
+latest_version: 2.13
+metacpan: https://metacpan.org/pod/Maypole
