@@ -1,5 +1,5 @@
 # brian's standard GitHub Actions Ubuntu config for Perl 5 modules
-# version 20260106.001
+# version 20260126.001
 # https://github.com/briandfoy/github_workflows
 # https://github.com/features/actions
 # This file is licensed under the Artistic License 2.0
@@ -49,6 +49,7 @@ on:
             - '**'
             - '!**appveyor**'
             - '!**circleci**'
+            - '!**freebsd**'
             - '!**macos**'
             - '!**notest**'
             - '!**release**'
@@ -75,7 +76,7 @@ on:
     pull_request:
     # weekly build on the master branch just to see what CPAN is doing
     schedule:
-        - cron: "13 13 * * 2"
+        - cron: "42 5 * * 1"
 jobs:
     perl:
         environment: automated_testing
@@ -84,7 +85,7 @@ jobs:
             matrix:
                 os:
                     - ubuntu-latest
-                perl-version: [ 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
+                perl-version: [ 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
         container:
             image: ghcr.io/perlreview/5.${{ matrix.perl-version }}-modules-amd64
         steps:
