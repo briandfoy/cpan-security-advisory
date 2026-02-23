@@ -721,7 +721,7 @@ advisories:
     reported: 2005-12-01
     severity: ~
   - affected_versions:
-      - =5.8.0
+      - ==5.8.0
     cves:
       - CVE-2005-0156
     description: "Buffer overflow in the PerlIO implementation in Perl 5.8.0, when installed with setuid support (sperl), allows local users to execute arbitrary code by setting the PERLIO_DEBUG variable and executing a Perl script whose full pathname contains a long directory tree.\n"
@@ -748,7 +748,7 @@ advisories:
     reported: 2005-02-07
     severity: ~
   - affected_versions:
-      - =5.8.0
+      - ==5.8.0
     cves:
       - CVE-2005-0155
     description: "The PerlIO implementation in Perl 5.8.0, when installed with setuid support (sperl), allows local users to create arbitrary files via the PERLIO_DEBUG variable.\n"
@@ -896,7 +896,7 @@ advisories:
     reported: 2016-04-08
     severity: high
   - affected_versions:
-      - =5.8.1
+      - ==5.8.1
     cves:
       - CVE-2003-0900
     description: "Perl 5.8.1 on Fedora Core does not properly initialize the random number generator when forking, which makes it easier for attackers to predict random numbers.\n"
@@ -1010,7 +1010,7 @@ advisories:
     reported: 2017-09-28
     severity: critical
   - affected_versions:
-      - =5.34.0
+      - ==5.34.0
     cves:
       - CVE-2022-48522
     description: "In Perl 5.34.0, function S_find_uninit_var in sv.c has a stack-based crash that can lead to remote code execution or local privilege escalation.\n"

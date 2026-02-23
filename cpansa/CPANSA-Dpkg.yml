@@ -297,7 +297,7 @@ advisories:
   reported: 2010-03-15
   severity: ~
 - affected_versions:
-  - =1.9.21
+  - ==1.9.21
   cves:
   - CVE-2004-2768
   description: |

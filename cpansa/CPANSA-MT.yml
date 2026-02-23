@@ -278,7 +278,7 @@ advisories:
   reported: 2019-12-26
   severity: medium
 - affected_versions:
-  - '=6.3.1'
+  - '==6.3.1'
   cves:
   - CVE-2018-0672
   description: |
@@ -369,7 +369,7 @@ advisories:
   reported: 2015-03-27
   severity: ~
 - affected_versions:
-  - '=5.13'
+  - '==5.13'
   cves:
   - CVE-2012-1503
   description: |

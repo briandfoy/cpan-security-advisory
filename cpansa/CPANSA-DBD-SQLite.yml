@@ -278,7 +278,7 @@ advisories:
   reported: 2020-02-21
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-20218
   description: |
@@ -298,7 +298,7 @@ advisories:
   reported: 2020-01-02
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19959
   description: |
@@ -317,7 +317,7 @@ advisories:
   reported: 2020-01-03
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19926
   - CVE-2019-19880
@@ -393,7 +393,7 @@ advisories:
   reported: 2019-05-10
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19925
   description: |
@@ -417,7 +417,7 @@ advisories:
   reported: 2019-12-24
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19924
   description: |
@@ -438,7 +438,7 @@ advisories:
   reported: 2019-12-24
   severity: medium
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19923
   description: |
@@ -462,7 +462,7 @@ advisories:
   reported: 2019-12-24
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19880
   description: |
@@ -527,7 +527,7 @@ advisories:
   reported: 2019-12-09
   severity: medium
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19603
   description: |
@@ -548,7 +548,7 @@ advisories:
   reported: 2019-12-09
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19317
   description: |
@@ -567,7 +567,7 @@ advisories:
   reported: 2019-12-05
   severity: critical
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19244
   description: |
@@ -585,7 +585,7 @@ advisories:
   reported: 2019-11-25
   severity: high
 - affected_versions:
-  - =1.65_02
+  - ==1.65_02
   cves:
   - CVE-2019-19242
   description: |
@@ -644,7 +644,7 @@ advisories:
   reported: 2019-04-03
   severity: high
 - affected_versions:
-  - =1.59_02
+  - ==1.59_02
   cves:
   - CVE-2018-20505
   description: |
@@ -754,7 +754,7 @@ advisories:
   reported: 2018-03-17
   severity: high
 - affected_versions:
-  - "=1.55_06"
+  - "==1.55_06"
   - "<=1.55_03"
   cves:
   - CVE-2017-10989
@@ -901,7 +901,7 @@ advisories:
   reported: 2015-04-24
   severity: ~
 - affected_versions:
-  - =1.47_01
+  - ==1.47_01
   cves:
   - CVE-2013-7443
   description: |

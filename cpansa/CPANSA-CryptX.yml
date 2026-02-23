@@ -25,7 +25,7 @@ advisories:
       distributed_version: ~
       name: libtomcrypt
     fixed_versions:
-      - "'>=0.065'"
+      - ">=0.065"
     github_security_advisory:
       - GHSA-w3qg-5chj-8g9g
       - GHSA-x32c-6j92-4hp9

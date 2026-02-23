@@ -29,7 +29,7 @@ advisories:
   reported: 2012-09-09
   severity: ~
 - affected_versions:
-  - =1.49
+  - ==1.49
   cves:
   - CVE-2009-0663
   description: |

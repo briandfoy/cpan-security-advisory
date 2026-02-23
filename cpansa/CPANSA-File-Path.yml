@@ -50,8 +50,8 @@ advisories:
   reported: 2008-12-01
   severity: ~
 - affected_versions:
-  - "=1.08"
-  - "=2.07"
+  - "==1.08"
+  - "==2.07"
   cves:
   - CVE-2008-5302
   description: |

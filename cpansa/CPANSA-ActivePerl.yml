@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - =5.16.1.1601
+  - ==5.16.1.1601
   cves:
   - CVE-2012-5377
   description: |
@@ -16,7 +16,7 @@ advisories:
   reported: 2012-10-11
   severity: ~
 - affected_versions:
-  - =5.8.8.817
+  - ==5.8.8.817
   cves:
   - CVE-2006-2856
   description: |

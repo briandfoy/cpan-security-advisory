@@ -45,7 +45,7 @@ advisories:
   reported: 2021-04-23
   severity: ~
 - affected_versions:
-  - '=8.32'
+  - '==8.32'
   cves:
   - CVE-2018-20211
   description: |
