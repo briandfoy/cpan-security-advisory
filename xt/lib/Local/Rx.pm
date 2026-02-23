@@ -32,6 +32,8 @@ are all in F<xt/lib> so far.
 
 =item * Local::Rx::Type::VCS_URL
 
+=item * Local::Rx::Type::VersionRange
+
 =item * Local::Rx::Type::YYYYMMDD
 
 =back
@@ -75,17 +77,19 @@ use Local::Rx::Type::CVE;
 use Local::Rx::Type::GHSA;
 use Local::Rx::Type::URL;
 use Local::Rx::Type::VCS_URL;
+use Local::Rx::Type::VersionRange;
 use Local::Rx::Type::YYYYMMDD;
 
 sub new {
 	Data::Rx->new({
-		type_plugins => [qw(
-			Local::Rx::Type::YYYYMMDD
-			Local::Rx::Type::GHSA
-			Local::Rx::Type::CVE
-			Local::Rx::Type::URL
-			Local::Rx::Type::VCS_URL
-			Local::Rx::Type::CommitID
+		type_plugins => [ map { "Local::Rx::Type::$_" } qw(
+			YYYYMMDD
+			GHSA
+			CVE
+			URL
+			VCS_URL
+			VersionRange
+			CommitID
 			)],
 	});
 	}
