@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260223.001 2026-02-23T06:01:16Z
+	* data upodate for 2026-02-23
+	* fix data problem in boost.yml (#383 from Olaf Alders)
+
 20260222.001 2026-02-22T06:54:05Z
 	* data update for 2026-02-22
 
