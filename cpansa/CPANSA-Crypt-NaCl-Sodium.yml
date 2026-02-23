@@ -1,0 +1,24 @@
+---
+advisories:
+  - affected_versions:
+      - <2.002
+    cves:
+      - CVE-2026-2588
+    description: Crypt::NaCl::Sodium versions through 2.001 for Perl has an integer overflow flaw on 32-bit systems.  Sodium.xs casts a STRLEN (size_t) to unsigned long long when passing a length pointer to libsodium functions.  On 32-bit systems size_t is typically 32-bits while an unsigned long long is at least 64-bits.
+    fixed_versions:
+      - '>=2.002'
+    github_security_advisory:
+      - GHSA-8gq5-mm3m-7h4x
+    id: CPANSA-Crypt-NaCl-Sodium-2026-2588
+    references:
+      - https://github.com/cpan-authors/crypt-nacl-sodium/commit/557388bdb4da416a56663cda0154b80cd524395c.patch
+      - https://github.com/cpan-authors/crypt-nacl-sodium/commit/8cf7f66ba922443e131c9deae1ee00fafe4f62e4.patch
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.001/source/Sodium.xs#L2119
+    reported: 2026-02-23
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-NaCl-Sodium
+last_checked: 1771824785
+latest_version: 2.002
+metacpan: https://metacpan.org/pod/Crypt::NaCl::Sodium
