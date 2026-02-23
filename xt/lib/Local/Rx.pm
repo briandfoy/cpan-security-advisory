@@ -1,3 +1,5 @@
+use v5.22;
+
 =head1 NAME
 
 Local::Rx - a convenient way to load Data::Rx with all the local types

@@ -1,4 +1,4 @@
-use v5.20;
+use v5.22;
 
 =head1 NAME
 

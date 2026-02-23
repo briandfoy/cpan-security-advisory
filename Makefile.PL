@@ -44,7 +44,7 @@ my $github    = 'https://github.com/briandfoy/cpan-security-advisory';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
 my %WriteMakefile = (
-	'MIN_PERL_VERSION' => '5.020',
+	'MIN_PERL_VERSION' => '5.022',
 
 	'NAME'          => $module,
 	'ABSTRACT_FROM' => $main_file,
