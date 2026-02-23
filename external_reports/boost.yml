@@ -67,7 +67,7 @@ name: boost
 perl_distributions:
 - affected:
   - distributed_library_version: '1.33'
-    perl_module_versions: '>=1,1,<=1.4'
+    perl_module_versions: '>=1.1,<=1.4'
   last_version_checked: '1.4'
   name: Boost-Graph
 url: https://www.boost.org/doc/libs/1_78_0/libs/graph/doc/index.html
