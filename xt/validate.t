@@ -70,10 +70,10 @@ sub get_rx () {
 		contents => {
 			type => '//rec',
 			required => {
-				affected_versions        => { type => '//arr', contents => { type => '//any', of => [ '//str', '//nil' ] } },
+				affected_versions        => { type => '//arr', contents => { type => '//any', of => [ 'tag:example.com,EXAMPLE:rx/cpansa-version-range', '//nil' ] } },
 				cves                     => { type => '//arr', contents => { type => "tag:example.com,EXAMPLE:rx/cve" }, },
 				description              => { type => '//str' },
-				fixed_versions           => { type => '//arr', contents => { type => '//any', of => [ '//str', '//nil' ] } },
+				fixed_versions           => { type => '//arr', contents => { type => '//any', of => [ 'tag:example.com,EXAMPLE:rx/cpansa-version-range', '//nil' ] } },
 				github_security_advisory => { type => '//arr', contents => { type => "tag:example.com,EXAMPLE:rx/ghsa" }, },
 				id                       => { type => '//str' },
 				reported                 => { type => "//any", of => [ 'tag:example.com,EXAMPLE:rx/cpansa-date', '//nil' ] },
@@ -86,7 +86,7 @@ sub get_rx () {
 					optional => {
 						distributed_version => { type => '//any', of => [ '//str', '//nil' ] },
 						name => { type => '//any', of => [ '//str', '//nil' ] },
-						affected_versions        => { type => '//any', of => [ '//str', '//nil' ] },
+						affected_versions        => { type => '//any', of => [ 'tag:example.com,EXAMPLE:rx/cpansa-version-range', '//nil' ] },
 						},
 					},
 				external_vulnerability => {
@@ -94,7 +94,7 @@ sub get_rx () {
 					optional => {
 						distributed_version => { type => '//any', of => [ '//str', '//nil' ] },
 						name => { type => '//any', of => [ '//str', '//nil' ] },
-						affected_versions        => { type => '//any', of => [ '//str', '//nil' ] },
+						affected_versions        => { type => '//any', of => [ 'tag:example.com,EXAMPLE:rx/cpansa-version-range', '//nil' ] },
 						},
 					},
 				comment     => { type => '//any', of => [ '//str', '//nil' ] },
