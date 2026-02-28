@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260228.001 2026-02-28T08:40:41Z
+	* CVE-2026-2597 for Crypt::SysRandom::XS
+	* CVE-2025-40932 for CPANSA-Apache-SessionX-2005-01
+
 20260225.001 2026-02-25T10:14:16Z
 	* data update for CVE-2024-58041 for Smolder
 
