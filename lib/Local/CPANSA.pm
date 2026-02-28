@@ -10,8 +10,16 @@ our @EXPORT = qw(
 our @EXPORT_OK = qw(
 	get_all_reports
 	get_dist_info
+	get_ua
 	latest_on_cpan
 	load_report
+	get_recorded_cves
+	get_ignored_cves
+	get_github_cve_issues
+	cve_recorded
+	cve_ignored
+	assemble_advisory
+	github_cve_issue_exists
 	);
 
 our %EXPORT_TAGS = (
@@ -103,7 +111,12 @@ sub assemble_advisory ( $config ) {
 	return \%hash
 	}
 
-=item * cve_ignored
+=item * cve_ignored(CVE)
+
+Returns true if the CVE is ignored in cpan-security-advisory. This means that
+the report was evaluated to be outside the scope of CPAN, such as non-CPAN
+project that uses a Perl module incorrectly, or a report that somehow mentions
+Perl but is not a Perl or CPAN issue.
 
 =cut
 
@@ -114,6 +127,8 @@ sub cve_ignored ( $cve ) {
 
 =item * cve_recorded
 
+Returns true if the CVE is recorded in cpan-security-advisory.
+
 =cut
 
 sub cve_recorded ( $cve ) {
@@ -121,7 +136,23 @@ sub cve_recorded ( $cve ) {
 	exists $hash->{$cve};
 	}
 
+=item * default_github_owner
+
+Returns C<briandfoy>, the GitHub owner for the GitHub repo.
+
+=item * default_github_repo
+
+Returns C<cpan-security-advisory>, the GitHub repo name.
+
+=cut
+
+sub default_github_owner () { 'briandfoy' }
+sub default_github_repo  () { 'cpan-security-advisory' }
+
 =item * get_dist_info( DIST )
+
+Get the distribution info from MetaCPAN. The C<DIST> can use the C<-> (dash) or
+the C<::> (double colon).
 
 =cut
 
@@ -152,7 +183,45 @@ sub get_dist_info ( $package_or_dist ) {
 	return \@items;
 	}
 
-=item * guess_package
+=item * get_unevaluated_cve()
+
+=cut
+
+sub get_unevaluated_cve () {
+	my $search_results = get_cve_search_results();
+
+	my @results;
+	foreach my $v ( $search_results->{vulnerabilities}->@* ) {
+		next unless exists $v->{cve};
+		my $cve  = $v->{cve}{id};
+		next if Local::CPANSA::cve_recorded( $cve ) || Local::CPANSA::cve_ignored( $cve );
+
+		my( $desc ) =
+			map { substr( $_-> {'value'}, 0, 75 ) =~ s/\v+/ /gr }
+			grep { $_->{'lang'} eq 'en' }
+			$v->{cve}{descriptions}->@*;
+
+		my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
+
+		push @results, { cve => $cve, description => $desc, url => $url};
+		}
+
+	return \@results;
+	}
+
+sub get_cve_search_results ( $keyword = 'Perl' ) {
+	my $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
+	my $json = get_ua()
+		->get( $url, form => { keywordSearch => $keyword } )
+		->res
+		->json;
+	}
+
+=item * guess_package(ITEM)
+
+Given the return value of C<assemble_item>, guess what Perl package might be
+involved. This looks for clues in the references or descriptions. It's often
+not helpful.
 
 =cut
 
@@ -176,9 +245,11 @@ sub guess_package ( $item ) {
 
 =item * parse_cpe23uri
 
+Turns the cpe23uri into a hash with proper keys. Although this is here, it hasn't
+turned out to be that useful.
+
 =cut
 
-# This hasn't turned out so useful
 sub parse_cpe23uri ( $cpe23uri ) {
 	state $keys = [ qw(
 		prefix
@@ -233,7 +304,9 @@ sub get_all_reports ( $base_dir = 'cpansa' ) {
 	return \@files;
 	}
 
-=item * get_cve_data
+=item * get_cve_data(CVE)
+
+Grab the JSON data for C<CVE> from I<services.nvd.nist.gov>.
 
 =cut
 
@@ -246,7 +319,9 @@ sub get_cve_data ( $cve ) {
 	get_ua()->get($url)->result->json->{vulnerabilities}[0]{cve};
 	}
 
-=item * get_cve_description
+=item * get_cve_description(CVE)
+
+Extract the description for C<CVE>.
 
 =cut
 
@@ -292,6 +367,27 @@ sub get_github_advisories ( $cve ) {
 		}
 
 	my $ghsa_ids =  [ map { $_->{ghsa_id} } $tx->res->json->@* ];
+	}
+
+=item * get_github_cve_issues( [ OWNER [, REPO] ] )
+
+=cut
+
+sub get_github_cve_issues ( $owner = default_github_owner(), $repo = default_github_repo() ) {
+	my $url = "https://api.github.com/repos/$owner/$repo/issues?state=open";
+
+	my $tx = get_ua()->get($url);
+
+	my @results;
+
+	if( $tx->res->is_success ) {
+		foreach my $i ( $tx->res->json->@* ) {
+			next unless $i->{title} =~ /\A CVE - \d+ - \d+ \z /ax;
+			push @results, $i;
+			}
+		}
+
+	return \@results;
 	}
 
 =item * get_github_token
@@ -371,6 +467,27 @@ sub get_ua () {
 
 	$ua
 	};
+
+=item * github_cve_issue_exists( ARRAY_REF, OPTS_HASH_REF )
+
+=cut
+
+sub github_cve_issue_exists ($args, $opts = {}) {
+	$opts->%* = (owner => default_github_owner(), repo => default_github_repo(), $opts->%* );
+	my( $owner, $repo ) = $opts->@{qw(owner repo)};
+	my $issues = get_github_cve_issues( $owner, $repo );
+	my %reported =
+		map { $_->{title}, $_->{number} }
+		grep { $_->{title} =~ /\A CVE - \d+ - \d+ \z/xa }
+		$issues->@*;
+
+	my %hash;
+	foreach my $cve ( $args->@* ) {
+		$hash{$cve} = $reported{$cve};
+		}
+
+	return \%hash;
+	}
 
 =item * latest_on_cpan( DIST )
 
