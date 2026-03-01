@@ -1,24 +1,41 @@
 ---
 advisories:
-- affected_versions:
-  - <1.10
-  cves:
-  - CVE-2018-25160
-  description: |
-    HTTP::Session2 1.10 does not validate session id, this causes RCE depending on the session store you use.
-  fixed_versions:
-  - '>=1.10'
-  github_security_advisory:
-  - GHSA-hg4g-pqvm-c557
-  id: CPANSA-HTTP-Session2-2018-01
-  references:
-  - https://metacpan.org/changes/distribution/HTTP-Session2
-  - https://github.com/tokuhirom/HTTP-Session2/commit/813838f6d08034b6a265a70e53b59b941b5d3e6d
-  reported: 2018-01-26
-  severity: critical
+  - affected_versions:
+      - <1.10
+    cves:
+      - CVE-2018-25160
+    description: "HTTP::Session2 1.09 does not validate session id, this causes RCE depending on the session store you use.\n"
+    fixed_versions:
+      - '>=1.10'
+    github_security_advisory:
+      - GHSA-hg4g-pqvm-c557
+    id: CPANSA-HTTP-Session2-2018-01
+    references:
+      - https://metacpan.org/changes/distribution/HTTP-Session2
+      - https://github.com/tokuhirom/HTTP-Session2/commit/813838f6d08034b6a265a70e53b59b941b5d3e6d
+    reported: 2018-01-26
+    severity: critical
+  - affected_versions:
+      - <1.12
+    cves:
+      - CVE-2026-3255
+    description: 'HTTP::Session2 versions before 1.12 for Perl for Perl may generate weak session ids using the rand() function.  The HTTP::Session2 session id generator returns a SHA-1 hash seeded with the built-in rand function, the epoch time, and the PID. The PID will come from a small set of numbers, and the epoch time may be guessed, if it is not leaked from the HTTP Date header. The built-in rand() function is unsuitable for cryptographic usage.  HTTP::Session2 after version 1.02 will attempt to use the /dev/urandom device to generate a session id, but if the device is unavailable (for example, under Windows), then it will revert to the insecure method described above.'
+    fixed_versions:
+      - '>=1.12'
+    github_security_advisory:
+      - GHSA-2p7f-7xjf-8q9q
+    id: CPANSA-HTTP-Session2-2026-3255
+    references:
+      - https://github.com/tokuhirom/HTTP-Session2/commit/9cfde4d7e0965172aef5dcfa3b03bb48df93e636.patch
+      - https://metacpan.org/release/TOKUHIROM/HTTP-Session2-1.01/source/lib/HTTP/Session2/ServerStore.pm#L68
+      - https://metacpan.org/release/TOKUHIROM/HTTP-Session2-1.11/source/lib/HTTP/Session2/Random.pm#L35
+      - https://metacpan.org/release/TOKUHIROM/HTTP-Session2-1.12/changes
+      - http://www.openwall.com/lists/oss-security/2026/02/27/12
+    reported: 2026-02-27
+    severity: ~
 cpansa_version: 2
 distribution: HTTP-Session2
-last_checked: 1749751661
-latest_version: '1.10'
+last_checked: 1772340968
+latest_version: 1.12
 metacpan: https://metacpan.org/pod/HTTP::Session2
 repo: https://github.com/tokuhirom/HTTP-Session2
