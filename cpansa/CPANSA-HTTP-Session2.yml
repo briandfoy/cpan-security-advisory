@@ -2,12 +2,14 @@
 advisories:
 - affected_versions:
   - <1.10
-  cves: []
+  cves:
+  - CVE-2018-25160
   description: |
     HTTP::Session2 1.10 does not validate session id, this causes RCE depending on the session store you use.
   fixed_versions:
   - '>=1.10'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-hg4g-pqvm-c557
   id: CPANSA-HTTP-Session2-2018-01
   references:
   - https://metacpan.org/changes/distribution/HTTP-Session2
