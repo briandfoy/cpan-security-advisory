@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260301.001 2026-03-01T05:21:51Z
+	* CVE-2026-3255 for HTTP::Session2
+	* CPANSA-HTTP-Session2-2018-01 is now assigned CVE-2018-25160
+
 20260228.001 2026-02-28T08:40:41Z
 	* CVE-2026-2597 for Crypt::SysRandom::XS
 	* CVE-2025-40932 for CPANSA-Apache-SessionX-2005-01
