@@ -8,18 +8,19 @@ our @EXPORT = qw(
 	);
 
 our @EXPORT_OK = qw(
+	assemble_advisory
+	cve_ignored
+	cve_recorded
 	get_all_reports
 	get_dist_info
+	get_github_cve_issues
+	get_ignored_cves
+	get_recorded_cves
 	get_ua
+	get_unevaluated_cve
+	github_cve_issue_exists
 	latest_on_cpan
 	load_report
-	get_recorded_cves
-	get_ignored_cves
-	get_github_cve_issues
-	cve_recorded
-	cve_ignored
-	assemble_advisory
-	github_cve_issue_exists
 	);
 
 our %EXPORT_TAGS = (
