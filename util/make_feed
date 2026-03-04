@@ -7,7 +7,7 @@ use experimental qw(signatures);
 use FindBin;
 use lib "$FindBin::Bin/../lib";
 
-use Local::CPANSA;
+use Local::CPANSA qw(get_unevaluated_cve);
 
 use Mojo::DOM;
 use Mojo::URL;
