@@ -83,7 +83,7 @@ sub assert_valid {
 	if( ! defined $value ) {
 		return $self->fail({
 			error => [ qw(type) ],
-			message => "URL value is not defined",
+			message => "Commit ID value is not defined",
 			value => $value,
 			})
 		}
