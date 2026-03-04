@@ -36,14 +36,15 @@ running.
 
 my $feed = start_xml();
 
-my $no_reports = 1;
+my $found_reports = 0;
 
 
 foreach my $v ( get_unevaluated_cve()->@* ) {
-	add_item( $feed, $hash );
+	add_item( $feed, $v );
+	$found_reports++;
 	}
 
-add_default_item( $feed ) if $no_reports;
+add_default_item( $feed ) unless $found_reports;
 
 say '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' . $feed;
 
