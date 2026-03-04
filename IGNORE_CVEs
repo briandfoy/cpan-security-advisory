@@ -219,3 +219,4 @@ CVE-2025-33112    IBM AIX 7.3 and IBM VIOS 4.1.1 Perl implementation
 CVE-2025-34300    Sawtooth Software’s Lighthouse Studio CGI program
 CVE-2025-43881    Improper validation of specified quantity in input issue exists in Real-time Bus Tracking System
 CVE-2025-54769    An authenticated, read-only user can upload a file and perform a directory
+CVE-2026-28769    A path traversal vulnerability exists in the /IDC_Logging/checkifdone.cgi
