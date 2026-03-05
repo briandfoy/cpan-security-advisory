@@ -1,10 +1,12 @@
 ---
 advisories:
-  - affected_versions: '>0'
+  - affected_versions:
+      - '>0'
     cves:
       - CVE-2024-57854
     description: "Net::NSCA::Client versions through 0.009002 for Perl uses a poor random number generator.  Version v0.003 switched to use Data::Rand::Obscure instead of Crypt::Random for generation of a random initialisation vectors.  Data::Rand::Obscure uses Perl's built-in rand() function, which is not suitable for cryptographic functions."
-    fixed_versions: []
+    fixed_versions:
+      - '>=0.009002'
     github_security_advisory:
       - GHSA-98r5-r223-6xwf
     id: CPANSA-Net-NSCA-Client-2024-57854
