@@ -1,0 +1,23 @@
+---
+advisories:
+  - affected_versions:
+      - '>0'
+    cves:
+      - CVE-2026-3257
+    description: UnQLite versions through 0.06 for Perl uses a potentially insecure version of the UnQLite library.  UnQLite for Perl embeds the UnQLite library.  Version 0.06 and earlier of the Perl module uses a version of the library from 2014 that may be vulnerable to a heap-based overflow.
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-4rjc-gpxw-9fr5
+    id: CPANSA-UnQLite-2026-3257
+    references:
+      - https://metacpan.org/release/TOKUHIROM/UnQLite-0.07/source/Changes
+      - https://unqlite.symisc.net/
+      - https://www.cve.org/CVERecord?id=CVE-2025-3791
+    reported: 2026-03-05
+    severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: UnQLite
+last_checked: 1772703267
+latest_version: 0.07
+metacpan: https://metacpan.org/pod/UnQLite
