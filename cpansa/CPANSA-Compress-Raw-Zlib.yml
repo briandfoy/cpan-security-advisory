@@ -1,40 +1,58 @@
 ---
 advisories:
-- affected_versions:
-  - <2.017
-  cves:
-  - CVE-2009-1391
-  description: |
-    Off-by-one error in the inflate function in Zlib.xs in Compress::Raw::Zlib Perl module before 2.017, as used in AMaViS, SpamAssassin, and possibly other products, allows context-dependent attackers to cause a denial of service (hang or crash) via a crafted zlib compressed stream that triggers a heap-based buffer overflow, as exploited in the wild by Trojan.Downloader-71014 in June 2009.
-  fixed_versions:
-  - '>=2.017'
-  github_security_advisory:
-  - GHSA-353f-jcfv-fpmh
-  id: CPANSA-Compress-Raw-Zlib-2009-1391
-  references:
-  - http://article.gmane.org/gmane.mail.virus.amavis.user/33635
-  - http://article.gmane.org/gmane.mail.virus.amavis.user/33638
-  - http://www.securityfocus.com/bid/35307
-  - http://secunia.com/advisories/35422
-  - https://bugzilla.redhat.com/show_bug.cgi?id=504386
-  - http://www.vupen.com/english/advisories/2009/1571
-  - http://thread.gmane.org/gmane.mail.virus.amavis.user/33635
-  - http://osvdb.org/55041
-  - http://lists.opensuse.org/opensuse-security-announce/2009-07/msg00002.html
-  - http://secunia.com/advisories/35876
-  - http://secunia.com/advisories/35685
-  - https://www.redhat.com/archives/fedora-package-announce/2009-July/msg00607.html
-  - http://secunia.com/advisories/35689
-  - http://www.mandriva.com/security/advisories?name=MDVSA-2009:157
-  - http://security.gentoo.org/glsa/glsa-200908-07.xml
-  - https://bugs.gentoo.org/show_bug.cgi?id=273141
-  - https://exchange.xforce.ibmcloud.com/vulnerabilities/51062
-  - https://usn.ubuntu.com/794-1/
-  reported: 2009-06-16
-  severity: ~
+  - affected_versions:
+      - <2.017
+    cves:
+      - CVE-2009-1391
+    description: "Off-by-one error in the inflate function in Zlib.xs in Compress::Raw::Zlib Perl module before 2.017, as used in AMaViS, SpamAssassin, and possibly other products, allows context-dependent attackers to cause a denial of service (hang or crash) via a crafted zlib compressed stream that triggers a heap-based buffer overflow, as exploited in the wild by Trojan.Downloader-71014 in June 2009.\n"
+    fixed_versions:
+      - '>=2.017'
+    github_security_advisory:
+      - GHSA-353f-jcfv-fpmh
+    id: CPANSA-Compress-Raw-Zlib-2009-1391
+    references:
+      - http://article.gmane.org/gmane.mail.virus.amavis.user/33635
+      - http://article.gmane.org/gmane.mail.virus.amavis.user/33638
+      - http://www.securityfocus.com/bid/35307
+      - http://secunia.com/advisories/35422
+      - https://bugzilla.redhat.com/show_bug.cgi?id=504386
+      - http://www.vupen.com/english/advisories/2009/1571
+      - http://thread.gmane.org/gmane.mail.virus.amavis.user/33635
+      - http://osvdb.org/55041
+      - http://lists.opensuse.org/opensuse-security-announce/2009-07/msg00002.html
+      - http://secunia.com/advisories/35876
+      - http://secunia.com/advisories/35685
+      - https://www.redhat.com/archives/fedora-package-announce/2009-July/msg00607.html
+      - http://secunia.com/advisories/35689
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2009:157
+      - http://security.gentoo.org/glsa/glsa-200908-07.xml
+      - https://bugs.gentoo.org/show_bug.cgi?id=273141
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/51062
+      - https://usn.ubuntu.com/794-1/
+    reported: 2009-06-16
+    severity: ~
+  - affected_versions:
+      - <=2.219
+    cves:
+      - CVE-2026-3381
+    description: 'Compress::Raw::Zlib versions through 2.219 for Perl use potentially insecure versions of zlib.  Compress::Raw::Zlib includes a copy of the zlib library. Compress::Raw::Zlib version 2.220 includes zlib 1.3.2, which addresses findings fron the 7ASecurity audit of zlib. The includes fixs for CVE-2026-27171.'
+    fixed_versions:
+      - '>=2.220'
+    github_security_advisory:
+      - GHSA-jvq4-fjjq-g6w7
+    id: CPANSA-Compress-Raw-Zlib-2026-3381
+    references:
+      - https://7asecurity.com/blog/2026/02/zlib-7asecurity-audit/
+      - https://github.com/madler/zlib
+      - https://github.com/madler/zlib/releases/tag/v1.3.2
+      - https://metacpan.org/release/PMQS/Compress-Raw-Zlib-2.221/source/Changes
+      - https://www.cve.org/CVERecord?id=CVE-2026-27171
+      - https://www.zlib.net/
+    reported: 2026-03-05
+    severity: ~
 cpansa_version: 2
 distribution: Compress-Raw-Zlib
-last_checked: 1749751661
-latest_version: '2.213'
+last_checked: 1772712480
+latest_version: 2.221
 metacpan: https://metacpan.org/pod/Compress::Raw::Zlib
 repo: https://github.com/pmqs/Compress-Raw-Zlib
