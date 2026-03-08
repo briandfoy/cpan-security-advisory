@@ -1,54 +1,50 @@
 ---
 advisories:
   - affected_versions:
-      - '==0.9.13,==0.9.13.2'
+      - '>804.027_500,<=804.036'
     cves:
-      - CVE-2012-0037
-    description: "Redland Raptor (aka libraptor) before 2.0.7, as used by OpenOffice 3.3 and 3.4 Beta, LibreOffice before 3.4.6 and 3.5.x before 3.5.1, and other products, allows user-assisted remote attackers to read arbitrary files via a crafted XML external entity (XXE) declaration and reference in an RDF document.\n"
+      - CVE-2009-2042
+    description: "libpng before 1.2.37 does not properly parse 1-bit interlaced images with width values that are not divisible by 8, which causes libpng to include uninitialized bits in certain rows of a PNG file and might allow remote attackers to read portions of sensitive memory via \"out-of-bounds pixels\" in the file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-28qp-8c7m-wc33
-    id: CPANSA-Redland-2012-0037-libraptor
+      - GHSA-rh45-m734-j52q
+    id: CPANSA-Tk-2009-2042-libpng
     references:
-      - http://www.debian.org/security/2012/dsa-2438
-      - http://www.libreoffice.org/advisories/CVE-2012-0037/
-      - http://secunia.com/advisories/48493
-      - http://rhn.redhat.com/errata/RHSA-2012-0411.html
-      - http://rhn.redhat.com/errata/RHSA-2012-0410.html
-      - http://www.osvdb.org/80307
-      - http://secunia.com/advisories/48529
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:063
-      - http://www.openwall.com/lists/oss-security/2012/03/27/4
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:062
-      - http://secunia.com/advisories/48526
-      - http://librdf.org/raptor/RELEASE.html#rel2_0_7
-      - http://secunia.com/advisories/48479
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:061
-      - http://secunia.com/advisories/48542
-      - http://vsecurity.com/resources/advisory/20120324-1/
-      - http://www.securityfocus.com/bid/52681
-      - http://blog.documentfoundation.org/2012/03/22/tdf-announces-libreoffice-3-4-6/
-      - http://secunia.com/advisories/48494
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/078242.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/077708.html
-      - http://secunia.com/advisories/48649
-      - http://www.securitytracker.com/id?1026837
-      - http://security.gentoo.org/glsa/glsa-201209-05.xml
-      - http://secunia.com/advisories/50692
-      - https://github.com/dajobe/raptor/commit/a676f235309a59d4aa78eeffd2574ae5d341fcb0
-      - http://secunia.com/advisories/60799
-      - http://www.gentoo.org/security/en/glsa/glsa-201408-19.xml
-      - http://www.openoffice.org/security/cves/CVE-2012-0037.html
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/74235
-      - https://lists.apache.org/thread.html/re0504f08000df786e51795940501e81a5d0ae981ecca68141e87ece0@%3Ccommits.openoffice.apache.org%3E
-    reported: 2012-06-17
+      - http://www.securityfocus.com/bid/35233
+      - http://secunia.com/advisories/35346
+      - http://www.vupen.com/english/advisories/2009/1510
+      - http://www.libpng.org/pub/png/libpng.html
+      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00630.html
+      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00218.html
+      - http://secunia.com/advisories/35470
+      - http://secunia.com/advisories/35524
+      - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.551809
+      - http://security.gentoo.org/glsa/glsa-200906-01.xml
+      - http://secunia.com/advisories/35594
+      - http://ubuntu.com/usn/usn-913-1
+      - http://www.vupen.com/english/advisories/2010/0637
+      - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+      - http://support.apple.com/kb/HT4077
+      - http://secunia.com/advisories/39215
+      - http://lists.vmware.com/pipermail/security-announce/2010/000090.html
+      - http://archives.neohapsis.com/archives/bugtraq/2010-04/0077.html
+      - http://archives.neohapsis.com/archives/fulldisclosure/2010-04/0121.html
+      - http://secunia.com/advisories/39206
+      - http://www.vmware.com/security/advisories/VMSA-2010-0007.html
+      - http://secunia.com/advisories/39251
+      - http://www.debian.org/security/2010/dsa-2032
+      - http://www.vupen.com/english/advisories/2010/0847
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
+      - http://www.vupen.com/english/advisories/2010/0682
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/50966
+    reported: 2009-06-12
     severity: ~
 cpansa_version: 2
-distribution: Redland
+distribution: Tk
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:06 2025
-  from: external_reports/libraptor.yml
-last_checked: 1749751661
-latest_version: v1.0.5.4
-repo: ~
+  date: Sun Mar  8 08:30:08 2026
+  from: external_reports/libpng.yml
+last_checked: 1772973008
+latest_version: 804.036
+repo: http://github.com/eserte/perl-tk

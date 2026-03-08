@@ -1,42 +1,26 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.02,<=0.06'
+      - '>=4.009_002,<4.012'
     cves:
-      - CVE-2003-0107
-    description: "Buffer overflow in the gzprintf function in zlib 1.1.4, when zlib is compiled without vsnprintf or when long inputs are truncated using vsnprintf, allows attackers to cause a denial of service or possibly execute arbitrary code.\n"
+      - CVE-2021-24032
+    description: "Beginning in v1.4.1 and prior to v1.4.9, due to an incomplete fix for CVE-2021-24031, the Zstandard command-line utility created output files with default permissions and restricted those permissions immediately afterwards. Output files could therefore momentarily be readable or writable to unintended parties.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-c9pj-8qx8-ccrw
-    id: CPANSA-LibZip-2003-0107-zlib
+      - GHSA-ffqj-7pgc-cmj5
+    id: CPANSA-Sereal-Decoder-2021-24032-zstd
     references:
-      - http://online.securityfocus.com/archive/1/312869
-      - http://www.iss.net/security_center/static/11381.php
-      - http://lists.apple.com/mhonarc/security-announce/msg00038.html
-      - ftp://ftp.caldera.com/pub/security/OpenLinux/CSSA-2003-011.0.txt
-      - http://distro.conectiva.com/atualizacoes/?id=a&anuncio=000619
-      - http://www.mandrakesoft.com/security/advisories?name=MDKSA-2003:033
-      - ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2003-004.txt.asc
-      - http://www.redhat.com/support/errata/RHSA-2003-079.html
-      - http://www.redhat.com/support/errata/RHSA-2003-081.html
-      - http://sunsolve.sun.com/pub-cgi/retrieve.pl?doc=fsalert%2F57405
-      - http://www.kb.cert.org/vuls/id/142121
-      - http://www.securityfocus.com/bid/6913
-      - http://www.osvdb.org/6599
-      - http://marc.info/?l=bugtraq&m=104620610427210&w=2
-      - http://marc.info/?l=bugtraq&m=104887247624907&w=2
-      - http://marc.info/?l=bugtraq&m=104610536129508&w=2
-      - http://marc.info/?l=bugtraq&m=104610337726297&w=2
-      - http://jvndb.jvn.jp/en/contents/2015/JVNDB-2015-000066.html
-      - http://jvn.jp/en/jp/JVN78689801/index.html
-    reported: 2003-03-07
-    severity: ~
+      - https://github.com/facebook/zstd/issues/2491
+      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=982519
+      - https://www.facebook.com/security/advisories/cve-2021-24032
+    reported: 2021-03-04
+    severity: medium
 cpansa_version: 2
-distribution: LibZip
+distribution: Sereal-Decoder
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:48 2025
-  from: external_reports/zlib.yml
-last_checked: 1749751661
-latest_version: 0.06
-repo: ~
+  date: Sun Mar  8 08:30:42 2026
+  from: external_reports/zstd.yml
+last_checked: 1772973042
+latest_version: 5.004
+repo: git://github.com/Sereal/Sereal.git

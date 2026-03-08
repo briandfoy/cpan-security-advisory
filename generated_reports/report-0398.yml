@@ -1,24 +1,35 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.08,<=0.24'
+      - ==1.6.5.0
     cves:
-      - X-libgit2-2015-0001
-    description: "On the heels of CVE 2014-9390, we are announcing another round of security updates to libgit2. Similar to the prior vulnerability, an attacker can construct a git commit that, when checked out, may cause files to be written to your .git directory which may lead to arbitrary code execution.\n"
+      - CVE-2017-7526
+    description: "libgcrypt before version 1.7.8 is vulnerable to a cache side-channel attack resulting into a complete break of RSA-1024 while using the left-to-right method for computing the sliding-window expansion. The same attack is believed to work on RSA-2048 with moderately more computation. This side-channel requires that attacker can run arbitrary software on the hardware where the private RSA key is used.\n"
     fixed_versions: []
     github_security_advisory:
-      - ~
-    id: CPANSA-Git-Raw-X-libgit2-2015-0001-libgit2
+      - GHSA-f2v5-c455-qhg2
+    id: CPANSA-Alien-GCrypt-2017-7526-libgcrypt
     references:
-      - https://www.edwardthomson.com/blog/another-libgit2-security-update.html
-    reported: 2015-01-20
-    severity: critical
+      - https://lists.gnupg.org/pipermail/gnupg-announce/2017q2/000408.html
+      - https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=e6a3dc9900433bbc8ad362a595a3837318c28fa9
+      - https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=8725c99ffa41778f382ca97233183bcd687bb0ce
+      - https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commit;h=78130828e9a140a9de4dafadbc844dbb64cb709a
+      - https://eprint.iacr.org/2017/627
+      - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-7526
+      - https://www.debian.org/security/2017/dsa-3960
+      - https://www.debian.org/security/2017/dsa-3901
+      - http://www.securitytracker.com/id/1038915
+      - http://www.securityfocus.com/bid/99338
+      - https://usn.ubuntu.com/3733-1/
+      - https://usn.ubuntu.com/3733-2/
+    reported: 2018-07-26
+    severity: medium
 cpansa_version: 2
-distribution: Git-Raw
+distribution: Alien-GCrypt
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:47 2025
-  from: external_reports/libgit2.yml
-last_checked: 1749751661
-latest_version: 0.90
-repo: git://github.com/jacquesg/p5-Git-Raw.git
+  date: Sun Mar  8 08:30:00 2026
+  from: external_reports/libgcrypt.yml
+last_checked: 1772973000
+latest_version: 1.6.5.0
+repo: git://github.com/ajgb/alien-gcrypt.git

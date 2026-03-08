@@ -1,34 +1,31 @@
 ---
 advisories:
   - affected_versions:
-      - ==1.1.17.1
+      - ==1.1.14.1
     cves:
-      - CVE-2016-0746
-    description: "Use-after-free vulnerability in the resolver in nginx 0.6.18 through 1.8.0 and 1.9.x before 1.9.10 allows remote attackers to cause a denial of service (worker process crash) or possibly have unspecified other impact via a crafted DNS response related to CNAME response processing.\n"
+      - CVE-2012-2089
+    description: "Buffer overflow in ngx_http_mp4_module.c in the ngx_http_mp4_module module in nginx 1.0.7 through 1.0.14 and 1.1.3 through 1.1.18, when the mp4 directive is used, allows remote attackers to cause a denial of service (memory overwrite) or possibly execute arbitrary code via a crafted MP4 file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-c3r2-x25x-6jwc
-    id: CPANSA-Nginx-Perl-2016-0746-nginx
+      - GHSA-9pvj-32x2-9jrc
+    id: CPANSA-Nginx-Perl-2012-2089-nginx
     references:
-      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1302588
-      - http://www.ubuntu.com/usn/USN-2892-1
-      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
-      - http://www.debian.org/security/2016/dsa-3473
-      - https://bto.bluecoat.com/security-advisory/sa115
-      - http://www.securitytracker.com/id/1034869
-      - https://security.gentoo.org/glsa/201606-06
-      - https://access.redhat.com/errata/RHSA-2016:1425
-      - https://support.apple.com/kb/HT212818
-      - http://seclists.org/fulldisclosure/2021/Sep/36
-    reported: 2016-02-15
-    severity: critical
+      - http://www.openwall.com/lists/oss-security/2012/04/12/9
+      - http://nginx.org/en/security_advisories.html
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/74831
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/079474.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-May/079467.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2012-April/079388.html
+      - http://www.securitytracker.com/id?1026924
+      - http://www.securityfocus.com/bid/52999
+    reported: 2012-04-17
+    severity: ~
 cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:10 2025
+  date: Sun Mar  8 08:30:13 2026
   from: external_reports/nginx.yml
-last_checked: 1749751661
+last_checked: 1772973013
 latest_version: v1.8.1.10
 repo: ~

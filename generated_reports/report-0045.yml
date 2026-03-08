@@ -1,14 +1,14 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.01,<=0.14'
+      - '>=0.01,<=0.04'
     cves:
       - CVE-2020-7105
     description: "async.c and dict.c in libhiredis.a in hiredis through 0.14.0 allow a NULL pointer dereference because malloc return values are unchecked.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-cjp9-9h2g-g3x5
-    id: CPANSA-Redis-Fast-2020-7105-hiredis
+    id: CPANSA-EV-Hiredis-2020-7105-hiredis
     references:
       - https://github.com/redis/hiredis/issues/747
       - https://lists.debian.org/debian-lts-announce/2020/01/msg00028.html
@@ -17,11 +17,11 @@ advisories:
     reported: 2020-01-16
     severity: high
 cpansa_version: 2
-distribution: Redis-Fast
+distribution: EV-Hiredis
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:20 2025
+  date: Sun Mar  8 08:28:35 2026
   from: external_reports/hiredis.yml
-last_checked: 1749751661
-latest_version: 0.37
-repo: https://github.com/shogo82148/Redis-Fast.git
+last_checked: 1772972915
+latest_version: 0.07
+repo: https://github.com/typester/EV-Hiredis.git

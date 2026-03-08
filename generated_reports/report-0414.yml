@@ -1,7 +1,7 @@
 ---
 advisories:
   - affected_versions:
-      - ==4.1.0.0
+      - '>=4.0.0.0,<=4.0.0.1'
     cves:
       - CVE-2016-2851
     description: "Integer overflow in proto.c in libotr before 4.1.1 on 64-bit platforms allows remote attackers to cause a denial of service (memory corruption and application crash) or execute arbitrary code via a series of large OTR messages, which triggers a heap-based buffer overflow.\n"
@@ -27,8 +27,8 @@ cpansa_version: 2
 distribution: Alien-OTR
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:53 2025
+  date: Sun Mar  8 08:30:05 2026
   from: external_reports/libotr.yml
-last_checked: 1749751661
+last_checked: 1772973005
 latest_version: 4.1.1.0
 repo: git://github.com/ajgb/alien-otr.git

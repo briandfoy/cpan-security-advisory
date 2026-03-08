@@ -1,7 +1,7 @@
 ---
 advisories:
   - affected_versions:
-      - 2.0.7
+      - 2.0.6
     cves:
       - CVE-2021-35472
     description: "An issue was discovered in LemonLDAP::NG before 2.0.12. Session cache corruption can lead to authorization bypass or spoofing. By running a loop that makes many authentication attempts, an attacker might alternately be authenticated as one of two different users.\n"
@@ -18,7 +18,7 @@ advisories:
     reported: 2021-07-30
     severity: high
   - affected_versions:
-      - 2.0.7
+      - 2.0.6
     cves:
       - CVE-2021-35473
     description: "OAuth2 handler does not verify access token validity\n"
@@ -36,8 +36,8 @@ cpansa_version: 2
 distribution: Lemonldap-NG-Manager
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:28 2025
+  date: Sun Mar  8 08:29:36 2026
   from: external_reports/lemonldap.yml
-last_checked: 1749751661
-latest_version: v2.21.0
+last_checked: 1772972976
+latest_version: v2.22.2
 repo: ~

@@ -1,62 +1,34 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.01,<=0.02_02'
+      - ==1.8.11.0
     cves:
-      - CVE-2014-8141
-    description: "Heap-based buffer overflow in the getZip64Data function in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
+      - CVE-2015-3187
+    description: "The svn_repos_trace_node_locations function in Apache Subversion before 1.7.21 and 1.8.x before 1.8.14, when path-based authorization is used, allows remote authenticated users to obtain sensitive path information by reading the history of a node that has been moved from a hidden path.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-3gfx-c6cm-vch8
-    id: CPANSA-Archive-Unzip-Burst-2014-8141-unzip
+      - GHSA-c79q-h5wc-3724
+    id: CPANSA-Alien-SVN-2015-3187-svn
     references:
-      - https://rt.cpan.org/Ticket/Display.html?id=143547
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1174856
-      - http://www.securitytracker.com/id/1031433
-      - http://www.ocert.org/advisories/ocert-2014-011.html
-      - https://access.redhat.com/errata/RHSA-2015:0700
-    reported: 2020-01-31
-    severity: high
-  - affected_versions:
-      - '>=0.01,<=0.02_02'
-    cves:
-      - CVE-2014-8140
-    description: "Heap-based buffer overflow in the test_compr_eb function in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-fhf3-rjhh-4c23
-    id: CPANSA-Archive-Unzip-Burst-2014-8140-unzip
-    references:
-      - https://rt.cpan.org/Ticket/Display.html?id=143547
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1174851
-      - http://www.securitytracker.com/id/1031433
-      - http://www.ocert.org/advisories/ocert-2014-011.html
-      - https://access.redhat.com/errata/RHSA-2015:0700
-    reported: 2020-01-31
-    severity: high
-  - affected_versions:
-      - '>=0.01,<=0.02_02'
-    cves:
-      - CVE-2014-8139
-    description: "Heap-based buffer overflow in the CRC32 verification in Info-ZIP UnZip 6.0 and earlier allows remote attackers to execute arbitrary code via a crafted zip file in the -t command argument to the unzip command.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-fhcq-p46p-2xvm
-    id: CPANSA-Archive-Unzip-Burst-2014-8139-unzip
-    references:
-      - https://rt.cpan.org/Ticket/Display.html?id=143547
-      - http://www.securitytracker.com/id/1031433
-      - http://www.ocert.org/advisories/ocert-2014-011.html
-      - https://access.redhat.com/errata/RHSA-2015:0700
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1174844
-    reported: 2020-01-31
-    severity: high
+      - http://www.securitytracker.com/id/1033215
+      - http://subversion.apache.org/security/CVE-2015-3187-advisory.txt
+      - http://www.debian.org/security/2015/dsa-3331
+      - http://lists.opensuse.org/opensuse-updates/2015-08/msg00022.html
+      - http://rhn.redhat.com/errata/RHSA-2015-1633.html
+      - https://support.apple.com/HT206172
+      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00003.html
+      - http://www.securityfocus.com/bid/76273
+      - http://rhn.redhat.com/errata/RHSA-2015-1742.html
+      - http://www.ubuntu.com/usn/USN-2721-1
+      - https://security.gentoo.org/glsa/201610-05
+    reported: 2015-08-12
+    severity: ~
 cpansa_version: 2
-distribution: Archive-Unzip-Burst
+distribution: Alien-SVN
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:45 2025
-  from: external_reports/unzip.yml
-last_checked: 1749751661
-latest_version: 0.09
-repo: git://github.com/mohawk2/Archive-Unzip-Burst
+  date: Sun Mar  8 08:30:40 2026
+  from: external_reports/svn.yml
+last_checked: 1772973040
+latest_version: v1.8.11.0
+repo: https://github.com/evalEmpire/Alien-SVN/

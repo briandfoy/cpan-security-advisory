@@ -1,45 +1,24 @@
 ---
 advisories:
   - affected_versions:
-      - '>=1.00,<=1.10'
+      - '>=5.002_001'
     cves:
-      - CVE-2016-4570
-    description: "The mxmlDelete function in mxml-node.c in mxml 2.9, 2.7, and possibly earlier allows remote attackers to cause a denial of service (stack consumption) via crafted xml file.\n"
+      - CVE-2018-12913
+    description: "In Miniz 2.0.7, tinfl_decompress in miniz_tinfl.c has an infinite loop because sym2 and counter can both remain equal to zero.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-73qc-88cx-hqmh
-    id: CPANSA-Win32-File-Summary-2016-4570-mxml
+      - GHSA-prfm-chh2-jj5h
+    id: CPANSA-Sereal-Decoder-2018-12913-miniz
     references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
-      - http://www.openwall.com/lists/oss-security/2016/05/11/14
-      - http://www.openwall.com/lists/oss-security/2016/05/09/16
-      - http://www.securityfocus.com/bid/90315
-      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
-    reported: 2017-02-03
-    severity: medium
-  - affected_versions:
-      - '>=1.00,<=1.10'
-    cves:
-      - CVE-2016-4571
-    description: "The mxml_write_node function in mxml-file.c in mxml 2.9, 2.7, and possibly earlier allows remote attackers to cause a denial of service (stack consumption) via crafted xml file.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-r5m9-xhw7-f4vr
-    id: CPANSA-Win32-File-Summary-2016-4571-mxml
-    references:
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1334648
-      - http://www.openwall.com/lists/oss-security/2016/05/11/14
-      - http://www.openwall.com/lists/oss-security/2016/05/09/16
-      - http://www.securityfocus.com/bid/90315
-      - https://lists.debian.org/debian-lts-announce/2019/01/msg00018.html
-    reported: 2017-02-03
-    severity: medium
+      - https://github.com/richgel999/miniz/issues/90
+    reported: 2018-06-27
+    severity: high
 cpansa_version: 2
-distribution: Win32-File-Summary
+distribution: Sereal-Decoder
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:09 2025
-  from: external_reports/mxml.yml
-last_checked: 1749751661
-latest_version: 0.01
-repo: ~
+  date: Sun Mar  8 08:30:10 2026
+  from: external_reports/miniz.yml
+last_checked: 1772973010
+latest_version: 5.004
+repo: git://github.com/Sereal/Sereal.git

@@ -1,7 +1,7 @@
 ---
 advisories:
   - affected_versions:
-      - =1.71_01
+      - =1.67_03
     cves:
       - CVE-2019-19242
     description: "SQLite 3.30.1 mishandles pExpr->y.pTab, as demonstrated by the TK_COLUMN case in sqlite3ExprCodeTarget in expr.c.\n"
@@ -17,7 +17,7 @@ advisories:
     reported: 2019-11-27
     severity: medium
   - affected_versions:
-      - =1.71_01
+      - =1.67_03
     cves:
       - CVE-2018-3906
     description: "An exploitable stack-based buffer overflow vulnerability exists in the retrieval of a database field in video-core's HTTP server of Samsung SmartThings Hub. The video-core process insecurely extracts the shard.videoHostURL field from its SQLite database, leading to a buffer overflow on the stack. An attacker can send an HTTP request to trigger this vulnerability.\n"
@@ -30,7 +30,7 @@ advisories:
     reported: 2018-09-21
     severity: high
   - affected_versions:
-      - =1.71_01
+      - =1.67_03
     cves:
       - CVE-2021-20227
     description: "A flaw was found in SQLite's SELECT query functionality (src/select.c). This flaw allows an attacker who is capable of running SQL queries locally on the SQLite database to cause a denial of service or possible code execution by triggering a use-after-free. The highest threat from this vulnerability is to system availability.\n"
@@ -53,8 +53,8 @@ cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:34 2025
+  date: Sun Mar  8 08:30:35 2026
   from: external_reports/sqlite.yml
-last_checked: 1749751661
-latest_version: 1.76
+last_checked: 1772973035
+latest_version: 1.78
 repo: https://github.com/DBD-SQLite/DBD-SQLite

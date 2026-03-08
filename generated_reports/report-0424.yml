@@ -1,48 +1,50 @@
 ---
 advisories:
   - affected_versions:
-      - '>804.024,<=804.027'
+      - '>=1.01,<=1.02'
     cves:
-      - CVE-2011-3045
-    description: "Integer signedness error in the png_inflate function in pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome before 17.0.963.83 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file, a different vulnerability than CVE-2011-3026.\n"
+      - CVE-2009-2042
+    description: "libpng before 1.2.37 does not properly parse 1-bit interlaced images with width values that are not divisible by 8, which causes libpng to include uninitialized bits in certain rows of a PNG file and might allow remote attackers to read portions of sensitive memory via \"out-of-bounds pixels\" in the file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-w4pv-vqp3-f753
-    id: CPANSA-Tk-2011-3045-libpng
+      - GHSA-rh45-m734-j52q
+    id: CPANSA-Prima-codecs-win64-2009-2042-libpng
     references:
-      - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
-      - http://code.google.com/p/chromium/issues/detail?id=116162
-      - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
-      - https://bugzilla.redhat.com/show_bug.cgi?id=799000
-      - http://secunia.com/advisories/48485
-      - http://secunia.com/advisories/48512
-      - http://secunia.com/advisories/48554
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
-      - http://secunia.com/advisories/48320
-      - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://www.securitytracker.com/id?1026823
-      - http://rhn.redhat.com/errata/RHSA-2012-0488.html
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
-      - http://www.debian.org/security/2012/dsa-2439
-      - http://rhn.redhat.com/errata/RHSA-2012-0407.html
-      - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
-    reported: 2012-03-22
+      - http://www.securityfocus.com/bid/35233
+      - http://secunia.com/advisories/35346
+      - http://www.vupen.com/english/advisories/2009/1510
+      - http://www.libpng.org/pub/png/libpng.html
+      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00630.html
+      - https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00218.html
+      - http://secunia.com/advisories/35470
+      - http://secunia.com/advisories/35524
+      - http://slackware.com/security/viewer.php?l=slackware-security&y=2009&m=slackware-security.551809
+      - http://security.gentoo.org/glsa/glsa-200906-01.xml
+      - http://secunia.com/advisories/35594
+      - http://ubuntu.com/usn/usn-913-1
+      - http://www.vupen.com/english/advisories/2010/0637
+      - http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html
+      - http://support.apple.com/kb/HT4077
+      - http://secunia.com/advisories/39215
+      - http://lists.vmware.com/pipermail/security-announce/2010/000090.html
+      - http://archives.neohapsis.com/archives/bugtraq/2010-04/0077.html
+      - http://archives.neohapsis.com/archives/fulldisclosure/2010-04/0121.html
+      - http://secunia.com/advisories/39206
+      - http://www.vmware.com/security/advisories/VMSA-2010-0007.html
+      - http://secunia.com/advisories/39251
+      - http://www.debian.org/security/2010/dsa-2032
+      - http://www.vupen.com/english/advisories/2010/0847
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:063
+      - http://www.vupen.com/english/advisories/2010/0682
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/50966
+    reported: 2009-06-12
     severity: ~
 cpansa_version: 2
-distribution: Tk
+distribution: Prima-codecs-win64
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:05 2025
+  date: Sun Mar  8 08:30:07 2026
   from: external_reports/libpng.yml
-last_checked: 1749751661
-latest_version: 804.036
-repo: http://github.com/eserte/perl-tk
+last_checked: 1772973007
+latest_version: ~
+repo: ~

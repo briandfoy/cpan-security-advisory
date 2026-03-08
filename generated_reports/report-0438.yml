@@ -1,24 +1,24 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.09,<=0.10'
+      - '>=4.009_002,<5.002_001'
     cves:
-      - CVE-2021-23432
-    description: "This affects all versions of package mootools. This is due to the ability to pass untrusted input to Object.merge()\n"
+      - CVE-2018-12913
+    description: "In Miniz 2.0.7, tinfl_decompress in miniz_tinfl.c has an infinite loop because sym2 and counter can both remain equal to zero.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-x6hx-7gh3-3q98
-    id: CPANSA-Perldoc-Server-2021-23432-mootools
+      - GHSA-prfm-chh2-jj5h
+    id: CPANSA-Sereal-Decoder-2018-12913-miniz
     references:
-      - https://snyk.io/vuln/SNYK-JS-MOOTOOLS-1325536
-    reported: 2021-08-24
-    severity: critical
+      - https://github.com/richgel999/miniz/issues/90
+    reported: 2018-06-27
+    severity: high
 cpansa_version: 2
-distribution: Perldoc-Server
+distribution: Sereal-Decoder
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:08 2025
-  from: external_reports/mootools.yml
-last_checked: 1749751661
-latest_version: 0.10
-repo: ~
+  date: Sun Mar  8 08:30:10 2026
+  from: external_reports/miniz.yml
+last_checked: 1772973010
+latest_version: 5.004
+repo: git://github.com/Sereal/Sereal.git

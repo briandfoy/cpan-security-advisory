@@ -1,48 +1,65 @@
 ---
 advisories:
   - affected_versions:
-      - '>=1.00,<=1.01'
+      - '>=0.01,<=0.07'
     cves:
-      - CVE-2011-3045
-    description: "Integer signedness error in the png_inflate function in pngrutil.c in libpng before 1.4.10beta01, as used in Google Chrome before 17.0.963.83 and other products, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted PNG file, a different vulnerability than CVE-2011-3026.\n"
+      - CVE-2019-7317
+    description: "png_image_free in png.c in libpng 1.6.x before 1.6.37 has a use-after-free because png_image_free_function is called under png_safe_execute.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-w4pv-vqp3-f753
-    id: CPANSA-Prima-codecs-win32-2011-3045-libpng
+      - GHSA-m96g-x499-p5f9
+    id: CPANSA-Image-PNG-Simple-2019-7317-libpng
     references:
-      - http://googlechromereleases.blogspot.com/2012/03/stable-channel-update_21.html
-      - http://code.google.com/p/chromium/issues/detail?id=116162
-      - http://src.chromium.org/viewvc/chrome?view=rev&revision=125311
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commit;h=a8c319a2b281af68f7ca0e2f9a28ca57b44ceb2b
-      - https://bugzilla.redhat.com/show_bug.cgi?id=799000
-      - http://secunia.com/advisories/48485
-      - http://secunia.com/advisories/48512
-      - http://secunia.com/advisories/48554
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076731.html
-      - http://secunia.com/advisories/48320
-      - http://lists.opensuse.org/opensuse-updates/2012-03/msg00051.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/076461.html
-      - http://secunia.com/advisories/49660
-      - http://security.gentoo.org/glsa/glsa-201206-15.xml
-      - http://www.securitytracker.com/id?1026823
-      - http://rhn.redhat.com/errata/RHSA-2012-0488.html
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A14763
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2012:033
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075987.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075981.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075619.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2012-March/075424.html
-      - http://www.debian.org/security/2012/dsa-2439
-      - http://rhn.redhat.com/errata/RHSA-2012-0407.html
-      - http://lists.opensuse.org/opensuse-security-announce/2012-04/msg00000.html
-    reported: 2012-03-22
-    severity: ~
+      - https://github.com/glennrp/libpng/issues/275
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
+      - https://seclists.org/bugtraq/2019/Apr/30
+      - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
+      - https://www.debian.org/security/2019/dsa-4435
+      - https://seclists.org/bugtraq/2019/Apr/36
+      - https://usn.ubuntu.com/3962-1/
+      - https://usn.ubuntu.com/3991-1/
+      - https://seclists.org/bugtraq/2019/May/56
+      - https://seclists.org/bugtraq/2019/May/59
+      - https://www.debian.org/security/2019/dsa-4448
+      - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
+      - https://access.redhat.com/errata/RHSA-2019:1265
+      - https://access.redhat.com/errata/RHSA-2019:1269
+      - https://access.redhat.com/errata/RHSA-2019:1267
+      - https://www.debian.org/security/2019/dsa-4451
+      - https://seclists.org/bugtraq/2019/May/67
+      - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
+      - https://usn.ubuntu.com/3997-1/
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
+      - https://access.redhat.com/errata/RHSA-2019:1310
+      - https://access.redhat.com/errata/RHSA-2019:1309
+      - https://access.redhat.com/errata/RHSA-2019:1308
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
+      - http://www.securityfocus.com/bid/108098
+      - https://security.netapp.com/advisory/ntap-20190719-0005/
+      - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+      - https://usn.ubuntu.com/4080-1/
+      - https://usn.ubuntu.com/4083-1/
+      - https://security.gentoo.org/glsa/201908-02
+      - https://access.redhat.com/errata/RHSA-2019:2494
+      - https://access.redhat.com/errata/RHSA-2019:2495
+      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
+      - https://access.redhat.com/errata/RHSA-2019:2585
+      - https://access.redhat.com/errata/RHSA-2019:2590
+      - https://access.redhat.com/errata/RHSA-2019:2592
+      - https://access.redhat.com/errata/RHSA-2019:2737
+      - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
+      - https://www.oracle.com/security-alerts/cpuoct2021.html
+    reported: 2019-02-04
+    severity: medium
 cpansa_version: 2
-distribution: Prima-codecs-win32
+distribution: Image-PNG-Simple
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:33:05 2025
+  date: Sun Mar  8 08:30:07 2026
   from: external_reports/libpng.yml
-last_checked: 1749751661
-latest_version: ~
+last_checked: 1772973007
+latest_version: 0.07
 repo: ~

@@ -1,29 +1,64 @@
 ---
 advisories:
   - affected_versions:
-      - '>=4.0.0,<6.0.23'
+      - '>=6.0.12,<=6.2.9'
     cves:
-      - CVE-2019-20454
-    description: "An out-of-bounds read was discovered in PCRE before 10.34 when the pattern \\X is JIT compiled and used to match specially crafted subjects in non-UTF mode. Applications that use PCRE to parse untrusted input may be vulnerable to this flaw, which would allow an attacker to crash the application. The flaw occurs in do_extuni_no_utf in pcre2_jit_compile.c.\n"
+      - CVE-2015-2325
+    description: "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-6wcm-vmc4-h93p
-    id: CPANSA-MarpaX-ESLIF-2019-20454-libpcre2
+      - GHSA-mwr9-2r49-jwhg
+    id: CPANSA-Perl6-Pugs-2015-2325-libpcre
     references:
-      - https://bugs.php.net/bug.php?id=78338
-      - https://bugs.exim.org/show_bug.cgi?id=2421
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1735494
-      - https://vcs.pcre.org/pcre2?view=revision&revision=1092
-      - https://security.gentoo.org/glsa/202006-16
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OQRAHYHLRNMBTPR3KXVM27NSZP3KTOPI/
-    reported: 2020-02-14
+      - https://bugs.exim.org/show_bug.cgi?id=1591
+      - https://fortiguard.com/zeroday/FG-VD-15-015
+      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
+      - https://www.pcre.org/original/changelog.txt
+    reported: 2020-01-14
     severity: high
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2015-2326
+    description: "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\".\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-m793-2mj8-wj8q
+    id: CPANSA-Perl6-Pugs-2015-2326-libpcre
+    references:
+      - https://bugs.exim.org/show_bug.cgi?id=1592
+      - https://fortiguard.com/zeroday/FG-VD-15-016
+      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
+      - https://www.pcre.org/original/changelog.txt
+    reported: 2020-01-14
+    severity: medium
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2015-8382
+    description: "The match function in pcre_exec.c in PCRE before 8.37 mishandles the /(?:((abcd))|(((?:(?:(?:(?:abc|(?:abcdef))))b)abcdefghi)abc)|((*ACCEPT)))/ pattern and related patterns involving (*ACCEPT), which allows remote attackers to obtain sensitive information from process memory or cause a denial of service (partially initialized memory and application crash) via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, aka ZDI-CAN-2547.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-h7q3-3hf3-hv3q
+    id: CPANSA-Perl6-Pugs-2015-8382-libpcre
+    references:
+      - https://bugs.exim.org/show_bug.cgi?id=1537
+      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
+      - http://vcs.pcre.org/pcre/code/trunk/pcre_exec.c?r1=1502&r2=1510
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1187225
+      - http://www.openwall.com/lists/oss-security/2015/08/04/3
+      - http://www.openwall.com/lists/oss-security/2015/11/29/1
+      - http://git.php.net/?p=php-src.git;a=commit;h=c351b47ce85a3a147cfa801fa9f0149ab4160834
+      - http://www.securityfocus.com/bid/76157
+      - https://bto.bluecoat.com/security-advisory/sa128
+    reported: 2015-12-02
+    severity: ~
 cpansa_version: 2
-distribution: MarpaX-ESLIF
+distribution: Perl6-Pugs
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:32:53 2025
-  from: external_reports/libpcre2.yml
-last_checked: 1749751661
-latest_version: 6.0.35.1
-repo: git://github.com/jddurand/c-marpaESLIFPerl.git
+  date: Sun Mar  8 08:30:05 2026
+  from: external_reports/libpcre.yml
+last_checked: 1772973005
+latest_version: 6.2.13
+repo: ~

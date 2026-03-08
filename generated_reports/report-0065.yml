@@ -1,14 +1,14 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2020-11022
     description: "In jQuery versions greater than or equal to 1.2 and before 3.5.0, passing HTML from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-gxr4-xjj5-5px2
-    id: CPANSA-Yukki-2020-11022-jquery
+    id: CPANSA-Plack-Debugger-2020-11022-jquery
     references:
       - https://github.com/jquery/jquery/security/advisories/GHSA-gxr4-xjj5-5px2
       - https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/
@@ -54,14 +54,14 @@ advisories:
     reported: 2020-04-29
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2020-11023
     description: "In jQuery versions greater than or equal to 1.0.3 and before 3.5.0, passing HTML containing <option> elements from untrusted sources - even after sanitizing it - to one of jQuery's DOM manipulation methods (i.e. .html(), .append(), and others) may execute untrusted code. This problem is patched in jQuery 3.5.0.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-jpcq-cgw6-v4j6
-    id: CPANSA-Yukki-2020-11023-jquery
+    id: CPANSA-Plack-Debugger-2020-11023-jquery
     references:
       - https://jquery.com/upgrade-guide/3.5/
       - https://github.com/jquery/jquery/security/advisories/GHSA-jpcq-cgw6-v4j6
@@ -129,14 +129,14 @@ advisories:
     reported: 2020-04-29
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2019-11358
     description: "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-6c3j-c64m-qhgq
-    id: CPANSA-Yukki-2019-11358-jquery
+    id: CPANSA-Plack-Debugger-2019-11358-jquery
     references:
       - https://www.drupal.org/sa-core-2019-006
       - https://snyk.io/vuln/SNYK-JS-JQUERY-174006
@@ -212,14 +212,14 @@ advisories:
     reported: 2019-04-20
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2015-9251
     description: "jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS) attacks when a cross-domain Ajax request is performed without the dataType option, causing text/javascript responses to be executed.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-rmxg-73gg-4p98
-    id: CPANSA-Yukki-2015-9251-jquery
+    id: CPANSA-Plack-Debugger-2015-9251-jquery
     references:
       - https://snyk.io/vuln/npm:jquery:20150627
       - https://github.com/jquery/jquery/pull/2588/commits/c254d308a7d3f1eac4d0b42837804cfffcba4bb2
@@ -262,14 +262,14 @@ advisories:
     reported: 2018-01-18
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2011-4969
     description: "Cross-site scripting (XSS) vulnerability in jQuery before 1.6.3, when using location.hash to select elements, allows remote attackers to inject arbitrary web script or HTML via a crafted tag.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-579v-mp3v-rrw5
-    id: CPANSA-Yukki-2011-4969-jquery
+    id: CPANSA-Plack-Debugger-2011-4969-jquery
     references:
       - https://github.com/jquery/jquery/commit/db9e023e62c1ff5d8f21ed9868ab6878da2005e9
       - http://bugs.jquery.com/ticket/9521
@@ -288,14 +288,14 @@ advisories:
     reported: 2013-03-08
     severity: ~
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2012-6708
     description: "jQuery before 1.9.0 is vulnerable to Cross-site Scripting (XSS) attacks. The jQuery(strInput) function does not differentiate selectors from HTML in a reliable fashion. In vulnerable versions, jQuery determined whether the input was HTML by looking for the '<' character anywhere in the string, giving attackers more flexibility when attempting to construct a malicious payload. In fixed versions, jQuery only deems the input to be HTML if it explicitly starts with the '<' character, limiting exploitability only to attackers who can control the beginning of a string, which is far less common.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-2pqj-h3vj-pqgw
-    id: CPANSA-Yukki-2012-6708-jquery
+    id: CPANSA-Plack-Debugger-2012-6708-jquery
     references:
       - https://snyk.io/vuln/npm:jquery:20120206
       - https://github.com/jquery/jquery/commit/05531fc4080ae24070930d15ae0cea7ae056457d
@@ -311,41 +311,41 @@ advisories:
     reported: 2018-01-18
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2020-7656
     description: "jquery prior to 1.9.0 allows Cross-site Scripting attacks via the load method. The load method fails to recognize and remove \"<script>\" HTML tags that contain a whitespace character, i.e: \"</script >\", which results in the enclosed script logic to be executed.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-q4m3-2j7h-f7xw
-    id: CPANSA-Yukki-2020-7656-jquery
+    id: CPANSA-Plack-Debugger-2020-7656-jquery
     references:
       - https://snyk.io/vuln/SNYK-JS-JQUERY-569619
       - https://security.netapp.com/advisory/ntap-20200528-0001/
     reported: 2020-05-19
     severity: medium
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2019-5428
     description: "Prototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as _proto_, constructor and prototype. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values. Properties on the Object.prototype are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-wv67-q8rr-grjp
-    id: CPANSA-Yukki-2019-5428-jquery
+    id: CPANSA-Plack-Debugger-2019-5428-jquery
     references:
       - https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006
     reported: ~
     severity: ~
   - affected_versions:
-      - '>=0.110830,<=0.140290'
+      - '>=0.01,<=0.03'
     cves:
       - CVE-2014-6071
     description: "jQuery 1.4.2 allows remote attackers to conduct cross-site scripting (XSS) attacks via vectors related to use of the text method inside after.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-q44p-q588-242q
-    id: CPANSA-Yukki-2014-6071-jquery
+    id: CPANSA-Plack-Debugger-2014-6071-jquery
     references:
       - https://bugzilla.redhat.com/show_bug.cgi?id=1136683
       - http://seclists.org/fulldisclosure/2014/Sep/10
@@ -353,11 +353,11 @@ advisories:
     reported: 2018-01-16
     severity: medium
 cpansa_version: 2
-distribution: Yukki
+distribution: Plack-Debugger
 generated:
   by: util/invert-third-party.pl
-  date: Mon Jun  2 18:31:24 2025
+  date: Sun Mar  8 08:28:41 2026
   from: external_reports/jquery.yml
-last_checked: 1749751661
-latest_version: 0.140290
-repo: git://github.com/zostay/Yukki.git
+last_checked: 1772972921
+latest_version: 0.03
+repo: https://github.com/stevan/p5-plack-debugger.git
