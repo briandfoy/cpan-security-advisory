@@ -16,6 +16,26 @@ advisories:
       - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.001/source/Sodium.xs#L2119
     reported: 2026-02-23
     severity: ~
+  - affected_versions:
+      - <2.003
+    cves:
+      - CVE-2026-30909
+    description: 'Crypt::NaCl::Sodium versions through 2.002 for Perl has potential integer overflows.  bin2hex, encrypt, aes256gcm_encrypt_afternm and seal functions do not check that output size will be less than SIZE_MAX, which could lead to integer wraparound causing an undersized output buffer.  Encountering this issue is unlikely as the message length would need to be very large.  For bin2hex() the bin_len would have to be > SIZE_MAX / 2 For encrypt() the msg_len would need to be > SIZE_MAX - 16U For aes256gcm_encrypt_afternm() the msg_len would need to be > SIZE_MAX - 16U For seal() the enc_len would need to be > SIZE_MAX - 64U'
+    fixed_versions:
+      - '>=2.003'
+    github_security_advisory:
+      - GHSA-qqmj-w4wh-9w2h
+    id: CPANSA-Crypt-NaCl-Sodium-2026-30909
+    references:
+      - https://github.com/cpan-authors/crypt-nacl-sodium/pull/24.patch
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.002/source/Sodium.xs#L2116
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.002/source/Sodium.xs#L2310
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.002/source/Sodium.xs#L3304
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.002/source/Sodium.xs#L942
+      - https://metacpan.org/release/TIMLEGGE/Crypt-NaCl-Sodium-2.003/source/Changes
+      - http://www.openwall.com/lists/oss-security/2026/03/08/1
+    reported: 2026-03-08
+    severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-NaCl-Sodium
