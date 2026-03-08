@@ -1,8 +1,7 @@
 ---
 advisories:
   - affected_versions: '<1.0.5'
-    cves:
-      - CVE-2015-8947
+    cve: CVE-2015-8947
     description: 'hb-ot-layout-gpos-table.hh in HarfBuzz before 1.0.5 allows remote attackers to cause a denial of service (buffer over-read) or possibly have unspecified other impact via crafted data, a different vulnerability than CVE-2016-2052.'
     fixed_versions: '>=1.0.5'
     github_security_advisory:
@@ -27,8 +26,7 @@ advisories:
     reported: 2016-07-19
     severity: ~
   - affected_versions: '<1.0.4'
-    cves:
-      - CVE-2015-9274
+    cve: CVE-2015-9274
     description: 'HarfBuzz before 1.0.4 allows remote attackers to cause a denial of service (invalid read of two bytes and application crash) because of GPOS and GSUB table mishandling, related to hb-ot-layout-gpos-table.hh, hb-ot-layout-gsub-table.hh, and hb-ot-layout-gsubgpos-private.hh.'
     fixed_versions: '>1.0.4'
     github_security_advisory:
@@ -39,8 +37,7 @@ advisories:
     reported: 2018-11-15
     severity: ~
   - affected_versions: '<1.0.6'
-    cves:
-      - CVE-2016-2052
+    cve: CVE-2016-2052
     description: 'Multiple unspecified vulnerabilities in HarfBuzz before 1.0.6, as used in Google Chrome before 48.0.2564.82, allow attackers to cause a denial of service or possibly have other impact via crafted data, as demonstrated by a buffer over-read resulting from an inverted length check in hb-ot-font.cc, a different issue than CVE-2015-8947.'
     fixed_versions: '>=1.0.6'
     github_security_advisory:
@@ -73,8 +70,7 @@ advisories:
     reported: 2016-01-25
     severity: ~
   - affected_versions: '<2.9.1'
-    cves:
-      - CVE-2021-45931
+    cve: CVE-2021-45931
     description: 'HarfBuzz 2.9.0 has an out-of-bounds write in hb_bit_set_invertible_t::set (called from hb_sparseset_t<hb_bit_set_invertible_t>::set and hb_set_copy).'
     fixed_versions: '>=2.9.1'
     github_security_advisory:
@@ -97,8 +93,7 @@ advisories:
     reported: 2022-01-01
     severity: ~
   - affected_versions: '<4.4.0'
-    cves:
-      - CVE-2022-33068
+    cve: CVE-2022-33068
     description: 'An integer overflow in the component hb-ot-shape-fallback.cc of Harfbuzz v4.3.0 allows attackers to cause a Denial of Service (DoS) via unspecified vectors.'
     fixed_versions: '>=4.4.0'
     github_security_advisory:
@@ -119,8 +114,7 @@ advisories:
     reported: 2022-06-23
     severity: ~
   - affected_versions: '<7.0.0'
-    cves:
-      - CVE-2023-25193
+    cve: CVE-2023-25193
     description: hb-ot-layout-gsubgpos.hh in HarfBuzz through 6.0.0 allows attackers to trigger O(n^2) growth via consecutive marks during the process of looking back for base glyphs when attaching marks.
     fixed_versions: '>=7.0.0'
     github_security_advisory:
@@ -141,8 +135,7 @@ advisories:
     reported: 2023-02-04
     severity: ~
   - affected_versions: '>=8.5.0,<=10.0.1'
-    cves:
-      - CVE-2024-56732
+    cve: CVE-2024-56732
     description: 'HarfBuzz is a text shaping engine. Starting with 8.5.0 through 10.0.1, there is a heap-based buffer overflow in the hb_cairo_glyphs_from_buffer function.'
     fixed_versions: '>10.0.1'
     github_security_advisory: []
@@ -152,8 +145,7 @@ advisories:
     reported: 2024-12-27
     severity: ~
   - affected_versions: '<=12.3.0'
-    cves:
-      - CVE-2026-22693
+    cve: CVE-2026-22693
     description: 'HarfBuzz is a text shaping engine. Prior to version 12.3.0, a null pointer dereference vulnerability exists in the SubtableUnicodesCache::create function located in src/hb-ot-cmap-table.hh. The function fails to check if hb_malloc returns NULL before using placement new to construct an object at the returned pointer address. When hb_malloc fails to allocate memory (which can occur in low-memory conditions or when using custom allocators that simulate allocation failures), it returns NULL. The code then attempts to call the constructor on this null pointer using placement new syntax, resulting in undefined behavior and a Segmentation Fault. This issue has been patched in version 12.3.0.'
     fixed_versions: '>=12.3.1'
     github_security_advisory: []
@@ -165,8 +157,7 @@ advisories:
     reported: 2026-01-10
     severity: ~
   - affected_versions: '<=11.2.1'
-    cves:
-      - CVE-0000-0000
+    cve: CVE-0000-0000
     description: 'When debug messaging is enabled using hb_buffer_set_message_func, a maliciously crafted font can trigger a buffer overflow using a complicated sequence lookup, leading to unauthorised overwriting of other data.'
     fixed_versions: '>11.2.1'
     github_security_advisory: []
