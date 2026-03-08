@@ -165,7 +165,8 @@ advisories:
     reported: 2026-01-10
     severity: ~
   - affected_versions: '<=11.2.1'
-    cves: []
+    cves:
+      - CVE-0000-0000
     description: 'When debug messaging is enabled using hb_buffer_set_message_func, a maliciously crafted font can trigger a buffer overflow using a complicated sequence lookup, leading to unauthorised overwriting of other data.'
     fixed_versions: '>11.2.1'
     github_security_advisory: []
