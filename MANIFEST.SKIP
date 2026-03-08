@@ -36,5 +36,6 @@ cpan-audit-db/
 CONTRIBUTING.md
 main-modules
 scratch/
-
+CPANSA-XXX.yml
+cpansa/CPANSA-XXX.yml
 .downstream.json
