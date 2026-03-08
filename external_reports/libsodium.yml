@@ -27,7 +27,9 @@ perl_distributions:
   - distributed_library_version: 1.0.20
     perl_module_versions: '>=0.000028,<=0.000041'
   - distributed_library_version: 1.0.20-stable
-    perl_module_versions: '>=0.000042'
+    perl_module_versions: '>=0.000042,<0.001000'
+  - distributed_library_version: 1.0.21-stable
+    perl_module_version: '>=0.001000'
   last_version_checked: '0.000042'
   name: Crypt-Sodium-XS
 url: ~
