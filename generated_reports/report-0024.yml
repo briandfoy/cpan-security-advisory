@@ -3,23 +3,23 @@ advisories:
   - affected_versions:
       - '>=0.08,<=0.10'
     cves:
-      - CVE-2019-12953
-    description: "Dropbear 2011.54 through 2018.76 has an inconsistent failure delay that may lead to revealing valid usernames, a different issue than CVE-2018-15599.\n"
+      - CVE-2020-36254
+    description: "scp.c in Dropbear before 2020.79 mishandles the filename of . or an empty filename, a related issue to CVE-2018-20685.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-6hj9-w8vp-p698
-    id: CPANSA-Net-Dropbear-2019-12953-dropbear
+      - GHSA-36m7-j2mr-5864
+    id: CPANSA-Net-Dropbear-2020-36254-dropbear
     references:
       - https://metacpan.org/release/ATRODO/Net-Dropbear-0.15/changes
-      - https://matt.ucc.asn.au/dropbear/CHANGES
-    reported: 2020-12-30
-    severity: medium
+      - https://github.com/mkj/dropbear/commit/8f8a3dff705fad774a10864a2e3dbcfa9779ceff
+    reported: 2021-02-25
+    severity: high
 cpansa_version: 2
 distribution: Net-Dropbear
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:28:30 2026
+  date: Sun Mar  8 09:31:37 2026
   from: external_reports/dropbear.yml
-last_checked: 1772972910
+last_checked: 1772976697
 latest_version: 0.16
 repo: https://github.com/atrodo/Net-Dropbear.git

@@ -3,22 +3,23 @@ advisories:
   - affected_versions:
       - '>=0.02'
     cves:
-      - CVE-2020-23849
-    description: "Stored XSS was discovered in the tree mode of jsoneditor before 9.0.2 through injecting and executing JavaScript.\n"
+      - CVE-2021-3822
+    description: "jsoneditor is vulnerable to Inefficient Regular Expression Complexity\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-q854-j362-cfq9
-    id: CPANSA-WWW-ORCID-2020-23849-jsoneditor
+      - GHSA-hhfg-6hfc-rvxm
+    id: CPANSA-WWW-ORCID-2021-3822-jsoneditor
     references:
-      - https://github.com/josdejong/jsoneditor/issues/1029
-    reported: 2021-01-11
-    severity: medium
+      - https://github.com/josdejong/jsoneditor/commit/092e386cf49f2a1450625617da8e0137ed067c3e
+      - https://huntr.dev/bounties/1e3ed803-b7ed-42f1-a4ea-c4c75da9de73
+    reported: 2021-09-27
+    severity: high
 cpansa_version: 2
 distribution: WWW-ORCID
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:28:45 2026
+  date: Sun Mar  8 09:31:53 2026
   from: external_reports/jsoneditor.yml
-last_checked: 1772972925
+last_checked: 1772976713
 latest_version: 0.0402
 repo: https://github.com/LibreCat/WWW-ORCID.git

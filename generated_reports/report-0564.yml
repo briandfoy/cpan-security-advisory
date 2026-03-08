@@ -27,8 +27,8 @@ cpansa_version: 2
 distribution: Alien-SVN
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:39 2026
+  date: Sun Mar  8 09:33:54 2026
   from: external_reports/svn.yml
-last_checked: 1772973039
+last_checked: 1772976834
 latest_version: v1.8.11.0
 repo: https://github.com/evalEmpire/Alien-SVN/

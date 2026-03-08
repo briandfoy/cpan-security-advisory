@@ -27,8 +27,8 @@ cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:15 2026
+  date: Sun Mar  8 09:33:28 2026
   from: external_reports/nginx.yml
-last_checked: 1772973015
+last_checked: 1772976808
 latest_version: v1.8.1.10
 repo: ~

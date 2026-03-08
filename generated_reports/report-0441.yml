@@ -17,8 +17,8 @@ cpansa_version: 2
 distribution: Perldoc-Server
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:11 2026
+  date: Sun Mar  8 09:33:24 2026
   from: external_reports/mootools.yml
-last_checked: 1772973011
+last_checked: 1772976804
 latest_version: 0.10
 repo: ~

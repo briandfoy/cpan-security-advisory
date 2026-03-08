@@ -17,8 +17,8 @@ cpansa_version: 2
 distribution: Sereal-Decoder
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:10 2026
+  date: Sun Mar  8 09:33:23 2026
   from: external_reports/miniz.yml
-last_checked: 1772973010
+last_checked: 1772976803
 latest_version: 5.004
 repo: git://github.com/Sereal/Sereal.git

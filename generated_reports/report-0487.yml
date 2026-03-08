@@ -3,38 +3,37 @@ advisories:
   - affected_versions:
       - '>=1.26_05,<=1.26_06'
     cves:
-      - CVE-2019-16168
-    description: "In SQLite through 3.29.0, whereLoopAddBtreeIndex in sqlite3.c can crash a browser or other application because of missing validation of a sqlite_stat1 sz field, aka a \"severe division by zero in the query planner.\"\n"
+      - CVE-2017-10989
+    description: "The getNodeSize function in ext/rtree/rtree.c in SQLite through 3.19.3, as used in GDAL and other products, mishandles undersized RTree blobs in a crafted database, leading to a heap-based buffer over-read or possibly unspecified other impact.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-m2vp-56p6-9q2h
-    id: CPANSA-DBD-SQLite-2019-16168-sqlite
+      - GHSA-rp6h-mxcc-96r2
+    id: CPANSA-DBD-SQLite-2017-10989-sqlite
     references:
-      - https://www.sqlite.org/src/timeline?c=98357d8c1263920b
-      - https://www.mail-archive.com/sqlite-users@mailinglists.sqlite.org/msg116312.html
-      - https://www.sqlite.org/src/info/e4598ecbdd18bd82945f6029013296690e719a62
-      - https://security.netapp.com/advisory/ntap-20190926-0003/
-      - http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00033.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-10/msg00032.html
-      - https://usn.ubuntu.com/4205-1/
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XZARJHJJDBHI7CE5PZEBXS5HKK6HXKW2/
-      - https://www.oracle.com/security-alerts/cpujan2020.html
-      - https://security.netapp.com/advisory/ntap-20200122-0003/
-      - https://security.gentoo.org/glsa/202003-16
-      - https://www.oracle.com/security-alerts/cpuapr2020.html
-      - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
-      - https://www.tenable.com/security/tns-2021-08
-      - https://www.tenable.com/security/tns-2021-11
-      - https://www.tenable.com/security/tns-2021-14
-      - https://kc.mcafee.com/corporate/index?page=content&id=SB10365
-    reported: 2019-09-09
-    severity: medium
+      - https://sqlite.org/src/info/66de6f4a
+      - https://bugs.launchpad.net/ubuntu/+source/sqlite3/+bug/1700937
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=2405
+      - https://sqlite.org/src/vpatch?from=0db20efe201736b3&to=66de6f4a9504ec26
+      - http://marc.info/?l=sqlite-users&m=149933696214713&w=2
+      - http://www.securityfocus.com/bid/99502
+      - http://www.securitytracker.com/id/1039427
+      - https://support.apple.com/HT208144
+      - https://support.apple.com/HT208115
+      - https://support.apple.com/HT208113
+      - https://support.apple.com/HT208112
+      - http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+      - https://lists.debian.org/debian-lts-announce/2019/01/msg00009.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-05/msg00050.html
+      - https://usn.ubuntu.com/4019-1/
+      - https://usn.ubuntu.com/4019-2/
+    reported: 2017-07-07
+    severity: critical
 cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:22 2026
+  date: Sun Mar  8 09:33:35 2026
   from: external_reports/sqlite.yml
-last_checked: 1772973022
+last_checked: 1772976815
 latest_version: 1.78
 repo: https://github.com/DBD-SQLite/DBD-SQLite

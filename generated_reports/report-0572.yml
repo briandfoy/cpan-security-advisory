@@ -55,8 +55,8 @@ cpansa_version: 2
 distribution: Archive-Unzip-Burst
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:40 2026
+  date: Sun Mar  8 09:33:56 2026
   from: external_reports/unzip.yml
-last_checked: 1772973040
+last_checked: 1772976836
 latest_version: 0.09
 repo: git://github.com/mohawk2/Archive-Unzip-Burst

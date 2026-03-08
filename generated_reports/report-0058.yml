@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: YATT-Lite
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:28:38 2026
+  date: Sun Mar  8 09:31:45 2026
   from: external_reports/jquery.yml
-last_checked: 1772972918
+last_checked: 1772976705
 latest_version: 0.131
 repo: https://github.com/hkoba/yatt_lite

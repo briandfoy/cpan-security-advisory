@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Zonemaster-GUI
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:28:39 2026
+  date: Sun Mar  8 09:31:46 2026
   from: external_reports/jquery.yml
-last_checked: 1772972919
+last_checked: 1772976706
 latest_version: ~
 repo: ~

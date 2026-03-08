@@ -3,62 +3,373 @@ advisories:
   - affected_versions:
       - '>=6.0.12,<=6.2.9'
     cves:
-      - CVE-2015-2325
-    description: "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier.\n"
+      - CVE-2007-1659
+    description: "Perl-Compatible Regular Expression (PCRE) library before 7.3 allows context-dependent attackers to cause a denial of service (crash) and possibly execute arbitrary code via regex patterns containing unmatched \"\\Q\\E\" sequences with orphan \"\\E\" codes.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-mwr9-2r49-jwhg
-    id: CPANSA-Perl6-Pugs-2015-2325-libpcre
+      - GHSA-h2p6-9f3w-vqw9
+    id: CPANSA-Perl6-Pugs-2007-1659-libpcre
     references:
-      - https://bugs.exim.org/show_bug.cgi?id=1591
-      - https://fortiguard.com/zeroday/FG-VD-15-015
-      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
-      - https://www.pcre.org/original/changelog.txt
-    reported: 2020-01-14
-    severity: high
+      - http://www.pcre.org/changelog.txt
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:212
+      - http://www.redhat.com/support/errata/RHSA-2007-0967.html
+      - http://www.redhat.com/support/errata/RHSA-2007-1068.html
+      - http://www.novell.com/linux/security/advisories/2007_62_pcre.html
+      - http://www.novell.com/linux/security/advisories/2007_25_sr.html
+      - http://www.securityfocus.com/bid/26346
+      - http://securitytracker.com/id?1018895
+      - http://secunia.com/advisories/27598
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27547
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27773
+      - http://secunia.com/advisories/27697
+      - http://support.avaya.com/elmodocs2/security/ASA-2007-505.htm
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://secunia.com/advisories/28041
+      - http://secunia.com/advisories/27965
+      - http://secunia.com/advisories/28136
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2008:030
+      - http://lists.opensuse.org/opensuse-security-announce/2008-01/msg00006.html
+      - http://secunia.com/advisories/28658
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://secunia.com/advisories/30106
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://www.debian.org/security/2008/dsa-1570
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38272
+      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9725
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
+    severity: ~
   - affected_versions:
       - '>=6.0.12,<=6.2.9'
     cves:
-      - CVE-2015-2326
-    description: "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\".\n"
+      - CVE-2007-1661
+    description: "Perl-Compatible Regular Expression (PCRE) library before 7.3 backtracks too far when matching certain input bytes against some regex patterns in non-UTF-8 mode, which allows context-dependent attackers to obtain sensitive information or cause a denial of service (crash), as demonstrated by the \"\\X?\\d\" and \"\\P{L}?\\d\" patterns.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-m793-2mj8-wj8q
-    id: CPANSA-Perl6-Pugs-2015-2326-libpcre
+      - GHSA-759q-4q8w-5gfh
+    id: CPANSA-Perl6-Pugs-2007-1661-libpcre
     references:
-      - https://bugs.exim.org/show_bug.cgi?id=1592
-      - https://fortiguard.com/zeroday/FG-VD-15-016
-      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
-      - https://www.pcre.org/original/changelog.txt
-    reported: 2020-01-14
-    severity: medium
+      - http://www.pcre.org/changelog.txt
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.novell.com/linux/security/advisories/2007_62_pcre.html
+      - http://www.securityfocus.com/bid/26346
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27773
+      - http://secunia.com/advisories/27697
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://secunia.com/advisories/28136
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://secunia.com/advisories/30106
+      - http://www.debian.org/security/2008/dsa-1570
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38274
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
+    severity: ~
   - affected_versions:
       - '>=6.0.12,<=6.2.9'
     cves:
-      - CVE-2015-8382
-    description: "The match function in pcre_exec.c in PCRE before 8.37 mishandles the /(?:((abcd))|(((?:(?:(?:(?:abc|(?:abcdef))))b)abcdefghi)abc)|((*ACCEPT)))/ pattern and related patterns involving (*ACCEPT), which allows remote attackers to obtain sensitive information from process memory or cause a denial of service (partially initialized memory and application crash) via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, aka ZDI-CAN-2547.\n"
+      - CVE-2007-1662
+    description: "Perl-Compatible Regular Expression (PCRE) library before 7.3 reads past the end of the string when searching for unmatched brackets and parentheses, which allows context-dependent attackers to cause a denial of service (crash), possibly involving forward references.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-h7q3-3hf3-hv3q
-    id: CPANSA-Perl6-Pugs-2015-8382-libpcre
+      - GHSA-q97c-6vfp-vgp5
+    id: CPANSA-Perl6-Pugs-2007-1662-libpcre
     references:
-      - https://bugs.exim.org/show_bug.cgi?id=1537
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://vcs.pcre.org/pcre/code/trunk/pcre_exec.c?r1=1502&r2=1510
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1187225
-      - http://www.openwall.com/lists/oss-security/2015/08/04/3
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - http://git.php.net/?p=php-src.git;a=commit;h=c351b47ce85a3a147cfa801fa9f0149ab4160834
-      - http://www.securityfocus.com/bid/76157
-      - https://bto.bluecoat.com/security-advisory/sa128
-    reported: 2015-12-02
+      - http://www.pcre.org/changelog.txt
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.securityfocus.com/bid/26346
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27697
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://secunia.com/advisories/28136
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://secunia.com/advisories/30106
+      - http://www.debian.org/security/2008/dsa-1570
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38275
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
+    severity: ~
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2007-4766
+    description: "Multiple integer overflows in Perl-Compatible Regular Expression (PCRE) library before 7.3 allow context-dependent attackers to cause a denial of service (crash) or execute arbitrary code via unspecified escape (backslash) sequences.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-ppf2-g285-2xj9
+    id: CPANSA-Perl6-Pugs-2007-4766-libpcre
+    references:
+      - http://www.pcre.org/changelog.txt
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.novell.com/linux/security/advisories/2007_62_pcre.html
+      - http://www.securityfocus.com/bid/26346
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27773
+      - http://secunia.com/advisories/27697
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://secunia.com/advisories/28136
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://www.debian.org/security/2008/dsa-1570
+      - http://secunia.com/advisories/30106
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38276
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
+    severity: ~
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2007-4767
+    description: "Perl-Compatible Regular Expression (PCRE) library before 7.3 does not properly compute the length of (1) a \\p sequence, (2) a \\P sequence, or (3) a \\P{x} sequence, which allows context-dependent attackers to cause a denial of service (infinite loop or crash) or execute arbitrary code.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-9cw9-v886-c24m
+    id: CPANSA-Perl6-Pugs-2007-4767-libpcre
+    references:
+      - http://www.pcre.org/changelog.txt
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.novell.com/linux/security/advisories/2007_62_pcre.html
+      - http://www.securityfocus.com/bid/26346
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27773
+      - http://secunia.com/advisories/27697
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://secunia.com/advisories/28136
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://secunia.com/advisories/30106
+      - http://www.debian.org/security/2008/dsa-1570
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38277
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
+    severity: ~
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2007-4768
+    description: "Heap-based buffer overflow in Perl-Compatible Regular Expression (PCRE) library before 7.3 allows context-dependent attackers to execute arbitrary code via a singleton Unicode sequence in a character class in a regex pattern, which is incorrectly optimized.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-jq5c-rgv9-cw8p
+    id: CPANSA-Perl6-Pugs-2007-4768-libpcre
+    references:
+      - http://www.debian.org/security/2007/dsa-1399
+      - http://mail.gnome.org/archives/gtk-devel-list/2007-November/msg00022.html
+      - https://issues.rpath.com/browse/RPL-1738
+      - http://security.gentoo.org/glsa/glsa-200711-30.xml
+      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:211
+      - http://www.securityfocus.com/bid/26346
+      - http://secunia.com/advisories/27538
+      - http://secunia.com/advisories/27543
+      - http://secunia.com/advisories/27554
+      - http://secunia.com/advisories/27741
+      - http://secunia.com/advisories/27697
+      - http://www.adobe.com/support/security/bulletins/apsb07-20.html
+      - http://lists.apple.com/archives/security-announce/2007/Dec/msg00002.html
+      - http://www.redhat.com/support/errata/RHSA-2007-1126.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-352A.html
+      - http://www.us-cert.gov/cas/techalerts/TA07-355A.html
+      - http://securitytracker.com/id?1019116
+      - http://secunia.com/advisories/28136
+      - http://secunia.com/advisories/28157
+      - http://secunia.com/advisories/28161
+      - http://bugs.gentoo.org/show_bug.cgi?id=198976
+      - http://security.gentoo.org/glsa/glsa-200801-02.xml
+      - http://secunia.com/advisories/28406
+      - http://secunia.com/advisories/28414
+      - http://www.gentoo.org/security/en/glsa/glsa-200801-07.xml
+      - http://secunia.com/advisories/28570
+      - http://security.gentoo.org/glsa/glsa-200801-18.xml
+      - http://security.gentoo.org/glsa/glsa-200801-19.xml
+      - http://secunia.com/advisories/28714
+      - http://secunia.com/advisories/28720
+      - http://lists.opensuse.org/opensuse-security-announce/2007-12/msg00007.html
+      - http://secunia.com/advisories/28213
+      - https://www.redhat.com/archives/fedora-package-announce/2008-March/msg00181.html
+      - http://secunia.com/advisories/29267
+      - http://lists.apple.com/archives/security-announce/2008/Mar/msg00001.html
+      - http://secunia.com/advisories/29420
+      - http://www.adobe.com/support/security/bulletins/apsb08-13.html
+      - http://security.gentoo.org/glsa/glsa-200805-11.xml
+      - http://secunia.com/advisories/30155
+      - http://secunia.com/advisories/30219
+      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-238305-1
+      - http://secunia.com/advisories/30507
+      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-239286-1
+      - http://secunia.com/advisories/30840
+      - http://secunia.com/advisories/30106
+      - http://www.debian.org/security/2008/dsa-1570
+      - http://www.vupen.com/english/advisories/2007/4238
+      - http://www.vupen.com/english/advisories/2007/4258
+      - http://www.vupen.com/english/advisories/2008/1966/references
+      - http://www.vupen.com/english/advisories/2008/0924/references
+      - http://www.vupen.com/english/advisories/2008/1724/references
+      - http://www.vupen.com/english/advisories/2007/3725
+      - http://www.vupen.com/english/advisories/2007/3790
+      - http://docs.info.apple.com/article.html?artnum=307562
+      - http://docs.info.apple.com/article.html?artnum=307179
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/38278
+      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9701
+      - https://usn.ubuntu.com/547-1/
+      - http://www.securityfocus.com/archive/1/483579/100/0/threaded
+      - http://www.securityfocus.com/archive/1/483357/100/0/threaded
+    reported: 2007-11-07
     severity: ~
 cpansa_version: 2
 distribution: Perl6-Pugs
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:05 2026
+  date: Sun Mar  8 09:33:18 2026
   from: external_reports/libpcre.yml
-last_checked: 1772973005
+last_checked: 1772976798
 latest_version: 6.2.13
 repo: ~

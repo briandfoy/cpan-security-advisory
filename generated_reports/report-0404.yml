@@ -3,30 +3,72 @@ advisories:
   - affected_versions:
       - '>=0.54,<=0.58'
     cves:
-      - CVE-2014-9390
-    description: "Git before 1.8.5.6, 1.9.x before 1.9.5, 2.0.x before 2.0.5, 2.1.x before 2.1.4, and 2.2.x before 2.2.1 on Windows and OS X; Mercurial before 3.2.3 on Windows and OS X; Apple Xcode before 6.2 beta 3; mine all versions before 08-12-2014; libgit2 all versions up to 0.21.2; Egit all versions before 08-12-2014; and JGit all versions before 08-12-2014 allow remote Git servers to execute arbitrary commands via a tree containing a crafted .git/config file with (1) an ignorable Unicode codepoint, (2) a git~1/config representation, or (3) mixed case that is improperly handled on a case-insensitive filesystem.\n"
+      - CVE-2016-10128
+    description: "Buffer overflow in the git_pkt_parse_line function in transports/smart_pkt.c in the Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote attackers to have unspecified impact via a crafted non-flush packet.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-6vvc-c2m3-cjf3
-    id: CPANSA-Git-Raw-2014-9390-libgit2
+      - GHSA-23v5-3rr6-rp4h
+    id: CPANSA-Git-Raw-2016-10128-libgit2
     references:
-      - https://news.ycombinator.com/item?id=8769667
-      - http://git-blame.blogspot.com/2014/12/git-1856-195-205-214-and-221-and.html
-      - https://github.com/blog/1938-git-client-vulnerability-announced
-      - http://securitytracker.com/id?1031404
-      - http://article.gmane.org/gmane.linux.kernel/1853266
-      - http://mercurial.selenic.com/wiki/WhatsNew
-      - http://support.apple.com/kb/HT204147
-      - https://libgit2.org/security/
-      - https://github.com/libgit2/libgit2/commit/928429c5c96a701bcbcafacb2421a82602b36915
-    reported: 2020-02-12
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/66e3774d279672ee51c3b54545a79d20d1ada834
+      - https://github.com/libgit2/libgit2/commit/4ac39c76c0153d1ee6889a0984c39e97731684b2
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95338
+    reported: 2017-03-24
     severity: critical
+  - affected_versions:
+      - '>=0.54,<=0.58'
+    cves:
+      - CVE-2016-10129
+    description: "The Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote attackers to cause a denial of service (NULL pointer dereference) via an empty packet line.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-7gh2-q8m8-26r9
+    id: CPANSA-Git-Raw-2016-10129-libgit2
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/84d30d569ada986f3eef527cbdb932643c2dd037
+      - https://github.com/libgit2/libgit2/commit/2fdef641fd0dd2828bd948234ae86de75221a11a
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95339
+    reported: 2017-03-24
+    severity: high
+  - affected_versions:
+      - '>=0.54,<=0.58'
+    cves:
+      - CVE-2016-10130
+    description: "The http_connect function in transports/http.c in libgit2 before 0.24.6 and 0.25.x before 0.25.1 might allow man-in-the-middle attackers to spoof servers by leveraging clobbering of the error variable.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-fhf3-77x2-3mpp
+    id: CPANSA-Git-Raw-2016-10130-libgit2
+    references:
+      - https://libgit2.github.com/security/
+      - https://github.com/libgit2/libgit2/commit/b5c6a1b407b7f8b952bded2789593b68b1876211
+      - https://github.com/libgit2/libgit2/commit/9a64e62f0f20c9cf9b2e1609f037060eb2d8eb22
+      - http://www.openwall.com/lists/oss-security/2017/01/11/6
+      - http://www.openwall.com/lists/oss-security/2017/01/10/5
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
+      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
+      - http://www.securityfocus.com/bid/95359
+    reported: 2017-03-24
+    severity: medium
 cpansa_version: 2
 distribution: Git-Raw
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:02 2026
+  date: Sun Mar  8 09:33:14 2026
   from: external_reports/libgit2.yml
-last_checked: 1772973002
+last_checked: 1772976794
 latest_version: 0.90
 repo: git://github.com/jacquesg/p5-Git-Raw.git

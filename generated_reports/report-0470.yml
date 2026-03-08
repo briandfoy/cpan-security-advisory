@@ -17,8 +17,8 @@ cpansa_version: 2
 distribution: SockJS
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:30:18 2026
+  date: Sun Mar  8 09:33:31 2026
   from: external_reports/sockjs.yml
-last_checked: 1772973018
+last_checked: 1772976811
 latest_version: 0.10
 repo: git://github.com/vti/sockjs-perl.git

@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Ukigumo-Server
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 08:28:43 2026
+  date: Sun Mar  8 09:31:50 2026
   from: external_reports/jquery.yml
-last_checked: 1772972923
+last_checked: 1772976710
 latest_version: v2.1.5
 repo: git://github.com/ukigumo/Ukigumo-Server.git
