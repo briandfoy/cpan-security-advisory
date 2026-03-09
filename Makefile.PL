@@ -35,6 +35,23 @@ Perl.
 
 =cut
 
+BEGIN {
+use ExtUtils::MM_Any;
+no warnings qw(redefine);
+
+# get rid of the warning about README.pod, because I'm using it.
+# It's also in INSTALL.SKIP
+sub ExtUtils::MM_Any::libscan {
+    my($self,$path) = @_;
+
+    my($dirs,$file) = ($self->splitpath($path))[1,2];
+    return '' if grep /^(?:RCS|CVS|SCCS|\.svn|_darcs)$/,
+                     $self->splitdir($dirs), $file;
+
+    return $path;
+	}
+}
+
 use File::Spec::Functions qw(catfile);
 
 my $module    = __PACKAGE__;
