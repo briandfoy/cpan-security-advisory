@@ -5,6 +5,8 @@ use strict;
 use lib qw(lib);
 use Local::CPANSA qw(:cpan :reports);
 
+my $template = "%2d %10s %10s %12d %s\n";
+
 foreach my $file ( get_all_reports()->@* ) {
 	say STDERR "Processing <$file>";
 	my $data = 	load_report($file);
@@ -13,13 +15,24 @@ foreach my $file ( get_all_reports()->@* ) {
 
 	my $latest_on_cpan = latest_on_cpan( $data->{distribution} );
 	next unless defined $latest_on_cpan; # some things disappear
+
+	# if there are no reports that are outstanding, update the checked info
+	# and move on
+	if( $unfixed == 0 ) {
+		$data->{last_checked} = time;
+		$data->{latest_version} = $latest_on_cpan;
+		save_report($file, $data);
+		next;
+		}
+
+	# if there are outstanding reports, but we've already checked the latest version
+	# then there is nothing for use to do
 	next if $data->{latest_version} eq $latest_on_cpan;
 
-	say <<~"HERE";
-			Unfixed: $unfixed
-			Report latest: $data->{latest_version}
-			CPAN latest:   $latest_on_cpan
-			Last checked:  $data->{last_checked}
-			Distribution:  $data->{distribution}
-		HERE
+	printf $template,
+		$unfixed,
+		$data->{'latest_version'},
+		$latest_on_cpan,
+		$data->{'last_checked'},
+		$data->{'url'} // $file;
 	}

@@ -21,6 +21,7 @@ our @EXPORT_OK = qw(
 	github_cve_issue_exists
 	latest_on_cpan
 	load_report
+	save_report
 	);
 
 our %EXPORT_TAGS = (
@@ -33,6 +34,7 @@ our %EXPORT_TAGS = (
 	reports => [qw(
 		get_all_reports
 		load_report
+		save_report
 		)],
 	);
 
@@ -512,6 +514,17 @@ you never need to know the details about how the report is stored.
 sub load_report ( $report_path ) {
 	state $rc = require YAML::XS;
 	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
+	}
+
+=item * save_report( PATH, HASHREF )
+
+Save the data for the report.
+
+=cut
+
+sub save_report ( $report_path, $hashref ) {
+	state $rc = require YAML::XS;
+	eval { YAML::XS::DumpFile( $report_path, $hashref ) };
 	}
 
 =back
