@@ -1,5 +1,11 @@
 # Changes for CPANSA::DB
 
+20260311.002 2026-03-11T13:29:32Z
+	* note fix for Crypt::CBC (CVE-2025-2814
+	* stop using YAML::Tiny for internal tools; always use YAML::XS
+	* some files in cpansa/ have updated to the default format for YAML::XS
+	* updated reports for latest versions on CPAN
+
 20260308.006 2026-03-08T14:26:07Z
 	* CVE-2026-30909 for Crypt::NaCl::Sodium
 	* CVE-2026-30910 for Crypt::Sodium::XS
