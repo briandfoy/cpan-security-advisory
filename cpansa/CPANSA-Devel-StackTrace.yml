@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.19'
+  - <1.19
   cves:
   - CVE-2008-3502
   description: |
@@ -20,7 +20,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Devel-StackTrace
-last_checked: 1749751661
+last_checked: 1773231493
 latest_version: '2.05'
 metacpan: https://metacpan.org/pod/Devel::StackTrace
 repo: https://github.com/houseabsolute/Devel-StackTrace

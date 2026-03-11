@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<=2.12'
+  - <=2.12
   cves:
   - CVE-2020-16155
   description: |
@@ -18,7 +18,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: CPAN-Checksums
-last_checked: 1749751661
+last_checked: 1773231453
 latest_version: '2.14'
 metacpan: https://metacpan.org/pod/CPAN::Checksums
 repo: https://github.com/andk/cpan-checksums

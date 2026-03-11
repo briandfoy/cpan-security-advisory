@@ -1,10 +1,10 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.36'
+  - <1.36
   cves:
   - CVE-2024-10224
-  description: >
+  description: |
     Qualys discovered that if unsanitized input was used with the library Modules::ScanDeps, before version 1.36 a local attacker could possibly execute arbitrary shell commands by open()ing a "pesky pipe" (such as passing "commands|" as a filename) or by passing arbitrary strings to eval().
   fixed_versions:
   - '>=1.36'
@@ -21,7 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Module-ScanDeps
-last_checked: 1749751661
+last_checked: 1773231544
 latest_version: '1.37'
 metacpan: https://metacpan.org/pod/Module::ScanDeps
 repo: https://github.com/rschupp/Module-ScanDeps

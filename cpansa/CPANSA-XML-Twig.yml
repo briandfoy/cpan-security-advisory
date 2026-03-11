@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.39'
+  - <1.39
   cves:
   - CVE-2016-9180
   description: |
@@ -21,7 +21,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: XML-Twig
-last_checked: 1749751661
+last_checked: 1773231601
 latest_version: '3.54'
 metacpan: https://metacpan.org/pod/XML::Twig
 repo: http://github.com/mirod/xmltwig

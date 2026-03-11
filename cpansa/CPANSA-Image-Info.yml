@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.39'
+  - <1.39
   cves:
   - CVE-2016-9181
   description: |
@@ -17,7 +17,7 @@ advisories:
   reported: 2016-11-04
 cpansa_version: 2
 distribution: Image-Info
-last_checked: 1749751661
+last_checked: 1773231527
 latest_version: '1.45'
 metacpan: https://metacpan.org/pod/Image::Info
 repo: https://github.com/eserte/image-info

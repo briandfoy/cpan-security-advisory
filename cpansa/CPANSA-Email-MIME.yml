@@ -1,14 +1,11 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.954'
+  - <1.954
   cves:
   - CVE-2024-4140
-  description: >
-    An excessive memory use issue (CWE-770) exists in Email-MIME,
-    before version 1.954, which can cause denial of service when parsing
-    multipart MIME messages. The patch set (from 2020 and 2024) limits
-    excessive depth and the total number of parts.
+  description: |
+    An excessive memory use issue (CWE-770) exists in Email-MIME, before version 1.954, which can cause denial of service when parsing multipart MIME messages. The patch set (from 2020 and 2024) limits excessive depth and the total number of parts.
   fixed_versions:
   - '>=1.954'
   github_security_advisory: []
@@ -28,7 +25,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Email-MIME
-last_checked: 1749751661
+last_checked: 1773231499
 latest_version: '1.954'
 metacpan: https://metacpan.org/pod/Email::MIME
 repo: https://github.com/mojolicious/mojo.git
