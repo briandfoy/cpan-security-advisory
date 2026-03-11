@@ -18,7 +18,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Apache-AuthCAS
-last_checked: 1749751661
+last_checked: 1773231428
 latest_version: '0.5'
 metacpan: https://metacpan.org/pod/Apache::AuthCAS
 repo: ~

@@ -33,7 +33,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Crypt-Perl
-last_checked: 1749751661
+last_checked: 1773231475
 latest_version: '0.38'
 metacpan: https://metacpan.org/pod/Crypt::Perl
 repo: https://github.com/FGasper/p5-Crypt-Perl.git

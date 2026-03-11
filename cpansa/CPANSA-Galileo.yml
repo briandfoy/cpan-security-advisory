@@ -20,7 +20,7 @@ advisories:
   severity: medium
 cpansa_version: 2
 distribution: Galileo
-last_checked: 1749751661
+last_checked: 1773231513
 latest_version: '0.043'
 metacpan: https://metacpan.org/pod/Galileo
 repo: http://github.com/jberger/Galileo

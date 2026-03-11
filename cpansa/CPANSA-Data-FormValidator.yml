@@ -24,7 +24,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Data-FormValidator
-last_checked: 1749751661
+last_checked: 1773231491
 latest_version: 4.88
 metacpan: https://metacpan.org/pod/Data::FormValidator
 repo: https://github.com/dnmfarrell/Data-FormValidator
