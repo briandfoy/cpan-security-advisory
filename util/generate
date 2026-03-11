@@ -23,8 +23,9 @@ use Mojo::JSON qw(decode_json encode_json);
 use PerlIO::gzip;
 use Ref::Util qw(is_plain_arrayref);
 
-use YAML::Tiny;
 use File::Temp;
+
+use Local::CPANSA qw(:cpan :reports);
 
 use subs qw(config message);
 
@@ -405,7 +406,7 @@ sub process_files ( $files ) {
 	foreach my $file ( $files->@* ) {
 		$indent++;
 		info "Reading $file", $indent;
-		my $yaml = YAML::Tiny->read($file)->[0];
+		my $yaml = load_report($file);
 		debug sprintf( "Found %d reports", scalar $yaml->{advisories}->@* ), $indent;
 		my %dists_in_file;
 		my $n = 0;
