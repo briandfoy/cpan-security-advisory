@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - "<0.083"
+  - <0.083
   cves:
   - CVE-2023-31486
   description: |
@@ -9,7 +9,7 @@ advisories:
 
     Resulting in a CWE-1188: Insecure Default Initialization of Resource weakness.
   fixed_versions:
-  - ">=0.083"
+  - '>=0.083'
   github_security_advisory:
   - GHSA-g56r-phrf-6pc4
   id: CPANSA-HTTP-Tiny-2023-31486
@@ -55,7 +55,7 @@ advisories:
   reported: 2013-11-27
 cpansa_version: 2
 distribution: HTTP-Tiny
-last_checked: 1749751661
-latest_version: '0.090'
+last_checked: 1773231522
+latest_version: '0.092'
 metacpan: https://metacpan.org/pod/HTTP::Tiny
 repo: https://github.com/Perl-Toolchain-Gang/HTTP-Tiny

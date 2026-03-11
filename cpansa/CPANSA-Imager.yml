@@ -104,7 +104,7 @@ advisories:
   reported: 2014-01-03
   severity: ~
 - affected_versions:
-  - '<=1.024'
+  - <=1.024
   cves:
   - CVE-2024-53901
   description: |
@@ -120,7 +120,7 @@ advisories:
   reported: 2024-11-17
   severity: moderate
 - affected_versions:
-  - '<0.50'
+  - <0.50
   cves:
   - CVE-2006-0053
   description: |
@@ -151,7 +151,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Imager
-last_checked: 1749751661
-latest_version: '1.027'
+last_checked: 1773231528
+latest_version: '1.029'
 metacpan: https://metacpan.org/pod/Imager
 repo: https://github.com/tonycoz/imager

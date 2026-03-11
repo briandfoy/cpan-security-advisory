@@ -32,7 +32,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-Server
-last_checked: 1749751661
-latest_version: '2.014'
+last_checked: 1773231563
+latest_version: '2.018'
 metacpan: https://metacpan.org/pod/Net::Server
 repo: ~

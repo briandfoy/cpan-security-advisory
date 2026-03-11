@@ -18,5 +18,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: Apache-Session
 last_checked: 1772703108
-latest_version: 2.12
+latest_version: 1.94
 metacpan: https://metacpan.org/pod/Apache::Session::Generate::MD5

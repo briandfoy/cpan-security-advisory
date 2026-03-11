@@ -344,7 +344,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Dpkg
-last_checked: 1749751661
-latest_version: v1.22.20
+last_checked: 1773231497
+latest_version: v1.23.4
 metacpan: https://metacpan.org/pod/Dpkg
 repo: https://git.dpkg.org/git/dpkg/dpkg

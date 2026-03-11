@@ -45,7 +45,7 @@ advisories:
   reported: 2021-04-23
   severity: ~
 - affected_versions:
-  - '==8.32'
+  - ==8.32
   cves:
   - CVE-2018-20211
   description: |
@@ -62,7 +62,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Image-ExifTool
-last_checked: 1749751661
-latest_version: '13.30'
+last_checked: 1773231527
+latest_version: '13.50'
 metacpan: https://metacpan.org/pod/Image::ExifTool
 repo: https://github.com/exiftool/exiftool

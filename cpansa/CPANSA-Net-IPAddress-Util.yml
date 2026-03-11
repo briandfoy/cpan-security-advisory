@@ -1,14 +1,11 @@
 ---
 advisories:
 - affected_versions:
-  - '<5.000'
+  - <5.000
   cves:
   - CVE-2021-47156
-  description: >
-    The Net::IPAddress::Util module before 5.000 for Perl does not
-    properly consider extraneous zero characters in an IP address string,
-    which (in some situations) allows attackers to bypass access control
-    that is based on IP addresses.
+  description: |
+    The Net::IPAddress::Util module before 5.000 for Perl does not properly consider extraneous zero characters in an IP address string, which (in some situations) allows attackers to bypass access control that is based on IP addresses.
   fixed_versions:
   - '>=5.000'
   github_security_advisory:
@@ -22,7 +19,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-IPAddress-Util
-last_checked: 1749751661
+last_checked: 1773231557
 latest_version: '5.001'
 metacpan: https://metacpan.org/pod/Net::IPAddress::Util
 repo: ~

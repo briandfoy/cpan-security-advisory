@@ -1,42 +1,60 @@
 ---
 advisories:
-  - affected_versions:
-      - <0.000042
-    cves:
-      - CVE-2025-15444
-    description: "Crypt::Sodium::XS module versions prior to 0.000042, for Perl, include a vulnerable version of libsodium  libsodium <= 1.0.20 or a version of libsodium released before December 30, 2025 contains a vulnerability documented as CVE-2025-69277  https://www.cve.org/CVERecord?id=CVE-2025-69277 .  The libsodium vulnerability states:  In atypical use cases involving certain custom cryptography or untrusted data to crypto_core_ed25519_is_valid_point, mishandles checks for whether an elliptic curve point is valid because it sometimes allows points that aren't in the main cryptographic group.  0.000042 includes a version of libsodium updated to 1.0.20-stable, released January 3, 2026, which includes a fix for the vulnerability."
-    embedded_vulnerability:
-      distributed_version: <-1.0.20
-      name: libsodium
-    fixed_versions:
-      - '>=0.000042'
-    github_security_advisory:
-      - GHSA-38vq-9wrc-xxh4
-    id: CPANSA-Crypt-Sodium-XS-2025-15444
-    references:
-      - https://00f.net/2025/12/30/libsodium-vulnerability/
-      - https://github.com/jedisct1/libsodium/commit/ad3004ec8731730e93fcfbbc824e67eadc1c1bae
-      - https://metacpan.org/dist/Crypt-Sodium-XS/changes
-    reported: 2026-01-06
-    severity: ~
-  - affected_versions:
-      - <0.001001
-    cves:
-      - CVE-2026-30910
-    description: 'Crypt::Sodium::XS versions through 0.001000 for Perl has potential integer overflows.  Combined aead encryption, combined signature creation, and bin2hex functions do not check that output size will be less than SIZE_MAX, which could lead to integer wraparound causing an undersized output buffer. This can cause a crash in bin2hex and encryption algorithms other than aes256gcm. For aes256gcm encryption and signatures, an undersized buffer could lead to buffer overflow.  Encountering this issue is unlikely as the message length would need to be very large.  For bin2hex the input size would have to be > SIZE_MAX / 2 For aegis encryption the input size would need to be > SIZE_MAX - 32U For other encryption the input size would need to be > SIZE_MAX - 16U For signatures the input size would need to be > SIZE_MAX - 64U'
-    fixed_versions:
-      - '>=0.001001'
-    github_security_advisory:
-      - GHSA-2qjg-jrhf-99vr
-    id: CPANSA-Crypt-Sodium-XS-2026-30910
-    references:
-      - https://metacpan.org/release/IAMB/Crypt-Sodium-XS-0.001001/changes
-      - http://www.openwall.com/lists/oss-security/2026/03/08/2
-    reported: 2026-03-08
-    severity: ~
+- affected_versions:
+  - <0.000042
+  cves:
+  - CVE-2025-15444
+  description: 'Crypt::Sodium::XS module versions prior to 0.000042, for Perl, include
+    a vulnerable version of libsodium  libsodium <= 1.0.20 or a version of libsodium
+    released before December 30, 2025 contains a vulnerability documented as CVE-2025-69277 
+    https://www.cve.org/CVERecord?id=CVE-2025-69277 .  The libsodium vulnerability
+    states:  In atypical use cases involving certain custom cryptography or untrusted
+    data to crypto_core_ed25519_is_valid_point, mishandles checks for whether an elliptic
+    curve point is valid because it sometimes allows points that aren''t in the main
+    cryptographic group.  0.000042 includes a version of libsodium updated to 1.0.20-stable,
+    released January 3, 2026, which includes a fix for the vulnerability.'
+  embedded_vulnerability:
+    distributed_version: <-1.0.20
+    name: libsodium
+  fixed_versions:
+  - '>=0.000042'
+  github_security_advisory:
+  - GHSA-38vq-9wrc-xxh4
+  id: CPANSA-Crypt-Sodium-XS-2025-15444
+  references:
+  - https://00f.net/2025/12/30/libsodium-vulnerability/
+  - https://github.com/jedisct1/libsodium/commit/ad3004ec8731730e93fcfbbc824e67eadc1c1bae
+  - https://metacpan.org/dist/Crypt-Sodium-XS/changes
+  reported: 2026-01-06
+  severity: ~
+- affected_versions:
+  - <0.001001
+  cves:
+  - CVE-2026-30910
+  description: Crypt::Sodium::XS versions through 0.001000 for Perl has potential
+    integer overflows.  Combined aead encryption, combined signature creation, and
+    bin2hex functions do not check that output size will be less than SIZE_MAX, which
+    could lead to integer wraparound causing an undersized output buffer. This can
+    cause a crash in bin2hex and encryption algorithms other than aes256gcm. For aes256gcm
+    encryption and signatures, an undersized buffer could lead to buffer overflow.  Encountering
+    this issue is unlikely as the message length would need to be very large.  For
+    bin2hex the input size would have to be > SIZE_MAX / 2 For aegis encryption the
+    input size would need to be > SIZE_MAX - 32U For other encryption the input size
+    would need to be > SIZE_MAX - 16U For signatures the input size would need to
+    be > SIZE_MAX - 64U
+  fixed_versions:
+  - '>=0.001001'
+  github_security_advisory:
+  - GHSA-2qjg-jrhf-99vr
+  id: CPANSA-Crypt-Sodium-XS-2026-30910
+  references:
+  - https://metacpan.org/release/IAMB/Crypt-Sodium-XS-0.001001/changes
+  - http://www.openwall.com/lists/oss-security/2026/03/08/2
+  reported: 2026-03-08
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-Sodium-XS
-last_checked: 1772970620
-latest_version: 0.001001i
+last_checked: 1773231478
+latest_version: '0.001001'
 metacpan: https://metacpan.org/pod/Crypt::Sodium::XS

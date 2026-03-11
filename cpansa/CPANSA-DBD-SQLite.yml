@@ -754,8 +754,8 @@ advisories:
   reported: 2018-03-17
   severity: high
 - affected_versions:
-  - "==1.55_06"
-  - "<=1.55_03"
+  - ==1.55_06
+  - <=1.55_03
   cves:
   - CVE-2017-10989
   description: |
@@ -785,7 +785,7 @@ advisories:
   reported: 2017-07-07
   severity: critical
 - affected_versions:
-  - '<=1.55_01'
+  - <=1.55_01
   cves:
   - CVE-2016-6153
   description: |
@@ -923,7 +923,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: DBD-SQLite
-last_checked: 1749751661
-latest_version: '1.76'
+last_checked: 1773231483
+latest_version: '1.78'
 metacpan: https://metacpan.org/pod/DBD::SQLite
 repo: https://github.com/DBD-SQLite/DBD-SQLite
