@@ -35,23 +35,6 @@ Perl.
 
 =cut
 
-BEGIN {
-use ExtUtils::MM_Any;
-no warnings qw(redefine);
-
-# get rid of the warning about README.pod, because I'm using it.
-# It's also in INSTALL.SKIP
-sub ExtUtils::MM_Any::libscan {
-    my($self,$path) = @_;
-
-    my($dirs,$file) = ($self->splitpath($path))[1,2];
-    return '' if grep /^(?:RCS|CVS|SCCS|\.svn|_darcs)$/,
-                     $self->splitdir($dirs), $file;
-
-    return $path;
-	}
-}
-
 use File::Spec::Functions qw(catfile);
 
 my $module    = __PACKAGE__;
@@ -108,7 +91,7 @@ my %WriteMakefile = (
 			},
 		},
 
-	'clean' => { FILES => "$dist-*" },
+	'clean' => { FILES => "$dist-* t/.last_run perl-cve-atom.xml generated_reports" },
 	);
 
 sub arguments { \%WriteMakefile }
@@ -130,6 +113,98 @@ sub do_it {
 	WriteMakefile( %$arguments );
 	}
 
+BEGIN {
+# remove the useless default `help` target so I can make my own
+use ExtUtils::MM_Unix;
+no warnings 'redefine';
+
+sub ExtUtils::MM_Unix::top_targets {
+# --- Target Sections ---
+
+    my($self) = shift;
+    my(@m);
+
+    push @m, $self->all_target, "\n" unless $self->{SKIPHASH}{'all'};
+
+    push @m, sprintf <<'EOF';
+pure_all :: config pm_to_blib subdirs linkext
+	$(NOECHO) $(NOOP)
+
+subdirs :: $(MYEXTLIB)
+	$(NOECHO) $(NOOP)
+
+config :: $(FIRST_MAKEFILE) blibdirs
+	$(NOECHO) $(NOOP)
+EOF
+
+    push @m, '
+$(O_FILES) : $(H_FILES)
+' if @{$self->{O_FILES} || []} && @{$self->{H} || []};
+
+#    push @m, q{
+# help :
+#	perldoc ExtUtils::MakeMaker
+#};
+
+    join('',@m);
+}
+
+
+
+}
+
+BEGIN {
+use ExtUtils::MM_Any;
+no warnings qw(redefine);
+
+# get rid of the warning about README.pod, because I'm using it.
+# It's also in INSTALL.SKIP
+sub ExtUtils::MM_Any::libscan {
+    my($self,$path) = @_;
+
+    my($dirs,$file) = ($self->splitpath($path))[1,2];
+    return '' if grep /^(?:RCS|CVS|SCCS|\.svn|_darcs)$/,
+                     $self->splitdir($dirs), $file;
+
+    return $path;
+	}
+}
+
+sub MY::postamble {
+	return <<'POSTAMBLE';
+GENERATED=t/.last_run perl-cve-atom.xml generated_reports
+CVE_FEED_FILE=perl-cve-atom.xml
+
+.PHONY: invert
+invert: ## turn the external_reports into CPANSA-style reports
+	$(PERL) util/invert-third-party.pl
+
+.PHONY: lint
+lint: invert ## lint the reports
+	$(PERL) util/lint_reports
+
+.PHONY: generate
+generate: invert ## recreate the data files
+	$(PERL) util/generate -o $@
+
+.PHONY: feed
+feed: $(CVE_FEED_FILE)
+
+$(CVE_FEED_FILE):
+	$(PERL) util/make_feed > $@
+
+.PHONY: test_yaml
+test_yaml: ## test all YAML files
+	env TEST_CHANGED_ONLY=0 prove -Ilib -b -r xt
+
+######################################################################
+# https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
+.PHONY: help ## Show all the Makefile targets with descriptions
+help: ## show a list of targets
+	@grep -E '^[a-zA-Z][/a-zA-Z0-9_.-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+POSTAMBLE
+	}
 
 no warnings;
 __PACKAGE__;
