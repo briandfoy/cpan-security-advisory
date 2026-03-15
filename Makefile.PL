@@ -91,7 +91,7 @@ my %WriteMakefile = (
 			},
 		},
 
-	'clean' => { FILES => "$dist-* t/.last_run perl-cve-atom.xml generated_reports" },
+	'clean' => { FILES => "$dist-* t/.last_run perl-cve-atom.xml" },
 	);
 
 sub arguments { \%WriteMakefile }
