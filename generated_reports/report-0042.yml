@@ -20,8 +20,8 @@ cpansa_version: 2
 distribution: Redis-hiredis
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:42 2026
+  date: Wed Mar 11 12:54:28 2026
   from: external_reports/hiredis.yml
-last_checked: 1772976702
+last_checked: 1773248068
 latest_version: v0.11.0
 repo: ~

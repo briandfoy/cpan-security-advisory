@@ -18,8 +18,8 @@ cpansa_version: 2
 distribution: WWW-ORCID
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:53 2026
+  date: Wed Mar 11 12:54:40 2026
   from: external_reports/jsoneditor.yml
-last_checked: 1772976713
+last_checked: 1773248080
 latest_version: 0.0402
 repo: https://github.com/LibreCat/WWW-ORCID.git

@@ -20,8 +20,8 @@ cpansa_version: 2
 distribution: EV-Hiredis
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:42 2026
+  date: Wed Mar 11 12:54:29 2026
   from: external_reports/hiredis.yml
-last_checked: 1772976702
+last_checked: 1773248069
 latest_version: 0.07
 repo: https://github.com/typester/EV-Hiredis.git

@@ -20,8 +20,8 @@ cpansa_version: 2
 distribution: MySQL-Admin
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:33 2026
+  date: Wed Mar 11 12:54:17 2026
   from: external_reports/bootstrap-select.yml
-last_checked: 1772976693
+last_checked: 1773248057
 latest_version: 1.18
 repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/

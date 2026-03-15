@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: UR
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:45 2026
+  date: Wed Mar 11 12:54:32 2026
   from: external_reports/jquery.yml
-last_checked: 1772976705
+last_checked: 1773248072
 latest_version: 0.47
 repo: git://github.com/genome/UR.git

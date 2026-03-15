@@ -18,8 +18,8 @@ cpansa_version: 2
 distribution: Net-Dropbear
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:38 2026
+  date: Wed Mar 11 12:54:23 2026
   from: external_reports/dropbear.yml
-last_checked: 1772976698
+last_checked: 1773248063
 latest_version: 0.16
 repo: https://github.com/atrodo/Net-Dropbear.git

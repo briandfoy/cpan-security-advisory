@@ -28,8 +28,8 @@ cpansa_version: 2
 distribution: Alien-FreeImage
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:39 2026
+  date: Wed Mar 11 12:54:26 2026
   from: external_reports/freeimage.yml
-last_checked: 1772976699
+last_checked: 1773248066
 latest_version: 1.001
 repo: https://github.com/kmx/alien-freeimage

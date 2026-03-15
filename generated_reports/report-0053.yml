@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Sidef
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:31:44 2026
+  date: Wed Mar 11 12:54:31 2026
   from: external_reports/jquery.yml
-last_checked: 1772976704
+last_checked: 1773248071
 latest_version: 26.01
 repo: https://github.com/trizen/sidef.git
