@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260315.002 2026-03-15T16:15:11Z
+	* data update for 2026-03-15
+
 20260311.002 2026-03-11T13:29:32Z
 	* note fix for Crypt::CBC (CVE-2025-2814
 	* stop using YAML::Tiny for internal tools; always use YAML::XS
