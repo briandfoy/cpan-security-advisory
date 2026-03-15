@@ -37,8 +37,8 @@ cpansa_version: 2
 distribution: Git-XS
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:31 2026
+  date: Sun Mar 15 12:06:40 2026
   from: external_reports/http-parser.yml
-last_checked: 1773248071
+last_checked: 1773590800
 latest_version: 0.02
 repo: ~

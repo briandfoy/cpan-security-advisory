@@ -28,8 +28,8 @@ cpansa_version: 2
 distribution: Win32-Printer
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:27 2026
+  date: Sun Mar 15 12:06:36 2026
   from: external_reports/freeimage.yml
-last_checked: 1773248067
+last_checked: 1773590796
 latest_version: v0.9.1
 repo: ~

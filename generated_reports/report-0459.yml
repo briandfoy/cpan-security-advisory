@@ -3,16 +3,16 @@ advisories:
   - affected_versions:
       - '>=1.8.1.8,<=1.8.1.10'
     cves:
-      - CVE-2016-0747
-    description: "The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 does not properly limit CNAME resolution, which allows remote attackers to cause a denial of service (worker process resource consumption) via vectors related to arbitrary name resolution.\n"
+      - CVE-2016-0742
+    description: "The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 allows remote attackers to cause a denial of service (invalid pointer dereference and worker process crash) via a crafted UDP DNS response.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-769v-gfhq-g2w7
-    id: CPANSA-Nginx-Perl-2016-0747-nginx
+      - GHSA-x98p-wfj9-8f25
+    id: CPANSA-Nginx-Perl-2016-0742-nginx
     references:
       - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1302589
       - http://www.ubuntu.com/usn/USN-2892-1
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1302587
       - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
       - http://www.debian.org/security/2016/dsa-3473
       - https://bto.bluecoat.com/security-advisory/sa115
@@ -22,13 +22,13 @@ advisories:
       - https://support.apple.com/kb/HT212818
       - http://seclists.org/fulldisclosure/2021/Sep/36
     reported: 2016-02-15
-    severity: medium
+    severity: high
 cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:28 2026
+  date: Sun Mar 15 12:08:24 2026
   from: external_reports/nginx.yml
-last_checked: 1772976808
+last_checked: 1773590904
 latest_version: v1.8.1.10
 repo: ~

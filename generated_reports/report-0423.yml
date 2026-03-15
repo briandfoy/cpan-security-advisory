@@ -3,29 +3,26 @@ advisories:
   - affected_versions:
       - '>=1.00,<=1.01'
     cves:
-      - CVE-2016-10087
-    description: "The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x before 1.6.27 allows context-dependent attackers to cause a NULL pointer dereference vectors involving loading a text chunk into a png structure, removing the text, and then adding another text chunk to the structure.\n"
+      - CVE-2017-12652
+    description: "libpng before 1.6.32 does not properly check the length of chunks against the user limit.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-r346-8vrh-m3wr
-    id: CPANSA-Prima-codecs-win32-2016-10087-libpng
+      - GHSA-94xg-qm4r-9r7c
+    id: CPANSA-Prima-codecs-win32-2017-12652-libpng
     references:
-      - http://www.openwall.com/lists/oss-security/2016/12/30/4
-      - http://www.openwall.com/lists/oss-security/2016/12/29/2
-      - http://www.securityfocus.com/bid/95157
-      - https://security.gentoo.org/glsa/201701-74
-      - https://usn.ubuntu.com/3712-2/
-      - https://usn.ubuntu.com/3712-1/
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2017-01-30
-    severity: high
+      - https://github.com/glennrp/libpng/blob/df7e9dae0c4aac63d55361e35709c864fa1b8363/ANNOUNCE
+      - http://www.securityfocus.com/bid/109269
+      - https://support.f5.com/csp/article/K88124225
+      - https://support.f5.com/csp/article/K88124225?utm_source=f5support&amp;utm_medium=RSS
+      - https://security.netapp.com/advisory/ntap-20220506-0003/
+    reported: 2019-07-10
+    severity: critical
 cpansa_version: 2
 distribution: Prima-codecs-win32
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:20 2026
+  date: Sun Mar 15 12:08:16 2026
   from: external_reports/libpng.yml
-last_checked: 1772976800
+last_checked: 1773590896
 latest_version: ~
 repo: ~

@@ -47,8 +47,8 @@ cpansa_version: 2
 distribution: Redland
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:21 2026
+  date: Sun Mar 15 12:08:17 2026
   from: external_reports/libraptor.yml
-last_checked: 1772976801
+last_checked: 1773590897
 latest_version: v1.0.5.4
 repo: ~

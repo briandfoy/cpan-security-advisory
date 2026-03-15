@@ -19,8 +19,8 @@ cpansa_version: 2
 distribution: Sereal-Encoder
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:57 2026
+  date: Sun Mar 15 12:08:50 2026
   from: external_reports/zstd.yml
-last_checked: 1772976837
+last_checked: 1773590930
 latest_version: 5.004
 repo: git://github.com/Sereal/Sereal.git

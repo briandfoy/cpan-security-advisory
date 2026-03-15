@@ -3,29 +3,63 @@ advisories:
   - affected_versions:
       - '>=0.01,<=3.0.3'
     cves:
-      - CVE-2016-10087
-    description: "The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x before 1.6.27 allows context-dependent attackers to cause a NULL pointer dereference vectors involving loading a text chunk into a png structure, removing the text, and then adding another text chunk to the structure.\n"
+      - CVE-2019-7317
+    description: "png_image_free in png.c in libpng 1.6.x before 1.6.37 has a use-after-free because png_image_free_function is called under png_safe_execute.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-r346-8vrh-m3wr
-    id: CPANSA-cppAdaptive2-2016-10087-libpng
+      - GHSA-m96g-x499-p5f9
+    id: CPANSA-cppAdaptive2-2019-7317-libpng
     references:
-      - http://www.openwall.com/lists/oss-security/2016/12/30/4
-      - http://www.openwall.com/lists/oss-security/2016/12/29/2
-      - http://www.securityfocus.com/bid/95157
-      - https://security.gentoo.org/glsa/201701-74
-      - https://usn.ubuntu.com/3712-2/
-      - https://usn.ubuntu.com/3712-1/
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2017-01-30
-    severity: high
+      - https://github.com/glennrp/libpng/issues/275
+      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
+      - https://seclists.org/bugtraq/2019/Apr/30
+      - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
+      - https://www.debian.org/security/2019/dsa-4435
+      - https://seclists.org/bugtraq/2019/Apr/36
+      - https://usn.ubuntu.com/3962-1/
+      - https://usn.ubuntu.com/3991-1/
+      - https://seclists.org/bugtraq/2019/May/56
+      - https://seclists.org/bugtraq/2019/May/59
+      - https://www.debian.org/security/2019/dsa-4448
+      - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
+      - https://access.redhat.com/errata/RHSA-2019:1265
+      - https://access.redhat.com/errata/RHSA-2019:1269
+      - https://access.redhat.com/errata/RHSA-2019:1267
+      - https://www.debian.org/security/2019/dsa-4451
+      - https://seclists.org/bugtraq/2019/May/67
+      - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
+      - https://usn.ubuntu.com/3997-1/
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
+      - https://access.redhat.com/errata/RHSA-2019:1310
+      - https://access.redhat.com/errata/RHSA-2019:1309
+      - https://access.redhat.com/errata/RHSA-2019:1308
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
+      - http://www.securityfocus.com/bid/108098
+      - https://security.netapp.com/advisory/ntap-20190719-0005/
+      - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+      - https://usn.ubuntu.com/4080-1/
+      - https://usn.ubuntu.com/4083-1/
+      - https://security.gentoo.org/glsa/201908-02
+      - https://access.redhat.com/errata/RHSA-2019:2494
+      - https://access.redhat.com/errata/RHSA-2019:2495
+      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
+      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
+      - https://access.redhat.com/errata/RHSA-2019:2585
+      - https://access.redhat.com/errata/RHSA-2019:2590
+      - https://access.redhat.com/errata/RHSA-2019:2592
+      - https://access.redhat.com/errata/RHSA-2019:2737
+      - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
+      - https://www.oracle.com/security-alerts/cpuoct2021.html
+    reported: 2019-02-04
+    severity: medium
 cpansa_version: 2
 distribution: cppAdaptive2
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:19 2026
+  date: Sun Mar 15 12:08:15 2026
   from: external_reports/libpng.yml
-last_checked: 1772976799
+last_checked: 1773590895
 latest_version: v3.0.3
 repo: ~

@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: MySQL-Admin
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:39 2026
+  date: Sun Mar 15 12:06:49 2026
   from: external_reports/jquery.yml
-last_checked: 1773248079
+last_checked: 1773590809
 latest_version: 1.18
 repo: https://sourceforge.net/p/lindnerei/code/ci/master/tree/

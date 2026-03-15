@@ -3,24 +3,21 @@ advisories:
   - affected_versions:
       - '>0.017.1,<0.018.1'
     cves:
-      - CVE-2026-22693
-    description: 'HarfBuzz is a text shaping engine. Prior to version 12.3.0, a null pointer dereference vulnerability exists in the SubtableUnicodesCache::create function located in src/hb-ot-cmap-table.hh. The function fails to check if hb_malloc returns NULL before using placement new to construct an object at the returned pointer address. When hb_malloc fails to allocate memory (which can occur in low-memory conditions or when using custom allocators that simulate allocation failures), it returns NULL. The code then attempts to call the constructor on this null pointer using placement new syntax, resulting in undefined behavior and a Segmentation Fault. This issue has been patched in version 12.3.0.'
+      - CVE-0000-0000
+    description: 'When debug messaging is enabled using hb_buffer_set_message_func, a maliciously crafted font can trigger a buffer overflow using a complicated sequence lookup, leading to unauthorised overwriting of other data.'
     fixed_versions: []
     github_security_advisory: []
-    id: CPANSA-HarfBuzz-Shaper-2026-22693-harfbuzz
+    id: CPANSA-HarfBuzz-Shaper-0000-0000-harfbuzz
     references:
-      - https://github.com/harfbuzz/harfbuzz/commit/1265ff8d990284f04d8768f35b0e20ae5f60daae
-      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-xvjr-f2r9-c7ww
-      - http://www.openwall.com/lists/oss-security/2026/01/11/1
-      - http://www.openwall.com/lists/oss-security/2026/01/12/1
-    reported: 2026-01-10
+      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-p965-5rr7-9mhq
+    reported: ~
     severity: ~
 cpansa_version: 2
 distribution: HarfBuzz-Shaper
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:27 2026
+  date: Sun Mar 15 12:06:37 2026
   from: external_reports/harfbuzz.yml
-last_checked: 1773248067
+last_checked: 1773590797
 latest_version: 0.033
 repo: https://github.com/sciurius/perl-HarfBuzz-Shaper.git

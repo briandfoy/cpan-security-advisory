@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: App-Netdisco
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:34 2026
+  date: Sun Mar 15 12:06:44 2026
   from: external_reports/jquery.yml
-last_checked: 1773248074
+last_checked: 1773590804
 latest_version: 2.097003
 repo: https://github.com/netdisco/netdisco

@@ -35,8 +35,8 @@ cpansa_version: 2
 distribution: Ukigumo-Agent
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:18 2026
+  date: Sun Mar 15 12:06:27 2026
   from: external_reports/bootstrap.yml
-last_checked: 1773248058
+last_checked: 1773590787
 latest_version: v0.1.8
 repo: git://github.com/ukigumo/Ukigumo-Agent.git

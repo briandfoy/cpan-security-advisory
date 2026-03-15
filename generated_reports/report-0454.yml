@@ -3,23 +3,32 @@ advisories:
   - affected_versions:
       - '==1.2.0.4,==1.2.0.5'
     cves:
-      - CVE-2014-3616
-    description: "nginx 0.5.6 through 1.7.4, when using the same shared ssl_session_cache or ssl_session_ticket_key for multiple servers, can reuse a cached SSL session for an unrelated context, which allows remote attackers with certain privileges to conduct \"virtual host confusion\" attacks.\n"
+      - CVE-2016-0742
+    description: "The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 allows remote attackers to cause a denial of service (invalid pointer dereference and worker process crash) via a crafted UDP DNS response.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-ch64-2v27-7pwp
-    id: CPANSA-Nginx-Perl-2014-3616-nginx
+      - GHSA-x98p-wfj9-8f25
+    id: CPANSA-Nginx-Perl-2016-0742-nginx
     references:
-      - http://www.debian.org/security/2014/dsa-3029
-      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html
-    reported: 2014-12-08
-    severity: ~
+      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
+      - http://www.ubuntu.com/usn/USN-2892-1
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1302587
+      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
+      - http://www.debian.org/security/2016/dsa-3473
+      - https://bto.bluecoat.com/security-advisory/sa115
+      - http://www.securitytracker.com/id/1034869
+      - https://security.gentoo.org/glsa/201606-06
+      - https://access.redhat.com/errata/RHSA-2016:1425
+      - https://support.apple.com/kb/HT212818
+      - http://seclists.org/fulldisclosure/2021/Sep/36
+    reported: 2016-02-15
+    severity: high
 cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar  8 09:33:27 2026
+  date: Sun Mar 15 12:08:23 2026
   from: external_reports/nginx.yml
-last_checked: 1772976807
+last_checked: 1773590903
 latest_version: v1.8.1.10
 repo: ~

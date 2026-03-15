@@ -3,34 +3,40 @@ advisories:
   - affected_versions:
       - '>=0.01,<=0.08'
     cves:
-      - CVE-2016-10735
-    description: "In Bootstrap 3.x before 3.4.0 and 4.x-beta before 4.0.0-beta.2, XSS is possible in the data-target attribute, a different vulnerability than CVE-2018-14041.\n"
+      - CVE-2018-14040
+    description: "Prototype Pollution is a vulnerability affecting JavaScript. Prototype Pollution refers to the ability to inject properties into existing JavaScript language construct prototypes, such as objects. JavaScript allows all Object attributes to be altered, including their magical attributes such as _proto_, constructor and prototype. An attacker manipulates these attributes to overwrite, or pollute, a JavaScript application object prototype of the base object by injecting other values. Properties on the Object.prototype are then inherited by all the JavaScript objects through the prototype chain. When that happens, this leads to either denial of service by triggering JavaScript exceptions, or it tampers with the application source code to force the code path that the attacker injects, thereby leading to remote code execution.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-4p24-vmcr-4gqj
-    id: CPANSA-Plack-Middleware-Bootstrap-2016-10735-bootstrap
+      - GHSA-3wqf-4x89-9g79
+    id: CPANSA-Plack-Middleware-Bootstrap-2018-14040-bootstrap
     references:
-      - https://github.com/twbs/bootstrap/pull/26460
-      - https://github.com/twbs/bootstrap/pull/23687
-      - https://github.com/twbs/bootstrap/pull/23679
-      - https://github.com/twbs/bootstrap/issues/27915#issuecomment-452140906
-      - https://github.com/twbs/bootstrap/issues/20184
-      - https://blog.getbootstrap.com/2018/12/13/bootstrap-3-4-0/
-      - https://access.redhat.com/errata/RHSA-2019:1456
-      - https://access.redhat.com/errata/RHBA-2019:1076
-      - https://access.redhat.com/errata/RHBA-2019:1570
-      - https://access.redhat.com/errata/RHSA-2019:3023
-      - https://access.redhat.com/errata/RHSA-2020:0132
-      - https://access.redhat.com/errata/RHSA-2020:0133
+      - https://github.com/twbs/bootstrap/pull/26630
+      - https://github.com/twbs/bootstrap/issues/26625
+      - https://github.com/twbs/bootstrap/issues/26423
+      - https://blog.getbootstrap.com/2018/07/12/bootstrap-4-1-2/
+      - https://lists.debian.org/debian-lts-announce/2018/08/msg00027.html
+      - https://seclists.org/bugtraq/2019/May/18
+      - http://packetstormsecurity.com/files/152787/dotCMS-5.1.1-Vulnerable-Dependencies.html
+      - http://seclists.org/fulldisclosure/2019/May/13
+      - http://seclists.org/fulldisclosure/2019/May/11
+      - http://seclists.org/fulldisclosure/2019/May/10
+      - https://lists.apache.org/thread.html/52e0e6b5df827ee7f1e68f7cc3babe61af3b2160f5d74a85469b7b0e@%3Cdev.superset.apache.org%3E
+      - https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+      - https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+      - https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+      - http://packetstormsecurity.com/files/156743/OctoberCMS-Insecure-Dependencies.html
+      - https://lists.apache.org/thread.html/r3dc0cac8d856bca02bd6997355d7ff83027dcfc82f8646a29b89b714@%3Cissues.hbase.apache.org%3E
+      - https://lists.apache.org/thread.html/rd0e44e8ef71eeaaa3cf3d1b8b41eb25894372e2995ec908ce7624d26@%3Ccommits.pulsar.apache.org%3E
+      - https://www.oracle.com/security-alerts/cpuApr2021.html
       - https://www.tenable.com/security/tns-2021-14
-    reported: 2019-01-09
+    reported: 2018-07-13
     severity: medium
 cpansa_version: 2
 distribution: Plack-Middleware-Bootstrap
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:20 2026
+  date: Sun Mar 15 12:06:28 2026
   from: external_reports/bootstrap.yml
-last_checked: 1773248060
+last_checked: 1773590788
 latest_version: 0.08
 repo: git://github.com/hitode909/Plack-Middleware-Bootstrap.git

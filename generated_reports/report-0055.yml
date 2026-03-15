@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Squatting
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:32 2026
+  date: Sun Mar 15 12:06:41 2026
   from: external_reports/jquery.yml
-last_checked: 1773248072
+last_checked: 1773590801
 latest_version: 0.83
 repo: http://github.com/beppu/squatting

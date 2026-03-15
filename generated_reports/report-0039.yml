@@ -3,27 +3,27 @@ advisories:
   - affected_versions:
       - '>=0.9.0,<=0.9.1'
     cves:
-      - CVE-2009-3743
-    description: "Off-by-one error in the Ins_MINDEX function in the TrueType bytecode interpreter in Ghostscript before 8.71 allows remote attackers to execute arbitrary code or cause a denial of service (heap memory corruption) via a malformed TrueType font in a document that trigger an integer overflow and a heap-based buffer overflow.\n"
+      - CVE-2016-9601
+    description: "ghostscript before version 9.21 is vulnerable to a heap based buffer overflow that was found in the ghostscript jbig2_decode_gray_scale_image function which is used to decode halftone segments in a JBIG2 image. A document (PostScript or PDF) with an embedded, specially crafted, jbig2 image could trigger a segmentation fault in ghostscript.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-3p47-jqhp-gxp9
-    id: CPANSA-Win32-Printer-2009-3743-jquery
+      - GHSA-vf87-jj8q-h556
+    id: CPANSA-Win32-Printer-2016-9601-jquery
     references:
-      - http://www.kb.cert.org/vuls/id/JALR-87YGN8
-      - http://www.kb.cert.org/vuls/id/644319
-      - http://www.securitytracker.com/id?1024785
-      - https://rhn.redhat.com/errata/RHSA-2012-0095.html
-      - http://security.gentoo.org/glsa/glsa-201412-17.xml
-      - http://www.securityfocus.com/archive/1/514892/100/0/threaded
-    reported: 2010-08-26
-    severity: ~
+      - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-9601
+      - https://bugs.ghostscript.com/show_bug.cgi?id=697457
+      - http://git.ghostscript.com/?p=jbig2dec.git;a=commit;h=e698d5c11d27212aa1098bc5b1673a3378563092
+      - https://www.debian.org/security/2017/dsa-3817
+      - https://security.gentoo.org/glsa/201706-24
+      - http://www.securityfocus.com/bid/97095
+    reported: 2018-04-24
+    severity: medium
 cpansa_version: 2
 distribution: Win32-Printer
 generated:
   by: util/invert-third-party.pl
-  date: Wed Mar 11 12:54:27 2026
+  date: Sun Mar 15 12:06:37 2026
   from: external_reports/ghostscript.yml
-last_checked: 1773248067
+last_checked: 1773590797
 latest_version: v0.9.1
 repo: ~
