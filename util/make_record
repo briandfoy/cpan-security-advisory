@@ -164,7 +164,7 @@ use Local::CPANSA;
 use Local::Config::make_record;
 
 use Mojo::Util qw(dumper);
-use YAML;
+use YAML::XS qw(Dump LoadFile);
 
 run( @ARGV ) unless caller;
 
@@ -177,9 +177,9 @@ sub run ( @args ) {
 	my $existing = do {
 		if( -e $report_path ) {
 			say "Path <$report_path> exists";
-			my $data = eval { YAML::LoadFile( $report_path ) };
+			my $data = eval { LoadFile( $report_path ) };
 			if( $@ ) {
-				die "Could not load existing file <$report_path>: $!\n";
+				die "Could not load existing file <$report_path>: $@\n";
 				}
 			$data;
 			}
@@ -236,7 +236,7 @@ sub run ( @args ) {
 			}
 		};
 
-	my $string = YAML::Dump($existing);
-
-	print { $fh } $string;
+	print { $fh } Dump($existing);
 	}
+
+sub dumper { state $rc = require Data::Dumper; Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump }
