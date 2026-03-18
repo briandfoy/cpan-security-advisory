@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260318.001 2026-03-18T21:50:56Z
+	* data udpate for 2026-03-18
+	* CVE-2026-4177 for YAML::Syck
+
 20260315.002 2026-03-15T16:15:11Z
 	* data update for 2026-03-15
 
