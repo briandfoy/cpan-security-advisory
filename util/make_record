@@ -177,7 +177,11 @@ sub run ( @args ) {
 	my $existing = do {
 		if( -e $report_path ) {
 			say "Path <$report_path> exists";
-			eval { YAML::LoadFile( $report_path ) };
+			my $data = eval { YAML::LoadFile( $report_path ) };
+			if( $@ ) {
+				die "Could not load existing file <$report_path>: $!\n";
+				}
+			$data;
 			}
 		else {
 			say "Path <$report_path> does not exist";
@@ -235,8 +239,4 @@ sub run ( @args ) {
 	my $string = YAML::Dump($existing);
 
 	print { $fh } $string;
-	}
-
-sub rt_n_to_url ( $rt ) {
-	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
 	}

@@ -516,6 +516,16 @@ sub load_report ( $report_path ) {
 	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
 	}
 
+=item * rt_n_to_url(N)
+
+Returns the I<rt.cpan.org> URL for ticket C<N>.
+
+=cut
+
+sub rt_n_to_url ( $rt ) {
+	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
+	}
+
 =item * save_report( PATH, HASHREF )
 
 Save the data for the report.
