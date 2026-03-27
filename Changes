@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260327.002 2026-03-27T21:51:53Z
+	* data update for 2026-03-27
+	* CVE-2006-10002, CVE-2006-10003 for XML::Parser
+
 20260318.001 2026-03-18T21:50:56Z
 	* data udpate for 2026-03-18
 	* CVE-2026-4177 for YAML::Syck
