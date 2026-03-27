@@ -1,0 +1,53 @@
+---
+advisories:
+- affected_versions:
+  - <=2.45
+  cves:
+  - CVE-2006-10002
+  description: XML::Parser versions through 2.45 for Perl could overflow the pre-allocated
+    buffer size cause a heap corruption (double free or corruption) and crashes.  A
+    :utf8 PerlIO layer, parse_stream() in Expat.xs could overflow the XML input buffer
+    because Perl's read() returns decoded characters while SvPV() gives back multi-byte
+    UTF-8 bytes that can exceed the pre-allocated buffer size. This can cause heap
+    corruption (double free or corruption) and crashes.
+  fixed_versions:
+  - '>=2.48'
+  github_security_advisory:
+  - GHSA-h943-hrx6-86cq
+  id: CPANSA-XML-Parser-2006-10002
+  references:
+  - https://github.com/cpan-authors/XML-Parser/commit/56b0509dfc6b559cd7555ea81ee62e3622069255.patch
+  - https://github.com/cpan-authors/XML-Parser/issues/64
+  - https://metacpan.org/release/TODDR/XML-Parser-2.46/changes
+  - https://rt.cpan.org/Ticket/Display.html?id=19859
+  - http://www.openwall.com/lists/oss-security/2026/03/19/1
+  - http://www.openwall.com/lists/oss-security/2026/03/22/3
+  reported: 2026-03-19
+  severity: ~
+- affected_versions:
+  - <=2.47
+  cves:
+  - CVE-2006-10003
+  description: XML::Parser versions through 2.47 for Perl has an off-by-one heap buffer
+    overflow in st_serial_stack.  In the case (stackptr == stacksize - 1), the stack
+    will NOT be expanded. Then the new value will be written at location (++stackptr),
+    which equals stacksize and therefore falls just outside the allocated buffer.  The
+    bug can be observed when parsing an XML file with very deep element nesting
+  fixed_versions:
+  - '>=2.48'
+  github_security_advisory:
+  - GHSA-x2wr-f89p-cqwh
+  id: CPANSA-XML-Parser-2006-10003
+  references:
+  - https://github.com/cpan-authors/XML-Parser/commit/3eb9cc95420fa0c3f76947c4708962546bf27cfd.patch
+  - https://github.com/cpan-authors/XML-Parser/issues/39
+  - https://rt.cpan.org/Ticket/Display.html?id=19860
+  - http://www.openwall.com/lists/oss-security/2026/03/19/2
+  reported: 2026-03-19
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: XML-Parser
+last_checked: 1774646193
+latest_version: '2.54'
+metacpan: https://metacpan.org/pod/XML::Parser
