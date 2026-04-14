@@ -10,8 +10,7 @@ advisories:
   github_security_advisory: []
   id: CPANSA-Storable-2017-01
   references:
-  - https://metacpan.org/changes/distribution/Storable
-  - https://cxsecurity.com/issue/WLB-2007120031
+  - https://metacpan.org/release/RURBAN/Storable-3.05/changes
   reported: 2017-01-29
 cpansa_version: 2
 distribution: Storable
