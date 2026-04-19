@@ -17,8 +17,7 @@ advisories:
   reported: 2016-07-27
   severity: high
 - affected_versions:
-  - '>=3.05'
-  - <=3.11
+  - '>=3.05,<=3.11'
   cves:
   - CVE-2021-36770
   description: |

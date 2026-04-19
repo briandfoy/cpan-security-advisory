@@ -26,8 +26,7 @@ advisories:
   reported: 2011-01-14
   severity: ~
 - affected_versions:
-  - '>=1.14'
-  - <=1.25
+  - '>=1.14,<=1.25'
   cves:
   - CVE-2009-3024
   description: |
