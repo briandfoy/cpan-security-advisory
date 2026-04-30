@@ -60,6 +60,33 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2023-36328
   reported: 2025-06-11
   severity: ~
+- affected_versions:
+  - <0.088
+  cves:
+  - CVE-2026-41564
+  description: CryptX versions before 0.088 for Perl do not reseed the Crypt::PK PRNG
+    state after forking.  The Crypt::PK::RSA, Crypt::PK::DSA, Crypt::PK::DH, Crypt::PK::ECC,
+    Crypt::PK::Ed25519 and Crypt::PK::X25519 modules seed a per-object PRNG state
+    in their constructors and reuse it without fork detection. A Crypt::PK::* object
+    created before `fork()` shares byte-identical PRNG state with every child process,
+    and any randomized operation they perform can produce identical output, including
+    key generation. Two ECDSA or DSA signatures from different processes are enough
+    to recover the signing private key through nonce-reuse key recovery.  This affects
+    preforking services such as the Starman web server, where a Crypt::PK::* object
+    loaded at startup is inherited by every worker process.
+  fixed_versions:
+  - '>=0.088'
+  github_security_advisory:
+  - GHSA-24c2-gp6c-24c6
+  id: CPANSA-CryptX-2026-41564
+  references:
+  - https://github.com/DCIT/perl-CryptX/commit/9a1dd3e0c27d68e32450be5538b864c2b115ee15.patch
+  - https://github.com/DCIT/perl-CryptX/security/advisories/GHSA-24c2-gp6c-24c6
+  - https://metacpan.org/release/MIK/CryptX-0.088
+  - http://www.openwall.com/lists/oss-security/2026/04/23/2
+  - https://github.com/DCIT/perl-CryptX/security/advisories/GHSA-24c2-gp6c-24c6
+  reported: 2026-04-23
+  severity: ~
 cpansa_version: 2
 distribution: CryptX
 last_checked: 1773231480
