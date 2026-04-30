@@ -12,6 +12,28 @@ advisories:
   references:
   - https://metacpan.org/release/RURBAN/Storable-3.05/changes
   reported: 2017-01-29
+- affected_versions:
+  - <3.05
+  cves:
+  - CVE-2017-20230
+  description: Storable versions before 3.05 for Perl has a stack overflow.  The retrieve_hook
+    function stored the length of the class name into a signed integer but in read
+    operations treated the length as unsigned. This allowed an attacker to craft data
+    that could trigger the overflow.
+  fixed_versions:
+  - '>=3.05'
+  github_security_advisory:
+  - GHSA-6r7m-2wh8-438w
+  id: CPANSA-Storable-2017-20230
+  references:
+  - https://github.com/Perl/perl5/commit/a258c17c6937f79529c8319a829310e09cdbd216.patch
+  - https://github.com/Perl/perl5/issues/15831
+  - https://metacpan.org/release/RURBAN/Storable-3.05/changes
+  - https://www.nntp.perl.org/group/perl.perl5.porters/2017/01/msg242533.html
+  - https://www.nntp.perl.org/group/perl.perl5.porters/2017/01/msg242703.html
+  - http://www.openwall.com/lists/oss-security/2026/04/21/5
+  reported: 2026-04-21
+  severity: ~
 cpansa_version: 2
 distribution: Storable
 last_checked: 1773231589
