@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - '>=v0.3.0,<v0.7.8'
+  cves:
+  - CVE-2026-7040
+  description: Text::Minify::XS versions from v0.3.0 before v0.7.8 for Perl have a
+    heap overflow when processing some malformed UTF-8 characters.  The minify functions
+    mishandled some malformed UTF-8 characters, leading to heap corruption.  Note
+    that the minify_utf8 function is an alias for minify.
+  fixed_versions:
+  - '>=v0.7.8'
+  github_security_advisory:
+  - GHSA-jqhf-vv4h-77h2
+  id: CPANSA-Text-Minify-XS-2026-7040
+  references:
+  - https://github.com/robrwo/Text-Minify-XS/security/advisories/GHSA-jqhf-vv4h-77h2
+  - https://metacpan.org/release/RRWO/Text-Minify-XS-v0.7.8/changes
+  - http://www.openwall.com/lists/oss-security/2026/04/27/5
+  reported: 2026-04-27
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Text-Minify-XS
+last_checked: 1777527623
+latest_version: v0.7.9
+metacpan: https://metacpan.org/pod/Text::Minify::XS
