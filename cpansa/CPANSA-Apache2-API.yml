@@ -1,0 +1,32 @@
+---
+advisories:
+- affected_versions:
+  - <=v0.5.2
+  cves:
+  - CVE-2026-5088
+  description: Apache::API::Password versions through v0.5.2 for Perl can generate
+    insecure random values for salts.  The _make_salt and _make_salt_bcrypt methods
+    will attept to load Crypt::URandom and then Bytes::Random::Secure to generate
+    random bytes for the salt.  If those modules are unavailable, it will simply return
+    16 bytes generated with Perl's built-in rand function.  The rand function is unsuitable
+    for cryptographic use.  These salts are used for password hashing.
+  fixed_versions:
+  - '>=v0.5.3'
+  github_security_advisory:
+  - GHSA-r6g6-6h6f-xcmj
+  id: CPANSA-Apache2-API-2026-5088
+  references:
+  - https://metacpan.org/pod/Crypt::URandom
+  - https://metacpan.org/release/JDEGUEST/Apache2-API-v0.5.2/view/lib/Apache2/API/Password.pod
+  - https://metacpan.org/release/JDEGUEST/Apache2-API-v0.5.3/changes
+  - https://security.metacpan.org/docs/guides/random-data-for-security.html
+  - http://www.openwall.com/lists/oss-security/2026/04/15/4
+  - http://www.openwall.com/lists/oss-security/2026/04/15/5
+  reported: 2026-04-15
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Apache2-API
+last_checked: 1777527213
+latest_version: '0.005003'
+metacpan: https://metacpan.org/pod/Apache2::API
