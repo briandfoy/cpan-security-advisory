@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260426.001 2026-04-30T00:48:45Z
+	* data update for 2026-04-26
+
 20260419.002 2026-04-19T16:48:53Z
 	* data update for 2026-04-19
 	* fix from haarg for a couple of improperly split affected_versions (#393)
