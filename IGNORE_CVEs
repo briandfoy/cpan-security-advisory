@@ -221,3 +221,10 @@ CVE-2025-43881    Improper validation of specified quantity in input issue exist
 CVE-2025-54769    An authenticated, read-only user can upload a file and perform a directory
 CVE-2026-28769    A path traversal vulnerability exists in the /IDC_Logging/checkifdone.cgi
 CVE-2026-23759    Perle IOLAN STS/SCS terminal server models with firmware versions prior to 6.0
+CVE-2026-34791    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34792    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34793    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34794    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34795    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34796    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-34797    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
