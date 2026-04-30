@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.4018
+  cves:
+  - CVE-2026-40560
+  description: 'Starman versions before 0.4018 for Perl allows HTTP Request Smuggling
+    via Improper Header Precedence.  Starman incorrectly prioritizes "Content-Length"
+    over "Transfer-Encoding: chunked" when both headers are present in an HTTP request.
+    Per RFC 7230 3.3.3, Transfer-Encoding must take precedence.  An attacker could
+    exploit this to smuggle malicious HTTP requests via a front-end reverse proxy.'
+  fixed_versions:
+  - '>=0.4018'
+  github_security_advisory:
+  - GHSA-gwjf-hg8j-jwvr
+  id: CPANSA-Starman-2026-40560
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc7230#section-3.3.3
+  - https://github.com/miyagawa/Starman/commit/ced205f0805027e9d9c0731f8c40b104220604ed.patch
+  - https://metacpan.org/release/MIYAGAWA/Starman-0.4018/changes
+  - http://www.openwall.com/lists/oss-security/2026/04/29/1
+  reported: 2026-04-29
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Starman
+last_checked: 1777527671
+latest_version: '0.4018'
+metacpan: https://metacpan.org/pod/Starman
