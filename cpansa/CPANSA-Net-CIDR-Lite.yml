@@ -18,6 +18,60 @@ advisories:
   - https://metacpan.org/pod/Net::CIDR::Lite
   reported: 2024-03-18
   severity: ~
+- affected_versions:
+  - <0.23
+  cves:
+  - CVE-2026-40198
+  description: 'Net::CIDR::Lite versions before 0.23 for Perl does not validate IPv6
+    group count, which may allow IP ACL bypass.  _pack_ipv6() does not check that
+    uncompressed IPv6 addresses (without ::) have exactly 8 hex groups. Inputs like
+    "abcd", "1:2:3", or "1:2:3:4:5:6:7" are accepted and produce packed values of
+    wrong length (3, 7, or 15 bytes instead of 17).  The packed values are used internally
+    for mask and comparison operations. find() and bin_find() use Perl string comparison
+    (lt/gt) on these values, and comparing strings of different lengths gives wrong
+    results. This can cause find() to incorrectly report an address as inside or outside
+    a range.  Example:    my $cidr = Net::CIDR::Lite->new("::/8");   $cidr->find("1:2:3");  #
+    invalid input, incorrectly returns true  This is the same class of input validation
+    issue as CVE-2021-47154 (IPv4 leading zeros) previously fixed in this module.  See
+    also CVE-2026-40199, a related issue in the same function affecting IPv4 mapped
+    IPv6 addresses.'
+  fixed_versions:
+  - '>=0.23'
+  github_security_advisory:
+  - GHSA-c25q-mqx5-m6v8
+  id: CPANSA-Net-CIDR-Lite-2026-40198
+  references:
+  - https://github.com/stigtsp/Net-CIDR-Lite/commit/25d65f85dbe4885959a10471725ec9d250a589c3.patch
+  - https://metacpan.org/release/STIGTSP/Net-CIDR-Lite-0.23/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-40199
+  reported: 2026-04-10
+  severity: ~
+- affected_versions:
+  - <0.23
+  cves:
+  - CVE-2026-40199
+  description: 'Net::CIDR::Lite versions before 0.23 for Perl mishandles IPv4 mapped
+    IPv6 addresses, which may allow IP ACL bypass.  _pack_ipv6() includes the sentinel
+    byte from _pack_ipv4() when building the packed representation of IPv4 mapped
+    addresses like ::ffff:192.168.1.1. This produces an 18 byte value instead of 17
+    bytes, misaligning the IPv4 part of the address.  The wrong length causes incorrect
+    results in mask operations (bitwise AND truncates to the shorter operand) and
+    in find() / bin_find() which use Perl string comparison (lt/gt). This can cause
+    find() to incorrectly match or miss addresses.  Example:    my $cidr = Net::CIDR::Lite->new("::ffff:192.168.1.0/120");   $cidr->find("::ffff:192.168.2.0");  #
+    incorrectly returns true  This is triggered by valid RFC 4291 IPv4 mapped addresses
+    (::ffff:x.x.x.x).  See also CVE-2026-40198, a related issue in the same function
+    affecting malformed IPv6 addresses.'
+  fixed_versions:
+  - '>=0.23'
+  github_security_advisory:
+  - GHSA-932w-96j4-j35v
+  id: CPANSA-Net-CIDR-Lite-2026-40199
+  references:
+  - https://github.com/stigtsp/Net-CIDR-Lite/commit/b7166b1fa17b3b14b4c795ace5b3fbf71a0bd04a.patch
+  - https://metacpan.org/release/STIGTSP/Net-CIDR-Lite-0.23/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-40198
+  reported: 2026-04-10
+  severity: ~
 cpansa_version: 2
 distribution: Net-CIDR-Lite
 last_checked: 1773231552
