@@ -1,0 +1,32 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-5085
+  description: Solstice::Session versions through 1440 for Perl generates session
+    ids insecurely.  The _generateSessionID method returns an MD5 digest seeded by
+    the epoch time, a random hash reference, a call to the built-in rand() function
+    and the process id.  The same method is used in the _generateID method in Solstice::Subsession,
+    which is part of the same distribution.  The epoch time may be guessed, if it
+    is not leaked in the HTTP Date header. Stringified hash refences will contain
+    predictable content. The built-in rand() function is seeded by 16-bits and is
+    unsuitable for security purposes. The process id comes from a small set of numbers.  Predictable
+    session ids could allow an attacker to gain access to systems.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-4g94-jfqp-p4f7
+  id: CPANSA-Solstice-2026-5085
+  references:
+  - https://metacpan.org/dist/Solstice/source/lib/Solstice/Session.pm#L481
+  - https://metacpan.org/dist/Solstice/source/lib/Solstice/Subsession.pm#L105
+  - https://security.metacpan.org/docs/guides/random-data-for-security.html
+  - http://www.openwall.com/lists/oss-security/2026/04/13/2
+  reported: 2026-04-13
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Solstice
+last_checked: 1777527026
+latest_version: '3364'
+metacpan: https://metacpan.org/pod/Solstice::Session
