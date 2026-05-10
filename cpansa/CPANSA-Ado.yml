@@ -24,8 +24,8 @@ advisories:
   reported: 2026-04-08
   severity: ~
 cpansa_version: 2
-darkpan: ~
-distribution: ~
+darkpan: true
+distribution: Ado
 last_checked: 1778400837
 latest_version: ~
 metacpan: https://metacpan.org/pod/Ado::Sessions
