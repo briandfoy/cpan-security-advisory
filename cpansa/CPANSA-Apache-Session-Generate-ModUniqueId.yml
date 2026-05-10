@@ -1,0 +1,34 @@
+---
+advisories:
+- affected_versions:
+  - '>=1.54'
+  cves:
+  - CVE-2026-5081
+  description: Apache::Session::Generate::ModUniqueId versions from 1.54 through 1.94
+    for Perl session ids are insecure.  Apache::Session::Generate::ModUniqueId (added
+    in version 1.54) uses the value of the UNIQUE_ID environment variable for the
+    session id. The UNIQUE_ID variable is set by the Apache mod_unique_id plugin,
+    which generates unique ids for the request. The id is based on the IPv4 address,
+    the process id, the epoch time, a 16-bit counter and a thread index, with no obfuscation.  The
+    server IP is often available to the public, and if not available, can be guessed
+    from previous session ids being issued. The process ids may also be guessed from
+    previous session ids. The timestamp is easily guessed (and leaked in the HTTP
+    Date response header).  The purpose of mod_unique_id is to assign a unique id
+    to requests so that events can be correlated in different logs. The id is not
+    designed, nor is it suitable for security purposes.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-546v-xqjf-qgcr
+  id: CPANSA-Apache-Session-2026-5081
+  references:
+  - https://httpd.apache.org/docs/current/mod/mod_unique_id.html
+  - https://metacpan.org/pod/Apache::Session::Generate::Random
+  - http://www.openwall.com/lists/oss-security/2026/05/06/6
+  reported: 2026-05-06
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Apache-Session
+last_checked: 1778399034
+latest_version: '0.02'
+metacpan: https://metacpan.org/pod/Apache::Session::Generate::ModUniqueId
