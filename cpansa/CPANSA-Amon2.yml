@@ -1,0 +1,37 @@
+---
+advisories:
+- affected_versions:
+  - <6.18
+  cves:
+  - CVE-2025-15604
+  description: Amon2 versions before 6.17 for Perl use an insecure random_string implementation
+    for security functions.  In versions 6.06 through 6.16, the random_string function
+    will attempt to read bytes from the /dev/urandom device, but if that is unavailable
+    then it generates bytes by concatenating a SHA-1 hash seeded with the built-in
+    rand() function, the PID, and the high resolution epoch time.  The PID will come
+    from a small set of numbers, and the epoch time may be guessed, if it is not leaked
+    from the HTTP Date header. The built-in rand function is unsuitable for cryptographic
+    usage.  Before version 6.06, there was no fallback when /dev/urandom was not available.  Before
+    version 6.04, the random_string function used the built-in rand() function to
+    generate a mixed-case alphanumeric string.  This function may be used for generating
+    session ids, generating secrets for signing or encrypting cookie session data
+    and generating tokens used for Cross Site Request Forgery (CSRF) protection.
+  fixed_versions:
+  - '>=6.18'
+  github_security_advisory:
+  - GHSA-7r2j-hgh9-jqqx
+  id: CPANSA-Amon2-2025-15604
+  references:
+  - https://github.com/tokuhirom/Amon/pull/135
+  - https://metacpan.org/release/TOKUHIROM/Amon2-6.17/changes
+  - https://metacpan.org/release/TOKUHIROM/Amon2-6.17/diff/TOKUHIROM/Amon2-6.16#lib/Amon2/Util.pm
+  - https://security.metacpan.org/docs/guides/random-data-for-security.html
+  - http://www.openwall.com/lists/oss-security/2026/03/28/4
+  reported: 2026-03-28
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Amon2
+last_checked: 1778397632
+latest_version: '6.18'
+metacpan: https://metacpan.org/pod/Amon2
