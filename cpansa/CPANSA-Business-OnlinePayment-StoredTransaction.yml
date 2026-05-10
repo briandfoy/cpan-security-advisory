@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2025-15618
+  description: Business::OnlinePayment::StoredTransaction versions through 0.01 for
+    Perl uses an insecure secret key.  Business::OnlinePayment::StoredTransaction
+    generates a secret key by using a MD5 hash of a single call to the built-in rand
+    function, which is unsuitable for cryptographic use.  This key is intended for
+    encrypting credit card transaction data.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-7rq2-v6rc-96jw
+  id: CPANSA-Business-OnlinePayment-StoredTransaction-2025-15618
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=>0
+  - https://metacpan.org/dist/Business-OnlinePayment-StoredTransaction/source/lib/Business/OnlinePayment/StoredTransaction.pm#L64-75
+  - https://security.metacpan.org/patches/B/Business-OnlinePayment-StoredTransaction/0.01/CVE-2025-15618-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/03/31/7
+  reported: 2026-03-31
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Business-OnlinePayment-StoredTransaction
+last_checked: 1778398010
+latest_version: '0.01'
+metacpan: https://metacpan.org/pod/Business::OnlinePayment::StoredTransaction
