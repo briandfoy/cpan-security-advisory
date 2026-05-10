@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.32
+  cves:
+  - CVE-2026-40561
+  description: 'Starlet versions through 0.31 for Perl allows HTTP Request Smuggling
+    via Improper Header Precedence.  Starlet incorrectly prioritizes "Content-Length"
+    over "Transfer-Encoding: chunked" when both headers are present in an HTTP request.
+    Per RFC 7230 3.3.3, Transfer-Encoding must take precedence.  An attacker could
+    exploit this to smuggle malicious HTTP requests via a front-end reverse proxy.'
+  fixed_versions:
+  - '>=0.32'
+  github_security_advisory:
+  - GHSA-2xqx-75wg-w86v
+  id: CPANSA-Starlet-2026-40561
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc7230#section-3.3.3
+  - https://github.com/kazuho/Starlet/commit/a7d5dfd1862aafa43e5eaca0fdb6acf4cc15b2d0.patch
+  - https://metacpan.org/release/KAZUHO/Starlet-0.32/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/03/1
+  reported: 2026-05-03
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Starlet
+last_checked: 1778398809
+latest_version: '0.32'
+metacpan: https://metacpan.org/pod/Starlet
