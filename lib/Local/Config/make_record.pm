@@ -70,12 +70,16 @@ sub new_meta ( $self, $config ) {
 			}
 		else {
 			state $rc = require MetaCPAN::Client;
-			my $mcpan = MetaCPAN::Client->new;
-			my $package = $mcpan->package($config->namespace);
-			my $dist = $mcpan->distribution($package->distribution);
-			my $repo;
-			$repo = $dist->github->{source} if keys  $dist->github->%*;
-			($package, $dist->name, $package->version, $dist->github->{source} );
+			my( $package, $dist_name, $version, $repo );
+			eval {
+				my $mcpan = MetaCPAN::Client->new;
+				my $package = $mcpan->package($config->namespace);
+				$version = $package->version;
+				my $dist = $mcpan->distribution($package->distribution);
+				$dist_name = $dist->name;
+				$repo = eval { $dist->github->{source} } if keys $dist->github->%*;
+				};
+			($package, $dist_name, $version, $repo );
 			}
 		};
 
