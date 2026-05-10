@@ -228,3 +228,5 @@ CVE-2026-34794    Endian Firewall version 3.3.25 and prior allow authenticated u
 CVE-2026-34795    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
 CVE-2026-34796    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
 CVE-2026-34797    Endian Firewall version 3.3.25 and prior allow authenticated users to execu
+CVE-2026-29202    Insufficient input validation of the `plugin` parameter of the `create_user
+CVE-2026-44128    SEPPmail Secure Email Gateway before version 15.0.2.1 allows unauthenticate
