@@ -36,6 +36,26 @@ advisories:
   - https://security.metacpan.org/docs/guides/random-data-for-security.html
   reported: 2025-07-16
   severity: ~
+- affected_versions:
+  - <0.21
+  cves:
+  - CVE-2014-125112
+  description: Plack::Middleware::Session::Cookie versions through 0.21 for Perl allows
+    remote code execution.  Plack::Middleware::Session::Cookie versions through 0.21
+    has a security vulnerability where it allows an attacker to execute arbitrary
+    code on the server during deserialization of the cookie data, when there is no
+    secret used to sign the cookie.
+  fixed_versions:
+  - '>=0.21'
+  github_security_advisory:
+  - GHSA-58qr-v987-vh6w
+  id: CPANSA-Plack-Middleware-Session-2014-125112
+  references:
+  - https://gist.github.com/miyagawa/2b8764af908a0dacd43d
+  - https://metacpan.org/release/MIYAGAWA/Plack-Middleware-Session-0.23-TRIAL/changes
+  - http://www.openwall.com/lists/oss-security/2026/03/26/2
+  reported: 2026-03-26
+  severity: ~
 cpansa_version: 2
 distribution: Plack-Middleware-Session
 last_checked: 1773231574
