@@ -1,0 +1,25 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2013-10075
+  description: Apache::Session versions through 1.94 for Perl re-creates deleted sessions.  The
+    session stores Apache::Session::Store::File and Apache::Session::Store::DB_File
+    will create a session that does not exist.  This can lead to sessions being revived,
+    potentially with data that was to be deleted.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-c9p5-pwmj-4f88
+  id: CPANSA-Apache-Session-2013-10075
+  references:
+  - https://rt.cpan.org/Public/Bug/Display.html?id=83525
+  - http://www.openwall.com/lists/oss-security/2026/05/08/12
+  reported: 2026-05-08
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Apache-Session
+last_checked: 1778399135
+latest_version: '1.94'
+metacpan: https://metacpan.org/pod/Apache::Session
