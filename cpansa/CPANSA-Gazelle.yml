@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.50
+  cves:
+  - CVE-2026-40562
+  description: 'Gazelle versions through 0.49 for Perl allows HTTP Request Smuggling
+    via Improper Header Precedence.  Gazelle incorrectly prioritizes "Content-Length"
+    over "Transfer-Encoding: chunked" when both headers are present in an HTTP request.
+    Per RFC 7230 3.3.3, Transfer-Encoding must take precedence.  An attacker could
+    exploit this to smuggle malicious HTTP requests via a front-end reverse proxy.'
+  fixed_versions:
+  - '>=0.50'
+  github_security_advisory:
+  - GHSA-mjw2-gf6p-382h
+  id: CPANSA-Gazelle-2026-40562
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc7230#section-3.3.3
+  - https://metacpan.org/release/KAZEBURO/Gazelle-0.50/changes
+  - https://security.metacpan.org/patches/G/Gazelle/0.49/CVE-2026-40562-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/05/06/7
+  reported: 2026-05-06
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Gazelle
+last_checked: 1778398909
+latest_version: '0.50'
+metacpan: https://metacpan.org/pod/Gazelle
