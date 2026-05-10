@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-5083
+  description: Ado::Sessions versions through 0.935 for Perl generates insecure session
+    ids.  The session id is generated from a SHA-1 hash seeded with the built-in rand
+    function, the epoch time, and the PID. The PID will come from a small set of numbers,
+    and the epoch time may be guessed, if it is not leaked from the HTTP Date header.
+    The built-in rand function is unsuitable for cryptographic usage.  Predicable
+    session ids could allow an attacker to gain access to systems.  Note that Ado
+    is no longer maintained, and has been removed from the CPAN index. It is still
+    available on BackPAN.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-3vcr-g3hm-2qr2
+  id: CPANSA--2026-5083
+  references:
+  - https://backpan.perl.org/authors/id/B/BE/BEROV/Ado-0.935.tar.gz
+  - https://github.com/kberov/Ado/issues/112
+  - https://security.metacpan.org/docs/guides/random-data-for-security.html
+  - http://www.openwall.com/lists/oss-security/2026/04/08/7
+  reported: 2026-04-08
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: ~
+last_checked: 1778400837
+latest_version: ~
+metacpan: https://metacpan.org/pod/Ado::Sessions
