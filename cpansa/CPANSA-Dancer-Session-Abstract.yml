@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-5080
+  description: Dancer::Session::Abstract versions through 1.3522 for Perl generates
+    session ids insecurely.  The session id is generated from summing the character
+    codepoints of the absolute pathname with the process id, the epoch time and calls
+    to the built-in rand() function to return a number between 0 and 999-billion,
+    and concatenating that result three times.  The path name might be known or guessed
+    by an attacker, especially for applications known to be written using Dancer with
+    standard installation locations.  The epoch time can be guessed by an attacker,
+    and may be leaked in the HTTP header.  The process id comes from a small set of
+    numbers, and workers may have sequential process ids.  The built-in rand() function
+    is seeded with 32-bits and is considered unsuitable for security applications.  Predictable
+    session ids could allow an attacker to gain access to systems.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-97p2-62hq-g269
+  id: CPANSA-Dancer-2026-5080
+  references:
+  - https://metacpan.org/release/BIGPRESH/Dancer-1.3522/source/lib/Dancer/Session/Abstract.pm#L85-102
+  - https://security.metacpan.org/patches/D/Dancer/1.3522/CVE-2026-5080-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/04/30/19
+  reported: 2026-04-30
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Dancer
+last_checked: 1778398693
+latest_version: '1.3522'
+metacpan: https://metacpan.org/pod/Dancer::Session::Abstract
