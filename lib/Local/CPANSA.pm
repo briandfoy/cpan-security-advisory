@@ -2,41 +2,16 @@ package Local::CPANSA;
 use v5.26;
 use experimental qw(signatures);
 
+use Carp;
 use Exporter qw(import);
 
-our @EXPORT = qw(
-	);
+our(@EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-our @EXPORT_OK = qw(
-	assemble_advisory
-	cve_ignored
-	cve_recorded
-	get_all_reports
-	get_dist_info
-	get_github_cve_issues
-	get_ignored_cves
-	get_recorded_cves
-	get_ua
-	get_unevaluated_cve
-	github_cve_issue_exists
-	latest_on_cpan
-	load_report
-	save_report
-	);
+our %EXPORT_TAGS;
+$EXPORT_TAGS{'all'}     = [ @EXPORT, @EXPORT_OK ];
+$EXPORT_TAGS{'default'} = [ @EXPORT ];
 
-our %EXPORT_TAGS = (
-	all => \@EXPORT_OK,
-	cpan    => [qw(
-		latest_on_cpan
-		get_dist_info
-		)],
-	default => \@EXPORT,
-	reports => [qw(
-		get_all_reports
-		load_report
-		save_report
-		)],
-	);
+use Local::Attributes;
 
 =encoding utf8
 
@@ -159,7 +134,7 @@ the C<::> (double colon).
 
 =cut
 
-sub get_dist_info ( $package_or_dist ) {
+sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
 	state $rc = do {
 		unless( eval { require MetaCPAN::Client } ) {
 			die <<~'HERE';
@@ -186,18 +161,18 @@ sub get_dist_info ( $package_or_dist ) {
 	return \@items;
 	}
 
-=item * get_unevaluated_cve()
+=item * get_all_cve()
+
+Takes the raw CVE search results and reduces it to an array ref of hashes, where
+each hash has keys for C<cve>, C<description>, C<url>, C<recorded>, and C<ignored>.
 
 =cut
 
-sub get_unevaluated_cve () {
-	my $search_results = get_cve_search_results();
-
+sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 	my @results;
-	foreach my $v ( $search_results->{vulnerabilities}->@* ) {
+	foreach my $v ( get_cve_search_results()->@* ) {
 		next unless exists $v->{cve};
 		my $cve  = $v->{cve}{id};
-		next if Local::CPANSA::cve_recorded( $cve ) || Local::CPANSA::cve_ignored( $cve );
 
 		my( $desc ) =
 			map { substr( $_-> {'value'}, 0, 75 ) =~ s/\v+/ /gr }
@@ -206,18 +181,46 @@ sub get_unevaluated_cve () {
 
 		my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
 
-		push @results, { cve => $cve, description => $desc, url => $url};
+		push @results, {
+			cve         => $cve,
+			description => $desc,
+			ignored     => cve_ignored($cve),
+			recorded    => cve_recorded($cve),
+			unevaluated => !( cve_ignored($cve) or cve_recorded($cve) ),
+			url         => $url
+			};
 		}
+
+	@results =
+		map  { $_->[0] }
+		sort { $a->[1] <=> $b->[1] or $a->[2] <=> $b->[2] }
+		map  { [ $_, $_->{'cve'} =~ /-(\d+)-(\d+)/a ] }
+		@results;
 
 	return \@results;
 	}
 
-sub get_cve_search_results ( $keyword = 'Perl' ) {
+=item * get_unevaluated_cve()
+
+=cut
+
+sub get_unevaluated_cve :Export_Ok() :Export_Tag("cve") {
+	[ grep { $_->{'unevaluated'} } get_all_cve()->@* ]
+	}
+
+sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' ) {
 	my $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
 	my $json = get_ua()
 		->get( $url, form => { keywordSearch => $keyword } )
 		->res
 		->json;
+
+	unless( exists $json->{'vulnerabilities'} ) {
+		carp "Problem with the JSON from NIST: Did not have 'vulnerabilities' key";
+		return [];
+		}
+
+	return $json->{'vulnerabilities'};
 	}
 
 =item * guess_package(ITEM)
@@ -295,13 +298,86 @@ sub report_path ( $package ) {
 	-e $try ? $try : ()
 	}
 
+=item * get_file_path( REL_PATH )
+
+Find the full path to C<REL_PATH> under the repository root (from C<find_root>).
+There might be multiple paths to the same C<REL_PATH>, so this returns an array
+ref for every matching path this finds. If it finds no files, the array ref
+is empty.
+
+The array is ordered by the most shallow files first (fewest subdirectories) and
+alphabetical for two paths at the same level.
+
+=cut
+
+
+sub get_file_path :Export_Ok :Export_Tag("file") ($rel_path) {
+	state $rc = require File::Find;
+
+	my @found = ();
+	my $wanted = sub {
+		return unless -d $File::Find::name;
+
+		my $candidate = catfile($File::Find::name, $rel_path);
+		return unless -e $candidate;
+
+		push @found, $candidate;
+		};
+	File::Find::find( $wanted, find_root() );
+
+	@found =
+		map  { $_->[0] }
+		sort { $a->[1] <=> $b->[1] or $a->[0] cmp $b->[0] }
+		map  {
+			[ $_, scalar Mojo::File->new($_)->to_array->@* ]
+			}
+		@found;
+
+	return \@found;
+	}
+
+=item * find_root( [ STARTING_FILE [, TARGET] ] )
+
+Attempt to find the top level of the repo starting from C<STARTING_FILE>. By
+default, it does this by looking for the first directory with a F<Makefile.PL>
+directory, but you can choose the target in the optional second argument.
+
+If you don't specify C<STARTING_FILE>, it uses the path to this module. Since
+all of these files are expected to be inside the repo, it doesn't matter where we
+start.
+
+This remembers the right path for the rest of the lifetime of the program
+and always returns that same value.
+
+=cut
+
+sub find_root :Export_Ok :Export_Tag("file") ( $file = __FILE__, $target = 'Makefile.PL' ) {
+	state $rc = require Mojo::File;
+	state $root;
+	return $root if defined $root;
+
+    my $dir = Mojo::File->new(__FILE__)->to_abs->dirname;
+
+    while(1) {
+
+    	if( -e $dir->child($target) ) {
+    		$root = $dir;
+    		return $root;
+    		}
+    	last if $dir eq $dir->dirname; # got to root
+        $dir = $dir->dirname;
+    	}
+
+    return;
+	}
+
 =item * get_all_reports
 
 Returns an arrayref of paths for every CPANSA report.
 
 =cut
 
-sub get_all_reports ( $base_dir = 'cpansa' ) {
+sub get_all_reports :Export_Ok :Export_Tag("reports") ( $base_dir = 'cpansa' ) {
 	opendir( my $dh, $base_dir ) or die "Could not open <$base_dir>: $!";
 	my @files = sort map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
 	return \@files;
@@ -403,11 +479,28 @@ sub get_github_token () {
 	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN}
 	}
 
-=item * get_ignored_cves
+=item * get_ignored_cves( [PATH] )
+
+Loads the data in the ignored CVE file, which is a whitespace-separated
+list of CVE number (i.e. C<CVE-2026-1234>) and a short description. This
+returns a hash ref where the keys are the CVE number and the values is
+meaningless:
+
+	my $ignored = get_ignored_cves();
+	foreach my $cve ( @cves ) {
+		next if $ignored->{$cve};
+		...
+		}
+
+This is mostly useful to check if a particular CVE has already been evaluated
+and judged to be outside our scope.
+
+The optional argument is the path to that file. By default, this is the file
+F<IGNORED_CVEs> under the repository root.
 
 =cut
 
-sub get_ignored_cves ( $file = 'IGNORE_CVEs' ) {
+sub get_ignored_cves :Export_Ok() :Export_Tag("cve") ( $file = get_file_path('IGNORE_CVEs')->[0] ) {
 	open my $fh, '<:encoding(UTF-8)', $file or do {
 		warn "Could not open <$file>: $! - Skipping ignored CVEs\n";
 		return {};
@@ -427,7 +520,7 @@ sub get_ignored_cves ( $file = 'IGNORE_CVEs' ) {
 
 =cut
 
-sub get_recorded_cves ( $base = 'cpansa' ) {
+sub get_recorded_cves :Export_Ok() :Export_Tag("cve") ( $base = get_file_path('cpansa')->[0] ) {
 	opendir( my $dh, $base ) or die "Could not open <$base>: $!";
 
 	my %found;
@@ -498,7 +591,7 @@ Returns the latest version on CPAN.
 
 =cut
 
-sub latest_on_cpan ($dist) {
+sub latest_on_cpan :Export_Ok :Export_Tag("cpan") ($dist) {
 	my $d = get_dist_info($dist);
 	my($latest) = grep { $_->status eq 'latest' } $d->@*;
 	defined $latest ? $latest->version : undef;
@@ -511,7 +604,7 @@ you never need to know the details about how the report is stored.
 
 =cut
 
-sub load_report ( $report_path ) {
+sub load_report :Export_Ok :Export_Tag("reports") ( $report_path ) {
 	state $rc = require YAML::XS;
 	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
 	}
@@ -532,7 +625,7 @@ Save the data for the report.
 
 =cut
 
-sub save_report ( $report_path, $hashref ) {
+sub save_report :Export_Ok :Export_Tag("reports") ( $report_path, $hashref ) {
 	state $rc = require YAML::XS;
 	eval { YAML::XS::DumpFile( $report_path, $hashref ) };
 	}
