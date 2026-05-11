@@ -18,13 +18,49 @@ list_cves - show all the CVEs that mention "perl"
 
 =head1 SYNOPSIS
 
+Run this from the top level of the repository:
+
 	% perl util/list_cves
+	...
+	✔  CVE-2026-41564    CryptX versions before 0.088 for Perl do not reseed the Crypt::PK PRNG s
+	*  CVE-2026-44128    SEPPmail Secure Email Gateway before version 15.0.2.1 allows unauthentic
+	?  CVE-2026-45179    Plack::Middleware::Statsd versions before 0.9.0 for Perl may leak user I
+
+	Summary
+	-------
+	*: 162
+	✔: 280
+	?: 5
 
 =head1 DESCRIPTION
 
+This is just a quick command-line app to see what the reports for Perl are. A
+check () in the first column means we already have recorded the report. An asterisk
+(C<*>) means that we have evaluated the report and are ignoring it. A question
+mark (C<?)> means that we have not yet evaluated that report.
 
+You need to run this from the top level of the repository since it depends on
+modules that are not distributed and not installed (in F<lib/Local>).
+
+=head1 SOURCE AVAILABILITY
+
+This source is in Github:
+
+	http://github.com/briandfoy/cpan-security-advisory
+
+=head1 AUTHOR
+
+brian d foy, C<< <brian d foy> >>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright © 2022-2026, brian d foy, All Rights Reserved.
+
+You may redistribute this under the terms of the Artistic License 2.0.
 
 =cut
+
+__PACKAGE__;
 
 my %Count;
 foreach my $v ( get_all_cve()->@* ) {
@@ -37,7 +73,7 @@ foreach my $v ( get_all_cve()->@* ) {
 	$Count{$mark}++;
 	print colored(
 		[ $color ],
-		sprintf "%s  %-17s %s\n", $mark, $cve, $v->{'description'}
+		sprintf "%s  %-17s %s\n", $mark, $cve, substr( $v->{'description'}, 0, 72 )
 		);
 	}
 
@@ -45,3 +81,6 @@ say "\nSummary\n-------";
 foreach my $mark ( keys %Count ) {
 	say "$mark: $Count{$mark}";
 	}
+
+exit( !! $Count{'?'} );
+

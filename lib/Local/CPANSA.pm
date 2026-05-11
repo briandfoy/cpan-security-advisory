@@ -175,7 +175,7 @@ sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 		my $cve  = $v->{cve}{id};
 
 		my( $desc ) =
-			map { substr( $_-> {'value'}, 0, 75 ) =~ s/\v+/ /gr }
+			map {  $_->{'value'} }
 			grep { $_->{'lang'} eq 'en' }
 			$v->{cve}{descriptions}->@*;
 
