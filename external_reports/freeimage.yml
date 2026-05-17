@@ -22,6 +22,17 @@ advisories:
   - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
   reported: 2015-09-29
   severity: ~
+- affected_versions: <=3.18.0
+  cve: CVE-2025-65803
+  description: |
+    An integer overflow in the psdParser::ReadImageData function of FreeImage v3.18.0 and before allows attackers to cause a Denial of Service (DoS) via supplying a crafted PSD file.
+  github_security_advisory:
+  - GHSA-hwvj-wq82-3x6r
+  references:
+  - https://freeimage.sourceforge.io/download.html
+  - https://gist.github.com/1mxml/cabd6d972557d9d992fe5f4f6ca1dd87
+  reported: 2025-12-10
+  severity: medium
 cpansa_version: 2
 name: freeimage
 perl_distributions:
@@ -29,7 +40,7 @@ perl_distributions:
   - distributed_library_version: 3.16.0
     perl_module_versions: '>=0.001,<=0.011'
   - distributed_library_version: 3.17.0
-    perl_module_versions: '>=1.000_1,<=1.001'
+    perl_module_versions: '>=1.000_1'
   last_version_checked: '1.001'
   name: Alien-FreeImage
 - affected:
