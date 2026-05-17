@@ -53,9 +53,30 @@ advisories:
   references:
   - https://metacpan.org/dist/HTTP-Tiny/changes
   reported: 2013-11-27
+- affected_versions:
+  - <0.093
+  cves:
+  - CVE-2026-7010
+  description: HTTP::Tiny versions before 0.093 for Perl do not validate CRLF in HTTP
+    request lines or control field header values.  The unvalidated inputs are the
+    method and URI in the request line, the URL host that becomes the `Host:` header,
+    and HTTP/1.1 control data field values.  An attacker who controls one of these
+    inputs, for example a user supplied URL passed to a webhook or URL fetch endpoint,
+    can inject additional headers and smuggle requests to the upstream server.
+  fixed_versions:
+  - '>=0.093'
+  github_security_advisory:
+  - GHSA-x3qr-8f53-fg74
+  id: CPANSA-HTTP-Tiny-2026-7010
+  references:
+  - https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/d73c7651e82ace02693842df55928b6c3ae7c38d.patch
+  - https://metacpan.org/release/HAARG/HTTP-Tiny-0.093-TRIAL/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/11/17
+  reported: 2026-05-11
+  severity: ~
 cpansa_version: 2
 distribution: HTTP-Tiny
-last_checked: 1773231522
-latest_version: '0.092'
+last_checked: 1779056283
+latest_version: '0.094'
 metacpan: https://metacpan.org/pod/HTTP::Tiny
 repo: https://github.com/Perl-Toolchain-Gang/HTTP-Tiny
