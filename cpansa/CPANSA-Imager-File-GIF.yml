@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - <1.003
+  cves:
+  - CVE-2026-8454
+  description: Imager::File::GIF versions through 1.002 for Perl allow a heap out
+    of bounds (OOB) write on crafted multi-frame GIF files.  Imager::File::GIF's i_readgif_multi_low
+    allocates a single per-row buffer GifRow sized for the GIF's global screen width
+    'SWidth' and reuses it across every image in the file.  The page-match branch
+    validates Image.Width + Image.Left > SWidth before each DGifGetLine write, but
+    the parallel skip-image branch at imgif.c:790-805 calls DGifGetLine(GifFile, GifRow,
+    Width) with no such check.
+  fixed_versions:
+  - '>=1.003'
+  github_security_advisory:
+  - GHSA-8r2w-8p2v-h4g4
+  id: CPANSA-Imager-File-GIF-2026-8454
+  references:
+  - https://github.com/tonycoz/imager/commit/782e9c06cc75a0f7eed383f39522f51f44598b04.patch
+  - https://metacpan.org/release/TONYC/Imager-File-GIF-1.003/source/Changes
+  - http://www.openwall.com/lists/oss-security/2026/05/15/15
+  reported: 2026-05-15
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Imager-File-GIF
+last_checked: 1779056957
+latest_version: '1.003'
+metacpan: https://metacpan.org/pod/Imager::File::GIF
