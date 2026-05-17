@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <0.9.0
+  cves:
+  - CVE-2026-46719
+  description: Net::Statsd::Lite versions before 0.9.0 for Perl allowed metric injections.  The
+    metric names were not checked for newlines, colons or pipes. Metrics generated
+    from untrusted sources could inject additional statsd metrics.
+  fixed_versions:
+  - '>=0.9.0'
+  github_security_advisory:
+  - GHSA-2x39-j499-jv87
+  id: CPANSA-Net-Statsd-Lite-2026-46719
+  references:
+  - https://github.com/robrwo/Net-Statsd-Lite/commit/e1a8ab866d75c2827982134e9cf7e51a7f771153.patch
+  - https://metacpan.org/release/RRWO/Net-Statsd-Lite-v0.9.0/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/16/9
+  reported: 2026-05-16
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-Statsd-Lite
+last_checked: 1779059733
+latest_version: v0.10.1
+metacpan: https://metacpan.org/pod/Net::Statsd::Lite
