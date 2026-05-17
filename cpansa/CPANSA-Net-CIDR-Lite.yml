@@ -72,6 +72,28 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2026-40198
   reported: 2026-04-10
   severity: ~
+- affected_versions:
+  - <0.24
+  cves:
+  - CVE-2026-45190
+  description: 'Net::CIDR::Lite versions before 0.24 for Perl does not properly validate
+    IP address and CIDR mask inputs, which may allow IP ACL bypass.  Inputs containing
+    a trailing newline or non-ASCII digit characters pass the validators but are then
+    re-encoded by the parser to a different address than the input string spelled.
+    find() and bin_find() can match or miss addresses as a result.  Example:    my
+    $cidr = Net::CIDR::Lite->new();   $cidr->add("::1\n/128");   $cidr->find("::1a");  #
+    incorrectly returns true  See also CVE-2026-45191.'
+  fixed_versions:
+  - '>=0.24'
+  github_security_advisory:
+  - GHSA-5vf8-328m-mxj5
+  id: CPANSA-Net-CIDR-Lite-2026-45190
+  references:
+  - https://github.com/stigtsp/Net-CIDR-Lite/commit/ca9542adec87110556601d7ce48381ea8d13e692.patch
+  - https://metacpan.org/release/STIGTSP/Net-CIDR-Lite-0.24/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-45191
+  reported: 2026-05-10
+  severity: ~
 cpansa_version: 2
 distribution: Net-CIDR-Lite
 last_checked: 1773231552
