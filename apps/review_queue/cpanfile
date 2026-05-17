@@ -1,0 +1,4 @@
+requires 'perl', '5.042';
+
+requires 'Mojolicious', '>= 9.0';
+requires 'Mojolicious::Plugin::JSONConfig';

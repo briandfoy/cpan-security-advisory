@@ -1,0 +1,43 @@
+<%
+my $bg_color = do { if($cve->{'recorded'}) { '#98FB984D' } elsif($cve->{'ignored'}) { '#ff000030' } else { '#00FFFF4D'   } };
+my $type     = do { if($cve->{'recorded'}) { 'recorded'  } elsif($cve->{'ignored'}) { 'ignored'   } else { 'unevaluated' } };
+my $expanded_template = sprintf 'partials/%s-expanded', $cve->{'type'};
+my $id = $cve->{'cve'};
+%>
+
+<div id="item-<%= $id %>"
+		class="list-item border border-secondary rounded mb-1 pt-2 <%= $type %>"
+		style="background-color: <%= $bg_color %> !important"
+		>
+    <div class="d-flex justify-content-between">
+    	<div id="title-<%= $id %>">
+    		<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1"><%= $id %><span></p>
+    	</div>
+    	<div>
+			<a
+				data-target="#details-<%= $id %>"
+				role="button"
+				class="mr-1 toggle-link"
+				data-toggle="collapse"
+				data-tooltip="collapse"
+				aria-expanded="false"
+				aria-controls="details-<%= $id %>"
+			>
+			<span class="bi bi-plus-square when-collapsed"></span>
+			<span class="bi bi-dash-square when-expanded"></span>
+			</a>
+    	</div>
+	</div>
+
+	<div class="collapse" id="details-<%= $id %>">
+		<div id="desc-<%= $id %>">
+			<%= include $expanded_template, cve => $cve, id => $id %>
+		</div>
+	</div>
+</div>
+
+<style>
+.toggle-link .when-expanded { display: none; }
+.toggle-link[aria-expanded="true"] .when-collapsed { display: none; }
+.toggle-link[aria-expanded="true"] .when-expanded { display: inline; }
+</style>

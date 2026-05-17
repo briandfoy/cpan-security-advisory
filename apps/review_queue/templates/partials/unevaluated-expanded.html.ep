@@ -1,0 +1,43 @@
+			<p class="item-description pl-2 pr-2"><%= $cve->{'description'} %></p>
+
+			<div>
+				<ul>
+				<% foreach my $url ( $cve->{'references'}->@* ) { %>
+					<li><a href="<%= $url %>"><%= $url %></a></li>
+				<% } %>
+				</ul>
+			</div>
+
+			<form>
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-package" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Package</label>
+					<div class="col-sm-9"><input type="text" name="package" id="<%= $id %>-package" class="form-control"></div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-ghsa" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">GHSA</label>
+					<div class="col-sm-9"><input type="text" name="ghsa-id" id="<%= $id %>-ghsa" class="form-control" value="<%= $cve->{'ghsa'} %>"></div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-affected-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Affected versions</label>
+					<div class="col-sm-9"><input type="text" name="affected-versions" id="<%= $id %>-affected-versions" class="form-control"></div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-fixed-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Fixed versions</label>
+					<div class="col-sm-9"><input type="text" name="fixed-versions" id="<%= $id %>-fixed-versions" class="form-control"></div>
+				</div>
+
+				<div class="form-group row no-gutters">
+					<div class="col-sm-12 d-flex justify-content-end pr-3">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="container">
+				<pre>
+				<%= Mojo::Util::dumper($cve) %>
+				</pre>
+			</div>
