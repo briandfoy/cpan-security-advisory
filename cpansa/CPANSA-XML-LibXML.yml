@@ -30,6 +30,29 @@ advisories:
   - https://rt.cpan.org/Public/Bug/Display.html?id=122246
   - https://lists.debian.org/debian-lts-announce/2017/11/msg00017.html
   reported: 2015-04-23
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-8177
+  description: XML::LibXML versions through 2.0210 for Perl read out-of-bounds heap
+    memory when parsing XML node names containing truncated UTF-8 byte sequences.  A
+    node name ending in the middle of a multi byte UTF-8 sequence causes the parser
+    to read past the end of the input string into adjacent heap memory.  Any Perl
+    process that passes attacker controlled strings to XML::LibXML's DOM node-name
+    methods can reach this path on the default API. The likely consequence is a crash,
+    causing denial of service.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-g5h8-x64v-qf5h
+  id: CPANSA-XML-LibXML-2026-8177
+  references:
+  - https://github.com/cpan-authors/XML-LibXML/commit/15652bd905a6c9dda59a81b14d4766adbbae2ea8.patch
+  - https://github.com/cpan-authors/XML-LibXML/issues/146
+  - https://github.com/cpan-authors/XML-LibXML/pull/149
+  - http://www.openwall.com/lists/oss-security/2026/05/10/8
+  - http://www.openwall.com/lists/oss-security/2026/05/11/2
+  reported: 2026-05-10
+  severity: ~
 cpansa_version: 2
 distribution: XML-LibXML
 last_checked: 1773231599
