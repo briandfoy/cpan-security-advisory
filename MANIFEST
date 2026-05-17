@@ -22,4 +22,5 @@ t/load.t
 t/pod.t
 t/pod_coverage.t
 t/test_manifest
+t/utils/find_file_paths.t
 t/yamllint.config
