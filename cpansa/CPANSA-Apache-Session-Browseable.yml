@@ -16,6 +16,32 @@ advisories:
   - https://lists.debian.org/debian-lts-announce/2023/01/msg00025.html
   reported: 2023-01-27
   severity: ~
+- affected_versions:
+  - <1.3.19
+  cves:
+  - CVE-2026-8503
+  description: Apache::Session::Generate::SHA256 versions before 1.3.19 for Perl create
+    insecure session ids.  Apache::Session::Generate::SHA256 generated session ids
+    insecurely. The default session id generator returns a SHA-256 hash of the built-in
+    rand() function, the epoch time, and the PID, that is hashed again. These are
+    predictable, low-entropy sources. Predicable session ids could allow an attacker
+    to gain access to systems.  Note that version 1.3.19 has a fallback without warning
+    to use insecure session generation method if the call to Crypt::URandom::urandom
+    fails. However, this is unlikely as Crypt::URandom is a hardcoded requirement
+    of the module.  This issue is similar to CVE-2025-40931 for Apache::Session::Generate::MD5.
+  fixed_versions:
+  - '>=1.3.19'
+  github_security_advisory:
+  - GHSA-2c59-fqg7-rwrx
+  id: CPANSA-Apache-Session-Browseable-2026-8503
+  references:
+  - https://github.com/LemonLDAPNG/Apache-Session-Browseable/commit/cc915cbbd266776eec3dd8bf4748b15fa827dbd0.patch
+  - https://metacpan.org/release/GUIMARD/Apache-Session-Browseable-1.3.19/changes
+  - https://metacpan.org/release/GUIMARD/Apache-Session-Browseable-1.3.19/diff/GUIMARD/Apache-Session-Browseable-1.3.18#lib/Apache/Session/Generate/SHA256.pm
+  - https://www.cve.org/CVERecord?id=CVE-2025-40931
+  - https://www.cve.org/CVERecord?id=CVE-2025-40932
+  reported: 2026-05-15
+  severity: ~
 cpansa_version: 2
 distribution: Apache-Session-Browseable
 last_checked: 1773231430
