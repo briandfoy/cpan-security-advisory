@@ -12,6 +12,10 @@ $EXPORT_TAGS{'all'}     = [ @EXPORT, @EXPORT_OK ];
 $EXPORT_TAGS{'default'} = [ @EXPORT ];
 
 use Local::Attributes;
+use Digest::SHA qw(sha256_hex);
+use Mojo::JSON qw(decode_json);
+use Mojo::URL;
+use Ref::Util qw( is_plain_arrayref is_plain_hashref );
 
 =encoding utf8
 
@@ -21,7 +25,13 @@ Local::CPANSA - tools for working within the repo
 
 =head1 SYNOPSIS
 
+	use Local::CPANSA;
+
 =head1 DESCRIPTION
+
+These are all utility functions used across various tools.
+
+=head2 Advisories
 
 =over 4
 
@@ -89,6 +99,10 @@ sub assemble_advisory ( $config ) {
 	return \%hash
 	}
 
+=back
+
+=head2 CVEs
+
 =item * cve_ignored(CVE)
 
 Returns true if the CVE is ignored in cpan-security-advisory. This means that
@@ -98,67 +112,23 @@ Perl but is not a Perl or CPAN issue.
 
 =cut
 
-sub cve_ignored ( $cve ) {
+sub cve_ignored :Export_Ok() :Export_Tag("cve") ( $cve ) {
 	state $hash = get_ignored_cves();
 	exists $hash->{$cve};
 	}
 
-=item * cve_recorded
+=item * cve_recorded(CVE)
 
 Returns true if the CVE is recorded in cpan-security-advisory.
 
 =cut
 
-sub cve_recorded ( $cve ) {
+use Mojo::Util qw(dumper);
+sub cve_recorded :Export_Ok() :Export_Tag("cve") ( $cve ) {
 	state $hash = get_recorded_cves();
-	exists $hash->{$cve};
-	}
-
-=item * default_github_owner
-
-Returns C<briandfoy>, the GitHub owner for the GitHub repo.
-
-=item * default_github_repo
-
-Returns C<cpan-security-advisory>, the GitHub repo name.
-
-=cut
-
-sub default_github_owner () { 'briandfoy' }
-sub default_github_repo  () { 'cpan-security-advisory' }
-
-=item * get_dist_info( DIST )
-
-Get the distribution info from MetaCPAN. The C<DIST> can use the C<-> (dash) or
-the C<::> (double colon).
-
-=cut
-
-sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
-	state $rc = do {
-		unless( eval { require MetaCPAN::Client } ) {
-			die <<~'HERE';
-				Could not load MetaCPAN::Client. Do you need to install
-				it or set PERL5LIB to find it?
-				HERE
-			}
-		};
-	state $mcpan = MetaCPAN::Client->new;
-
-	my $dist = $package_or_dist =~ s/::/-/gr;
-	my $query = {
-		all => [ { distribution => $dist }, ],
-		};
-
-	my $releases = $mcpan->release( $query );
-	my $total = $releases->total;
-
-	my @items;
-	while( my $item = $releases->next ) {
-		push @items, $item;
-		}
-	Dumper(\@items); use Data::Dumper;
-	return \@items;
+	$cve = uc($cve);
+	# say STDERR "CVE: $cve " . dumper( $hash->{$cve} );
+	defined $hash->{$cve} ? $hash->{$cve}[0] : ();
 	}
 
 =item * get_all_cve()
@@ -166,28 +136,67 @@ sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
 Takes the raw CVE search results and reduces it to an array ref of hashes, where
 each hash has keys for C<cve>, C<description>, C<url>, C<recorded>, and C<ignored>.
 
+The B<type> key is one of C<reported>, C<ignored>, or C<unevaluated>.
+
 =cut
 
 sub get_all_cve :Export_Ok() :Export_Tag("cve") {
+	state $sub_name = (caller(0))[3] =~ s/.*:://r;
+
 	my @results;
 	foreach my $v ( get_cve_search_results()->@* ) {
-		next unless exists $v->{cve};
-		my $cve  = $v->{cve}{id};
+		next unless exists $v->{'cve'};
+		my $cve  = $v->{'cve'}{'id'};
+
+		my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
 
 		my( $desc ) =
 			map {  $_->{'value'} }
 			grep { $_->{'lang'} eq 'en' }
-			$v->{cve}{descriptions}->@*;
+			$v->{'cve'}{'descriptions'}->@*;
 
-		my $url = 'https://nvd.nist.gov/vuln/detail/' . $cve;
+		my $recorded = cve_recorded($cve);
+		my $ignored  = cve_ignored($cve);
+
+		my $type = do {
+			   if( $recorded ) { 'recorded'    }
+			elsif( $ignored  ) { 'ignored'     }
+			else               { 'unevaluated' }
+			};
+
+		my @references =
+			sort
+			map { $_->{'url'} }
+			$v->{'cve'}{'references'}->@*;
+
+		my $ghsa;
+		my $dist_info = {};
+		my $package;
+		say STDERR "$sub_name: CVE: $cve TYPE: $type";
+		if( $type eq 'unevaluated' ) {
+			say STDERR "$sub_name: CVE: $cve TYPE: $type FETCHING EXTRA";
+			$ghsa = get_github_advisories($cve)->[0];
+			$package = guess_package($v);
+			say STDERR "$sub_name: CVE: $cve PACKAGE: $package";
+			$dist_info = get_dist_info($package);
+			}
 
 		push @results, {
-			cve         => $cve,
-			description => $desc,
-			ignored     => cve_ignored($cve),
-			recorded    => cve_recorded($cve),
-			unevaluated => !( cve_ignored($cve) or cve_recorded($cve) ),
-			url         => $url
+			cve          => $cve,
+			changes      => $dist_info->{'changes'},
+			description  => $desc,
+			distribution => $dist_info->{'dist_name'},
+			ghsa         => $ghsa,
+			ignored      => $ignored,
+			latest       => $dist_info->{'latest'},
+			main_module  => $dist_info->{'main_module'},
+			metacpan_link => Mojo::URL->new( "https://metacpan.org/pod/$dist_info->{'main_module'}" ),
+			package      => $package,
+			recorded     => $recorded,
+			references   => \@references,
+			type         => $type,
+			unevaluated  => !( $ignored or $recorded ),
+			url          => $url
 			};
 		}
 
@@ -200,20 +209,27 @@ sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 	return \@results;
 	}
 
-=item * get_unevaluated_cve()
+=item * get_cve_search_results()
+
+Returns the data structure that NIST sent us. We cache this for up to half of
+a day. It extracts the C<vulnerabilities> portion and returns that.
+
+The cache file, F<cve-search-results.json>, is at the top-level of the directory.
 
 =cut
 
-sub get_unevaluated_cve :Export_Ok() :Export_Tag("cve") {
-	[ grep { $_->{'unevaluated'} } get_all_cve()->@* ]
-	}
-
 sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' ) {
-	my $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
-	my $json = get_ua()
-		->get( $url, form => { keywordSearch => $keyword } )
-		->res
-		->json;
+	state $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
+	state $cached_file = find_root()->child('cve-search-results.json');
+
+	unless( -e $cached_file and -M $cached_file < 0.5 ) {
+		get_ua()
+			->get( $url, form => { keywordSearch => $keyword } )
+			->res
+			->save_to($cached_file);
+		}
+
+	my $json = decode_json( $cached_file->slurp );
 
 	unless( exists $json->{'vulnerabilities'} ) {
 		carp "Problem with the JSON from NIST: Did not have 'vulnerabilities' key";
@@ -221,166 +237,6 @@ sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' )
 		}
 
 	return $json->{'vulnerabilities'};
-	}
-
-=item * guess_package(ITEM)
-
-Given the return value of C<assemble_item>, guess what Perl package might be
-involved. This looks for clues in the references or descriptions. It's often
-not helpful.
-
-=cut
-
-sub guess_package ( $item ) {
-	my @urls = map { Mojo::URL->new($_->{url}) } $item->{cve}{references}{reference_data}->@*;
-
-	my( $metacpan ) = grep { $_->host =~ /metacpan\.org\z/ } @urls;
-	if( defined $metacpan ) {
-		return $1 if $metacpan =~ m<https://metacpan.org/(pod|dist)/(.*?)(\z|/)>;
-		}
-
-	my( $search ) = grep { $_->host =~ /search\.cpan\.org\z/ } @urls;
-	if( defined $search ) {
-		say "SEARCH: $search";
-		}
-
-	if( $item->{cve}{description}{description_data}[0]{value} =~ /\b ( [A-Z][A-Z0-9_]+(?:::[A-Z][A-Z0-9_]+)+ ) \b/xi ) {
-		return $1
-		}
-	}
-
-=item * parse_cpe23uri
-
-Turns the cpe23uri into a hash with proper keys. Although this is here, it hasn't
-turned out to be that useful.
-
-=cut
-
-sub parse_cpe23uri ( $cpe23uri ) {
-	state $keys = [ qw(
-		prefix
-		version
-		part
-		vendor
-		product
-		version
-		update
-		edition
-		language
-		sw_edition
-		target_sw
-		target_hw
-		other
-		) ];
-
-	state $pattern = qr{  # colons not escaped
-		(?<!
-			\\
-		)
-		:
-		}x;
-
-	my %hash;
-	@hash{$keys->@*} = map { s|\\||gr } split /$pattern/, $cpe23uri;
-	return \%hash;
-	}
-
-=item * report_path(PACKAGE)
-
-Return the report path for a given package. If a report path does not
-exist, returns the empty list.
-
-=cut
-
-sub report_path ( $package ) {
-	use File::Spec::Functions qw(catfile);
-	my $try = catfile( 'cpansa', "CPANSA-$package.yml" );
-	-e $try ? $try : ()
-	}
-
-=item * get_file_path( REL_PATH )
-
-Find the full path to C<REL_PATH> under the repository root (from C<find_root>).
-There might be multiple paths to the same C<REL_PATH>, so this returns an array
-ref for every matching path this finds. If it finds no files, the array ref
-is empty.
-
-The array is ordered by the most shallow files first (fewest subdirectories) and
-alphabetical for two paths at the same level.
-
-=cut
-
-
-sub get_file_path :Export_Ok :Export_Tag("file") ($rel_path) {
-	state $rc = require File::Find;
-
-	my @found = ();
-	my $wanted = sub {
-		return unless -d $File::Find::name;
-
-		my $candidate = catfile($File::Find::name, $rel_path);
-		return unless -e $candidate;
-
-		push @found, $candidate;
-		};
-	File::Find::find( $wanted, find_root() );
-
-	@found =
-		map  { $_->[0] }
-		sort { $a->[1] <=> $b->[1] or $a->[0] cmp $b->[0] }
-		map  {
-			[ $_, scalar Mojo::File->new($_)->to_array->@* ]
-			}
-		@found;
-
-	return \@found;
-	}
-
-=item * find_root( [ STARTING_FILE [, TARGET] ] )
-
-Attempt to find the top level of the repo starting from C<STARTING_FILE>. By
-default, it does this by looking for the first directory with a F<Makefile.PL>
-directory, but you can choose the target in the optional second argument.
-
-If you don't specify C<STARTING_FILE>, it uses the path to this module. Since
-all of these files are expected to be inside the repo, it doesn't matter where we
-start.
-
-This remembers the right path for the rest of the lifetime of the program
-and always returns that same value.
-
-=cut
-
-sub find_root :Export_Ok :Export_Tag("file") ( $file = __FILE__, $target = 'Makefile.PL' ) {
-	state $rc = require Mojo::File;
-	state $root;
-	return $root if defined $root;
-
-    my $dir = Mojo::File->new(__FILE__)->to_abs->dirname;
-
-    while(1) {
-
-    	if( -e $dir->child($target) ) {
-    		$root = $dir;
-    		return $root;
-    		}
-    	last if $dir eq $dir->dirname; # got to root
-        $dir = $dir->dirname;
-    	}
-
-    return;
-	}
-
-=item * get_all_reports
-
-Returns an arrayref of paths for every CPANSA report.
-
-=cut
-
-sub get_all_reports :Export_Ok :Export_Tag("reports") ( $base_dir = 'cpansa' ) {
-	opendir( my $dh, $base_dir ) or die "Could not open <$base_dir>: $!";
-	my @files = sort map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
-	return \@files;
 	}
 
 =item * get_cve_data(CVE)
@@ -413,70 +269,6 @@ sub get_cve_description ( $cve ) {
 		$item->{descriptions}->@*;
 
 	$desc
-	}
-
-=item * get_github_advisories
-
-=cut
-
-# https://docs.github.com/en/rest/security-advisories/global-advisories?apiVersion=2022-11-28#list-global-security-advisories
-sub get_github_advisories ( $cve ) {
-	state $rc = require Mojo::UserAgent;
-
-	$cve = uc($cve);
-	$cve = "CVE-$cve" if $cve =~ /\A\d+-\d+\z/a;
-
-	my $url = Mojo::URL->new('https://api.github.com/advisories');
-	my $headers = {
-		Authorization          => join( ' ', 'token', get_github_token() ),
-		Accept                 => 'application/vnd.github+json',
-		'X-GitHub-Api-Version' => '2022-11-28',
-		};
-	my $query = {
-		cve_id => $cve
-		};
-
-	my $tx = get_ua()->get(
-		$url => $headers => form => $query
-		);
-
-	unless( $tx->res->is_success ) {
-		warn "Could not get GHSA ID: " . $tx->res->body;
-		return [];
-		}
-
-	my $ghsa_ids =  [ map { $_->{ghsa_id} } $tx->res->json->@* ];
-	}
-
-=item * get_github_cve_issues( [ OWNER [, REPO] ] )
-
-=cut
-
-sub get_github_cve_issues ( $owner = default_github_owner(), $repo = default_github_repo() ) {
-	my $url = "https://api.github.com/repos/$owner/$repo/issues?state=open";
-
-	my $tx = get_ua()->get($url);
-
-	my @results;
-
-	if( $tx->res->is_success ) {
-		foreach my $i ( $tx->res->json->@* ) {
-			next unless $i->{title} =~ /\A CVE - \d+ - \d+ \z /ax;
-			push @results, $i;
-			}
-		}
-
-	return \@results;
-	}
-
-=item * get_github_token
-
-Returns the value of the CPANSA_GITHUB_TOKEN or GITHUB_TOKEN environment variable.
-
-=cut
-
-sub get_github_token () {
-	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN}
 	}
 
 =item * get_ignored_cves( [PATH] )
@@ -516,7 +308,11 @@ sub get_ignored_cves :Export_Ok() :Export_Tag("cve") ( $file = get_file_path('IG
 	return \%found;
 	}
 
-=item * get_recorded_cves
+=item * get_recorded_cves()
+
+Returns a hash reference where the keys are the CVE, and the value is an array
+ref of the files it was found in. Typically, there is only one file, but there
+are a few odd cases out there.
 
 =cut
 
@@ -543,10 +339,22 @@ sub get_recorded_cves :Export_Ok() :Export_Tag("cve") ( $base = get_file_path('c
 			grep { exists $_->{cves} }
 			$yaml->{advisories}->@*;
 
-		@found{@found_cves} = (1)x@found_cves;
+		foreach my $found (@found_cves) {
+			push $found{$found}->@*, $file;
+			}
 		}
 
 	return \%found;
+	}
+
+=item * get_unevaluated_cve()
+
+Reduce the list from C<get_all_cve> to just the unevaluated reports.
+
+=cut
+
+sub get_unevaluated_cve :Export_Ok() :Export_Tag("cve") {
+	[ grep { $_->{'unevaluated'} } get_all_cve()->@* ]
 	}
 
 =item * get_ua
@@ -564,11 +372,491 @@ sub get_ua () {
 	$ua
 	};
 
+=item * parse_cpe23uri
+
+Turns the cpe23uri into a hash with proper keys. Although this is here, it hasn't
+turned out to be that useful.
+
+=cut
+
+sub parse_cpe23uri ( $cpe23uri ) {
+	state $keys = [ qw(
+		prefix
+		version
+		part
+		vendor
+		product
+		version
+		update
+		edition
+		language
+		sw_edition
+		target_sw
+		target_hw
+		other
+		) ];
+
+	state $pattern = qr{  # colons not escaped
+		(?<!
+			\\
+		)
+		:
+		}x;
+
+	my %hash;
+	@hash{$keys->@*} = map { s|\\||gr } split /$pattern/, $cpe23uri;
+	return \%hash;
+	}
+
+=back
+
+=head2 Reports
+
+=over 4
+
+=item * load_report( PATH )
+
+Load the data for the report and return a Perl hash. Using this means
+you never need to know the details about how the report is stored.
+
+=cut
+
+sub load_report :Export_Ok :Export_Tag("reports") ( $report_path ) {
+	state $rc = require YAML::XS;
+	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
+	}
+
+=item * report_dir
+
+Returns the directory that holds the YAML reports.
+
+=cut
+
+sub report_dir :Export_Ok :Export_Tag("file") () {
+	find_root()->child('cpansa')
+	}
+
+=item * report_path(PACKAGE)
+
+Return the report path for a given package. If a report path does not
+exist, returns the empty list.
+
+=cut
+
+sub report_path ( $package ) {
+	use File::Spec::Functions qw(catfile);
+	my $try = report_dir()->child( "CPANSA-$package.yml" );
+	-e $try ? $try : ()
+	}
+
+=item * save_report( PATH, HASHREF )
+
+Save the data for the report.
+
+=cut
+
+sub save_report :Export_Ok :Export_Tag("reports") ( $report_path, $hashref ) {
+	state $rc = require YAML::XS;
+	eval { YAML::XS::DumpFile( $report_path, $hashref ) };
+	}
+
+=back
+
+=head2 CPAN
+
+For these, the C<DIST> argument can be the namespace with double colons (C<Some::Package>)
+or the dashed form (C<Some-Package)). The functions will figure it out.
+
+=over 4
+
+=item * get_dist_info( DIST )
+
+Get the distribution info from MetaCPAN. The C<DIST> can use the C<-> (dash) or
+the C<::> (double colon). Returns a hash ref of various info.
+
+=cut
+
+sub metacpan_cache ( $method, $args, $sub = sub ($a) { $a->@* } ) {
+	state $rc = do {
+		unless( eval { require MetaCPAN::Client } ) {
+			die <<~'HERE';
+				Could not load MetaCPAN::Client. Do you need to install
+				it or set PERL5LIB to find it?
+				HERE
+			}
+		};
+	state $mcpan = MetaCPAN::Client->new;
+	state $section = 'metacpan';
+
+	say STDERR "metacpan_cache method: $method args: (@$args)";
+
+	my $sha256 = sha256_hex( join "\000", $args->@* );
+	my $tag = join '-', $method, $sha256;
+	my $contents = get_cache_item( $section, $tag );
+
+	unless( defined $contents ) {
+		say STDERR "metacpan_cache fetching fresh method: $method args: (@$args)";
+		$contents = eval { $mcpan->$method( $sub->($args) ) };
+		delete $contents->{'client'};
+		if( length $@ ) {
+			warn "metacpan_cache method: $method args: (@$args) AT: $@\n";
+			return;
+			}
+		set_cache_item( $section, $tag, $contents )
+		}
+
+	return $contents;
+	}
+
+sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
+	my $dist = eval {
+		if( $package_or_dist =~ /::/ or $package_or_dist !~ /-/ ) {
+			my $module = metacpan_cache( 'module', [ $package_or_dist ] );
+			metacpan_cache( 'distribution', [ $module->distribution ] );
+			}
+		elsif( $package_or_dist =~ /-/ ) {
+			metacpan_cache( 'distribution', [ $package_or_dist ] );
+			}
+		else {
+			();
+			}
+		};
+
+	return {} unless defined $dist;
+
+	my $latest = metacpan_cache( 'release', [ $dist->name ] );
+	my $changes = latest_changes($latest);
+
+	return {
+		argument  => $package_or_dist,
+		dist_name => $dist->name,
+		latest    => $latest->version,
+		changes   => $changes,
+		main_module => $latest->main_module,
+		};
+	}
+
+sub latest_changes ($latest) {
+	state $section = 'metacpan';
+    my @args = ( $latest->author, $latest->name );
+	my $tag = join '-', @args, 'changes';
+	my $changes = get_cache_item( $section, $tag );
+	return my $last = (values $changes->%*)[0] if keys $changes->%*;
+
+    for my $filename (qw(Changes CHANGES ChangeLog Changelog CHANGELOG CHANGELOG.md)) {
+        my $url = sprintf 'https://fastapi.metacpan.org/v1/source/%s/%s/%s', @args, $filename;
+        my $tx = get_ua()->get($url);
+        if( $tx->res->is_success ) {
+        	$changes = $tx->res->body;
+			set_cache_item( $section, $tag, { $filename => $changes });
+ 			last;
+       		}
+    	}
+
+    return $changes;
+	}
+
+=item * guess_package(ITEM)
+
+Given the return value of C<assemble_item>, guess what Perl package might be
+involved. This looks for clues in the references or descriptions even if it's often
+not helpful.
+
+First, if there is a MetaCPAN URL that we recognize, grab the distribution or
+package name out of it. If we find that, return it.
+
+Second, if there is an old I<search.cpan.org> URL, do the same thing.
+
+Last, look in the description for things that look like a package name (C<::>)
+and return that if found.
+
+Otherwise, return the empty list.
+
+This could be much more sophisticated.
+
+=cut
+
+sub guess_package :Export_Ok :Export_Tag("cpan") ( $item ) {
+	my @urls = map { Mojo::URL->new($_->{'url'}) } $item->{'cve'}{'references'}->@*;
+
+	my( $metacpan ) = grep { $_->host =~ /metacpan\.org\z/ } @urls;
+	if( defined $metacpan ) {
+		return $1 if $metacpan =~ m<https://metacpan.org/(pod|dist)/(.*?)(\z|/)>;
+		}
+
+	my( $search ) = grep { $_->host =~ /search\.cpan\.org\z/ } @urls;
+	if( defined $search ) {
+		say "guess_package: $search";
+		}
+
+	my( $description ) = map { $_->{'value'} }  grep { $_->{'lang'} eq 'en' } $item->{'cve'}{'descriptions'}->@*;
+	# say "guess_package: desc: $description";
+
+	if( $description =~ /\b ( [A-Z][A-Z0-9_]+(?:::[A-Z][A-Z0-9_]+)+ ) \b/xi ) {
+		# say "guess_package: package: $1";
+		return $1
+		}
+
+	# say STDERR "guess_package: could not guess a package";
+	return;
+	}
+
+=back
+
+=head2 Files and Paths
+
+=over 4
+
+=item * find_root( [ STARTING_FILE [, TARGET] ] )
+
+Attempt to find the top level of the repo starting from C<STARTING_FILE>. By
+default, it does this by looking for the first directory with a F<Makefile.PL>
+directory, but you can choose the target in the optional second argument.
+
+If you don't specify C<STARTING_FILE>, it uses the path to this module. Since
+all of these files are expected to be inside the repo, it doesn't matter where we
+start.
+
+This remembers the right path for the rest of the lifetime of the program
+and always returns that same value.
+
+=cut
+
+sub find_root :Export_Ok :Export_Tag("file") ( $file = __FILE__, $target = 'Makefile.PL' ) {
+	state $rc = require Mojo::File;
+	state $root;
+	return $root if defined $root;
+
+    my $dir = Mojo::File->new(__FILE__)->to_abs->dirname;
+
+    while(1) {
+    	if( -e $dir->child($target) ) {
+    		$root = $dir;
+    		return $root;
+    		}
+    	last if $dir eq $dir->dirname; # got to root
+        $dir = $dir->dirname;
+    	}
+
+    return;
+	}
+
+=item * get_all_reports
+
+Returns an arrayref of paths for every CPANSA report.
+
+=cut
+
+sub get_all_reports :Export_Ok :Export_Tag("reports") ( $base_dir = report_dir() ) {
+	opendir( my $dh, $base_dir ) or die "Could not open <$base_dir>: $!";
+	my @files = sort map { catfile $base_dir, $_ } grep ! /\A\./, readdir($dh);
+	return \@files;
+	}
+
+=item * get_file_path( REL_PATH )
+
+Find the full path to C<REL_PATH> under the repository root (from C<find_root>).
+There might be multiple paths to the same C<REL_PATH>, so this returns an array
+ref for every matching path this finds. If it finds no files, the array ref
+is empty.
+
+The array is ordered by the most shallow files first (fewest subdirectories) and
+alphabetical for two paths at the same level.
+
+=cut
+
+sub get_file_path :Export_Ok :Export_Tag("file") ($rel_path) {
+	state $rc = require File::Find;
+
+	my @found = ();
+	my $wanted = sub {
+		return unless -d $File::Find::name;
+
+		my $candidate = catfile($File::Find::name, $rel_path);
+		return unless -e $candidate;
+
+		push @found, $candidate;
+		};
+	File::Find::find( $wanted, find_root() );
+
+	@found =
+		map  { $_->[0] }
+		sort { $a->[1] <=> $b->[1] or $a->[0] cmp $b->[0] }
+		map  {
+			[ $_, scalar Mojo::File->new($_)->to_array->@* ]
+			}
+		@found;
+
+	return \@found;
+	}
+
+=back
+
+=head2 Cache
+
+=over 4
+
+=item *
+
+=cut
+
+=item * get_cache_dir( SECTION )
+
+=cut
+
+sub get_cache_dir ( $section ) {
+	state $dir = do {
+		my $d = find_root->child('.cache');
+		$d->make_path;
+		$d;
+		};
+	$dir->child($section)->make_path;
+	}
+
+=item * get_cache_item( SECTION, TAG, TTL )
+
+=cut
+
+sub get_cache_item ( $section, $tag, $ttl = 0.5 ) {
+	state $sub_name = (caller(0))[3] =~ s/.*:://r;
+
+	my $file = get_cache_dir($section)->child($tag);
+	say STDERR "$sub_name: file <$file>";
+	return unless -e $file;
+	return if -M _ > $ttl;
+
+	say STDERR "$sub_name: retrieving file <$file>";
+	my $contents = eval { Storable::retrieve($file) };
+
+	return do {
+		if( $@ ) {
+			warn "$sub_name: Could not retrieve file <$file>: $@\n";
+			();
+			}
+		elsif( is_plain_arrayref($contents) and 0 == $contents->@* ) {
+			warn "$sub_name: Empty array ref in <$file>. Ignoring.\n";
+			();
+			}
+		elsif( is_plain_hashref($contents) and 0 == keys $contents->%* ) {
+			warn "$sub_name: Empty hash ref in <$file>. Ignoring.\n";
+			();
+			}
+		else {
+			$contents;
+			}
+		};
+	}
+
+=item * set_cache_item( SECTION, TAG, ITEM )
+
+=cut
+
+sub set_cache_item ( $section, $tag, $item ) {
+	my $file = get_cache_dir($section)->child($tag);
+	say STDERR "set_cache_item: file <$file>";
+	say STDERR "set_cache_item: item " . dumper($item);
+	Storable::store($item, $file);
+	}
+
+=back
+
+=head2 GitHub
+
+Most of these require a GitHub token. See C<get_github_token()>.
+
+=over 4
+
+=item * default_github_owner
+
+Returns C<briandfoy>, the GitHub owner for the GitHub repo.
+
+=item * default_github_repo
+
+Returns C<cpan-security-advisory>, the GitHub repo name.
+
+=cut
+
+sub default_github_owner :Export_Ok() :Export_Tag("github") () { 'briandfoy' }
+
+sub default_github_repo  :Export_Ok() :Export_Tag("github") () { 'cpan-security-advisory' }
+
+=item * get_github_advisories(CVE)
+
+Return an array ref of GitHub Security Advisories associated with C<CVE>.
+
+=cut
+
+# https://docs.github.com/en/rest/security-advisories/global-advisories?apiVersion=2022-11-28#list-global-security-advisories
+sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
+	state $cache_section = 'ghsa';
+	state $url = Mojo::URL->new('https://api.github.com/advisories');
+
+	$cve = uc($cve);
+	$cve = "CVE-$cve" if $cve =~ /\A\d+-\d+\z/a;
+
+	my $json = get_cache_item( $cache_section, $cve );
+	unless( defined $json ) {
+		my $headers = {
+			Accept                 => 'application/vnd.github+json',
+			'X-GitHub-Api-Version' => '2026-03-10',
+			};
+		my $query = {
+			cve_id => $cve
+			};
+
+		my $tx = get_ua()->get($url => $headers => form => $query);
+
+		unless( $tx->res->is_success ) {
+			carp "Could not get GHSA ID: " . $tx->res->body;
+			return [];
+			}
+		set_cache_item( $cache_section, $cve, $tx->res->json );
+		$json = $tx->res->json;
+		};
+
+	my $ghsa_ids =  [ map { $_->{'ghsa_id'} } $json->@* ];
+	return $ghsa_ids;
+	}
+
+=item * get_github_cve_issues( [ OWNER [, REPO] ] )
+
+Return the open issues for the GitHub repository C<OWNER/REPO>. This uses the
+default values, and is probably not useful here for any other values.
+
+=cut
+
+sub get_github_cve_issues :Export_Ok() :Export_Tag("github") ( $owner = default_github_owner(), $repo = default_github_repo() ) {
+	my $url = "https://api.github.com/repos/$owner/$repo/issues?state=open";
+
+	my $tx = get_ua()->get($url);
+
+	my @results;
+
+	if( $tx->res->is_success ) {
+		foreach my $i ( $tx->res->json->@* ) {
+			next unless $i->{title} =~ /\A CVE - \d+ - \d+ \z /ax;
+			push @results, $i;
+			}
+		}
+
+	return \@results;
+	}
+
+=item * get_github_token
+
+Returns the value of the CPANSA_GITHUB_TOKEN or GITHUB_TOKEN environment variable.
+
+=cut
+
+sub get_github_token :Export_Ok() :Export_Tag("github") () {
+	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN}
+	}
+
 =item * github_cve_issue_exists( ARRAY_REF, OPTS_HASH_REF )
 
 =cut
 
-sub github_cve_issue_exists ($args, $opts = {}) {
+sub github_cve_issue_exists :Export_Ok() :Export_Tag("github") ($args, $opts = {}) {
 	$opts->%* = (owner => default_github_owner(), repo => default_github_repo(), $opts->%* );
 	my( $owner, $repo ) = $opts->@{qw(owner repo)};
 	my $issues = get_github_cve_issues( $owner, $repo );
@@ -585,29 +873,13 @@ sub github_cve_issue_exists ($args, $opts = {}) {
 	return \%hash;
 	}
 
-=item * latest_on_cpan( DIST )
+=back
 
-Returns the latest version on CPAN.
+=head2 RT
 
-=cut
+Deal with I<rt.cpan.org>.
 
-sub latest_on_cpan :Export_Ok :Export_Tag("cpan") ($dist) {
-	my $d = get_dist_info($dist);
-	my($latest) = grep { $_->status eq 'latest' } $d->@*;
-	defined $latest ? $latest->version : undef;
-	}
-
-=item * load_report( PATH )
-
-Load the data for the report and return a Perl hash. Using this means
-you never need to know the details about how the report is stored.
-
-=cut
-
-sub load_report :Export_Ok :Export_Tag("reports") ( $report_path ) {
-	state $rc = require YAML::XS;
-	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
-	}
+=over 4
 
 =item * rt_n_to_url(N)
 
@@ -619,16 +891,6 @@ sub rt_n_to_url ( $rt ) {
 	"https://rt.cpan.org/Public/Bug/Display.html?id=$rt"
 	}
 
-=item * save_report( PATH, HASHREF )
-
-Save the data for the report.
-
-=cut
-
-sub save_report :Export_Ok :Export_Tag("reports") ( $report_path, $hashref ) {
-	state $rc = require YAML::XS;
-	eval { YAML::XS::DumpFile( $report_path, $hashref ) };
-	}
 
 =back
 

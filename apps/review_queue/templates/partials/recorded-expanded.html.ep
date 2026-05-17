@@ -1,2 +1,2 @@
-			<p>File: <%= $cve->{'recorded'} %></p>
+			<p class="item-description pl-2 pr-2">File: <%= $cve->{'recorded'} %></p>
 			<p class="item-description pl-2"><%= $cve->{'description'} %></p>

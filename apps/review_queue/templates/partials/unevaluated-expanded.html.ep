@@ -11,22 +11,31 @@
 			<form>
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-package" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Package</label>
-					<div class="col-sm-9"><input type="text" name="package" id="<%= $id %>-package" class="form-control"></div>
+					<div class="col-sm-9"><input type="text" name="package" id="<%= $id %>-package" class="form-control" value="<%= $cve->{'package'} %>"/></div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-info" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Distribution</label>
+					<div class="col-sm-9 mt-2">
+						<a href="<%= $cve->{'metacpan_link'} %>" target="_blank" rel="noopener noreferrer"><%= $cve->{'main_module'} %></a>
+						Dist: <span id="<%= $id %>-dist_name"><%= $cve->{'distribution'} %></span>
+						Latest: <span id="<%= $id %>-latest_version"><%= $cve->{'latest'} %></span>
+					</div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-ghsa" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">GHSA</label>
-					<div class="col-sm-9"><input type="text" name="ghsa-id" id="<%= $id %>-ghsa" class="form-control" value="<%= $cve->{'ghsa'} %>"></div>
+					<div class="col-sm-9"><input type="text" name="ghsa-id" id="<%= $id %>-ghsa" class="form-control" value="<%= $cve->{'ghsa'} %>"/></div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-affected-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Affected versions</label>
-					<div class="col-sm-9"><input type="text" name="affected-versions" id="<%= $id %>-affected-versions" class="form-control"></div>
+					<div class="col-sm-9"><input type="text" name="affected-versions" id="<%= $id %>-affected-versions" class="form-control"/></div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-fixed-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Fixed versions</label>
-					<div class="col-sm-9"><input type="text" name="fixed-versions" id="<%= $id %>-fixed-versions" class="form-control"></div>
+					<div class="col-sm-9"><input type="text" name="fixed-versions" id="<%= $id %>-fixed-versions" class="form-control"/></div>
 				</div>
 
 				<div class="form-group row no-gutters">
@@ -36,8 +45,62 @@
 				</div>
 			</form>
 
-			<div class="container">
-				<pre>
-				<%= Mojo::Util::dumper($cve) %>
-				</pre>
+			<div
+				class="list-item border border-secondary rounded ml-2 mr-2 mb-2 pt-2"
+				style="background-color: #f8f9fa !important"
+				>
+				<div class="d-flex">
+					<div class="ml-2">
+						<a
+							data-target="#data-dump-details-<%= $id %>"
+							role="button"
+							class="mr-1 mt-2 toggle-link"
+							data-toggle="collapse"
+							data-tooltip="collapse"
+							aria-expanded="false"
+							aria-controls="data-dump-details-<%= $id %>"
+						>
+						<span class="mt-2 bi bi-plus-square when-collapsed"></span>
+						<span class="mt-2 bi bi-dash-square when-expanded"></span>
+						</a>
+					</div>
+					<div id="data-dump-title-<%= $id %>">
+						<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1">Data Structure<span></p>
+					</div>
+				</div>
+				<div class="container collapse" id="data-dump-details-<%= $id %>">
+					<div>
+					<pre><%= Mojo::Util::dumper($cve) %></pre>
+					</div>
+				</div>
+			</div>
+
+			<div
+				class="list-item border border-secondary rounded ml-2 mr-2 mb-2 pt-2"
+				style="background-color: #f8f9fa !important"
+				>
+				<div class="d-flex">
+					<div class="ml-2">
+						<a
+							data-target="#changes-<%= $id %>"
+							role="button"
+							class="mr-1 mt-2 toggle-link"
+							data-toggle="collapse"
+							data-tooltip="collapse"
+							aria-expanded="false"
+							aria-controls="changes-details-<%= $id %>"
+						>
+						<span class="mt-2 bi bi-plus-square when-collapsed"></span>
+						<span class="mt-2 bi bi-dash-square when-expanded"></span>
+						</a>
+					</div>
+					<div id="changes-title-<%= $id %>">
+						<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1">Changes<span></p>
+					</div>
+				</div>
+				<div class="container collapse" id="changes-<%= $id %>">
+					<div>
+					<pre><%= $cve->{'changes'} %></pre>
+					</div>
+				</div>
 			</div>
