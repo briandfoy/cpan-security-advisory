@@ -8,7 +8,7 @@ advisories:
     which causes out-of-bounds read and potential information disclosure  Missing
     null terminators in token.c leads to but-of-bounds read which allows adjacent
     variable to be read  The issue is seen with complex YAML files with a hash of
-    all keys and empty values. There is no indication that the issue leads to accessing
+    all keys and empty values.Â There is no indication that the issue leads to accessing
     memory outside that allocated to the module.
   fixed_versions:
   - '>=1.36'
@@ -41,9 +41,36 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/03/16/6
   reported: 2026-03-16
   severity: ~
+- affected_versions:
+  - <1.38
+  cves:
+  - CVE-2026-5089
+  description: 'YAML::Syck versions before 1.38 for Perl  has an out-of-bounds read.  The
+    base60 (sexagesimal) parsing code in perl_syck.h has a buffer underflow bug in
+    both int#base60 and float#base60 handlers. When processing the leftmost segment
+    of a colon-separated value (e.g., the 1 in 1:30:45), the inner while loop can
+    decrement a pointer past the start of the string buffer:      while ( colon >=
+    ptr && *colon != '':'' )     {         colon--;     }     if ( *colon == '':''
+    ) *colon = ''\0'';  // colon may be ptr-1 here  When no colon is found (final/leftmost
+    segment), colon becomes ptr-1, and the subsequent *colon dereference reads one
+    byte before the allocated buffer.'
+  fixed_versions:
+  - '>=1.38'
+  github_security_advisory:
+  - GHSA-jcwf-qrr5-xwq3
+  id: CPANSA-YAML-Syck-2026-5089
+  references:
+  - https://github.com/cpan-authors/YAML-Syck/commit/208a4d3bd1b5cdb4a791a6e3905bd6bd45e9d005.patch
+  - https://github.com/cpan-authors/YAML-Syck/issues/132
+  - https://github.com/cpan-authors/YAML-Syck/pull/133
+  - https://metacpan.org/release/TODDR/YAML-Syck-1.38/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/12/16
+  - https://github.com/cpan-authors/YAML-Syck/issues/132
+  reported: 2026-05-12
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: YAML-Syck
-last_checked: 1773840655
-latest_version: '1.36'
+last_checked: 1779055675
+latest_version: '1.45'
 metacpan: https://metacpan.org/pod/YAML::Syck
