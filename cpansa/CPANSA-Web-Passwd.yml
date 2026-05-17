@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-8500
+  description: Web::Passwd versions through 0.03 for Perl is vulnerable to RCE.  Web::Passwd
+    is a small CGI application for managing htpasswd files using the htpasswd command.  The
+    user parameter is not validated or escaped, and is used as the last argument on
+    the command line, allowing for command injection.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-jrw9-jqqp-jcq9
+  id: CPANSA-Web-Passwd-2026-8500
+  references:
+  - https://httpd.apache.org/docs/current/programs/htpasswd.html
+  - https://metacpan.org/release/EVANK/Web-Passwd-0.03
+  - http://www.openwall.com/lists/oss-security/2026/05/13/8
+  reported: 2026-05-13
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Web-Passwd
+last_checked: 1779057175
+latest_version: '0.03'
+metacpan: https://metacpan.org/pod/Web::Passwd
