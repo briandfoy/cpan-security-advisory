@@ -1,0 +1,32 @@
+---
+advisories:
+- affected_versions:
+  - '>=0.017,<0.031'
+  cves:
+  - CVE-2026-8463
+  description: Crypt::Argon2 versions from 0.017 before 0.031 for Perl perform a heap
+    out-of-bounds read in argon2_verify on empty encoded input.  The auto-detect form
+    of argon2_verify passes encoded_len - 1 as the length argument to memchr without
+    checking that encoded_len is non-zero. When the encoded string is empty, the size_t
+    subtraction underflows to SIZE_MAX and memchr scans adjacent heap memory looking
+    for a '$' separator byte.  A caller that invokes argon2_verify against a stored
+    hash that may legitimately be empty (for example a placeholder row or a NULL column
+    materialised as an empty string) reads out-of-bounds heap memory, which can crash
+    the process or leak the position of an adjacent '$' byte into subsequent parsing.
+  fixed_versions:
+  - '>=0.031'
+  github_security_advisory:
+  - GHSA-3p6c-7qjr-35x9
+  id: CPANSA-Crypt-Argon2-2026-8463
+  references:
+  - https://github.com/Leont/crypt-argon2/commit/92eac03ce63d541e0ead7ea5a89b9b67ce0c0e64.patch
+  - https://metacpan.org/release/LEONT/Crypt-Argon2-0.031/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/13/4
+  reported: 2026-05-13
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-Argon2
+last_checked: 1779057059
+latest_version: '0.031'
+metacpan: https://metacpan.org/pod/Crypt::Argon2
