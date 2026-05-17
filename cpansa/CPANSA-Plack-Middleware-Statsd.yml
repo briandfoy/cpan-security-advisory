@@ -17,6 +17,26 @@ advisories:
   - https://metacpan.org/dist/Plack-Middleware-Statsd/changes
   reported: 2025-05-13
   severity: ~
+- affected_versions:
+  - <0.9.0
+  cves:
+  - CVE-2026-45179
+  description: Plack::Middleware::Statsd versions before 0.9.0 for Perl may leak user
+    IP addresses.  If the communication channel to the statsd daemon is not secured
+    (for example, by sending UDP packets to a host on another network), then users'
+    IP addresses may be leaked.  Since version 0.9.0, the IP address is no longer
+    logged to statsd unless configured. When configured, an HMAC signature of the
+    IP address is logged instead.
+  fixed_versions:
+  - '>=0.9.0'
+  github_security_advisory: []
+  id: CPANSA-Plack-Middleware-Statsd-2026-45179
+  references:
+  - https://github.com/robrwo/Plack-Middleware-Statsd/security/advisories/GHSA-9gwm-665p-w2xx
+  - https://metacpan.org/release/RRWO/Plack-Middleware-Statsd-v0.9.0/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/10/4
+  reported: 2026-05-10
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Plack-Middleware-Statsd
