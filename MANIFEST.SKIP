@@ -39,3 +39,5 @@ scratch/
 CPANSA-XXX.yml
 cpansa/CPANSA-XXX.yml
 .downstream.json
+apps/
+cve-search-results.json
