@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <=0.10.0
+  cves:
+  - CVE-2026-45180
+  description: Catalyst::Plugin::Statsd versions through 0.10.0 for Perl may leak
+    session ids.  If the communication channel to the statsd daemon is not secured
+    (for example, by sending UDP packets to a host on another network), then users'
+    session ids may be leaked.  This may allow an attacker to use session ids as authentication
+    tokens.
+  fixed_versions:
+  - '>=0.10.1'
+  github_security_advisory: []
+  id: CPANSA-Catalyst-Plugin-Statsd-2026-45180
+  references:
+  - https://github.com/robrwo/CatalystX-Statsd/security/advisories/GHSA-gjvr-hq83-fc38
+  - https://github.com/robrwo/Plack-Middleware-Statsd/security/advisories/GHSA-9gwm-665p-w2xx
+  - https://metacpan.org/release/RRWO/Catalyst-Plugin-Statsd-v0.10.0/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-45179
+  reported: 2026-05-10
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Catalyst-Plugin-Statsd
+last_checked: 1779059067
+latest_version: v0.10.1
+metacpan: https://metacpan.org/pod/Catalyst::Plugin::Statsd
