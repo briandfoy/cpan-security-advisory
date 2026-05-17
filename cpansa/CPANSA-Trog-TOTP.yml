@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <1.006
+  cves:
+  - CVE-2026-46474
+  description: Trog::TOTP versions before 1.006 for Perl generate secrets using rand.  Secrets
+    were generated using Perl's built-in rand function, which is predictable and unsuitable
+    for security usage.
+  fixed_versions:
+  - '>=1.006'
+  github_security_advisory:
+  - GHSA-x5pc-h62r-4rgx
+  id: CPANSA-Trog-TOTP-2026-46474
+  references:
+  - https://metacpan.org/release/TEODESIAN/Trog-TOTP-1.006/changes
+  - https://metacpan.org/release/TEODESIAN/Trog-TOTP-1.006/diff/TEODESIAN/Trog-TOTP-1.005#lib/Trog/TOTP.pm
+  - http://www.openwall.com/lists/oss-security/2026/05/15/18
+  reported: 2026-05-15
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Trog-TOTP
+last_checked: 1779059425
+latest_version: '1.006'
+metacpan: https://metacpan.org/pod/Trog::TOTP
