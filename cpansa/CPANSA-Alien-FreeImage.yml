@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2022-4988
+  - CVE-2015-0852
+  - CVE-2025-65803
+  description: Alien::FreeImage versions through 1.001 for Perl contains several vulnerable
+    libraries.  Alien::FreeImage contains version 3.17.0 of the FreeImage library
+    from 2017, which has known vulnerabilities such as CVE-2015-0852 and CVE-2025-65803.  The
+    library embeds other images libraries that also have known vulnerabilities.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-wqrc-gg3r-jw9v
+  id: CPANSA-Alien-FreeImage-2022-4988
+  references:
+  - https://freeimage.sourceforge.io/
+  - https://github.com/kmx/alien-freeimage/issues/4
+  - https://github.com/kmx/alien-freeimage/issues/5
+  - https://metacpan.org/release/KMX/Alien-FreeImage-1.001/source/src/Source
+  - https://nvd.nist.gov/vuln/detail/CVE-2015-0852
+  - https://nvd.nist.gov/vuln/detail/CVE-2025-65803
+  reported: 2026-05-11
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Alien-FreeImage
+last_checked: 1779054225
+latest_version: '1.001'
+metacpan: https://metacpan.org/pod/Alien::FreeImage
