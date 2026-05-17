@@ -68,9 +68,32 @@ advisories:
   references:
   - https://metacpan.org/dist/libwww-perl/changes
   reported: 1995-09-06
-cpansa_version: 2
+- affected_versions:
+  - <6.83
+  cves:
+  - CVE-2026-8368
+  description: LWP::UserAgent versions before 6.83 for Perl leak Authorization and
+    Proxy-Authorization headers on cross-origin redirects.  On a 3xx response, the
+    redirect handler strips only Host and Cookie before issuing the follow-up request.
+    Caller-supplied Authorization and Proxy-Authorization headers are sent unchanged
+    to the redirect target, including across scheme, host, or port changes.  A redirect
+    to an attacker controlled host therefore discloses the caller's credentials to
+    that host.
+  fixed_versions:
+  - '>=6.83'
+  github_security_advisory:
+  - GHSA-39wp-j2gg-h44j
+  id: CPANSA-libwww-perl-2026-8368
+  references:
+  - https://github.com/libwww-perl/libwww-perl/commit/9c4aeb6f2dd32f2b7eaf2d7827cade31ea6cb2c6.patch
+  - https://github.com/libwww-perl/libwww-perl/pull/284
+  - https://github.com/libwww-perl/libwww-perl/pull/512
+  - https://metacpan.org/release/OALDERS/libwww-perl-6.83/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/12/7
+  reported: 2026-05-12
+  severity: ~cpansa_version: 2
 distribution: libwww-perl
-last_checked: 1773231607
-latest_version: '6.81'
+last_checked: 1779056705
+latest_version: '6.83'
 metacpan: https://metacpan.org/pod/LWP
 repo: https://github.com/libwww-perl/libwww-perl
