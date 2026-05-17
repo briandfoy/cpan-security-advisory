@@ -94,6 +94,25 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2026-45191
   reported: 2026-05-10
   severity: ~
+- affected_versions:
+  - <0.24
+  cves:
+  - CVE-2026-45191
+  description: Net::CIDR::Lite versions before 0.24 for Perl does not properly consider
+    extraneous zero characters in CIDR mask values, which may allow IP ACL bypass.  Mask
+    forms like "/00" and "/01" pass validation and parse to the same prefix as their
+    unpadded value.  See also CVE-2026-45190.
+  fixed_versions:
+  - '>=0.24'
+  github_security_advisory:
+  - GHSA-fw62-67j2-4wmc
+  id: CPANSA-Net-CIDR-Lite-2026-45191
+  references:
+  - https://github.com/stigtsp/Net-CIDR-Lite/commit/24e2c439ec405e5256024b9acefd4f7008c5ed0c.patch
+  - https://metacpan.org/release/STIGTSP/Net-CIDR-Lite-0.24/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-45190
+  reported: 2026-05-10
+  severity: ~
 cpansa_version: 2
 distribution: Net-CIDR-Lite
 last_checked: 1773231552
