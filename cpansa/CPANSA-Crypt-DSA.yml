@@ -38,6 +38,23 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/15/26
   reported: 2026-05-15
   severity: ~
+- affected_versions:
+  - <1.20
+  cves:
+  - CVE-2026-8704
+  description: Crypt::DSA versions through 1.19 for Perl use 2-args open, allowing
+    existing files to be modified.
+  fixed_versions:
+  - '>=1.20'
+  github_security_advisory:
+  - GHSA-5cq6-9f97-wjwx
+  id: CPANSA-Crypt-DSA-2026-8704
+  references:
+  - https://metacpan.org/release/TIMLEGGE/Crypt-DSA-1.20/changes
+  - https://metacpan.org/release/TIMLEGGE/Crypt-DSA-1.20/diff/TIMLEGGE/Crypt-DSA-1.19#lib/Crypt/DSA/Key.pm
+  - http://www.openwall.com/lists/oss-security/2026/05/15/27
+  reported: 2026-05-15
+  severity: ~
 cpansa_version: 2
 distribution: Crypt-DSA
 last_checked: 1749751661
