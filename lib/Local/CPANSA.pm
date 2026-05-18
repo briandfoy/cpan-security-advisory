@@ -753,8 +753,8 @@ sub get_cache_item ( $section, $tag, $ttl = 0.5 ) {
 
 sub set_cache_item ( $section, $tag, $item ) {
 	my $file = get_cache_dir($section)->child($tag);
-	say STDERR "set_cache_item: file <$file>";
-	say STDERR "set_cache_item: item " . dumper($item);
+#	say STDERR "set_cache_item: file <$file>";
+#	say STDERR "set_cache_item: item " . dumper($item);
 	Storable::store($item, $file);
 	}
 
@@ -782,7 +782,11 @@ sub default_github_repo  :Export_Ok() :Export_Tag("github") () { 'cpan-security-
 
 =item * get_github_advisories(CVE)
 
-Return an array ref of GitHub Security Advisories associated with C<CVE>.
+Return an array ref of GitHub Security Advisory IDs associated with C<CVE>.
+
+This used to use a token, but you don't strictly need that for low rates. For
+the moment I've taken out the token bits, but you can make more queries faster
+with a token. I typically only need about 10 calls.
 
 =cut
 
@@ -790,6 +794,10 @@ Return an array ref of GitHub Security Advisories associated with C<CVE>.
 sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 	state $cache_section = 'ghsa';
 	state $url = Mojo::URL->new('https://api.github.com/advisories');
+
+	# this is a shim for old behavior because I don't want accidentally
+	# bad input to blow up. Just move on and we can fix it later.
+	return [] unless (defined $cve and length $cve);
 
 	$cve = uc($cve);
 	$cve = "CVE-$cve" if $cve =~ /\A\d+-\d+\z/a;
