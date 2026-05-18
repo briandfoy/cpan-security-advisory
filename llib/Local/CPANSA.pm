@@ -1,5 +1,6 @@
-package Local::CPANSA;
 use v5.26;
+
+package Local::CPANSA;
 use experimental qw(signatures);
 
 use Carp;
