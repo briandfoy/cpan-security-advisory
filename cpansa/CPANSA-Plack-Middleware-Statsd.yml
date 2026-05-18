@@ -29,7 +29,8 @@ advisories:
     IP address is logged instead.
   fixed_versions:
   - '>=0.9.0'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-9gwm-665p-w2xx
   id: CPANSA-Plack-Middleware-Statsd-2026-45179
   references:
   - https://github.com/robrwo/Plack-Middleware-Statsd/security/advisories/GHSA-9gwm-665p-w2xx
