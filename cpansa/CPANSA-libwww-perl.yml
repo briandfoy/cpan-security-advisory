@@ -91,7 +91,8 @@ advisories:
   - https://metacpan.org/release/OALDERS/libwww-perl-6.83/changes
   - http://www.openwall.com/lists/oss-security/2026/05/12/7
   reported: 2026-05-12
-  severity: ~cpansa_version: 2
+  severity: ~
+cpansa_version: 2
 distribution: libwww-perl
 last_checked: 1779056705
 latest_version: '6.83'
