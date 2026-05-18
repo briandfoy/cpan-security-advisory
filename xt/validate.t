@@ -1,7 +1,7 @@
 use v5.20;
 
 use FindBin qw($RealBin);
-use lib "$RealBin/lib";
+use lib ( "$RealBin/lib", 'lib' );
 
 use Test::More;
 
