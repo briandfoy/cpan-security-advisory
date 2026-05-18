@@ -1,5 +1,6 @@
-use v5.42;
+use v5.22;
 package Local::Attributes;
+use experimental qw(signatures);
 
 use Exporter qw(import);
 our @EXPORT = qw(

@@ -1,7 +1,7 @@
 use v5.26;
 use Test::More;
 
-use lib qw(lib);
+use lib qw(llib);
 
 my $class = 'Local::CPANSA';
 

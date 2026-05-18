@@ -5,7 +5,7 @@ use open qw(:std :utf8);
 use experimental qw(signatures);
 
 use FindBin;
-use lib "$FindBin::Bin/../lib";
+use lib "$FindBin::Bin/../llib";
 
 use Local::CPANSA qw(:all);
 

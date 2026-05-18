@@ -2,7 +2,7 @@
 use v5.26;
 use strict;
 
-use lib qw(lib);
+use lib qw(llib);
 use Local::CPANSA qw(:cpan :reports);
 
 my $template = "%2d %10s %10s %12d %s\n";
