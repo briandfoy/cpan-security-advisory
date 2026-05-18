@@ -85,7 +85,7 @@ jobs:
             matrix:
                 os:
                     - ubuntu-latest
-                perl-version: [ 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
+                perl-version: [ 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
         container:
             image: ghcr.io/perlreview/5.${{ matrix.perl-version }}-modules-amd64
         steps:
