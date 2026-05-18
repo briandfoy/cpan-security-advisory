@@ -172,12 +172,12 @@ sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 		my $ghsa;
 		my $dist_info = {};
 		my $package;
-		say STDERR "$sub_name: CVE: $cve TYPE: $type";
+		# say STDERR "$sub_name: CVE: $cve TYPE: $type";
 		if( $type eq 'unevaluated' ) {
-			say STDERR "$sub_name: CVE: $cve TYPE: $type FETCHING EXTRA";
+			# say STDERR "$sub_name: CVE: $cve TYPE: $type FETCHING EXTRA";
 			$ghsa = get_github_advisories($cve)->[0];
 			$package = guess_package($v);
-			say STDERR "$sub_name: CVE: $cve PACKAGE: $package";
+			# say STDERR "$sub_name: CVE: $cve PACKAGE: $package";
 			$dist_info = get_dist_info($package);
 			}
 
@@ -488,14 +488,14 @@ sub metacpan_cache ( $method, $args, $sub = sub ($a) { $a->@* } ) {
 	state $mcpan = MetaCPAN::Client->new;
 	state $section = 'metacpan';
 
-	say STDERR "metacpan_cache method: $method args: (@$args)";
+	# say STDERR "metacpan_cache method: $method args: (@$args)";
 
 	my $sha256 = sha256_hex( join "\000", $args->@* );
 	my $tag = join '-', $method, $sha256;
 	my $contents = get_cache_item( $section, $tag );
 
 	unless( defined $contents ) {
-		say STDERR "metacpan_cache fetching fresh method: $method args: (@$args)";
+		# say STDERR "metacpan_cache fetching fresh method: $method args: (@$args)";
 		$contents = eval { $mcpan->$method( $sub->($args) ) };
 		delete $contents->{'client'};
 		if( length $@ ) {
@@ -586,7 +586,7 @@ sub guess_package :Export_Ok :Export_Tag("cpan") ( $item ) {
 
 	my( $search ) = grep { $_->host =~ /search\.cpan\.org\z/ } @urls;
 	if( defined $search ) {
-		say "guess_package: $search";
+		say "guess_package: Found a search.cpan.org link <$search>";
 		}
 
 	my( $description ) = map { $_->{'value'} }  grep { $_->{'lang'} eq 'en' } $item->{'cve'}{'descriptions'}->@*;
@@ -721,11 +721,11 @@ sub get_cache_item ( $section, $tag, $ttl = 0.5 ) {
 	state $sub_name = (caller(0))[3] =~ s/.*:://r;
 
 	my $file = get_cache_dir($section)->child($tag);
-	say STDERR "$sub_name: file <$file>";
+#	say STDERR "$sub_name: file <$file>";
 	return unless -e $file;
 	return if -M _ > $ttl;
 
-	say STDERR "$sub_name: retrieving file <$file>";
+#	say STDERR "$sub_name: retrieving file <$file>";
 	my $contents = eval { Storable::retrieve($file) };
 
 	return do {
