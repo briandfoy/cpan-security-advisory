@@ -1,4 +1,4 @@
-use v5.26;
+use v5.28;
 
 package Local::Config::make_record;
 use parent qw(Local::Config::Base);

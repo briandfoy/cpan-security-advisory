@@ -2,7 +2,6 @@ use utf8;
 
 =encoding utf8
 
-
 =head1 NAME
 
 xt/ghsa.t - test the bits that look up GitHub Security Advisory IDs
@@ -62,8 +61,10 @@ Copyright 2022-2026, brian d foy C<< <bdfoy@cpan.org> >>
 use Test::More;
 
 BEGIN {
-	if( $] < 5.026 ) {
-		plan skip_all => "This test requires Perl 5.026 or later. Skipping";
+	my $min_version = '5.028';
+	# we use attributes, which changes in v5.28 to come before the signature
+	if( $] < $min_version ) {
+		plan skip_all => "This test requires Perl $min_version or later. Skipping";
 		exit;
 		}
 	}

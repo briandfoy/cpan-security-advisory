@@ -1,5 +1,5 @@
 package Local::Config::Base;
-use v5.26;
+use v5.28;
 
 use experimental qw(signatures);
 use vars qw($AUTOLOAD);

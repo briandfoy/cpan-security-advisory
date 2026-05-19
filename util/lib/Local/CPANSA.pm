@@ -1,4 +1,4 @@
-use v5.26;
+use v5.28; # attributes now come before signature
 
 package Local::CPANSA;
 use experimental qw(signatures);

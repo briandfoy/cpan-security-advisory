@@ -6,6 +6,15 @@ use lib ("$RealBin/lib", "lib");
 
 use Test::More;
 
+BEGIN {
+	my $min_version = '5.028';
+	# we use attributes, which changes in v5.28 to come before the signature
+	if( $] < $min_version ) {
+		plan skip_all => "This test requires Perl $min_version or later. Skipping";
+		exit;
+		}
+	}
+
 use YAML::XS;
 
 my @modules  = qw( CPANSA::DB CPAN::Audit::DB );

@@ -1,4 +1,5 @@
-use v5.22;
+use v5.28; # v5.28 changed to make attributes come before signatures
+
 package Local::Attributes;
 use experimental qw(signatures);
 
