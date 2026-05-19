@@ -785,9 +785,9 @@ sub default_github_repo  :Export_Ok() :Export_Tag("github") () { 'cpan-security-
 
 Return an array ref of GitHub Security Advisory IDs associated with C<CVE>.
 
-This used to use a token, but you don't strictly need that for low rates. For
-the moment I've taken out the token bits, but you can make more queries faster
-with a token. I typically only need about 10 calls.
+This will use the token in either C<CPANSA_GITHUB_TOKEN> or C<GITHUB_TOKEN>
+if one or both of those are present. Otherwise this will make an unauthenticated
+request.
 
 =cut
 
@@ -804,6 +804,7 @@ sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 	$cve = "CVE-$cve" if $cve =~ /\A\d+-\d+\z/a;
 
 	my $json = get_cache_item( $cache_section, $cve );
+
 	unless( defined $json ) {
 		my $headers = {
 			Accept                 => 'application/vnd.github+json',
@@ -813,14 +814,20 @@ sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 			cve_id => $cve
 			};
 
+		my($token) = grep { length } map { $ENV{$_} } qw(CPANSA_GITHUB_TOKEN GITHUB_TOKEN);
+		if( $token ) {
+			$headers->{'Authorization'} = 'Bearer ' . $token;
+			}
 		my $tx = get_ua()->get($url => $headers => form => $query);
 
 		unless( $tx->res->is_success ) {
 			carp "Could not get GHSA ID: " . $tx->res->body;
 			return [];
 			}
-		set_cache_item( $cache_section, $cve, $tx->res->json );
-		$json = $tx->res->json;
+		my $json = $tx->res->json;
+
+		set_cache_item( $cache_section, $cve, $json );
+		$json;
 		};
 
 	my $ghsa_ids =  [ map { $_->{'ghsa_id'} } $json->@* ];

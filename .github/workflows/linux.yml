@@ -80,6 +80,8 @@ on:
 jobs:
     perl:
         environment: automated_testing
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:

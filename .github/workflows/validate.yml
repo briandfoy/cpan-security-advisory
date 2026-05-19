@@ -26,11 +26,13 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
     cancel-in-progress: true
 
+permissions: {}
+
 jobs:
     yaml:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v5
             - name: 'yamllint on cpansa'
               uses: karancode/yamllint-github-action@master
               with:
@@ -50,6 +52,8 @@ jobs:
               env:
                   YAMLLINT_CONFIG_FILE: xt/yamllint.config
     lint:
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:

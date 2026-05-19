@@ -33,6 +33,10 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref || github.run_id }}
     cancel-in-progress: true
 
+permissions:
+    actions: write
+    contents: read
+
 on:
     push:
         branches:
@@ -68,6 +72,8 @@ on:
 jobs:
     perl:
         environment: automated_testing
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         runs-on: ${{ matrix.os }}
         # store any secrets in an environment named "testing"
         strategy:

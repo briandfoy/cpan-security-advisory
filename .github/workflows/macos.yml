@@ -74,6 +74,8 @@ on:
 jobs:
     perl:
         environment: automated_testing
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         runs-on: macOS-latest
         steps:
             - uses: actions/checkout@v5
