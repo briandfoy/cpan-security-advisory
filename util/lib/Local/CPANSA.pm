@@ -820,6 +820,9 @@ sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 			}
 		my $tx = get_ua()->get($url => $headers => form => $query);
 
+print STDERR "REQUEST: " . $tx->req->to_string;
+print STDERR "RESPONSE: " . $tx->res->to_string;
+
 		unless( $tx->res->is_success ) {
 			carp "Could not get GHSA ID: " . $tx->res->body;
 			return [];
