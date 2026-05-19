@@ -96,6 +96,36 @@ jobs:
                 echo "C:\strawberry\perl\bin"      | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
             - name: Perl version
               run: perl -V
+# Restore the last module installation for this OS/perl combination. This
+# saves several minutes in some cases. When cpan installs updates, the
+# 'save' counterpart for 'restore' will update the cache. If this fails we
+# keep going, although the module installation will take longer
+            - name: Restore Perl modules
+              id: perl-modules-cache-restore
+              continue-on-error: true
+              uses: actions/cache/restore@v4
+              with:
+                key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
+                path: |
+                  C:\Strawberry\perl\lib\
+                  C:\Strawberry\perl\vendor\lib\
+                  C:\Strawberry\perl\site\lib\
+# We cannot reuse a cache key that exists, so we'll delete it and then save it again
+# There are various hacks for this, but GitHub has so far declined to
+# do what so many people want. This seems like a long way to go to do
+# this, but most of the problem is translating the unique cache key name
+# to another hidden ID value. This is pervasive in the GitHub API. If we
+# fail this step, no big whoop. Outside pull requesters are likely to fail
+# this step since their token won't have permissions to the repo cache
+            - name: Delete cache
+              continue-on-error: true
+              id: delete-cache
+              env:
+                GH_TOKEN: ${{ github.token }}
+              run: |
+                gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/${{ github.repository }}/actions/caches \
+                  | jq -r '.actions_caches[] | select(.key == "${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}") | .id' \
+                  | xargs -I{} gh api --method DELETE -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/${{ github.repository }}/actions/caches/{}
 # cpan can operate with https, but we need IO::SSL::Socket, which
 # does not come with Perl.
 #
@@ -161,3 +191,17 @@ jobs:
                 cpan -M https://www.cpan.org -T Devel::Cover Devel::Cover::Report::Coveralls
                 perl Makefile.PL
                 cover -test +ignore 'Makefile.PL' -report coveralls
+# Now always save the Perl modules in case we updated some versions. We'd like
+# this step to work, but if it doesn't, it's not a big deal. The always() captures
+# any work that we did even if something failed.
+            - name: Save Perl modules
+              continue-on-error: true
+              id: perl-modules-cache-save
+              uses: actions/cache/save@v4
+              if: always()
+              with:
+                key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
+                path: |
+                  C:\Strawberry\perl\lib\
+                  C:\Strawberry\perl\vendor\lib\
+                  C:\Strawberry\perl\site\lib\
