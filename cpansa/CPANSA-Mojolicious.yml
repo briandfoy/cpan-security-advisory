@@ -157,7 +157,7 @@ advisories:
       - <1.12
     cves:
       - CVE-2011-1841
-    description: "Mojolicious is vulnerable to cross-site scripting, caused by improper validation of user-supplied input by link_to helper. A remote attacker could exploit this vulnerability using a specially-crafted URL to execute script in a victim's Web browser within the security context of the hosting Web site, once the URL is clicked. An attacker could use this vulnerability to steal the victim's cookie-based authentication credentials.\n"
+    description: "Cross-site scripting (XSS) vulnerability in the link_to helper in Mojolicious before 1.12 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.\n"
     fixed_versions:
       - '>=1.12'
     github_security_advisory:
@@ -167,6 +167,9 @@ advisories:
       - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
       - https://www.debian.org/security/2011/dsa-2239
       - https://github.com/mojolicious/mojo/commit/f6801ef7be8c78092e38f870b19fae3da0899d60
+      - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
+      - http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060122.html
+      - http://www.securityfocus.com/bid/47713
     reported: 2011-03-10
     severity: high
   - affected_versions:
@@ -201,24 +204,6 @@ advisories:
       - https://github.com/kraih/mojo/commit/aa7c8da54b1ebd4ccb64aa66dede7b7cdb381c44
       - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
       - http://www.debian.org/security/2011/dsa-2239
-    reported: 2011-05-03
-    severity: ~
-  - affected_versions:
-      - <1.12
-    cves:
-      - CVE-2011-1841
-    description: "Cross-site scripting (XSS) vulnerability in the link_to helper in Mojolicious before 1.12 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.\n"
-    fixed_versions:
-      - '>=1.12'
-    github_security_advisory:
-      - GHSA-w975-73p7-chcj
-    id: CPANSA-Mojolicious-2011-1841
-    references:
-      - http://cpansearch.perl.org/src/KRAIH/Mojolicious-1.20/Changes
-      - http://lists.fedoraproject.org/pipermail/package-announce/2011-May/060122.html
-      - http://www.debian.org/security/2011/dsa-2239
-      - http://www.securityfocus.com/bid/47713
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/67257
     reported: 2011-05-03
     severity: ~
   - affected_versions:
