@@ -133,6 +133,10 @@ jobs:
             - name: Install dependencies
               run: |
                 cpan -M https://www.cpan.org -T .
+            - name: Install cpanfile dependencies
+              if: hashFiles('.github/cpanfile') != ''
+              run: |
+                cpanm --installdeps --notest .github
             - name: Run tests
               run: |
                 perl Makefile.PL

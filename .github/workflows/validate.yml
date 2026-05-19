@@ -71,6 +71,10 @@ jobs:
             - name: 'setup'
               run: |
                 cpan -T Mojo::Util Term::ANSIColor YAML::XS IO::Interactive MetaCPAN::Client YAML CPAN::Audit Data::Rx
+            - name: Install cpanfile dependencies
+              if: hashFiles('.github/cpanfile') != ''
+              run: |
+                cpanm --installdeps --notest .github
             - name: "Lint reports"
               run: |
                 perl util/lint_reports

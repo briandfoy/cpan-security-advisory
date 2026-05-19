@@ -114,6 +114,10 @@ jobs:
             - name: install local dependencies
               run: |
                 cpan -T -M http://www.cpan.org Antsy CPAN::DistnameInfo Data::Rx HTTP::Tiny JSON MetaCPAN::Client Module::CoreList Mojo::Util Mojo::File Mojo::JSON PerlIO::gzip Ref::Util YAML::Tiny YAML::XS || true
+            - name: Install cpanfile dependencies
+              if: hashFiles('.github/cpanfile') != ''
+              run: |
+                cpanm --installdeps --notest .github
             - name: install latest
               run: |
                 cpan -T -M http://www.cpan.org .

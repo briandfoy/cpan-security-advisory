@@ -51,6 +51,10 @@ jobs:
             - name: 'setup'
               run: |
                 sudo cpan -T App::Cpan YAML::XS Mojolicious Data::Rx
+            - name: Install cpanfile dependencies
+              if: hashFiles('.github/cpanfile') != ''
+              run: |
+                cpanm --installdeps --notest .github
             - name: 'prove'
               run: |
                 prove -Ilib
