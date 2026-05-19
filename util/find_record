@@ -2,6 +2,9 @@
 use v5.26;
 use strict;
 
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
+
 =head1 NAME
 
 util/find_record - discover where a CVE appears in the YAML files

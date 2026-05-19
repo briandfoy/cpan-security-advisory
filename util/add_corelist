@@ -9,7 +9,7 @@ use Mojo::File;
 use Mojo::JSON qw(decode_json encode_json);
 
 use FindBin qw($Bin);
-use lib ("$Bin/../lib");
+use lib ( "$Bin/../lib", "$Bin/lib" );
 
 use CPANSA::DB;
 my $DB = CPANSA::DB::db();

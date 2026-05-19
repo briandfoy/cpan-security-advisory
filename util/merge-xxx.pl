@@ -1,6 +1,9 @@
 #!perl
 use v5.10;
 
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
+
 =head1 NAME
 
 merge-xxx.pl - update some external_reports with a bit of a kludge

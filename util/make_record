@@ -4,6 +4,9 @@ use strict;
 use experimental qw(signatures);
 use open qw(:std :utf8);
 
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
+
 =head1 NAME
 
 make_record - turn a CVE into a CPANSA YAML object

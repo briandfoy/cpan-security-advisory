@@ -3,6 +3,9 @@ use v5.26;
 use warnings;
 use experimental qw(signatures);
 
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
+
 use MetaCPAN::Client;
 use File::Spec::Functions;
 use IO::Interactive qw(interactive);

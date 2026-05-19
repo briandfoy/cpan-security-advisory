@@ -4,8 +4,8 @@ use utf8;
 use open qw(:std :utf8);
 use experimental qw(signatures);
 
-use FindBin;
-use lib "$FindBin::Bin/../lib";
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
 
 use Local::CPANSA;
 

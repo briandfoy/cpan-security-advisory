@@ -4,7 +4,7 @@ use utf8;
 use open qw(:std :utf8);
 
 use FindBin qw($Bin);
-use lib "$Bin/../lib";
+use lib "$Bin/../lib", "$Bin/lib";
 
 use Mojo::Util qw(dumper);
 use Term::ANSIColor;

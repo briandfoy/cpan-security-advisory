@@ -2,7 +2,7 @@ use v5.26;
 use utf8;
 
 use FindBin qw($Bin);
-use lib "$Bin/../lib";
+use lib "$Bin/../lib", "$Bin/../lib";
 
 use Local::Tools::list_all_releases;
 

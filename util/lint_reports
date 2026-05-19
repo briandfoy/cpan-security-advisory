@@ -4,6 +4,9 @@ use strict;
 use warnings;
 use utf8;
 
+use FindBin qw($Bin);
+use lib ( "$Bin/../lib", "$Bin/lib" );
+
 use experimental qw(builtin for_list signatures);
 use builtin qw(indexed);
 
