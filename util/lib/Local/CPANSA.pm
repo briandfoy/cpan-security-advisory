@@ -32,7 +32,14 @@ Local::CPANSA - tools for working within the repo
 
 These are all utility functions used across various tools.
 
+Things are kinda a mess as I try to move common behavior from various programs
+into this module and figure out how to best organize it. All of this started as
+simple functions.
+
 =head2 Advisories
+
+The advisory is all the data we have on a problem. These are mostly about CVE
+reports, but they don't need to have a CVE.
 
 =over 4
 
@@ -103,6 +110,8 @@ sub assemble_advisory ( $config ) {
 =back
 
 =head2 CVEs
+
+=over 4
 
 =item * cve_ignored(CVE)
 
@@ -210,36 +219,6 @@ sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 	return \@results;
 	}
 
-=item * get_cve_search_results()
-
-Returns the data structure that NIST sent us. We cache this for up to half of
-a day. It extracts the C<vulnerabilities> portion and returns that.
-
-The cache file, F<cve-search-results.json>, is at the top-level of the directory.
-
-=cut
-
-sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' ) {
-	state $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
-	state $cached_file = find_root()->child('cve-search-results.json');
-
-	unless( -e $cached_file and -M $cached_file < 0.5 ) {
-		get_ua()
-			->get( $url, form => { keywordSearch => $keyword } )
-			->res
-			->save_to($cached_file);
-		}
-
-	my $json = decode_json( $cached_file->slurp );
-
-	unless( exists $json->{'vulnerabilities'} ) {
-		carp "Problem with the JSON from NIST: Did not have 'vulnerabilities' key";
-		return [];
-		}
-
-	return $json->{'vulnerabilities'};
-	}
-
 =item * get_cve_data(CVE)
 
 Grab the JSON data for C<CVE> from I<services.nvd.nist.gov>.
@@ -270,6 +249,36 @@ sub get_cve_description ( $cve ) {
 		$item->{descriptions}->@*;
 
 	$desc
+	}
+
+=item * get_cve_search_results()
+
+Returns the data structure that NIST sent us. We cache this for up to half of
+a day. It extracts the C<vulnerabilities> portion and returns that.
+
+The cache file, F<cve-search-results.json>, is at the top-level of the directory.
+
+=cut
+
+sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' ) {
+	state $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
+	state $cached_file = find_root()->child('cve-search-results.json');
+
+	unless( -e $cached_file and -M $cached_file < 0.5 ) {
+		get_ua()
+			->get( $url, form => { keywordSearch => $keyword } )
+			->res
+			->save_to($cached_file);
+		}
+
+	my $json = decode_json( $cached_file->slurp );
+
+	unless( exists $json->{'vulnerabilities'} ) {
+		carp "Problem with the JSON from NIST: Did not have 'vulnerabilities' key";
+		return [];
+		}
+
+	return $json->{'vulnerabilities'};
 	}
 
 =item * get_ignored_cves( [PATH] )
@@ -785,9 +794,10 @@ sub default_github_repo  :Export_Ok() :Export_Tag("github") () { 'cpan-security-
 
 Return an array ref of GitHub Security Advisory IDs associated with C<CVE>.
 
-This will use the token in either C<CPANSA_GITHUB_TOKEN> or C<GITHUB_TOKEN>
-if one or both of those are present. Otherwise this will make an unauthenticated
-request.
+This will use the token in any of C<CPANSA_GITHUB_TOKEN>, C<GITHUB_TOKEN>, or C<GH_TOKEN>
+as reported by C<get_github_token>.
+
+Otherwise this will make an unauthenticated request.
 
 =cut
 
@@ -814,7 +824,7 @@ sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 			cve_id => $cve
 			};
 
-		my($token) = grep { length } map { $ENV{$_} } qw(CPANSA_GITHUB_TOKEN GITHUB_TOKEN);
+		my $token = get_github_token();
 		if( $token ) {
 			$headers->{'Authorization'} = 'Bearer ' . $token;
 			}
@@ -827,7 +837,7 @@ sub get_github_advisories :Export_Ok() :Export_Tag("github") ( $cve ) {
 		$json = $tx->res->json;
 
 		set_cache_item( $cache_section, $cve, $json );
-		};
+		}
 
 	my $ghsa_ids =  [ map { $_->{'ghsa_id'} } $json->@* ];
 	return $ghsa_ids;
@@ -864,7 +874,7 @@ Returns the value of the CPANSA_GITHUB_TOKEN or GITHUB_TOKEN environment variabl
 =cut
 
 sub get_github_token :Export_Ok() :Export_Tag("github") () {
-	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN}
+	$ENV{CPANSA_GITHUB_TOKEN} // $ENV{GITHUB_TOKEN} // $ENV{GH_TOKEN}
 	}
 
 =item * github_cve_issue_exists( ARRAY_REF, OPTS_HASH_REF )
