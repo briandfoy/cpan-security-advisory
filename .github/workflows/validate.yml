@@ -59,17 +59,16 @@ jobs:
             matrix:
                 os:
                     - ubuntu-latest
-                perl-version:
-                    - 'latest'
+                perl-version: [ 42 ]
         container:
-            image: perl:${{ matrix.perl-version }}
+            image: ghcr.io/perlreview/5.${{ matrix.perl-version }}-modules-amd64
         steps:
             - uses: actions/checkout@v3
             - name: Load cache
               id: perl-modules-cache-restore
               uses: actions/cache/restore@v4
               with:
-                key: validate-${{ runner.os }}-${{ matrix.perl-version }}-modules
+                key: validate-${{ runner.os }}-perl-${{ matrix.perl-version }}-modules
                 path: |
                   /usr/local/lib/perl5
             - name: 'setup'
