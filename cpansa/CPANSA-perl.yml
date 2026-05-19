@@ -75,13 +75,14 @@ advisories:
   reported: 2016-08-02
   severity: high
 - affected_versions:
-  - '>=5.005,<5.24.0'
+  - '>=5.005,<5.22.2'
+  - '>=5.23.0,<5.23.7'
   cves:
   - CVE-2015-8608
   description: |
     The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
   fixed_versions:
-  - '>=5.24.0'
+  - '>=5.22.2'
   github_security_advisory:
   - GHSA-523x-9jc5-mf89
   id: CPANSA-perl-2015-8608
@@ -966,24 +967,6 @@ advisories:
   - https://security.gentoo.org/glsa/201507-11
   reported: 2015-08-16
   severity: ~
-- affected_versions:
-  - <5.22.2
-  cves:
-  - CVE-2015-8608
-  description: |
-    The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
-  fixed_versions:
-  - '>=5.22.2'
-  github_security_advisory:
-  - GHSA-523x-9jc5-mf89
-  id: CPANSA-perl-2015-8608
-  references:
-  - https://rt.perl.org/Public/Bug/Display.html?id=126755
-  - https://packetstormsecurity.com/files/136649/Perl-5.22-VDir-MapPathA-W-Out-Of-Bounds-Reads-Buffer-Over-Reads.html
-  - http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html
-  - https://www.oracle.com/security-alerts/cpujul2020.html
-  reported: 2017-02-07
-  severity: critical
 - affected_versions:
   - <5.14.0
   cves:
