@@ -1,0 +1,3 @@
+requires 'Ref::Util';
+requires 'Data::Rx';
+requires 'Mojolicious', '>= 9, < 10';
