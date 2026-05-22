@@ -1180,37 +1180,6 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2025/05/30/4
   reported: 2025-05-30
   severity: ~
-- affected_versions:
-  - '>5.9.4,<5.40.4'
-  - '>=5.41.0,<5.42.3'
-  - '>=5.43.0,<5.43.9'
-  cves:
-  - CVE-2026-4176
-  - CVE-2026-3381
-  - CVE-2026-27171
-  description: Perl versions from 5.9.4 before 5.40.4-RC1, from 5.41.0 before 5.42.2-RC1,
-    from 5.43.0 before 5.43.9 contain a vulnerable version of Compress::Raw::Zlib.  Compress::Raw::Zlib
-    is included in the Perl package as a dual-life core module, and is vulnerable
-    to CVE-2026-3381 due to a vendored version of zlib which has several vulnerabilities,
-    including CVE-2026-27171. The bundled Compress::Raw::Zlib was updated to version
-    2.221 in Perl blead commit c75ae9cc164205e1b6d6dbd57bd2c65c8593fe94.
-  fixed_versions:
-  - '>=5.40.4,<5.41.0'
-  - '>=5.42.3,<5.43.0'
-  - '>=5.43.9'
-  github_security_advisory:
-  - GHSA-q2q4-jjp8-f6m3
-  id: CPANSA-perl-2026-4176
-  references:
-  - https://github.com/Perl/perl5/commit/c75ae9cc164205e1b6d6dbd57bd2c65c8593fe94
-  - https://lists.security.metacpan.org/cve-announce/msg/37638919/
-  - https://metacpan.org/release/PMQS/Compress-Raw-Zlib-2.221/source/Changes
-  - https://metacpan.org/release/SHAY/perl-5.40.4/changes
-  - https://metacpan.org/release/SHAY/perl-5.42.2/changes
-  - https://www.cve.org/CVERecord?id=CVE-2026-3381
-  - http://www.openwall.com/lists/oss-security/2026/03/30/2
-  reported: 2026-03-29
-  severity: ~
 cpansa_version: 2
 distribution: perl
 last_checked: 1773230576
