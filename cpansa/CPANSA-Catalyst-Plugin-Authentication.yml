@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <=0.10024
+  cves:
+  - CVE-2026-5091
+  description: Catalyst::Plugin::Authentication versions through 0.10024 for Perl  is
+    susceptible to timing attacks.  These versions use Perl's built-in eq comparison.
+    Discrepencies in timing could be used to guess the underlying hash or password.
+  fixed_versions:
+  - '>=1.0026'
+  github_security_advisory:
+  - GHSA-37jv-v9vv-wxwv
+  id: CPANSA-Catalyst-Plugin-Authentication-2026-5091
+  references:
+  - https://github.com/perl-catalyst/Catalyst-Plugin-Authentication/commit/b0515f492257438cf07082acf1e10d06e8088a5e.patch
+  - https://metacpan.org/release/ETHER/Catalyst-Plugin-Authentication-0.10_025/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/21/19
+  reported: 2026-05-21
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Catalyst-Plugin-Authentication
+last_checked: 1779524463
+latest_version: '0.10026'
+metacpan: https://metacpan.org/pod/Catalyst::Plugin::Authentication
