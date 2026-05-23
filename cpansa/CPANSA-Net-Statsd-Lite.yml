@@ -18,6 +18,24 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/16/9
   reported: 2026-05-16
   severity: ~
+- affected_versions:
+  - <=0.10.0
+  cves:
+  - CVE-2026-8788
+  description: Net::Statsd::Lite versions through 0.10.0 for Perl allowed metric injections.  The
+    values from the set_add method were not checked for newlines, colons or pipes.
+    Metrics generated from untrusted sources could inject additional statsd metrics.  Note
+    that version 0.9.0 fixed a similar issue CVE-2026-46719 for metric names.
+  fixed_versions:
+  - '>=0.10.1'
+  github_security_advisory:
+  - GHSA-57h4-p8xg-x38x
+  id: CPANSA-Net-Statsd-Lite-2026-8788
+  references:
+  - https://metacpan.org/release/RRWO/Net-Statsd-Lite-v0.10.1/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  reported: 2026-05-18
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-Statsd-Lite
