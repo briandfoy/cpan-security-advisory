@@ -160,9 +160,6 @@ The report format looks like this:
 
 =cut
 
-use FindBin;
-use lib "$FindBin::Bin/../lib";
-
 use Local::CPANSA;
 use Local::Config::make_record;
 
