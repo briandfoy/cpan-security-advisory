@@ -13,6 +13,8 @@ use Mojo::Util qw(dumper);
 
 =head1 NAME
 
+Local::Config::Base -
+
 =head1 SYNOPSIS
 
 =head1 DESCRIPTION
