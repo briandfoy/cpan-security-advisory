@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <0.10
+  cves:
+  - CVE-2026-47372
+  description: Crypt::SaltedHash versions through 0.09 for Perl generate insecure
+    random values for salts.  These versions use the built-in rand function, which
+    is predictable and unsuitable for cryptography.
+  fixed_versions:
+  - '>=0.10'
+  github_security_advisory:
+  - GHSA-h295-pfx3-r298
+  id: CPANSA-Crypt-SaltedHash-2026-47372
+  references:
+  - https://github.com/robrwo/perl-Crypt-SaltedHash/commit/9b68437d2cd420b819b3a795474c3870338d38d5.patch
+  - https://metacpan.org/release/RRWO/Crypt-SaltedHash-0.10/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/20/22
+  reported: 2026-05-20
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-SaltedHash
+last_checked: 1779525772
+latest_version: '0.12'
+metacpan: https://metacpan.org/pod/Crypt::SaltedHash
