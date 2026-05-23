@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - <=1.94
+  cves:
+  - CVE-2026-8507
+  description: Crypt::OpenSSL::PKCS12 versions through 1.94 for Perl have out-of-bounds
+    (OOB) write flaws.  When parsing a PKCS12 file, with a >= 1 GiB OCTET STRING (or
+    BIT STRING) attribute on a SAFEBAG, via info() or info_as_hash(), a heap out-of-bounds
+    write would be triggered with remote-code-execution potential (RCE) due to a signed
+    integer overflow in the size calculation passed to Renew().
+  fixed_versions:
+  - '>=1.95'
+  github_security_advisory:
+  - GHSA-3qmj-qw66-fwx8
+  id: CPANSA-Crypt-OpenSSL-PKCS12-2026-8507
+  references:
+  - https://github.com/dsully/perl-crypt-openssl-pkcs12/commit/b9d0469c6d8f5b5c6c2a45a3d0647a532b749397.patch
+  - https://github.com/dsully/perl-crypt-openssl-pkcs12/issues/55
+  - https://github.com/dsully/perl-crypt-openssl-pkcs12/issues/56
+  - https://metacpan.org/release/JONASBN/Crypt-OpenSSL-PKCS12-1.95/view/Changes.md
+  - http://www.openwall.com/lists/oss-security/2026/05/17/5
+  reported: 2026-05-17
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-OpenSSL-PKCS12
+last_checked: 1779524672
+latest_version: '1.95'
+metacpan: https://metacpan.org/pod/Crypt::OpenSSL::PKCS12
