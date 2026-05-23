@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <0.1.1
+  cves:
+  - CVE-2026-46473
+  description: Authen::TOTP versions before 0.1.1 for Perl generate secrets using
+    rand.  Secrets were generated using Perl's built-in rand function, which is predictable
+    and unsuitable for security usage.
+  fixed_versions:
+  - '>=0.1.1'
+  github_security_advisory:
+  - GHSA-wm67-cj4w-p69m
+  id: CPANSA-Authen-TOTP-2026-46473
+  references:
+  - https://github.com/tchatzi/Authen-TOTP/commit/d04f30cc6538d77fc6b6d550da450cf3017b8561.patch
+  - https://metacpan.org/release/TCHATZI/Authen-TOTP-0.1.1/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/21/15
+  reported: 2026-05-21
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Authen-TOTP
+last_checked: 1779525475
+latest_version: v0.1.1
+metacpan: https://metacpan.org/pod/Authen::TOTP
