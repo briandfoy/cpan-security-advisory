@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <3.103
+  cves:
+  - CVE-2026-5090
+  description: Template::Plugin::HTML versions through 3.102 for Perl allows HTML
+    and JavaScript to be injected.  The html_filter function did not escape single
+    quotes. HTML attributes inside of single quotes could be have code injected.  For
+    example, the variable "var" in      <a id='ref' title='[% var | html %]'>  would
+    not be properly escaped. An attacker could insert some limited HTML and JavaScript,
+    for example,      var = " ' onclick='while (true) { alert(1) }'"  Note that arbitrary
+    HTML and JavaScript would be difficult to inject, because angle brackets, ampersands
+    and double-quotes would still be escaped.
+  fixed_versions:
+  - '>=3.103'
+  github_security_advisory:
+  - GHSA-xhg9-j279-j625
+  id: CPANSA-Template-Toolkit-2026-5090
+  references:
+  - https://github.com/abw/Template2/issues/327
+  - https://github.com/abw/Template2/pull/337/changes/11c78a7a771d4af505efeb754a0b8775689c2eae
+  - http://www.openwall.com/lists/oss-security/2026/05/19/40
+  reported: 2026-05-19
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Template-Toolkit
+last_checked: 1779524193
+latest_version: '3.103'
+metacpan: https://metacpan.org/pod/Template::Plugin::HTML
