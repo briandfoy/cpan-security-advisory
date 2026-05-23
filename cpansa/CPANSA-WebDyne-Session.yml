@@ -1,0 +1,32 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-5084
+  description: WebDyne::Session versions through 2.075 for Perl generates the session
+    id insecurely.  The session handler generates the session id from an MD5 hash
+    seeded with a call to the built-in rand() function. The rand function is passed
+    a maximum value based on the process id, the epoch time and the reference address
+    of the object, but this information will have no effect on the overall quality
+    of the seed of the message digest.  The rand function is seeded by 32-bits and
+    is predictable. It is considered unsuitable for cryptographic purposes.  Predictable
+    session ids could allow an attacker to gain access to systems.  Note that WebDyne::Session
+    versions 1.042 and earlier appear to be in separate distributions from WebDyne.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-462c-h7qr-cxm6
+  id: CPANSA-WebDyne-2026-5084
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-2.075/source/lib/WebDyne/Session.pm#L120
+  - https://security.metacpan.org/docs/guides/random-data-for-security.html
+  - https://webdyne.org
+  - http://www.openwall.com/lists/oss-security/2026/05/11/3
+  reported: 2026-05-11
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: WebDyne-Session
+last_checked: 1779523060
+latest_version: '2.075'
+metacpan: https://metacpan.org/pod/WebDyne::Session
