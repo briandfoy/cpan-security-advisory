@@ -22,6 +22,26 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/17/5
   reported: 2026-05-17
   severity: ~
+- affected_versions:
+  - <=1.94
+  cves:
+  - CVE-2026-8721
+  description: Crypt::OpenSSL::PKCS12 versions through 1.94 for Perl truncates passwords
+    with embedded NULLs.  Password parameters in PKCS12.xs are declared char *, which
+    routes through Perl's default typemap to SvPV_nolen.  The Perl length is discarded.  The
+    C code (or OpenSSL internally) calls strlen() on the buffer.  Any password byte
+    at or after the first NULL is silently dropped. Binary / KDF-derived / HMAC-derived
+    passwords lose entropy without any warnings.
+  fixed_versions:
+  - '>=1.95'
+  github_security_advisory:
+  - GHSA-hh8h-hxcj-2pm7
+  id: CPANSA-Crypt-OpenSSL-PKCS12-2026-8721
+  references:
+  - https://metacpan.org/release/JONASBN/Crypt-OpenSSL-PKCS12-1.95/view/Changes.md
+  - http://www.openwall.com/lists/oss-security/2026/05/17/6
+  reported: 2026-05-17
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-OpenSSL-PKCS12
