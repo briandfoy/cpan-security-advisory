@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <0.3.8
+  cves:
+  - CVE-2026-46720
+  description: Net::Statsd::Tiny versions before 0.3.8 for Perl allowed metric injections.  The
+    metric names and set values were not checked for newlines, colons or pipes. Metrics
+    generated from untrusted sources could inject additional statsd metrics.
+  fixed_versions:
+  - '>=0.3.8'
+  github_security_advisory:
+  - GHSA-vqfg-jwcg-58ww
+  id: CPANSA-Net-Statsd-Tiny-2026-46720
+  references:
+  - https://github.com/robrwo/Net-Statsd-Tiny/commit/06f814f52fbcc0b2afddf7a2d6f8137fd3cede13.patch
+  - https://metacpan.org/release/RRWO/Net-Statsd-Tiny-v0.3.8/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  reported: 2026-05-17
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-Statsd-Tiny
+last_checked: 1779525635
+latest_version: v0.4.1
+metacpan: https://metacpan.org/pod/Net::Statsd::Tiny
