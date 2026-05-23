@@ -226,12 +226,16 @@ Grab the JSON data for C<CVE> from I<services.nvd.nist.gov>.
 =cut
 
 sub get_cve_data ( $cve ) {
-	state $rc = require Mojo::URL;
-	state $base = Mojo::URL->new('https://services.nvd.nist.gov/rest/json/cves/2.0');
-	return {} unless $cve;
+	my $search_results = get_cve_search_results();
 
-	my $url = $base->clone->query( cveId => $cve );
-	get_ua()->get($url)->result->json->{vulnerabilities}[0]{cve};
+	foreach my $item ( $search_results->@* ) {
+		if( $item->{'cve'}{'id'} eq uc($cve) ) {
+			return $item->{'cve'};
+			last;
+			}
+		}
+
+	return {};
 	}
 
 =item * get_cve_description(CVE)
@@ -261,17 +265,17 @@ The cache file, F<cve-search-results.json>, is at the top-level of the directory
 =cut
 
 sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' ) {
-	state $url = "https://services.nvd.nist.gov/rest/json/cves/2.0";
-	state $cached_file = find_root()->child('cve-search-results.json');
+	state $url     = "https://services.nvd.nist.gov/rest/json/cves/2.0";
+	state $section = 'data';
+	state $tag     = 'cve-search-results.json';
 
-	unless( -e $cached_file and -M $cached_file < 0.5 ) {
-		get_ua()
-			->get( $url, form => { keywordSearch => $keyword } )
-			->res
-			->save_to($cached_file);
+	my $json = get_cache_item( $section, $tag );
+	say STDERR "Cache item $section/$tag is undef";
+
+	unless( defined $json ) {
+		$json = get_ua()->get($url => form => { keywordSearch => $keyword })->res->json;
+		set_cache_item( $section, $tag, $json );
 		}
-
-	my $json = decode_json( $cached_file->slurp );
 
 	unless( exists $json->{'vulnerabilities'} ) {
 		carp "Problem with the JSON from NIST: Did not have 'vulnerabilities' key";
