@@ -41,3 +41,5 @@ cpansa/CPANSA-XXX.yml
 .downstream.json
 apps/
 cve-search-results.json
+.cache/
+test-meta.pl
