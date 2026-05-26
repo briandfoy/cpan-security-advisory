@@ -34,7 +34,7 @@ advisories:
   - CVE-2025-40913
   - CVE-2023-36328
   description: Net::Dropbear versions through 0.16 for Perl contains a dependency
-    that may be susceptible to an integer overflow.  Net::DropbearÂ embeds a version
+    that may be susceptible to an integer overflow.  Net::Dropbear embeds a version
     of the libtommath library that is susceptible to an integer overflow associated
     with CVE-2023-36328.
   fixed_versions: []
