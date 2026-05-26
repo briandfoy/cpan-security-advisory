@@ -41,7 +41,8 @@ advisories:
     process that passes attacker controlled strings to XML::LibXML's DOM node-name
     methods can reach this path on the default API. The likely consequence is a crash,
     causing denial of service.
-  fixed_versions: []
+  fixed_versions:
+  - '>=2.0211'
   github_security_advisory:
   - GHSA-g5h8-x64v-qf5h
   id: CPANSA-XML-LibXML-2026-8177
