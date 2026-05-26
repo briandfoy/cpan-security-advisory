@@ -56,7 +56,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: XML-LibXML
-last_checked: 1773231599
-latest_version: '2.0210'
+last_checked: 1779803493
+latest_version: '2.0213'
 metacpan: https://metacpan.org/pod/XML::LibXML
 repo: https://github.com/shlomif/perl-XML-LibXML.git
