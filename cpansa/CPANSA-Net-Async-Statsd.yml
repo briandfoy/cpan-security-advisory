@@ -1,0 +1,24 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-8722
+  description: Net::Async::Statsd::Client versions through 0.005 for Perl allow metric
+    injections.  The metric names are not checked for newlines, colons or pipes. Metrics
+    generated from untrusted sources could inject additional statsd metrics.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-hpgh-hpwg-532v
+  id: CPANSA-Net-Async-Statsd-2026-8722
+  references:
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  reported: 2026-06-04
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-Async-Statsd
+last_checked: 1780681109
+latest_version: '0.005'
+metacpan: https://metacpan.org/pod/Net::Async::Statsd
