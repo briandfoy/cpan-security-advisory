@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - <0.11
+  cves:
+  - CVE-2026-8647
+  description: Crypt::ScryptKDF versions through 0.010 for Perl uses insecure random
+    number source when no CSPRNG module is available.  The random_bytes function fell
+    back to using the built-in rand() function when none of the Perl modules Crypt::PRNG,
+    Crypt::OpenSSL::Random, Net::SSLeay, Crypt::Random, or Bytes::Random::Secure were
+    available.
+  fixed_versions:
+  - '>=0.11'
+  github_security_advisory: []
+  id: CPANSA-Crypt-ScryptKDF-2026-8647
+  references:
+  - https://metacpan.org/release/MIK/Crypt-ScryptKDF-0.011/changes
+  - https://metacpan.org/release/MIK/Crypt-ScryptKDF-0.011/diff/MIK/Crypt-ScryptKDF-0.010#lib/Crypt/ScryptKDF.pm
+  - http://www.openwall.com/lists/oss-security/2026/05/26/8
+  reported: 2026-05-26
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-ScryptKDF
+last_checked: 1780680878
+latest_version: '0.011'
+metacpan: https://metacpan.org/pod/Crypt::ScryptKDF
