@@ -23,6 +23,27 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2026-46741
   reported: 2026-06-05
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-11362
+  description: DataDog::DogStatsd versions through 0.07 for Perl allow metric injections
+    from event tags.  DataDog::DogStatsd does not properly sanitise input, allowing
+    metric injections of data from untrusted sources.  The format_event method (used
+    by the event method) does not validate the content of the tags, which may contain
+    commas (allowing tags to be injected) or newlines, pipes and colons that allow
+    metric injections.  (There is an ineffective s/|//g to remove pipes, but because
+    the pipe is not escaped, it is interpreted as a regular expression metacharacter
+    and has no effect.)
+  fixed_versions: []
+  github_security_advisory: []
+  id: CPANSA-DataDog-DogStatsd-2026-11362
+  references:
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  - https://www.cve.org/CVERecord?id=CVE-2026-46741
+  reported: 2026-06-05
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: DataDog-DogStatsd
