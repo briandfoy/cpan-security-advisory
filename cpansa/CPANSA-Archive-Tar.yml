@@ -74,6 +74,27 @@ advisories:
   - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00002.html
   reported: 2016-08-02
   severity: high
+- affected_versions:
+  - <3.10
+  cves:
+  - CVE-2026-9538
+  description: Archive::Tar versions before 3.10 for Perl allow memory exhaustion
+    via attacker controlled entry size field in tar header.  _read_tar() reads each
+    entry's payload with $handle->read($$data, $block), where $block is derived from
+    the entry's 12-byte size field in the tar header with no upper bound on that value.  A
+    crafted header declaring a multi-gigabyte size causes Perl to allocate a scalar
+    of that size.
+  fixed_versions:
+  - '>=3.10'
+  github_security_advisory:
+  - GHSA-rrh7-4pj2-xxq8
+  id: CPANSA-Archive-Tar-2026-9538
+  references:
+  - https://github.com/jib/archive-tar-new/commit/f9af01426038e29d9578825a0cd3626946ab08c7.patch
+  - https://metacpan.org/release/BINGOS/Archive-Tar-3.10/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/26/4
+  reported: 2026-05-26
+  severity: ~
 cpansa_version: 2
 distribution: Archive-Tar
 last_checked: 1773231441
