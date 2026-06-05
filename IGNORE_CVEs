@@ -232,3 +232,4 @@ CVE-2026-29202    Insufficient input validation of the `plugin` parameter of the
 CVE-2026-42589    Gotenberg is a Docker-powered stateless API for PDF files. Prior to 8.31.0, Gotenberg
 CVE-2026-42945    NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module
 CVE-2026-44128    SEPPmail Secure Email Gateway before version 15.0.2.1 allows unauthenticate
+CVE-2026-9256     NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module.
