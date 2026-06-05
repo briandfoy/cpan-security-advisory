@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.13.1
+  cves:
+  - CVE-2026-9658
+  description: 'Plack::Middleware::Security::Common versions before 0.13.1 for Perl
+    did not block header injections in request paths.  The header injection rule was
+    ineffective at blocking header injections in the request paths unless they were
+    double-encoded, for example,    GET /path\r\nHTTP/1.1\r\nHost: secret.example.com  Note
+    that it is unclear whether request paths with CRLF followed by additional headers
+    would be blocked by reverse proxies, or how they would be processed by Plack-based
+    servers.'
+  fixed_versions:
+  - '>=0.13.1'
+  github_security_advisory:
+  - GHSA-xcq6-chp9-g954
+  id: CPANSA-Plack-Middleware-Security-Simple-2026-9658
+  references:
+  - https://metacpan.org/release/RRWO/Plack-Middleware-Security-Simple-v0.13.1/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/28/9
+  reported: 2026-05-28
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Plack-Middleware-Security-Simple
+last_checked: 1780683139
+latest_version: v0.13.1
+metacpan: https://metacpan.org/pod/Plack::Middleware::Security::Simple
