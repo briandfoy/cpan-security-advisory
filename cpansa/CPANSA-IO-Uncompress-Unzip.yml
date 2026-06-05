@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - <2.215
+  cves:
+  - CVE-2025-15649
+  description: IO::Uncompress::Unzip versions before 2.215 for Perl propagate uncaught
+    exception when parsing zip header with malformed DOS date.  _dosToUnixTime() decodes
+    the local-file-header last-modification date field and calls Time::Local::timelocal()
+    without an eval guard. A header whose date field decodes to an out-of-range month,
+    day, or hour causes timelocal() to die.  The exception propagates out of IO::Uncompress::Unzip->new($file)
+    where callers expect undef plus $UnzipError.
+  fixed_versions:
+  - '>=2.215'
+  github_security_advisory:
+  - GHSA-hcq9-8v5x-mqjp
+  id: CPANSA-IO-Compress-2025-15649
+  references:
+  - https://github.com/pmqs/IO-Compress/commit/fd28c1d2374eee9811f6d0c5bddc0957abdf1da8.patch
+  - https://github.com/pmqs/IO-Compress/issues/65
+  - https://metacpan.org/release/PMQS/IO-Compress-2.215/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/27/1
+  reported: 2026-05-27
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: IO-Compress
+last_checked: 1780680398
+latest_version: '2.220'
+metacpan: https://metacpan.org/pod/IO::Uncompress::Unzip
