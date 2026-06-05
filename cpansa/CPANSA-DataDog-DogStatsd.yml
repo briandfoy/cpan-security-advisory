@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-9270
+  description: DataDog::DogStatsd versions through 0.07 for Perl allow metric injections.  DataDog::DogStatsd
+    does not properly sanitise input, allowing metric injections of data from untrusted
+    sources.  The send_stats method does not remove newlines from metric names ($stat
+    variable), allowing attackers to change the metric name prefix.  The send_stats
+    method does not validate the content of the value ($delta variable), allowing
+    attackers to inject metrics, especially from methods that do not restrict the
+    data type for the value, such as set, gauge, count and histogram.  The send_stats
+    method does not validate the content of the tags, which may contain newlines,
+    pipes and colons that allow metric injections.  Note that the SYNOPSIS shows an
+    example of passing a website form "loginName" parameter as a tag, which is unsafe.
+  fixed_versions: []
+  github_security_advisory: []
+  id: CPANSA-DataDog-DogStatsd-2026-9270
+  references:
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  - https://www.cve.org/CVERecord?id=CVE-2026-46741
+  reported: 2026-06-05
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: DataDog-DogStatsd
+last_checked: 1780682275
+latest_version: '0.07'
+metacpan: https://metacpan.org/pod/DataDog::DogStatsd
