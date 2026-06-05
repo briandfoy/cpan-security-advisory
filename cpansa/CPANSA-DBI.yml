@@ -159,6 +159,25 @@ advisories:
   - https://usn.ubuntu.com/4509-1/
   reported: 2020-09-11
   severity: medium
+- affected_versions:
+  - <1.648
+  cves:
+  - CVE-2026-10879
+  description: DBI versions before 1.648 for Perl have a heap overflow when preparsing
+    SQL statements with more than 9 binders.  The preparse method expands SQL placeholder
+    characters to numbered binders of the form :pN, but only allocates three characters
+    per binder in the buffer.  Placeholders 10-99 require four characters, 100-999
+    require five characters, et cetera.
+  fixed_versions:
+  - '>=1.648'
+  github_security_advisory:
+  - GHSA-c7xw-cj86-m724
+  id: CPANSA-DBI-2026-10879
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/af79036c07aa9a457971c0f4136e37c85dc20978.patch
+  - https://metacpan.org/release/HMBRAND/DBI-1.648/changes
+  reported: 2026-06-05
+  severity: ~
 cpansa_version: 2
 distribution: DBI
 last_checked: 1773231485
