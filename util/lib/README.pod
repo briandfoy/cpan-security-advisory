@@ -1,4 +1,4 @@
-# The llib/ directory
+# The util/lib/ directory
 
 This directory holds the modules for the tools in the repository. These
 modules should not be installed.
