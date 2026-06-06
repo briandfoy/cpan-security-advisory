@@ -1156,10 +1156,10 @@ advisories:
   description: Perl threads have a working directory race condition where file operations
     may target unintended paths.  If a directory handle is open at thread creation,
     the process-wide current working directory is temporarily changed in order to
-    clone that handle for the new thread, which is visible from any third (orÂ more)
-    thread already running. This may lead to unintended operationsÂ such as loading
-    code or accessing files from unexpected locations, which a local attacker may
-    be able to exploit. The bug was introduced in commit 11a11ecf4bea72b17d250cfb43c897be1341861e
+    cloneÂ that handle for the new thread, which is visible from any third (orÃÂ more)
+    thread already running. This may lead to unintended operationsÃÂ such as loading
+    code or accessing files from unexpected locations,Â which a local attacker may
+    be able to exploit. The bug was introduced in commitÂ 11a11ecf4bea72b17d250cfb43c897be1341861e
     and released in Perl version 5.13.6
   fixed_versions:
   - '>=5.41.13'
@@ -1179,6 +1179,28 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2025/05/23/1
   - http://www.openwall.com/lists/oss-security/2025/05/30/4
   reported: 2025-05-30
+  severity: ~
+- affected_versions:
+  - <5.43.10
+  cves:
+  - CVE-2026-8376
+  description: Perl versions through 5.43.10 have a heap buffer overflow when compiling
+    regular expressions with a repeated fixed string on 32-bit builds.  Perl_study_chunk
+    in regcomp_study.c checked the size of the joined substring buffer in characters
+    rather than bytes. For a quantified fixed substring with a large minimum count,
+    the byte length mincount * l could overflow SSize_t, producing an undersized SvGROW
+    allocation; the subsequent copy writes past the end of the buffer.  A caller that
+    compiles an attacker-controlled regular expression on a 32-bit perl build triggers
+    a heap buffer overflow at compile time.
+  fixed_versions:
+  - '>=5.43.11'
+  github_security_advisory:
+  - GHSA-mpxq-89h3-qc47
+  id: CPANSA-perl-2026-8376
+  references:
+  - https://github.com/Perl/perl5/commit/5e7f119eb2bb1181be908701f22bf7068e722f1c.patch
+  - http://www.openwall.com/lists/oss-security/2026/05/26/1
+  reported: 2026-05-26
   severity: ~
 cpansa_version: 2
 distribution: perl
