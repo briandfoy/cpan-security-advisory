@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <0.13
+  cves:
+  - CVE-2026-46739
+  description: Net::Statsd versions before 0.13 for Perl allow metric injections.  The
+    metric names are not checked for newlines, colons or pipes. Metrics generated
+    from untrusted sources could inject additional statsd metrics.  The update_stats
+    (used for updating counters) and gauge methods do not check that values are numeric
+    (which would block metric injection).
+  fixed_versions:
+  - '>=0.13'
+  github_security_advisory:
+  - GHSA-wjp4-mf92-6wh6
+  id: CPANSA-Net-Statsd-2026-46739
+  references:
+  - https://github.com/cosimo/perl5-net-statsd/pull/10
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  reported: 2026-06-04
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-Statsd
+last_checked: 1780755698
+latest_version: '0.13'
+metacpan: https://metacpan.org/pod/Net::Statsd
