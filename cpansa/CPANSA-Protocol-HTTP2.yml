@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-10725
+  description: Protocol::HTTP2 versions through 1.12 for Perl is vulnerable to a HTTP/2
+    Bomb.  Protocol::HTTP2's inbound HPACK path has no header-list size limit, so
+    a small HTTP/2 request can expand into large server memory (the "HTTP/2 bomb").  The
+    headers_decode method materialises a full key+value copy per indexed reference
+    with no running size check, and the stream_header_block_add method appends (since
+    version 1.12) every CONTINUATION frame to the per-stream buffer unbounded.  MAX_HEADER_LIST_SIZE
+    (default 65536) is advertised in SETTINGS but never consulted on decode.  It is
+    absent from the decoder and from the :limits export tag.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-q432-rmqv-hh8m
+  id: CPANSA-Protocol-HTTP2-2026-10725
+  references:
+  - https://metacpan.org/release/CRUX/Protocol-HTTP2-1.12/source/lib/Protocol/HTTP2/HeaderCompression.pm#L133
+  - https://metacpan.org/release/CRUX/Protocol-HTTP2-1.12/source/lib/Protocol/HTTP2/Stream.pm#L414
+  - https://security.metacpan.org/patches/P/Protocol-HTTP2/1.12/CVE-2026-10725-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/06/06/7
+  reported: 2026-06-06
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Protocol-HTTP2
+last_checked: 1780755488
+latest_version: '1.12'
+metacpan: https://metacpan.org/pod/Protocol::HTTP2
