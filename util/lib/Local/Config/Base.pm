@@ -25,6 +25,7 @@ Local::Config::Base -
 
 sub AUTOLOAD ( $self, @args ) {
 	my $method = $AUTOLOAD =~ s/.*:://r;
+
 	croak( "Unknown method <$method>" ) unless $self->key_exists($method);
 
 	   if( @args == 0 ) { $self->value_for( $method ) }
@@ -59,7 +60,7 @@ sub dump ( $self ) {
 =cut
 
 sub getopts_args ( $self ) {
-	state $spec = $self->getopts_spec;
+	my $spec = $self->getopts_spec;
 	$self->{spec} =  $spec;
 	my %getopts_args =
 		map  { $spec->{$_}{getopt} => \$spec->{$_}{value} }
@@ -80,7 +81,7 @@ sub getopts_spec ( $self ) {
 
 =cut
 
-sub key_exists ( $self, $key ) { exists $self->getopts_spec->{$key}	}
+sub key_exists ( $self, $key ) { exists $self->{'spec'}{$key}	}
 
 =item * new
 
@@ -99,13 +100,9 @@ sub new ( $class, @args ) {
 
 =cut
 
-sub leftover_args ( $self, $args = undef ) {
-	if( defined $args ) {
-		$self->{spec}{leftover_args} = $args
-		}
-	else {
-		$self->{spec}{leftover_args};
-		}
+sub leftover_args ( $self, @args ) {
+	$self->{leftover_args} = $args[0] if @args > 0;
+	$self->{leftover_args};
 	}
 
 =item * postprocess_args
@@ -117,6 +114,9 @@ sub postprocess_args ( $self ) {
 	}
 
 =item * process_args
+
+This processes the command-line arguments, and adds the remaining arguments to
+C<leftover_args>.
 
 =cut
 
@@ -159,7 +159,7 @@ sub value_for ( $self, $key ) {
 		return;
 		}
 
-	$self->{spec}{$key}{value}
+	$self->{'spec'}{$key}{'value'};
 	}
 
 =item * set_value_for
@@ -172,7 +172,7 @@ sub set_value_for ( $self, $key, $value ) {
 		return;
 		}
 
-	$self->getopts_spec->{$key}{value} = $value;
+	$self->{'spec'}{$key}{'value'} = $value;
 	$self;
 	}
 

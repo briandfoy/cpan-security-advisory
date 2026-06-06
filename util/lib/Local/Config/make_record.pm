@@ -9,6 +9,9 @@ use namespace::autoclean;
 use Carp qw(carp);
 use Local::CPANSA;
 
+use Mojo::Util qw(dumper);
+use YAML::XS qw(Dump LoadFile);
+
 =encoding utf8
 
 =head1 NAME
@@ -26,7 +29,7 @@ Local::Config::make_record - stuff to create an advisory file
 =cut
 
 sub getopts_spec ( $self ) {
-	state %opts = (
+	my %opts = (
 		affected           => { order => 4, getopt => "affected|a=s",          description => 'Affected versions' },
 		cve                => { order => 1, getopt => 'cve=s',                 description => 'CVE value' },
 		fixed              => { order => 5, getopt => "fixed|f=s",             description => 'Fixed versions' },
@@ -100,7 +103,6 @@ sub new_meta ( $self, $config ) {
 
 sub postprocess_args ( $self ) {
 	my ($cve_arg, $package_arg ) = $self->leftover_args->@*;
-
 	$self->cve( $cve_arg ) if defined $cve_arg;
 	$self->namespace( $package_arg ) if defined $package_arg;
 
@@ -125,7 +127,7 @@ sub postprocess_args ( $self ) {
 =cut
 
 sub prompt_for_values ( $self ) {
-	my $opts = $self->getopts_spec;
+	my $opts = $self->{'spec'};
 	my @prompt_keys =
 		sort { $opts->{$a}{order} <=> $opts->{$b}{order} }
 		grep { eval{ $opts->{$_}{order} } }
@@ -148,6 +150,67 @@ sub prompt_for_values ( $self ) {
 		}
 
 	$self;
+	}
+
+=item * run
+
+=cut
+
+sub run ( $class, @args ) {
+	my $config = Local::Config::make_record->new( @args );
+
+	my $report_path = $config->output_filename // $config->guess_output_filename;
+	say STDERR "Report path is <$report_path>";
+
+	my $existing = do {
+		if( -e $report_path ) {
+			say "Path <$report_path> exists";
+			my $data = eval { LoadFile( $report_path ) };
+			if( $@ ) {
+				die "Could not load existing file <$report_path>: $@\n";
+				}
+			$data;
+			}
+		else {
+			say "Path <$report_path> does not exist";
+			Local::Config::make_record->new_meta($config);
+			}
+		};
+
+	my $advisory = Local::CPANSA::assemble_advisory( $config );
+
+	my $new_id = $advisory->{id};
+	my $new_id_exists = grep { $_->{id} eq $new_id } $existing->{advisories}->@*;
+
+	if( $new_id_exists ) {
+		say STDERR "ID $new_id already exists";
+		return 0;
+		}
+
+	push $existing->{advisories}->@*, $advisory;
+
+	# If we want to redirect into an existing file, take out the YAML
+	# header, unless we have -s to force the header
+
+	my $fh = do {
+		if( $config->output_filename eq '-' ) { \*STDOUT }
+		else {
+			open my $fh, '>:encoding(UTF-8)', $report_path
+				or die "Could not open <$report_path>: $!\n";
+			$fh;
+			}
+		};
+
+	print { $fh } Dump($existing);
+
+	my $cve = $advisory->{'cves'}[0];
+	my @command = ('git', 'commit', '-m', "$cve for " . $config->namespace);
+
+	print "Commit with <@command>?";
+	my $answer = <STDIN>;
+
+	system 'git', 'add', $report_path;
+	system @command;
 	}
 
 =back
