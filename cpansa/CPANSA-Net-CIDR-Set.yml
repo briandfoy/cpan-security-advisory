@@ -59,6 +59,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/06/04/11
   reported: 2026-06-04
   severity: ~
+- affected_versions:
+  - <0.21
+  cves:
+  - CVE-2026-49942
+  description: Net::CIDR::Set versions through 0.20 for Perl did not validate network
+    masks.  The mask portion of a network mask could contain Unicode digits such as
+    the Arabic-Indic One (U+0661), or non-digits, which were ignored.   This could
+    allow network masks to accept larger networks.  Leading zeros were also accepted,
+    but treated as decimal instead of octal.  This could lead to confusion about what
+    networks are acceptable.
+  fixed_versions:
+  - '>=0.21'
+  github_security_advisory:
+  - GHSA-fff7-gx98-vr3g
+  id: CPANSA-Net-CIDR-Set-2026-49942
+  references:
+  - https://metacpan.org/release/RRWO/Net-CIDR-Set-0.21/changes
+  - https://nvd.nist.gov/vuln/detail/CVE-2025-40911
+  - https://nvd.nist.gov/vuln/detail/CVE-2026-45191
+  reported: 2026-06-04
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-CIDR-Set
