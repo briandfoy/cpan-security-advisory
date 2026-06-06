@@ -361,13 +361,13 @@ sub get_recorded_cves :Export_Ok() :Export_Tag("cve") ( $base = get_file_path('c
 	return \%found;
 	}
 
-=item * get_unevaluated_cve()
+=item * get_unevaluated_cves()
 
 Reduce the list from C<get_all_cve> to just the unevaluated reports.
 
 =cut
 
-sub get_unevaluated_cve :Export_Ok() :Export_Tag("cve") {
+sub get_unevaluated_cves :Export_Ok() :Export_Tag("cve") {
 	[ grep { $_->{'unevaluated'} } get_all_cve()->@* ]
 	}
 
