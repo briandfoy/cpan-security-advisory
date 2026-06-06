@@ -22,7 +22,8 @@ advisories:
   - https://github.com/NixOS/nixpkgs/pull/181632
   reported: 2022-06-27
   severity: medium
-- affected_versions: "<6.17"
+- affected_versions:
+  - "<6.17"
   cves:
   - CVE-2026-8450
   description: 'HTTP::Daemon versions before 6.17 for Perl allow OS command injection
@@ -32,7 +33,8 @@ advisories:
     input passed to send_file() can run OS commands at the daemon process UID. The
     read-pipe form (''cmd |'') also leaks subprocess stdout into the HTTP response
     body. The write-mode forms can create or truncate files at attacker chosen paths.'
-  fixed_versions: ">=6.17"
+  fixed_versions:
+  - ">=6.17"
   github_security_advisory:
   - GHSA-3hc6-3p33-wq57
   id: CPANSA-HTTP-Daemon-2026-8450
