@@ -21,6 +21,24 @@ advisories:
   - https://metacpan.org/release/RRWO/Net-CIDR-Set-0.14/changes
   reported: 2025-05-27
   severity: ~
+- affected_versions:
+  - <0.21
+  cves:
+  - CVE-2026-49940
+  description: Net::CIDR::Set versions through 0.20 for Perl accept non-ASCII IP addresses
+    and netmasks.  Unicode digits such as the Arabic-Indic One (U+0661) were accepted
+    but not properly parsed as numbers.  This could allow network masks to accept
+    larger networks.
+  fixed_versions:
+  - '>=0.21'
+  github_security_advisory:
+  - GHSA-hpv8-77xm-27wx
+  id: CPANSA-Net-CIDR-Set-2026-49940
+  references:
+  - https://metacpan.org/release/RRWO/Net-CIDR-Set-0.21/changes
+  - https://nvd.nist.gov/vuln/detail/CVE-2025-40911
+  reported: 2026-06-04
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-CIDR-Set
