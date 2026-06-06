@@ -188,7 +188,7 @@ sub get_all_cve :Export_Ok() :Export_Tag("cve") {
 			$ghsa = get_github_advisories($cve)->[0];
 			$package = guess_package($v);
 			# say STDERR "$sub_name: CVE: $cve PACKAGE: $package";
-			$dist_info = get_dist_info($package);
+			$dist_info = get_dist_info($package) if $package;
 			}
 
 		push @results, {
