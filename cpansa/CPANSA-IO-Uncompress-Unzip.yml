@@ -22,6 +22,28 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/27/1
   reported: 2026-05-27
   severity: ~
+- affected_versions:
+  - <2.220
+  cves:
+  - CVE-2026-48959
+  description: IO::Uncompress::Unzip versions before 2.220 for Perl allow CPU exhaustion
+    via per-byte read loop in fastForward.  fastForward() compares length $offset
+    (the digit count of the offset, 1 to 19) against the chunk size $c instead of
+    $offset itself, so $c shrinks from 16 KiB to 1-19 bytes per iteration.  Extracting
+    a named entry from an attacker supplied zip via IO::Uncompress::Unzip->new($zip,
+    Name => $target) drives a per-byte read loop scaling with the entry's compressed
+    size, up to the non-Zip64 4 GiB cap.
+  fixed_versions:
+  - '>=2.220'
+  github_security_advisory:
+  - GHSA-7vxx-5gqr-7r44
+  id: CPANSA-IO-Compress-2026-48959
+  references:
+  - https://github.com/pmqs/IO-Compress/commit/68db44076f4c1a86a2ffe53a958eac6cabaf72e2.patch
+  - https://metacpan.org/release/PMQS/IO-Compress-2.220/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/27/2
+  reported: 2026-05-27
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: IO-Compress
