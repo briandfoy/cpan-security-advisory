@@ -39,6 +39,26 @@ advisories:
   - https://nvd.nist.gov/vuln/detail/CVE-2025-40911
   reported: 2026-06-04
   severity: ~
+- affected_versions:
+  - <0.21
+  cves:
+  - CVE-2026-49941
+  description: Net::CIDR::Set versions through 0.20 for Perl did not validate IP addresses.  The
+    add method called the _encode method to parse addresses. If the addresses did
+    not look like netmasks or network ranges, then they were assumed to single IP
+    addresses and passed back to itself as a 32-bit or 128-bit netmask.  If the argument
+    was not a well-formed IP address, then this would lead to indefinite recursion.  An
+    attacker could use this to cause a denial of service.
+  fixed_versions:
+  - '>=0.21'
+  github_security_advisory:
+  - GHSA-wvxw-q92g-9ghf
+  id: CPANSA-Net-CIDR-Set-2026-49941
+  references:
+  - https://metacpan.org/release/RRWO/Net-CIDR-Set-0.21/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/04/11
+  reported: 2026-06-04
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-CIDR-Set
