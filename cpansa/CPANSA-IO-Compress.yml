@@ -54,6 +54,28 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/27/3
   reported: 2026-05-27
   severity: ~
+- affected_versions:
+  - <2.220
+  cves:
+  - CVE-2026-48962
+  description: IO::Compress versions before 2.220 for Perl can execute arbitrary code
+    in File::GlobMapper via an attacker-controlled output glob.  _parseOutputGlob()
+    wraps the caller-supplied output glob string in double quotes and stores it in
+    the parser state; _getFiles() then runs the stored expression through eval STRING.
+    A literal double quote in the output glob closes the dquote wrapper, and the characters
+    that follow are evaluated as Perl.  Arbitrary Perl in the output glob executes
+    at the calling process's privilege.
+  fixed_versions:
+  - '>=2.220'
+  github_security_advisory:
+  - GHSA-q6wx-vhvq-x7h6
+  id: CPANSA-IO-Compress-2026-48962
+  references:
+  - https://github.com/pmqs/IO-Compress/commit/f2db247bf90d4cc7ee2710be384946081f3b4610.patch
+  - https://metacpan.org/release/PMQS/IO-Compress-2.220/changes
+  - http://www.openwall.com/lists/oss-security/2026/05/27/4
+  reported: 2026-05-27
+  severity: ~
 cpansa_version: 2
 distribution: IO-Compress
 last_checked: 1773231523
