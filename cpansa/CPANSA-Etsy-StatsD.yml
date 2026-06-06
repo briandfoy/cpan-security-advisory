@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-46741
+  description: Etsy::StatsD versions through 1.002002 for Perl allow metric injections.  The
+    metric names and values are not checked for newlines, colons or pipes. Metrics
+    generated from untrusted sources could inject additional statsd metrics.  Note
+    that the git repository contains an unreleased version with the gauge and set
+    methods that also do not check for potential metric injections.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-mcvm-9xxc-24jx
+  id: CPANSA-Etsy-StatsD-2026-46741
+  references:
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  reported: 2026-06-04
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Etsy-StatsD
+last_checked: 1780762218
+latest_version: '1.002002'
+metacpan: https://metacpan.org/pod/Etsy::StatsD

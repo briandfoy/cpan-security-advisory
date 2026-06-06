@@ -3,7 +3,7 @@ use v5.28; # attributes now come before signature
 package Local::CPANSA;
 use experimental qw(signatures);
 
-use Carp;
+use Carp qw(croak carp cluck);
 use Exporter qw(import);
 
 our(@EXPORT, @EXPORT_OK, %EXPORT_TAGS);
@@ -270,9 +270,9 @@ sub get_cve_search_results :Export_Ok() :Export_Tag("cve") ( $keyword = 'Perl' )
 	state $tag     = 'cve-search-results.json';
 
 	my $json = get_cache_item( $section, $tag );
-	say STDERR "Cache item $section/$tag is undef";
 
 	unless( defined $json ) {
+		say STDERR "Cache item $section/$tag is undef: Refetching CVE search results";
 		$json = get_ua()->get($url => form => { keywordSearch => $keyword })->res->json;
 		set_cache_item( $section, $tag, $json );
 		}
@@ -503,13 +503,14 @@ sub metacpan_cache ( $method, $args, $sub = sub ($a) { $a->@* } ) {
 	state $section = 'metacpan';
 
 	# say STDERR "metacpan_cache method: $method args: (@$args)";
+	# say STDERR "metacpan_cache method: $method args last index: ($#$args)";
 
 	my $sha256 = sha256_hex( join "\000", $args->@* );
 	my $tag = join '-', $method, $sha256;
 	my $contents = get_cache_item( $section, $tag );
 
 	unless( defined $contents ) {
-		# say STDERR "metacpan_cache fetching fresh method: $method args: (@$args)";
+		say STDERR "metacpan_cache ($section, $tag) fetching fresh method: $method args: (@$args)";
 		$contents = eval { $mcpan->$method( $sub->($args) ) };
 		delete $contents->{'client'};
 		if( length $@ ) {
