@@ -8,7 +8,8 @@ sub startup ($app) {
 	$app->secrets($config->{secrets});
 
 	my $r = $app->routes;
-	$r->get('/')->to('SPA#main');
+	$r->get('/')       ->to('SPA#main');
+	$r->post('/submit')->to('SPA#submit');
 	}
 
 1;

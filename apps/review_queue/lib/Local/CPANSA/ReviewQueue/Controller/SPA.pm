@@ -19,4 +19,14 @@ sub main ($c) {
 		);
 	}
 
+sub submit ($c) {
+
+
+	$c->render(
+		template => 'partial',
+		format   => 'html',
+		)
+
+	}
+
 1;

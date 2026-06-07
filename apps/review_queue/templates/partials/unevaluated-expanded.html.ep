@@ -8,7 +8,11 @@
 				</ul>
 			</div>
 
-			<form>
+			<form id ="submi-form-<%= $cve->{'cve'} %>"
+				hx-post="/submit"
+				hx-target=""
+				hx-swap="innerHTML"
+				>
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-package" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Package</label>
 					<div class="col-sm-9"><input type="text" name="package" id="<%= $id %>-package" class="form-control" value="<%= $cve->{'package'} %>"/></div>

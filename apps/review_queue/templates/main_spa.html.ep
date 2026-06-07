@@ -1,11 +1,9 @@
-<%=
-
+<%
 my %counts;
 
 $counts{'unevaluated'} = grep { $_->{'unevaluated'} } $cves->@*;
 $counts{'ignored'}     = grep { $_->{'ignored'}     } $cves->@*;
 $counts{'recorded'}    = grep { $_->{'recorded'}    } $cves->@*;
-
 %><!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +13,7 @@ $counts{'recorded'}    = grep { $_->{'recorded'}    } $cves->@*;
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
+
 
 	<div class="container text-center">
 		<style>
@@ -38,6 +37,10 @@ $counts{'recorded'}    = grep { $_->{'recorded'}    } $cves->@*;
 		  });
 		});
 		</script>
+	</div>
+
+	<div id="generated-tag" class="container">
+		<p>Generated at <%= scalar localtime %></p>
 	</div>
 
 	<div id="list-content" class="container mt-5">
