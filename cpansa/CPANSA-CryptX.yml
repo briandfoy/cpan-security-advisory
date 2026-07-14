@@ -99,7 +99,8 @@ advisories:
     buffer. Version 0.088 added the clamp to gcm_decrypt_verify, and 0.088_001 added
     it to the other three.  Any caller of an affected helper that forwards an attacker-controlled
     tag longer than the buffer can trigger the overflow.
-  fixed_versions: []
+  fixed_versions:
+  - '>0.088'
   github_security_advisory:
   - GHSA-4p3p-7392-hjw4
   id: CPANSA-CryptX-2026-41565
