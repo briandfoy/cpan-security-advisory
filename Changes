@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260715.001 2026-07-15T20:45:35Z
+	* data update for 2026-07-15
+	* data update for CryptX, CVE-2206-41565 (#413)
+
 20260712.001 2026-07-12T18:57:51Z
 	* data update for 2026-07-12
 
