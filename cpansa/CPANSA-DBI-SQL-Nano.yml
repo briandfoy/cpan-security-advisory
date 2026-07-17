@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions:
+  - '>=1.42,<1.651'
+  cves:
+  - CVE-2026-15043
+  description: DBI::SQL::Nano versions from 1.42 before 1.651 for Perl have inverted
+    <= and >= SQL operators on text.  DBI::SQL::Nano, DBI's built-in mini-SQL engine,
+    evaluated WHERE predicates incorrectly in some cases. In the non-numeric string
+    branch of the is_matched method, <= was evaluated using Perl's ge operator, and
+    >= was evaluated using Perl's le operator.  SQL::Nano is the fallback query engine
+    for DBI's file-backed drivers (DBD::File, DBD::DBM, CSV-style drivers) whenever
+    SQL::Statement is not installed, and is forced whenever DBI_SQL_NANO=1. Queries
+    over such tables use these predicates directly.  The impact depends on the context.
+    Where an application relies on a WHERE clause to filter file-backed data for policy
+    or authorization, an inverted <=/>= comparison silently returns the wrong rows.
+  fixed_versions:
+  - '>=1.651'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-15043
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/e9742ef85a75867cbd696860e3bf3e32b681f98d.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-mv45-ff6j-x9jp
+  - https://metacpan.org/release/HMBRAND/DBI-1.651/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/14/9
+  reported: 2026-07-14
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: DBI
+last_checked: 1784266116
+latest_version: '1.015544'
+metacpan: https://metacpan.org/pod/DBI::SQL::Nano
