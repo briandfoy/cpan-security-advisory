@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <1.02
+  cves:
+  - CVE-2026-9537
+  description: Mojo::JWT versions before 1.02 for Perl verify HMAC signatures with
+    a non-constant-time string comparison.  The decode() method compares the supplied
+    signature to the recomputed HMAC with Perl's eq operator, which stops at the first
+    differing byte, so the comparison time varies with the number of matching leading
+    bytes.  A caller that decodes attacker supplied tokens leaks the expected signature
+    through this timing variation, which can be aggregated over many requests to recover
+    the signature and forge a token.
+  fixed_versions:
+  - '>=1.02'
+  github_security_advisory:
+  - GHSA-3rp9-gq85-w2mf
+  id: CPANSA-Mojo-JWT-2026-9537
+  references:
+  - https://github.com/jberger/Mojo-JWT/commit/b8aefb846613e44b5b12bc170898ffd5b05094a2.patch
+  - http://www.openwall.com/lists/oss-security/2026/07/17/11
+  reported: 2026-07-17
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Mojo-JWT
+last_checked: 1784318315
+latest_version: '1.02'
+metacpan: https://metacpan.org/pod/Mojo::JWT
