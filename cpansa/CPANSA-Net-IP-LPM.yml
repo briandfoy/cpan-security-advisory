@@ -1,20 +1,52 @@
 ---
 advisories:
-  - affected_versions:
-      - '>=1.10'
-    cves:
-      - CVE-2025-40910
-    description: 'Net::IP::LPM version 1.10 for Perl does not properly consider leading zero characters in IP CIDR address strings, which could allow attackers to bypass access control that is based on IP addresses.  Leading zeros are used to indicate octal numbers, which can confuse users who are intentionally using octal notation, as well as users who believe they are using decimal notation.'
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-7ffq-hwvw-j35c
-    id: CPANSA-Net-IP-LPM-2025-40910
-    references:
-      - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
-      - https://metacpan.org/release/TPODER/Net-IP-LPM-1.10/diff/TPODER/Net-IP-LPM-1.09/lib/Net/IP/LPM.pm
-      - https://security.metacpan.org/patches/N/Net-IP-LPM/1.10/CVE-2025-40910-r1.patch
-    reported: 2025-06-27
-    severity: ~
+- affected_versions:
+  - '>=1.10'
+  cves:
+  - CVE-2025-40910
+  description: Net::IP::LPM version 1.10 for Perl does not properly consider leading
+    zero characters in IP CIDR address strings, which could allow attackers to bypass
+    access control that is based on IP addresses.  Leading zeros are used to indicate
+    octal numbers, which can confuse users who are intentionally using octal notation,
+    as well as users who believe they are using decimal notation.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-7ffq-hwvw-j35c
+  id: CPANSA-Net-IP-LPM-2025-40910
+  references:
+  - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/
+  - https://metacpan.org/release/TPODER/Net-IP-LPM-1.10/diff/TPODER/Net-IP-LPM-1.09/lib/Net/IP/LPM.pm
+  - https://security.metacpan.org/patches/N/Net-IP-LPM/1.10/CVE-2025-40910-r1.patch
+  reported: 2025-06-27
+  severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-56015
+  description: 'Net::IP::LPM versions through 1.10 for Perl allow a heap out-of-bounds
+    read via an unbounded prefix length.  add() passes the prefix string to the trie
+    builder addPrefixToTrie() without checking it against the address width.  addPrefixToTrie()
+    then walks the prefix buffer by prefix_length bits, reading prefix[byte] for byte
+    up to prefix_len/8, where prefix is the 4-byte (IPv4) or 16-byte (IPv6) packed
+    address. A prefix length greater than 32 for IPv4 or 128 for IPv6, for example
+    add("1.2.3.4/255", $v) or add("2001:db8::/255", $v), reads past the end of the
+    packed address.  The out-of-bounds read happens during trie construction and is
+    bounded: the prefix length is stored as an unsigned char, so the bit walk reads
+    at most 32 bytes from the start of the packed address, a short distance past the
+    end of the 4-byte or 16-byte buffer. It is detectable under AddressSanitizer,
+    valgrind, or a hardened allocator, where it can abort the process. Lookups and
+    dump() format only the valid address width, so the out-of-bounds bytes are not
+    exposed through the module''s API.'
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-q2wj-rfvr-wf9p
+  id: CPANSA-Net-IP-LPM-2026-56015
+  references:
+  - https://rt.cpan.org/Ticket/Display.html?id=179856
+  - https://security.metacpan.org/patches/N/Net-IP-LPM/1.10/CVE-2026-56015-r2.patch
+  - http://www.openwall.com/lists/oss-security/2026/07/03/4
+  reported: 2026-07-03
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-IP-LPM
