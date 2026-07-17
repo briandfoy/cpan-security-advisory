@@ -55,6 +55,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/15/27
   reported: 2026-05-15
   severity: ~
+- affected_versions:
+  - <1.21
+  cves:
+  - CVE-2026-12205
+  description: Crypt::DSA versions before 1.21 for Perl reused the nonce across signatures,
+    leading to private-key recovery.  Crypt::DSA::sign caches the per-signature nonce
+    material in the Key object without ever clearing it.  The first sign() on a Key
+    object picks a nonce, and every later sign() on that same object reuses it, producing
+    an identical "r".  Keys used to sign more than once with an affected version should
+    be considered compromised.
+  fixed_versions:
+  - '>=1.21'
+  github_security_advisory:
+  - GHSA-88g7-87jg-w4q9
+  id: CPANSA-Crypt-DSA-2026-12205
+  references:
+  - https://metacpan.org/release/TIMLEGGE/Crypt-DSA-1.20/source/lib/Crypt/DSA.pm#L47
+  - https://metacpan.org/release/TIMLEGGE/Crypt-DSA-1.21/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/15/4
+  reported: 2026-06-15
+  severity: ~
 cpansa_version: 2
 distribution: Crypt-DSA
 last_checked: 1749751661
