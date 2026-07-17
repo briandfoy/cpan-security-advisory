@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions:
+  - <0.000026
+  cves:
+  - CVE-2026-13766
+  description: 'DBIx::QuickORM versions before 0.000026 for Perl allow SQL injection
+    via unquoted SQL identifiers.  The default SQL builder, a SQL::Abstract subclass,
+    sets bindtype in its constructor but never quote_char, so SQL::Abstract emits
+    identifiers verbatim. Caller-supplied identifiers (order_by, where-clause column
+    keys, field and returning lists, upsert columns, and join aliases) reach the SQL
+    string raw, while values are placeholder-bound and unaffected.  A caller that
+    forwards untrusted input to an affected identifier position, such as a user-controlled
+    order_by value, enables SQL injection: the row order can be made to depend on
+    a sub-select over columns the query never selected, and the where and update identifier
+    positions permit further data disclosure and tampering.'
+  fixed_versions:
+  - '>=0.000026'
+  github_security_advisory:
+  - GHSA-gvp3-3684-gppw
+  id: CPANSA-DBIx-QuickORM-2026-13766
+  references:
+  - https://github.com/exodist/DBIx-QuickORM/commit/43d7684682050780f056f25e1879191fb0a3265e.patch
+  - https://metacpan.org/release/EXODIST/DBIx-QuickORM-0.000026/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/30/4
+  reported: 2026-06-30
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: DBIx-QuickORM
+last_checked: 1784265486
+latest_version: '0.000028'
+metacpan: https://metacpan.org/pod/DBIx::QuickORM
