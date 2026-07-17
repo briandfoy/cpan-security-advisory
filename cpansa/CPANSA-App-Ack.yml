@@ -42,6 +42,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/08/8
   reported: 2026-07-08
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-49147
+  description: App::Ack versions through 3.10.0 for Perl print unsanitised terminal
+    escape sequences from filenames in several output modes.  When ack prints a filename
+    whose basename contains terminal control bytes such as ANSI escape sequences,
+    those bytes reach the terminal unchanged. Version 3.10.0 added a _safe_filename
+    helper that sanitises the filenames printed by -f, -g, the colored match heading,
+    and per-match lines, but the --show-types, -l/-L, and -c paths still emit the
+    raw filename.  A file whose name embeds cursor-movement or color escapes can overwrite
+    or recolor earlier terminal output, or be passed unchanged to a downstream consumer.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-p4vj-7pqg-xhr6
+  id: CPANSA-ack-2026-49147
+  references:
+  - https://metacpan.org/release/PETDANCE/ack-v3.10.0/source/Changes
+  - http://www.openwall.com/lists/oss-security/2026/07/08/9
+  reported: 2026-07-08
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: ack
