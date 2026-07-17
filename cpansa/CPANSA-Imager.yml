@@ -195,6 +195,26 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/06/3
   reported: 2026-07-06
   severity: ~
+- affected_versions:
+  - <1.033
+  cves:
+  - CVE-2026-14454
+  description: Imager versions before 1.033 for Perl treat unsigned EXIF IFD entry
+    counts as signed.  Imager mishandled large EXIF IFD entry count values, treating
+    them as negative numbers.  This could lead to an attempt to allocate a block nearly
+    the size of the address space, which fails and kills the process.  An attacker
+    could craft an image with EXIF data that terminates a worker process.
+  fixed_versions:
+  - '>=1.033'
+  github_security_advisory:
+  - GHSA-j48m-64vj-6rm9
+  id: CPANSA-Imager-2026-14454
+  references:
+  - https://github.com/tonycoz/imager/commit/06f01a5d0fd591259aeba589370d6888384a6b6d.patch
+  - https://metacpan.org/release/TONYC/Imager-1.033/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/08/6
+  reported: 2026-07-08
+  severity: ~
 cpansa_version: 2
 distribution: Imager
 last_checked: 1773231528
