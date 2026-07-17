@@ -74,6 +74,35 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/11/17
   reported: 2026-05-11
   severity: ~
+- affected_versions:
+  - <0.095
+  cves:
+  - CVE-2026-7017
+  description: HTTP::Tiny versions before 0.095 for Perl forward credential headers
+    to cross-origin redirect targets.  When the server returns a 3xx redirect, `_maybe_redirect`
+    follows the `Location:` header and `_prepare_headers_and_cb` re-merges the caller's
+    `headers` argument into the new request, without checking whether the redirect
+    target shares an origin with the original URL. Caller-supplied `Authorization`,
+    `Cookie` and `Proxy-Authorization` headers are therefore re-sent to whatever host
+    the redirect names, across scheme, host or port boundaries, and including `https`
+    to `http` downgrades that expose them in plaintext on the wire.  The HTTP::Tiny
+    POD note that "Authorization headers will not be included in a redirected request"
+    applied only to the URL-userinfo Basic-auth path, not to headers passed explicitly
+    by the caller.
+  fixed_versions:
+  - '>=0.095'
+  github_security_advisory:
+  - GHSA-pgc4-5jjm-7rr7
+  id: CPANSA-HTTP-Tiny-2026-7017
+  references:
+  - https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/84984ef3930ddd4afcf5eb83b40d3cee200739c3.patch
+  - https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/8f32ca89e21c3ad0422adc698fa6ad17a193f55f.patch
+  - https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/commit/e7a03aedf2395158f2b0d3bad2df943349227bb3.patch
+  - https://github.com/Perl-Toolchain-Gang/HTTP-Tiny/pull/36
+  - https://metacpan.org/release/HAARG/HTTP-Tiny-0.095-TRIAL/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/07/13
+  reported: 2026-07-07
+  severity: ~
 cpansa_version: 2
 distribution: HTTP-Tiny
 last_checked: 1779056283
