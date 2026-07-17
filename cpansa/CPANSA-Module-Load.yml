@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - <0.22
+  cves:
+  - CVE-2011-10043
+  description: Module::Load versions before 0.22 for Perl allow arbitrary modules
+    outside of @INC to be loaded.  Module names starting with "::" could be passed
+    to the load function to specify arbitrary module paths.  Attackers able to influence
+    module names passed to load could use that bug to execute arbitrary code.
+  fixed_versions:
+  - '>=0.22'
+  github_security_advisory:
+  - GHSA-8x3h-9qcg-hv3j
+  id: CPANSA-Module-Load-2011-10043
+  references:
+  - https://blogs.perl.org/users/michael_g_schwern/2011/10/how-not-to-load-a-module-or-bad-interfaces-make-good-people-do-bad-things.html
+  - https://metacpan.org/release/BINGOS/Module-Load-0.22/changes
+  - https://metacpan.org/release/BINGOS/Module-Load-0.22/diff/BINGOS/Module-Load-0.20/lib/Module/Load.pm
+  reported: 2026-07-07
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Module-Load
+last_checked: 1784262746
+latest_version: '0.36'
+metacpan: https://metacpan.org/pod/Module::Load
