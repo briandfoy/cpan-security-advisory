@@ -20,6 +20,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/16/4
   reported: 2026-07-16
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-57073
+  description: HTML::Bare versions through 0.04 for Perl have an unbounded character
+    lookahead.  The parserc_parse function attempts to check for multicharacter strings
+    such as "<![CDATA" or element terminators such as ">" without checking that the
+    offsets are within the buffer.  Truncated strings such as "<a/" can trigger an
+    out-of-bounds read.  Note that the latest version available on CPAN is version
+    0.02. Newer versions are available on the git repository.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-682p-jxjc-9j4v
+  id: CPANSA-HTML-Bare-2026-57073
+  references:
+  - https://github.com/nanoscopic/perl-HTML-Bare/pull/2
+  - https://security.metacpan.org/patches/H/HTML-Bare/0.02/CVE-2026-57073-r1.patch
+  - https://security.metacpan.org/patches/H/HTML-Bare/0.04/CVE-2026-57073-r2.patch
+  - http://www.openwall.com/lists/oss-security/2026/07/16/3
+  reported: 2026-07-16
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-Bare
