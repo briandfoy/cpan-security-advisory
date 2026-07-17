@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <0.59
+  cves:
+  - CVE-2026-12844
+  description: List::SomeUtils::XS versions before 0.59 for Perl have a heap buffer
+    overflow in the pairwise function.  pairwise() collects the values returned by
+    the block into a heap buffer sized to the longer input array, then grows the buffer
+    before each copy with a single quadrupling (alloc <<= 2) instead of a loop. A
+    block call that returns more than four times the current allocation in one invocation
+    outgrows that one quadrupling, and the copy writes past the end of the buffer.  Any
+    caller of pairwise() whose block returns, for a single pair, more than four times
+    the longer input array's length writes past the buffer and corrupts the heap.
+  fixed_versions:
+  - '>=0.59'
+  github_security_advisory:
+  - GHSA-h2pv-qmv8-hvcv
+  id: CPANSA-List-SomeUtils-XS-2026-12844
+  references:
+  - https://github.com/houseabsolute/List-SomeUtils-XS/commit/22549f78669b780d6aa338a2d2e49a3dedfffaa6.patch
+  - https://metacpan.org/release/DROLSKY/List-SomeUtils-XS-0.59/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/25/11
+  reported: 2026-06-25
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: List-SomeUtils-XS
+last_checked: 1784264728
+latest_version: '0.59'
+metacpan: https://metacpan.org/pod/List::SomeUtils::XS
