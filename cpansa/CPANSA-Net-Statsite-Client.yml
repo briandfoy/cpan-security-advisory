@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-11373
+  description: Net::Statsite::Client versions through 1.1.0 for Perl allow metric
+    injections.  Net::Statsite::Client is a client for the statsite protocol, which
+    is a variant of statsd.  Newlines are not removed from metric names, allowing
+    metric injections.  Values are not sanitised for newlines or other protocol control
+    characters such as colons or pipes, allowing metric injections.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-g5q2-6jvc-qfhh
+  id: CPANSA-Net-Statsite-Client-2026-11373
+  references:
+  - http://armon.github.io/statsite
+  - https://metacpan.org/release/JASEI/Net-Statsite-Client-1.1.0/view/lib/Net/Statsite/Client.pm
+  - https://security.metacpan.org/patches/N/Net-Statsite-Client/1.1.0/CVE-2026-11373-r1.patch
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  - https://www.cve.org/CVERecord?id=CVE-2026-46739
+  reported: 2026-06-22
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Net-Statsite-Client
+last_checked: 1784264066
+latest_version: v1.1.0
+metacpan: https://metacpan.org/pod/Net::Statsite::Client
