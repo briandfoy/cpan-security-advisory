@@ -37,6 +37,30 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/06/12/4
   reported: 2026-06-12
   severity: ~
+- affected_versions:
+  - <0.261630
+  cves:
+  - CVE-2026-9641
+  description: Crypt::PBKDF2 versions before 0.261630 for Perl have a weak default
+    algorithm and number of iterations.  The default algorithm is HMAC-SHA1, which
+    should only be used for legacy systems.  These versions default to using 1000
+    iterations.  Depending on the chosen algorithm, 220,000 to 1,400,000 iterations
+    should be used.
+  fixed_versions:
+  - '>=0.261630'
+  github_security_advisory:
+  - GHSA-v9r4-9w2c-2xcp
+  id: CPANSA-Crypt-PBKDF2-2026-9641
+  references:
+  - https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#pbkdf2
+  - https://metacpan.org/release/ARODLAND/Crypt-PBKDF2-0.261630/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/12/5
+  - http://www.openwall.com/lists/oss-security/2026/06/13/1
+  - http://www.openwall.com/lists/oss-security/2026/06/14/1
+  - http://www.openwall.com/lists/oss-security/2026/06/14/2
+  - http://www.openwall.com/lists/oss-security/2026/06/14/3
+  reported: 2026-06-12
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-PBKDF2
