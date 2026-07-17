@@ -67,6 +67,30 @@ advisories:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-mv44-v82p-89xv
   reported: 2026-06-30
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-57082
+  description: Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman
+    private key with a non-cryptographic PRNG.  The MSE (Message Stream Encryption)
+    handshake derives its 160-bit Diffie-Hellman private key from Perl's rand(), a
+    non-cryptographic drand48-class generator seeded once per process, in KeyExchange.pm.
+    The shared secret and the RC4 keys derived from it (the SHA-1 of "keyA" or "keyB",
+    the shared secret, and the infohash) therefore depend entirely on a predictable
+    PRNG. The same handshake sends, in cleartext, random padding drawn from the same
+    rand() sequence in _random_pad, immediately after the public key and the private-key
+    draw.  A passive observer of the handshake recovers the PRNG state from the cleartext
+    padding, reconstructs the private key, computes the shared secret from the peer's
+    public key on the wire, derives the RC4 keys, and decrypts the connection, defeating
+    the passive-observation obfuscation MSE provides.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-3x8p-9jc8-598w
+  id: CPANSA-Net-BitTorrent-2026-57082
+  references:
+  - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-g444-x2c5-94hc
+  reported: 2026-06-30
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-BitTorrent
