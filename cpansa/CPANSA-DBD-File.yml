@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <1.651
+  cves:
+  - CVE-2026-15392
+  description: DBD::File versions before 1.651 for Perl do not ensure the table file
+    is not a symlink to an untrusted location.  The complete_table_name method builds
+    the absolute table file path without checking whether the file is a symbolic link.
+    A link inside the data directory can point to a table file at any path outside
+    of the configured f_dir and f_dir_search directories.  Callers of file-based drivers
+    can read or write files outside of the data directory.
+  fixed_versions:
+  - '>=1.651'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-15392
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/96d62dfe4528bf56fe13f413ed323d4252531728.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-mh3j-xwf4-jrqw
+  - https://metacpan.org/release/HMBRAND/DBI-1.651/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/14/15
+  reported: 2026-07-14
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: DBI
+last_checked: 1784266162
+latest_version: '0.45'
+metacpan: https://metacpan.org/pod/DBD::File
