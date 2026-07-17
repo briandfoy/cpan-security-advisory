@@ -1,0 +1,34 @@
+---
+advisories:
+- affected_versions:
+  - <0.04
+  cves:
+  - CVE-2026-50637
+  description: Metrics::Any::Adapter::Statsd versions before 0.04 for Perl does not
+    protect against metric injections.  The statsd protocol (and extensions) allow
+    mutiple metrics, separated by newlines, to be sent per packet.  The send method
+    does not validate the contents of the metric names or values. If the names have
+    newlines and statsd control characters (colon, pipe) then metric injections are
+    possible.  Version 0.04 fixed this by modifying the _make method to block metric
+    names with characters below ASCII 32 (which includes the newline), or colons or
+    pipes.
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory:
+  - GHSA-q83q-ghhm-p7g4
+  id: CPANSA-Metrics-Any-Adapter-Statsd-2026-50637
+  references:
+  - https://metacpan.org/release/PEVANS/Metrics-Any-Adapter-Statsd-0.04/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-46719
+  - https://www.cve.org/CVERecord?id=CVE-2026-46720
+  - https://www.cve.org/CVERecord?id=CVE-2026-46739
+  - https://www.cve.org/CVERecord?id=CVE-2026-50638
+  - https://www.cve.org/CVERecord?id=CVE-2026-50639
+  reported: 2026-06-10
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Metrics-Any-Adapter-Statsd
+last_checked: 1784266414
+latest_version: '0.04'
+metacpan: https://metacpan.org/pod/Metrics::Any::Adapter::Statsd
