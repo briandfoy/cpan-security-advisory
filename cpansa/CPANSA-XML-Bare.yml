@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-13401
+  description: XML::Bare versions through 0.53 for Perl will hang in an infinite loop
+    when parsing malformed attributes.  The parserc_parse function never advances
+    the attribute-parse state cursor on certain malformed attribute forms, looping
+    forever.  Nameless attributes such as "<a ='c'>" or unbalanced quotes "<a b='''''''c'>"
+    can trigger this condition.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-8299-xh3w-xhx5
+  id: CPANSA-XML-Bare-2026-13401
+  references:
+  - https://github.com/nanoscopic/perl-XML-Bare/pull/2
+  - https://security.metacpan.org/patches/X/XML-Bare/0.53/CVE-2026-13401-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/07/16/2
+  reported: 2026-07-16
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: XML-Bare
+last_checked: 1784264953
+latest_version: '0.53'
+metacpan: https://metacpan.org/pod/XML::Bare
