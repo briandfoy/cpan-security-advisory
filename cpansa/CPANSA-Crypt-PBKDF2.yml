@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - <0.261630
+  cves:
+  - CVE-2017-20240
+  description: Crypt::PBKDF2 versions before 0.261630 for Perl are vulnerable to timing
+    attacks.  These versions use Perl's built-in eq comparison. Discrepancies in timing
+    could be used to guess the underlying derived-key.
+  fixed_versions:
+  - '>=0.261630'
+  github_security_advisory:
+  - GHSA-m538-6wp4-7h22
+  id: CPANSA-Crypt-PBKDF2-2017-20240
+  references:
+  - https://github.com/arodland/Crypt-PBKDF2/pull/6
+  - https://metacpan.org/release/ARODLAND/Crypt-PBKDF2-0.161520/source/lib/Crypt/PBKDF2.pm#L123-148
+  - https://metacpan.org/release/ARODLAND/Crypt-PBKDF2-0.261630/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/12/3
+  reported: 2026-06-12
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Crypt-PBKDF2
+last_checked: 1784262890
+latest_version: '0.261630'
+metacpan: https://metacpan.org/pod/Crypt::PBKDF2
