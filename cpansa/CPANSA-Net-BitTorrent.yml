@@ -23,6 +23,28 @@ advisories:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-5wc6-r65f-62rr
   reported: 2026-06-30
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-57080
+  description: Net::BitTorrent versions through 2.0.1 for Perl allow remote memory
+    exhaustion via an uncapped peer-wire message-length prefix.  The peer-wire framing
+    in _process_messages trusts the 4-byte length prefix sent by a connected peer
+    with no upper bound, while receive_data appends every inbound byte to the input
+    buffer. A peer announces a length prefix of up to about 4 GiB and then streams
+    bytes; the decoder waits until the buffer holds the full message before processing
+    it, so the buffer grows without limit.  Peer connections are unauthenticated,
+    so any peer in the swarm exhausts the downloading process's memory. The largest
+    legitimate message is a 16 KiB piece block, so any announced length far above
+    that is anomalous.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-h9mr-rh28-v9r2
+  id: CPANSA-Net-BitTorrent-2026-57080
+  references:
+  - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-7jr6-2jf4-6qc4
+  reported: 2026-06-30
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-BitTorrent
