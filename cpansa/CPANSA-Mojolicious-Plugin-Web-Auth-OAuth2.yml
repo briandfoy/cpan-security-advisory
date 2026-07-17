@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-9733
+  description: Mojolicious::Plugin::Web::Auth::OAuth2 versions through 0.17 for Perl
+    have an insecure default state parameter.  When no state generator is specified
+    in the constructor, the module defaults to using a SHA-1 hash of predictable and
+    low-entropy sources, including the epoch time (which is leaked via the HTTP Date
+    header) and a call to Perl's built-in rand function.  A predictable state allows
+    an attacker to hijack another user's session through cross site request forgery
+    (CSRF).
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-rq65-66g5-5pg2
+  id: CPANSA-Mojolicious-Plugin-Web-Auth-2026-9733
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc6749#section-10.12
+  - https://metacpan.org/release/HAYAJO/Mojolicious-Plugin-Web-Auth-0.17/source/lib/Mojolicious/Plugin/Web/Auth/OAuth2.pm#L129-131
+  - https://security.metacpan.org/patches/M/Mojolicious-Plugin-Web-Auth/0.17/CVE-2026-9733-r2.patch
+  - http://www.openwall.com/lists/oss-security/2026/06/23/1
+  reported: 2026-06-23
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Mojolicious-Plugin-Web-Auth
+last_checked: 1784263933
+latest_version: undef
+metacpan: https://metacpan.org/pod/Mojolicious::Plugin::Web::Auth::OAuth2
