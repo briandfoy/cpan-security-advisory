@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-13082
+  description: GD::SecurityImage versions through 1.75 for Perl use rand to generate
+    secrets.  The random method creates the challenge text used for the CAPTCHA by
+    sampling characters from an array using Perl's built-in rand function, and generates
+    a (by default) six-character string.  The built-in rand function is unsuitable
+    for security applications because it is predictable and reversible.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-p496-rgmp-v9mg
+  id: CPANSA-GD-SecurityImage-2026-13082
+  references:
+  - https://security.metacpan.org/patches/G/GD-SecurityImage/1.75/CVE-2026-13082-r1.patch
+  - https://www.cve.org/CVERecord?id=CVE-2025-40916
+  reported: 2026-07-17
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: GD-SecurityImage
+last_checked: 1784318352
+latest_version: '1.75'
+metacpan: https://metacpan.org/pod/GD::SecurityImage
