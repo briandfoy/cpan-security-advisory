@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <1.36
+  cves:
+  - CVE-2026-14895
+  description: String::Util versions before 1.36 for Perl are susceptible to a regular
+    expression denial of service.  The trim and rtrim functions stripped trailing
+    whitespace with s/\s*$//u. Because \s* matches greedily and the $ anchor fails
+    whenever a non-whitespace character follows the whitespace, the regex engine retries
+    the match at each offset of a long whitespace run, producing quadratic backtracking.
+    The fix replaces \s*$ with \s+$.  Any caller that passes untrusted input to trim
+    or rtrim can trigger CPU exhaustion with a string containing a long run of whitespace.
+  fixed_versions:
+  - '>=1.36'
+  github_security_advisory:
+  - GHSA-vm32-9cff-wgh2
+  id: CPANSA-String-Util-2026-14895
+  references:
+  - https://github.com/scottchiefbaker/String-Util/commit/f8150867aaeb8f57c59601aefb2193f2caed8745.patch
+  - https://github.com/scottchiefbaker/String-Util/releases
+  - https://metacpan.org/release/BAKERSCOT/String-Util-1.36/diff/BAKERSCOT/String-Util-1.35#lib/String/Util.pm
+  - http://www.openwall.com/lists/oss-security/2026/07/07/18
+  reported: 2026-07-07
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: String-Util
+last_checked: 1784266041
+latest_version: '1.36'
+metacpan: https://metacpan.org/pod/String::Util
