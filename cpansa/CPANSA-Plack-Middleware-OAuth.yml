@@ -1,0 +1,37 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-12740
+  description: 'Plack::Middleware::OAuth versions through 0.10 for Perl do not support
+    the OAuth 2.0 state parameter.  RequestTokenV2 builds the provider authorization
+    redirect without issuing a state value, and AccessTokenV2 exchanges the callback
+    code and registers the resulting token into the session (register_session) without
+    verifying that the callback corresponds to an authorization request this session
+    initiated.  Any application that uses this middleware for OAuth 2.0 login is exposed
+    to login cross-site request forgery: because the callback is not bound to the
+    session that began the flow, an attacker who starts an authorization with their
+    own provider account can deliver the resulting callback to a victim, causing the
+    victim''s session to complete the attacker''s authorization and associating the
+    attacker''s provider identity and access token with that session. Where the application
+    persists this as an account link, the attacker may retain access to the victim''s
+    account through their own provider credentials.'
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-rfx5-x6rx-6w25
+  id: CPANSA-Plack-Middleware-OAuth-2026-12740
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc6749#section-10.12
+  - https://github.com/c9s/Plack-Middleware-OAuth/pull/13
+  - https://rt.cpan.org/Ticket/Display.html?id=179874
+  - https://security.metacpan.org/patches/P/Plack-Middleware-OAuth/0.10/CVE-2026-12740-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/07/04/10
+  reported: 2026-07-04
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Plack-Middleware-OAuth
+last_checked: 1784264618
+latest_version: '0.10'
+metacpan: https://metacpan.org/pod/Plack::Middleware::OAuth
