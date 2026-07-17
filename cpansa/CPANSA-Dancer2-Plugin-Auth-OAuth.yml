@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - <0.22
+  cves:
+  - CVE-2026-11832
+  description: Dancer2::Plugin::Auth::OAuth versions before 0.22 for Perl default
+    to a predictable nonce.  The default nonce was generated using an MD5 hash of
+    the epoch time, which is predictable.
+  fixed_versions:
+  - '>=0.22'
+  github_security_advisory:
+  - GHSA-h3g4-wmrw-rm63
+  id: CPANSA-Dancer2-Plugin-Auth-OAuth-2026-11832
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-3.3
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-4.9
+  - https://metacpan.org/release/BIAFRA/Dancer2-Plugin-Auth-OAuth-0.22/changes
+  - https://www.cve.org/CVERecord?id=CVE-2025-22376
+  reported: 2026-06-15
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Dancer2-Plugin-Auth-OAuth
+last_checked: 1784264415
+latest_version: '0.23'
+metacpan: https://metacpan.org/pod/Dancer2::Plugin::Auth::OAuth
