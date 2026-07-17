@@ -18,6 +18,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/21/19
   reported: 2026-05-21
   severity: ~
+- affected_versions:
+  - <0.10_027
+  cves:
+  - CVE-2009-10007
+  description: Catalyst::Plugin::Authentication versions before 0.10_027 for Perl
+    is susceptible to session fixation attacks.  Catalyst::Plugin::Authentication
+    does not automatically change the session id after authentication. An attacker
+    that obtains a session id cookie can use this to impersonate the victim.
+  fixed_versions:
+  - '>=0.10_027'
+  github_security_advisory:
+  - GHSA-pfqm-wq4x-p42c
+  id: CPANSA-Catalyst-Plugin-Authentication-2009-10007
+  references:
+  - https://github.com/perl-catalyst/Catalyst-Plugin-Authentication/commit/b1385ea87a2491b64f33169222af19982d0acce3.patch
+  - https://metacpan.org/pod/Catalyst::Plugin::Session#change_session_id
+  - https://metacpan.org/pod/Plack::Middleware::Session#change_id
+  - https://metacpan.org/release/ETHER/Catalyst-Plugin-Authentication-0.10_027/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/09/10
+  reported: 2026-06-09
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Catalyst-Plugin-Authentication
