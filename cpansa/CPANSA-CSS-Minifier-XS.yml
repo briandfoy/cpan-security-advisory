@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - <0.14
+  cves:
+  - CVE-2026-13593
+  description: CSS::Minifier::XS versions before 0.14 for Perl have a memory leak
+    when the entire document is minified away.  The minify function has a memory leak
+    when processing a document containing only characters to be removed, such as comments
+    and whitespace.
+  fixed_versions:
+  - '>=0.14'
+  github_security_advisory:
+  - GHSA-89gv-4m9m-97p2
+  id: CPANSA-CSS-Minifier-XS-2026-13593
+  references:
+  - https://metacpan.org/release/GTERMARS/CSS-Minifier-XS-0.14/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/29/18
+  reported: 2026-06-29
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: CSS-Minifier-XS
+last_checked: 1784265002
+latest_version: '0.15'
+metacpan: https://metacpan.org/pod/CSS::Minifier::XS
