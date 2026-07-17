@@ -19,6 +19,24 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/06/12/3
   reported: 2026-06-12
   severity: ~
+- affected_versions:
+  - <0.261630
+  cves:
+  - CVE-2026-9638
+  description: Crypt::PBKDF2 versions before 0.261630 for Perl generate insecure random
+    values for salts.  These versions use the built-in rand function, which is predictable
+    and unsuitable for cryptography.
+  fixed_versions:
+  - '>=0.261630'
+  github_security_advisory:
+  - GHSA-3rw7-pf56-37cv
+  id: CPANSA-Crypt-PBKDF2-2026-9638
+  references:
+  - https://metacpan.org/dist/Crypt-PBKDF2/source/lib/Crypt/PBKDF2.pm#L86-93
+  - https://metacpan.org/release/ARODLAND/Crypt-PBKDF2-0.261630/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/12/4
+  reported: 2026-06-12
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-PBKDF2
