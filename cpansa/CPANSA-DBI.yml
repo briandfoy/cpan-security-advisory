@@ -249,6 +249,27 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2026-10879
   reported: 2026-07-07
   severity: ~
+- affected_versions:
+  - <1.650
+  cves:
+  - CVE-2026-14740
+  description: DBI versions before 1.650 for Perl read one byte out-of-bounds in preparse
+    when deleting an initial SQL comment.  The preparse method normalises SQL and
+    removes comments. When the SQL starts with a comment line, the deletion of that
+    line during normalisation led to an out-of-bounds read by one byte. The result
+    is a fault on memory-hardened builds and nondeterministic newline retention on
+    normal builds.
+  fixed_versions:
+  - '>=1.650'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-14740
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/fc16f9e8b3dd5c65caf1867781ab2bfe2fadcc01.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-35f4-f8m9-w8xg
+  - https://metacpan.org/release/HMBRAND/DBI-1.650/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/07/17
+  reported: 2026-07-07
+  severity: ~
 cpansa_version: 2
 distribution: DBI
 last_checked: 1773231485
