@@ -45,6 +45,28 @@ advisories:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-7jr6-2jf4-6qc4
   reported: 2026-06-30
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-57081
+  description: 'Net::BitTorrent versions through 2.0.1 for Perl allow remote memory
+    exhaustion via deeply nested bencoded input.  bdecode recurses once per nested
+    list or dictionary level with no depth cap, and each recursive call receives the
+    remaining buffer by value while the list and dictionary branches capture the whole
+    remainder, so every live recursion frame keeps its own copy of the shrinking buffer
+    (O(N^2) bytes for an N-deep input). The decoder runs on every untrusted bencode
+    source: .torrent files, BEP09 metadata fetched from peers, DHT messages, and tracker
+    responses.  A bencoded input of roughly 150,000 nested lists (about 150 KB on
+    the wire) drives multi-gigabyte peak memory, so one short message from any peer,
+    or one crafted .torrent file or magnet link, terminates the client.'
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-39fp-mc5w-p8hh
+  id: CPANSA-Net-BitTorrent-2026-57081
+  references:
+  - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-mv44-v82p-89xv
+  reported: 2026-06-30
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-BitTorrent
