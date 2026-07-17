@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-3031
+  description: Image::EPEG versions through 0.15 for Perl embeds an unsupported version
+    of the Epeg library.  Image::EPEG includes Epeg 0.9.0 that was last updated in
+    2004.  Epeg is a fast JPEG thumbnail library that was once part of the Englightenment
+    Project.
+  embedded_vulnerability:
+    distributed_version: ~
+    name: epeg
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-4gpm-fvvv-c6c5
+  id: CPANSA--2026-3031
+  references:
+  - https://backpan.metacpan.org/authors/id/T/TO/TOKUHIROM/Image-Epeg-0.15.readme
+  - https://backpan.metacpan.org/authors/id/T/TO/TOKUHIROM/Image-Epeg-0.15.tar.gz
+  - https://sourceforge.net/projects/enlightenment/files/OldFiles/epeg-0.9.0.tar.gz/download
+  reported: 2026-07-16
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: ~
+last_checked: 1784263384
+latest_version: ~
+metacpan: https://metacpan.org/pod/Image::EPEG
