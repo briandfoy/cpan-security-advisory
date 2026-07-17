@@ -24,6 +24,32 @@ advisories:
   - https://exchange.xforce.ibmcloud.com/vulnerabilities/75328
   reported: 2012-06-27
   severity: ~
+- affected_versions:
+  - <3.00100
+  cves:
+  - CVE-2026-11527
+  description: 'Config::IniFiles versions before 3.001000 for Perl allow OS command
+    injection and file overwrite via a 2-arg open() of the -file argument in _make_filehandle.  Config::IniFiles::_make_filehandle
+    opens a filename argument with Perl''s 2-arg open(), so a filename that begins
+    or ends with a pipe ("| cmd", "cmd |") or begins with a redirect ("> path", ">>
+    path") is run as a command or redirect rather than opened as a file. The helper
+    is the open path behind the documented -file argument: new(-file => $thing) reaches
+    it through ReadConfig. An in-memory scalar reference (-file => \$text) does not
+    open a path and is unaffected.  Any caller that forwards untrusted input to the
+    -file argument can run an arbitrary command or truncate a file under the process
+    UID.'
+  fixed_versions:
+  - '>=3.001000'
+  github_security_advisory:
+  - GHSA-2g88-7qc8-9vxv
+  id: CPANSA-Config-IniFiles-2026-11527
+  references:
+  - https://github.com/shlomif/perl-Config-IniFiles/commit/3e48f9627fbba4dae5de35be1f735cdeb7e47fb8.patch
+  - https://metacpan.org/release/SHLOMIF/Config-IniFiles-3.001000/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/14/5
+  - https://lists.debian.org/debian-lts-announce/2026/06/msg00026.html
+  reported: 2026-06-14
+  severity: ~
 cpansa_version: 2
 distribution: Config-IniFiles
 last_checked: 1749751661
