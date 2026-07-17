@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions:
+  - <0.19
+  cves:
+  - CVE-2025-15646
+  description: HTML::Gumbo versions before 0.19 for Perl disclose heap memory via
+    type confusion.  Support for the <template> element was added to libgumbo 0.10.0
+    in 2015, but the walk_tree function in lib/HTML/Gumbo.xs was not updated to support
+    it. The element was treated as a text-node, where strlen() over-reads the heap
+    block that the pointer addresses.  Any caller that runs parse() with the default
+    format => 'string', or with format => 'tree', on input containing a <template>
+    element serializes the over-read bytes into the returned result, disclosing bounded
+    heap contents. format => 'callback' reaches a croak on the unhandled node type
+    and is unaffected.
+  fixed_versions:
+  - '>=0.19'
+  github_security_advisory:
+  - GHSA-754r-h5mg-r795
+  id: CPANSA-HTML-Gumbo-2025-15646
+  references:
+  - https://bugs.debian.org/1104789
+  - https://github.com/bestpractical/HTML-Gumbo/commit/15c0598909d4a64f47ef0a1abc5051f4e113c186.patch
+  - https://metacpan.org/release/BPS/HTML-Gumbo-0.19/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/01/7
+  reported: 2026-07-01
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: HTML-Gumbo
+last_checked: 1784263038
+latest_version: '0.20'
+metacpan: https://metacpan.org/pod/HTML::Gumbo
