@@ -270,6 +270,26 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/07/17
   reported: 2026-07-07
   severity: ~
+- affected_versions:
+  - <1.651
+  cves:
+  - CVE-2026-60082
+  description: DBI versions before 1.651 for Perl do not enforce statement handle
+    consistency with the row.  When the statement handle had no fields but the source
+    row was non-empty, the internal row-buffer helper would read from a negative array
+    index.  This could be triggered by a caller supplying inconsistent metadata and
+    rows to the prepare method.
+  fixed_versions:
+  - '>=1.651'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-60082
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/397868704291bbf0989b97e2c0661189890653e2.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-rwhc-hhmv-cjvg
+  - https://metacpan.org/release/HMBRAND/DBI-1.651/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/14/13
+  reported: 2026-07-14
+  severity: ~
 cpansa_version: 2
 distribution: DBI
 last_checked: 1773231485
