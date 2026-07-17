@@ -1,0 +1,36 @@
+---
+advisories:
+- affected_versions:
+  - <6.08
+  cves:
+  - CVE-2026-14741
+  description: HTTP::Date versions before 6.08 for Perl allow CPU exhaustion via polynomial
+    regex backtracking in parse_date.  parse_date() matches the date string against
+    a chain of alternative regexes, and str2time() delegates to it. Several of these
+    patterns place unbounded quantifiers next to each other before a trailing `\s*$`
+    anchor. A valid date prefix followed by a long interior run of digits, letters,
+    or whitespace and a single trailing byte that defeats the final match forces the
+    engine to repartition the run, giving polynomial (about quadratic) backtracking.
+    A header value of a few tens of kilobytes runs for tens of seconds of CPU.  HTTP::Date
+    parses timestamps such as HTTP `Date`, `Expires`, and `Last-Modified` headers,
+    which commonly originate from untrusted sources. Any caller that passes an untrusted
+    date header to str2time() or parse_date() can be driven to consume unbounded CPU,
+    a denial of service.
+  fixed_versions:
+  - '>=6.08'
+  github_security_advisory:
+  - GHSA-mcqf-9rr5-v7rw
+  id: CPANSA-HTTP-Date-2026-14741
+  references:
+  - https://github.com/libwww-perl/HTTP-Date/commit/78c20952cdfbf11e03cf1199ad70f13298a84c5c.patch
+  - https://github.com/libwww-perl/HTTP-Date/pull/33
+  - https://metacpan.org/release/OALDERS/HTTP-Date-6.08/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/17/10
+  reported: 2026-07-17
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: HTTP-Date
+last_checked: 1784318433
+latest_version: '6.08'
+metacpan: https://metacpan.org/pod/HTTP::Date
