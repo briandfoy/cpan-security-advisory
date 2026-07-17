@@ -27,6 +27,30 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/06/29/16
   reported: 2026-06-29
   severity: ~
+- affected_versions:
+  - <0.16
+  cves:
+  - CVE-2026-56018
+  description: JavaScript::Minifier::XS versions before 0.16 for Perl leak memory
+    on every call to minify(), allowing unbounded memory growth.  In JsMinify (XS.xs)
+    the cleanup frees only the NodeSet structures and never the per-token contents
+    buffers allocated in JsSetNodeContents; JsDiscardNode unlinks nodes without freeing
+    their contents. Each token's contents buffer is therefore leaked on every call,
+    and the two early returns taken when the node list is empty leak the whole NodeSet.  A
+    long-lived process that minifies repeatedly, such as an asset pipeline or a server-side
+    minifier endpoint, grows in memory without bound until it exhausts available memory
+    and is killed, causing denial of service.
+  fixed_versions:
+  - '>=0.16'
+  github_security_advisory:
+  - GHSA-fvxv-8c37-qrc6
+  id: CPANSA-JavaScript-Minifier-XS-2026-56018
+  references:
+  - https://github.com/bleargh45/JavaScript-Minifier-XS/issues/10
+  - https://metacpan.org/release/GTERMARS/JavaScript-Minifier-XS-0.16/changes
+  - http://www.openwall.com/lists/oss-security/2026/06/29/17
+  reported: 2026-06-29
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: JavaScript-Minifier-XS
