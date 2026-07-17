@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-11702
+  description: Bytes::Random::Secure::Tiny versions through 1.011 for Perl share internal
+    state across forked processes.  When an object is initialised before forking,
+    then the internal state for the PRNG is shared across processes and identical
+    random streams will be produced.  Secrets generated in multiprocess applications
+    are predictable across processes.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-vcwj-3q56-r32w
+  id: CPANSA-Bytes-Random-Secure-Tiny-2026-11702
+  references:
+  - https://github.com/daoswald/Bytes-Random-Secure-Tiny/issues/6
+  - https://github.com/daoswald/Bytes-Random-Secure-Tiny/pull/7
+  - https://security.metacpan.org/patches/B/Bytes-Random-Secure-Tiny/1.011/CVE-2026-11702-r1.patch
+  - https://www.cve.org/CVERecord?id=CVE-2026-11625
+  - https://www.cve.org/CVERecord?id=CVE-2026-41564
+  reported: 2026-06-26
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Bytes-Random-Secure-Tiny
+last_checked: 1784264258
+latest_version: '1.011'
+metacpan: https://metacpan.org/pod/Bytes::Random::Secure::Tiny
