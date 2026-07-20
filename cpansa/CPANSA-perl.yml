@@ -1203,7 +1203,7 @@ advisories:
   reported: 2026-05-26
   severity: ~
 - affected_versions:
-  - <5.44
+  - <5.44.0
   cves:
   - CVE-2026-57432
   description: Perl versions through 5.43.10 have an integer overflow in S_measure_struct
@@ -1215,7 +1215,7 @@ advisories:
     pointer out of bounds.  A template derived from untrusted input can read heap
     memory past the buffer and return it to the caller.
   fixed_versions:
-  - '>=5.44'
+  - '>=5.44.0'
   github_security_advisory:
   - GHSA-5g35-5jrj-f39p
   id: CPANSA-perl-2026-57432
@@ -1226,7 +1226,7 @@ advisories:
   reported: 2026-07-13
   severity: ~
 - affected_versions:
-  - <5.44
+  - <5.44.0
   cves:
   - CVE-2026-13221
   description: Perl versions through 5.43.9 produce silently incorrect regular expression
@@ -1239,7 +1239,7 @@ advisories:
     (failing to match strings it should). When such a pattern gates an access or filtering
     decision, the result is wrong.
   fixed_versions:
-  - '>=5.44'
+  - '>=5.44.0'
   github_security_advisory:
   - GHSA-whhx-pv66-xhgq
   id: CPANSA-perl-2026-13221
@@ -1252,6 +1252,6 @@ advisories:
 cpansa_version: 2
 distribution: perl
 last_checked: 1773230576
-latest_version: 5.042001
+latest_version: 5.044000
 metacpan: https://metacpan.org/pod/perl
 repo: https://github.com/Perl/perl5
