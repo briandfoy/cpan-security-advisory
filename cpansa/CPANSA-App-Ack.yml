@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<v3.10.0'
   cves:
   - CVE-2026-49145
   description: App::Ack versions through 3.10.0 for Perl read arbitrary files via
@@ -12,7 +12,8 @@ advisories:
     Version 3.10.0 added --follow to the blocklist; --files-from remains accepted.  A
     project .ackrc committed to an untrusted repository can make ack read files outside
     the project and print their matching lines.
-  fixed_versions: []
+  fixed_versions:
+  - '>=v3.10.0'
   github_security_advisory:
   - GHSA-c2rv-g977-2fxr
   id: CPANSA-ack-2026-49145
@@ -22,7 +23,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - '>0'
+  - '<v3.10.0'
   cves:
   - CVE-2026-49146
   description: App::Ack versions before 3.10.0 for Perl allow memory exhaustion via
@@ -32,7 +33,8 @@ advisories:
     before-context buffer to that value, so a project .ackrc setting --before-context=100000000
     made ack allocate a buffer of 100 million elements.  A project .ackrc committed
     to an untrusted repository can abort ack with an out-of-memory condition.
-  fixed_versions: []
+  fixed_versions:
+  - '>=v3.10.0'
   github_security_advisory:
   - GHSA-hf7w-mcpw-97mf
   id: CPANSA-ack-2026-49146
@@ -43,7 +45,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - '>0'
+  - '<v3.10.0'
   cves:
   - CVE-2026-49147
   description: App::Ack versions through 3.10.0 for Perl print unsanitised terminal
@@ -54,7 +56,8 @@ advisories:
     and per-match lines, but the --show-types, -l/-L, and -c paths still emit the
     raw filename.  A file whose name embeds cursor-movement or color escapes can overwrite
     or recolor earlier terminal output, or be passed unchanged to a downstream consumer.
-  fixed_versions: []
+  fixed_versions:
+  - '>=v3.10.0'
   github_security_advisory:
   - GHSA-p4vj-7pqg-xhr6
   id: CPANSA-ack-2026-49147
@@ -67,5 +70,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: ack
 last_checked: 1784266280
-latest_version: '3.010000'
+latest_version: 'v3.10.0'
 metacpan: https://metacpan.org/pod/App::Ack
