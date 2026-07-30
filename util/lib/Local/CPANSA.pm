@@ -551,26 +551,6 @@ sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
 		};
 	}
 
-sub latest_changes ($latest) {
-	state $section = 'metacpan';
-    my @args = ( $latest->author, $latest->name );
-	my $tag = join '-', @args, 'changes';
-	my $changes = get_cache_item( $section, $tag );
-	return my $last = (values $changes->%*)[0] if keys $changes->%*;
-
-    for my $filename (qw(Changes CHANGES ChangeLog Changelog CHANGELOG CHANGELOG.md)) {
-        my $url = sprintf 'https://fastapi.metacpan.org/v1/source/%s/%s/%s', @args, $filename;
-        my $tx = get_ua()->get($url);
-        if( $tx->res->is_success ) {
-        	$changes = $tx->res->body;
-			set_cache_item( $section, $tag, { $filename => $changes });
- 			last;
-       		}
-    	}
-
-    return $changes;
-	}
-
 =item * guess_package(ITEM)
 
 Given the return value of C<assemble_item>, guess what Perl package might be
@@ -614,6 +594,32 @@ sub guess_package :Export_Ok :Export_Tag("cpan") ( $item ) {
 
 	# say STDERR "guess_package: could not guess a package";
 	return;
+	}
+
+sub latest_changes ($latest) {
+	state $section = 'metacpan';
+    my @args = ( $latest->author, $latest->name );
+	my $tag = join '-', @args, 'changes';
+	my $changes = get_cache_item( $section, $tag );
+	return my $last = (values $changes->%*)[0] if keys $changes->%*;
+
+    for my $filename (qw(Changes CHANGES ChangeLog Changelog CHANGELOG CHANGELOG.md)) {
+        my $url = sprintf 'https://fastapi.metacpan.org/v1/source/%s/%s/%s', @args, $filename;
+        my $tx = get_ua()->get($url);
+        if( $tx->res->is_success ) {
+        	$changes = $tx->res->body;
+			set_cache_item( $section, $tag, { $filename => $changes });
+ 			last;
+       		}
+    	}
+
+    return $changes;
+	}
+
+sub dumper { state $rc = require Data::Dumper; Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump }
+
+sub latest_on_cpan :Export_Ok :Export_Tag("cpan") ($dist) {
+	get_dist_info($dist)->{'latest'};
 	}
 
 =back
