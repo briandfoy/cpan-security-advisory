@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<1.12'
   cves:
   - CVE-2026-10725
   description: Protocol::HTTP2 versions through 1.12 for Perl is vulnerable to a HTTP/2
@@ -12,7 +12,8 @@ advisories:
     version 1.12) every CONTINUATION frame to the per-stream buffer unbounded.  MAX_HEADER_LIST_SIZE
     (default 65536) is advertised in SETTINGS but never consulted on decode.  It is
     absent from the decoder and from the :limits export tag.
-  fixed_versions: []
+  fixed_versions:
+  - '>1.13'
   github_security_advisory:
   - GHSA-q432-rmqv-hh8m
   id: CPANSA-Protocol-HTTP2-2026-10725
@@ -27,5 +28,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: Protocol-HTTP2
 last_checked: 1780755488
-latest_version: '1.12'
+latest_version: '1.13'
 metacpan: https://metacpan.org/pod/Protocol::HTTP2
