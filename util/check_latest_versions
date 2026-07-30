@@ -10,7 +10,7 @@ use Local::CPANSA qw(:cpan :reports);
 my $template = "%2d %10s %10s %12d %s\n";
 
 foreach my $file ( get_all_reports()->@* ) {
-	say STDERR "Processing <$file>";
+#	say STDERR "Processing <$file>";
 	my $data = 	load_report($file);
 
 	my $unfixed = grep { ! defined $_->{fixed_versions} or $_->{fixed_versions}->@* == 0 } $data->{advisories}->@*;

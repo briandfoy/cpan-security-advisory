@@ -510,11 +510,11 @@ sub metacpan_cache ( $method, $args, $sub = sub ($a) { $a->@* } ) {
 	my $contents = get_cache_item( $section, $tag );
 
 	unless( defined $contents ) {
-		say STDERR "metacpan_cache ($section, $tag) fetching fresh method: $method args: (@$args)";
+		# say STDERR "metacpan_cache ($section, $tag) fetching fresh method: $method args: (@$args)";
 		$contents = eval { $mcpan->$method( $sub->($args) ) };
 		delete $contents->{'client'};
 		if( length $@ ) {
-			warn "metacpan_cache method: $method args: (@$args) AT: $@\n";
+			# warn "metacpan_cache method: $method args: (@$args) AT: $@\n";
 			return;
 			}
 		set_cache_item( $section, $tag, $contents )
