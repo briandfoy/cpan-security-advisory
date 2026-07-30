@@ -540,13 +540,18 @@ sub get_dist_info :Export_Ok :Export_Tag("cpan") ( $package_or_dist ) {
 	return {} unless defined $dist;
 
 	my $latest = metacpan_cache( 'release', [ $dist->name ] );
+	return {
+		argument    => $package_or_dist,
+		dist_name   => $dist->name,
+		} unless defined $latest;
+
 	my $changes = latest_changes($latest);
 
 	return {
-		argument  => $package_or_dist,
-		dist_name => $dist->name,
-		latest    => $latest->version,
-		changes   => $changes,
+		argument    => $package_or_dist,
+		dist_name   => $dist->name,
+		latest      => $latest->version,
+		changes     => $changes,
 		main_module => $latest->main_module,
 		};
 	}
