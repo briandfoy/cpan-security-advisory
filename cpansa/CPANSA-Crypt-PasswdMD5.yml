@@ -1,13 +1,14 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<1.43'
   cves:
   - CVE-2026-6659
   description: Crypt::PasswdMD5 versions through 1.42 for Perl generates insecure
     random values for salts.  The built-in rand function is predictable, and unsuitable
     for cryptography.
-  fixed_versions: []
+  fixed_versions:
+  - '>=1.43'
   github_security_advisory:
   - GHSA-j539-xxc6-73wf
   id: CPANSA-Crypt-PasswdMD5-2026-6659
@@ -20,5 +21,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: Crypt-PasswdMD5
 last_checked: 1778399213
-latest_version: '1.42'
+latest_version: '1.46'
 metacpan: https://metacpan.org/pod/Crypt::PasswdMD5
