@@ -23,7 +23,7 @@ advisories:
   reported: 2022-06-27
   severity: medium
 - affected_versions:
-  - "<6.17"
+  - <6.17
   cves:
   - CVE-2026-8450
   description: 'HTTP::Daemon versions before 6.17 for Perl allow OS command injection
@@ -34,7 +34,7 @@ advisories:
     read-pipe form (''cmd |'') also leaks subprocess stdout into the HTTP response
     body. The write-mode forms can create or truncate files at attacker chosen paths.'
   fixed_versions:
-  - ">=6.17"
+  - '>=6.17'
   github_security_advisory:
   - GHSA-3hc6-3p33-wq57
   id: CPANSA-HTTP-Daemon-2026-8450
@@ -47,7 +47,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: HTTP-Daemon
-last_checked: 1780680557
+last_checked: 1785398914
 latest_version: '6.17'
 metacpan: https://metacpan.org/pod/HTTP::Daemon
 repo: https://github.com/libwww-perl/HTTP-Daemon.git
