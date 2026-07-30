@@ -49,6 +49,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-NaCl-Sodium
-last_checked: 1773231472
+last_checked: 1785398914
 latest_version: '2.003'
 metacpan: https://metacpan.org/pod/Crypt::NaCl::Sodium

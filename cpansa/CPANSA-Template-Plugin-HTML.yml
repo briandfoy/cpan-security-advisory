@@ -26,6 +26,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Template-Toolkit
-last_checked: 1779524193
-latest_version: '3.103'
+last_checked: 1785398916
+latest_version: '3.106'
 metacpan: https://metacpan.org/pod/Template::Plugin::HTML

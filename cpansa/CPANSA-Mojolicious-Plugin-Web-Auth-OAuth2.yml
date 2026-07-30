@@ -26,5 +26,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: Mojolicious-Plugin-Web-Auth
 last_checked: 1784263933
-latest_version: undef
+latest_version: 0.17
 metacpan: https://metacpan.org/pod/Mojolicious::Plugin::Web::Auth::OAuth2

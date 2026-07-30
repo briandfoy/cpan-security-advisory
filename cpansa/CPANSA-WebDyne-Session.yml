@@ -28,5 +28,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: WebDyne-Session
 last_checked: 1779523060
-latest_version: '2.075'
+latest_version: '1.044'
 metacpan: https://metacpan.org/pod/WebDyne::Session

@@ -26,6 +26,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: String-Util
-last_checked: 1784266041
+last_checked: 1785398916
 latest_version: '1.36'
 metacpan: https://metacpan.org/pod/String::Util

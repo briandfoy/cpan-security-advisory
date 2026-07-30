@@ -25,7 +25,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Email-MIME
-last_checked: 1773231499
+last_checked: 1785398914
 latest_version: '1.954'
 metacpan: https://metacpan.org/pod/Email::MIME
 repo: https://github.com/mojolicious/mojo.git

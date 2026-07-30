@@ -26,6 +26,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-Parser
-last_checked: 1780681338
+last_checked: 1785398914
 latest_version: '3.85'
 metacpan: https://metacpan.org/pod/HTML::Entities

@@ -24,6 +24,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Sereal-Decoder
-last_checked: 1778398203
-latest_version: '5.004'
+last_checked: 1785398916
+latest_version: '5.009'
 metacpan: https://metacpan.org/pod/Sereal::Decoder

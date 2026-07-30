@@ -39,7 +39,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Socket
-last_checked: 1773231586
-latest_version: '2.040'
+last_checked: 1785398916
+latest_version: '2.041'
 metacpan: https://metacpan.org/pod/Socket
 repo: https://github.com/Perl/perl5

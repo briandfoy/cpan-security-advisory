@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-Gumbo
-last_checked: 1784263038
+last_checked: 1785398914
 latest_version: '0.20'
 metacpan: https://metacpan.org/pod/HTML::Gumbo

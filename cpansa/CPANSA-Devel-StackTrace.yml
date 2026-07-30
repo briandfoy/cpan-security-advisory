@@ -20,7 +20,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Devel-StackTrace
-last_checked: 1773231493
+last_checked: 1785398914
 latest_version: '2.05'
 metacpan: https://metacpan.org/pod/Devel::StackTrace
 repo: https://github.com/houseabsolute/Devel-StackTrace

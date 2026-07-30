@@ -115,7 +115,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Net-CIDR-Lite
-last_checked: 1773231552
-latest_version: '0.22'
+last_checked: 1785398915
+latest_version: '0.24'
 metacpan: https://metacpan.org/pod/Net::CIDR::Lite
 repo: https://github.com/stigtsp/Net-CIDR-Lite

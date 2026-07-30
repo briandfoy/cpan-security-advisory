@@ -58,7 +58,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Plack-Middleware-Session
-last_checked: 1773231574
+last_checked: 1785398916
 latest_version: '0.36'
 metacpan: https://metacpan.org/pod/Plack::Middleware::Session
 repo: https://github.com/plack/Plack-Middleware-Session.git

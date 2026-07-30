@@ -22,6 +22,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-NSCA-Client
-last_checked: 1773231559
+last_checked: 1785398915
 latest_version: '0.009002'
 metacpan: https://metacpan.org/pod/Net::NSCA::Client

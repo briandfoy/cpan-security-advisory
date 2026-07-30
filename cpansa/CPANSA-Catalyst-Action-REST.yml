@@ -15,7 +15,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Catalyst-Action-REST
-last_checked: 1773231456
-latest_version: '1.21'
+last_checked: 1785398914
+latest_version: '1.22'
 metacpan: https://metacpan.org/pod/Catalyst::Action::REST
 repo: ~

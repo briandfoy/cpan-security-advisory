@@ -33,6 +33,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Concierge-Sessions
-last_checked: 1773231466
-latest_version: v0.11.0
+last_checked: 1785398914
+latest_version: v0.11.3
 metacpan: https://metacpan.org/pod/Concierge::Sessions

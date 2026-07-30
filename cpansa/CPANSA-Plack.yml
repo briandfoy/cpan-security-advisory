@@ -62,6 +62,6 @@ advisories:
 cpansa_version: 2
 distribution: Plack
 last_checked: 1773231577
-latest_version: '1.0051'
+latest_version: '1.0054'
 metacpan: https://metacpan.org/pod/Plack
 repo: https://github.com/plack/Plack.git

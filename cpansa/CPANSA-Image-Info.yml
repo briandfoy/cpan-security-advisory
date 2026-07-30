@@ -17,7 +17,7 @@ advisories:
   reported: 2016-11-04
 cpansa_version: 2
 distribution: Image-Info
-last_checked: 1773231527
+last_checked: 1785398915
 latest_version: '1.45'
 metacpan: https://metacpan.org/pod/Image::Info
 repo: https://github.com/eserte/image-info

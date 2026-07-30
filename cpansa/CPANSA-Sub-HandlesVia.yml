@@ -23,7 +23,7 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Sub-HandlesVia
-last_checked: 1773231590
+last_checked: 1785398916
 latest_version: '0.053005'
 metacpan: https://metacpan.org/pod/Sub::HandlesVia
 repo: https://github.com/tobyink/p5-sub-handlesvia

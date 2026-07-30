@@ -16,7 +16,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Log-Any
-last_checked: 1773231536
-latest_version: '1.718'
+last_checked: 1785398915
+latest_version: '1.720'
 metacpan: https://metacpan.org/pod/Log::Any
 repo: https://github.com/preaction/Log-Any.git

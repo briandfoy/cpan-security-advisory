@@ -105,7 +105,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: HTTP-Tiny
-last_checked: 1779056283
-latest_version: '0.094'
+last_checked: 1785398914
+latest_version: '0.096'
 metacpan: https://metacpan.org/pod/HTTP::Tiny
 repo: https://github.com/Perl-Toolchain-Gang/HTTP-Tiny

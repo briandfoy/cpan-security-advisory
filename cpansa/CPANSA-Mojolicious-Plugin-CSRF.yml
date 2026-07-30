@@ -21,6 +21,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Mojolicious-Plugin-CSRF
-last_checked: 1773231547
-latest_version: '1.05'
+last_checked: 1785398915
+latest_version: '1.06'
 metacpan: https://metacpan.org/pod/Mojolicious::Plugin::CSRF

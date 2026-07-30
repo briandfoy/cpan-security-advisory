@@ -19,7 +19,7 @@ advisories:
     name: Robert Rothenberg
 cpansa_version: 2
 distribution: Kelp
-last_checked: 1773231531
+last_checked: 1785398915
 latest_version: '2.22'
 metacpan: https://metacpan.org/pod/Kelp
 repo: https://github.com/sgnix/kelp

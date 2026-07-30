@@ -68,7 +68,7 @@ advisories:
   x-commit: 'Encode CVE-2011-2939 GitHub #13'
 cpansa_version: 2
 distribution: Encode
-last_checked: 1773231500
-latest_version: '3.21'
+last_checked: 1785398914
+latest_version: '3.24'
 metacpan: https://metacpan.org/pod/Encode
 repo: https://github.com/dankogai/p5-encode

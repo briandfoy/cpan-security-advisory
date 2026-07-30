@@ -23,6 +23,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: XML-Sig
-last_checked: 1773231600
-latest_version: '0.69'
+last_checked: 1785398916
+latest_version: '0.70'
 metacpan: https://metacpan.org/pod/XML::Sig

@@ -17,7 +17,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CGI-Application-Plugin-CAPTCHA
-last_checked: 1773231447
+last_checked: 1785398914
 latest_version: '0.04'
 metacpan: https://metacpan.org/pod/CGI::Application::Plugin::CAPTCHA
 repo: https://github.com/cromedome/cgi-application-plugin-captcha

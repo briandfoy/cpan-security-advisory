@@ -35,7 +35,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: PAR
-last_checked: 1773231566
+last_checked: 1785398915
 latest_version: '1.021'
 metacpan: https://metacpan.org/pod/PAR
 repo: https://github.com/rschupp/PAR

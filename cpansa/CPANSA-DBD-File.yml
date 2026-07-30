@@ -24,6 +24,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: DBI
-last_checked: 1784266162
-latest_version: '0.45'
+last_checked: 1785398914
+latest_version: '1.651'
 metacpan: https://metacpan.org/pod/DBD::File

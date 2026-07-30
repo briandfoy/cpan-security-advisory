@@ -25,6 +25,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Catalyst-Plugin-Session
-last_checked: 1773231459
+last_checked: 1785398914
 latest_version: '0.44'
 metacpan: https://metacpan.org/pod/Catalyst::Plugin::Session

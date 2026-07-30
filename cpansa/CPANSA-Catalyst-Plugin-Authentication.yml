@@ -42,6 +42,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Catalyst-Plugin-Authentication
-last_checked: 1779524463
+last_checked: 1785398914
 latest_version: '0.10026'
 metacpan: https://metacpan.org/pod/Catalyst::Plugin::Authentication

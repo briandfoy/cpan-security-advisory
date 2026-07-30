@@ -25,6 +25,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Imager-File-GIF
-last_checked: 1779056957
-latest_version: '1.003'
+last_checked: 1785398915
+latest_version: '1.004'
 metacpan: https://metacpan.org/pod/Imager::File::GIF

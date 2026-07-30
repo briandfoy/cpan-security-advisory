@@ -30,5 +30,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: Apache-Session
 last_checked: 1778399034
-latest_version: '0.02'
+latest_version: '1.94'
 metacpan: https://metacpan.org/pod/Apache::Session::Generate::ModUniqueId

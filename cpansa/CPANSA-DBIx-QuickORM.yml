@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: DBIx-QuickORM
-last_checked: 1784265486
+last_checked: 1785398914
 latest_version: '0.000028'
 metacpan: https://metacpan.org/pod/DBIx::QuickORM

@@ -22,6 +22,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Text-Minify-XS
-last_checked: 1777527623
+last_checked: 1785398916
 latest_version: v0.7.9
 metacpan: https://metacpan.org/pod/Text::Minify::XS

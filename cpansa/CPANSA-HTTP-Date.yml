@@ -31,6 +31,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: HTTP-Date
-last_checked: 1784318433
+last_checked: 1785398914
 latest_version: '6.08'
 metacpan: https://metacpan.org/pod/HTTP::Date

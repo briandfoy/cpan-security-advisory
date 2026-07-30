@@ -78,7 +78,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: IO-Compress
-last_checked: 1773231523
-latest_version: '2.219'
+last_checked: 1785398914
+latest_version: '2.223'
 metacpan: https://metacpan.org/pod/IO::Compress
 repo: https://github.com/pmqs/IO-Compress

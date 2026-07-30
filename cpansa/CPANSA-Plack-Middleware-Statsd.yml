@@ -41,6 +41,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Plack-Middleware-Statsd
-last_checked: 1773231575
-latest_version: v0.8.2
+last_checked: 1785398916
+latest_version: v0.9.3
 metacpan: https://metacpan.org/pod/Plack::Middleware::Statsd

@@ -21,6 +21,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Trog-TOTP
-last_checked: 1779059425
+last_checked: 1785398916
 latest_version: '1.006'
 metacpan: https://metacpan.org/pod/Trog::TOTP
