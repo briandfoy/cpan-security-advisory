@@ -31,7 +31,8 @@ advisories:
     n->type_id in place, corrupting shared node data.  A memory leak occurred in syck_hdlr_add_anchor
     when a node already had an anchor. The incoming anchor string 'a' was leaked on
     early return.
-  fixed_versions: '>=1.37'
+  fixed_versions:
+  - '>=1.37'
   github_security_advisory:
   - GHSA-72r6-p2x3-g9gj
   id: CPANSA-YAML-Syck-2026-4177
