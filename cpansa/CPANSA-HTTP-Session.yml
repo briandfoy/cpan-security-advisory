@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<0.54'
   cves:
   - CVE-2026-3256
   description: HTTP::Session versions through 0.53 for Perl defaults to using insecurely
@@ -12,7 +12,8 @@ advisories:
     Date header. The built-in rand function is unsuitable for cryptographic usage.  The
     distribution includes HTTP::session::ID::MD5 which contains a similar flaw, but
     uses the MD5 hash instead.
-  fixed_versions: []
+  fixed_versions:
+  - '>=0.54'
   github_security_advisory:
   - GHSA-mx9c-4xjq-mhj6
   id: CPANSA-http-session-2026-3256
@@ -27,5 +28,5 @@ cpansa_version: 2
 darkpan: ~
 distribution: http-session
 last_checked: 1778397794
-latest_version: '0.53'
+latest_version: '0.54'
 metacpan: https://metacpan.org/pod/HTTP::Session
