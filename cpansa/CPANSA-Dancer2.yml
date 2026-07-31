@@ -15,6 +15,30 @@ advisories:
   - https://github.com/PerlDancer/Dancer2/commit/3580f5d0874a9abf5483528f73bda9a7fd9ec7f1
   reported: 2018-01-30
   severity: critical
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-13577
+  description: Dancer2 versions through 2.1.0 for Perl generate insecure session ids
+    when required CSPRNG modules are unavailable.  Dancer2::Core::Role::SessionFactory::generate_id
+    silently falls back to a built-in rand-derived session id unless both Math::Random::ISAAC::XS
+    and Crypt::URandom are available.  The fallback session id is generated from a
+    SHA-1 hash of a call to the built-in rand function, the absolute path of the Dancer2::Core::Role::SessionFactory
+    module, an internal counter, the process id, the module instance memory address,
+    and a shuffled string of characters (using the List::Util::shuffle function, which
+    also uses the built-in rand function).  These are all low-entropy and easily guessed
+    sources.  The built-in rand() function is seeded with 32-bits and considered unsuitable
+    for security applications.  Predictable session ids could allow an attacker to
+    gain access to systems.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-ccc2-34g9-j7rg
+  id: CPANSA-Dancer2-2026-13577
+  references:
+  - https://github.com/PerlDancer/Dancer2/blob/v2.1.0/lib/Dancer2/Core/Role/SessionFactory.pm#L142
+  - https://www.cve.org/CVERecord?id=CVE-2026-5080
+  reported: 2026-07-20
+  severity: ~
 cpansa_version: 2
 distribution: Dancer2
 last_checked: 1785398914
