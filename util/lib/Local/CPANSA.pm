@@ -13,6 +13,8 @@ $EXPORT_TAGS{'all'}     = [ @EXPORT, @EXPORT_OK ];
 $EXPORT_TAGS{'default'} = [ @EXPORT ];
 
 use Local::Attributes;
+
+use File::Spec::Functions qw(catfile);
 use Digest::SHA qw(sha256_hex);
 use Mojo::JSON qw(decode_json);
 use Mojo::URL;
