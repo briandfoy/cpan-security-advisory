@@ -439,7 +439,10 @@ you never need to know the details about how the report is stored.
 
 sub load_report :Export_Ok :Export_Tag("reports") ( $report_path ) {
 	state $rc = require YAML::XS;
+	return unless -e $report_path;
 	my $yaml = eval { YAML::XS::LoadFile( $report_path ) };
+	carp "Could not save <$report_path>: $@" unless $yaml;
+	return $yaml;
 	}
 
 =item * report_dir
@@ -452,18 +455,17 @@ sub report_dir :Export_Ok :Export_Tag("file") () {
 	find_root()->child('cpansa')
 	}
 
-=item * report_path(PACKAGE)
+=item * report_path(DIST_NAME)
 
-Return the report path for a given package. If a report path does not
-exist, returns the empty list.
+Return the report path for a given distribution.
 
 =cut
 
-sub report_path ( $package ) {
-	use File::Spec::Functions qw(catfile);
-	my $try = report_dir()->child( "CPANSA-$package.yml" );
-	-e $try ? $try : ()
 sub report_path :Export_Ok :Export_Tag("file") ( $dist_name ) {
+	$dist_name =~ s/::/-/g;
+	my $report_path = report_dir()->child( "CPANSA-$dist_name.yml" );
+
+	return $report_path;
 	}
 
 =item * save_report( PATH, HASHREF )
@@ -474,7 +476,7 @@ Save the data for the report.
 
 sub save_report :Export_Ok :Export_Tag("reports") ( $report_path, $hashref ) {
 	state $rc = require YAML::XS;
-	eval { YAML::XS::DumpFile( $report_path, $hashref ) };
+	carp "Could not save <$report_path>: $@" unless eval { YAML::XS::DumpFile( $report_path, $hashref ) };
 	}
 
 =back
