@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-65069
+  description: |-
+    Data::DisjointSet::Shared versions before 0.02 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in dsu.h with open(path, O_RDWR|O_CREAT, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-xqf2-wg33-4hp8
+  id: CPANSA-Data-DisjointSet-Shared-2026-65069
+  references:
+  - https://metacpan.org/release/EGOR/Data-DisjointSet-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-DisjointSet-Shared-0.02/diff/EGOR/Data-DisjointSet-Shared-0.01#dsu.h
+  reported: 2026-07-21
+  severity: medium
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-59147
+  description: |-
+    Data::DisjointSet::Shared versions before 0.02 for Perl allow out-of-bounds reads and writes via an unvalidated parent index in dsu_find.
+
+    The attach-time validator dsu_validate_header checks the header scalars and region layout against the file size, but does not validate the array contents it then trusts. dsu_find walks and path-compresses parent[x] with x a raw file-stored index never bounded against the node count, so both the read and the compression write-back land out of bounds.
+
+    A local peer that can write the backing file can leave the header valid while poisoning the parent array, so the next find or union both reads and writes through an out-of-bounds parent index, corrupting memory or crashing the process.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-2q6p-wjf6-872r
+  id: CPANSA-Data-DisjointSet-Shared-2026-59147
+  references:
+  - https://metacpan.org/release/EGOR/Data-DisjointSet-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-DisjointSet-Shared-0.02/diff/EGOR/Data-DisjointSet-Shared-0.01#dsu.h
+  reported: 2026-07-21
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Data-DisjointSet-Shared
+last_checked: 1785592952
+latest_version: '0.03'
+metacpan: https://metacpan.org/pod/Data::DisjointSet::Shared
