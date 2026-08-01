@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.04
+  cves:
+  - CVE-2026-65066
+  description: |-
+    Data::RingBuffer::Shared versions before 0.04 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in ring.h with open(path, O_RDWR|O_CREAT, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory:
+  - GHSA-v6hr-647x-cg64
+  id: CPANSA-Data-RingBuffer-Shared-2026-65066
+  references:
+  - https://metacpan.org/release/EGOR/Data-RingBuffer-Shared-0.04/changes
+  - https://metacpan.org/release/EGOR/Data-RingBuffer-Shared-0.04/diff/EGOR/Data-RingBuffer-Shared-0.03#ring.h
+  reported: 2026-07-21
+  severity: low
+- affected_versions:
+  - <0.04
+  cves:
+  - CVE-2026-59144
+  description: |-
+    Data::RingBuffer::Shared versions before 0.04 for Perl allow a stack buffer overflow via an unvalidated elem_size in ring_read_seq.
+
+    The attach-time validator ring_validate_header checks the capacity-overflow and total_size consistency of the header but never caps elem_size against the destination size. ring_read_seq does memcpy(out, ring_slot(h, seq), elem_size) with elem_size read raw from the mmap'd segment, copying into a fixed 8-byte destination scalar. An elem_size larger than 8 bytes writes past the destination.
+
+    A local peer that can write the backing file can leave the header valid while setting a large elem_size, so the next read copies a file-controlled length into the fixed 8-byte stack buffer, corrupting adjacent stack frames.
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory:
+  - GHSA-jxx5-5g59-8f3j
+  id: CPANSA-Data-RingBuffer-Shared-2026-59144
+  references:
+  - https://metacpan.org/release/EGOR/Data-RingBuffer-Shared-0.04/changes
+  - https://metacpan.org/release/EGOR/Data-RingBuffer-Shared-0.04/diff/EGOR/Data-RingBuffer-Shared-0.03#ring.h
+  reported: 2026-07-21
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Data-RingBuffer-Shared
+last_checked: 1785592983
+latest_version: '0.05'
+metacpan: https://metacpan.org/pod/Data::RingBuffer::Shared
