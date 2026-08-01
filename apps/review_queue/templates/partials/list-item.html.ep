@@ -3,6 +3,8 @@ my $bg_color = do { if($cve->{'recorded'}) { '#98FB984D' } elsif($cve->{'ignored
 my $type     = do { if($cve->{'recorded'}) { 'recorded'  } elsif($cve->{'ignored'}) { 'ignored'   } else { 'unevaluated' } };
 my $expanded_template = sprintf 'partials/%s-expanded', $cve->{'type'};
 my $id = $cve->{'cve'};
+
+print STDERR "TEMPLATE: " . Mojo::Util::dumper( $cve );
 %>
 
 <div id="item-<%= $id %>"
@@ -11,7 +13,8 @@ my $id = $cve->{'cve'};
 		>
     <div class="d-flex justify-content-between">
     	<div id="title-<%= $id %>">
-    		<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1"><%= $id %><span></p>
+    		<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1"><%= $id %><span> -
+    		<span class="item-label font-weight-bold pl-2 mb-1"><%= $cve->{'main_module'} %><span></p>
     	</div>
     	<div>
 			<a
