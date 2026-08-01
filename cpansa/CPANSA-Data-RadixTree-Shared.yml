@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-65063
+  description: |-
+    Data::RadixTree::Shared versions before 0.02 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in radix.h with open(path, O_RDWR|O_CREAT, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-c3ff-xfjv-hpqv
+  id: CPANSA-Data-RadixTree-Shared-2026-65063
+  references:
+  - https://metacpan.org/release/EGOR/Data-RadixTree-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-RadixTree-Shared-0.02/diff/EGOR/Data-RadixTree-Shared-0.01#radix.h
+  reported: 2026-07-21
+  severity: low
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-59141
+  description: |-
+    Data::RadixTree::Shared versions before 0.02 for Perl allow an out-of-bounds read via unvalidated node and arena indices in rdx_find_locked.
+
+    The attach-time validator rdx_validate_header checks the header scalars and region layout against the file size, but does not validate the node records it then trusts. rdx_find_locked indexes nodes[cur].children[k] and reads each node's label_off and label_len raw from the mmap'd segment, none bounded against the node count or the arena size.
+
+    A local peer that can write the backing file can leave the header valid while poisoning the node records, so a lookup dereferences an out-of-bounds node or arena index, reading adjacent memory or crashing the process.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-hg64-92gr-322p
+  id: CPANSA-Data-RadixTree-Shared-2026-59141
+  references:
+  - https://metacpan.org/release/EGOR/Data-RadixTree-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-RadixTree-Shared-0.02/diff/EGOR/Data-RadixTree-Shared-0.01#radix.h
+  reported: 2026-07-21
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Data-RadixTree-Shared
+last_checked: 1785592994
+latest_version: '0.03'
+metacpan: https://metacpan.org/pod/Data::RadixTree::Shared
