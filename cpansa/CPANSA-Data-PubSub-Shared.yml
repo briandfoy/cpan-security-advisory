@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <0.07
+  cves:
+  - CVE-2026-64617
+  description: |-
+    Data::PubSub::Shared versions before 0.07 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in pubsub.h with open(path, O_RDWR|O_CREAT, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.07'
+  github_security_advisory:
+  - GHSA-w3vw-q5h9-gx9g
+  id: CPANSA-Data-PubSub-Shared-2026-64617
+  references:
+  - https://metacpan.org/release/EGOR/Data-PubSub-Shared-0.07/changes
+  - https://metacpan.org/release/EGOR/Data-PubSub-Shared-0.07/diff/EGOR/Data-PubSub-Shared-0.06#pubsub.h
+  reported: 2026-07-21
+  severity: low
+cpansa_version: 2
+darkpan: ~
+distribution: Data-PubSub-Shared
+last_checked: 1785593006
+latest_version: '0.08'
+metacpan: https://metacpan.org/pod/Data::PubSub::Shared
