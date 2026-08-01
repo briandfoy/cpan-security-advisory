@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <0.05
+  cves:
+  - CVE-2026-64613
+  description: |-
+    Data::Buffer::Shared versions before 0.05 for Perl create a world-readable mmap backing file and open it without O_NOFOLLOW.
+
+    The segment is created in buf_generic.h with open(path, O_RDWR|O_CREAT|O_EXCL, 0666). O_EXCL blocks a pre-seeded file on create, but the mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable), and O_NOFOLLOW is absent, so a symlink planted at the path is followed when the segment is attached.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted symlink at the path redirects the open to another file.
+  fixed_versions:
+  - '>=0.05'
+  github_security_advisory:
+  - GHSA-pmmg-wc48-vjhq
+  id: CPANSA-Data-Buffer-Shared-2026-64613
+  references:
+  - https://metacpan.org/release/EGOR/Data-Buffer-Shared-0.05/changes
+  - https://metacpan.org/release/EGOR/Data-Buffer-Shared-0.05/diff/EGOR/Data-Buffer-Shared-0.04#buf_generic.h
+  reported: 2026-07-21
+  severity: medium
+cpansa_version: 2
+darkpan: ~
+distribution: Data-Buffer-Shared
+last_checked: 1785593021
+latest_version: '0.06'
+metacpan: https://metacpan.org/pod/Data::Buffer::Shared
