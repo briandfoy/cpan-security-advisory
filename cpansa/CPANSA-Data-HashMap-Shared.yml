@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.14
+  cves:
+  - CVE-2026-65064
+  description: |-
+    Data::HashMap::Shared versions before 0.14 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in shm_generic.h with open(path, O_RDWR | O_CREAT | O_CLOEXEC, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.14'
+  github_security_advisory:
+  - GHSA-jq3v-5cfp-pm6x
+  id: CPANSA-Data-HashMap-Shared-2026-65064
+  references:
+  - https://metacpan.org/release/EGOR/Data-HashMap-Shared-0.14/changes
+  - https://metacpan.org/release/EGOR/Data-HashMap-Shared-0.14/diff/EGOR/Data-HashMap-Shared-0.13#shm_generic.h
+  reported: 2026-07-21
+  severity: low
+- affected_versions:
+  - <0.14
+  cves:
+  - CVE-2026-59142
+  description: |-
+    Data::HashMap::Shared versions before 0.14 for Perl allow an out-of-bounds read via an unvalidated arena offset and length in shm_str_copy.
+
+    The attach-time validator shm_validate_header checks the header scalars and region layout against the file size, but does not validate the array contents it then trusts. shm_str_copy does memcpy(dst, arena + off, len) with off and len read raw from the mmap'd segment and unbounded, on the each, keys, values, pop, shift, take, swap, drain and cursor paths. The get path bounds off and len separately and is not affected.
+
+    A local peer that can write the backing file can leave the header valid while poisoning a record's offset and length, so iterating or draining the map copies a file-controlled offset and length out of the arena, reading adjacent memory or crashing the process.
+  fixed_versions:
+  - '>=0.14'
+  github_security_advisory:
+  - GHSA-4m33-8fcc-g5rp
+  id: CPANSA-Data-HashMap-Shared-2026-59142
+  references:
+  - https://metacpan.org/release/EGOR/Data-HashMap-Shared-0.14/changes
+  - https://metacpan.org/release/EGOR/Data-HashMap-Shared-0.14/diff/EGOR/Data-HashMap-Shared-0.13#shm_generic.h
+  reported: 2026-07-21
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Data-HashMap-Shared
+last_checked: 1785592990
+latest_version: '0.16'
+metacpan: https://metacpan.org/pod/Data::HashMap::Shared
