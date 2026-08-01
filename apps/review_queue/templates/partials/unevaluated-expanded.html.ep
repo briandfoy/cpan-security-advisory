@@ -8,23 +8,38 @@
 				</ul>
 			</div>
 
-			<form id ="submi-form-<%= $cve->{'cve'} %>"
+			<form id ="submit-form-<%= $cve->{'cve'} %>"
 				hx-post="/submit"
-				hx-target=""
-				hx-swap="innerHTML"
+				hx-target="#item-<%= $cve->{'cve'} %>"
+				hx-swap="outerHTML"
 				>
+				<input type="hidden" name="description" id="<%= $id %>-description" class="form-control" value="<%= $cve->{'description'} %>"/>
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-cve" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">CVE</label>
+					<div class="col-sm-9"><input type="text" name="cve" id="<%= $id %>-cve" class="form-control" value="<%= $cve->{'cve'} %>"/></div>
+				</div>
+
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-package" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Package</label>
 					<div class="col-sm-9"><input type="text" name="package" id="<%= $id %>-package" class="form-control" value="<%= $cve->{'package'} %>"/></div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
-					<label for="<%= $id %>-info" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Distribution</label>
+					<label for="<%= $id %>-info" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Namespace</label>
 					<div class="col-sm-9 mt-2">
 						<a href="<%= $cve->{'metacpan_link'} %>" target="_blank" rel="noopener noreferrer"><%= $cve->{'main_module'} %></a>
-						Dist: <span id="<%= $id %>-dist_name"><%= $cve->{'distribution'} %></span>
-						Latest: <span id="<%= $id %>-latest_version"><%= $cve->{'latest'} %></span>
+						<input type="hidden" name="main_module" id="<%= $id %>-main-module" class="form-control" value="<%= $cve->{'main_module'} %>"/>
 					</div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-distribution" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Distribution</label>
+					<div class="col-sm-9"><input type="text" name="distribution" id="<%= $id %>-distribution" class="form-control" value="<%= $cve->{'distribution'} %>"/></div>
+				</div>
+
+				<div class="form-group ml-2 mr-2 row no-gutters">
+					<label for="<%= $id %>-latest" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Latest</label>
+					<div class="col-sm-9"><%= $cve->{'latest'} %></div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
@@ -32,14 +47,26 @@
 					<div class="col-sm-9"><input type="text" name="ghsa-id" id="<%= $id %>-ghsa" class="form-control" value="<%= $cve->{'ghsa'} %>"/></div>
 				</div>
 
+<%
+my( $affected, $fixed ) = do {
+	local $_ = $cve->{'description'};
+	if( /\bversions? before (\S+)/ )          { "<$1", ">=$1" }
+	elsif( /\bversions through (\S+)/ ) {
+		if( $cve->{'latest'} eq $1 )          { '>0', '' }
+		else                                  { "<$cve->{'latest'}", ">=$cve->{'latest'}" }
+		}
+	else                                      { ( '', '' ) }
+	};
+
+%>
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-affected-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Affected versions</label>
-					<div class="col-sm-9"><input type="text" name="affected-versions" id="<%= $id %>-affected-versions" class="form-control"/></div>
+					<div class="col-sm-9"><input type="text" name="affected-versions" id="<%= $id %>-affected-versions" class="form-control" value="<%= $affected %>"/></div>
 				</div>
 
 				<div class="form-group ml-2 mr-2 row no-gutters">
 					<label for="<%= $id %>-fixed-versions" class="pr-2 col-sm-3 col-form-label font-weight-bold text-right">Fixed versions</label>
-					<div class="col-sm-9"><input type="text" name="fixed-versions" id="<%= $id %>-fixed-versions" class="form-control"/></div>
+					<div class="col-sm-9"><input type="text" name="fixed-versions" id="<%= $id %>-fixed-versions" class="form-control" value="<%= $fixed %>"/></div>
 				</div>
 
 				<div class="form-group row no-gutters">
