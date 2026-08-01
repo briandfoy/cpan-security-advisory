@@ -1,0 +1,33 @@
+---
+advisories:
+- affected_versions:
+  - <0.6.1
+  cves:
+  - CVE-2026-16766
+  description: |-
+    Catalyst::View::Wkhtmltopdf versions before 0.6.1 for Perl allow shell command injection (RCE) via PDF render options.
+
+    Options are passed directly to the wkhtmltopdf command without sanitization.
+
+    Any web application that passes user-controlled options such as the page_size, orientation or margins without validation allows shell command injection.
+
+    Version 0.6.0 was released with an incomplete fix for this issue.
+
+    Note that the wkhtmltopdf project is no longer being developed, and users of this package should migrate to alternative solutions.
+  fixed_versions:
+  - '>=0.6.1'
+  github_security_advisory: []
+  id: CPANSA-Catalyst-View-Wkhtmltopdf-2026-16766
+  references:
+  - https://github.com/mc7244/Catalyst-View-Wkhtmltopdf/issues/6
+  - https://github.com/robrwo/Catalyst-View-Wkhtmltopdf/security/advisories/GHSA-42w4-jj8w-6p98
+  - https://metacpan.org/release/RRWO/Catalyst-View-Wkhtmltopdf-v0.6.1/changes
+  - http://www.openwall.com/lists/oss-security/2026/07/25/4
+  reported: 2026-07-25
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Catalyst-View-Wkhtmltopdf
+last_checked: 1785593214
+latest_version: v0.6.3
+metacpan: https://metacpan.org/pod/Catalyst::View::Wkhtmltopdf
