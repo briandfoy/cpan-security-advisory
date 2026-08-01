@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-65068
+  description: |-
+    Data::SpatialHash::Shared versions before 0.02 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in sphash.h with open(path, O_RDWR|O_CREAT, 0666). The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-fm8j-jqfj-cvjh
+  id: CPANSA-Data-SpatialHash-Shared-2026-65068
+  references:
+  - https://metacpan.org/release/EGOR/Data-SpatialHash-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-SpatialHash-Shared-0.02/diff/EGOR/Data-SpatialHash-Shared-0.01#sphash.h
+  reported: 2026-07-21
+  severity: low
+- affected_versions:
+  - <0.02
+  cves:
+  - CVE-2026-59146
+  description: |-
+    Data::SpatialHash::Shared versions before 0.02 for Perl allow out-of-bounds reads and writes via unvalidated bucket, link and free-list indices in sph_walk_cell and sph_alloc_slot.
+
+    The attach-time validator sph_validate_header checks the header scalars and region layout against the file size, but does not validate the array contents it then trusts. sph_walk_cell reads entries[buckets[b]] and follows each entry's next link raw, and sph_alloc_slot writes through a file-stored free_head index, none bounded against the entry count (max_entries).
+
+    A local peer that can write the backing file can leave the header valid while poisoning the bucket chain and free list, so a query reads through an out-of-bounds bucket and next index and an insert writes through an out-of-bounds free-list head, corrupting memory or crashing the process.
+  fixed_versions:
+  - '>=0.02'
+  github_security_advisory:
+  - GHSA-p5xm-h38r-4xmg
+  id: CPANSA-Data-SpatialHash-Shared-2026-59146
+  references:
+  - https://metacpan.org/release/EGOR/Data-SpatialHash-Shared-0.02/changes
+  - https://metacpan.org/release/EGOR/Data-SpatialHash-Shared-0.02/diff/EGOR/Data-SpatialHash-Shared-0.01#sphash.h
+  reported: 2026-07-21
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Data-SpatialHash-Shared
+last_checked: 1785592975
+latest_version: '0.03'
+metacpan: https://metacpan.org/pod/Data::SpatialHash::Shared
