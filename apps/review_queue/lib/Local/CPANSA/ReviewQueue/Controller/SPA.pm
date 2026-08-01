@@ -68,8 +68,8 @@ sub add_advisory ($c) {
 	$advisory{'reported'}                 = $cve_details->{'published'} =~ s/T.*//r;;
 	$advisory{'severity'}                 = eval { lc $cve_details->{'metrics'}{'cvssMetricV31'}[0]{'cvssData'}{'baseSeverity'} };
 	$advisory{'affected_versions'}        = [ $c->param('affected-versions') ];
-	$advisory{'fixed_versions'}           = [ $c->param('fixed-versions') ];
-	$advisory{'github_security_advisory'} = [ $c->param('ghsa-id') ];
+	$advisory{'fixed_versions'}           = [ $c->param('fixed-versions') || () ];
+	$advisory{'github_security_advisory'} = [ $c->param('ghsa-id') || () ];
 
 	$c->app->log->debug( "add_advisory: Hash: " . dumper(\%advisory) );
 
