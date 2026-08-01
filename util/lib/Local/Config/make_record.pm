@@ -158,7 +158,6 @@ sub prompt_for_values ( $self ) {
 
 sub run ( $class, @args ) {
 	my $config = Local::Config::make_record->new( @args );
-
 	my $report_path = $config->output_filename // $config->guess_output_filename;
 	say STDERR "Report path is <$report_path>";
 
