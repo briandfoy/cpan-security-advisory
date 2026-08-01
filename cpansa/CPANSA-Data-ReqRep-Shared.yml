@@ -1,0 +1,48 @@
+---
+advisories:
+- affected_versions:
+  - <0.05
+  cves:
+  - CVE-2026-65061
+  description: |-
+    Data::ReqRep::Shared versions before 0.05 for Perl create a world-readable mmap backing file and open it without O_EXCL or O_NOFOLLOW.
+
+    The segment is created in reqrep.h with open(path, O_RDWR | O_CREAT, 0666), for both the request-reply and the integer-variant segments. The mode is 0666, so under the default umask 022 the file is created mode 0644 (world-readable). O_NOFOLLOW is absent, so a symlink planted at the path is followed, and O_EXCL is absent, so the open silently uses a pre-planted file instead of failing.
+
+    A "Shared" segment naturally lives in a shared directory such as /tmp or /dev/shm, where any local user can read the IPC payloads stored in the world-readable segment, and a pre-planted file or symlink at the path lets a local attacker win a pre-creation race or redirect the open.
+  fixed_versions:
+  - '>=0.05'
+  github_security_advisory:
+  - GHSA-grf7-5crv-x7vq
+  id: CPANSA-Data-ReqRep-Shared-2026-65061
+  references:
+  - https://metacpan.org/release/EGOR/Data-ReqRep-Shared-0.05/changes
+  - https://metacpan.org/release/EGOR/Data-ReqRep-Shared-0.05/diff/EGOR/Data-ReqRep-Shared-0.04#reqrep.h
+  reported: 2026-07-21
+  severity: low
+- affected_versions:
+  - <0.05
+  cves:
+  - CVE-2026-59139
+  description: |-
+    Data::ReqRep::Shared versions before 0.05 for Perl allow an out-of-bounds read via an unvalidated arena offset and length in reqrep_recv_locked.
+
+    The attach-time validator reqrep_validate_header checks the header scalars and region layout against the file size, but does not validate the array contents it then trusts. reqrep_recv_locked does memcpy(copy_buf, req_arena + arena_off, len) with arena_off and len read raw from the mmap'd segment and never bounded against the arena capacity (req_arena_cap).
+
+    A local peer that can write the backing file can leave the header valid while poisoning a request slot's offset and length, so receiving the request copies a file-controlled offset and length out of the arena, reading adjacent memory or crashing the process.
+  fixed_versions:
+  - '>=0.05'
+  github_security_advisory:
+  - GHSA-3jgv-34p5-3fxv
+  id: CPANSA-Data-ReqRep-Shared-2026-59139
+  references:
+  - https://metacpan.org/release/EGOR/Data-ReqRep-Shared-0.05/changes
+  - https://metacpan.org/release/EGOR/Data-ReqRep-Shared-0.05/diff/EGOR/Data-ReqRep-Shared-0.04#reqrep.h
+  reported: 2026-07-21
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Data-ReqRep-Shared
+last_checked: 1785593001
+latest_version: '0.06'
+metacpan: https://metacpan.org/pod/Data::ReqRep::Shared
