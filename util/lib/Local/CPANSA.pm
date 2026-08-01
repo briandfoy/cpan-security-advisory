@@ -227,7 +227,7 @@ Grab the JSON data for C<CVE> from I<services.nvd.nist.gov>.
 
 =cut
 
-sub get_cve_data ( $cve ) {
+sub get_cve_data :Export_Ok() :Export_Tag("cve") ( $cve ) {
 	my $search_results = get_cve_search_results();
 
 	foreach my $item ( $search_results->@* ) {
@@ -463,6 +463,7 @@ sub report_path ( $package ) {
 	use File::Spec::Functions qw(catfile);
 	my $try = report_dir()->child( "CPANSA-$package.yml" );
 	-e $try ? $try : ()
+sub report_path :Export_Ok :Export_Tag("file") ( $dist_name ) {
 	}
 
 =item * save_report( PATH, HASHREF )
