@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.3.0
+  cves:
+  - CVE-2026-58586
+  description: |-
+    Image::WebP versions before 0.3.0 for Perl bundle a vulnerable version of libwebp.
+
+    Image::WebP does not link to the system libwebp. Instead, it uses a bundled copy of libwebp 0.3.0 (released 2013-03-20). That version has multiple known vulnerabilities, including CVE-2023-4863.
+
+    Any caller that decodes an untrusted WebP image reaches the bundled decoder. Because the library is compiled into the module, upgrading the system libwebp does not remediate this.
+  fixed_versions:
+  - '>=0.3.0'
+  github_security_advisory:
+  - GHSA-7qv8-435q-f6x2
+  id: CPANSA-Image-WebP-2026-58586
+  references:
+  - https://metacpan.org/release/ZAPAD/Image-WebP-0.2/source/webp-src/NEWS
+  - https://metacpan.org/release/ZAPAD/Image-WebP-0.3.0/source/Changes
+  - https://www.cve.org/CVERecord?id=CVE-2023-4863
+  reported: 2026-07-24
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Image-WebP
+last_checked: 1785593277
+latest_version: '0.03'
+metacpan: https://metacpan.org/pod/Image::WebP
