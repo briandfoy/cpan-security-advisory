@@ -13,8 +13,11 @@ print STDERR "TEMPLATE: " . Mojo::Util::dumper( $cve );
 		>
     <div class="d-flex justify-content-between">
     	<div id="title-<%= $id %>">
-    		<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1"><%= $id %><span> -
+    		<p class="item-first-line"><span class="item-label font-weight-bold pl-2 mb-1"><%= $id %><span>
+    		<% if( length $cve->{'main_module'} ) { %>
+    		 -
     		<span class="item-label font-weight-bold pl-2 mb-1"><%= $cve->{'main_module'} %><span></p>
+    		<% } %>
     	</div>
     	<div>
 			<a
