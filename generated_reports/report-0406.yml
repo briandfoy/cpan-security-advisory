@@ -3,72 +3,40 @@ advisories:
   - affected_versions:
       - '>=0.61,<=0.74'
     cves:
-      - CVE-2016-10128
-    description: "Buffer overflow in the git_pkt_parse_line function in transports/smart_pkt.c in the Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote attackers to have unspecified impact via a crafted non-flush packet.\n"
+      - CVE-2018-8098
+    description: "Integer overflow in the index.c:read_entry() function while decompressing a compressed prefix length in libgit2 before v0.26.2 allows an attacker to cause a denial of service (out-of-bounds read) via a crafted repository index file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-23v5-3rr6-rp4h
-    id: CPANSA-Git-Raw-2016-10128-libgit2
+      - GHSA-m334-hpp6-wjh3
+    id: CPANSA-Git-Raw-2018-8098-libgit2
     references:
       - https://libgit2.github.com/security/
-      - https://github.com/libgit2/libgit2/commit/66e3774d279672ee51c3b54545a79d20d1ada834
-      - https://github.com/libgit2/libgit2/commit/4ac39c76c0153d1ee6889a0984c39e97731684b2
-      - http://www.openwall.com/lists/oss-security/2017/01/11/6
-      - http://www.openwall.com/lists/oss-security/2017/01/10/5
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
-      - http://www.securityfocus.com/bid/95338
-    reported: 2017-03-24
-    severity: critical
+      - https://github.com/libgit2/libgit2/commit/3db1af1f370295ad5355b8f64b865a2a357bcac0
+      - https://github.com/libgit2/libgit2/commit/3207ddb0103543da8ad2139ec6539f590f9900c1
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
+    severity: medium
   - affected_versions:
       - '>=0.61,<=0.74'
     cves:
-      - CVE-2016-10129
-    description: "The Git Smart Protocol support in libgit2 before 0.24.6 and 0.25.x before 0.25.1 allows remote attackers to cause a denial of service (NULL pointer dereference) via an empty packet line.\n"
+      - CVE-2018-8099
+    description: "Incorrect returning of an error code in the index.c:read_entry() function leads to a double free in libgit2 before v0.26.2, which allows an attacker to cause a denial of service via a crafted repository index file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-7gh2-q8m8-26r9
-    id: CPANSA-Git-Raw-2016-10129-libgit2
+      - GHSA-mhmm-r9x5-v638
+    id: CPANSA-Git-Raw-2018-8099-libgit2
     references:
       - https://libgit2.github.com/security/
-      - https://github.com/libgit2/libgit2/commit/84d30d569ada986f3eef527cbdb932643c2dd037
-      - https://github.com/libgit2/libgit2/commit/2fdef641fd0dd2828bd948234ae86de75221a11a
-      - http://www.openwall.com/lists/oss-security/2017/01/11/6
-      - http://www.openwall.com/lists/oss-security/2017/01/10/5
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
-      - http://www.securityfocus.com/bid/95339
-    reported: 2017-03-24
-    severity: high
-  - affected_versions:
-      - '>=0.61,<=0.74'
-    cves:
-      - CVE-2016-10130
-    description: "The http_connect function in transports/http.c in libgit2 before 0.24.6 and 0.25.x before 0.25.1 might allow man-in-the-middle attackers to spoof servers by leveraging clobbering of the error variable.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-fhf3-77x2-3mpp
-    id: CPANSA-Git-Raw-2016-10130-libgit2
-    references:
-      - https://libgit2.github.com/security/
-      - https://github.com/libgit2/libgit2/commit/b5c6a1b407b7f8b952bded2789593b68b1876211
-      - https://github.com/libgit2/libgit2/commit/9a64e62f0f20c9cf9b2e1609f037060eb2d8eb22
-      - http://www.openwall.com/lists/oss-security/2017/01/11/6
-      - http://www.openwall.com/lists/oss-security/2017/01/10/5
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00072.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00036.html
-      - http://lists.opensuse.org/opensuse-updates/2017-02/msg00030.html
-      - http://www.securityfocus.com/bid/95359
-    reported: 2017-03-24
+      - https://github.com/libgit2/libgit2/commit/58a6fe94cb851f71214dbefac3f9bffee437d6fe
+      - https://lists.debian.org/debian-lts-announce/2022/03/msg00031.html
+    reported: 2018-03-14
     severity: medium
 cpansa_version: 2
 distribution: Git-Raw
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:11 2026
+  date: Mon Aug  3 07:23:22 2026
   from: external_reports/libgit2.yml
-last_checked: 1773590891
+last_checked: 1785756202
 latest_version: 0.90
 repo: git://github.com/jacquesg/p5-Git-Raw.git

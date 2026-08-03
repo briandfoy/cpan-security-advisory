@@ -21,8 +21,8 @@ cpansa_version: 2
 distribution: Ukigumo-Server
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:31 2026
+  date: Mon Aug  3 07:21:48 2026
   from: external_reports/chartjs.yml
-last_checked: 1773590791
+last_checked: 1785756108
 latest_version: v2.1.5
 repo: git://github.com/ukigumo/Ukigumo-Server.git

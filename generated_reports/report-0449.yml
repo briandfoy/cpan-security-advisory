@@ -3,32 +3,30 @@ advisories:
   - affected_versions:
       - ==1.1.15.1
     cves:
-      - CVE-2016-0742
-    description: "The resolver in nginx before 1.8.1 and 1.9.x before 1.9.10 allows remote attackers to cause a denial of service (invalid pointer dereference and worker process crash) via a crafted UDP DNS response.\n"
+      - CVE-2013-4547
+    description: "nginx 0.8.41 through 1.4.3 and 1.5.x before 1.5.7 allows remote attackers to bypass intended restrictions via an unescaped space character in a URI.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-x98p-wfj9-8f25
-    id: CPANSA-Nginx-Perl-2016-0742-nginx
+      - GHSA-9x2q-qf8w-h347
+    id: CPANSA-Nginx-Perl-2013-4547-nginx
     references:
-      - http://lists.opensuse.org/opensuse-updates/2016-02/msg00042.html
-      - http://www.ubuntu.com/usn/USN-2892-1
-      - https://bugzilla.redhat.com/show_bug.cgi?id=1302587
-      - http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html
-      - http://www.debian.org/security/2016/dsa-3473
-      - https://bto.bluecoat.com/security-advisory/sa115
-      - http://www.securitytracker.com/id/1034869
-      - https://security.gentoo.org/glsa/201606-06
-      - https://access.redhat.com/errata/RHSA-2016:1425
-      - https://support.apple.com/kb/HT212818
-      - http://seclists.org/fulldisclosure/2021/Sep/36
-    reported: 2016-02-15
-    severity: high
+      - http://www.debian.org/security/2012/dsa-2802
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00084.html
+      - http://secunia.com/advisories/55757
+      - http://secunia.com/advisories/55825
+      - http://secunia.com/advisories/55822
+      - http://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00118.html
+      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00119.html
+      - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00007.html
+    reported: 2013-11-23
+    severity: ~
 cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:22 2026
+  date: Mon Aug  3 07:23:30 2026
   from: external_reports/nginx.yml
-last_checked: 1773590902
+last_checked: 1785756210
 latest_version: v1.8.1.10
 repo: ~

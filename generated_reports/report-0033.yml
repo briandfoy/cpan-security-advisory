@@ -1,35 +1,25 @@
 ---
 advisories:
   - affected_versions:
-      - '>=1.000_1,<=1.001'
+      - '>=1.000_1'
     cves:
-      - CVE-2015-0852
-    description: "Multiple integer underflows in PluginPCX.cpp in FreeImage 3.17.0 and earlier allow remote attackers to cause a denial of service (heap memory corruption) via vectors related to the height and width of a window.\n"
+      - CVE-2025-65803
+    description: "An integer overflow in the psdParser::ReadImageData function of FreeImage v3.18.0 and before allows attackers to cause a Denial of Service (DoS) via supplying a crafted PSD file.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-vg9f-qf95-c67j
-    id: CPANSA-Alien-FreeImage-2015-0852-freeimage
+      - GHSA-hwvj-wq82-3x6r
+    id: CPANSA-Alien-FreeImage-2025-65803-freeimage
     references:
-      - https://github.com/kmx/alien-freeimage/issues/5
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-September/167766.html
-      - http://www.openwall.com/lists/oss-security/2015/08/28/1
-      - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=797165
-      - http://www.debian.org/security/2015/dsa-3392
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172491.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172583.html
-      - http://www.securitytracker.com/id/1034077
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168000.html
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-October/168023.html
-      - https://security.gentoo.org/glsa/201701-68
-      - https://www.oracle.com/technetwork/security-advisory/cpujan2019-5072801.html
-    reported: 2015-09-29
-    severity: ~
+      - https://freeimage.sourceforge.io/download.html
+      - https://gist.github.com/1mxml/cabd6d972557d9d992fe5f4f6ca1dd87
+    reported: 2025-12-10
+    severity: medium
 cpansa_version: 2
 distribution: Alien-FreeImage
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:35 2026
+  date: Mon Aug  3 07:21:50 2026
   from: external_reports/freeimage.yml
-last_checked: 1773590795
+last_checked: 1785756110
 latest_version: 1.001
 repo: https://github.com/kmx/alien-freeimage

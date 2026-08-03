@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: Yote
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:47 2026
+  date: Mon Aug  3 07:22:02 2026
   from: external_reports/jquery.yml
-last_checked: 1773590807
+last_checked: 1785756122
 latest_version: 3.0
 repo: ~

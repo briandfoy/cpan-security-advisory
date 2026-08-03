@@ -70,8 +70,8 @@ cpansa_version: 2
 distribution: Boost-Graph
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:26 2026
+  date: Mon Aug  3 07:21:42 2026
   from: external_reports/boost.yml
-last_checked: 1773590786
+last_checked: 1785756102
 latest_version: 1.4
 repo: ~

@@ -24,8 +24,8 @@ cpansa_version: 2
 distribution: Crypt-Sodium-XS
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:18 2026
+  date: Mon Aug  3 07:23:27 2026
   from: external_reports/libsodium.yml
-last_checked: 1773590898
-latest_version: 0.001001
+last_checked: 1785756207
+latest_version: 0.002000
 repo: ~

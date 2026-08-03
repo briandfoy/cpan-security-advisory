@@ -22,8 +22,8 @@ cpansa_version: 2
 distribution: MarpaX-ESLIF
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:15 2026
+  date: Mon Aug  3 07:23:24 2026
   from: external_reports/libpcre2.yml
-last_checked: 1773590895
+last_checked: 1785756204
 latest_version: 6.0.35.1
 repo: git://github.com/jddurand/c-marpaESLIFPerl.git

@@ -76,8 +76,8 @@ cpansa_version: 2
 distribution: Yukki
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:49 2026
+  date: Mon Aug  3 07:22:05 2026
   from: external_reports/jqueryui.yml
-last_checked: 1773590809
+last_checked: 1785756125
 latest_version: 0.140290
 repo: git://github.com/zostay/Yukki.git

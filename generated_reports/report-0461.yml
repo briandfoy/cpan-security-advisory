@@ -24,8 +24,8 @@ cpansa_version: 2
 distribution: Yukki
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:24 2026
+  date: Mon Aug  3 07:23:32 2026
   from: external_reports/plupload.yml
-last_checked: 1773590904
+last_checked: 1785756212
 latest_version: 0.140290
 repo: git://github.com/zostay/Yukki.git

@@ -16,8 +16,8 @@ cpansa_version: 2
 distribution: HarfBuzz-Shaper
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:37 2026
+  date: Mon Aug  3 07:21:53 2026
   from: external_reports/harfbuzz.yml
-last_checked: 1773590797
+last_checked: 1785756113
 latest_version: 0.033
 repo: https://github.com/sciurius/perl-HarfBuzz-Shaper.git

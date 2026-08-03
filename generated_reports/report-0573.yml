@@ -17,8 +17,8 @@ cpansa_version: 2
 distribution: Yancy
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:08:50 2026
+  date: Mon Aug  3 07:23:58 2026
   from: external_reports/vue.yml
-last_checked: 1773590930
+last_checked: 1785756238
 latest_version: 1.088
 repo: https://github.com/preaction/Yancy.git

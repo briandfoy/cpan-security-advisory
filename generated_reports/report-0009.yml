@@ -35,8 +35,8 @@ cpansa_version: 2
 distribution: Zabbix-Reporter
 generated:
   by: util/invert-third-party.pl
-  date: Sun Mar 15 12:06:28 2026
+  date: Mon Aug  3 07:21:44 2026
   from: external_reports/bootstrap.yml
-last_checked: 1773590788
+last_checked: 1785756104
 latest_version: 0.07
 repo: git://github.com/gittex/Zabbix-Reporter.git
