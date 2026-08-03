@@ -193,6 +193,10 @@ feed: $(CVE_FEED_FILE)
 $(CVE_FEED_FILE):
 	$(PERL) util/make_feed > $@
 
+.PHONY: review
+review:
+	(cd apps/review_queue; morbo script/review_queue)
+
 .PHONY: test_yaml
 test_yaml: ## test all YAML files
 	env TEST_CHANGED_ONLY=0 prove -Ilib -b -r xt
