@@ -1,0 +1,71 @@
+---
+advisories:
+- affected_versions:
+  - <0.86
+  cves:
+  - CVE-2026-18108
+  description: |-
+    Net::SAML2 versions before 0.86 for Perl allow authentication bypass because _verify_encrypted_assertion accepts an EncryptedAssertion whose decrypted content carries no signature.
+
+    _verify_encrypted_assertion decrypts the EncryptedAssertion and returns it as verified when it carries no signature, via "return $xml unless $xpath->exists('dsig:Signature', $assert);". The signature check and the trust anchor check that follow run only when a signature is present, so a decrypted assertion with no dsig:Signature element reaches new_from_xml unverified and its NameID and attributes are read into the assertion object. An SP's encryption certificate is published in its SAML metadata so the IdP can encrypt to it, so any party can encrypt an unsigned assertion to that certificate, wrap it in a samlp:Response, and post it to the assertion consumer service.
+
+    Any caller that configures a decryption key_file, and so accepts EncryptedAssertions, takes identity fields from an assertion that no trust anchor covers, and an unauthenticated party can authenticate as an arbitrary user. Callers with no key_file configured do not decrypt and are unaffected.
+  fixed_versions:
+  - '>=0.86'
+  github_security_advisory:
+  - GHSA-g48m-j5m7-625h
+  id: CPANSA-Net-SAML2-2026-18108
+  references:
+  - https://github.com/perl-net-saml2/perl-Net-SAML2/commit/d916468586404518b8cf3c78dbd001cc1f1046a7.patch
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.85/source/lib/Net/SAML2/Protocol/Assertion.pm#L78
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.86/changes
+  reported: 2026-08-03
+  severity: critical
+- affected_versions:
+  - <0.86
+  cves:
+  - CVE-2026-18092
+  description: |-
+    Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass via XML signature wrapping because new_from_xml reads assertion identity with document-wide XPath instead of the signed subtree.
+
+    new_from_xml reads the NameID, attribute values, SessionIndex, audience and other identity fields with document-wide XPath, such as //saml:Assertion/saml:AttributeStatement/saml:Attribute and //saml:Subject/saml:NameID, which select the first matching element in document order rather than the element covered by the verified signature. handle_response confirms that a signature is present and, when a cacert is configured, that it chains to the CA, but XML::Sig verifies only the element named by the signature's Reference URI, so unsigned sibling assertions in the same document are not covered. An attacker who holds any one IdP-signed assertion can add an unsigned attacker-authored assertion earlier in document order; the signature still verifies and the document-order XPath returns the attacker's NameID and attributes.
+
+    Any caller that passes an untrusted Response to new_from_xml can accept identity fields from an assertion the IdP never signed, even when a cacert trust anchor is configured, so a party holding one valid IdP-signed assertion can authenticate as an arbitrary user.
+  fixed_versions:
+  - '>=0.86'
+  github_security_advisory:
+  - GHSA-657v-xpf8-79x2
+  id: CPANSA-Net-SAML2-2026-18092
+  references:
+  - https://github.com/perl-net-saml2/perl-Net-SAML2/commit/201fead7f42b83f40c84bf4a311a25b09acd18f9.patch
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.86/changes
+  reported: 2026-08-03
+  severity: high
+- affected_versions:
+  - <0.86
+  cves:
+  - CVE-2026-18089
+  description: |-
+    Net::SAML2 versions before 0.86 for Perl allow SAML authentication bypass by verifying responses against the response-embedded certificate in verify_xml when no trust anchor is configured.
+
+    verify_xml in Net::SAML2::Role::VerifyXML runs "return if !$anchors && !$cacert;" as soon as the XML::Sig check succeeds, and that check uses the X.509 certificate taken from the response's own dsig:KeyInfo/dsig:X509Certificate element, so an unanchored response is checked only against the key it carries. Binding::POST declares cacert as an optional Maybe[Str] with no default, so a POST binding built without one takes that path, and _verify_encrypted_assertion returns early the same way with "return $xml unless $cacert;".
+
+    Any caller that constructs Binding::POST or calls Assertion->new_from_xml without a cacert, cert_text, or anchors argument accepts a response signed by an attacker generated key whose self-signed certificate is embedded in that response, authenticating an arbitrary assertion.
+  fixed_versions:
+  - '>=0.86'
+  github_security_advisory:
+  - GHSA-p5j9-p2w8-q5rw
+  id: CPANSA-Net-SAML2-2026-18089
+  references:
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.85/source/lib/Net/SAML2/Binding/POST.pm#L21
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.85/source/lib/Net/SAML2/Protocol/Assertion.pm#L84
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.85/source/lib/Net/SAML2/Role/VerifyXML.pm#L32
+  - https://metacpan.org/release/TIMLEGGE/Net-SAML2-0.88/source/Changes
+  reported: 2026-08-03
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Net-SAML2
+last_checked: 1785922446
+latest_version: '0.88'
+metacpan: https://metacpan.org/pod/Net::SAML2
