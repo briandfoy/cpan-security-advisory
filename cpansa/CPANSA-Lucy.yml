@@ -12,6 +12,18 @@ advisories:
   references: []
   reported: ~
   severity: ~
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-61483
+  description: ''
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-3rc9-h6hx-fvf7
+  id: CPANSA-Lucy-2026-61483
+  references: []
+  reported: ~
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Lucy
