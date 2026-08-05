@@ -20,6 +20,68 @@ advisories:
   - https://github.com/perl-net-saml2/perl-XML-Sig/pull/64
   reported: 2025-11-26
   severity: ~
+- affected_versions:
+  - '>=0.29'
+  cves:
+  - CVE-2026-18568
+  description: |-
+    XML::Sig versions from 0.29 before 0.72 for Perl allow signature verification bypass because verify returns true when every signature was skipped before any cryptographic check.
+
+    verify in lib/XML/Sig.pm counts the `//dsig:Signature` elements into `$numsigs` and iterates over them, but two paths reach `next` before any digest or key check runs: a `SignedInfo/Reference/@URI` that resolves to no element while `$numsigs` is greater than 1, and, when `id_attr` is set, a reference that does not match the requested ID. The loop records nothing about what it checked, so when every signature takes one of those paths control reaches the unconditional `return 1` that ends verify. Two `Signature` elements whose Reference URI names an ID that no element carries is enough, as is one such element combined with `id_attr`.
+
+    Any caller that passes untrusted XML to verify can receive a true return for a document in which no digest and no signature value was checked; a `cert` or `cert_text` trust anchor does not change this, because no key check runs. Versions up to 0.28 use an XML::XPath based verify that has no such skip and are not affected.
+  fixed_versions:
+  - <0.72
+  github_security_advisory:
+  - GHSA-r3hj-rg3j-262c
+  id: CPANSA-XML-Sig-2026-18568
+  references:
+  - https://github.com/perl-net-saml2/perl-XML-Sig/commit/ef22cfed1ac0f29b316d17eb79cf6480e03ae16a.patch
+  - https://metacpan.org/release/TIMLEGGE/XML-Sig-0.72/changes
+  - https://www.cve.org/CVERecord?id=CVE-2025-40934
+  reported: 2026-08-03
+  severity: high
+- affected_versions:
+  - <0.71
+  cves:
+  - CVE-2026-9487
+  description: |-
+    XML::Sig versions before 0.71 for Perl allow signature wrapping via duplicate ID.
+
+    _get_signed_xml() in lib/XML/Sig.pm, called from verify(), resolves the SignedInfo Reference/@URI to a node with the XPath expression "//*[@ID='$id']" and returns the first node of the resulting node set. A document in which two elements share that ID value is accepted: the digest and signature are checked against whichever element comes first in document order, and the duplicate is not detected.
+
+    Such a document verifies successfully while an application that resolves the same ID independently can read the second, attacker supplied element; in a SAML2 context this places the contents of an Assertion under attacker control.
+  fixed_versions:
+  - '>=0.71'
+  github_security_advisory:
+  - GHSA-wqp7-2ww4-q6mf
+  id: CPANSA-XML-Sig-2026-9487
+  references:
+  - https://github.com/perl-net-saml2/perl-XML-Sig/commit/4976bde5245df69b8e02c6ae061acbd4891cd7f9.patch
+  - https://metacpan.org/release/TIMLEGGE/XML-Sig-0.71/source/Changes
+  reported: 2026-08-03
+  severity: critical
+- affected_versions:
+  - <0.71
+  cves:
+  - CVE-2026-9390
+  description: |-
+    XML::Sig versions before 0.71 for Perl allow XPath injection in ID lookup.
+
+    verify() and _get_signed_xml() in lib/XML/Sig.pm build XPath expressions by concatenating the SignedInfo/Reference/@URI value read from the document being verified. The value is neither escaped nor checked against the NCName grammar that XML requires of an ID, so a URI containing a single quote closes the string literal in the generated expression and appends arbitrary XPath operators.
+
+    A crafted URI can make the lookup match elements the reference does not name, or every element in the document, so which node is selected for digest verification is decided by the injected expression rather than by the reference.
+  fixed_versions:
+  - '>=0.71'
+  github_security_advisory:
+  - GHSA-mhmm-7px6-jx3j
+  id: CPANSA-XML-Sig-2026-9390
+  references:
+  - https://github.com/perl-net-saml2/perl-XML-Sig/commit/69ad2b421118fadd33d57f50b110b8d161e8fef5.patch
+  - https://github.com/perl-net-saml2/perl-XML-Sig/commit/a85aad21aa767ac1c158bbfc19447683941ab376.patch
+  - https://metacpan.org/release/TIMLEGGE/XML-Sig-0.71/changes
+  reported: 2026-08-03
+  severity: critical
 cpansa_version: 2
 darkpan: ~
 distribution: XML-Sig

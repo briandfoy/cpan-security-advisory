@@ -4,25 +4,38 @@ advisories:
   - '>0'
   cves:
   - CVE-2026-61484
-  description: ''
+  description: '** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted
+    Data vulnerability in Apache Lucy. This issue affects Apache Lucy:
+    all versions. As this project is retired, we do not plan to release
+    a version that fixes this issue. Users are recommended to find an
+    alternative or restrict access to the instance to trusted users.
+    NOTE: This vulnerability only affects products that are no longer
+    supported by the maintainer.'
   fixed_versions: []
   github_security_advisory:
   - GHSA-q347-vr2h-mpmx
   id: CPANSA-Lucy-2026-61484
-  references: []
-  reported: ~
+  references:
+  - https://lists.apache.org/thread/942t3pwgz2nrhnklrtyt5zr7g4wqc9cb
+  reported: 2026-08-05
   severity: ~
 - affected_versions:
   - '>0'
   cves:
   - CVE-2026-61483
-  description: ''
+  description: '** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
+    in Apache Lucy. This issue affects Apache Lucy: all versions. As this project
+    is retired, we do not plan to release a version that fixes this issue.
+    Users are recommended to find an alternative or restrict access to the
+    instance to trusted users. NOTE: This vulnerability only affects products
+    that are no longer supported by the maintainer.'
   fixed_versions: []
   github_security_advisory:
   - GHSA-3rc9-h6hx-fvf7
   id: CPANSA-Lucy-2026-61483
-  references: []
-  reported: ~
+  references:
+  - https://lists.apache.org/thread/ltp8320c0nsy45bpzm8342jd7yj05z1h
+  reported: 2026-08-05
   severity: ~
 cpansa_version: 2
 darkpan: ~
