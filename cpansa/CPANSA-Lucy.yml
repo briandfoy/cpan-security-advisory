@@ -1,0 +1,20 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-61484
+  description: ''
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-q347-vr2h-mpmx
+  id: CPANSA-Lucy-2026-61484
+  references: []
+  reported: ~
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: Lucy
+last_checked: 1785924973
+latest_version: '0.006002'
+metacpan: https://metacpan.org/pod/Lucy
