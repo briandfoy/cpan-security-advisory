@@ -1,0 +1,55 @@
+---
+advisories:
+- affected_versions:
+  - <0.06
+  cves:
+  - CVE-2026-66902
+  description: |-
+    Google::Auth versions before 0.06 for Perl run a command named in an external_account credentials JSON via an ungated system call.
+
+    The Pluggable subclass reads credential_source.executable.command from the credentials JSON and runs it as `system($command)`, a single argument call that passes the whole string to /bin/sh -c. The executable's environment_variables map from the same JSON is copied into %ENV first. No opt-in gate guards the call. make_creds selects the Pluggable subclass whenever credential_source.executable is present, so the path is reached from the standard Application Default Credentials flow, including a "type": "external_account" configuration read from the file named by GOOGLE_APPLICATION_CREDENTIALS. Configurations without credential_source.executable do not select this subclass and do not reach the call.
+
+    Any caller that builds credentials from a configuration it does not fully control runs the embedded command with the privileges of the application process.
+  fixed_versions:
+  - '>=0.06'
+  github_security_advisory:
+  - GHSA-vjmh-7f4c-cx88
+  id: CPANSA-Google-Auth-2026-66902
+  references:
+  - https://github.com/GoogleCloudPlatform/google-auth-library-perl/commit/c95c77e70bec94f17e239d88050f843ea1cade95.patch
+  - https://metacpan.org/release/CJCOLLIER/Google-Auth-0.06/diff/CJCOLLIER/Google-Auth-0.05
+  - http://www.openwall.com/lists/oss-security/2026/08/04/35
+  reported: 2026-08-04
+  severity: ''
+- affected_versions:
+  - <0.09
+  cves:
+  - CVE-2026-66901
+  description: |-
+    Google::Auth versions before 0.09 for Perl allow server side request forgery and credential exfiltration via unvalidated URLs taken from the credentials JSON.
+
+    The URLs the library requests are read from the credentials JSON, and their hosts were not checked against the universe domain before the request. For an external_account configuration, retrieve_subject_token fetched credential_source.url with headers from the same JSON, and fetch_access_token posted the subject token to token_url, then sent the STS access token it received to service_account_impersonation_url in an Authorization: Bearer header. The authorized_user, impersonated_service_account and service_account configurations posted the client secret and refresh token, the source access token, and a signed JWT assertion to their own JSON-supplied token_uri or impersonation URL.
+
+    Any caller that builds credentials from a configuration it does not fully control issues those requests from the application's network position, reaching hosts the configuration names, including internal services and link-local metadata endpoints, and hands them the credentials each request carries. The service_account assertion is bound to aud, so it is not replayable against Google.
+
+    Version 0.06 added a _validate_url host check to the external_account class, keyed on a universe_domain read from the same credentials JSON. Version 0.07 gated a JSON-supplied universe domain behind GOOGLE_EXTERNAL_ACCOUNT_ALLOW_CUSTOM_UNIVERSES=1, deriving the pin flag from arguments that an earlier BUILDARGS pass had already merged on the make_creds path. Version 0.08 passed the pin decision through as an explicit constructor argument and moved _validate_url to Google::Auth::Credentials, adding the call to UserRefreshCredentials and ImpersonatedServiceAccountCredentials, and 0.09 added it to ServiceAccountCredentials.
+  fixed_versions:
+  - '>=0.09'
+  github_security_advisory:
+  - GHSA-xxpm-5c34-x4c3
+  id: CPANSA-Google-Auth-2026-66901
+  references:
+  - https://github.com/GoogleCloudPlatform/google-auth-library-perl/commit/9b5157062acc605ca9e6c507b910587f4829ce9e.patch
+  - https://github.com/GoogleCloudPlatform/google-auth-library-perl/commit/c95c77e70bec94f17e239d88050f843ea1cade95.patch
+  - https://github.com/GoogleCloudPlatform/google-auth-library-perl/commit/cbbb07804e3f8cc7cf9638ecc9c2097d80a9ef50.patch
+  - https://github.com/GoogleCloudPlatform/google-auth-library-perl/commit/cd42bdef53afcc4531161e85e91d0d5997e01324.patch
+  - https://metacpan.org/release/CJCOLLIER/Google-Auth-0.09/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/04/34
+  reported: 2026-08-04
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Google-Auth
+last_checked: 1785922298
+latest_version: 0.09
+metacpan: https://metacpan.org/pod/Google-Auth
