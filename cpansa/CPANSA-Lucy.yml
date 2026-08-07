@@ -23,7 +23,7 @@ advisories:
   - '>0'
   cves:
   - CVE-2026-61483
-  description: '** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
+  description: 'Apache Lucy: QueryParser unbounded recursion on deeply-nested query -> C-stack-overflow DoS ** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
     in Apache Lucy. This issue affects Apache Lucy: all versions. As this project
     is retired, we do not plan to release a version that fixes this issue.
     Users are recommended to find an alternative or restrict access to the
@@ -35,8 +35,44 @@ advisories:
   id: CPANSA-Lucy-2026-61483
   references:
   - https://lists.apache.org/thread/ltp8320c0nsy45bpzm8342jd7yj05z1h
+  - http://www.openwall.com/lists/oss-security/2026/08/05/4
   reported: 2026-08-05
-  severity: ~
+  severity: high
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-61485
+  description: 'Apache Lucy: Freezer/InStream deserialization bomb - unbounded allocation reading an index ** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
+    in Apache Lucy. This issue affects Apache Lucy: all versions. As this project
+    is retired, we do not plan to release a version that fixes this issue.
+    Users are recommended to find an alternative or restrict access to the
+    instance to trusted users. NOTE: This vulnerability only affects products
+    that are no longer supported by the maintainer.'
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-7wjr-wh6f-62xm
+  id: CPANSA-Lucy-2026-61485
+  references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2026-61485
+  - https://lists.apache.org/thread/4q9rfscp3tkjr3kt7lsg97szhmydl23s
+  - http://www.openwall.com/lists/oss-security/2026/08/05/6
+  reported: 2026-08-05
+  severity: high
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-61486
+  description: 'Apache Lucy: stack-buffer-overflow in JSON parser error reporter on malformed input ** UNSUPPORTED WHEN ASSIGNED ** Stack-based Buffer Overflow vulnerability in Apache Lucy. This issue affects Apache Lucy: all versions. As this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users. NOTE: This vulnerability only affects products that are no longer supported by the maintainer.'
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-phfr-gw5r-65ff
+  id: CPANSA-Lucy-2026-61486
+  references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2026-61486
+  - https://lists.apache.org/thread/z88yv1z19ppsd4td4nqtg7q72fvqh01b
+  - http://www.openwall.com/lists/oss-security/2026/08/05/7
+  reported: 2026-08-05
+  severity: critical
 cpansa_version: 2
 darkpan: ~
 distribution: Lucy
