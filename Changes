@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260807.001 2026-08-07T19:07:51Z
+	* re-generate data
+	* CVEs for Apache Lucy
+
 20260803.002 2026-08-03T12:04:43Z
 	* data update for 2026-08-03 (perls 5.40.5, 5.42.3)
 
