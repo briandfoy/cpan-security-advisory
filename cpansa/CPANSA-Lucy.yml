@@ -4,7 +4,7 @@ advisories:
   - '>0'
   cves:
   - CVE-2026-61484
-  description: '** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted
+  description: 'Apache Lucy: LucyX::Remote::SearchServer unauthenticated remote Storable::thaw -> RCE/DoS ** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted
     Data vulnerability in Apache Lucy. This issue affects Apache Lucy:
     all versions. As this project is retired, we do not plan to release
     a version that fixes this issue. Users are recommended to find an
@@ -17,8 +17,9 @@ advisories:
   id: CPANSA-Lucy-2026-61484
   references:
   - https://lists.apache.org/thread/942t3pwgz2nrhnklrtyt5zr7g4wqc9cb
+  - http://www.openwall.com/lists/oss-security/2026/08/05/5
   reported: 2026-08-05
-  severity: ~
+  severity: critical
 - affected_versions:
   - '>0'
   cves:
