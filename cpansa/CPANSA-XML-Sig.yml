@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>=0.27,<=0.67'
+  - '>=0.27,<0.68'
   cves:
   - CVE-2025-40934
   description: XML-Sig versions 0.27 through 0.67 for Perl incorrectly validates XML
@@ -21,7 +21,7 @@ advisories:
   reported: 2025-11-26
   severity: ~
 - affected_versions:
-  - '>=0.29'
+  - '>=0.29,<0.72'
   cves:
   - CVE-2026-18568
   description: |-
@@ -31,7 +31,7 @@ advisories:
 
     Any caller that passes untrusted XML to verify can receive a true return for a document in which no digest and no signature value was checked; a `cert` or `cert_text` trust anchor does not change this, because no key check runs. Versions up to 0.28 use an XML::XPath based verify that has no such skip and are not affected.
   fixed_versions:
-  - <0.72
+  - '>=0.72'
   github_security_advisory:
   - GHSA-r3hj-rg3j-262c
   id: CPANSA-XML-Sig-2026-18568
