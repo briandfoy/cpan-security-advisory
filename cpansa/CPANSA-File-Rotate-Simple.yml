@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <0.4.0
+  cves:
+  - CVE-2026-17435
+  description: |-
+    File::Rotate::Simple versions before 0.4.0 for Perl create the target of dangling symlinks when rotating files.
+
+    When the file to be rotated is a symbolic link to a missing file, and the touch option is enabled, then the rotate method assumes that the file is absent (since the existence check is against the target), and does not rotate it. But it touches the file, which creates the target.
+
+    An attacker that has the ability to create the symlink can use this to create an arbitrary file with permissions of the process rotating the files (which may be different from the process that normally writes to the log file that is being rotated).
+
+    Note that the touch option is disabled by default.
+  fixed_versions:
+  - '>=0.4.0'
+  github_security_advisory: []
+  id: CPANSA-File-Rotate-Simple-2026-17435
+  references:
+  - https://github.com/robrwo/File-Rotate-Simple/commit/ead3f5c0e51217b34d286aa243949dba60b39eba.patch
+  - https://github.com/robrwo/File-Rotate-Simple/security/advisories/GHSA-fpmm-8f6h-wv74
+  - https://metacpan.org/release/RRWO/File-Rotate-Simple-v0.4.0/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/07/7
+  reported: 2026-08-07
+  severity: low
+cpansa_version: 2
+darkpan: ~
+distribution: File-Rotate-Simple
+last_checked: 1786809066
+latest_version: v0.4.2
+metacpan: https://metacpan.org/pod/File::Rotate::Simple
