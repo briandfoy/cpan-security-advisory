@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-13048
+  description: |-
+    Data::MuForm::Localizer versions through 0.05 for Perl execute Perl from a message catalog header, reached at an arbitrary path because load_lexicon interpolates the language attribute into the catalog filename.
+
+    load_lexicon builds the catalog path by appending `Messages/$lang.po` to the directory holding Localizer.pm, where $lang is the language attribute, with no check that it names a bare locale tag. A value holding `../` segments walks out of the message directory, so any readable path with a `.po` suffix is loaded. While parsing the catalog, extract_header_msgstr takes the `Plural-Forms:` header, prefixes `$` to the bare words nplurals, plural and n, and passes the rest verbatim into a string that is evaluated: the nplurals form evaluates the header expression immediately, and the plural_code form compiles it into a subroutine whose body runs when a plural message is localized. A header of `nplurals=2; plural=(system('...'),0);` therefore runs that command as the catalog loads. The evaluation inherits strict, so an expression that assigns to an undeclared variable fails to compile, while one built from calls alone does not.
+
+    An application that sets the language attribute from request data, an Accept-Language header or a locale parameter, and an attacker who can place a file with a `.po` suffix and chosen contents at a readable path, together give code execution as the application user. The message expansion path is not affected: expand_named substitutes only the placeholder names the caller supplies, and _mangle_value returns the value unchanged.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-9pqq-8968-ccrw
+  id: CPANSA-Data-MuForm-2026-13048
+  references:
+  - https://metacpan.org/release/GSHANK/Data-MuForm-0.05/source/lib/Data/MuForm/Localizer.pm#L381-428
+  - https://metacpan.org/release/GSHANK/Data-MuForm-0.05/source/lib/Data/MuForm/Localizer.pm#L56-63
+  - https://security.metacpan.org/patches/D/Data-MuForm/0.05/CVE-2026-13048-r2.patch
+  - http://www.openwall.com/lists/oss-security/2026/08/13/10
+  reported: 2026-08-13
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Data-MuForm
+last_checked: 1786808867
+latest_version: '0.04'
+metacpan: https://metacpan.org/pod/Data::MuForm
