@@ -290,6 +290,48 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/14/13
   reported: 2026-07-14
   severity: ~
+- affected_versions:
+  - <1.652
+  cves:
+  - CVE-2026-73193
+  description: |-
+    DBI versions before 1.652 for Perl allow a heap out-of-bounds write on 32-bit perl via an integer wraparound in the output buffer size computed by preparse.
+
+    preparse reserves its output buffer with `newSV(strlen(statement) * 7 + 16)`, budgeting seven output bytes per input byte for the longest ':p99999' expansion. The product is computed in STRLEN, which is 32 bits wide on a 32-bit perl build, so a statement of 613,566,757 bytes multiplies to 4,294,967,299, wraps modulo 2^32 to 3, and reserves 19 bytes. The parser then copies the statement out through a raw pointer with no capacity check, writing the whole 585 MB input past the end of the allocation. The 99,999 placeholder limit does not bound this path, which is reached by ordinary non-placeholder content.
+
+    Any caller that passes an untrusted statement of that length to preparse on a 32-bit perl gets a heap out-of-bounds write of attacker controlled bytes. Builds with a 64-bit STRLEN are not affected, since the wrap there needs a statement of about 2.3 exabytes.
+  fixed_versions:
+  - '>=1.652'
+  github_security_advisory:
+  - GHSA-wj3v-c3hh-mhqr
+  id: CPANSA-DBI-2026-73193
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/c751ae5a5a6f56c2f8284f37c1f4d43500352ef1.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-wj3v-c3hh-mhqr
+  - https://www.cve.org/CVERecord?id=CVE-2026-14739
+  reported: 2026-08-15
+  severity: ''
+- affected_versions:
+  - <1.652
+  cves:
+  - CVE-2026-73194
+  description: |-
+    DBI versions before 1.652 for Perl allow a heap out-of-bounds write via an unvalidated numeric placeholder that sets the binder counter in preparse.
+
+    preparse reserves seven output bytes per input byte, the width of the longest ':p99999' expansion. The ':N' branch parses the number with `atoi(src)` and assigns it to the binder counter with no range check, so a statement containing ':2147483648' leaves the counter negative (-2147483648 with glibc, where atoi wraps). Each following '?' then expands through `sprintf(start, ":p%d", idx++)` to ':p-2147483648', 14 bytes with the terminating NUL where the buffer budgets 7. The placeholder limit added in 1.650 tests the counter against 99,999, which a negative counter passes.
+
+    Any caller that preparses an untrusted statement into ':pN' style placeholders gets a heap out-of-bounds write that grows with the number of '?' marks following the poisoned placeholder. The '?' and '%s' return styles compare the parsed number against the expected sequence and error out, and are unaffected.
+  fixed_versions:
+  - '>=1.652'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-73194
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/29b72ae7d2a8114a734a55840bf1c45b89207809.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-623j-hfpc-mrc4
+  - https://www.cve.org/CVERecord?id=CVE-2026-10879
+  - https://www.cve.org/CVERecord?id=CVE-2026-14739
+  reported: 2026-08-15
+  severity: ''
 cpansa_version: 2
 distribution: DBI
 last_checked: 1785398914
