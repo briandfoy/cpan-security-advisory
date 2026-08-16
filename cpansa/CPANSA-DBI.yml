@@ -334,7 +334,7 @@ advisories:
   severity: ''
 cpansa_version: 2
 distribution: DBI
-last_checked: 1785398914
-latest_version: '1.651'
+last_checked: 1786809522
+latest_version: '1.652'
 metacpan: https://metacpan.org/pod/DBI
 repo: https://github.com/perl5-dbi/dbi
