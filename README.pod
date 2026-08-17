@@ -95,7 +95,7 @@ reflect the state of the main repo and exist only for redundancy:
 
 =over 4
 
-=item * L<https://bitbucket.com/briandfoy/cpan-security-advisory>
+=item * L<https://bitbucket.com/theperlreview/cpan-security-advisory>
 
 =item * L<https://gitlab.com/briandfoy/cpan-security-advisory>
 

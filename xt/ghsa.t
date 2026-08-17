@@ -40,7 +40,7 @@ That repo is mirrored to several other services:
 
 =over 4
 
-=item * L<https://bitbucket.com/briandfoy/cpan-security-advisory>
+=item * L<https://bitbucket.com/theperlreview/cpan-security-advisory>
 
 =item * L<https://gitlab.com/briandfoy/cpan-security-advisory>
 

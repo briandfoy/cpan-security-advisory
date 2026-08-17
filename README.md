@@ -10,7 +10,7 @@ The main mirror is [briandfoy/cpan-security-advisory on GitHub](https://github.c
 but there are other copies:
 
 - [https://github.com/briandfoy/cpan-security-advisory](https://github.com/briandfoy/cpan-security-advisory)
-- [https://bitbucket.org/briandfoy/cpan-security-advisory](https://bitbucket.org/briandfoy/cpan-security-advisory)
+- [https://bitbucket.org/theperlreview/cpan-security-advisory](https://bitbucket.org/theperlreview/cpan-security-advisory)
 - [https://gitlab.com/briandfoy/cpan-security-advisory](https://gitlab.com/briandfoy/cpan-security-advisory)
 
 If you want to mirror a copy, clone the repo and send me the link. Let's
