@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <2.0.0
+  cves:
+  - CVE-2026-77781
+  description: |-
+    Tie::Hash::Regex versions before 2.0.0 for Perl will throw an exception on unparseable lookup keys.
+
+    The FETCH, EXISTS and DELETE methods throw an exception when on malformed regular expressions.
+
+    Each method falls back to a regex match when the key is not already stored in the hash, compiling the caller's key with a bare qr// and no eval guard. A key that is not a valid regular expression pattern, such as a single unmatched bracket, dies.
+
+    An application that looks up externally supplied strings in a tied hash will die on an invalid key.
+  fixed_versions:
+  - '>=2.0.0'
+  github_security_advisory:
+  - GHSA-fwmp-gxj5-29mj
+  id: CPANSA-Tie-Hash-Regex-2026-77781
+  references:
+  - https://github.com/davorg-cpan/tie-hash-regex/commit/4239732cb76233543e2ded8ff5e0f238af152e0c.patch
+  - https://metacpan.org/release/DAVECROSS/Tie-Hash-Regex-2.0.0/source/Changes
+  - http://www.openwall.com/lists/oss-security/2026/08/22/2
+  reported: 2026-08-22
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Tie-Hash-Regex
+last_checked: 1787976972
+latest_version: '2.0'
+metacpan: https://metacpan.org/pod/Tie::Hash::Regex
