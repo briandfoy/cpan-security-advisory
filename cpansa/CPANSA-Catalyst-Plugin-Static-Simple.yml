@@ -15,6 +15,27 @@ advisories:
   - https://blog.hackeriet.no/cpan-signature-verification-vulnerabilities/
   - https://metacpan.org/pod/CPAN::Checksums
   reported: 2017-10-31
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-15743
+  description: |-
+    Catalyst::Plugin::Static::Simple versions through 0.38 for Perl mark responses as publicly cacheable.
+
+    The _serve_static method always sets the Cache-Control header to "public", with no means of overriding it.  This advises proxies that the content may be stored in a shared cache, and may be reused in responses to requests from other users. (This includes requests with an Authorization header.)
+
+    Configuring the expires time to "0" to disable caching, as documented, is ignored.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-cj6v-gcgr-8wgg
+  id: CPANSA-Catalyst-Plugin-Static-Simple-2026-15743
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc9111
+  - https://github.com/perl-catalyst/Catalyst-Plugin-Static-Simple/pull/3
+  - https://security.metacpan.org/patches/C/Catalyst-Plugin-Static-Simple/0.38/CVE-2026-15743-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/08/20/18
+  reported: 2026-08-20
+  severity: medium
 cpansa_version: 2
 distribution: Catalyst-Plugin-Static-Simple
 last_checked: 1785398914
