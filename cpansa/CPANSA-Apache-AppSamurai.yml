@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-19565
+  description: |-
+    Apache::AppSamurai::Util versions through 1.01 for Perl generate predictable session authentication keys from the clock and process id in CreateSessionAuthKey.
+
+    CreateSessionAuthKey runs five rounds of SHA-256, each over a fresh Time::HiRes reading formatted to six decimal places, the running digest, and the process id. CreateSession calls it with an empty key source on every login, and the optional Keysource directive is the only route to the other branch. The result is 64 hex characters. The microsecond field of the first reading takes one of a million values, the later readings follow it within microseconds, and the process id is drawn from a small range.
+
+    The key is returned to the browser as the session cookie, and is combined with the configured server key to compute the session id and to encrypt the stored session data. An attacker who knows the second in which a session was created and the process id of the worker that created it can enumerate candidate keys and recover the victim's cookie, bypassing authentication for the protected resources. Each candidate has to be tried against the server, which validates the cookie with a key the attacker does not hold.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-hw54-jvwm-w52c
+  id: CPANSA-Apache-AppSamurai-2026-19565
+  references:
+  - https://metacpan.org/release/PAULDOOM/Apache-AppSamurai-1.01/source/lib/Apache/AppSamurai.pm#L1446-1533
+  - https://metacpan.org/release/PAULDOOM/Apache-AppSamurai-1.01/source/lib/Apache/AppSamurai/Util.pm#L106-135
+  - http://www.openwall.com/lists/oss-security/2026/08/23/4
+  reported: 2026-08-23
+  severity: low
+cpansa_version: 2
+darkpan: ~
+distribution: Apache-AppSamurai
+last_checked: 1787976836
+latest_version: '1.01'
+metacpan: https://metacpan.org/pod/Apache::AppSamurai
