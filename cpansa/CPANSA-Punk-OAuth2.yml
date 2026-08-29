@@ -1,0 +1,55 @@
+---
+advisories:
+- affected_versions:
+  - <0.03
+  cves:
+  - CVE-2026-75628
+  description: |-
+    Punk::OAuth2 versions before 0.03 for Perl allow an attacker-chosen off-site redirect after login because same_origin_path accepts a backslash or tab in the return parameter.
+
+    oauth2_login reads the return parameter from the initiation request, runs same_origin_path over it, and stores the survivor in the session flow record as the post-login redirect target. That check rejects a value that does not begin with a slash, one with a slash as its second byte, and one containing CR or LF. A backslash and a tab pass. The URL Standard treats a backslash as equivalent to a slash for special schemes, so `/\evil.example` parses with the authority `evil.example`. It also strips ASCII tab before parsing, so a tab between two leading slashes leaves `//evil.example`.
+
+    A crafted link to the application's own login route lands the victim on the attacker's site after a genuine authentication. The redirect carries no authorization code or access token.
+  fixed_versions:
+  - '>=0.03'
+  github_security_advisory:
+  - GHSA-v6g5-xxrx-m495
+  id: CPANSA-Punk-OAuth2-2026-75628
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc9700#section-4.11.1
+  - https://metacpan.org/release/LNATION/Punk-OAuth2-0.02/source/include/pox/pox_util.h#L94
+  - https://metacpan.org/release/LNATION/Punk-OAuth2-0.03/changes
+  - https://url.spec.whatwg.org/#concept-basic-url-parser
+  - https://url.spec.whatwg.org/#relative-slash-state
+  - http://www.openwall.com/lists/oss-security/2026/08/20/1
+  reported: 2026-08-20
+  severity: medium
+- affected_versions:
+  - <0.04
+  cves:
+  - CVE-2026-75866
+  description: |-
+    Punk::OAuth2::Server versions through 0.03 for Perl issue access tokens outside a client's registered scopes and grant types because no authorization path reads them.
+
+    Punk::OAuth2::Server::Store registers scopes and grant_types per client and documents both as client registration. token dispatches on the grant_type in the request body, so a client registered for authorization_code alone can ask for client_credentials, and that arm passes the requested scope straight to the minter, which signs it into the at+jwt access token. authorize copies the query scope into the authorization code record without comparing it against the registration, leaving the optional consent hook as the only check between an arbitrary scope and the issued code. redirect_uris on the same client row is read and enforced.
+
+    A registered client can obtain a correctly signed token carrying any scope it names, and a resource server running Punk::OAuth2::Checker accepts that token and honours the scope. A client registered without a secret authenticates on its client_id alone, so anyone who knows that identifier can request one.
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory:
+  - GHSA-cjjx-w599-qf62
+  id: CPANSA-Punk-OAuth2-2026-75866
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc6749#section-3.3
+  - https://datatracker.ietf.org/doc/html/rfc6749#section-5.2
+  - https://metacpan.org/release/LNATION/Punk-OAuth2-0.03/view/lib/Punk/OAuth2/Server/Store.pm
+  - https://metacpan.org/release/LNATION/Punk-OAuth2-0.04/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/22/6
+  reported: 2026-08-22
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: Punk-OAuth2
+last_checked: 1787976913
+latest_version: '0.07'
+metacpan: https://metacpan.org/pod/Punk::OAuth2
