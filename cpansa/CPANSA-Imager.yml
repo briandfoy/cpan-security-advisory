@@ -216,7 +216,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - '>0.45_02'
+  - '>0.45_02,<1.034'
   cves:
   - CVE-2026-19082
   description: |-
@@ -226,7 +226,7 @@ advisories:
 
     Any caller of Imager->read() on an attacker-supplied image with such an entry may receive an exif_* tag holding adjacent heap bytes instead of an empty string.
   fixed_versions:
-  - <1.034
+  - '>=1.034'
   github_security_advisory:
   - GHSA-hx46-55wp-hv6m
   id: CPANSA-Imager-2026-19082
