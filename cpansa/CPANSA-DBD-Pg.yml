@@ -36,7 +36,7 @@ advisories:
   description: |
     Heap-based buffer overflow in the DBD::Pg (aka DBD-Pg or libdbd-pg-perl) module 1.49 for Perl might allow context-dependent attackers to execute arbitrary code via unspecified input to an application that uses the getline and pg_getline functions to read database rows.
   fixed_versions:
-  - '<1.49,>1.49'
+  - <1.49,>1.49
   github_security_advisory:
   - GHSA-q57m-cgxh-vv5j
   id: CPANSA-DBD-Pg-2009-0663
@@ -83,6 +83,33 @@ advisories:
   - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9680
   reported: 2009-04-30
   severity: ~
+- affected_versions:
+  - <3.21.1
+  cves:
+  - CVE-2026-78183
+  description: |-
+    DBD::Pg version 3.21.0 for Perl has a heap out-of-bounds write in quote_float.
+
+    quote_float() allocates the length of the string + 1, which is the size of the bare numeric symbol plus NULL.  But for special literals NaN, Inf, +Inf, -Inf, Infinity, +Infinity, -Infinity it emits the literal surrounded by quotes plus NULL, which is length + 3 bytes. Every recognised literal (case-insensitive) overflows by 2 bytes, a single quote and a NULL.
+
+    This can be reached by the $dbh->quote method, for example
+
+        $dbh->quote( "Infinity", DBI::SQL_NUMERIC ).
+
+    This regression was introduced in 3.21.0 by the quote.c rewrite.
+  fixed_versions:
+  - '>=3.21.1'
+  github_security_advisory:
+  - GHSA-6mq2-jf7v-pvjx
+  id: CPANSA-DBD-Pg-2026-78183
+  references:
+  - https://github.com/bucardo/dbdpg/commit/6d6f47ed2403cda55c82b1bad56e388ba7390065.patch
+  - https://github.com/bucardo/dbdpg/commit/adacf1de872326a465e13f9e4281a674ebcd227e
+  - https://github.com/bucardo/dbdpg/security/advisories/GHSA-785p-fw3v-r822
+  - https://metacpan.org/release/TURNSTEP/DBD-Pg-3.21.1/source/Changes
+  - http://www.openwall.com/lists/oss-security/2026/08/23/5
+  reported: 2026-08-23
+  severity: critical
 cpansa_version: 2
 distribution: DBD-Pg
 last_checked: 1749751661
