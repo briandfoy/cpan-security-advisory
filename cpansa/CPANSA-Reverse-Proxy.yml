@@ -1,0 +1,31 @@
+---
+advisories:
+- affected_versions:
+  - <0.04
+  cves:
+  - CVE-2026-75922
+  description: |-
+    Reverse::Proxy versions before 0.04 for Perl allow HTTP request smuggling via a percent-decoded PATH_INFO written unencoded to the upstream request line.
+
+    PSGI hands PATH_INFO to an application percent-decoded, so a %XX sequence in the client URL has become a raw byte by the time the proxy sees it. The proxy appends that byte string to the upstream base URL, and for an Upgrade tunnel writes it into a request line it serializes itself, re-encoding nothing in either path. The HTTP client that sends the resulting URL does not validate the target either. A path containing %0d%0a therefore arrives at the upstream as a CRLF that ends the request line, and a decoded space, '?' or '#' truncates it the same way.
+
+    Everything the client writes after the CRLF is read by the upstream as a second request. On the buffered path it arrives on a keep-alive connection the proxy pools and reuses for other clients. Its method, path and headers are all chosen by the client, and the upstream attributes it to the proxy, so it reaches upstream paths that the proxy's own routing does not expose.
+  fixed_versions:
+  - '>=0.04'
+  github_security_advisory:
+  - GHSA-5xq5-hx4g-f5v6
+  id: CPANSA-Reverse-Proxy-2026-75922
+  references:
+  - https://metacpan.org/release/LNATION/Reverse-Proxy-0.03/source/Proxy.xs#L386-399
+  - https://metacpan.org/release/LNATION/Reverse-Proxy-0.03/source/Proxy.xs#L654-666
+  - https://metacpan.org/release/LNATION/Reverse-Proxy-0.04/changes
+  - https://metacpan.org/release/LNATION/Reverse-Proxy-0.04/source/Proxy.xs#L400-426
+  - http://www.openwall.com/lists/oss-security/2026/08/23/2
+  reported: 2026-08-23
+  severity: medium
+cpansa_version: 2
+darkpan: ~
+distribution: Reverse-Proxy
+last_checked: 1787976960
+latest_version: '0.06'
+metacpan: https://metacpan.org/pod/Reverse::Proxy
