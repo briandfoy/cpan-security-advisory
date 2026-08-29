@@ -16,6 +16,97 @@ advisories:
   - https://metacpan.org/release/RRWO/Net-OAuth-0.29/changes
   reported: 2025-01-03
   severity: high
+- affected_versions:
+  - <0.32
+  cves:
+  - CVE-2026-72887
+  description: |-
+    Net::OAuth::Client versions before 0.32 for Perl allow the service provider to silently downgrade OAuth 1.0a to OAuth 1.0 in get_request_token.
+
+    Passing a callback to the constructor selects OAuth 1.0a. get_request_token then revokes that choice when the request token response omits oauth_callback_confirmed, with no exception, no warning and no option to require 1.0a. The access token request is built from the OAuth 1.0 message class, which has no verifier parameter, so oauth_verifier is dropped from the request even when get_access_token was passed one.
+
+    oauth_verifier is the binding that OAuth 1.0a added between the authorization step and the token exchange. An application that asked for 1.0a and gets 1.0 is open to OAuth 1.0 session fixation, where an attacker obtains a request token, has the victim authorize it, and then completes the exchange themselves, linking the victim's provider account to a session the attacker controls. No attacker action sets up the downgrade: a provider that does not confirm the callback is enough.
+  fixed_versions:
+  - '>=0.32'
+  github_security_advisory: []
+  id: CPANSA-Net-OAuth-2026-72887
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-2.1
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-2.3
+  - https://github.com/vurtdev/Net-OAuth/commit/fd505dac1988723ed96721657663f2e4ac731644.patch
+  - https://github.com/vurtdev/Net-OAuth/security/advisories/GHSA-jh72-4qq2-8j6g
+  - https://metacpan.org/release/RRWO/Net-OAuth-0.32/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/16/3
+  reported: 2026-08-16
+  severity: critical
+- affected_versions:
+  - <0.32
+  cves:
+  - CVE-2026-72888
+  description: |-
+    Net::OAuth versions before 0.32 for Perl allow memory exhaustion via unbounded caching of failed module loads in smart_require.
+
+    smart_require stores results in a process-global hash with no bound and no eviction, and keeps an entry for every class name it is asked about, including names that failed to load, because the return value of the failed eval is stored before the error is checked. The key comes off the wire on the server side: _signature_method_class builds the class name from the signature_method parameter of the incoming message, and verify resolves it before any signature is checked.
+
+    A remote client chooses both how many entries are created and how long each key is. In a persistent server the hash grows for the life of the worker process until it exhausts memory. Header size limits bound the key length on the Authorization header path, but not on a POST body.
+  fixed_versions:
+  - '>=0.32'
+  github_security_advisory:
+  - GHSA-m2cv-cq5x-47ph
+  id: CPANSA-Net-OAuth-2026-72888
+  references:
+  - https://github.com/vurtdev/Net-OAuth/commit/ee713fc96263c70b3b9a5280612618b474576f8f.patch
+  - https://github.com/vurtdev/Net-OAuth/security/advisories/GHSA-m2cv-cq5x-47ph
+  - https://metacpan.org/release/RRWO/Net-OAuth-0.32/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/16/4
+  reported: 2026-08-16
+  severity: medium
+- affected_versions:
+  - <0.33
+  cves:
+  - CVE-2026-75589
+  description: |-
+    Net::OAuth versions before 0.33 for Perl check HMAC-SHA1, HMAC-SHA256 and PLAINTEXT signatures with a non-constant-time comparison in verify.
+
+    Each of the three compares the signature carried in the message against the locally computed one with the eq operator, which returns as soon as the two strings differ. The time taken to reject a signature varies with the length of the matching prefix. RSA-SHA1 is not affected, as it verifies through the RSA key object rather than by comparing strings.
+
+    A client that can submit messages and time the replies may recover a valid signature one byte at a time rather than searching the whole signature space. Under PLAINTEXT the value compared against is the signature key itself, so the search recovers consumer_secret and token_secret.
+  fixed_versions:
+  - '>=0.33'
+  github_security_advisory:
+  - GHSA-g8xr-69p3-gw56
+  id: CPANSA-Net-OAuth-2026-75589
+  references:
+  - https://github.com/vurtdev/Net-OAuth/commit/a1a16b58add85668ef4fcda642a486ceed098eba.patch
+  - https://github.com/vurtdev/Net-OAuth/security/advisories/GHSA-g8xr-69p3-gw56
+  - https://metacpan.org/release/RRWO/Net-OAuth-0.33/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/19/3
+  reported: 2026-08-19
+  severity: high
+- affected_versions:
+  - <0.33
+  cves:
+  - CVE-2026-72889
+  description: |-
+    Net::OAuth versions before 0.33 for Perl allow the sender to choose the signature algorithm in verify.
+
+    verify resolves the signature method class from the signature_method parameter of the incoming message. signature_method is required on every request, so the algorithm used to check a signature is chosen by whoever sent it, and nothing lets the verifying party pin the method instead. When a message names HMAC-SHA1 or HMAC-SHA256, the key is derived from consumer_secret and token_secret rather than from the key the provider deployed.
+
+    A provider deployed on RSA-SHA1 holds only the consumer public key, and RFC 5849 does not use consumer_secret for that method, so the required parameter is filled with a placeholder. A client that names HMAC-SHA1 instead has its signature checked against that placeholder, so a guessable one is enough to forge requests for any consumer key and token.
+  fixed_versions:
+  - '>=0.33'
+  github_security_advisory:
+  - GHSA-c8rm-g5cm-4pf5
+  id: CPANSA-Net-OAuth-2026-72889
+  references:
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-3.4.2
+  - https://datatracker.ietf.org/doc/html/rfc5849#section-3.4.3
+  - https://github.com/vurtdev/Net-OAuth/commit/c467adf45c8d77ac4b92ad78b3eebf949252ba7f.patch
+  - https://github.com/vurtdev/Net-OAuth/security/advisories/GHSA-c8rm-g5cm-4pf5
+  - https://metacpan.org/release/RRWO/Net-OAuth-0.33/changes
+  - http://www.openwall.com/lists/oss-security/2026/08/19/2
+  reported: 2026-08-19
+  severity: critical
 cpansa_version: 2
 distribution: Net-OAuth
 last_checked: 1785398915
