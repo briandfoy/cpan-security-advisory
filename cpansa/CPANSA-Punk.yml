@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - <0.18
+  cves:
+  - CVE-2026-75870
+  description: |-
+    Punk versions before 0.18 for Perl allow session cookie forgery via an empty default HMAC key when a session is declared without a secret.
+
+    The session keyword freezes its options onto the application as given: it does not require a secret, warn, or refuse to start when one is absent. The cookie read and the write-back both default that key to the empty string, so a declaration with no secret option, or with an undefined or empty one, signs and verifies with a zero-length HMAC-SHA256 key.
+
+    An attacker who knows the cookie format can then mint one offline carrying any contents the session holds, such as a user identifier or a role. Nothing marks the misconfiguration at runtime: cookies are well formed and sessions round-trip as expected.
+  fixed_versions:
+  - '>=0.18'
+  github_security_advisory:
+  - GHSA-3679-xr9w-9625
+  id: CPANSA-Punk-2026-75870
+  references:
+  - https://metacpan.org/release/LNATION/Punk-0.17/source/include/punk/punk_session.h
+  - https://metacpan.org/release/LNATION/Punk-0.17/view/lib/Punk.pm
+  - https://metacpan.org/release/LNATION/Punk-0.18/source/Changes
+  - http://www.openwall.com/lists/oss-security/2026/08/22/5
+  reported: 2026-08-22
+  severity: critical
+cpansa_version: 2
+darkpan: ~
+distribution: ~
+last_checked: 1787976899
+latest_version: ~
+metacpan: https://metacpan.org/pod/
