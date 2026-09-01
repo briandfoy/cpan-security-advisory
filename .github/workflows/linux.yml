@@ -1,5 +1,5 @@
 # brian's standard GitHub Actions Ubuntu config for Perl 5 modules
-# version 20260126.001
+# version 20260831.001
 # https://github.com/briandfoy/github_workflows
 # https://github.com/features/actions
 # This file is licensed under the Artistic License 2.0
@@ -76,18 +76,16 @@ on:
     pull_request:
     # weekly build on the master branch just to see what CPAN is doing
     schedule:
-        - cron: "42 5 * * 1"
+        - cron: "12 17 * * 0"
 jobs:
     perl:
         environment: automated_testing
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
                 os:
                     - ubuntu-latest
-                perl-version: [ 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
+                perl-version: [ 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
         container:
             image: ghcr.io/perlreview/5.${{ matrix.perl-version }}-modules-amd64
         steps:
@@ -114,7 +112,7 @@ jobs:
             - name: Restore Perl modules
               id: perl-modules-cache-restore
               continue-on-error: true
-              uses: actions/cache/restore@v4
+              uses: actions/cache/restore@v6
               with:
                 key: ${{ runner.os }}-${{ matrix.perl-version }}-modules
                 path: |
@@ -152,10 +150,6 @@ jobs:
             - name: Install dependencies
               run: |
                 cpanm --notest --installdeps --with-suggests --with-recommends .
-            - name: Install cpanfile dependencies
-              if: hashFiles('.github/cpanfile') != ''
-              run: |
-                cpanm --installdeps --notest .github
             - name: Show cpanm failures
               if: ${{ failure() }}
               run: |
@@ -206,7 +200,7 @@ jobs:
             - name: Save Perl modules
               continue-on-error: true
               id: perl-modules-cache-save
-              uses: actions/cache/save@v4
+              uses: actions/cache/save@v6
               if: always()
               with:
                 key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
