@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260903.001 2026-09-03T21:33:17Z
+	* fix problem with Punk's data
+
 20260830.001 2026-08-30T21:30:38Z
 	* data update for 2026-08-30
 	* moved Bitbucket repo: https://bitbucket.org/theperlreview/cpan-security-advisory
