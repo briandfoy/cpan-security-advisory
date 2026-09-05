@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - '>=0.3.2,<0.3.11'
+  cves:
+  - CVE-2026-82309
+  description: |-
+    Robots::Validate versions from 0.3.2 before 0.3.11 for Perl allow unbounded outbound DNS queries per validation via a forward-confirmation loop that does not bound the names it queries.
+
+    _check_dns issues one PTR query for the client address, keeps the returned names matching the rule's domain, and issues a forward query for each until one resolves back to that address. Nothing bounds that list, and a client controls the reverse zone for its own address, so it chooses how many names the PTR answer holds. Net::DNS refetches a truncated answer over TCP by default, so the 512-byte UDP payload does not cap it either.
+
+    Any client whose User-Agent matches a rule with a domain reaches _check_dns. Each forward name is distinct and client-chosen, so every query misses the local cache and is resolved against the authoritative servers for that domain. The queries are synchronous, so the caller is held until all of them answer or time out.
+  fixed_versions:
+  - '>=0.3.11'
+  github_security_advisory:
+  - GHSA-6399-5qhh-48h5
+  id: CPANSA-Robots-Validate-2026-82309
+  references:
+  - https://github.com/robrwo/Robots-Validate/commit/6426178c49ff6c440922f31a92a6feb3c661b143.patch
+  - https://github.com/robrwo/Robots-Validate/security/advisories/GHSA-6399-5qhh-48h5
+  - https://metacpan.org/release/RRWO/Robots-Validate-v0.4.0/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/04/3
+  reported: 2026-09-04
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Robots-Validate
+last_checked: 1788639102
+latest_version: v0.4.2
+metacpan: https://metacpan.org/pod/Robots::Validate
