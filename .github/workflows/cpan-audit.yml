@@ -56,12 +56,7 @@ jobs:
                 os:
                     - ubuntu-latest
                 perl-version:
-                    - '5.30-bullseye'
-                    - '5.32-bullseye'
-                    - '5.34-bullseye'
-                    - '5.36-bookworm'
-                    - '5.38-bookworm'
-                    - 'latest'
+                    - latest
         container:
             image: perl:${{ matrix.perl-version }}
         steps:
