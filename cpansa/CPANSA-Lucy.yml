@@ -41,7 +41,8 @@ advisories:
   reported: 2026-08-05
   severity: high
 - affected_versions:
-  - '>0'
+  - '<0'
+  comment: this CVE was rejected
   cves:
   - CVE-2026-61485
   description: 'Apache Lucy: Freezer/InStream deserialization bomb - unbounded allocation reading an index ** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
