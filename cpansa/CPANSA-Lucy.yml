@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<0.8.0'
   cves:
   - CVE-2026-61484
   description: 'Apache Lucy: LucyX::Remote::SearchServer unauthenticated remote Storable::thaw -> RCE/DoS ** UNSUPPORTED WHEN ASSIGNED ** Deserialization of Untrusted
@@ -11,7 +11,8 @@ advisories:
     alternative or restrict access to the instance to trusted users.
     NOTE: This vulnerability only affects products that are no longer
     supported by the maintainer.'
-  fixed_versions: []
+  fixed_versions:
+  - '>=0.8.0'
   github_security_advisory:
   - GHSA-q347-vr2h-mpmx
   id: CPANSA-Lucy-2026-61484
