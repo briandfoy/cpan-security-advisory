@@ -22,7 +22,7 @@ advisories:
   reported: 2026-08-05
   severity: critical
 - affected_versions:
-  - '>0'
+  - '<0.8.0'
   cves:
   - CVE-2026-61483
   description: 'Apache Lucy: QueryParser unbounded recursion on deeply-nested query -> C-stack-overflow DoS ** UNSUPPORTED WHEN ASSIGNED ** Uncontrolled Recursion vulnerability
@@ -31,7 +31,8 @@ advisories:
     Users are recommended to find an alternative or restrict access to the
     instance to trusted users. NOTE: This vulnerability only affects products
     that are no longer supported by the maintainer.'
-  fixed_versions: []
+  fixed_versions:
+  - '>=0.8.0'
   github_security_advisory:
   - GHSA-3rc9-h6hx-fvf7
   id: CPANSA-Lucy-2026-61483
