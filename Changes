@@ -1,5 +1,9 @@
 # Changes for CPANSA::DB
 
+20260906.002 2026-09-06T10:25:06Z
+	* data update for 2026-09-06
+	* updated affected_versions for Apache Lucy
+
 20260903.001 2026-09-03T21:33:17Z
 	* fix problem with Punk's data
 
