@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20260908.001 2026-09-08T13:43:53Z
+	* data update 2026-09-07
+
 20260906.002 2026-09-06T10:25:06Z
 	* data update for 2026-09-06
 	* updated affected_versions for Apache Lucy
