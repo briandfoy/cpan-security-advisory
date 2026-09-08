@@ -76,7 +76,7 @@ on:
     pull_request:
     # weekly build on the master branch just to see what CPAN is doing
     schedule:
-        - cron: "38 5 * * 0"
+        - cron: "10 10 * * 2"
 jobs:
     perl:
         environment: automated_testing
@@ -85,7 +85,7 @@ jobs:
             matrix:
                 os:
                     - ubuntu-latest
-                perl-version: [ 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 ]
+                perl-version: [ 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44 ]
         container:
             image: ghcr.io/perlreview/5.${{ matrix.perl-version }}-modules-amd64
         steps:
