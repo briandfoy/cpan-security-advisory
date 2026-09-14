@@ -36,7 +36,7 @@ jobs:
         container:
             image: perl:${{ matrix.perl-version }}
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v5
             - name: setup packages
               run: |
                 apt-get update
@@ -71,7 +71,7 @@ jobs:
 # 'save' counterpart for 'restore' will update the cache.
             - name: Restore Perl modules
               id: perl-modules-cache-restore
-              uses: actions/cache/restore@v4
+              uses: actions/cache/restore@v6
               with:
                 key: generate-${{ runner.os }}-${{ matrix.perl-version }}-modules
                 path: |
@@ -162,7 +162,7 @@ jobs:
 # Now always save the Perl modules in case we updated some versions
             - name: Save Perl modules
               id: perl-modules-cache-save
-              uses: actions/cache/save@v4
+              uses: actions/cache/save@v6
               if: always()
               with:
                 key: ${{ steps.perl-modules-cache-restore.outputs.cache-primary-key }}
