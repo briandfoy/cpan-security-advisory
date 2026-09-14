@@ -112,10 +112,18 @@ jobs:
             - name: Install dependencies
               run: |
                 cpanm --notest --installdeps --with-suggests --with-recommends .
+            - name: Show cpanm failures
+              if: ${{ failure() }}
+              run: |
+                cat /github/home/.cpanm/work/*/build.log
             - name: Install cpanfile dependencies
               if: hashFiles('.github/cpanfile') != ''
               run: |
                 cpanm --installdeps --notest .github
+            - name: Show cpanm failures for cpanfile
+              if: ${{ failure() }}
+              run: |
+                cat /github/home/.cpanm/work/*/build.log
             - name: generate
               env:
                 CPAN_AUDIT_DEBUG: ${{ vars.CPAN_AUDIT_DEBUG }}
