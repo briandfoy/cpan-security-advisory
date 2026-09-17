@@ -44,3 +44,6 @@ cve-search-results.json
 .cache/
 test-meta.pl
 local/
+
+.downstream.json
+cpan_tester_reports
