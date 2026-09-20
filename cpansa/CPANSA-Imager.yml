@@ -238,6 +238,80 @@ advisories:
   - https://github.com/tonycoz/imager/security/advisories/GHSA-hx46-55wp-hv6m
   reported: 2026-08-07
   severity: high
+- affected_versions:
+  - '>=0.45_02,<1.035'
+  cves:
+  - CVE-2026-73638
+  description: |-
+    Imager versions from 0.45_02 before 1.035 for Perl read outside the EXIF block via unchecked start offsets in tiff_load_ifd.
+
+    tiff_load_ifd() validates an IFD entry's data by checking that `entry->offset + entry->size` stays within the EXIF block, and never checks the start offset itself. Where that sum is not the real end of the data, the check passes with the entry starting outside the block.
+
+    Through 1.032 `entry->offset` is a plain int, so on the usual two's-complement implementations an offset with the high bit set converts to negative and the sum can land back inside the block. From 1.033 the field is a size_t and the addition wraps only where size_t is 32 bits. The IFD's own start offset is checked the same way and wraps where unsigned long is 32 bits, which includes 64-bit Windows.
+
+    Any caller of Imager->read() on an attacker-supplied image may receive EXIF tags holding bytes from outside the block, or crash the process.
+  fixed_versions:
+  - '>=1.035'
+  github_security_advisory:
+  - GHSA-j47j-8w8p-3mmc
+  id: CPANSA-Imager-2026-73638
+  references:
+  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1144226
+  - https://github.com/tonycoz/imager/commit/48ba8ac0749f89466b6e6681fb88cbdb51086ebd.patch
+  - https://github.com/tonycoz/imager/commit/6f1fd003a8e48c7e6e58b7019a04cc71bbfec2c3.patch
+  - https://github.com/tonycoz/imager/issues/568
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-j47j-8w8p-3mmc
+  - https://metacpan.org/release/TONYC/Imager-1.035/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/17/5
+  reported: 2026-09-17
+  severity: ''
+- affected_versions:
+  - <1.036
+  cves:
+  - CVE-2026-93018
+  description: |-
+    Imager versions before 1.036 for Perl disclose uninitialised heap memory reading a paletted image with pixel indexes past its colour map in i_gpix_p and i_glin_p.
+
+    The palette is allocated uninitialised, and only the entries a reader adds count as populated. The TGA reader stores pixel indexes without checking them against the colour map. i_gpix_p() rejects only an index greater than the count, so an index equal to it reads the first unpopulated entry, and getpixel() returns it.
+
+    i_glin_p() skips any index at or beyond the count without writing that pixel to the caller's buffer. The palette-to-RGB conversion reads each row through an uninitialised buffer, so those pixels of the converted image hold prior heap contents.
+
+    Reading an attacker-supplied image through Imager->read() and then fetching its pixels or converting it to RGB discloses process heap memory.
+  fixed_versions:
+  - '>=1.036'
+  github_security_advisory:
+  - GHSA-j7v7-cm4g-vrgf
+  id: CPANSA-Imager-2026-93018
+  references:
+  - https://github.com/tonycoz/imager/commit/dcf0a52e2732399d42ab44d98af6934658d068ee.patch
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-j7v7-cm4g-vrgf
+  - https://metacpan.org/release/TONYC/Imager-1.036/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/18/8
+  reported: 2026-09-18
+  severity: ''
+- affected_versions:
+  - <1.036
+  cves:
+  - CVE-2026-93019
+  description: |-
+    Imager versions before 1.036 for Perl exit the process reading a TGA with a colour map length of 32768 or more in tga_palette_read.
+
+    The reader unpacks the two-byte colour map length into a signed short, so a length of 32768 or more becomes negative. tga_palette_read() casts that value to size_t and asks mymalloc() for a size near SIZE_MAX. The allocation fails and Imager's allocator calls exit(3).
+
+    Reading an attacker-supplied file through Imager->read() triggers an uncatchable exit.
+  fixed_versions:
+  - '>=1.036'
+  github_security_advisory:
+  - GHSA-p4vw-rc54-p2c2
+  id: CPANSA-Imager-2026-93019
+  references:
+  - https://github.com/tonycoz/imager/commit/74ed50e0625f9f51054e595bb4a8da92c1e0d571.patch
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-p4vw-rc54-p2c2
+  - https://metacpan.org/release/TONYC/Imager-1.036/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/18/9
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-p4vw-rc54-p2c2
+  reported: 2026-09-18
+  severity: critical
 cpansa_version: 2
 distribution: Imager
 last_checked: 1789907370
