@@ -36,6 +36,7 @@ advisories:
   - GHSA-ccc2-34g9-j7rg
   id: CPANSA-Dancer2-2026-13577
   references:
+  - https://www.cve.org/CVERecord?id=CVE-2026-5080
   - https://github.com/PerlDancer/Dancer2/blob/v2.1.0/lib/Dancer2/Core/Role/SessionFactory.pm#L142
   - https://www.cve.org/CVERecord?id=CVE-2026-13577
   - https://github.com/PerlDancer/Dancer2/pull/1804
