@@ -66,6 +66,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-SAML2
-last_checked: 1785922446
-latest_version: '0.88'
+last_checked: 1789907410
+latest_version: '0.89'
 metacpan: https://metacpan.org/pod/Net::SAML2

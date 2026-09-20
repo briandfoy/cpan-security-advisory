@@ -20,6 +20,6 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Crypt-Random-Source
-last_checked: 1785398914
+last_checked: 1789907311
 latest_version: '0.14'
 metacpan: https://metacpan.org/pod/Crypt::Random::Source

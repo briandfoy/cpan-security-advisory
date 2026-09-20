@@ -43,6 +43,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-DisjointSet-Shared
-last_checked: 1785592952
-latest_version: '0.03'
+last_checked: 1789907326
+latest_version: '0.05'
 metacpan: https://metacpan.org/pod/Data::DisjointSet::Shared

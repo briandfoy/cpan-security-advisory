@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<2.1.0'
+  - <2.1.0
   cves:
   - CVE-2026-57079
   description: Net::BitTorrent versions through 2.0.1 for Perl write files outside
@@ -25,7 +25,7 @@ advisories:
   reported: 2026-06-30
   severity: ~
 - affected_versions:
-  - '<2.1.0'
+  - <2.1.0
   cves:
   - CVE-2026-57080
   description: Net::BitTorrent versions through 2.0.1 for Perl allow remote memory
@@ -48,7 +48,7 @@ advisories:
   reported: 2026-06-30
   severity: ~
 - affected_versions:
-  - '<2.1.0'
+  - <2.1.0
   cves:
   - CVE-2026-57081
   description: 'Net::BitTorrent versions through 2.0.1 for Perl allow remote memory
@@ -71,7 +71,7 @@ advisories:
   reported: 2026-06-30
   severity: ~
 - affected_versions:
-  - '<2.1.0'
+  - <2.1.0
   cves:
   - CVE-2026-57082
   description: Net::BitTorrent versions through 2.0.1 for Perl generate the MSE Diffie-Hellman
@@ -98,6 +98,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-BitTorrent
-last_checked: 1784266878
+last_checked: 1789907401
 latest_version: v2.1.1
 metacpan: https://metacpan.org/pod/Net::BitTorrent

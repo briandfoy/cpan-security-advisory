@@ -43,6 +43,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-SortedSet-Shared
-last_checked: 1785592998
-latest_version: '0.04'
+last_checked: 1789907332
+latest_version: '0.06'
 metacpan: https://metacpan.org/pod/Data::SortedSet::Shared

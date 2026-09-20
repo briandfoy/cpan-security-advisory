@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.43'
+  - <1.43
   cves:
   - CVE-2026-6659
   description: Crypt::PasswdMD5 versions through 1.42 for Perl generates insecure
@@ -20,6 +20,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-PasswdMD5
-last_checked: 1778399213
+last_checked: 1789907309
 latest_version: '1.46'
 metacpan: https://metacpan.org/pod/Crypt::PasswdMD5

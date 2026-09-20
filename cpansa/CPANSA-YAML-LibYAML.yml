@@ -108,7 +108,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: YAML-LibYAML
-last_checked: 1785398916
+last_checked: 1789907468
 latest_version: v0.910.0
 metacpan: https://metacpan.org/pod/YAML::LibYAML
 repo: https://github.com/ingydotnet/yaml-libyaml-pm

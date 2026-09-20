@@ -47,6 +47,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: IO-Compress
-last_checked: 1785398914
-latest_version: '2.223'
+last_checked: 1789907364
+latest_version: '2.224'
 metacpan: https://metacpan.org/pod/IO::Uncompress::Unzip

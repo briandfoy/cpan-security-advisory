@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Catalyst-View-Wkhtmltopdf
-last_checked: 1785593214
-latest_version: v0.6.3
+last_checked: 1789907297
+latest_version: v0.6.4
 metacpan: https://metacpan.org/pod/Catalyst::View::Wkhtmltopdf

@@ -109,7 +109,7 @@ advisories:
   severity: critical
 cpansa_version: 2
 distribution: Net-OAuth
-last_checked: 1785398915
-latest_version: '0.31'
+last_checked: 1789907408
+latest_version: '0.33'
 metacpan: https://metacpan.org/pod/Net::OAuth
 repo: https://github.com/keeth/Net-OAuth

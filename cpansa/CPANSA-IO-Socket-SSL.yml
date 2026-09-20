@@ -49,7 +49,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: IO-Socket-SSL
-last_checked: 1785398914
+last_checked: 1789907364
 latest_version: '2.099'
 metacpan: https://metacpan.org/pod/IO::Socket::SSL
 repo: https://github.com/noxxi/p5-io-socket-ssl

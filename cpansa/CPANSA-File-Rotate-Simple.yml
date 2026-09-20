@@ -26,6 +26,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: File-Rotate-Simple
-last_checked: 1786809066
+last_checked: 1789907347
 latest_version: v0.4.2
 metacpan: https://metacpan.org/pod/File::Rotate::Simple

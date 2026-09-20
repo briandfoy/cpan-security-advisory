@@ -22,6 +22,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-ScryptKDF
-last_checked: 1785398914
+last_checked: 1789907314
 latest_version: '0.011'
 metacpan: https://metacpan.org/pod/Crypt::ScryptKDF

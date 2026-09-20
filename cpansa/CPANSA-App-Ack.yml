@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<v3.10.0'
+  - <v3.10.0
   cves:
   - CVE-2026-49145
   description: App::Ack versions through 3.10.0 for Perl read arbitrary files via
@@ -23,7 +23,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - '<v3.10.0'
+  - <v3.10.0
   cves:
   - CVE-2026-49146
   description: App::Ack versions before 3.10.0 for Perl allow memory exhaustion via
@@ -45,7 +45,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - '<v3.10.0'
+  - <v3.10.0
   cves:
   - CVE-2026-49147
   description: App::Ack versions through 3.10.0 for Perl print unsanitised terminal
@@ -69,6 +69,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: ack
-last_checked: 1784266280
-latest_version: 'v3.10.0'
+last_checked: 1789907274
+latest_version: v3.10.0
 metacpan: https://metacpan.org/pod/App::Ack

@@ -141,7 +141,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: CGI
-last_checked: 1785398914
+last_checked: 1789907289
 latest_version: '4.72'
 metacpan: https://metacpan.org/pod/CGI
 repo: https://github.com/leejo/CGI.pm

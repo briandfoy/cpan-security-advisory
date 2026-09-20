@@ -104,7 +104,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Crypt-DSA
-last_checked: 1749751661
+last_checked: 1789907304
 latest_version: '1.24'
 metacpan: https://metacpan.org/pod/Crypt::DSA
 repo: http://svn.ali.as/cpan/trunk/Crypt-DSA

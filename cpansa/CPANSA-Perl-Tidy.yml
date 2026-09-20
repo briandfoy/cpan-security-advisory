@@ -46,6 +46,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Perl-Tidy
-last_checked: 1785398915
-latest_version: '20260705'
+last_checked: 1789907423
+latest_version: '20260826'
 metacpan: https://metacpan.org/pod/Perl::Tidy

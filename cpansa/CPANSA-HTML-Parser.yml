@@ -24,7 +24,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: HTML-Parser
-last_checked: 1785398914
-latest_version: '3.85'
+last_checked: 1789907357
+latest_version: '3.86'
 metacpan: https://metacpan.org/pod/HTML::Parser
 repo: https://github.com/libwww-perl/HTML-Parser

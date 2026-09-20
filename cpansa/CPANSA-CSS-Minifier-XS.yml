@@ -21,6 +21,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: CSS-Minifier-XS
-last_checked: 1785398914
+last_checked: 1789907291
 latest_version: '0.15'
 metacpan: https://metacpan.org/pod/CSS::Minifier::XS

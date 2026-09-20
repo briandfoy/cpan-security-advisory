@@ -30,6 +30,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: TOML-XS
-last_checked: 1785593199
+last_checked: 1789907451
 latest_version: '0.06'
 metacpan: https://metacpan.org/pod/TOML::XS

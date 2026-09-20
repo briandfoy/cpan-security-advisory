@@ -23,6 +23,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-Graph-Shared
-last_checked: 1785593013
-latest_version: '0.05'
+last_checked: 1789907328
+latest_version: '0.07'
 metacpan: https://metacpan.org/pod/Data::Graph::Shared

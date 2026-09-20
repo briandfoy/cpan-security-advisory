@@ -26,6 +26,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Tie-Hash-Regex
-last_checked: 1787976972
-latest_version: '2.0'
+last_checked: 1789907454
+latest_version: v2.0.0
 metacpan: https://metacpan.org/pod/Tie::Hash::Regex

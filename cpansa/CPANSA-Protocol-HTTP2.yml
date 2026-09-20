@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<1.12'
+  - <1.12
   cves:
   - CVE-2026-10725
   description: Protocol::HTTP2 versions through 1.12 for Perl is vulnerable to a HTTP/2
@@ -27,6 +27,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Protocol-HTTP2
-last_checked: 1780755488
-latest_version: '1.13'
+last_checked: 1789907431
+latest_version: '1.14'
 metacpan: https://metacpan.org/pod/Protocol::HTTP2

@@ -87,6 +87,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-OpenSSL-PKCS12
-last_checked: 1785398914
-latest_version: '1.97'
+last_checked: 1789907306
+latest_version: '1.99'
 metacpan: https://metacpan.org/pod/Crypt::OpenSSL::PKCS12

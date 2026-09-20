@@ -240,7 +240,7 @@ advisories:
   severity: high
 cpansa_version: 2
 distribution: Imager
-last_checked: 1785398915
-latest_version: '1.033'
+last_checked: 1789907370
+latest_version: '1.036'
 metacpan: https://metacpan.org/pod/Imager
 repo: https://github.com/tonycoz/imager
