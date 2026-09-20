@@ -16,7 +16,7 @@ advisories:
   reported: 2018-01-30
   severity: critical
 - affected_versions:
-  - '>0'
+  - <2.2.0
   cves:
   - CVE-2026-13577
   description: Dancer2 versions through 2.1.0 for Perl generate insecure session ids
@@ -30,13 +30,18 @@ advisories:
     sources.  The built-in rand() function is seeded with 32-bits and considered unsuitable
     for security applications.  Predictable session ids could allow an attacker to
     gain access to systems.
-  fixed_versions: []
+  fixed_versions:
+  - '>=2.2.0'
   github_security_advisory:
   - GHSA-ccc2-34g9-j7rg
   id: CPANSA-Dancer2-2026-13577
   references:
-  - https://github.com/PerlDancer/Dancer2/blob/v2.1.0/lib/Dancer2/Core/Role/SessionFactory.pm#L142
   - https://www.cve.org/CVERecord?id=CVE-2026-5080
+  - https://github.com/PerlDancer/Dancer2/blob/v2.1.0/lib/Dancer2/Core/Role/SessionFactory.pm#L142
+  - https://www.cve.org/CVERecord?id=CVE-2026-13577
+  - https://github.com/PerlDancer/Dancer2/pull/1804
+  - https://github.com/PerlDancer/Dancer2/commit/c2fedd5378439c13173a61111fa9f631acdb044b
+  - https://metacpan.org/release/CROMEDOME/Dancer2-2.2.0/changes
   reported: 2026-07-20
   severity: ~
 cpansa_version: 2
