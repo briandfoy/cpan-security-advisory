@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<0.08'
   cves:
   - CVE-2026-13410
   description: Dancer::Plugin::Auth::Google versions through 0.07 for Perl have TLS
@@ -10,7 +10,8 @@ advisories:
     between the Dancer application and googleapis.com can intercept the OAuth2 token
     exchange and userinfo fetch, return a forged access_token and user profile, and
     be logged in to the Dancer application as any Google user.
-  fixed_versions: []
+  fixed_versions:
+  - '>=0.08'
   github_security_advisory:
   - GHSA-mwgc-xrww-2crj
   id: CPANSA-Dancer-Plugin-Auth-Google-2026-13410
@@ -24,6 +25,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Dancer-Plugin-Auth-Google
-last_checked: 1784318484
-latest_version: '0.07'
+last_checked: 1789907964
+latest_version: '0.08'
 metacpan: https://metacpan.org/pod/Dancer::Plugin::Auth::Google

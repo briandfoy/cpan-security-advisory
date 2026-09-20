@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<3.003_704'
   cves:
   - CVE-2026-5084
   description: WebDyne::Session versions through 2.075 for Perl generates the session
@@ -13,7 +13,8 @@ advisories:
     is predictable. It is considered unsuitable for cryptographic purposes.  Predictable
     session ids could allow an attacker to gain access to systems.  Note that WebDyne::Session
     versions 1.042 and earlier appear to be in separate distributions from WebDyne.
-  fixed_versions: []
+  fixed_versions:
+  - '>=3.003_704'
   github_security_advisory:
   - GHSA-462c-h7qr-cxm6
   id: CPANSA-WebDyne-2026-5084
@@ -27,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: WebDyne
-last_checked: 1779523330
-latest_version: '2.075'
+last_checked: 1789907964
+latest_version: '3.029'
 metacpan: https://metacpan.org/pod/WebDyne
