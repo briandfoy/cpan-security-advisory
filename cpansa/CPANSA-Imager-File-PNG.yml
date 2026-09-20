@@ -1,0 +1,34 @@
+---
+advisories:
+- affected_versions:
+  - '>=1.003,<1.004'
+  cves:
+  - CVE-2026-73639
+  description: |-
+    Imager::File::PNG versions from 1.003 before 1.004 for Perl write past the end of the row buffer reading a PNG with a tRNS transparency chunk in read_direct8.
+
+    With a tRNS chunk, read_direct8() adds an alpha channel to the image it creates but still sizes the row buffer from the original channel count. libpng expands the transparency into that extra channel, so png_read_row() fills one channel more than the buffer holds, at one byte per sample, and writes width bytes past the end of the allocation. Palette images go to read_paletted() and 16-bit images to read_direct16(), which sizes its buffer from png_get_rowbytes() and allocates enough for the expanded row.
+
+    The same reader ships bundled in the Imager distribution.
+
+    Reading an attacker-supplied PNG through Imager->read() corrupts the heap, which can crash the process.
+  fixed_versions:
+  - '>=1.004'
+  github_security_advisory:
+  - GHSA-jhx5-34j8-9g88
+  id: CPANSA-Imager-File-PNG-2026-73639
+  references:
+  - https://github.com/tonycoz/imager/commit/d973bd7e8843f084e8071caa24b89545c88b1e4b.patch
+  - https://github.com/tonycoz/imager/pull/567
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-jhx5-34j8-9g88
+  - https://metacpan.org/release/TONYC/Imager-1.035/changes
+  - https://metacpan.org/release/TONYC/Imager-File-PNG-1.004/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/17/6
+  reported: 2026-09-17
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Imager-File-PNG
+last_checked: 1789896395
+latest_version: '1.005'
+metacpan: https://metacpan.org/pod/Imager::File::PNG
