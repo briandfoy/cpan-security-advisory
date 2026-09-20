@@ -85,7 +85,7 @@ sub assert_valid {
 	my ($self, $value) = @_;
 
 	my $op         = qr/ ( [!<>]=? | [<>=]= ) /nx;
-	my $version_re = qr/ ( v? \d+ (\.\d+)* (_\d+)? ) /nxa;
+	my $version_re = qr/ ( v? \d+ (\.\d+)* ([_-]\d+)? ) /nxa;
 
 	my $pattern    = qr/ \A $op? $version_re (, $op? $version_re )?  \z /nxa;
 
