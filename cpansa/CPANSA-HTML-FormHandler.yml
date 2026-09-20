@@ -28,6 +28,91 @@ advisories:
   - https://www.cve.org/CVERecord?id=CVE-2012-6329
   reported: 2026-08-13
   severity: critical
+- affected_versions:
+  - <0.410000
+  cves:
+  - CVE-2026-19872
+  description: |-
+    HTML::FormHandler versions before 0.410000 for Perl allow cross-site scripting via a submitted value rendered unescaped in an error message.
+
+    The wrappers and renderers that emit a form's errors interpolate the error string straight into HTML with no escaping. Two of the library's own messages, no_match and not_allowed, splice the submitted value into that string, and a failing type constraint puts the rejected value into the message it builds, which _apply_actions hands to add_error.
+
+    A field declared with a check regexp, a check list or a type constraint reaches those messages, with no custom validator and no non-default configuration. Errors rendered through an application's own escaping template layer rather than the library's rendering roles are not affected.
+
+    A request over the network that submits markup to such a field gets it back live inside the error span, running script in the victim's origin. Re-rendering a rejected value later gives the stored variant.
+  fixed_versions:
+  - '>=0.410000'
+  github_security_advisory:
+  - GHSA-74pj-vp7j-2f6m
+  id: CPANSA-HTML-FormHandler-2026-19872
+  references:
+  - https://github.com/gshank/html-formhandler/commit/2574fdb4561f5c32d44cfbfbb3188345d49eb5a2.patch
+  - https://metacpan.org/release/ABRAXXA/HTML-FormHandler-0.410000/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/08/15
+  reported: 2026-09-08
+  severity: medium
+- affected_versions:
+  - <0.410002
+  cves:
+  - CVE-2026-85484
+  description: |-
+    HTML::FormHandler versions before 0.410002 for Perl render option group labels and radio button labels into HTML without escaping.
+
+    The Select, RadioGroup, CheckboxGroup and HorizCheckboxGroup widgets render a group label unescaped, Select into a label attribute and the other three into element content. RadioGroup also renders each radio button's own label unescaped.
+
+    Any application whose option list is built from data rather than literals, using options_from, an options_fieldname method, or the DBIC model, allows attacker-influenced text in a label that can override the options or embed JavaScript in rendered pages.
+  fixed_versions:
+  - '>=0.410002'
+  github_security_advisory:
+  - GHSA-mwmv-8rm6-755x
+  id: CPANSA-HTML-FormHandler-2026-85484
+  references:
+  - https://github.com/gshank/html-formhandler/commit/49b562e0fed5146fc1a372c5fa8a879876b8841d.patch
+  - https://metacpan.org/release/ABRAXXA/HTML-FormHandler-0.410002/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/08/16
+  reported: 2026-09-08
+  severity: medium
+- affected_versions:
+  - <0.410002
+  cves:
+  - CVE-2026-85485
+  description: |-
+    HTML::FormHandler versions before 0.410002 for Perl render some error messages into HTML without escaping.
+
+    The Table form layout and the Bootstrap 2 and 3 wrappers splice each error string straight into the surrounding markup. Version 0.410000, the fix for CVE-2026-19872, escaped the equivalent values in the other layouts and wrappers, and 0.410002 extended that to these three.
+
+    Error messages that contain attacker-influenced content such as rejected field values could embed JavaScript in rendered pages.
+  fixed_versions:
+  - '>=0.410002'
+  github_security_advisory:
+  - GHSA-m5h3-w9r6-p935
+  id: CPANSA-HTML-FormHandler-2026-85485
+  references:
+  - https://github.com/gshank/html-formhandler/commit/2ea9e138dbfe231e317c13936abe6583217c807f.patch
+  - https://metacpan.org/release/ABRAXXA/HTML-FormHandler-0.410002/changes
+  reported: 2026-09-08
+  severity: medium
+- affected_versions:
+  - <0.410002
+  cves:
+  - CVE-2026-85630
+  description: |-
+    HTML::FormHandler versions before 0.410002 for Perl render field attributes into HTML without escaping using the process_attrs method.
+
+    Any application with fields or field labels where some attributes are built from data rather than literals allows attacker-influenced text in an attribute value that can override the field attributes or embed JavaScript in rendered pages.
+
+    For example, the RadioGroup widget uses the process_attrs method via the render_option and wrap_radio methods.
+  fixed_versions:
+  - '>=0.410002'
+  github_security_advisory:
+  - GHSA-4qf4-6x5x-m29p
+  id: CPANSA-HTML-FormHandler-2026-85630
+  references:
+  - https://github.com/gshank/html-formhandler/commit/a887271e91d755e6486a9f433ae932deb1d2c4a6.patch
+  - https://metacpan.org/release/ABRAXXA/HTML-FormHandler-0.410002/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/08/18
+  reported: 2026-09-08
+  severity: medium
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-FormHandler
