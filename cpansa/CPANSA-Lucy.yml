@@ -52,7 +52,8 @@ advisories:
     Users are recommended to find an alternative or restrict access to the
     instance to trusted users. NOTE: This vulnerability only affects products
     that are no longer supported by the maintainer.'
-  fixed_versions: []
+  fixed_versions:
+  - '>0'
   github_security_advisory:
   - GHSA-7wjr-wh6f-62xm
   id: CPANSA-Lucy-2026-61485
@@ -81,6 +82,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Lucy
-last_checked: 1785924973
-latest_version: '0.006002'
+last_checked: 1789907964
+latest_version: v0.8.0
 metacpan: https://metacpan.org/pod/Lucy
