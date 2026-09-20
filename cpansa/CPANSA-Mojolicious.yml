@@ -329,6 +329,50 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/14/16
   reported: 2026-07-14
   severity: ~
+- affected_versions:
+  - <9.47
+  cves:
+  - CVE-2026-68914
+  description: Mojolicious is a real-time web framework for Perl. Prior to 9.47, the
+    pure-Perl implementation of Mojo::JSON does not limit nesting depth when Cpanel::JSON::XS
+    is unavailable or MOJO_NO_JSON_XS is enabled. An attacker who can supply untrusted
+    JSON to decode_json, from_json, or j can submit deeply nested arrays or objects,
+    causing unbounded recursion, memory exhaustion, and a process crash. Applications
+    using the Cpanel::JSON::XS backend are not affected because that backend already
+    enforces a nesting limit. This issue is fixed in version 9.47.
+  fixed_versions:
+  - '>=9.47'
+  github_security_advisory:
+  - GHSA-p5qf-qvw8-xgvg
+  id: CPANSA-Mojolicious-2026-68914
+  references:
+  - https://github.com/mojolicious/mojo/commit/cc38b0554275c4d84f6b8b49bcbbc1bec2068fe1
+  - https://github.com/mojolicious/mojo/security/advisories/GHSA-p5qf-qvw8-xgvg
+  - https://github.com/mojolicious/mojo/security/advisories/GHSA-p5qf-qvw8-xgvg
+  reported: 2026-09-18
+  severity: ''
+- affected_versions:
+  - <9.48
+  cves:
+  - CVE-2026-77568
+  description: Mojolicious is a real-time web framework for Perl. Prior to 9.48, the
+    Mojolicious CSRF helpers csrf_field, csrf_token, and csrf_protect reuse an unchanged
+    per-session token in rendered HTML. When response compression is enabled and attacker-influenced
+    content is reflected in the same response, an unauthenticated attacker who can
+    induce many victim requests and observe response sizes can use a BREACH compression
+    side channel to recover the token and forge cross-site requests. API-only deployments
+    that never render the token in HTML are not affected. This issue is fixed in version
+    9.48.
+  fixed_versions:
+  - '>=9.48'
+  github_security_advisory:
+  - GHSA-cf46-h6jw-mj3r
+  id: CPANSA-Mojolicious-2026-77568
+  references:
+  - https://github.com/mojolicious/mojo/commit/01921fbbbbeca2d1397e082d4a647f9b84c24e27
+  - https://github.com/mojolicious/mojo/security/advisories/GHSA-cf46-h6jw-mj3r
+  reported: 2026-09-18
+  severity: medium
 cpansa_version: 2
 distribution: Mojolicious
 last_checked: 1789908642
