@@ -12,28 +12,32 @@ advisories:
   - '>=7.1.2-30'
   github_security_advisory:
   - GHSA-g684-8gxh-c62w
+  - GHSA-5m9j-96ff-j6qc
   id: CPANSA-ImageMagick-2026-86423
   references:
   - https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-5m9j-96ff-j6qc
   - https://www.vulncheck.com/advisories/imagemagick-before-7.1.2-30-heap-use-after-free-via-getlist
   reported: 2026-09-07
   severity: low
-- affected_versions: []
+- affected_versions:
+  - '>=6.9,<6.9.13-55'
+  - '>=7,<7.1.2-30'
   cves:
   - CVE-2026-86425
   description: ImageMagick before 7.1.2-30 and 6.9.x before 6.9.13-55 contains a heap-use-after-free
-    vulnerability in the Layer method of PerlMagick. An attacker who supplies a crafted
-    list of images can trigger memory access after deallocation, resulting in a crash
-    (denial of service).
-  fixed_versions: []
+    vulnerability in the Layer method of PerlMagick. An attacker who supplies a crafted list of images
+    can trigger memory access after deallocation, resulting in a crash (denial of service).
+  fixed_versions:
+  - '>=7.1.2-30'
   github_security_advisory:
   - GHSA-cq4h-xmp2-xr98
-  id: CPANSA--2026-86425
+  - GHSA-chf5-8rv9-gjqr
+  id: CPANSA-ImageMagick-2026-86425
   references:
   - https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-chf5-8rv9-gjqr
   - https://www.vulncheck.com/advisories/imagemagick-before-7.1.2-30-heap-use-after-free-via-layer
   reported: 2026-09-07
-  severity: ~
+  severity: medium
 cpansa_version: 2
 darkpan: true
 distribution: ImageMagick
