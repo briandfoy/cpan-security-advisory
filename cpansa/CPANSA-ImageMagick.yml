@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - >=6.9,<6.9.13-55
+  - >=7,<7.1.2-30
+  cves:
+  - CVE-2026-86423
+  description: ImageMagick before 7.1.2-30 and 6.9.x before 6.9.13-55 contains a heap-use-after-free
+    vulnerability in the GetList method of PerlMagick. A crafted call to the GetList
+    method can trigger the use-after-free, resulting in a crash (denial of service).
+  fixed_versions:
+  - '>=7.1.2-30'
+  github_security_advisory:
+  - GHSA-g684-8gxh-c62w
+  id: CPANSA-ImageMagick-2026-86423
+  references:
+  - https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-5m9j-96ff-j6qc
+  - https://www.vulncheck.com/advisories/imagemagick-before-7.1.2-30-heap-use-after-free-via-getlist
+  reported: 2026-09-07
+  severity: low
+cpansa_version: 2
+darkpan: true
+distribution: ImageMagick
+last_checked: 1789898976
+latest_version: 7.1.2-31
+metacpan: ~
+repo: https://github.com/ImageMagick/ImageMagick
