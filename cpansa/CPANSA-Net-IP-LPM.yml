@@ -9,7 +9,8 @@ advisories:
     access control that is based on IP addresses.  Leading zeros are used to indicate
     octal numbers, which can confuse users who are intentionally using octal notation,
     as well as users who believe they are using decimal notation.
-  fixed_versions: []
+  fixed_versions:
+  - '>=1.11'
   github_security_advisory:
   - GHSA-7ffq-hwvw-j35c
   id: CPANSA-Net-IP-LPM-2025-40910
@@ -20,7 +21,7 @@ advisories:
   reported: 2025-06-27
   severity: ~
 - affected_versions:
-  - '>0'
+  - <1.11
   cves:
   - CVE-2026-56015
   description: 'Net::IP::LPM versions through 1.10 for Perl allow a heap out-of-bounds
@@ -37,7 +38,8 @@ advisories:
     valgrind, or a hardened allocator, where it can abort the process. Lookups and
     dump() format only the valid address width, so the out-of-bounds bytes are not
     exposed through the module''s API.'
-  fixed_versions: []
+  fixed_versions:
+  - '>=1.11'
   github_security_advisory:
   - GHSA-q2wj-rfvr-wf9p
   id: CPANSA-Net-IP-LPM-2026-56015
@@ -47,9 +49,30 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/07/03/4
   reported: 2026-07-03
   severity: ~
+- affected_versions:
+  - <1.12
+  cves:
+  - CVE-2026-86287
+  description: Net::IP::LPM versions before 1.12 for Perl accept malformed prefix
+    lengths.  Non-numeric and non-ASCII prefix lengths are accepted and treated as
+    0. Integers over 31 bits are silently truncated.  A single malformed mask will
+    poison the lookup table.  The result is that the lookup will silently succeed
+    for every address. An allow-list will allow every address, and a deny-list will
+    block every address.
+  fixed_versions:
+  - '>=1.12'
+  github_security_advisory:
+  - GHSA-456r-qjr2-xph9
+  id: CPANSA-Net-IP-LPM-2026-86287
+  references:
+  - https://github.com/robrwo/perl-Net-IP-LPM/commit/814f8baa85537827db8c3b3d251e48db7aca318f.patch
+  - https://metacpan.org/release/RRWO/Net-IP-LPM-1.12/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/07/1
+  reported: 2026-09-07
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: Net-IP-LPM
 last_checked: 1751550544
-latest_version: 1.10
+latest_version: 1.12
 metacpan: https://metacpan.org/pod/Net::IP::LPM
