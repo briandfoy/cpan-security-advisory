@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '>0,<1.042'
   cves:
   - CVE-2026-5084
   description: WebDyne::Session versions through 2.075 for Perl generates the session
