@@ -1,0 +1,37 @@
+---
+advisories:
+- affected_versions:
+  - '>=1.01'
+  cves:
+  - CVE-2026-95831
+  description: Crypt::SelfCertificate versions from 1.01 through 1.05 for Perl contains
+    malware which executes Python code from an obfuscated URL.  The generate_certificate
+    runs a Python script saved as a certificate file.  The pyhton script attempts
+    to retrieve code from a hardcoded http URL that is obfuscated with base64 encoding
+    and run the response body directly.  The impact is that arbitrary code can be
+    invoked as the user, without a dropped script being saved on the affected host.  The
+    releases have no test scripts nor build hooks.  The intention may have been to
+    trigger the payload after installation.  For version 1.01, the dropper script
+    is in lib/Crypt/SelfCertificate/sample/validate.p12.  For version 1.05, the dropper
+    script is in lib/Crypt/SelfCertificate/sample/cert7.pem.  The SHA-256 digests
+    of the files are      fbff21f45ff748365062a5e36fb2d72558cad82a507a6f357f320b4fcdf07760
+    Crypt-SelfCertificate-1.01.tar.gz     27b2d2d3174ad771474fff2521f5084ec231e9218ea8c832515aef1cbd5897bc
+    lib/Crypt/SelfCertificate/sample/validate.p12      9fdfa7d69b034b77d4510cda567e8da1e486ca81c7daaadc5732a45c41d71991
+    Crypt-SelfCertificate-1.05.tar.gz     27b2d2d3174ad771474fff2521f5084ec231e9218ea8c832515aef1cbd5897bc
+    lib/Crypt/SelfCertificate/sample/cert7.pem
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-9ppr-x3mg-6jg2
+  id: CPANSA--2026-95831
+  references:
+  - https://www.nntp.perl.org/group/perl.cpan.testers.discuss/2026/09/msg4754.html
+  - http://www.openwall.com/lists/oss-security/2026/09/22/21
+  - http://www.openwall.com/lists/oss-security/2026/09/23/2
+  reported: 2026-09-22
+  severity: ~
+cpansa_version: 2
+darkpan: ~
+distribution: ~
+last_checked: 1790167122
+latest_version: ~
+metacpan: https://metacpan.org/pod/Crypt::SelfCertificate
