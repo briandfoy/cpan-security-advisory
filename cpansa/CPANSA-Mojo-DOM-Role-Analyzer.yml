@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <=0.015
+  - '>=0.15'
   cves:
   - CVE-2024-38526
   description: >
@@ -13,7 +13,8 @@ advisories:
     distributed_version: ~
     name: polyfill.io
   fixed_versions: []
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-5vgj-ggm4-fg62
   id: CPANSA-Mojo-DOM-Role-Analyzer-2024-38526
   references:
   - https://github.com/mitmproxy/pdoc/pull/703
@@ -23,7 +24,7 @@ advisories:
   - https://github.com/sdondley/Mojo-DOM-Role-Analyzer/issues/10
   - https://stackdiary.com/polyfill-compromise-hits-100000-sites-in-a-supply-chain-attack/
   reported: 2024-06-26
-  severity: ~
+  severity: high
 cpansa_version: 2
 distribution: Mojo-DOM-Role-Analyzer
 last_checked: 1749751661
