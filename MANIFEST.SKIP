@@ -43,3 +43,4 @@ apps/
 cve-search-results.json
 .cache/
 test-meta.pl
+local/
