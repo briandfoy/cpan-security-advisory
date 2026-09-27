@@ -1,7 +1,30 @@
 #!/bin/sh
 # .git/hooks/pre-push
+
+remote_url="$2"
+
+# only test when pushing to GitHub
+case "$remote_url" in
+    *github.com[:/]*) ;;
+    *) exit 0 ;;
+esac
+
+stamp="$(git rev-parse --git-dir)/pre-push-tested"
+head=$(git rev-parse HEAD)
+
+# only trust the cache when the working tree is clean and matches HEAD
+clean() { [ -z "$(git status --porcelain)" ]; }
+
+if clean && [ -f "$stamp" ] && [ "$(cat "$stamp")" = "$head" ]; then
+    echo "Tests already passed for $head; skipping."
+    exit 0
+fi
+
 echo "Checking author tests before push..."
-prove -lr xt || {
+if prove -lr xt; then
+    clean && echo "$head" > "$stamp"
+    exit 0
+else
     echo "Tests failed; push aborted. (can push with --no-verify)"
     exit 1
-}
+fi
