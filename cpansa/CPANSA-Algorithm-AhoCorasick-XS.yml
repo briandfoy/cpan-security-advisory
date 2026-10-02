@@ -1,0 +1,39 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-80490
+  description: |-
+    Algorithm::AhoCorasick::XS versions through 0.04 for Perl read the haystack string length before the scalar is stringified.
+
+    The matches, first_match and match_details methods use the T_STD_STRING typemap to translate Perl scalars (SVs) into strings via the std::string constructor, using the SvPV macro to stringify the haystack input, and the SvCUR macro to determine the length of the SV.
+
+    When the input SVs are references, integers (IVs) or floats (NVs), the SvCUR macro will return an invalid length if it is run before the input is stringified, leading to an out-of-bounds read which can abort the process.
+
+    Note that the evaluation order of arguments to std::string is unspecified. Depending on the compiler, SvCUR may be run first and lead to an abort that cannot be caught within Perl.
+
+    This can be triggered when the haystack is a numeric value, for example,
+
+        my $ac = Algorithm::AhoCorasick::XS->new( [ "11", "22" ] );
+        $ac->matches( 211 );
+
+    This can occur when the haystack is the result of reading data from decoded JSON or a numeric database column. It can also be triggered when using a blessed object as a haystack.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-pfmw-49c5-8vv3
+  id: CPANSA-Algorithm-AhoCorasick-XS-2026-80490
+  references:
+  - https://github.com/richardjharris/Algorithm-AhoCorasick-XS/pull/1
+  - https://metacpan.org/release/RJH/Algorithm-AhoCorasick-XS-0.04/source/typemap#L14
+  - https://rt.cpan.org/Ticket/Display.html?id=181560
+  - https://security.metacpan.org/patches/A/Algorithm-AhoCorasick-XS/0.04/CVE-2026-80490-r1.patch
+  - http://www.openwall.com/lists/oss-security/2026/09/30/15
+  reported: 2026-09-30
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Algorithm-AhoCorasick-XS
+last_checked: 1790961625
+latest_version: '0.04'
+metacpan: https://metacpan.org/pod/Algorithm::AhoCorasick::XS
