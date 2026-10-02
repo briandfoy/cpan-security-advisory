@@ -18,11 +18,11 @@ foreach my $diff ( @diffs ) {
 	my $path = ($diff =~ /diff --git (\S+)/ )[0] =~ s|a/||r;
 	my( $file ) = basename( $path );
 	my $dist = $file =~ s/.*CPANSA-(\S+).yml/$1/r;
-	my( $cve ) = $diff =~ /^ \+ \h+ cves: \R\+ \h+ - \h+ (\S+) /xm;
+	my( @cves ) = $diff =~ /^ \+ \h+ cves: \R\+ \h+ - \h+ (\S+) /xmg;
 
-	say "$cve - $dist - $file";
+	say "@cves - $dist - $file";
 
-	my $message = "$cve for $dist";
+	my $message = "$dist - @cves";
 	my @command = ( 'git', 'commit', '-m', $message, $path );
 	system @command;
 	}
