@@ -363,6 +363,61 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/09/19/4
   reported: 2026-09-19
   severity: critical
+- affected_versions:
+  - <1.654
+  cves:
+  - CVE-2026-88815
+  description: |-
+    DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in sql_type_cast_svpv.
+
+    When casting to SQL_NUMERIC, sql_type_cast_svpv passes the string pointer and length of the SV to grok_number without stringifying it first. An integer (IV) or floating-point (NV) value has no valid string pointer, so grok_number reads from an invalid address, triggering a segmentation fault.
+
+    This is reachable in Perl using the sql_type_cast function:
+
+      my $num = 42;
+      DBI::sql_type_cast( $num, DBI::SQL_NUMERIC, 0 );
+  fixed_versions:
+  - '>=1.654'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-88815
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/e5ad87e5602da995d28b4d65df222368b58d6702.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-c8vq-w3wr-6979
+  - https://metacpan.org/release/HMBRAND/DBI-1.654/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/28/12
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-c8vq-w3wr-6979
+  reported: 2026-09-28
+  severity: medium
+- affected_versions:
+  - <1.654
+  cves:
+  - CVE-2026-88816
+  description: |-
+    DBI versions before 1.654 for Perl incorrectly treat numeric values as strings in FetchHashKeyName.
+
+    fetchrow_hashref uses the string pointer of the FetchHashKeyName attribute as the key name without stringifying it first. When FetchHashKeyName has been set to an integer (IV) or floating-point (NV) value, that pointer is invalid, so reading the key name triggers a segmentation fault.
+
+    This can be triggered with the following code:
+
+       my $dbh = DBI->connect( "dbi:ExampleP:", "", "",
+           { RaiseError => 0, PrintError => 0 } );
+       $dbh->{FetchHashKeyName} = 42;
+
+       my $sth = $dbh->prepare("select mode, size, name from .");
+       $sth->execute;
+       $sth->fetchrow_hashref;
+  fixed_versions:
+  - '>=1.654'
+  github_security_advisory: []
+  id: CPANSA-DBI-2026-88816
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/70962570212dc60a5428098cf2a0462ad5945851.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-f4qx-mr9m-q2hq
+  - https://metacpan.org/release/HMBRAND/DBI-1.654/changes
+  - http://www.openwall.com/lists/oss-security/2026/09/28/13
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-f4qx-mr9m-q2hq
+  reported: 2026-09-28
+  severity: high
 cpansa_version: 2
 distribution: DBI
 last_checked: 1789907320
