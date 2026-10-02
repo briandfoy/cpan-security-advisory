@@ -31,7 +31,7 @@ advisories:
   - https://lists.debian.org/debian-lts-announce/2017/11/msg00017.html
   reported: 2015-04-23
 - affected_versions:
-  - '>0'
+  - <2.0211
   cves:
   - CVE-2026-8177
   description: XML::LibXML versions through 2.0210 for Perl read out-of-bounds heap
