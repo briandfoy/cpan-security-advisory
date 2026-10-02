@@ -312,6 +312,49 @@ advisories:
   - https://github.com/tonycoz/imager/security/advisories/GHSA-p4vw-rc54-p2c2
   reported: 2026-09-18
   severity: critical
+- affected_versions:
+  - <1.037
+  cves:
+  - CVE-2026-102504
+  description: |-
+    Imager versions before 1.037 for Perl exit the process reading a raw image with an out-of-range raw_datachannels value in i_readraw_wiol.
+
+    Nothing range-checks raw_datachannels. The line buffer is sized as the image width times the channel count with no overflow check, so a negative or very large count requests an excessive allocation. When it fails, Imager's allocator calls exit(3).
+
+    Passing an untrusted raw_datachannels value to Imager->read() triggers an uncatchable exit.
+  fixed_versions:
+  - '>=1.037'
+  github_security_advisory: []
+  id: CPANSA-Imager-2026-102504
+  references:
+  - https://github.com/tonycoz/imager/commit/21b0df9eef1dffe1fdcd3706bfea9f1338031679.patch
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-g549-r73g-x7x6
+  - https://metacpan.org/release/TONYC/Imager-1.037/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/01/9
+  reported: 2026-10-01
+  severity: high
+- affected_versions:
+  - <1.037
+  cves:
+  - CVE-2026-102505
+  description: |-
+    Imager versions before 1.037 for Perl overflow a heap buffer fetching float samples from a paletted image in i_gsampf_fp.
+
+    For a paletted image, getsamples() with type "float" allocates a buffer of one sample per pixel and fetches every requested channel of each pixel into it. Requesting more than one channel writes past its end.
+
+    An attacker-supplied image controls the overflowing bytes through its palette.
+  fixed_versions:
+  - '>=1.037'
+  github_security_advisory:
+  - GHSA-4rx6-cgv3-fmxp
+  id: CPANSA-Imager-2026-102505
+  references:
+  - https://github.com/tonycoz/imager/commit/aae49c6be065aa467e834105c816359394a634db.patch
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-4rx6-cgv3-fmxp
+  - https://metacpan.org/release/TONYC/Imager-1.037/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/01/10
+  reported: 2026-10-01
+  severity: medium
 cpansa_version: 2
 distribution: Imager
 last_checked: 1789907370
