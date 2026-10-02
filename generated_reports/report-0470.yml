@@ -1,24 +1,27 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.03,<=0.10'
+      - ==0.22
     cves:
-      - CVE-2020-7693
-    description: "Incorrect handling of Upgrade header with the value websocket leads in crashing of containers hosting sockjs apps. This affects the package sockjs before 0.3.20.\n"
+      - CVE-2022-0776
+    description: "Cross-site Scripting (XSS) - DOM in GitHub repository hakimel/reveal.js prior to 4.3.0.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-c9g6-9335-x697
-    id: CPANSA-SockJS-2020-7693-sockjs
+      - GHSA-hhqj-cfjx-vj25
+    id: CPANSA-App-revealup-2022-0776-revealjs
     references:
-      - https://nvd.nist.gov/vuln/detail/CVE-2020-7693
-    reported: 2020-07-09
-    severity: ~
+      - https://github.com/hakimel/reveal.js/commit/32cdd3b1872ba8e2267c9e87ae216cb55f40f4d2
+      - https://huntr.dev/bounties/be2b7ee4-f487-42e1-874a-6bcc410e4001
+      - https://github.com/yusukebe/App-revealup/issues/12#issuecomment-1169417411
+      - https://github.com/yusukebe/App-revealup/commit/c8fea67994b1aa6d734066bff9ada4e834b09cb7
+    reported: 2022-03-01
+    severity: medium
 cpansa_version: 2
-distribution: SockJS
+distribution: App-revealup
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:34 2026
-  from: external_reports/sockjs.yml
-last_checked: 1785756214
-latest_version: 0.10
-repo: git://github.com/vti/sockjs-perl.git
+  date: Fri Oct  2 16:22:50 2026
+  from: external_reports/reveal.yml
+last_checked: 1790972570
+latest_version: 0.23
+repo: https://github.com/yusukebe/App-revealup.git

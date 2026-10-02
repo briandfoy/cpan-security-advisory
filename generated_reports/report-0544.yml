@@ -1,100 +1,26 @@
 ---
 advisories:
   - affected_versions:
-      - =1.65_02
+      - '>=1.63_05,<=1.64'
     cves:
-      - CVE-2020-13632
-    description: "ext/fts3/fts3_snippet.c in SQLite before 3.32.0 has a NULL pointer dereference via a crafted matchinfo() query.\n"
+      - CVE-2021-20223
+    description: "An issue was found in fts5UnicodeTokenize() in ext/fts5/fts5_tokenize.c in Sqlite. A unicode61 tokenizer configured to treat unicode \"control-characters\" (class Cc), was treating embedded nul characters as tokens. The issue was fixed in sqlite-3.34.0 and later.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-vqf7-574h-2gf3
-    id: CPANSA-DBD-SQLite-2020-13632-sqlite
+      - GHSA-r7v8-jjhj-75h7
+    id: CPANSA-DBD-SQLite-2021-20223-sqlite
     references:
-      - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
-      - https://sqlite.org/src/info/a4dd148928ea65bd
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
-      - https://security.netapp.com/advisory/ntap-20200608-0002/
-      - https://usn.ubuntu.com/4394-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-26
-      - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
-      - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
-    reported: 2020-05-27
-    severity: medium
-  - affected_versions:
-      - =1.65_02
-    cves:
-      - CVE-2020-13631
-    description: "SQLite before 3.32.0 allows a virtual table to be renamed to the name of one of its shadow tables, related to alter.c and build.c.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-ggrr-j79r-pq3m
-    id: CPANSA-DBD-SQLite-2020-13631-sqlite
-    references:
-      - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
-      - https://sqlite.org/src/info/eca0ba2cf4c0fdf7
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
-      - https://security.netapp.com/advisory/ntap-20200608-0002/
-      - https://usn.ubuntu.com/4394-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-26
-      - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-      - https://support.apple.com/kb/HT211931
-      - https://support.apple.com/kb/HT211844
-      - https://support.apple.com/kb/HT211850
-      - https://support.apple.com/kb/HT211843
-      - https://support.apple.com/kb/HT211952
-      - http://seclists.org/fulldisclosure/2020/Nov/19
-      - http://seclists.org/fulldisclosure/2020/Nov/22
-      - http://seclists.org/fulldisclosure/2020/Nov/20
-      - https://support.apple.com/kb/HT211935
-      - http://seclists.org/fulldisclosure/2020/Dec/32
-      - https://lists.apache.org/thread.html/rc713534b10f9daeee2e0990239fa407e2118e4aa9e88a7041177497c@%3Cissues.guacamole.apache.org%3E
-      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
-    reported: 2020-05-27
-    severity: medium
-  - affected_versions:
-      - =1.65_02
-    cves:
-      - CVE-2020-13630
-    description: "ext/fts3/fts3.c in SQLite before 3.32.0 has a use-after-free in fts3EvalNextRow, related to the snippet feature.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-wgpm-4xgr-4mhp
-    id: CPANSA-DBD-SQLite-2020-13630-sqlite
-    references:
-      - https://bugs.chromium.org/p/chromium/issues/detail?id=1080459
-      - https://sqlite.org/src/info/0d69f76f0865f962
-      - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/L7KXQWHIY2MQP4LNM6ODWJENMXYYQYBN/
-      - https://security.netapp.com/advisory/ntap-20200608-0002/
-      - https://usn.ubuntu.com/4394-1/
-      - https://www.oracle.com/security-alerts/cpujul2020.html
-      - https://security.gentoo.org/glsa/202007-26
-      - https://security.FreeBSD.org/advisories/FreeBSD-SA-20:22.sqlite.asc
-      - https://lists.debian.org/debian-lts-announce/2020/08/msg00037.html
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-      - https://support.apple.com/kb/HT211931
-      - https://support.apple.com/kb/HT211844
-      - https://support.apple.com/kb/HT211850
-      - https://support.apple.com/kb/HT211843
-      - https://support.apple.com/kb/HT211952
-      - http://seclists.org/fulldisclosure/2020/Nov/19
-      - http://seclists.org/fulldisclosure/2020/Nov/22
-      - http://seclists.org/fulldisclosure/2020/Nov/20
-      - https://support.apple.com/kb/HT211935
-      - http://seclists.org/fulldisclosure/2020/Dec/32
-      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
-    reported: 2020-05-27
-    severity: high
+      - https://github.com/sqlite/sqlite/commit/d1d43efa4fb0f2098c0e2c5bf2e807c58d5ec05b
+      - https://www.sqlite.org/forum/forumpost/09609d7e22
+      - https://sqlite.org/src/info/b7b7bde9b7a03665
+    reported: 2022-08-25
+    severity: critical
 cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:52 2026
+  date: Fri Oct  2 16:23:03 2026
   from: external_reports/sqlite.yml
-last_checked: 1785756232
+last_checked: 1790972583
 latest_version: 1.78
 repo: https://github.com/DBD-SQLite/DBD-SQLite

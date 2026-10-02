@@ -3,29 +3,122 @@ advisories:
   - affected_versions:
       - '>804.024,<=804.027'
     cves:
-      - CVE-2016-10087
-    description: "The png_set_text_2 function in libpng 0.71 before 1.0.67, 1.2.x before 1.2.57, 1.4.x before 1.4.20, 1.5.x before 1.5.28, and 1.6.x before 1.6.27 allows context-dependent attackers to cause a NULL pointer dereference vectors involving loading a text chunk into a png structure, removing the text, and then adding another text chunk to the structure.\n"
+      - CVE-2010-1205
+    description: "Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x before 1.4.3, as used in progressive applications, might allow remote attackers to execute arbitrary code via a PNG image that triggers an additional data row.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-r346-8vrh-m3wr
-    id: CPANSA-Tk-2016-10087-libpng
+      - GHSA-qq2m-25fj-pxvm
+    id: CPANSA-Tk-2010-1205-libpng
     references:
-      - http://www.openwall.com/lists/oss-security/2016/12/30/4
-      - http://www.openwall.com/lists/oss-security/2016/12/29/2
-      - http://www.securityfocus.com/bid/95157
-      - https://security.gentoo.org/glsa/201701-74
-      - https://usn.ubuntu.com/3712-2/
-      - https://usn.ubuntu.com/3712-1/
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2017-01-30
-    severity: high
+      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=188eb6b42602bf7d7ae708a21897923b6a83fe7c#patch18
+      - http://www.vupen.com/english/advisories/2010/1612
+      - http://secunia.com/advisories/40302
+      - https://bugzilla.redhat.com/show_bug.cgi?id=608238
+      - http://www.securityfocus.com/bid/41174
+      - http://www.libpng.org/pub/png/libpng.html
+      - https://bugs.webkit.org/show_bug.cgi?id=40798
+      - http://code.google.com/p/chromium/issues/detail?id=45983
+      - http://googlechromereleases.blogspot.com/2010/07/stable-channel-update.html
+      - http://trac.webkit.org/changeset/61816
+      - http://secunia.com/advisories/40472
+      - http://www.vupen.com/english/advisories/2010/1755
+      - http://www.ubuntu.com/usn/USN-960-1
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
+      - http://www.debian.org/security/2010/dsa-2072
+      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
+      - http://secunia.com/advisories/40547
+      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
+      - http://www.vupen.com/english/advisories/2010/1846
+      - https://bugzilla.mozilla.org/show_bug.cgi?id=570451
+      - http://www.vupen.com/english/advisories/2010/1837
+      - http://www.vupen.com/english/advisories/2010/1877
+      - http://lists.apple.com/archives/security-announce/2010//Aug/msg00003.html
+      - http://support.apple.com/kb/HT4312
+      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
+      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
+      - http://secunia.com/advisories/41574
+      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
+      - http://www.vupen.com/english/advisories/2010/2491
+      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+      - http://support.apple.com/kb/HT4435
+      - http://support.apple.com/kb/HT4456
+      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
+      - http://www.vupen.com/english/advisories/2010/3045
+      - http://www.vupen.com/english/advisories/2010/3046
+      - http://support.apple.com/kb/HT4457
+      - http://secunia.com/advisories/42314
+      - http://secunia.com/advisories/42317
+      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
+      - http://support.apple.com/kb/HT4554
+      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
+      - http://support.apple.com/kb/HT4566
+      - http://blackberry.com/btsc/KB27244
+      - http://secunia.com/advisories/40336
+      - http://www.vupen.com/english/advisories/2010/1637
+      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
+      - http://www.mozilla.org/security/announce/2010/mfsa2010-41.html
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59815
+      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11851
+    reported: 2010-06-30
+    severity: critical
+  - affected_versions:
+      - '>804.024,<=804.027'
+    cves:
+      - CVE-2010-2249
+    description: "Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x before 1.4.3, allows remote attackers to cause a denial of service (memory consumption and application crash) via a PNG image containing malformed Physical Scale (aka sCAL) chunks.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-2r3r-854p-xjfr
+    id: CPANSA-Tk-2010-2249-libpng
+    references:
+      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=90cfcecc09febb8d6c8c1d37ea7bb7cf0f4b00f3#patch20
+      - https://bugzilla.redhat.com/show_bug.cgi?id=608644
+      - http://secunia.com/advisories/40302
+      - http://www.vupen.com/english/advisories/2010/1612
+      - http://www.libpng.org/pub/png/libpng.html
+      - http://www.securityfocus.com/bid/41174
+      - http://www.ubuntu.com/usn/USN-960-1
+      - http://www.vupen.com/english/advisories/2010/1755
+      - http://secunia.com/advisories/40472
+      - http://www.vupen.com/english/advisories/2010/1877
+      - http://www.debian.org/security/2010/dsa-2072
+      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
+      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
+      - http://www.vupen.com/english/advisories/2010/1837
+      - http://www.vupen.com/english/advisories/2010/1846
+      - http://secunia.com/advisories/40547
+      - http://secunia.com/advisories/41574
+      - http://www.vupen.com/english/advisories/2010/2491
+      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
+      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
+      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
+      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
+      - http://support.apple.com/kb/HT4435
+      - http://support.apple.com/kb/HT4456
+      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
+      - http://www.vupen.com/english/advisories/2010/3046
+      - http://support.apple.com/kb/HT4457
+      - http://www.vupen.com/english/advisories/2010/3045
+      - http://secunia.com/advisories/42314
+      - http://www.securitytracker.com/id?1024723
+      - http://secunia.com/advisories/42317
+      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
+      - http://support.apple.com/kb/HT4554
+      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
+      - http://support.apple.com/kb/HT4566
+      - http://secunia.com/advisories/40336
+      - http://www.vupen.com/english/advisories/2010/1637
+      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
+      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59816
+    reported: 2010-06-30
+    severity: medium
 cpansa_version: 2
 distribution: Tk
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:26 2026
+  date: Fri Oct  2 16:22:42 2026
   from: external_reports/libpng.yml
-last_checked: 1785756206
+last_checked: 1790972562
 latest_version: 804.036
 repo: http://github.com/eserte/perl-tk

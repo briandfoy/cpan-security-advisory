@@ -1,27 +1,29 @@
 ---
 advisories:
   - affected_versions:
-      - '>=0.20,<=0.21'
+      - '>0'
     cves:
-      - CVE-2022-0776
-    description: "Cross-site Scripting (XSS) - DOM in GitHub repository hakimel/reveal.js prior to 4.3.0.\n"
+      - ~
+    description: "pdoc provides API Documentation for Python Projects. Documentation generated with `pdoc --math` linked to JavaScript files from polyfill.io. The polyfill.io CDN has been sold and now serves malicious code. This issue has been fixed in pdoc 14.5.1.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-hhqj-cfjx-vj25
-    id: CPANSA-App-revealup-2022-0776-revealjs
+      - GHSA-5vgj-ggm4-fg62
+    id: CPANSA-Mojolicious::Plugin::LazyImage--polyfill
     references:
-      - https://github.com/hakimel/reveal.js/commit/32cdd3b1872ba8e2267c9e87ae216cb55f40f4d2
-      - https://huntr.dev/bounties/be2b7ee4-f487-42e1-874a-6bcc410e4001
-      - https://github.com/yusukebe/App-revealup/issues/12#issuecomment-1169417411
-      - https://github.com/yusukebe/App-revealup/commit/c8fea67994b1aa6d734066bff9ada4e834b09cb7
-    reported: 2022-03-01
-    severity: medium
+      - https://github.com/mitmproxy/pdoc/pull/703
+      - https://github.com/mitmproxy/pdoc/security/advisories/GHSA-5vgj-ggm4-fg62
+      - https://sansec.io/research/polyfill-supply-chain-attack
+      - https://github.com/briandfoy/cpan-security-advisory/issues/155
+      - https://github.com/sdondley/Mojo-DOM-Role-Analyzer/issues/10
+      - https://stackdiary.com/polyfill-compromise-hits-100000-sites-in-a-supply-chain-attack/
+    reported: 2024-06-26
+    severity: high
 cpansa_version: 2
-distribution: App-revealup
+distribution: Mojolicious::Plugin::LazyImage
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:33 2026
-  from: external_reports/reveal.yml
-last_checked: 1785756213
-latest_version: 0.23
-repo: https://github.com/yusukebe/App-revealup.git
+  date: Fri Oct  2 16:22:49 2026
+  from: external_reports/polyfill.yml
+last_checked: 1790972569
+latest_version: ~
+repo: ~

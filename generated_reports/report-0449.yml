@@ -3,30 +3,23 @@ advisories:
   - affected_versions:
       - ==1.1.15.1
     cves:
-      - CVE-2013-4547
-    description: "nginx 0.8.41 through 1.4.3 and 1.5.x before 1.5.7 allows remote attackers to bypass intended restrictions via an unescaped space character in a URI.\n"
+      - CVE-2014-3616
+    description: "nginx 0.5.6 through 1.7.4, when using the same shared ssl_session_cache or ssl_session_ticket_key for multiple servers, can reuse a cached SSL session for an unrelated context, which allows remote attackers with certain privileges to conduct \"virtual host confusion\" attacks.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-9x2q-qf8w-h347
-    id: CPANSA-Nginx-Perl-2013-4547-nginx
+      - GHSA-ch64-2v27-7pwp
+    id: CPANSA-Nginx-Perl-2014-3616-nginx
     references:
-      - http://www.debian.org/security/2012/dsa-2802
-      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00084.html
-      - http://secunia.com/advisories/55757
-      - http://secunia.com/advisories/55825
-      - http://secunia.com/advisories/55822
-      - http://mailman.nginx.org/pipermail/nginx-announce/2013/000125.html
-      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00118.html
-      - http://lists.opensuse.org/opensuse-updates/2013-11/msg00119.html
-      - http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00007.html
-    reported: 2013-11-23
+      - http://www.debian.org/security/2014/dsa-3029
+      - http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html
+    reported: 2014-12-08
     severity: ~
 cpansa_version: 2
 distribution: Nginx-Perl
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:30 2026
+  date: Fri Oct  2 16:22:47 2026
   from: external_reports/nginx.yml
-last_checked: 1785756210
+last_checked: 1790972567
 latest_version: v1.8.1.10
 repo: ~

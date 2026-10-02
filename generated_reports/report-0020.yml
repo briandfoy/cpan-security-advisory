@@ -30,8 +30,8 @@ cpansa_version: 2
 distribution: IO-Compress-Brotli
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:21:47 2026
+  date: Fri Oct  2 16:21:28 2026
   from: external_reports/brotli.yml
-last_checked: 1785756107
+last_checked: 1790972488
 latest_version: 0.022
 repo: https://github.com/timlegge/perl-IO-Compress-Brotli

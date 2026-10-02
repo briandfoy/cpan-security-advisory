@@ -1,45 +1,26 @@
 ---
 advisories:
   - affected_versions:
-      - '>=1.65_03,<=1.66'
+      - =1.65_01
     cves:
-      - CVE-2020-15358
-    description: "In SQLite before 3.32.3, select.c mishandles query-flattener optimization, leading to a multiSelectOrderBy heap overflow because of misuse of transitive properties for constant propagation.\n"
+      - CVE-2021-20223
+    description: "An issue was found in fts5UnicodeTokenize() in ext/fts5/fts5_tokenize.c in Sqlite. A unicode61 tokenizer configured to treat unicode \"control-characters\" (class Cc), was treating embedded nul characters as tokens. The issue was fixed in sqlite-3.34.0 and later.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-rq2p-jfw7-2cj3
-    id: CPANSA-DBD-SQLite-2020-15358-sqlite
+      - GHSA-r7v8-jjhj-75h7
+    id: CPANSA-DBD-SQLite-2021-20223-sqlite
     references:
-      - https://www.sqlite.org/src/info/10fa79d00f8091e5
-      - https://www.sqlite.org/src/timeline?p=version-3.32.3&bt=version-3.32.2
-      - https://www.sqlite.org/src/tktview?name=8f157e8010
-      - https://security.netapp.com/advisory/ntap-20200709-0001/
-      - https://security.gentoo.org/glsa/202007-26
-      - https://usn.ubuntu.com/4438-1/
-      - https://www.oracle.com/security-alerts/cpuoct2020.html
-      - https://support.apple.com/kb/HT211931
-      - https://support.apple.com/kb/HT211844
-      - https://support.apple.com/kb/HT211850
-      - https://support.apple.com/kb/HT211843
-      - https://support.apple.com/kb/HT211847
-      - http://seclists.org/fulldisclosure/2020/Nov/19
-      - http://seclists.org/fulldisclosure/2020/Nov/22
-      - http://seclists.org/fulldisclosure/2020/Nov/20
-      - http://seclists.org/fulldisclosure/2020/Dec/32
-      - https://www.oracle.com/security-alerts/cpujan2021.html
-      - https://support.apple.com/kb/HT212147
-      - http://seclists.org/fulldisclosure/2021/Feb/14
-      - https://www.oracle.com/security-alerts/cpuApr2021.html
-      - https://cert-portal.siemens.com/productcert/pdf/ssa-389290.pdf
-      - https://www.oracle.com/security-alerts/cpuapr2022.html
-    reported: 2020-06-27
-    severity: medium
+      - https://github.com/sqlite/sqlite/commit/d1d43efa4fb0f2098c0e2c5bf2e807c58d5ec05b
+      - https://www.sqlite.org/forum/forumpost/09609d7e22
+      - https://sqlite.org/src/info/b7b7bde9b7a03665
+    reported: 2022-08-25
+    severity: critical
 cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:23:52 2026
+  date: Fri Oct  2 16:23:03 2026
   from: external_reports/sqlite.yml
-last_checked: 1785756232
+last_checked: 1790972583
 latest_version: 1.78
 repo: https://github.com/DBD-SQLite/DBD-SQLite

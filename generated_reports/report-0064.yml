@@ -356,8 +356,8 @@ cpansa_version: 2
 distribution: JS-jQuery
 generated:
   by: util/invert-third-party.pl
-  date: Mon Aug  3 07:21:59 2026
+  date: Fri Oct  2 16:21:37 2026
   from: external_reports/jquery.yml
-last_checked: 1785756119
+last_checked: 1790972497
 latest_version: 1.2.6.001
 repo: ~
