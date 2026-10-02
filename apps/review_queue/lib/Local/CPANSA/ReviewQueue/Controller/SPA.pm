@@ -21,18 +21,57 @@ sub main ($c) {
 		);
 	}
 
+sub ignore_cve ($c, $cve_details) {
+	}
+
 sub submit ($c) {
 	my %hash;
 
-	my $all = $c->add_advisory;
+	my $action = $c->param('action');
 
-	$c->stash( cve => {
-		cve         => $all->{'advisory'}{'cves'}[0],
-		recorded    => $all->{'extra'}{'report_path'},
-		description => $all->{'advisory'}{'description'},
-		type        => 'recorded',
-		main_module => $all->{'extra'}{'main_module'},
-		});
+	my $cve_details = get_cve_data( $c->param('cve') );
+
+	if( $action eq 'add' ) {
+		my $all = $c->add_advisory($cve_details);
+
+		$c->stash( cve => {
+			cve         => $all->{'advisory'}{'cves'}[0],
+			recorded    => $all->{'extra'}{'report_path'},
+			description => $all->{'advisory'}{'description'},
+			type        => 'recorded',
+			main_module => $all->{'extra'}{'main_module'},
+			ignored     => 0,
+			recorded    => 1,
+			unevaluated => 0,
+			});
+		}
+	elsif( $action eq 'ignore' ) {
+		$c->app->log->debug( "ignore_cve: " . $c->param('cve') );
+
+		add_ignored_cve( $c->param('cve'), $c->param('description') );
+
+		$c->stash( cve => {
+			cve         => $c->param('cve'),
+			description => $c->param('description'),
+			type        => 'ignored',
+			ignored     => 1,
+			recorded    => 0,
+			unevaluated => 0,
+			});
+		}
+	else {
+		$c->app->log->error( "Unrecognized action <$action>");
+		$c->stash(
+			status => 404,
+			cve => {
+				ignored     => 0,
+				recorded    => 0,
+				unevaluated => 1,
+				type        => 'unevaluated',
+				}
+			);
+		}
+
 	$c->render(
 		template => 'partials/list-item',
 		format   => 'html',
@@ -49,7 +88,7 @@ sub guess_output_filename ( $namespace ) {
 	return catfile($root, $basename);
 	}
 
-sub add_advisory ($c) {
+sub add_advisory ($c, $cve_details) {
 	my %advisory;
 	my %extra;
 
@@ -57,7 +96,6 @@ sub add_advisory ($c) {
 	$extra{'distribution'} = $c->param('distribution');
 
 	$c->app->log->debug( "add_advisory: distribution is <$extra{'distribution'}>" );
-	my $cve_details = get_cve_data( $c->param('cve') );
 
 	$extra{'report_path'} = "" . Local::CPANSA::report_path( $c->param('distribution') );
 

@@ -115,6 +115,23 @@ sub assemble_advisory ( $config ) {
 
 =over 4
 
+=item * add_ignored_cve ($cve_details)
+
+=cut
+
+sub add_ignored_cve :Export_Ok() :Export_Tag("cve") ($cve, $description) {
+	state $file = ignore_file();
+
+	warn "In add_ignored_cve $cve file: $file";
+
+	open my $fh, '>>:encoding(UTF-8)', $file or do {
+		warn "add_ignored_cve: could not open $file: $!";
+		return;
+		};
+	say {$fh} join "\t", $cve, substr($description, 0, 70) =~ s/\s+\z//r;
+	close $fh or warn "Could not close $file: $? $!";
+	}
+
 =item * cve_ignored(CVE)
 
 Returns true if the CVE is ignored in cpan-security-advisory. This means that
@@ -721,15 +738,22 @@ sub get_file_path :Export_Ok :Export_Tag("file") ($rel_path) {
 	return \@found;
 	}
 
+=item * ignore_file()
+
+Returns the path to the file that has the ignored CVEs list
+
+=cut
+
+sub ignore_file :Export_Ok :Export_Tag("file") () {
+	state $file = find_root()->child('IGNORE_CVEs');
+	$file;
+	}
+
 =back
 
 =head2 Cache
 
 =over 4
-
-=item *
-
-=cut
 
 =item * get_cache_dir( SECTION )
 

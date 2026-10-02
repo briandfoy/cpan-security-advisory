@@ -71,7 +71,8 @@ my( $affected, $fixed ) = do {
 
 				<div class="form-group row no-gutters">
 					<div class="col-sm-12 d-flex justify-content-end pr-3">
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" name="action" value="ignore" class="btn btn-primary mr-2">Ignore</button>
+						<button type="submit" name="action" value="add"    class="btn btn-primary ml-2">Add</button>
 					</div>
 				</div>
 			</form>
