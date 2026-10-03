@@ -9,9 +9,6 @@ advisories:
     generated with `pdoc --math` linked to JavaScript files from
     polyfill.io. The polyfill.io CDN has been sold and now serves
     malicious code. This issue has been fixed in pdoc 14.5.1.
-  embedded_vulnerability:
-    distributed_version: ~
-    name: polyfill.io
   fixed_versions: []
   github_security_advisory:
   - GHSA-5vgj-ggm4-fg62
