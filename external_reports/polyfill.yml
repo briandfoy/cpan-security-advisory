@@ -26,9 +26,9 @@ perl_distributions:
 - affected:
   - distributed_library_version: 3
     perl_module_versions: '>=0.15'
-  name: Mojo::DOM::Role::Analyzer
+  name: Mojo-DOM-Role-Analyzer
 - affected:
   - distributed_library_version: 3
     perl_module_versions: '>0'
-  name: Mojolicious::Plugin::LazyImage
+  name: Mojolicious-Plugin-LazyImage
 url: https://www.polyfill.io
