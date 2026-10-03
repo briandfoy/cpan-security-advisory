@@ -2,8 +2,7 @@
 advisories:
 - affected_versions:
   - '>0'
-  cves:
-  - CVE-2024-38526
+  cve: CVE-2024-38526
   description: >
     pdoc provides API Documentation for Python Projects. Documentation
     generated with `pdoc --math` linked to JavaScript files from
