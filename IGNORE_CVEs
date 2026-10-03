@@ -235,7 +235,7 @@ CVE-2026-44128    SEPPmail Secure Email Gateway before version 15.0.2.1 allows u
 CVE-2026-9256     NGINX Plus and NGINX Open Source have a vulnerability in the ngx_http_rewrite_module module.
 CVE-2026-75031    In the interchange/interchange project, a critical remote code execution (RCE) vulnerability was found in the “quick question” admin feature
 CVE-2026-66858    The protocol skip routine in several Apache Thrift bindings did not apply the binding's recursion limit
+CVE-2026-85494    Improper handling of length parameter inconsistenc
 CVE-2026-85086    Improper certificate validation, Initialization of a resource with an insecure default vulnerability in Apache Thrift perl bindings.
-CVE-2026-96286	Uncaught exception vulnerability in Apache Thrift
-CVE-2026-96287	Inefficient Algorithmic Complexity vulnerability i
-CVE-2026-85494	Improper handling of length parameter inconsistenc
+CVE-2026-96286    Uncaught exception vulnerability in Apache Thrift
+CVE-2026-96287    Inefficient Algorithmic Complexity vulnerability i
