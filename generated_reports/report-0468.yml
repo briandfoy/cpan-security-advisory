@@ -17,8 +17,8 @@ cpansa_version: 2
 distribution: App-revealup
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:50 2026
+  date: Fri Oct  2 23:01:59 2026
   from: external_reports/reveal.yml
-last_checked: 1790972570
+last_checked: 1790996519
 latest_version: 0.23
 repo: https://github.com/yusukebe/App-revealup.git

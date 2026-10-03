@@ -23,8 +23,8 @@ cpansa_version: 2
 distribution: Alien-GCrypt
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:37 2026
+  date: Fri Oct  2 23:01:45 2026
   from: external_reports/libgcrypt.yml
-last_checked: 1790972557
+last_checked: 1790996505
 latest_version: 1.6.5.0
 repo: git://github.com/ajgb/alien-gcrypt.git

@@ -3,12 +3,12 @@ advisories:
   - affected_versions:
       - '>=0.15'
     cves:
-      - ~
+      - CVE-2024-38526
     description: "pdoc provides API Documentation for Python Projects. Documentation generated with `pdoc --math` linked to JavaScript files from polyfill.io. The polyfill.io CDN has been sold and now serves malicious code. This issue has been fixed in pdoc 14.5.1.\n"
     fixed_versions: []
     github_security_advisory:
       - GHSA-5vgj-ggm4-fg62
-    id: CPANSA-Mojo::DOM::Role::Analyzer--polyfill
+    id: CPANSA-Mojo-DOM-Role-Analyzer-2024-38526-polyfill
     references:
       - https://github.com/mitmproxy/pdoc/pull/703
       - https://github.com/mitmproxy/pdoc/security/advisories/GHSA-5vgj-ggm4-fg62
@@ -19,11 +19,11 @@ advisories:
     reported: 2024-06-26
     severity: high
 cpansa_version: 2
-distribution: Mojo::DOM::Role::Analyzer
+distribution: Mojo-DOM-Role-Analyzer
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:49 2026
+  date: Fri Oct  2 23:01:59 2026
   from: external_reports/polyfill.yml
-last_checked: 1790972569
-latest_version: ~
-repo: ~
+last_checked: 1790996519
+latest_version: 0.015
+repo: git://github.com/sdondley/Mojo-DOM-Role-Analyzer.git

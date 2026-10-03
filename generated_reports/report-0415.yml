@@ -27,8 +27,8 @@ cpansa_version: 2
 distribution: Alien-OTR
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:40 2026
+  date: Fri Oct  2 23:01:48 2026
   from: external_reports/libotr.yml
-last_checked: 1790972560
+last_checked: 1790996508
 latest_version: 4.1.1.0
 repo: git://github.com/ajgb/alien-otr.git

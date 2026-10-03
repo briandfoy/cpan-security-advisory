@@ -3,41 +3,65 @@ advisories:
   - affected_versions:
       - '>=0.89,<=1.27'
     cves:
-      - CVE-2007-5137
-    description: "Buffer overflow in the ReadImage function in generic/tkImgGIF.c in Tcl (Tcl/Tk) 8.4.13 through 8.4.15 allows remote attackers to execute arbitrary code via multi-frame interlaced GIF files in which later frames are smaller than the first. NOTE: this issue is due to an incorrect patch for CVE-2007-5378.\n"
+      - CVE-2008-0553
+    description: "Stack-based buffer overflow in the ReadImage function in tkImgGIF.c in Tk (Tcl/Tk) before 8.5.1 allows remote attackers to execute arbitrary code via a crafted GIF image, a similar issue to CVE-2006-4484.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-67cg-f67f-c8v9
-    id: CPANSA-Tcl-2007-5137-tcl
+      - GHSA-w2px-74cm-hrpr
+    id: CPANSA-Tcl-2008-0553-tcl
     references:
-      - http://sourceforge.net/project/shownotes.php?release_id=541207
-      - http://secunia.com/advisories/26942
-      - http://bugs.gentoo.org/show_bug.cgi?id=192539
-      - https://www.redhat.com/archives/fedora-package-announce/2007-October/msg00261.html
-      - http://security.gentoo.org/glsa/glsa-200710-07.xml
-      - http://www.mandriva.com/security/advisories?name=MDKSA-2007:200
-      - http://www.novell.com/linux/security/advisories/2007_20_sr.html
-      - http://www.ubuntu.com/usn/usn-529-1
-      - http://www.attrition.org/pipermail/vim/2007-October/001826.html
-      - http://www.securityfocus.com/bid/25826
-      - http://secunia.com/advisories/27086
-      - http://secunia.com/advisories/27207
-      - http://secunia.com/advisories/27182
-      - http://secunia.com/advisories/27295
-      - http://secunia.com/advisories/27229
+      - http://sourceforge.net/project/shownotes.php?release_id=573933&group_id=10894
+      - http://www.securityfocus.com/bid/27655
+      - http://securitytracker.com/id?1019309
+      - http://secunia.com/advisories/28784
+      - https://bugzilla.redhat.com/show_bug.cgi?id=431518
+      - https://www.redhat.com/archives/fedora-package-announce/2008-February/msg00193.html
+      - https://www.redhat.com/archives/fedora-package-announce/2008-February/msg00132.html
+      - https://www.redhat.com/archives/fedora-package-announce/2008-February/msg00115.html
+      - https://www.redhat.com/archives/fedora-package-announce/2008-February/msg00205.html
+      - http://www.mandriva.com/security/advisories?name=MDVSA-2008:041
+      - http://secunia.com/advisories/28807
+      - http://secunia.com/advisories/28848
+      - http://www.debian.org/security/2008/dsa-1490
+      - http://www.debian.org/security/2008/dsa-1491
+      - http://secunia.com/advisories/28857
+      - http://secunia.com/advisories/28867
+      - http://wiki.rpath.com/Advisories:rPSA-2008-0054
+      - https://issues.rpath.com/browse/RPL-2215
+      - http://secunia.com/advisories/28954
+      - http://www.redhat.com/support/errata/RHSA-2008-0135.html
+      - http://www.redhat.com/support/errata/RHSA-2008-0134.html
       - http://www.redhat.com/support/errata/RHSA-2008-0136.html
       - http://secunia.com/advisories/29069
-      - http://www.debian.org/security/2009/dsa-1743
-      - http://secunia.com/advisories/34297
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A9540
-    reported: 2007-09-28
+      - http://secunia.com/advisories/29070
+      - http://lists.opensuse.org/opensuse-security-announce/2008-04/msg00005.html
+      - http://secunia.com/advisories/29622
+      - http://sunsolve.sun.com/search/document.do?assetkey=1-26-237465-1
+      - http://secunia.com/advisories/30129
+      - http://www.vmware.com/security/advisories/VMSA-2008-0009.html
+      - http://secunia.com/advisories/30535
+      - http://secunia.com/advisories/30717
+      - http://secunia.com/advisories/30783
+      - http://www.novell.com/linux/security/advisories/2008_13_sr.html
+      - http://www.debian.org/security/2008/dsa-1598
+      - https://www.redhat.com/archives/fedora-package-announce/2008-May/msg00116.html
+      - http://secunia.com/advisories/30188
+      - http://www.vupen.com/english/advisories/2008/0430
+      - http://www.vupen.com/english/advisories/2008/1744
+      - http://www.vupen.com/english/advisories/2008/1456/references
+      - http://ubuntu.com/usn/usn-664-1
+      - http://secunia.com/advisories/32608
+      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A10098
+      - http://www.securityfocus.com/archive/1/493080/100/0/threaded
+      - http://www.securityfocus.com/archive/1/488069/100/0/threaded
+    reported: 2008-02-07
     severity: ~
 cpansa_version: 2
 distribution: Tcl
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:23:08 2026
+  date: Fri Oct  2 23:02:15 2026
   from: external_reports/tcl.yml
-last_checked: 1790972588
+last_checked: 1790996535
 latest_version: 1.53
 repo: https://github.com/vadrerko/tcl.pm.git

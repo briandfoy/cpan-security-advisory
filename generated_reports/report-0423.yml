@@ -3,122 +3,77 @@ advisories:
   - affected_versions:
       - '>=1.00,<=1.01'
     cves:
-      - CVE-2010-1205
-    description: "Buffer overflow in pngpread.c in libpng before 1.2.44 and 1.4.x before 1.4.3, as used in progressive applications, might allow remote attackers to execute arbitrary code via a PNG image that triggers an additional data row.\n"
+      - CVE-2015-8126
+    description: "Multiple buffer overflows in the (1) png_set_PLTE and (2) png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before 1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x before 1.6.19 allow remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a small bit-depth value in an IHDR (aka image header) chunk in a PNG image.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-qq2m-25fj-pxvm
-    id: CPANSA-Prima-codecs-win32-2010-1205-libpng
+      - GHSA-rr6q-q2jh-948f
+    id: CPANSA-Prima-codecs-win32-2015-8126-libpng
     references:
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=188eb6b42602bf7d7ae708a21897923b6a83fe7c#patch18
-      - http://www.vupen.com/english/advisories/2010/1612
-      - http://secunia.com/advisories/40302
-      - https://bugzilla.redhat.com/show_bug.cgi?id=608238
-      - http://www.securityfocus.com/bid/41174
-      - http://www.libpng.org/pub/png/libpng.html
-      - https://bugs.webkit.org/show_bug.cgi?id=40798
-      - http://code.google.com/p/chromium/issues/detail?id=45983
-      - http://googlechromereleases.blogspot.com/2010/07/stable-channel-update.html
-      - http://trac.webkit.org/changeset/61816
-      - http://secunia.com/advisories/40472
-      - http://www.vupen.com/english/advisories/2010/1755
-      - http://www.ubuntu.com/usn/USN-960-1
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
-      - http://www.debian.org/security/2010/dsa-2072
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
-      - http://secunia.com/advisories/40547
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
-      - http://www.vupen.com/english/advisories/2010/1846
-      - https://bugzilla.mozilla.org/show_bug.cgi?id=570451
-      - http://www.vupen.com/english/advisories/2010/1837
-      - http://www.vupen.com/english/advisories/2010/1877
-      - http://lists.apple.com/archives/security-announce/2010//Aug/msg00003.html
-      - http://support.apple.com/kb/HT4312
-      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
-      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
-      - http://secunia.com/advisories/41574
-      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
-      - http://www.vupen.com/english/advisories/2010/2491
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
-      - http://support.apple.com/kb/HT4435
-      - http://support.apple.com/kb/HT4456
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
-      - http://www.vupen.com/english/advisories/2010/3045
-      - http://www.vupen.com/english/advisories/2010/3046
-      - http://support.apple.com/kb/HT4457
-      - http://secunia.com/advisories/42314
-      - http://secunia.com/advisories/42317
-      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
-      - http://support.apple.com/kb/HT4554
-      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
-      - http://support.apple.com/kb/HT4566
-      - http://blackberry.com/btsc/KB27244
-      - http://secunia.com/advisories/40336
-      - http://www.vupen.com/english/advisories/2010/1637
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
-      - http://www.mozilla.org/security/announce/2010/mfsa2010-41.html
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59815
-      - https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11851
-    reported: 2010-06-30
-    severity: critical
-  - affected_versions:
-      - '>=1.00,<=1.01'
-    cves:
-      - CVE-2010-2249
-    description: "Memory leak in pngrutil.c in libpng before 1.2.44, and 1.4.x before 1.4.3, allows remote attackers to cause a denial of service (memory consumption and application crash) via a PNG image containing malformed Physical Scale (aka sCAL) chunks.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-2r3r-854p-xjfr
-    id: CPANSA-Prima-codecs-win32-2010-2249-libpng
-    references:
-      - http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=90cfcecc09febb8d6c8c1d37ea7bb7cf0f4b00f3#patch20
-      - https://bugzilla.redhat.com/show_bug.cgi?id=608644
-      - http://secunia.com/advisories/40302
-      - http://www.vupen.com/english/advisories/2010/1612
-      - http://www.libpng.org/pub/png/libpng.html
-      - http://www.securityfocus.com/bid/41174
-      - http://www.ubuntu.com/usn/USN-960-1
-      - http://www.vupen.com/english/advisories/2010/1755
-      - http://secunia.com/advisories/40472
-      - http://www.vupen.com/english/advisories/2010/1877
-      - http://www.debian.org/security/2010/dsa-2072
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044397.html
-      - http://www.mandriva.com/security/advisories?name=MDVSA-2010:133
-      - http://lists.fedoraproject.org/pipermail/package-announce/2010-July/044283.html
-      - http://www.vupen.com/english/advisories/2010/1837
-      - http://www.vupen.com/english/advisories/2010/1846
-      - http://secunia.com/advisories/40547
-      - http://secunia.com/advisories/41574
-      - http://www.vupen.com/english/advisories/2010/2491
-      - http://lists.opensuse.org/opensuse-security-announce/2010-09/msg00006.html
-      - http://www.vmware.com/security/advisories/VMSA-2010-0014.html
-      - http://lists.vmware.com/pipermail/security-announce/2010/000105.html
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html
-      - http://support.apple.com/kb/HT4435
-      - http://support.apple.com/kb/HT4456
-      - http://lists.apple.com/archives/security-announce/2010//Nov/msg00003.html
-      - http://www.vupen.com/english/advisories/2010/3046
-      - http://support.apple.com/kb/HT4457
-      - http://www.vupen.com/english/advisories/2010/3045
-      - http://secunia.com/advisories/42314
-      - http://www.securitytracker.com/id?1024723
-      - http://secunia.com/advisories/42317
-      - http://lists.apple.com/archives/security-announce/2011/Mar/msg00000.html
-      - http://support.apple.com/kb/HT4554
-      - http://lists.apple.com/archives/security-announce/2011//Mar/msg00004.html
-      - http://support.apple.com/kb/HT4566
-      - http://secunia.com/advisories/40336
-      - http://www.vupen.com/english/advisories/2010/1637
-      - http://slackware.com/security/viewer.php?l=slackware-security&y=2010&m=slackware-security.613061
-      - https://exchange.xforce.ibmcloud.com/vulnerabilities/59816
-    reported: 2010-06-30
-    severity: medium
+      - http://www.openwall.com/lists/oss-security/2015/11/12/2
+      - http://www.debian.org/security/2015/dsa-3399
+      - http://www.ubuntu.com/usn/USN-2815-1
+      - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+      - https://code.google.com/p/chromium/issues/detail?id=560291
+      - http://googlechromereleases.blogspot.com/2016/03/stable-channel-update.html
+      - https://support.apple.com/HT206167
+      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+      - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+      - https://access.redhat.com/errata/RHSA-2016:1430
+      - http://www.securityfocus.com/bid/77568
+      - https://security.gentoo.org/glsa/201603-09
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00028.html
+      - http://www.debian.org/security/2016/dsa-3507
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00015.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00014.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00018.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177344.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177382.html
+      - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+      - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00028.html
+      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
+      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00159.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172797.html
+      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00063.html
+      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00062.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00029.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00034.html
+      - http://www.securitytracker.com/id/1034142
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172769.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172823.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172324.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00030.html
+      - https://security.gentoo.org/glsa/201611-08
+    reported: 2015-11-13
+    severity: ~
 cpansa_version: 2
 distribution: Prima-codecs-win32
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:42 2026
+  date: Fri Oct  2 23:01:50 2026
   from: external_reports/libpng.yml
-last_checked: 1790972562
+last_checked: 1790996510
 latest_version: ~
 repo: ~

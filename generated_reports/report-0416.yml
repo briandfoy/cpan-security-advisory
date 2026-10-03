@@ -3,356 +3,62 @@ advisories:
   - affected_versions:
       - '>=6.0.12,<=6.2.9'
     cves:
-      - CVE-2015-5073
-    description: "Heap-based buffer overflow in the find_fixedlength function in pcre_compile.c in PCRE before 8.38 allows remote attackers to cause a denial of service (crash) or obtain sensitive information from heap memory and possibly bypass the ASLR protection mechanism via a crafted regular expression with an excess closing parenthesis.\n"
+      - CVE-2015-2325
+    description: "The compile_branch function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code, cause a denial of service (out-of-bounds heap read and crash), or possibly have other unspecified impact via a regular expression with a group containing a forward reference repeated a large number of times within a repeated outer group that has a zero minimum quantifier.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-r9r2-m4cw-3hgp
-    id: CPANSA-Perl6-Pugs-2015-5073-libpcre
+      - GHSA-mwr9-2r49-jwhg
+    id: CPANSA-Perl6-Pugs-2015-2325-libpcre
     references:
-      - http://www.openwall.com/lists/oss-security/2015/06/26/1
-      - http://vcs.pcre.org/pcre?view=revision&revision=1571
-      - https://bugs.exim.org/show_bug.cgi?id=1651
-      - http://www.openwall.com/lists/oss-security/2015/06/26/3
-      - http://www-01.ibm.com/support/docview.wss?uid=isg3T1023886
-      - http://www.securityfocus.com/bid/75430
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?revision=1609&view=markup
-      - http://www.securitytracker.com/id/1033154
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-      - http://rhn.redhat.com/errata/RHSA-2016-1025.html
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
-    reported: 2016-12-13
-    severity: critical
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8380
-    description: "The pcre_exec function in pcre_exec.c in PCRE before 8.38 mishandles a // pattern with a \\01 string, which allows remote attackers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-67r8-54m7-f6x4
-    id: CPANSA-Perl6-Pugs-2015-8380-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - https://bugs.exim.org/show_bug.cgi?id=1637
-      - https://blog.fuzzing-project.org/29-Heap-Overflow-in-PCRE.html
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - http://www.securityfocus.com/bid/77695
-      - http://lists.fedoraproject.org/pipermail/package-announce/2015-December/173700.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8381
-    description: "The compile_regex function in pcre_compile.c in PCRE before 8.38 and pcre2_compile.c in PCRE2 before 10.2x mishandles the /(?J:(?|(:(?|(?'R')(\\\\k'R')|((?'R')))H'Rk'Rf)|s(?'R'))))/ and /(?J:(?|(:(?|(?'R')(\\\\z(?|(?'R')(\\\\k'R')|((?'R')))k'R')|((?'R')))H'Ak'Rf)|s(?'R')))/ patterns, and related patterns with certain group references, which allows remote attackers to cause a denial of service (heap-based buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-wvfj-fw7x-gqpr
-    id: CPANSA-Perl6-Pugs-2015-8381-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - https://bugs.exim.org/show_bug.cgi?id=1667
-      - https://bugs.exim.org/show_bug.cgi?id=1672
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - http://www.securityfocus.com/bid/76187
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8383
-    description: "PCRE before 8.38 mishandles certain repeated conditional groups, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-jc3f-3h6r-67mm
-    id: CPANSA-Perl6-Pugs-2015-8383-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8384
-    description: "PCRE before 8.38 mishandles the /(?J)(?'d'(?'d'\\\\g{d}))/ pattern and related patterns with certain recursive back references, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, a related issue to CVE-2015-8392 and CVE-2015-8395.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-52qf-gwh3-p975
-    id: CPANSA-Perl6-Pugs-2015-8384-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8385
-    description: "PCRE before 8.38 mishandles the /(?|(\\\\k'Pm')|(?'Pm'))/ pattern and related patterns with certain forward references, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-9pjx-2pvv-2f38
-    id: CPANSA-Perl6-Pugs-2015-8385-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
-      - http://www.securityfocus.com/bid/85572
-      - http://www-01.ibm.com/support/docview.wss?uid=isg3T1023886
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-      - http://rhn.redhat.com/errata/RHSA-2016-1025.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8386
-    description: "PCRE before 8.38 mishandles the interaction of lookbehind assertions and mutually recursive subpatterns, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-x66w-7mq7-3gxp
-    id: CPANSA-Perl6-Pugs-2015-8386-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - http://www-01.ibm.com/support/docview.wss?uid=isg3T1023886
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-      - http://rhn.redhat.com/errata/RHSA-2016-1025.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8387
-    description: "PCRE before 8.38 mishandles (?123) subroutine calls and related subroutine calls, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-gjfv-m56f-jm68
-    id: CPANSA-Perl6-Pugs-2015-8387-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8388
-    description: "PCRE before 8.38 mishandles the /(?=di(?<=(?1))|(?=(.))))/ pattern and related patterns with an unmatched closing parenthesis, which allows remote attackers to cause a denial of service (buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-5776-327r-qhr3
-    id: CPANSA-Perl6-Pugs-2015-8388-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
-      - http://www.securityfocus.com/bid/85576
-      - http://www-01.ibm.com/support/docview.wss?uid=isg3T1023886
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-      - http://rhn.redhat.com/errata/RHSA-2016-1025.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8389
-    description: "PCRE before 8.38 mishandles the /(?:|a|){100}x/ pattern and related patterns, which allows remote attackers to cause a denial of service (infinite recursion) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-w4p3-383r-c3gc
-    id: CPANSA-Perl6-Pugs-2015-8389-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8390
-    description: "PCRE before 8.38 mishandles the [: and \\\\ substrings in character classes, which allows remote attackers to cause a denial of service (uninitialized memory read) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-6788-8v9x-34c3
-    id: CPANSA-Perl6-Pugs-2015-8390-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8391
-    description: "The pcre_compile function in pcre_compile.c in PCRE before 8.38 mishandles certain [: nesting, which allows remote attackers to cause a denial of service (CPU consumption) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-86ch-fq45-3c2j
-    id: CPANSA-Perl6-Pugs-2015-8391-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - http://www-01.ibm.com/support/docview.wss?uid=isg3T1023886
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-      - http://rhn.redhat.com/errata/RHSA-2016-1025.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8392
-    description: "PCRE before 8.38 mishandles certain instances of the (?| substring, which allows remote attackers to cause a denial of service (unintended recursion and buffer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, a related issue to CVE-2015-8384 and CVE-2015-8395.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-qx7v-4wx4-fpg4
-    id: CPANSA-Perl6-Pugs-2015-8392-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8393
-    description: "pcregrep in PCRE before 8.38 mishandles the -q option for binary files, which might allow remote attackers to obtain sensitive information via a crafted file, as demonstrated by a CGI script that sends stdout data to a client.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-795f-fr55-w3f9
-    id: CPANSA-Perl6-Pugs-2015-8393-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8394
-    description: "PCRE before 8.38 mishandles the (?(<digits>) and (?(R<digits>) conditions, which allows remote attackers to cause a denial of service (integer overflow) or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-wpvc-3mh7-8pwj
-    id: CPANSA-Perl6-Pugs-2015-8394-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731
-      - http://www.securityfocus.com/bid/82990
-      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174931.html
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2015-8395
-    description: "PCRE before 8.38 mishandles certain references, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, a related issue to CVE-2015-8384 and CVE-2015-8392.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-vpj5-f38f-q927
-    id: CPANSA-Perl6-Pugs-2015-8395-libpcre
-    references:
-      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
-      - http://www.openwall.com/lists/oss-security/2015/11/29/1
-      - https://bto.bluecoat.com/security-advisory/sa128
-      - https://security.gentoo.org/glsa/201607-02
-      - https://access.redhat.com/errata/RHSA-2016:1132
-      - http://rhn.redhat.com/errata/RHSA-2016-2750.html
-    reported: 2015-12-02
-    severity: ~
-  - affected_versions:
-      - '>=6.0.12,<=6.2.9'
-    cves:
-      - CVE-2017-6004
-    description: "The compile_bracket_matchingpath function in pcre_jit_compile.c in PCRE through 8.x before revision 1680 (e.g., the PHP 7.1.1 bundled version) allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted regular expression.\n"
-    fixed_versions: []
-    github_security_advisory:
-      - GHSA-59rh-53qm-wcv4
-    id: CPANSA-Perl6-Pugs-2017-6004-libpcre
-    references:
-      - https://vcs.pcre.org/pcre/code/trunk/pcre_jit_compile.c?r1=1676&r2=1680&view=patch
-      - https://bugs.exim.org/show_bug.cgi?id=2035
-      - http://www.securityfocus.com/bid/96295
-      - https://security.gentoo.org/glsa/201706-11
-      - http://www.securitytracker.com/id/1037850
-      - https://access.redhat.com/errata/RHSA-2018:2486
-      - https://lists.apache.org/thread.html/rf4c02775860db415b4955778a131c2795223f61cb8c6a450893651e4@%3Cissues.bookkeeper.apache.org%3E
-      - https://lists.apache.org/thread.html/r58af02e294bd07f487e2c64ffc0a29b837db5600e33b6e698b9d696b@%3Cissues.bookkeeper.apache.org%3E
-    reported: 2017-02-16
+      - https://bugs.exim.org/show_bug.cgi?id=1591
+      - https://fortiguard.com/zeroday/FG-VD-15-015
+      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
+      - https://www.pcre.org/original/changelog.txt
+    reported: 2020-01-14
     severity: high
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2015-2326
+    description: "The pcre_compile2 function in PCRE before 8.37 allows context-dependent attackers to compile incorrect code and cause a denial of service (out-of-bounds read) via regular expression with a group containing both a forward referencing subroutine call and a recursive back reference, as demonstrated by \"((?+1)(\\1))/\".\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-m793-2mj8-wj8q
+    id: CPANSA-Perl6-Pugs-2015-2326-libpcre
+    references:
+      - https://bugs.exim.org/show_bug.cgi?id=1592
+      - https://fortiguard.com/zeroday/FG-VD-15-016
+      - http://lists.opensuse.org/opensuse-updates/2015-05/msg00014.html
+      - https://www.pcre.org/original/changelog.txt
+    reported: 2020-01-14
+    severity: medium
+  - affected_versions:
+      - '>=6.0.12,<=6.2.9'
+    cves:
+      - CVE-2015-8382
+    description: "The match function in pcre_exec.c in PCRE before 8.37 mishandles the /(?:((abcd))|(((?:(?:(?:(?:abc|(?:abcdef))))b)abcdefghi)abc)|((*ACCEPT)))/ pattern and related patterns involving (*ACCEPT), which allows remote attackers to obtain sensitive information from process memory or cause a denial of service (partially initialized memory and application crash) via a crafted regular expression, as demonstrated by a JavaScript RegExp object encountered by Konqueror, aka ZDI-CAN-2547.\n"
+    fixed_versions: []
+    github_security_advisory:
+      - GHSA-h7q3-3hf3-hv3q
+    id: CPANSA-Perl6-Pugs-2015-8382-libpcre
+    references:
+      - https://bugs.exim.org/show_bug.cgi?id=1537
+      - http://vcs.pcre.org/pcre/code/trunk/ChangeLog?view=markup
+      - http://vcs.pcre.org/pcre/code/trunk/pcre_exec.c?r1=1502&r2=1510
+      - https://bugzilla.redhat.com/show_bug.cgi?id=1187225
+      - http://www.openwall.com/lists/oss-security/2015/08/04/3
+      - http://www.openwall.com/lists/oss-security/2015/11/29/1
+      - http://git.php.net/?p=php-src.git;a=commit;h=c351b47ce85a3a147cfa801fa9f0149ab4160834
+      - http://www.securityfocus.com/bid/76157
+      - https://bto.bluecoat.com/security-advisory/sa128
+    reported: 2015-12-02
+    severity: ~
 cpansa_version: 2
 distribution: Perl6-Pugs
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:41 2026
+  date: Fri Oct  2 23:01:48 2026
   from: external_reports/libpcre.yml
-last_checked: 1790972561
+last_checked: 1790996508
 latest_version: 6.2.13
 repo: ~

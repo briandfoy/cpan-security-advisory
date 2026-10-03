@@ -37,8 +37,8 @@ cpansa_version: 2
 distribution: Lemonldap-NG-Common
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:21:41 2026
+  date: Fri Oct  2 23:00:52 2026
   from: external_reports/lemonldap.yml
-last_checked: 1790972501
+last_checked: 1790996452
 latest_version: v2.23.4
 repo: ~

@@ -3,24 +3,33 @@ advisories:
   - affected_versions:
       - '>0.017.1,<0.018.1'
     cves:
-      - CVE-2026-22693
-    description: 'HarfBuzz is a text shaping engine. Prior to version 12.3.0, a null pointer dereference vulnerability exists in the SubtableUnicodesCache::create function located in src/hb-ot-cmap-table.hh. The function fails to check if hb_malloc returns NULL before using placement new to construct an object at the returned pointer address. When hb_malloc fails to allocate memory (which can occur in low-memory conditions or when using custom allocators that simulate allocation failures), it returns NULL. The code then attempts to call the constructor on this null pointer using placement new syntax, resulting in undefined behavior and a Segmentation Fault. This issue has been patched in version 12.3.0.'
+      - CVE-2022-33068
+    description: An integer overflow in the component hb-ot-shape-fallback.cc of Harfbuzz v4.3.0 allows attackers to cause a Denial of Service (DoS) via unspecified vectors.
     fixed_versions: []
-    github_security_advisory: []
-    id: CPANSA-HarfBuzz-Shaper-2026-22693-harfbuzz
+    github_security_advisory:
+      - GHSA-cq67-chj5-8385
+    id: CPANSA-HarfBuzz-Shaper-2022-33068-harfbuzz
     references:
-      - https://github.com/harfbuzz/harfbuzz/commit/1265ff8d990284f04d8768f35b0e20ae5f60daae
-      - https://github.com/harfbuzz/harfbuzz/security/advisories/GHSA-xvjr-f2r9-c7ww
-      - http://www.openwall.com/lists/oss-security/2026/01/11/1
-      - http://www.openwall.com/lists/oss-security/2026/01/12/1
-    reported: 2026-01-10
+      - https://github.com/harfbuzz/harfbuzz/commit/62e803b36173fd096d7ad460dd1d1db9be542593
+      - https://github.com/harfbuzz/harfbuzz/issues/3557
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FQBJ24W6TXLSAQWCFW7IBGUMX4AJI3S4/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QQMEXOVDL3T2UXKBCON7JSOCE646G7HG/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/W56WTC5IY4EIUHVUIHMCXA3BSBZLSZCI/
+      - https://security.gentoo.org/glsa/202209-11
+      - https://github.com/harfbuzz/harfbuzz/commit/62e803b36173fd096d7ad460dd1d1db9be542593
+      - https://github.com/harfbuzz/harfbuzz/issues/3557
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FQBJ24W6TXLSAQWCFW7IBGUMX4AJI3S4/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QQMEXOVDL3T2UXKBCON7JSOCE646G7HG/
+      - https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/W56WTC5IY4EIUHVUIHMCXA3BSBZLSZCI/
+      - https://security.gentoo.org/glsa/202209-11
+    reported: 2022-06-23
     severity: ~
 cpansa_version: 2
 distribution: HarfBuzz-Shaper
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:21:32 2026
+  date: Fri Oct  2 23:00:44 2026
   from: external_reports/harfbuzz.yml
-last_checked: 1790972492
+last_checked: 1790996444
 latest_version: 0.033
 repo: https://github.com/sciurius/perl-HarfBuzz-Shaper.git

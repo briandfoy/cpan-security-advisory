@@ -3,63 +3,77 @@ advisories:
   - affected_versions:
       - ==0.01
     cves:
-      - CVE-2019-7317
-    description: "png_image_free in png.c in libpng 1.6.x before 1.6.37 has a use-after-free because png_image_free_function is called under png_safe_execute.\n"
+      - CVE-2015-8126
+    description: "Multiple buffer overflows in the (1) png_set_PLTE and (2) png_get_PLTE functions in libpng before 1.0.64, 1.1.x and 1.2.x before 1.2.54, 1.3.x and 1.4.x before 1.4.17, 1.5.x before 1.5.24, and 1.6.x before 1.6.19 allow remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a small bit-depth value in an IHDR (aka image header) chunk in a PNG image.\n"
     fixed_versions: []
     github_security_advisory:
-      - GHSA-m96g-x499-p5f9
-    id: CPANSA-cppAdaptive1-2019-7317-libpng
+      - GHSA-rr6q-q2jh-948f
+    id: CPANSA-cppAdaptive1-2015-8126-libpng
     references:
-      - https://github.com/glennrp/libpng/issues/275
-      - https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=12803
-      - https://seclists.org/bugtraq/2019/Apr/30
-      - http://packetstormsecurity.com/files/152561/Slackware-Security-Advisory-libpng-Updates.html
-      - https://www.debian.org/security/2019/dsa-4435
-      - https://seclists.org/bugtraq/2019/Apr/36
-      - https://usn.ubuntu.com/3962-1/
-      - https://usn.ubuntu.com/3991-1/
-      - https://seclists.org/bugtraq/2019/May/56
-      - https://seclists.org/bugtraq/2019/May/59
-      - https://www.debian.org/security/2019/dsa-4448
-      - https://lists.debian.org/debian-lts-announce/2019/05/msg00032.html
-      - https://access.redhat.com/errata/RHSA-2019:1265
-      - https://access.redhat.com/errata/RHSA-2019:1269
-      - https://access.redhat.com/errata/RHSA-2019:1267
-      - https://www.debian.org/security/2019/dsa-4451
-      - https://seclists.org/bugtraq/2019/May/67
-      - https://lists.debian.org/debian-lts-announce/2019/05/msg00038.html
-      - https://usn.ubuntu.com/3997-1/
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00002.html
-      - https://access.redhat.com/errata/RHSA-2019:1310
-      - https://access.redhat.com/errata/RHSA-2019:1309
-      - https://access.redhat.com/errata/RHSA-2019:1308
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00029.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-06/msg00084.html
-      - http://www.securityfocus.com/bid/108098
-      - https://security.netapp.com/advisory/ntap-20190719-0005/
-      - https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
-      - https://usn.ubuntu.com/4080-1/
-      - https://usn.ubuntu.com/4083-1/
-      - https://security.gentoo.org/glsa/201908-02
-      - https://access.redhat.com/errata/RHSA-2019:2494
-      - https://access.redhat.com/errata/RHSA-2019:2495
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00044.html
-      - http://lists.opensuse.org/opensuse-security-announce/2019-08/msg00038.html
-      - https://access.redhat.com/errata/RHSA-2019:2585
-      - https://access.redhat.com/errata/RHSA-2019:2590
-      - https://access.redhat.com/errata/RHSA-2019:2592
-      - https://access.redhat.com/errata/RHSA-2019:2737
-      - https://support.hpe.com/hpsc/doc/public/display?docLocale=en_US&docId=emr_na-hpesbst03977en_us
-      - https://www.oracle.com/security-alerts/cpuApr2021.html
-      - https://www.oracle.com/security-alerts/cpuoct2021.html
-    reported: 2019-02-04
-    severity: medium
+      - http://www.openwall.com/lists/oss-security/2015/11/12/2
+      - http://www.debian.org/security/2015/dsa-3399
+      - http://www.ubuntu.com/usn/USN-2815-1
+      - http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html
+      - https://code.google.com/p/chromium/issues/detail?id=560291
+      - http://googlechromereleases.blogspot.com/2016/03/stable-channel-update.html
+      - https://support.apple.com/HT206167
+      - http://lists.apple.com/archives/security-announce/2016/Mar/msg00004.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174905.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2596.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2595.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/175073.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-January/174936.html
+      - http://rhn.redhat.com/errata/RHSA-2015-2594.html
+      - http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html
+      - http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2015-2719645.html
+      - https://access.redhat.com/errata/RHSA-2016:1430
+      - http://www.securityfocus.com/bid/77568
+      - https://security.gentoo.org/glsa/201603-09
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00028.html
+      - http://www.debian.org/security/2016/dsa-3507
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00015.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00014.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00018.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177344.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2016-February/177382.html
+      - https://kc.mcafee.com/corporate/index?page=content&id=SB10148
+      - http://rhn.redhat.com/errata/RHSA-2016-0057.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0056.html
+      - http://rhn.redhat.com/errata/RHSA-2016-0055.html
+      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00033.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00038.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00028.html
+      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00160.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00042.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172663.html
+      - http://lists.opensuse.org/opensuse-updates/2015-11/msg00159.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172797.html
+      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00063.html
+      - http://lists.opensuse.org/opensuse-updates/2015-12/msg00062.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00029.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00043.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00047.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172620.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172647.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00044.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00048.html
+      - http://lists.opensuse.org/opensuse-security-announce/2015-11/msg00034.html
+      - http://www.securitytracker.com/id/1034142
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172769.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172823.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00045.html
+      - http://lists.opensuse.org/opensuse-security-announce/2016-01/msg00041.html
+      - http://lists.fedoraproject.org/pipermail/package-announce/2015-November/172324.html
+      - http://lists.opensuse.org/opensuse-updates/2016-01/msg00030.html
+      - https://security.gentoo.org/glsa/201611-08
+    reported: 2015-11-13
+    severity: ~
 cpansa_version: 2
 distribution: cppAdaptive1
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:41 2026
+  date: Fri Oct  2 23:01:49 2026
   from: external_reports/libpng.yml
-last_checked: 1790972561
+last_checked: 1790996509
 latest_version: 0.01
 repo: ~

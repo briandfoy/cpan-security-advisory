@@ -37,8 +37,8 @@ cpansa_version: 2
 distribution: Lemonldap-NG-Manager
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:22:12 2026
+  date: Fri Oct  2 23:01:21 2026
   from: external_reports/lemonldap.yml
-last_checked: 1790972532
+last_checked: 1790996481
 latest_version: v2.23.4
 repo: ~

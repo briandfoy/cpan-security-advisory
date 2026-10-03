@@ -53,8 +53,8 @@ cpansa_version: 2
 distribution: DBD-SQLite
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:23:04 2026
+  date: Fri Oct  2 23:02:12 2026
   from: external_reports/sqlite.yml
-last_checked: 1790972584
+last_checked: 1790996532
 latest_version: 1.78
 repo: https://github.com/DBD-SQLite/DBD-SQLite

@@ -18,8 +18,8 @@ cpansa_version: 2
 distribution: JavaScript-Duktape-XS
 generated:
   by: util/invert-third-party.pl
-  date: Fri Oct  2 16:21:30 2026
+  date: Fri Oct  2 23:00:42 2026
   from: external_reports/duktape.yml
-last_checked: 1790972490
+last_checked: 1790996442
 latest_version: 0.000081
 repo: https://github.com/gonzus/JavaScript-Duktape-XS
