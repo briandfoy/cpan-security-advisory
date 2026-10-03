@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20261002.009 2026-10-03T16:44:36Z
+	* data update for 2026-10-02
+
 20260923.001 2026-09-23T13:40:42Z
 	* data update, especially for CVE-2026-95831 for malicious Crypt::SelfCertificate
 
