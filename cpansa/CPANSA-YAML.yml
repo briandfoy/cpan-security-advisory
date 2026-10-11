@@ -26,6 +26,51 @@ advisories:
   - https://github.com/ingydotnet/yaml-pm/issues/176
   reported: 2017-05-10
   severity: ~
+- affected_versions:
+  - <1.28
+  cves:
+  - CVE-2019-25777
+  description: |-
+    YAML versions before 1.27_001 for Perl allow a loaded perl/glob document to replace any package variable, which can lead to arbitrary code execution.
+
+    A perl/glob document names a package and a symbol, and supplies the value assigned to it. Nothing restricts the name, so the target can be @INC or YAML's own load options.
+
+    A perl/glob document that sets $YAML::LoadCode or $YAML::UseCode turns on code loading, which is off by default, for every later Load() in the process. A perl/code document is then passed to a string eval, so an attacker who supplies two documents to separate Load() calls in one process can execute arbitrary Perl code.
+  fixed_versions:
+  - '>=1.28'
+  github_security_advisory:
+  - GHSA-38xx-2hm6-vh7q
+  id: CPANSA-YAML-2019-25777
+  references:
+  - https://github.com/ingydotnet/yaml-pm/commit/bace96b5e6661d521c7c515c94a09e081c911fce.patch
+  - https://github.com/ingydotnet/yaml-pm/issues/212
+  - https://metacpan.org/release/TINITA/YAML-1.28/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/05/7
+  reported: 2026-10-05
+  severity: high
+- affected_versions:
+  - <1.30
+  cves:
+  - CVE-2017-20285
+  description: |-
+    YAML versions before 1.30 for Perl allow a loaded document to trigger the DESTROY method of arbitrary classes.
+
+    A perl/hash:Class tag blesses a hash into the class it names. The document supplies the object's fields, and Perl calls DESTROY when it goes out of scope.
+
+    What DESTROY does depends on the classes the process has loaded. With File::Temp::Dir from core Perl, it can delete a directory tree the document names.
+  fixed_versions:
+  - '>=1.30'
+  github_security_advisory:
+  - GHSA-c454-fc94-q86x
+  id: CPANSA-YAML-2017-20285
+  references:
+  - https://github.com/ingydotnet/yaml-pm/commit/471314bbdcbd62077eea32755929122aa8bd00a3.patch
+  - https://github.com/ingydotnet/yaml-pm/commit/7736f38bd02e4f9f77d5468721e3be3d7b34a8ec.patch
+  - https://github.com/ingydotnet/yaml-pm/issues/176
+  - https://metacpan.org/release/TINITA/YAML-1.30/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/05/8
+  reported: 2026-10-05
+  severity: critical
 cpansa_version: 2
 distribution: YAML
 last_checked: 1789907470
