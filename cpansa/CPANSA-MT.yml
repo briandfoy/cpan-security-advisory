@@ -720,6 +720,28 @@ advisories:
   - https://www.sixapart.jp/movabletype/news/2026/04/08-1100.html
   reported: 2026-04-08
   severity: medium
+- affected_versions:
+  - '>=9.2.0,<=9.2.1'
+  - '>=9.0.0,<=9.0.9'
+  - '>=8.8.0,<=8.8.5'
+  - '>=8.0.0,<=8.0.12'
+  - '>=8.4.0,<8.5.0'
+  - '>=7,<8'
+  cves:
+  - CVE-2026-96408
+  description: A code injection vulnerability exists in the upgrade script of Movable
+    Type, which may allow an unauthenticated attacker to execute an arbitrary Perl
+    script or an SQL query on the affected product.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-9xxq-384j-m3qw
+  id: CPANSA-MT-2026-96408
+  references:
+  - https://jvn.jp/en/jp/JVN91153973/
+  - https://movabletype.org/news/2026/10/mt-930-released.html
+  - https://www.sixapart.jp/movabletype/news/2026/10/07-1100.html
+  reported: 2026-10-07
+  severity: ''
 cpansa_version: 2
 darkpan: true
 distribution: MT
