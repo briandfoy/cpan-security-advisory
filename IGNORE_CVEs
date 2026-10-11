@@ -239,3 +239,4 @@ CVE-2026-85494    Improper handling of length parameter inconsistenc
 CVE-2026-85086    Improper certificate validation, Initialization of a resource with an insecure default vulnerability in Apache Thrift perl bindings.
 CVE-2026-96286    Uncaught exception vulnerability in Apache Thrift
 CVE-2026-96287    Inefficient Algorithmic Complexity vulnerability i
+CVE-2026-59787	The Perl SNMP trap receiver script shipped with Zabbix does not proper
