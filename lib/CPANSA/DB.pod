@@ -1,5 +1,5 @@
-# created by util/generate at Sun Oct  4 10:04:23 2026
-# https://github.com/briandfoy/cpan-security-advisory 5f02a2465808d51e7693891508445005ce447460
+# created by util/generate at Sun Oct 11 10:18:18 2026
+# https://github.com/briandfoy/cpan-security-advisory 310f3b4750bfdf1ab64b3a26bb9a2928f34659e5
 
 =encoding utf8
 
