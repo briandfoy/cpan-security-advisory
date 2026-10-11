@@ -413,7 +413,7 @@ advisories:
   description: |
     Cross-site scripting (XSS) vulnerability in Six Apart (formerly Six Apart KK) Movable Type (MT) Pro 5.13 allows remote attackers to inject arbitrary web script or HTML via the comment section.
   fixed_versions:
-  - '<5.13'
+  - <5.13
   - '>5.13'
   github_security_advisory:
   - GHSA-crq9-rq4m-26gj
@@ -644,7 +644,7 @@ advisories:
   reported: 2009-01-02
   severity: ~
 - affected_versions:
-  - '<=1.44'
+  - <=1.44
   - '>=7,<7.8.0'
   cves:
   - CVE-2021-20812
@@ -662,7 +662,7 @@ advisories:
   reported: 2021-08-26
   severity: medium
 - affected_versions:
-  - '<=1.53'
+  - <=1.53
   - '>7,<7.9.6'
   cves:
   - CVE-2022-43660
@@ -706,7 +706,8 @@ advisories:
   - '>=9.0.1,<9.0.7'
   cves:
   - CVE-2026-33088
-  description: Movable Type provided by Six Apart Ltd. contains an SQL Injection vulnerability which may allow an attacker to execute an arbitrary SQL statement.
+  description: Movable Type provided by Six Apart Ltd. contains an SQL Injection vulnerability
+    which may allow an attacker to execute an arbitrary SQL statement.
   fixed_versions:
   - '>=8.0.10,<8.1'
   - '>=8.8.3,<9'
