@@ -26,9 +26,169 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/04/29/17
   reported: 2026-04-29
   severity: ~
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110752
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl allow memory exhaustion by allocating one entry per index of an RFC 7111 selector in fragment.
+
+    fragment expands a row= or col= selector into an array with one element per selected index before it reads any data, and it does not clamp an explicit end column in a cell= selector to the row. Only the syntax and order of the ranges are checked, so row=1-400000000 on a two-line file allocates 400 million elements.
+
+    An application that passes a request-supplied fragment to fragment or csv can be made to exhaust memory, which ends the process with an Out of memory error that eval cannot catch.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-c8hf-63cr-rrfm
+  id: CPANSA-Text-CSV_XS-2026-110752
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/d9d3d66f9ff6a8a1bc255a6ef05100f9b102b92b.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - '>=1.46,<1.65'
+  cves:
+  - CVE-2026-110753
+  description: |-
+    Text::CSV_XS versions from 1.46 before 1.65 for Perl have a use-after-free of bind_columns variables when skip_empty_rows skips an empty line in getline.
+
+    With bind_columns, the parser writes each field into the caller's own scalar without taking a reference to it. When skip_empty_rows skips an empty last line, the parser frees the current field scalar without checking whether it is bound, dropping one reference from the application's variable. The "eof" mode does the same on any empty line.
+
+    The variable is then freed while the application still references it, so later code uses freed memory and can crash the process.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-gvjh-vp76-v2mp
+  id: CPANSA-Text-CSV_XS-2026-110753
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/f082d5c8aab1b8d16b6181d4f3042a06947e260f.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110754
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl leak the parsed fields of a record that fails to parse in getline.
+
+    getline collects the fields of a record into a new array and returns a reference to it only when the parse succeeds. When the record has a syntax error, getline returns undef and never frees the array or the fields parsed before the error.
+
+    A long-running process parsing untrusted CSV retains every malformed record it is sent, so repeated malformed input exhausts its memory.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-v7vg-mqfq-633j
+  id: CPANSA-Text-CSV_XS-2026-110754
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/eb4f739ffc605bfb1ab710e5330704faa0e89f08.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110755
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl allow quadratic CPU use by copying the unparsed remainder per record of CR-only input in getline.
+
+    With eol unset, the default, getline reads with Perl's default line separator, so input with CR-only line endings arrives as one chunk. After each record the parser copies the whole unparsed remainder into a new buffer, which the next call parses and copies again, so the work grows with the square of the input size.
+
+    A reader with default options that is sent CSV with classic Mac line endings spends seconds of CPU time on a megabyte of input.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-chcw-qm6q-pg64
+  id: CPANSA-Text-CSV_XS-2026-110755
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/f25e00aacd6fc15857b22487cb2e5ca263f377e0.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110756
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl drop the end of a record and its line ending when a UTF-8 flagged field precedes invalid UTF-8 bytes in print.
+
+    When a record contains a UTF-8 flagged field, print holds back trailing bytes that are not valid UTF-8 at each buffer flush, so that a character split across two flushes can be completed. Nothing writes the held-back bytes after the record's final flush. A record whose last field ends in such a byte loses it, any closing quote and the line ending, while print still returns true. combine is not affected.
+
+    The next record is written onto the same line, or, when the last field was quoted, the missing closing quote makes a reader take every following record as part of that field.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-fvcq-fpcj-xxcc
+  id: CPANSA-Text-CSV_XS-2026-110756
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/0610a8d81262ae6f1ac82a88d73c8a471f38af19.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110757
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl allow record splitting by writing strings used as numbers without quotes in combine.
+
+    combine and print do not check whether a field needs quotes when its value has Perl's integer or numeric flag set. Perl sets these flags on a string used in a numeric operation when it parses as a number, which allows leading and trailing whitespace. With binary set, as csv does by default, "12\n" passes a check such as $qty > 0 and is then written unquoted with its newline.
+
+    A value validated as a number can end the record early and turn the fields after it into a separate row.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-9gc4-xhw7-655h
+  id: CPANSA-Text-CSV_XS-2026-110757
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/fcfb796cb50de9cef8b94a70535304ac41a50c56.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110758
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl read before the start of an all-blank field under allow_whitespace in strip_trail_whitespace.
+
+    Under allow_whitespace, strip_trail_whitespace removes trailing spaces and tabs from each unquoted field without stopping at the start of the field. For a field of only blanks it reads the byte before the field's heap buffer. If that byte is also a space or tab, it may be zeroed and the walk continue backwards, depending on what the allocator placed there.
+
+    Leading blanks are normally skipped before a field is stored, but an all-blank field still arrives after a leading escape_char that differs from quote_char, or as a quoted field in getline when its line ends in two CRs.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-fxm8-2g6q-9hhf
+  id: CPANSA-Text-CSV_XS-2026-110758
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/efed7ee21177c59a5b69e787f84154e1fcb0d095.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
+- affected_versions:
+  - <1.65
+  cves:
+  - CVE-2026-110759
+  description: |-
+    Text::CSV_XS versions before 1.65 for Perl return a 0xFF byte that is not in the input for an empty last field followed by a lone CR in parse.
+
+    When the input to parse ends in a separator and a lone CR, the parser treats the end of the input as the next character and stores the end-of-file marker in the field as the byte 0xFF. With binary set, parse("a,\r") returns the fields "a" and "\xFF". On UTF-8 flagged input the last field is a UTF-8 flagged string holding that lone byte, which is malformed UTF-8. The same input with a non-empty last field is rejected as an error.
+
+    A CRLF file read line by line and chomped ends this way when its last column is empty, so the application receives a byte that is not in its input.
+  fixed_versions:
+  - '>=1.65'
+  github_security_advisory:
+  - GHSA-v3f5-7p3g-9fm4
+  id: CPANSA-Text-CSV_XS-2026-110759
+  references:
+  - https://github.com/cpan-authors/Text-CSV_XS/commit/7627f1a2bb8ffe4e81d9847318a060822043f7f3.patch
+  - https://metacpan.org/release/HMBRAND/Text-CSV_XS-1.65/changes
+  reported: 2026-10-16
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Text-CSV_XS
-last_checked: 1789907452
-latest_version: '1.64'
+last_checked: 1792324078
+latest_version: '1.65'
 metacpan: https://metacpan.org/pod/Text::CSV_XS
