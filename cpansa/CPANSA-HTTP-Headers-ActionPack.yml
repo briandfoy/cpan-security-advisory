@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.10
+  cves:
+  - CVE-2026-113877
+  description: |-
+    HTTP::Headers::ActionPack versions before 0.10 for Perl allow CPU exhaustion via Accept-Language ranges matched as regular expressions.
+
+    _language_match interpolates each Accept-Language range into the pattern `/^$range\-/i` without escaping it, so regular expression syntax in the header reaches the regex engine. A 12-byte range such as `(a?|b?){26}z` backtracks for seconds, and each increment of the quantifier doubles the time. An invalid range such as `(` fails to compile.
+
+    A remote attacker can exhaust CPU, or make choose_language die, in any application that passes an untrusted Accept-Language header to it.
+  fixed_versions:
+  - '>=0.10'
+  github_security_advisory:
+  - GHSA-q4hv-hfj9-x4r5
+  id: CPANSA-HTTP-Headers-ActionPack-2026-113877
+  references:
+  - https://github.com/robrwo/perl-HTTP-Headers-ActionPack/commit/77f0deb23f3de872c2e64befd72750e0f0f4bec9.patch
+  - https://metacpan.org/release/RRWO/HTTP-Headers-ActionPack-0.10/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/23/27
+  reported: 2026-10-23
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: HTTP-Headers-ActionPack
+last_checked: 1792931843
+latest_version: '0.10'
+metacpan: https://metacpan.org/pod/HTTP::Headers::ActionPack
