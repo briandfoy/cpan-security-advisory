@@ -22,6 +22,31 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/15/15
   reported: 2026-05-15
   severity: ~
+- affected_versions:
+  - <1.006
+  cves:
+  - CVE-2026-112202
+  description: |-
+    Imager::File::GIF versions before 1.006 for Perl allow out-of-bounds reads when consolidating GIF images.
+
+    With `gif_consolidate => 1`, palette indices from the image are used without checking the colour table's bounds. The i_readgif_low routine reads beyond the heap allocation and copies the bytes into output pixels. The default GIF reader is not affected.
+
+    The same code ships bundled in the Imager distribution.
+
+    An attacker supplying a crafted GIF can disclose adjacent heap memory through the decoded output and may crash the process.
+  fixed_versions:
+  - '>=1.006'
+  github_security_advisory:
+  - GHSA-v4hp-5h6w-9897
+  id: CPANSA-Imager-File-GIF-2026-112202
+  references:
+  - https://github.com/tonycoz/imager/commit/dec96f12b3d8a7fd94e86264953a5e4919dd6036.patch
+  - https://github.com/tonycoz/imager/security/advisories/GHSA-v4hp-5h6w-9897
+  - https://metacpan.org/release/TONYC/Imager-1.040/changes
+  - https://metacpan.org/release/TONYC/Imager-File-GIF-1.006/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/21/1
+  reported: 2026-10-20
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Imager-File-GIF
