@@ -22,6 +22,30 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/09/04/3
   reported: 2026-09-04
   severity: ''
+- affected_versions:
+  - '>0.4.2,<0.4.10'
+  cves:
+  - CVE-2026-112921
+  description: |-
+    Robots::Validate versions from 0.4.3 before 0.4.10 for Perl report clients as imposter robots when User-Agent matcher state carries over from a previous request.
+
+    Each Robots::Validate object holds one pure-Perl Aho-Corasick search machine and feeds every User-Agent into it without resetting its state. A User-Agent that ends part-way through a robot name leaves the machine mid-match, so the next User-Agent checked by the same object can complete that name. That client's address is then checked against the robot's DNS rule, which it fails.
+
+    A remote client can use this to make a site that blocks bad robots block other visitors where the prefix User-Agent string is a suffix of a robot being validated.
+
+    Note that deployments with Algorithm::AhoCorasick::XS are also affected, since it was unused due to a different bug.
+  fixed_versions:
+  - '>-0.4.10'
+  github_security_advisory:
+  - GHSA-wh9j-9gh8-wm87
+  id: CPANSA-Robots-Validate-2026-112921
+  references:
+  - https://github.com/robrwo/Robots-Validate/commit/776a1456e6605492b7582ed25d3d5006ef384402.patch
+  - https://metacpan.org/release/RRWO/Robots-Validate-v0.4.10/changes
+  - https://metacpan.org/release/RRWO/Robots-Validate-v0.4.11/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/21/30
+  reported: 2026-10-21
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Robots-Validate
