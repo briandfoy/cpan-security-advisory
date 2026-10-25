@@ -240,3 +240,8 @@ CVE-2026-85086    Improper certificate validation, Initialization of a resource 
 CVE-2026-96286    Uncaught exception vulnerability in Apache Thrift
 CVE-2026-96287    Inefficient Algorithmic Complexity vulnerability i
 CVE-2026-59787	The Perl SNMP trap receiver script shipped with Zabbix does not proper
+CVE-2025-30045	CGM CLININET is vulnerable to Code Injection in the ConvExpr function,
+CVE-2026-30971	ZoneMinder is a free, open source closed-circuit television software a
+CVE-2026-84316	Nginx UI is a web user interface for the Nginx web server. Prior to 2.
+CVE-2026-84317	Nginx UI is a web user interface for the Nginx web server. Prior to 2.
+CVE-2026-84318	Nginx UI is a web user interface for the Nginx web server. From 2.0.0-
