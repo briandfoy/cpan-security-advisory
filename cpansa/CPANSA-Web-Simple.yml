@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.035
+  cves:
+  - CVE-2026-114629
+  description: |-
+    Web::Simple versions before 0.035 for Perl allocate a buffer sized by the Content-Length header for urlencoded body parameters.
+
+    Web::Dispatch::ParamParser::get_unpacked_body_from reads an application/x-www-form-urlencoded body using a single read call, with no cap and the return value ignored. Perl's read grows the buffer to the requested length before reading, so the declared Content-Length determines the allocation.
+
+    An attacker can trigger this through any route whose dispatch specification has a % body-parameter match, such as sub (POST + %name=), sending a Content-Length far larger than the body actually sent. No authentication is involved.
+  fixed_versions:
+  - '>=0.035'
+  github_security_advisory:
+  - GHSA-38cx-9rf2-hq5v
+  id: CPANSA-Web-Simple-2026-114629
+  references:
+  - https://github.com/p5sagit/Web-Simple/commit/7e02c4f6204a2898938d357e6efe6dc2679af695.patch
+  - https://metacpan.org/release/ETHER/Web-Simple-0.035/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/24/4
+  reported: 2026-10-24
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Web-Simple
+last_checked: 1792931652
+latest_version: '0.035'
+metacpan: https://metacpan.org/pod/Web::Simple
