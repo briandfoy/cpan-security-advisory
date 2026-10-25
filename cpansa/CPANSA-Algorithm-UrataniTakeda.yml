@@ -1,0 +1,30 @@
+---
+advisories:
+- affected_versions:
+  - '>0.1.5,<0.1.7'
+  cves:
+  - CVE-2026-113811
+  description: |-
+    Algorithm::UrataniTakeda versions from 0.1.5 before 0.1.7 for Perl allow memory exhaustion via a never-cleared failure shift cache in search.
+
+    The failure shift is cached for each pair of trie state and text character in a field of the matcher object, and nothing clears it. A character not seen before at a given state adds an entry that lasts for the life of the matcher.
+
+    An attacker who can submit text with many distinct characters to a long-lived matcher can grow its memory with each search.
+  fixed_versions:
+  - '>=0.1.7'
+  github_security_advisory:
+  - GHSA-9vcx-647w-pr3h
+  id: CPANSA-Algorithm-UrataniTakeda-2026-113811
+  references:
+  - https://github.com/robrwo/perl-Algorithm-UrataniTakeda/commit/79897ef86a5a9bb6bc381718fe977c8150bc3d5b.patch
+  - https://github.com/robrwo/perl-Algorithm-UrataniTakeda/security/advisories/GHSA-9vcx-647w-pr3h
+  - https://metacpan.org/release/RRWO/Algorithm-UrataniTakeda-v0.1.7/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/21/27
+  reported: 2026-10-21
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Algorithm-UrataniTakeda
+last_checked: 1792931832
+latest_version: v0.1.8
+metacpan: https://metacpan.org/pod/Algorithm::UrataniTakeda
