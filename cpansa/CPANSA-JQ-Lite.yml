@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <2.51
+  cves:
+  - CVE-2026-78497
+  description: |-
+    JQ::Lite versions before 2.51 for Perl execute Perl code embedded in a query's regular expression by compiling it with string eval.
+
+    The pattern given to test(), match(), or the match and =~ conditions of select() is placed in a `qr'...'` literal and compiled as source text, so a `(?{ ... })` code block in it runs without `use re 'eval'`. Single quotes in the pattern are escaped, but a code block runs in place and needs none.
+
+    An attacker who supplies a query, or text that an application inserts into the pattern of one, can execute arbitrary Perl code in the calling process.
+  fixed_versions:
+  - '>=2.51'
+  github_security_advisory: []
+  id: CPANSA-JQ-Lite-2026-78497
+  references:
+  - https://github.com/kawamurashingo/JQ-Lite/commit/c461721ae3d5a90d6d94dbb234c1b8dfee5c1769.patch
+  - https://metacpan.org/release/SHINGO/JQ-Lite-2.51/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/18/3
+  reported: 2026-10-18
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: JQ-Lite
+last_checked: 1792931865
+latest_version: '2.59'
+metacpan: https://metacpan.org/pod/JQ::Lite
