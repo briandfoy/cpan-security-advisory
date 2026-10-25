@@ -33,6 +33,33 @@ advisories:
   - https://github.com/certifi/python-certifi/commit/bd8153872e9c6fc98f4023df9c2deaffea2fa463
   reported: 2024-06-11
   severity: low
+- affected_versions:
+  - <20261020
+  cves:
+  - CVE-2026-113812
+  description: |-
+    Mozilla::CA versions before 20261020 for Perl provide a CA certificate bundle containing a root linked to compromised intermediates.
+
+    The bundle includes "emSign ECC Root CA - G3", which provides a trust path for intermediate certificates whose private keys are publicly available.
+
+    An attacker able to intercept or redirect client traffic may use these keys to impersonate a TLS server.
+
+    LWP, HTTP::Tiny and other clients normally use IO::Socket::SSL, which looks for CA certificates in OpenSSL's default locations before falling back to Mozilla::CA.
+
+    Configuration and environment variables can override this selection. Users should check which CA store their client uses. If it uses the system store, check for and install the operating system vendor's updates for this incident.
+  fixed_versions:
+  - '>=20261020'
+  github_security_advisory:
+  - GHSA-h2xv-9jg2-5v55
+  id: CPANSA-Mozilla-CA-2026-113812
+  references:
+  - https://bugzilla.mozilla.org/show_bug.cgi?id=2083449
+  - https://emudhra.we-have-a-problem.com/
+  - https://metacpan.org/release/LWP/Mozilla-CA-20261020/changes
+  - https://www.openwall.com/lists/oss-security/2026/10/20/1
+  - http://www.openwall.com/lists/oss-security/2026/10/20/36
+  reported: 2026-10-20
+  severity: ''
 cpansa_version: 2
 distribution: Mozilla-CA
 last_checked: 1789907398
