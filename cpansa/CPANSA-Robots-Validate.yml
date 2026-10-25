@@ -35,7 +35,7 @@ advisories:
 
     Note that deployments with Algorithm::AhoCorasick::XS are also affected, since it was unused due to a different bug.
   fixed_versions:
-  - '>-0.4.10'
+  - '>=0.4.10'
   github_security_advisory:
   - GHSA-wh9j-9gh8-wm87
   id: CPANSA-Robots-Validate-2026-112921
