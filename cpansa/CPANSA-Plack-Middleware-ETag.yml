@@ -1,0 +1,27 @@
+---
+advisories:
+- affected_versions:
+  - '>0.04,<0.06'
+  cves:
+  - CVE-2026-111946
+  description: |-
+    Plack::Middleware::ETag versions from 0.04 before 0.06 for Perl disclose file inode numbers in the default ETag header.
+
+    When the response body is a filehandle and the file_etag option is not set, the ETag is built from the file's inode number, modification time and size. Clients receiving affected responses may use the disclosed inode numbers to aid backend fingerprinting and correlation of files served through different URLs.
+  fixed_versions:
+  - '>=0.06'
+  github_security_advisory:
+  - GHSA-943g-rgq5-6xc8
+  id: CPANSA-Plack-Middleware-ETag-2026-111946
+  references:
+  - https://github.com/robrwo/perl-Plack-Middleware-ETag/security/advisories/GHSA-943g-rgq5-6xc8
+  - https://metacpan.org/release/RRWO/Plack-Middleware-ETag-0.06/changes
+  - https://www.cve.org/CVERecord?id=CVE-2003-1418
+  reported: 2026-10-19
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Plack-Middleware-ETag
+last_checked: 1792931724
+latest_version: '0.06'
+metacpan: https://metacpan.org/pod/Plack::Middleware::ETag
