@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <6.18
+  - <6.17
   cves:
   - CVE-2025-15604
   description: Amon2 versions before 6.17 for Perl use an insecure random_string implementation
@@ -17,7 +17,7 @@ advisories:
     session ids, generating secrets for signing or encrypting cookie session data
     and generating tokens used for Cross Site Request Forgery (CSRF) protection.
   fixed_versions:
-  - '>=6.18'
+  - '>=6.17'
   github_security_advisory:
   - GHSA-7r2j-hgh9-jqqx
   id: CPANSA-Amon2-2025-15604
