@@ -15,7 +15,9 @@ advisories:
   fixed_versions: []
   github_security_advisory:
   - GHSA-3vcr-g3hm-2qr2
-  id: CPANSA--2026-5083
+  id: CPANSA-Ado-2026-5083
+  previous_id:
+  - CPANSA--2026-5083
   references:
   - https://backpan.perl.org/authors/id/B/BE/BEROV/Ado-0.935.tar.gz
   - https://github.com/kberov/Ado/issues/112

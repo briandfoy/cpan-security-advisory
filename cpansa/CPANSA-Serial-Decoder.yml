@@ -18,7 +18,9 @@ advisories:
   - '>=5.005'
   github_security_advisory:
   - GHSA-xhpj-269v-vq2q
-  id: CPANSA--2026-8796
+  id: CPANSA-Sereal-Decoder-2026-8796
+  previous_id:
+  - CPANSA--2026-8796
   references:
   - https://github.com/Sereal/Sereal/commit/303a2c69cdba80bf37a3ff43461e0aa78198a7a3.patch
   - https://metacpan.org/release/YVES/Sereal-Decoder-5.005/changes

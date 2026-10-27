@@ -22,7 +22,9 @@ advisories:
   fixed_versions: []
   github_security_advisory:
   - GHSA-9ppr-x3mg-6jg2
-  id: CPANSA--2026-95831
+  id: CPANSA-Crypt-SelfCertificate-2026-95831
+  previous_id:
+  - CPANSA--2026-95831
   references:
   - https://www.nntp.perl.org/group/perl.cpan.testers.discuss/2026/09/msg4754.html
   - http://www.openwall.com/lists/oss-security/2026/09/22/21

@@ -11,7 +11,9 @@ advisories:
   fixed_versions: []
   github_security_advisory:
   - GHSA-4gpm-fvvv-c6c5
-  id: CPANSA--2026-3031
+  id: CPANSA-Image-Epeg-2026-3031
+  previous_id:
+  - CPANSA--2026-3031
   references:
   - https://backpan.metacpan.org/authors/id/T/TO/TOKUHIROM/Image-Epeg-0.15.readme
   - https://backpan.metacpan.org/authors/id/T/TO/TOKUHIROM/Image-Epeg-0.15.tar.gz
