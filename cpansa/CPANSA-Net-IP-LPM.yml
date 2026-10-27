@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>=1.10'
+  - ==1.10
   cves:
   - CVE-2025-40910
   description: Net::IP::LPM version 1.10 for Perl does not properly consider leading
