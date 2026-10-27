@@ -14,7 +14,9 @@ advisories:
   - '>=5.36'
   github_security_advisory:
   - GHSA-wf9v-63v3-ff2x
-  id: CPANSA--2026-19953
+  id: CPANSA-URI-2026-19953
+  previous_id:
+  - CPANSA--2026-19953
   references:
   - https://github.com/libwww-perl/URI/commit/956619a9e94f86d8d2c529b4e06a3674c54a73e7.patch
   - https://github.com/libwww-perl/URI/pull/191
