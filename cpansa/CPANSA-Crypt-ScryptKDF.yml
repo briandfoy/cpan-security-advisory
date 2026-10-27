@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <0.11
+  - <0.011
   cves:
   - CVE-2026-8647
   description: Crypt::ScryptKDF versions through 0.010 for Perl uses insecure random
@@ -10,7 +10,7 @@ advisories:
     Crypt::OpenSSL::Random, Net::SSLeay, Crypt::Random, or Bytes::Random::Secure were
     available.
   fixed_versions:
-  - '>=0.11'
+  - '>=0.011'
   github_security_advisory: []
   id: CPANSA-Crypt-ScryptKDF-2026-8647
   references:
