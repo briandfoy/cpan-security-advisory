@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>=2.04,<=2.1900'
+  - '>=2.04,<=2.1800'
   cves:
   - CVE-2025-40918
   description: Authen::SASL::Perl::DIGEST_MD5 versions 2.04 through 2.1800 for Perl
