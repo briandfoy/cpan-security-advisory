@@ -6,7 +6,7 @@ advisories:
   description: |
     LWP::Protocol::file can open existent file from file:// scheme. However, current version of LWP uses open FILEHANDLE,EXPR and it has ability to execute arbitrary command
   fixed_versions:
-  - '>=6.27'
+  - '>=6.28'
   github_security_advisory: []
   id: CPANSA-libwww-perl-2017-01
   references:
