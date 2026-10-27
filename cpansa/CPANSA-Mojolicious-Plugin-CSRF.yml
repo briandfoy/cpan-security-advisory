@@ -9,7 +9,7 @@ advisories:
     MD5 of the process id, the current time, and a single call to the built-in rand()
     function.
   fixed_versions:
-  - '>=1.03'
+  - '>=1.04'
   github_security_advisory:
   - GHSA-mqr9-mgqq-52rq
   id: CPANSA-Mojolicious-Plugin-CSRF-2025-40915
