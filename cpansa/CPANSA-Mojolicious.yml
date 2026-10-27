@@ -21,7 +21,7 @@ advisories:
   description: |
     Small sessions could be used as part of a brute-force attack to decode the session secret.
   fixed_versions:
-  - '>=9.91'
+  - '>=9.19'
   github_security_advisory: []
   id: CPANSA-Mojolicious-2021-02
   references:
