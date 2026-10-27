@@ -1,5 +1,14 @@
 # Changes for CPANSA::DB
 
+20261027.001 2026-10-27T12:01:00Z
+	* fix some report IDs that were missing the dist name:
+	(#444, from Takafumi ONAKA)
+		- CPANSA--2026-5083 -> CPANSA-Ado-2026-5083
+		- CPANSA--2026-95831 -> CPANSA-Crypt-SelfCertificate-2026-95831
+		- CPANSA--2026-3031 -> CPANSA-Image-Epeg-2026-3031
+		- CPANSA--2026-8796 -> CPANSA-Sereal-Decoder-2026-8796
+		- CPANSA--2026-19953 -> CPANSA-URI-2026-19953
+
 20261025.002 2026-10-25T17:31:42Z
 	* data update for 2026-10-25
 
