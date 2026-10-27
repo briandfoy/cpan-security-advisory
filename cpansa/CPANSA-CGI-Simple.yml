@@ -76,7 +76,7 @@ advisories:
   reported: 2010-12-06
   severity: ~
 - affected_versions:
-  - <=1.282
+  - <1.282
   cves:
   - CVE-2025-40927
   description: 'CGI::Simple versions before 1.282 for Perl has a HTTP response splitting
