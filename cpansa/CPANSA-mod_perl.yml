@@ -33,7 +33,8 @@ advisories:
   - CVE-2011-2767
   description: |
     mod_perl 2.0 through 2.0.10 allows attackers to execute arbitrary Perl code by placing it in a user-owned .htaccess file, because (contrary to the documentation) there is no configuration option that permits Perl code for the administrator's control of HTTP request processing without also permitting unprivileged users to run Perl code in the context of the user account that runs Apache HTTP Server processes.
-  fixed_versions: []
+  fixed_versions:
+  - '>=2.0.11'
   github_security_advisory:
   - GHSA-hm7f-5jxx-cwvg
   id: CPANSA-mod_perl-2011-2767
