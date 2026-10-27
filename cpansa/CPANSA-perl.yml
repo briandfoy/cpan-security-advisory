@@ -82,7 +82,8 @@ advisories:
   description: |
     The VDir::MapPathA and VDir::MapPathW functions in Perl 5.22 allow remote attackers to cause a denial of service (out-of-bounds read) and possibly execute arbitrary code via a crafted (1) drive letter or (2) pInName argument.
   fixed_versions:
-  - '>=5.22.2'
+  - '>=5.22.2,<5.23.0'
+  - '>=5.23.7'
   github_security_advisory:
   - GHSA-523x-9jc5-mf89
   id: CPANSA-perl-2015-8608
@@ -123,6 +124,7 @@ advisories:
   description: |
     regcomp.c in Perl before 5.30.3 allows a buffer overflow via a crafted regular expression because of recursive S_study_chunk calls.
   fixed_versions:
+  - '>=5.28.3,<5.29.0'
   - '>=5.30.3'
   github_security_advisory: []
   id: CPANSA-perl-2020-12723
@@ -156,6 +158,7 @@ advisories:
   description: |
     Perl before 5.30.3 has an integer overflow related to mishandling of a "PL_regkind[OP(n)] == NOTHING" situation. A crafted regular expression could lead to malformed bytecode with a possibility of instruction injection.
   fixed_versions:
+  - '>=5.28.3,<5.29.0'
   - '>=5.30.3'
   github_security_advisory: []
   id: CPANSA-perl-2020-10878
@@ -188,6 +191,7 @@ advisories:
   description: |
     Perl before 5.30.3 on 32-bit platforms allows a heap-based buffer overflow because nested regular expression quantifiers have an integer overflow.
   fixed_versions:
+  - '>=5.28.3,<5.29.0'
   - '>=5.30.3'
   github_security_advisory: []
   id: CPANSA-perl-2020-10543
@@ -213,13 +217,14 @@ advisories:
   severity: high
 - affected_versions:
   - '>=5.22.0,<5.24.4'
-  - '>=5.26.0,<5.28.2'
+  - '>=5.26.0,<5.26.2'
   cves:
   - CVE-2018-6798
   description: |
     An issue was discovered in Perl 5.22 through 5.26. Matching a crafted locale dependent regular expression can cause a heap-based buffer over-read and potentially information disclosure.
   fixed_versions:
-  - '>=5.28.0'
+  - '>=5.24.4,<5.25.0'
+  - '>=5.26.2'
   github_security_advisory:
   - GHSA-pfh3-76fp-4978
   id: CPANSA-perl-2018-6798
@@ -244,7 +249,8 @@ advisories:
   description: |
     An issue was discovered in Perl 5.18 through 5.26. A crafted regular expression can cause a heap-based buffer overflow, with control over the bytes written.
   fixed_versions:
-  - '>=5.28.0'
+  - '>=5.24.4,<5.25.0'
+  - '>=5.26.2'
   github_security_advisory:
   - GHSA-8qqx-9gj6-xx9p
   id: CPANSA-perl-2018-6797
@@ -269,6 +275,7 @@ advisories:
   description: |
     Heap-based buffer overflow in the pack function in Perl before 5.26.2 allows context-dependent attackers to execute arbitrary code via a large item count.
   fixed_versions:
+  - '>=5.24.4,<5.25.0'
   - '>=5.26.2'
   github_security_advisory:
   - GHSA-wrx2-mfgr-hgr7
@@ -355,6 +362,7 @@ advisories:
   description: |
     Perl before 5.26.3 and 5.28.0 before 5.28.1 has a buffer overflow via a crafted regular expression that triggers invalid write operations.
   fixed_versions:
+  - '>=5.26.3,<5.27.0'
   - '>=5.28.1'
   github_security_advisory:
   - GHSA-qj2w-cj4c-5f2g
@@ -386,6 +394,7 @@ advisories:
   description: |
     Perl before 5.26.3 and 5.28.x before 5.28.1 has a buffer overflow via a crafted regular expression that triggers invalid write operations.
   fixed_versions:
+  - '>=5.26.3,<5.27.0'
   - '>=5.28.1'
   github_security_advisory:
   - GHSA-qr73-9894-ffxf
@@ -431,6 +440,7 @@ advisories:
   description: |
     Buffer overflow in the S_grok_bslash_N function in regcomp.c in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows remote attackers to disclose sensitive information or cause a denial of service (application crash) via a crafted regular expression with an invalid '\\N{U+...}' escape.
   fixed_versions:
+  - '>=5.24.3,<5.25.0'
   - '>=5.26.1'
   github_security_advisory:
   - GHSA-h435-qr7v-xh34
@@ -460,6 +470,7 @@ advisories:
   description: |
     Heap-based buffer overflow in the S_regatom function in regcomp.c in Perl 5 before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 allows remote attackers to cause a denial of service (out-of-bounds write) via a regular expression with a '\\N{}' escape and the case-insensitive modifier.
   fixed_versions:
+  - '>=5.24.3,<5.25.0'
   - '>=5.26.1'
   github_security_advisory:
   - GHSA-q52c-c9hv-jc77
@@ -508,13 +519,15 @@ advisories:
   reported: 2016-05-25
   severity: high
 - affected_versions:
-  - <5.18.0
+  - <5.14.4
+  - '>=5.15.0,<5.16.3'
   cves:
   - CVE-2013-1667
   description: |
     The rehash mechanism in Perl 5.8.2 through 5.16.x allows context-dependent attackers to cause a denial of service (memory consumption and crash) via a crafted hash key.
   fixed_versions:
-  - '>=5.26.1'
+  - '>=5.14.4,<5.15.0'
+  - '>=5.16.3'
   github_security_advisory:
   - GHSA-wv37-679q-qgxw
   id: CPANSA-perl-2013-1667
@@ -954,7 +967,7 @@ advisories:
   description: |
     Integer underflow in regcomp.c in Perl before 5.20, as used in Apple OS X before 10.10.5 and other products, allows context-dependent attackers to execute arbitrary code or cause a denial of service (application crash) via a long digit string associated with an invalid backreference within a regular expression.
   fixed_versions:
-  - '>=5.20'
+  - '>=5.20.0'
   github_security_advisory:
   - GHSA-m7pj-qf68-j4wp
   id: CPANSA-perl-2013-7422
@@ -1021,6 +1034,7 @@ advisories:
   description: |
     Stack-based buffer overflow in the CPerlHost::Add method in win32/perlhost.h in Perl before 5.24.3-RC1 and 5.26.x before 5.26.1-RC1 on Windows allows attackers to execute arbitrary code via a long environment variable.
   fixed_versions:
+  - '>=5.24.3,<5.25.0'
   - '>=5.26.1'
   github_security_advisory:
   - GHSA-6g5g-x3hj-6v2x
@@ -1065,9 +1079,9 @@ advisories:
   description: |
     A crafted regular expression when compiled by perl 5.30.0 through 5.38.0 can cause a one attacker controlled byte buffer overflow in a heap allocated buffer
   fixed_versions:
-  - ==5.34.3
-  - ==5.36.3
-  - ==5.38.1
+  - '>=5.34.3,<5.35.0'
+  - '>=5.36.3,<5.37.0'
+  - '>=5.38.1'
   github_security_advisory:
   - GHSA-96fh-9q43-rmjh
   id: CPANSA-perl-2023-47038
@@ -1090,6 +1104,8 @@ advisories:
 
     An attacker with limited privileges can exploit this behavior by placing cmd.exe in locations with weak permissions, such as C:\ProgramData. By doing so, when an administrator attempts to use this executable from these compromised locations, arbitrary code can be executed.
   fixed_versions:
+  - '>=5.34.2,<5.35.0'
+  - '>=5.36.3,<5.37.0'
   - '>=5.38.1'
   github_security_advisory:
   - GHSA-44qm-928x-6p3g
@@ -1124,7 +1140,8 @@ advisories:
   severity: ~
 - affected_versions:
   - '>0,<5.38.4'
-  - '>=5.40.0,<5.40.2'
+  - '>=5.39.0,<5.40.2'
+  - '>=5.41.0,<5.41.11'
   cves:
   - CVE-2024-56406
   description: A heap buffer overflow vulnerability was discovered in Perl.   When
@@ -1134,8 +1151,9 @@ advisories:
     vulnerability can enable Denial of Service and possibly Code Execution attacks
     on platforms that lack sufficient defenses.
   fixed_versions:
-  - '>=5.40.1'
-  - '>=5.38.4,<5.40.0'
+  - '>=5.38.4,<5.39.0'
+  - '>=5.40.2,<5.41.0'
+  - '>=5.41.11'
   github_security_advisory:
   - GHSA-p6jf-pv8c-623c
   id: CPANSA-perl-2024-56406
@@ -1149,7 +1167,7 @@ advisories:
   severity: ~
 - affected_versions:
   - '>=5.16.3,<5.38.5'
-  - '>=5.40.0,<5.40.3'
+  - '>=5.39.0,<5.40.3'
   - '>=5.41.0,<5.41.13'
   cves:
   - CVE-2025-40909
@@ -1162,9 +1180,9 @@ advisories:
     be able to exploit. The bug was introduced in commit 11a11ecf4bea72b17d250cfb43c897be1341861e
     and released in Perl version 5.13.6
   fixed_versions:
+  - '>=5.38.5,<5.39.0'
+  - '>=5.40.3,<5.41.0'
   - '>=5.41.13'
-  - '>=5.38.5,<5.40.0'
-  - '>=5.40.3'
   github_security_advisory:
   - GHSA-jpf5-526x-c5hw
   id: CPANSA-perl-2025-40909
@@ -1195,7 +1213,7 @@ advisories:
     compiles an attacker-controlled regular expression on a 32-bit perl build triggers
     a heap buffer overflow at compile time.
   fixed_versions:
-  - '>=5.40.5,<5.42.0'
+  - '>=5.40.5,<5.41.0'
   - '>=5.42.3,<5.43.0'
   - '>=5.43.11'
   github_security_advisory:
@@ -1221,7 +1239,7 @@ advisories:
     pointer out of bounds.  A template derived from untrusted input can read heap
     memory past the buffer and return it to the caller.
   fixed_versions:
-  - '>=5.40.5,<5.42.0'
+  - '>=5.40.5,<5.41.0'
   - '>=5.42.3,<5.43.0'
   - '>=5.43.11'
   github_security_advisory:
@@ -1249,7 +1267,7 @@ advisories:
     (failing to match strings it should). When such a pattern gates an access or filtering
     decision, the result is wrong.
   fixed_versions:
-  - '>=5.40.5,<5.43.10'
+  - '>=5.40.5,<5.41.0'
   - '>=5.42.3,<5.43.0'
   - '>=5.43.10'
   github_security_advisory:
