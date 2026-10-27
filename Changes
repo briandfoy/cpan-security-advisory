@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20261027.002 2026-10-27T17:37:40Z
+	* many small updates to reports with version mistakes (#445)
+
 20261027.001 2026-10-27T12:01:00Z
 	* fix some report IDs that were missing the dist name:
 	(#444, from Takafumi ONAKA)
