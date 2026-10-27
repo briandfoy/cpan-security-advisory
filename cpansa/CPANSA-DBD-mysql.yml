@@ -36,7 +36,8 @@ advisories:
   - CVE-2016-1249
   description: "Out-of-bounds read.\n"
   fixed_versions:
-  - <2.9003,>=4.039
+  - <2.9003
+  - '>=4.039'
   github_security_advisory:
   - GHSA-v93g-vffx-whwx
   id: CPANSA-DBD-mysql-2016-03
