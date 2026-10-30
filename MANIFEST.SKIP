@@ -38,14 +38,16 @@ main-modules
 scratch/
 CPANSA-XXX.yml
 cpansa/CPANSA-XXX.yml
-.downstream.json
+^\.downstream\.json
 apps/
 cve-search-results.json
 .cache/
 test-meta.pl
 local/
 
-.downstream.json
-cpan_tester_reports
-.claude/
+^cpan_tester_reports/
+^\.claude/
 ^CLAUDE.md
+^AGENTS\.md
+^CLAUDE\.md
+^\.claude
