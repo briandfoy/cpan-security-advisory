@@ -684,7 +684,7 @@ advisories:
   reported: 2008-04-24
   severity: ~
 - affected_versions:
-  - <5.10.0
+  - <=5.10.0
   cves:
   - CVE-2005-3962
   description: |
