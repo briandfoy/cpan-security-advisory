@@ -23,7 +23,7 @@ advisories:
   reported: 2026-09-04
   severity: ''
 - affected_versions:
-  - '>0.4.3,<0.4.10'
+  - '>=0.4.3,<0.4.10'
   cves:
   - CVE-2026-112921
   description: |-
