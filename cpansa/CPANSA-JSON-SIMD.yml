@@ -1,21 +1,147 @@
 ---
 advisories:
-  - affected_versions:
-      - '<1.07'
-    cves:
-      - CVE-2025-40930
-    description: 'JSON::SIMD before version 1.07 and earlier for Perl has an integer buffer overflow causing a segfault when parsing crafted JSON, enabling denial-of-service attacks or other unspecified impact.'
-    fixed_versions:
-    - '>=1.07'
-    github_security_advisory:
-      - GHSA-9pm2-v7x2-9mw5
-    id: CPANSA-JSON-SIMD-2025-40930
-    references:
-      - https://github.com/pjuhasz/JSON-SIMD/commit/9a87de7331c9fa5198cae404a83b17649cf7b918.patch
-      - https://metacpan.org/release/PJUHASZ/JSON-SIMD-1.06/source/SIMD.xs#L248
-      - https://metacpan.org/release/PJUHASZ/JSON-SIMD-1.07/changes
-    reported: 2025-09-08
-    severity: ~
+- affected_versions:
+  - '<1.07'
+  cves:
+  - CVE-2025-40930
+  description: 'JSON::SIMD before version 1.07 and earlier for Perl has an integer buffer overflow causing a segfault when parsing crafted JSON, enabling denial-of-service attacks or other unspecified impact.'
+  fixed_versions:
+  - '>=1.07'
+  github_security_advisory:
+  - GHSA-9pm2-v7x2-9mw5
+  id: CPANSA-JSON-SIMD-2025-40930
+  references:
+  - https://github.com/pjuhasz/JSON-SIMD/commit/9a87de7331c9fa5198cae404a83b17649cf7b918.patch
+  - https://metacpan.org/release/PJUHASZ/JSON-SIMD-1.06/source/SIMD.xs#L248
+  - https://metacpan.org/release/PJUHASZ/JSON-SIMD-1.07/changes
+  reported: 2025-09-08
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110672
+  description: Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded key
+    of an object rejected for a duplicate key or a missing colon in decode_hv.  A
+    quoted key of 24 or more bytes, or one containing a non-ASCII byte or an escape
+    sequence, is decoded into a new scalar. Nothing frees that scalar when the object
+    is rejected for a missing ':' after the key or, from 4.09, for a duplicate key.
+    Duplicate keys are an error unless allow_dupkeys, dupkeys_as_arrayref or relaxed
+    is set.  A process that keeps running after a failed decode retains one key per
+    rejected document, with its size chosen by the sender. Repeated requests exhaust
+    process memory.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-cg4x-76pf-wq6q
+  id: CPANSA-JSON-SIMD-2026-110672
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/532b53cf8d2ca5ab6bc24048325566d1f7132425.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110673
+  description: Cpanel::JSON::XS versions before 4.80 for Perl allow stack exhaustion
+    via nested tagged values under allow_tags in decode_tag.  With allow_tags, "("
+    starts a tagged value. Its tag and value are decoded recursively, and each can
+    start another tagged value. Unlike arrays and objects, this nesting is not counted
+    against max_depth.  A run of "(" bytes exhausts the C stack and triggers an uncatchable
+    segmentation fault regardless of max_depth.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-fgcx-mvpm-hff9
+  id: CPANSA-JSON-SIMD-2026-110673
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/995eb484a9351753e2a8ec3317918b5b4a4e086a.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110678
+  description: Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion
+    by buffering incremental input past max_size in incr_parse.  The parser appends
+    each chunk to its buffer. In scalar or list context, it compares max_size with
+    how far it has progressed, not with the buffer length. A chunk that starts with
+    a NUL byte stops the parser before it progresses, and a call in void context skips
+    the check, so the buffer grows without limit.  A peer streaming data to an incr_parse
+    consumer can exhaust process memory regardless of max_size.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-94qg-48qm-9798
+  id: CPANSA-JSON-SIMD-2026-110678
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/d516f296b1714e06b0fb9eaae72f4558ae3d83d6.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110682
+  description: Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input
+    chunking change the decoded value of top-level numbers in incr_parse.  allow_nonref
+    is enabled by default and incr_parse inherits it. A top-level number, true, false
+    or null has no closing delimiter, so the incremental parser decodes whatever has
+    arrived. The bytes 12 decode as one value when read together, but as 1 and then
+    2 when split across two reads.  A peer that can influence read boundaries can
+    change how many messages a stream consumer decodes and what values they carry.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-vg22-xr3v-rw3m
+  id: CPANSA-JSON-SIMD-2026-110682
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/f632d6690d82c14cd2d76d648805325201c52b83.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110685
+  description: Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments
+    of a tagged value when its THAW method dies in decode_tag.  With allow_tags, a
+    tagged value's class name and argument array are decoded and passed to the class's
+    THAW method. Both are released only after THAW returns, so a THAW that dies leaves
+    the whole decoded argument structure allocated.  Each rejected document leaks
+    data of a size the sender chooses, so a process that catches the error and keeps
+    running exhausts its memory.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-mv2h-wx54-jcf9
+  id: CPANSA-JSON-SIMD-2026-110685
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/9ab010221c069a7af9ef7463454ecd3b8ace9c58.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
+- affected_versions:
+  - '<1.08'
+  cves:
+  - CVE-2026-110686
+  description: Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks
+    when a filter removes itself during decoding in decode_hv.  A decode copies the
+    parser's filter_json_object and filter_json_single_key_object callbacks without
+    taking references to them. A filter callback that removes the last single-key
+    filter frees the callback table while the decode in progress still uses it. The
+    next object is dispatched through freed memory and can crash the process.
+  fixed_versions:
+  - '>=1.08'
+  github_security_advisory:
+  - GHSA-q5qq-6rc9-83rg
+  id: CPANSA-JSON-SIMD-2026-110686
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/c3e7e3c5b0b72d82b072c6a7cfb8c34cec4c7ea2.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: ~
 cpansa_version: 2
 darkpan: ~
 distribution: JSON-SIMD
