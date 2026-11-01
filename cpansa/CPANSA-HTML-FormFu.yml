@@ -29,6 +29,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-FormFu
-last_checked: 1788639275
-latest_version: '2.07'
+last_checked: 1793549734
+latest_version: '2.09'
 metacpan: https://metacpan.org/pod/HTML::FormFu
