@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<0.08'
+  - <0.08
   cves:
   - CVE-2026-13410
   description: Dancer::Plugin::Auth::Google versions through 0.07 for Perl have TLS
@@ -25,6 +25,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Dancer-Plugin-Auth-Google
-last_checked: 1789907964
-latest_version: '0.08'
+last_checked: 1793539789
+latest_version: 0.08
 metacpan: https://metacpan.org/pod/Dancer::Plugin::Auth::Google
