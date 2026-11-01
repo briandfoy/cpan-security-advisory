@@ -23,6 +23,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-Buffer-Shared
-last_checked: 1789907325
-latest_version: '0.08'
+last_checked: 1793539792
+latest_version: '0.10'
 metacpan: https://metacpan.org/pod/Data::Buffer::Shared

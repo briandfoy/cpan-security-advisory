@@ -16,7 +16,7 @@ advisories:
   reported: 2012-05-07
 cpansa_version: 2
 distribution: Crypt-Passwd-XS
-last_checked: 1789907309
-latest_version: '0.601'
+last_checked: 1793539777
+latest_version: '0.701'
 metacpan: https://metacpan.org/pod/Crypt::Passwd::XS
 repo: ~

@@ -27,6 +27,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Apache2-API
-last_checked: 1789907273
-latest_version: v0.5.5
+last_checked: 1793539725
+latest_version: v0.5.6
 metacpan: https://metacpan.org/pod/Apache2::API

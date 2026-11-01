@@ -43,6 +43,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-Intern-Shared
-last_checked: 1789907329
-latest_version: '0.05'
+last_checked: 1793539800
+latest_version: '0.07'
 metacpan: https://metacpan.org/pod/Data::Intern::Shared

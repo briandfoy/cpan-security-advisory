@@ -73,6 +73,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-IP-LPM
-last_checked: 1751550544
-latest_version: 1.12
+last_checked: 1793539891
+latest_version: '1.13'
 metacpan: https://metacpan.org/pod/Net::IP::LPM

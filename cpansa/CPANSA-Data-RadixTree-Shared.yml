@@ -43,6 +43,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Data-RadixTree-Shared
-last_checked: 1789907330
-latest_version: '0.05'
+last_checked: 1793539806
+latest_version: '0.07'
 metacpan: https://metacpan.org/pod/Data::RadixTree::Shared

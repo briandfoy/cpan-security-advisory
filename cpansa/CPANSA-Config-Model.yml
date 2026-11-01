@@ -45,7 +45,7 @@ advisories:
   reported: 2017-05-10
 cpansa_version: 2
 distribution: Config-Model
-last_checked: 1789907301
-latest_version: '2.166'
+last_checked: 1793539768
+latest_version: '2.168'
 metacpan: https://metacpan.org/pod/Config::Model
 repo: https://github.com/dod38fr/config-model

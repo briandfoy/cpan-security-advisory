@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Imager-File-JPEG
-last_checked: 1789907369
-latest_version: '1.005'
+last_checked: 1793539853
+latest_version: '1.007'
 metacpan: https://metacpan.org/pod/Imager::File::JPEG

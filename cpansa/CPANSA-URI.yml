@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: URI
-last_checked: 1789907456
-latest_version: '5.37'
+last_checked: 1793539960
+latest_version: '5.40'
 metacpan: https://metacpan.org/pod/URI
