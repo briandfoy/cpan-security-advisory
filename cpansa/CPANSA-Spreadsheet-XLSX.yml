@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <0.19
+  cves:
+  - CVE-2026-115943
+  description: |-
+    Spreadsheet::XLSX versions before 0.19 for Perl allow code execution via string eval of number format conditions in ExcelFmt.
+
+    When a number format has a condition such as [>100], ExcelFmt chooses the format section by passing the condition and the cell value to a string eval. Both come from the workbook, and the eval runs while Spreadsheet::XLSX->new parses it.
+
+    An attacker who supplies an XLSX file can run arbitrary Perl code.
+  fixed_versions:
+  - '>=0.19'
+  github_security_advisory:
+  - GHSA-h33r-pwjw-x33j
+  id: CPANSA-Spreadsheet-XLSX-2026-115943
+  references:
+  - https://metacpan.org/release/ASB/Spreadsheet-XLSX-0.19/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/30/3
+  reported: 2026-10-29
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Spreadsheet-XLSX
+last_checked: 1793539939
+latest_version: '0.20'
+metacpan: https://metacpan.org/pod/Spreadsheet::XLSX
