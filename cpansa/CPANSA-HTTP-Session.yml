@@ -24,9 +24,29 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/03/28/5
   reported: 2026-03-28
   severity: ~
+- affected_versions:
+  - <0.54
+  cves:
+  - CVE-2026-13575
+  description: |-
+    HTTP::Session versions before 0.54 for Perl allow memcached command injection via unfiltered session ids in HTTP::Session::Store::CHI.
+
+    The session id from the client's cookie reaches the CHI cache unchanged. The sibling HTTP::Session::Store::Memcached rejects ids that contain control characters, but the CHI store has no such check, and CHI does not escape keys for its memcached drivers.
+
+    With a memcached driver, a CR and LF in the session id end the cache command early, and the server reads the bytes after them as further commands.
+  fixed_versions:
+  - '>=0.54'
+  github_security_advisory: []
+  id: CPANSA-http-session-2026-13575
+  references:
+  - https://github.com/tokuhirom/http-session/commit/58288cbf941da6d2aad4ff5c0c79e523d9e583b4.patch
+  - https://metacpan.org/release/KTAT/http-session-0.53/source/lib/HTTP/Session/Store/CHI.pm
+  - https://metacpan.org/release/TOKUHIROM/http-session-0.54/changes
+  reported: 2026-11-01
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: http-session
-last_checked: 1789907361
+last_checked: 1793539844
 latest_version: '0.54'
 metacpan: https://metacpan.org/pod/HTTP::Session
