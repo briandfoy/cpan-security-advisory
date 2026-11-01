@@ -8,7 +8,7 @@ use warnings;
 use FindBin qw($Bin);
 use lib ("$Bin/../lib", "$Bin/lib");
 
-use Antsy qw(:all);
+use Antsy 0.908 qw(:all);
 use Carp qw(croak);
 use CPAN::DistnameInfo;
 use Cwd qw(getcwd);
@@ -102,7 +102,7 @@ sub add_meta ( $db ) {
 sub debug ( $message, $indent = 0 ) {
 	return unless config()->{debug};
 	_message *STDERR,
-		text_cyan() . $message . reset(),
+		text_cyan() . $message . reset_all(),
 		$indent;
 }
 
@@ -115,7 +115,7 @@ sub info ( $message, $indent = 0 ) {
 
 sub unexpected ( $message, $indent = 0 ) {
 	_message *STDERR,
-		text_bright_red() . $message . reset(),
+		text_bright_red() . $message . reset_all(),
 		$indent;
 }
 
@@ -272,6 +272,8 @@ sub default_version ($output_file) {
 	return $version;
 }
 
+sub dumper { state $rc = require Data::Dumper; Data::Dumper->new([@_])->Indent(1)->Sortkeys(1)->Terse(1)->Useqq(1)->Dump }
+
 sub get_commit {
 	my( $commit ) = `git rev-parse HEAD`;
 	chomp ($commit);
@@ -330,7 +332,7 @@ sub output_gpg_signature ( $string, $file ) {
 	my @command = (
 		'gpg', '--batch', '--yes', '-o', $gpg_file, '-sb',
 		'--pinentry-mode', 'loopback',
-		'--passphrase', $ENV{GPG_PASSPHRASE},
+#		'--passphrase', $ENV{GPG_PASSPHRASE},
 		'--armor', '-u', $opts->{gpg_key}
 		);
 	debug "COMMAND is @command";
