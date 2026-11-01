@@ -1,5 +1,5 @@
-# created by util/generate at Sun Nov  1 16:45:25 2026
-# https://github.com/briandfoy/cpan-security-advisory.git 9122b2394c1955f025192a036656bd8489f2aa30
+# created by util/generate at Sun Nov  1 17:11:20 2026
+# https://github.com/briandfoy/cpan-security-advisory.git 6e2edc470b4870efeba8a91eac138ad5677d0e97
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPAN::Audit::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261101.009';
+our $VERSION = '20261101.010';
 
 sub db {
 	{
@@ -20194,7 +20194,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -20883,7 +20883,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -41535,7 +41535,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "2.158"
         },
         {
@@ -41589,7 +41589,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.029010",
+          "perl_release" => "5.02901",
           "version" => "2.174"
         },
         {
@@ -41625,7 +41625,7 @@ sub db {
         {
           "date" => "2021-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.034",
+          "perl_release" => "5.034000",
           "version" => "2.179"
         },
         {
@@ -45459,7 +45459,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.58_01"
         }
       ]
@@ -51004,7 +51004,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "5.45"
         },
         {
@@ -51022,7 +51022,7 @@ sub db {
         {
           "date" => "2015-06-01T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.022",
+          "perl_release" => "5.022000",
           "version" => "7.04_01"
         },
         {
@@ -51523,7 +51523,7 @@ sub db {
         {
           "date" => "2011-05-14T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.014000",
+          "perl_release" => "5.014",
           "version" => "2.2210"
         },
         {
@@ -51547,7 +51547,7 @@ sub db {
         {
           "date" => "2012-05-26T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.017",
+          "perl_release" => "5.017000",
           "version" => "3.17"
         },
         {
@@ -51631,7 +51631,7 @@ sub db {
         {
           "date" => "2018-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.027010",
+          "perl_release" => "5.02701",
           "version" => "3.39"
         },
         {
@@ -51661,7 +51661,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.45"
         },
         {
@@ -53382,7 +53382,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "1.0403"
         },
         {
@@ -109057,7 +109057,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "2.02"
         },
         {
@@ -109099,7 +109099,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011",
+          "perl_release" => "5.011000",
           "version" => "3.3002"
         },
         {
@@ -109123,7 +109123,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013010",
+          "perl_release" => "5.01301",
           "version" => "3.37"
         },
         {
@@ -109201,7 +109201,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "3.55"
         },
         {
@@ -109297,7 +109297,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.029010",
+          "perl_release" => "5.02901",
           "version" => "3.78"
         },
         {
@@ -109333,7 +109333,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.84"
         },
         {
@@ -118412,7 +118412,7 @@ sub db {
         {
           "date" => "2012-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.016",
+          "perl_release" => "5.016000",
           "version" => "2.31_01"
         },
         {
@@ -121899,7 +121899,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "1.72"
         },
         {
@@ -121953,7 +121953,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011",
+          "perl_release" => "5.011000",
           "version" => "1.84"
         },
         {
@@ -122019,7 +122019,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013010",
+          "perl_release" => "5.01301",
           "version" => "1.94"
         },
         {
@@ -125224,7 +125224,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "3.32"
         },
         {
@@ -125248,7 +125248,7 @@ sub db {
         {
           "date" => "2025-03-21T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.04101",
+          "perl_release" => "5.041010",
           "version" => "3.36"
         },
         {
@@ -125854,7 +125854,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "0.01"
         },
         {
@@ -125866,7 +125866,7 @@ sub db {
         {
           "date" => "2002-07-19T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.008",
+          "perl_release" => "5.008000",
           "version" => "0.03"
         },
         {
@@ -152941,7 +152941,7 @@ sub db {
         {
           "date" => "2002-07-19T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.008",
+          "perl_release" => "5.008000",
           "version" => "1.33"
         },
         {
@@ -153019,7 +153019,7 @@ sub db {
         {
           "date" => "2024-06-09T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.040000",
+          "perl_release" => "5.04",
           "version" => "5.01_02"
         }
       ]
@@ -153052,9 +153052,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "9122b2394c1955f025192a036656bd8489f2aa30",
-    "date" => "Sun Nov  1 16:45:25 2026",
-    "epoch" => 1793551525,
+    "commit" => "6e2edc470b4870efeba8a91eac138ad5677d0e97",
+    "date" => "Sun Nov  1 17:11:19 2026",
+    "epoch" => 1793553079,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
