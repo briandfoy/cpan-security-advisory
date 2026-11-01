@@ -27,6 +27,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Solstice
-last_checked: 1777527026
-latest_version: '3364'
-metacpan: https://metacpan.org/pod/Solstice::Session
+last_checked: 1793542326
+latest_version: '0.9'
+metacpan: https://metacpan.org/pod/Solstice
