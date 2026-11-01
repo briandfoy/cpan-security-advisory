@@ -10,7 +10,9 @@ advisories:
   - '>=6.32'
   github_security_advisory:
   - GHSA-vqr8-85pj-78rw
-  id: CPANSA-Poe-Component-IRC-2010-3438
+  id: CPANSA-POE-Component-IRC-2010-3438
+  previous_id:
+  - CPANSA-Poe-Component-IRC-2010-3438
   references:
   - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=581194
   - https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2010-3438
