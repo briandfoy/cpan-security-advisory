@@ -187,7 +187,7 @@ advisories:
   description: |
     Cross-site scripting vulnerability in Movable Type Movable Type Premium 1.37 and earlier and Movable Type Premium Advanced 1.37 and earlier allows a remote authenticated attacker to inject an arbitrary script via unspecified vectors.
   fixed_versions:
-  - '>=1.37'
+  - '>1.37'
   github_security_advisory:
   - GHSA-3x6m-pmx9-j7f5
   id: CPANSA-MT-2020-5669
