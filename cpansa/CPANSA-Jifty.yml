@@ -29,7 +29,7 @@ advisories:
   cves: []
   description: "Allowed all actions on GET.\n"
   fixed_versions:
-  - '>=0.80408'
+  - '>=0.70408'
   github_security_advisory: []
   id: CPANSA-Jifty-2008-01
   references:

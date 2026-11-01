@@ -33,7 +33,7 @@ advisories:
   - https://rt.cpan.org/Ticket/Display.html?id=46384
   reported: 2009-09-23
 - affected_versions:
-  - <2.28
+  - <=2.28
   cves:
   - CVE-2020-16156
   description: CPAN 2.28 allows Signature Verification Bypass.

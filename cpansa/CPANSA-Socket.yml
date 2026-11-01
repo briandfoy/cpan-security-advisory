@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <2.026
+  - <=2.026
   cves: []
   description: |
     The function croak is variadic which expects as a first parameter printf-style format.  Passing arbitrary and string from the caller as a printf format leads to the security problem CWE-134: Use of Externally-Controlled Format String.

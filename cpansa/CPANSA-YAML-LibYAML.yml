@@ -20,7 +20,7 @@ advisories:
   description: |
     scanner.c in LibYAML 0.1.5 and 0.1.6, as used in the YAML-LibYAML (aka YAML-XS) module for Perl, allows context-dependent attackers to cause a denial of service (assertion failure and crash) via vectors involving line-wrapping.
   fixed_versions:
-  - '>=0.54'
+  - '>=0.53'
   github_security_advisory:
   - GHSA-wrq2-fvvw-grpm
   id: CPANSA-YAML-LibYAML-2014-9130
