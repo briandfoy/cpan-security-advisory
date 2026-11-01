@@ -25,8 +25,9 @@ advisories:
   cves:
   - CVE-2026-86425
   description: ImageMagick before 7.1.2-30 and 6.9.x before 6.9.13-55 contains a heap-use-after-free
-    vulnerability in the Layer method of PerlMagick. An attacker who supplies a crafted list of images
-    can trigger memory access after deallocation, resulting in a crash (denial of service).
+    vulnerability in the Layer method of PerlMagick. An attacker who supplies a crafted
+    list of images can trigger memory access after deallocation, resulting in a crash
+    (denial of service).
   fixed_versions:
   - '>=7.1.2-30'
   github_security_advisory:
@@ -38,6 +39,24 @@ advisories:
   - https://www.vulncheck.com/advisories/imagemagick-before-7.1.2-30-heap-use-after-free-via-layer
   reported: 2026-09-07
   severity: medium
+- affected_versions:
+  - <7.1.2-33
+  cves:
+  - CVE-2026-116157
+  description: ImageMagick before 7.1.2-33 contains a memory leak vulnerability in
+    PerlMagick that fails to free values returned when reading image properties. Attackers
+    can repeatedly trigger property reads through five affected PerlMagick code locations
+    to exhaust memory and cause denial of service.
+  fixed_versions:
+  - '>=7.1.2-33'
+  github_security_advisory:
+  - GHSA-m2jm-q252-h5pf
+  id: CPANSA-ImageMagick-2026-116157
+  references:
+  - https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-pj4h-g4pf-66v3
+  - https://www.vulncheck.com/advisories/imagemagick-before-7.1.2-33-memory-leak-in-perlmagick-property-reading
+  reported: 2026-10-25
+  severity: low
 cpansa_version: 2
 darkpan: true
 distribution: ImageMagick
