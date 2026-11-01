@@ -27,7 +27,8 @@ advisories:
   github_security_advisory:
   - GHSA-75ff-mxv3-9xhw
   id: CPANSA-Crypt-JWT-2019-1010161
-  previous_id: CPANSA-Crypt-JWT-2019-01
+  previous_id:
+  - CPANSA-Crypt-JWT-2019-01
   references:
   - https://github.com/DCIT/perl-Crypt-JWT/issues/3#issuecomment-417947483
   reported: 2019-03-20
