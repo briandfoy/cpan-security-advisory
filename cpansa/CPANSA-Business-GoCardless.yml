@@ -1,0 +1,65 @@
+---
+advisories:
+- affected_versions:
+  - <1.01
+  cves:
+  - CVE-2026-119036
+  description: |-
+    Business::GoCardless versions before 1.01 for Perl allow memory exhaustion by flattening legacy webhook payloads before checking their signature.
+
+    A webhook body with a top-level "payload" key is verified as a legacy webhook. To rebuild the signed string, the payload is flattened into one key and value pair per leaf, each key carrying the full path to that leaf, and the pairs are then encoded, sorted and joined. A long key holding a long array costs memory proportional to the key length times the array length.
+
+    A remote attacker can exhaust memory in the process receiving webhooks with a single request that carries no valid signature.
+  fixed_versions:
+  - '>=1.01'
+  github_security_advisory:
+  - GHSA-f3jh-6hrj-xx6p
+  id: CPANSA-Business-GoCardless-2026-119036
+  references:
+  - https://metacpan.org/release/LEEJO/Business-GoCardless-1.01/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <1.01
+  cves:
+  - CVE-2026-119037
+  description: |-
+    Business::GoCardless versions before 1.01 for Perl accept forged webhooks when a configured webhook secret is undef or empty.
+
+    signature_valid uses each configured secret as the HMAC key, and nothing rejects undef or an empty string, both of which Digest::SHA treats as an empty key. A secret read from an unset environment variable, or an empty entry in a list of rotated secrets, is used as is.
+
+    A remote attacker can sign a forged webhook with an empty key and have it accepted as sent by GoCardless.
+  fixed_versions:
+  - '>=1.01'
+  github_security_advisory:
+  - GHSA-25v3-44x4-vgq4
+  id: CPANSA-Business-GoCardless-2026-119037
+  references:
+  - https://metacpan.org/release/LEEJO/Business-GoCardless-1.01/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <1.01
+  cves:
+  - CVE-2026-119038
+  description: |-
+    Business::GoCardless versions before 1.01 for Perl complete redirect flows without checking the session token, letting a leaked redirect flow ID create payments against another customer's mandate.
+
+    confirm_resource takes no session token from the caller. It reads the redirect flow back from the GoCardless API and completes it with the token from that response, so the check that the flow is completed by the session that started it always passes. It then creates the requested payment or subscription against the flow's mandate. Since version 1.00, a flow that already has a mandate is returned as confirmed without being completed again, so the same ID creates a new payment on every call.
+
+    A remote attacker who obtains another customer's redirect flow ID can create payments or subscriptions against that customer's mandate.
+  fixed_versions:
+  - '>=1.01'
+  github_security_advisory:
+  - GHSA-mcww-5qq7-3cr5
+  id: CPANSA-Business-GoCardless-2026-119038
+  references:
+  - https://metacpan.org/release/LEEJO/Business-GoCardless-1.01/changes
+  reported: 2026-10-30
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Business-GoCardless
+last_checked: 1793539736
+latest_version: '1.01'
+metacpan: https://metacpan.org/pod/Business::GoCardless
