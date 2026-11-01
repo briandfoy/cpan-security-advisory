@@ -16,7 +16,8 @@ advisories:
     or authorization, an inverted <=/>= comparison silently returns the wrong rows.
   fixed_versions:
   - '>=1.651'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-mv45-ff6j-x9jp
   id: CPANSA-DBI-2026-15043
   references:
   - https://github.com/perl5-dbi/dbi/commit/e9742ef85a75867cbd696860e3bf3e32b681f98d.patch

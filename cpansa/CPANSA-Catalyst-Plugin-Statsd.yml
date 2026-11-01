@@ -11,7 +11,8 @@ advisories:
     tokens.
   fixed_versions:
   - '>=0.10.1'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-gjvr-hq83-fc38
   id: CPANSA-Catalyst-Plugin-Statsd-2026-45180
   references:
   - https://github.com/robrwo/CatalystX-Statsd/security/advisories/GHSA-gjvr-hq83-fc38

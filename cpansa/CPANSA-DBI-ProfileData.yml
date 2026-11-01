@@ -10,7 +10,8 @@ advisories:
     index and consume available memory.
   fixed_versions:
   - '>=1.651'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-ww49-w4mv-jrr4
   id: CPANSA-DBI-2026-60081
   references:
   - https://github.com/perl5-dbi/dbi/commit/6764e755e83ee1ebb1b40760e5b53eb50960bd7a.patch

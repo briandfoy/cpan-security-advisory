@@ -14,7 +14,8 @@ advisories:
     Note that the touch option is disabled by default.
   fixed_versions:
   - '>=0.4.0'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-fpmm-8f6h-wv74
   id: CPANSA-File-Rotate-Simple-2026-17435
   references:
   - https://github.com/robrwo/File-Rotate-Simple/commit/ead3f5c0e51217b34d286aa243949dba60b39eba.patch

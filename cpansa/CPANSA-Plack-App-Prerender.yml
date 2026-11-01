@@ -16,7 +16,8 @@ advisories:
     This allows an attacker to access internal or restricted hosts that only the webserver has access to.
   fixed_versions:
   - '>=0.3.0'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-6x4w-x68j-ppqq
   id: CPANSA-Plack-App-Prerender-2026-17552
   references:
   - https://github.com/robrwo/perl-Plack-App-Prerender/commit/2d793dd69e2b6f4e469618ee742bd8402677202d.patch

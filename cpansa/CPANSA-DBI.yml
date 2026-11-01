@@ -221,7 +221,8 @@ advisories:
     code on the broker host.'
   fixed_versions:
   - '>=1.650'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-ch8w-hxc2-v557
   id: CPANSA-DBI-2026-14380
   references:
   - https://github.com/perl5-dbi/dbi/commit/b73d5d9901767fc1d16b6661ef08fbed4532e259.patch
@@ -261,7 +262,8 @@ advisories:
     normal builds.
   fixed_versions:
   - '>=1.650'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-35f4-f8m9-w8xg
   id: CPANSA-DBI-2026-14740
   references:
   - https://github.com/perl5-dbi/dbi/commit/fc16f9e8b3dd5c65caf1867781ab2bfe2fadcc01.patch
@@ -281,7 +283,8 @@ advisories:
     rows to the prepare method.
   fixed_versions:
   - '>=1.651'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-rwhc-hhmv-cjvg
   id: CPANSA-DBI-2026-60082
   references:
   - https://github.com/perl5-dbi/dbi/commit/397868704291bbf0989b97e2c0661189890653e2.patch
@@ -323,7 +326,8 @@ advisories:
     Any caller that preparses an untrusted statement into ':pN' style placeholders gets a heap out-of-bounds write that grows with the number of '?' marks following the poisoned placeholder. The '?' and '%s' return styles compare the parsed number against the expected sequence and error out, and are unaffected.
   fixed_versions:
   - '>=1.652'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-623j-hfpc-mrc4
   id: CPANSA-DBI-2026-73194
   references:
   - https://github.com/perl5-dbi/dbi/commit/29b72ae7d2a8114a734a55840bf1c45b89207809.patch
@@ -378,7 +382,8 @@ advisories:
       DBI::sql_type_cast( $num, DBI::SQL_NUMERIC, 0 );
   fixed_versions:
   - '>=1.654'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-c8vq-w3wr-6979
   id: CPANSA-DBI-2026-88815
   references:
   - https://github.com/perl5-dbi/dbi/commit/e5ad87e5602da995d28b4d65df222368b58d6702.patch
@@ -407,7 +412,8 @@ advisories:
        $sth->fetchrow_hashref;
   fixed_versions:
   - '>=1.654'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-f4qx-mr9m-q2hq
   id: CPANSA-DBI-2026-88816
   references:
   - https://github.com/perl5-dbi/dbi/commit/70962570212dc60a5428098cf2a0462ad5945851.patch

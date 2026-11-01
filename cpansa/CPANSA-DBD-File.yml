@@ -12,7 +12,8 @@ advisories:
     can read or write files outside of the data directory.
   fixed_versions:
   - '>=1.651'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-mh3j-xwf4-jrqw
   id: CPANSA-DBI-2026-15392
   references:
   - https://github.com/perl5-dbi/dbi/commit/96d62dfe4528bf56fe13f413ed323d4252531728.patch

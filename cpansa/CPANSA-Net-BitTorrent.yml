@@ -19,6 +19,7 @@ advisories:
   - '>=2.1.0'
   github_security_advisory:
   - GHSA-5gfq-2rx4-6vwv
+  - GHSA-5wc6-r65f-62rr
   id: CPANSA-Net-BitTorrent-2026-57079
   references:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-5wc6-r65f-62rr
@@ -42,6 +43,7 @@ advisories:
   - '>=2.1.0'
   github_security_advisory:
   - GHSA-h9mr-rh28-v9r2
+  - GHSA-7jr6-2jf4-6qc4
   id: CPANSA-Net-BitTorrent-2026-57080
   references:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-7jr6-2jf4-6qc4
@@ -65,6 +67,7 @@ advisories:
   - '>=2.1.0'
   github_security_advisory:
   - GHSA-39fp-mc5w-p8hh
+  - GHSA-mv44-v82p-89xv
   id: CPANSA-Net-BitTorrent-2026-57081
   references:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-mv44-v82p-89xv
@@ -90,6 +93,7 @@ advisories:
   - '>=2.1.0'
   github_security_advisory:
   - GHSA-3x8p-9jc8-598w
+  - GHSA-g444-x2c5-94hc
   id: CPANSA-Net-BitTorrent-2026-57082
   references:
   - https://github.com/sanko/Net-BitTorrent.pm/security/advisories/GHSA-g444-x2c5-94hc

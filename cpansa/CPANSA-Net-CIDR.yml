@@ -8,7 +8,8 @@ advisories:
     that some older tools may interpret as octal values.
   fixed_versions:
   - '>=0.25'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-pch5-whg9-qr2r
   id: CPANSA-Net-CIDR-2021-4456
   references:
   - https://blog.urth.org/2021/03/29/security-issues-in-perl-ip-address-distros/

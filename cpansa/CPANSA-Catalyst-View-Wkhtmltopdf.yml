@@ -16,7 +16,8 @@ advisories:
     Note that the wkhtmltopdf project is no longer being developed, and users of this package should migrate to alternative solutions.
   fixed_versions:
   - '>=0.6.1'
-  github_security_advisory: []
+  github_security_advisory:
+  - GHSA-42w4-jj8w-6p98
   id: CPANSA-Catalyst-View-Wkhtmltopdf-2026-16766
   references:
   - https://github.com/mc7244/Catalyst-View-Wkhtmltopdf/issues/6

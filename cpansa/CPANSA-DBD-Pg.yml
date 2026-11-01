@@ -102,6 +102,7 @@ advisories:
   - '>=3.21.1'
   github_security_advisory:
   - GHSA-6mq2-jf7v-pvjx
+  - GHSA-785p-fw3v-r822
   id: CPANSA-DBD-Pg-2026-78183
   references:
   - https://github.com/bucardo/dbdpg/commit/6d6f47ed2403cda55c82b1bad56e388ba7390065.patch
