@@ -23,7 +23,7 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Linux-Statm-Tiny
-last_checked: 1789907377
+last_checked: 1793539862
 latest_version: '0.0701'
 metacpan: https://metacpan.org/pod/Linux::Statm::Tiny
 repo: https://github.com/robrwo/Linux-Statm-Tiny

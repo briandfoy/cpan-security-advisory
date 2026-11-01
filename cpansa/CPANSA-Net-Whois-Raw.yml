@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Net-Whois-Raw
-last_checked: 1791758626
+last_checked: 1793539900
 latest_version: '2.99044'
 metacpan: https://metacpan.org/pod/Net::Whois::Raw

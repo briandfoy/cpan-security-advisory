@@ -116,6 +116,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: HTML-FormHandler
-last_checked: 1789907357
+last_checked: 1793539836
 latest_version: '0.410002'
 metacpan: https://metacpan.org/pod/HTML::FormHandler

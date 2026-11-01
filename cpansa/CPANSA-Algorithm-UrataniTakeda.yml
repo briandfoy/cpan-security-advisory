@@ -25,6 +25,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Algorithm-UrataniTakeda
-last_checked: 1792931832
+last_checked: 1793539710
 latest_version: v0.1.8
 metacpan: https://metacpan.org/pod/Algorithm::UrataniTakeda

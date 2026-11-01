@@ -24,6 +24,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Web-Simple
-last_checked: 1792931652
+last_checked: 1793539964
 latest_version: '0.035'
 metacpan: https://metacpan.org/pod/Web::Simple

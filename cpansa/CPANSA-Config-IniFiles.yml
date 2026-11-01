@@ -53,7 +53,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Config-IniFiles
-last_checked: 1789907300
+last_checked: 1793539768
 latest_version: '3.003000'
 metacpan: https://metacpan.org/pod/Config::IniFiles
 repo: https://github.com/shlomif/perl-Config-IniFiles

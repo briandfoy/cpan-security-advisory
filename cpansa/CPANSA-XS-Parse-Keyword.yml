@@ -33,6 +33,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: XS-Parse-Keyword
-last_checked: 1790961698
+last_checked: 1793539971
 latest_version: '0.51'
 metacpan: https://metacpan.org/pod/XS::Parse::Keyword

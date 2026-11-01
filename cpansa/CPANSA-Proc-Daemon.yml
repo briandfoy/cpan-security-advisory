@@ -21,7 +21,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Proc-Daemon
-last_checked: 1749751661
+last_checked: 1793539922
 latest_version: '0.23'
 metacpan: https://metacpan.org/pod/Proc::Daemon
 repo: https://github.com/akreal/Proc-Daemon.git

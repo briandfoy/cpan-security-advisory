@@ -23,6 +23,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: JQ-Lite
-last_checked: 1792931865
+last_checked: 1793539855
 latest_version: '2.59'
 metacpan: https://metacpan.org/pod/JQ::Lite

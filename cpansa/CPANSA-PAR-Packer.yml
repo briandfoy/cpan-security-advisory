@@ -17,7 +17,7 @@ advisories:
   reported: 2011-07-18
 cpansa_version: 2
 distribution: PAR-Packer
-last_checked: 1789907418
+last_checked: 1793539903
 latest_version: '1.064'
 metacpan: https://metacpan.org/pod/PAR::Packer
 repo: https://github.com/rschupp/PAR-Packer

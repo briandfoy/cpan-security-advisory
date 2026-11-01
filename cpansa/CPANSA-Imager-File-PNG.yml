@@ -29,6 +29,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Imager-File-PNG
-last_checked: 1789896395
+last_checked: 1793539854
 latest_version: '1.005'
 metacpan: https://metacpan.org/pod/Imager::File::PNG

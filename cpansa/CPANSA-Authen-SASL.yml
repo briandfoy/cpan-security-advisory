@@ -27,6 +27,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Authen-SASL
-last_checked: 1789896713
+last_checked: 1793539734
 latest_version: '2.2100'
 metacpan: https://metacpan.org/pod/Authen::SASL

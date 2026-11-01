@@ -24,6 +24,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: MojoX-Authentication
-last_checked: 1789896745
+last_checked: 1793539875
 latest_version: '0.008'
 metacpan: https://metacpan.org/pod/MojoX::Authentication

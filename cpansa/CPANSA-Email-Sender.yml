@@ -45,6 +45,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Email-Sender
-last_checked: 1790168248
+last_checked: 1793539817
 latest_version: '2.603'
 metacpan: https://metacpan.org/pod/Email::Sender

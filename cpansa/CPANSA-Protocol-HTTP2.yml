@@ -51,6 +51,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Protocol-HTTP2
-last_checked: 1789907431
+last_checked: 1793539923
 latest_version: '1.14'
 metacpan: https://metacpan.org/pod/Protocol::HTTP2

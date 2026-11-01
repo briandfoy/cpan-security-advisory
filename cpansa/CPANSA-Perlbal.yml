@@ -20,7 +20,7 @@ advisories:
   severity: ~
 cpansa_version: 2
 distribution: Perlbal
-last_checked: 1749751661
+last_checked: 1793539910
 latest_version: '1.80'
 metacpan: https://metacpan.org/pod/Perlbal
 repo: ~

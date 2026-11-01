@@ -189,6 +189,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Text-CSV_XS
-last_checked: 1792324078
+last_checked: 1793539957
 latest_version: '1.65'
 metacpan: https://metacpan.org/pod/Text::CSV_XS

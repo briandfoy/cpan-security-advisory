@@ -20,6 +20,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-PasswdMD5
-last_checked: 1789907309
+last_checked: 1793539777
 latest_version: '1.46'
 metacpan: https://metacpan.org/pod/Crypt::PasswdMD5

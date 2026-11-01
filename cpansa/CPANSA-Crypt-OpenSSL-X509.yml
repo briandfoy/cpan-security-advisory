@@ -46,6 +46,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Crypt-OpenSSL-X509
-last_checked: 1789907308
+last_checked: 1793539776
 latest_version: 2.1.5
 metacpan: https://metacpan.org/pod/Crypt::OpenSSL::X509
