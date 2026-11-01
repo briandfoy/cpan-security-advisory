@@ -28,13 +28,13 @@ advisories:
   - https://github.com/rurban/Cpanel-JSON-XS/commit/6554531b39fac236321d8601d35eaaa75ae45e20
   reported: ~
 - affected_versions:
-  - <4.033
+  - <4.33
   cves:
   - CVE-2022-48623
   description: |
     Wrong error messages/sometimes crashes or endless loops with invalid JSON in relaxed mode
   fixed_versions:
-  - '>=4.033'
+  - '>=4.33'
   github_security_advisory:
   - GHSA-44qr-8pf6-6q33
   id: CPANSA-Cpanel-JSON-XS-2023-01
@@ -114,9 +114,310 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/06/03/5
   reported: 2026-06-03
   severity: ~
+- affected_versions:
+  - '>=4.51,<4.80'
+  cves:
+  - CVE-2026-110688
+  description: |-
+    Cpanel::JSON::XS versions from 4.51 before 4.80 for Perl allow quadratic CPU use by revalidating the remaining buffer per value in incr_parse.
+
+    At the first non-ASCII byte in a string, the decoder validates UTF-8 from there to the end of its input. incr_parse decodes each buffered value with a fresh decoder, so every value revalidates the rest of the buffer, and doubling the input quadruples the work.
+
+    A peer that sends about a megabyte of ordinary non-ASCII JSON in one read ties up the process for seconds of CPU time.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-cv8j-jrx6-q4fj
+  id: CPANSA-Cpanel-JSON-XS-2026-110688
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/384309f6a297384e69c851b5d64e1c421d9b2dcc.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.43,<4.80'
+  cves:
+  - CVE-2026-110687
+  description: |-
+    Cpanel::JSON::XS versions from 4.43 before 4.80 for Perl misorder byte-string keys during canonical encoding in utf16_cmp.
+
+    canonical sorts keys by UTF-16 code units. When any key in a hash is UTF-8 flagged, every key is decoded as UTF-8 for the comparison, including byte-string keys that the encoder writes out as Latin-1 characters. A byte-string key whose bytes are valid UTF-8 is sorted out of order, and two keys that encode differently can compare equal and are left in hash order.
+
+    The same data can encode to different canonical documents across processes.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-fq4p-2pcg-jg87
+  id: CPANSA-Cpanel-JSON-XS-2026-110687
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/bb9da30b67f637f4d57922f0e043376363f28f0c.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110686
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl use freed filter callbacks when a filter removes itself during decoding in decode_hv.
+
+    A decode copies the parser's filter_json_object and filter_json_single_key_object callbacks without taking references to them. A filter callback that removes the last single-key filter frees the callback table while the decode in progress still uses it. The next object is dispatched through freed memory and can crash the process.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-q5qq-6rc9-83rg
+  id: CPANSA-Cpanel-JSON-XS-2026-110686
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/c3e7e3c5b0b72d82b072c6a7cfb8c34cec4c7ea2.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: medium
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110685
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded arguments of a tagged value when its THAW method dies in decode_tag.
+
+    With allow_tags, a tagged value's class name and argument array are decoded and passed to the class's THAW method. Both are released only after THAW returns, so a THAW that dies leaves the whole decoded argument structure allocated.
+
+    Each rejected document leaks data of a size the sender chooses, so a process that catches the error and keeps running exhausts its memory.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-mv2h-wx54-jcf9
+  id: CPANSA-Cpanel-JSON-XS-2026-110685
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/9ab010221c069a7af9ef7463454ecd3b8ace9c58.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: critical
+- affected_versions:
+  - '>=3.0202,<4.80'
+  cves:
+  - CVE-2026-110684
+  description: |-
+    Cpanel::JSON::XS versions from 3.0202 before 4.80 for Perl leak memory and retain overloaded objects when encoding values as strings in encode_stringify.
+
+    encode_stringify writes a value in its string form under allow_stringify, under convert_blessed for objects without TO_JSON, and under allow_bignum. For an array or hash object with a "" overload, and from 4.20 a scalar object, it takes an extra reference that is never released, so the object and everything it references are never freed. From 4.10 it also never frees its copy of the string.
+
+    Repeatedly encoding data that contains such values grows process memory without bound.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-pjjg-2ww8-r6xm
+  id: CPANSA-Cpanel-JSON-XS-2026-110684
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/5b15916b5e7841e447664ace51fb50c12d1e0f39.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.42,<4.80'
+  cves:
+  - CVE-2026-110682
+  description: |-
+    Cpanel::JSON::XS versions from 4.42 before 4.80 for Perl let input chunking change the decoded value of top-level numbers in incr_parse.
+
+    allow_nonref is enabled by default and incr_parse inherits it. A top-level number, true, false or null has no closing delimiter, so the incremental parser decodes whatever has arrived. The bytes 12 decode as one value when read together, but as 1 and then 2 when split across two reads.
+
+    A peer that can influence read boundaries can change how many messages a stream consumer decodes and what values they carry.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-vg22-xr3v-rw3m
+  id: CPANSA-Cpanel-JSON-XS-2026-110682
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/f632d6690d82c14cd2d76d648805325201c52b83.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110681
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl use the parent interpreter's scalars from a parser object cloned into a new ithread.
+
+    A parser object holds its callbacks and its incremental parse buffer as raw scalar pointers. When a thread is created, these are copied into the new interpreter unchanged, so the child's parser uses, and later frees, scalars that belong to the parent and may already have been freed there.
+
+    A parser created before a thread starts and used inside it can call freed callbacks, corrupt reference counts and crash the process.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-rmwh-p89p-h6wq
+  id: CPANSA-Cpanel-JSON-XS-2026-110681
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/c53eefbaa59c344abd4c71762118da04280987e8.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.20,<4.80'
+  cves:
+  - CVE-2026-110680
+  description: |-
+    Cpanel::JSON::XS versions from 4.20 before 4.80 for Perl write out of bounds when a tied or shared hash grows during canonical encoding in encode_hv.
+
+    With canonical, the keys of a tied or threads::shared hash are counted before a second pass collects them for sorting. The encoder uses a fixed 64-entry stack array or, for larger counts, a heap array sized from the first pass. If the second pass exceeds that capacity, entries are written out of bounds before the counts are compared.
+
+    This corrupts stack or heap memory and can crash the process.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-7pvv-fpf6-6qmg
+  id: CPANSA-Cpanel-JSON-XS-2026-110680
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/44c4591cc62ea7f453a0ed931abf24394e1560a1.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110678
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by buffering incremental input past max_size in incr_parse.
+
+    The parser appends each chunk to its buffer. In scalar or list context, it compares max_size with how far it has progressed, not with the buffer length. A chunk that starts with a NUL byte stops the parser before it progresses, and a call in void context skips the check, so the buffer grows without limit.
+
+    A peer streaming data to an incr_parse consumer can exhaust process memory regardless of max_size.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-94qg-48qm-9798
+  id: CPANSA-Cpanel-JSON-XS-2026-110678
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/d516f296b1714e06b0fb9eaae72f4558ae3d83d6.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.28,<4.80'
+  cves:
+  - CVE-2026-110677
+  description: |-
+    Cpanel::JSON::XS versions from 4.28 before 4.80 for Perl leak the array collecting duplicate key values under dupkeys_as_arrayref in decode_hv.
+
+    With dupkeys_as_arrayref, the values of a duplicate object key are collected into a new array. An extra reference is never released, so the array and every value in it outlive the decoded structure. The array also leaks when decoding fails after a duplicate key.
+
+    Repeatedly decoding untrusted JSON with a duplicate key holding a large value exhausts process memory.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-mjfh-hmwc-q348
+  id: CPANSA-Cpanel-JSON-XS-2026-110677
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/edb13030a708afc2cde0d2629fb6bdd31288ce6c.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110676
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl allow memory exhaustion by encoding exponent notation as full decimal digits under allow_bignum.
+
+    With allow_bignum, a JSON number with a fraction or exponent decodes to a Math::BigFloat, which stores the exponent separately and so decodes cheaply. Encoding it untyped or as JSON_TYPE_FLOAT writes the plain decimal form with one digit per unit of exponent. Nothing bounds the exponent, so the 12-byte text [1e30000000] encodes to 30 MB.
+
+    Untrusted JSON decoded with allow_bignum and encoded again can exhaust memory and CPU.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-qgf5-7gf3-jg2g
+  id: CPANSA-Cpanel-JSON-XS-2026-110676
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/996ab96972b967a917536d291947b5f3cf42e960.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.33,<4.80'
+  cves:
+  - CVE-2026-110675
+  description: |-
+    Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl accept malformed UTF-8 in bare hash keys under allow_barekey in decode_hv.
+
+    With utf8 and allow_barekey, which relaxed enables, a quoted key is validated as UTF-8 but a bare key's bytes are stored as a UTF-8 flagged string without any check. Malformed UTF-8, control bytes and backslashes reach the decoded hash, while malformed UTF-8 and control bytes in a quoted key or a value are rejected.
+
+    Later operations on the key, including lc, uc or encoding the hash again, die with a malformed UTF-8 error.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-9hvc-g7pw-p4j7
+  id: CPANSA-Cpanel-JSON-XS-2026-110675
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/c2cd02281b9d6904ca0aff2740154e742abc070c.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - '>=4.33,<4.80'
+  cves:
+  - CVE-2026-110674
+  description: |-
+    Cpanel::JSON::XS versions from 4.33 before 4.80 for Perl miss duplicate non-ASCII bare keys, allowing type confusion under dupkeys_as_arrayref in decode_hv.
+
+    With allow_barekey, which relaxed enables, a bare key containing a non-ASCII byte is stored as UTF-8 but looked up as raw bytes, so a repeated key escapes the duplicate-key check and replaces the earlier value.
+
+    From 4.41, under dupkeys_as_arrayref, a bare repeat replaces the array that collects a key's values with a plain value, and the next quoted repeat pushes onto that value as if it were an array. A JSON integer there is dereferenced as a pointer.
+
+    Untrusted JSON decoded with relaxed and dupkeys_as_arrayref can crash the process or dereference an address chosen by a JSON number.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-c92x-ph36-v6p2
+  id: CPANSA-Cpanel-JSON-XS-2026-110674
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/c52037857d6a99d96ebd1ce3e2fa769505f028cf.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-9334
+  reported: 2026-10-19
+  severity: medium
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110673
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl allow stack exhaustion via nested tagged values under allow_tags in decode_tag.
+
+    With allow_tags, "(" starts a tagged value. Its tag and value are decoded recursively, and each can start another tagged value. Unlike arrays and objects, this nesting is not counted against max_depth.
+
+    A run of "(" bytes exhausts the C stack and triggers an uncatchable segmentation fault regardless of max_depth.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-fgcx-mvpm-hff9
+  id: CPANSA-Cpanel-JSON-XS-2026-110673
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/995eb484a9351753e2a8ec3317918b5b4a4e086a.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
+- affected_versions:
+  - <4.80
+  cves:
+  - CVE-2026-110672
+  description: |-
+    Cpanel::JSON::XS versions before 4.80 for Perl leak the decoded key of an object rejected for a duplicate key or a missing colon in decode_hv.
+
+    A quoted key of 24 or more bytes, or one containing a non-ASCII byte or an escape sequence, is decoded into a new scalar. Nothing frees that scalar when the object is rejected for a missing ':' after the key or, from 4.09, for a duplicate key. Duplicate keys are an error unless allow_dupkeys, dupkeys_as_arrayref or relaxed is set.
+
+    A process that keeps running after a failed decode retains one key per rejected document, with its size chosen by the sender. Repeated requests exhaust process memory.
+  fixed_versions:
+  - '>=4.80'
+  github_security_advisory:
+  - GHSA-cg4x-76pf-wq6q
+  id: CPANSA-Cpanel-JSON-XS-2026-110672
+  references:
+  - https://github.com/rurban/Cpanel-JSON-XS/commit/532b53cf8d2ca5ab6bc24048325566d1f7132425.patch
+  - https://metacpan.org/release/RURBAN/Cpanel-JSON-XS-4.80/changes
+  reported: 2026-10-19
+  severity: high
 cpansa_version: 2
 distribution: Cpanel-JSON-XS
-last_checked: 1789907302
-latest_version: '4.52'
+last_checked: 1793539769
+latest_version: '4.80'
 metacpan: https://metacpan.org/pod/Cpanel::JSON::XS
 repo: https://github.com/rurban/Cpanel-JSON-XS
