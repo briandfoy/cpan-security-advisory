@@ -954,7 +954,7 @@ advisories:
   description: |
     Integer underflow in regcomp.c in Perl before 5.20, as used in Apple OS X before 10.10.5 and other products, allows context-dependent attackers to execute arbitrary code or cause a denial of service (application crash) via a long digit string associated with an invalid backreference within a regular expression.
   fixed_versions:
-  - '>=5.20'
+  - '>=5.20.0'
   github_security_advisory:
   - GHSA-m7pj-qf68-j4wp
   id: CPANSA-perl-2013-7422
