@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <=2.45
+  - <2.48
   cves:
   - CVE-2006-10002
   description: XML::Parser versions through 2.45 for Perl could overflow the pre-allocated
