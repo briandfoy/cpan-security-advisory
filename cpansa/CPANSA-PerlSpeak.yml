@@ -9,7 +9,9 @@ advisories:
       - '>2.01'
     github_security_advisory:
       - GHSA-rf58-pvq5-m9jf
-    id: CPANSA-PerlSpeak-2011-10007
+    id: CPANSA-PerlSpeak-2020-10674
+    previous_id:
+      - CPANSA-PerlSpeak-2011-10007
     references:
       - https://nvd.nist.gov/vuln/detail/CVE-2020-10674
       - https://metacpan.org/source/JKAMPHAUS/PerlSpeak-2.01/Changes
