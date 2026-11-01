@@ -61,6 +61,6 @@ cpansa_version: 2
 darkpan: true
 distribution: ImageMagick
 last_checked: 1789898976
-latest_version: 7.1.2-31
+latest_version: 7.1.2-33
 metacpan: ~
 repo: https://github.com/ImageMagick/ImageMagick
