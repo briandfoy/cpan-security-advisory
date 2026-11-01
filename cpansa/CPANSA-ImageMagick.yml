@@ -51,6 +51,7 @@ advisories:
   - '>=7.1.2-33'
   github_security_advisory:
   - GHSA-m2jm-q252-h5pf
+  - GHSA-pj4h-g4pf-66v3
   id: CPANSA-ImageMagick-2026-116157
   references:
   - https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-pj4h-g4pf-66v3
