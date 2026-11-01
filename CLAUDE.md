@@ -12,6 +12,7 @@ Advisory data lives in `cpansa/CPANSA-<Distribution>.yml`, with one file per dis
 * Don't repeat URLs in `references`.
 * Quote numeric-looking `latest_version` values. Unquoted, `0.10` can read as `0.1`.
 * An `affected_versions` value of `'<0'` means the report was rejected. The advisory stays in the file for completeness.
+* JSON-SIMD shares some vulnerabilities with Cpanel::JSON::XS, according to its Changes file, so those advisories keep the Cpanel::JSON::XS descriptions.
 
 ## Reviewing and staging generated changes
 
