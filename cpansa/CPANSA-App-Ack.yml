@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <v3.10.0
+  - <=v3.10.0
   cves:
   - CVE-2026-49145
   description: App::Ack versions through 3.10.0 for Perl read arbitrary files via
@@ -13,7 +13,7 @@ advisories:
     project .ackrc committed to an untrusted repository can make ack read files outside
     the project and print their matching lines.
   fixed_versions:
-  - '>=v3.10.0'
+  - '>v3.10.0'
   github_security_advisory:
   - GHSA-c2rv-g977-2fxr
   id: CPANSA-ack-2026-49145
@@ -45,7 +45,7 @@ advisories:
   reported: 2026-07-08
   severity: ~
 - affected_versions:
-  - <v3.10.0
+  - <=v3.10.0
   cves:
   - CVE-2026-49147
   description: App::Ack versions through 3.10.0 for Perl print unsanitised terminal
@@ -57,7 +57,7 @@ advisories:
     raw filename.  A file whose name embeds cursor-movement or color escapes can overwrite
     or recolor earlier terminal output, or be passed unchanged to a downstream consumer.
   fixed_versions:
-  - '>=v3.10.0'
+  - '>v3.10.0'
   github_security_advisory:
   - GHSA-p4vj-7pqg-xhr6
   id: CPANSA-ack-2026-49147

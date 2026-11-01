@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - <1.12
+  - <=1.12
   cves:
   - CVE-2026-10725
   description: Protocol::HTTP2 versions through 1.12 for Perl is vulnerable to a HTTP/2
@@ -13,7 +13,7 @@ advisories:
     (default 65536) is advertised in SETTINGS but never consulted on decode.  It is
     absent from the decoder and from the :limits export tag.
   fixed_versions:
-  - '>1.13'
+  - '>=1.13'
   github_security_advisory:
   - GHSA-q432-rmqv-hh8m
   id: CPANSA-Protocol-HTTP2-2026-10725
