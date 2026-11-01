@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.18
+  cves:
+  - CVE-2026-116130
+  description: |-
+    HTTP::Parser::XS versions before 0.18 for Perl truncate PATH_INFO at an encoded NUL byte in parse_http_request.
+
+    The XS parser URL-decodes the request path and measures the result with strlen(), so PATH_INFO ends at the first byte decoded from %00. The pure-Perl backend is not affected.
+
+    A remote attacker can send a path that a proxy or filter checks in full while the application routes on a shorter one.
+  fixed_versions:
+  - '>=0.18'
+  github_security_advisory:
+  - GHSA-qgp9-frp4-99qf
+  id: CPANSA-HTTP-Parser-XS-2026-116130
+  references:
+  - https://github.com/kazuho/p5-http-parser-xs/commit/f388b9d7994722b01edd03d57de7d2fb819e1aae.patch
+  - https://metacpan.org/release/KAZUHO/HTTP-Parser-XS-0.18/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/30/12
+  reported: 2026-10-30
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: HTTP-Parser-XS
+last_checked: 1793539844
+latest_version: '0.18'
+metacpan: https://metacpan.org/pod/HTTP::Parser::XS
