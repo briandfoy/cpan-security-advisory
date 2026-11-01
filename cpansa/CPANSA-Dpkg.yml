@@ -199,25 +199,6 @@ advisories:
   reported: 2014-05-30
   severity: ~
 - affected_versions:
-  - <1.17.9
-  cves:
-  - CVE-2014-3127
-  description: |
-    dpkg 1.15.9 on Debian squeeze introduces support for the "C-style encoded filenames" feature without recognizing that the squeeze patch program lacks this feature, which triggers an interaction error that allows remote attackers to conduct directory traversal attacks and modify files outside of the intended directories via a crafted source package. NOTE: this can be considered a release engineering problem in the effort to fix CVE-2014-0471.
-  fixed_versions:
-  - '>=1.17.9'
-  github_security_advisory:
-  - GHSA-f267-j9wx-cwjf
-  id: CPANSA-Dpkg-2014-3127
-  references:
-  - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=746306
-  - http://www.securityfocus.com/bid/67181
-  - http://seclists.org/oss-sec/2014/q2/227
-  - http://seclists.org/oss-sec/2014/q2/191
-  - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
-  reported: 2014-05-14
-  severity: ~
-- affected_versions:
   - <1.15.8.8
   cves:
   - CVE-2010-1679
