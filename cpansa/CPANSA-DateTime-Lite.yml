@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - <0.8.1
+  cves:
+  - CVE-2026-87768
+  description: |-
+    DateTime::Lite versions before 0.8.1 for Perl allow CPU exhaustion via a per-day loop when adding seconds.
+
+    _normalize_leap_seconds crosses day boundaries one day at a time, so add(seconds => $n) on an object with a non-floating time zone takes about |$n|/86400 iterations, and nothing limits $n. The XS implementation and the pure-Perl fallback both have the loop.
+
+    An attacker who controls the number of seconds added can keep the process busy for as long as they choose.
+  fixed_versions:
+  - '>=0.8.1'
+  github_security_advisory:
+  - GHSA-4rjq-xvjh-92j2
+  id: CPANSA-DateTime-Lite-2026-87768
+  references:
+  - https://metacpan.org/release/JDEGUEST/DateTime-Lite-v0.8.1/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/30/10
+  reported: 2026-10-30
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: DateTime-Lite
+last_checked: 1793539810
+latest_version: v0.11.0
+metacpan: https://metacpan.org/pod/DateTime::Lite
