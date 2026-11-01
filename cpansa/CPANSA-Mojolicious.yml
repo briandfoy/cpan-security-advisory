@@ -308,7 +308,7 @@ advisories:
   reported: 2026-07-06
   severity: ~
 - affected_versions:
-  - '>4.59,<9.48'
+  - '>=4.59,<9.48'
   cves:
   - CVE-2026-15747
   description: Mojolicious versions from 4.59 before 9.48 for Perl expose a stable
