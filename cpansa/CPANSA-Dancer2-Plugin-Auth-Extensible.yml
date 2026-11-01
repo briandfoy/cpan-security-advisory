@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<0.712'
+  - <0.712
   cves:
   - CVE-2026-15689
   description: |-
@@ -28,6 +28,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: Dancer2-Plugin-Auth-Extensible
-last_checked: 1789907964
+last_checked: 1793539790
 latest_version: '0.714'
 metacpan: https://metacpan.org/pod/Dancer2::Plugin::Auth::Extensible
