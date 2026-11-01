@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '>0'
+  - '<2.09'
   cves:
   - CVE-2026-19873
   description: |-
@@ -14,7 +14,8 @@ advisories:
     Once the form is submitted, each cloned field's constraints scan the whole element tree in _find_field_value, so cost grows faster than linearly with the count. A single request exhausts memory and CPU.
 
     The latest release on CPAN is 2.07, from 2018. Version 2.08 exists only in the git repository.
-  fixed_versions: []
+  fixed_versions:
+  - '>=2.09'
   github_security_advisory:
   - GHSA-8cjx-f34x-86x3
   id: CPANSA-HTML-FormFu-2026-19873
