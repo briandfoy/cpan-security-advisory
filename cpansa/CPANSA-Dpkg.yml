@@ -201,23 +201,6 @@ advisories:
 - affected_versions:
   - <1.17.9
   cves:
-  - CVE-2014-0471
-  description: |
-    Directory traversal vulnerability in the unpacking functionality in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8 allows remote attackers to write arbitrary files via a crafted source package, related to "C-style filename quoting."
-  fixed_versions:
-  - '>=1.17.9'
-  github_security_advisory:
-  - GHSA-34xq-j8f4-r5cq
-  id: CPANSA-Dpkg-2014-0471
-  references:
-  - http://www.debian.org/security/2014/dsa-2915
-  - http://www.ubuntu.com/usn/USN-2183-1
-  - http://www.securityfocus.com/bid/67106
-  reported: 2014-04-30
-  severity: ~
-- affected_versions:
-  - <1.17.9
-  cves:
   - CVE-2014-3127
   description: |
     dpkg 1.15.9 on Debian squeeze introduces support for the "C-style encoded filenames" feature without recognizing that the squeeze patch program lacks this feature, which triggers an interaction error that allows remote attackers to conduct directory traversal attacks and modify files outside of the intended directories via a crafted source package. NOTE: this can be considered a release engineering problem in the effort to fix CVE-2014-0471.
@@ -233,23 +216,6 @@ advisories:
   - http://seclists.org/oss-sec/2014/q2/191
   - http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog
   reported: 2014-05-14
-  severity: ~
-- affected_versions:
-  - <1.17.8
-  cves:
-  - CVE-2014-0471
-  description: |
-    Directory traversal vulnerability in the unpacking functionality in dpkg before 1.15.9, 1.16.x before 1.16.13, and 1.17.x before 1.17.8 allows remote attackers to write arbitrary files via a crafted source package, related to "C-style filename quoting."
-  fixed_versions:
-  - '>=1.17.8'
-  github_security_advisory:
-  - GHSA-34xq-j8f4-r5cq
-  id: CPANSA-Dpkg-2014-0471
-  references:
-  - http://www.debian.org/security/2014/dsa-2915
-  - http://www.ubuntu.com/usn/USN-2183-1
-  - http://www.securityfocus.com/bid/67106
-  reported: 2014-04-30
   severity: ~
 - affected_versions:
   - <1.15.8.8
