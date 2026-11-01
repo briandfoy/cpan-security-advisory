@@ -24,6 +24,37 @@ advisories:
   - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4TOGTZ2ZWDH662ZNFFSZVL3M5AJXV6JF/
   reported: 2020-09-15
   severity: medium
+- affected_versions: '>=1.0.3,<=1.2.0'
+  cve: CVE-2026-111497
+  description: |
+    A buffer overflow vulnerability in the Brotli decoder (c/dec/decode.c) in Google Brotli versions 1.0.3 through 1.2.0 on all platforms allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream. Users need to update any Brotli libraries or binaries between 1.0.3 through 1.2.0 to the latest available version: 1.0.10 or 1.1.1 or 1.2.1.
+  fixed_versions: '>=1.2.1'
+  github_security_advisory:
+  - GHSA-9v8h-qqgm-4m35
+  references:
+  - http://www.openwall.com/lists/oss-security/2026/10/23/25
+  - http://www.openwall.com/lists/oss-security/2026/10/24/6
+  - http://www.openwall.com/lists/oss-security/2026/10/26/12
+  - http://www.openwall.com/lists/oss-security/2026/10/26/13
+  - http://www.openwall.com/lists/oss-security/2026/10/26/16
+  - https://broccoli2shell.com
+  - https://cert-portal.siemens.com/productcert/html/ssa-045512.html
+  - https://cert-portal.siemens.com/productcert/html/ssa-443410.html
+  - https://cert-portal.siemens.com/productcert/html/ssa-898633.html
+  - https://ellio.tech/en/blog/node2shell-cve-2026-111497-rce-on-stock-nodejs-builds/
+  - https://github.com/advisories/GHSA-9v8h-qqgm-4m35
+  - https://github.com/andybalholm/brotli/releases/tag/v1.2.7
+  - https://github.com/dotnet/announcements/issues/494
+  - https://github.com/google/brotli/releases/tag/v1.0.10
+  - https://github.com/google/brotli/releases/tag/v1.1.1
+  - https://github.com/google/brotli/releases/tag/v1.2.1
+  - https://lists.debian.org/debian-lts-announce/2026/10/msg00049.html
+  - https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high
+  - https://patchtheplanet.org/brotli
+  - https://www.aikido.dev/blog/node2shell-nodejs-brotli-rce-cve-2026-111497
+  - https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-111497
+  reported: 2026-10-22
+  severity: critical
 cpansa_version: 2
 name: brotli
 perl_distributions:
@@ -39,4 +70,12 @@ perl_distributions:
   - distributed_library_version: 1.0.7
     perl_module_versions: ==0.004_002
   name: IO-Compress-Brotli
+- affected:
+  - distributed_library_version: 1.0.7
+    perl_module_versions: '>=1.0.7.7,<=1.0.7.9'
+  - distributed_library_version: 1.1.0
+    perl_module_versions: ==1.1.0.0
+  - distributed_library_version: 1.2.1
+    perl_module_versions: ==1.2.1.0
+  name: XS-libbrotli
 url: https://github.com/google/brotli

@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <1.2.1.0
+  cves:
+  - CVE-2026-115946
+  description: |-
+    XS::libbrotli versions before 1.2.1.0 for Perl bundle a brotli library with an out-of-bounds write in the decoder.
+
+    Affected versions compile a bundled brotli into static archives that dependent XS modules link against at build time, rather than using the system library. The bundled copy, 1.0.7 or 1.1.0 across the range, carries the decoder out-of-bounds write described in CVE-2026-111497. Version 1.2.1.0 updates it to brotli 1.2.1.
+
+    XS::libbrotli has no Perl interface, so the decoder is reached through any dependent module that decompresses untrusted data with it. An attacker supplying a crafted brotli stream can corrupt decoder state, disclose memory, crash the process, or potentially execute arbitrary code. Upgrading the system brotli does not remediate this.
+  fixed_versions:
+  - '>=1.2.1.0'
+  github_security_advisory:
+  - GHSA-3jf5-xc4h-mr9m
+  id: CPANSA-XS-libbrotli-2026-115946
+  references:
+  - https://github.com/google/brotli/releases/tag/v1.2.1
+  - https://metacpan.org/release/SYBER/XS-libbrotli-1.2.1.0/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-111497
+  reported: 2026-11-01
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: XS-libbrotli
+last_checked: 1793539971
+latest_version: v1.2.1.0
+metacpan: https://metacpan.org/pod/XS::libbrotli
