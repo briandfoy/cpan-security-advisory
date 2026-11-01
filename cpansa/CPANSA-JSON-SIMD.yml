@@ -1,11 +1,12 @@
 ---
 advisories:
   - affected_versions:
-      - '>0'
+      - '<1.07'
     cves:
       - CVE-2025-40930
     description: 'JSON::SIMD before version 1.07 and earlier for Perl has an integer buffer overflow causing a segfault when parsing crafted JSON, enabling denial-of-service attacks or other unspecified impact.'
-    fixed_versions: []
+    fixed_versions:
+    - '>=1.07'
     github_security_advisory:
       - GHSA-9pm2-v7x2-9mw5
     id: CPANSA-JSON-SIMD-2025-40930
@@ -18,6 +19,6 @@ advisories:
 cpansa_version: 2
 darkpan: ~
 distribution: JSON-SIMD
-last_checked: 1760357269
-latest_version: 1.07
+last_checked: 1793540994
+latest_version: 1.08
 metacpan: https://metacpan.org/pod/JSON::SIMD
