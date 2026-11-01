@@ -714,7 +714,7 @@ advisories:
   - '>=9.0.7'
   github_security_advisory:
   - GHSA-pq32-jh3r-7r93
-  id: CPANSA-Net-MovableType-2026-25776
+  id: CPANSA-Net-MovableType-2026-33088
   references:
   - https://jvn.jp/en/jp/JVN66473735/
   - https://movabletype.org/news/2026/04/mt-907-released.html
