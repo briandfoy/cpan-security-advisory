@@ -1,0 +1,219 @@
+---
+advisories:
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118996
+  description: |-
+    CallBackery versions before 0.62.0 for Perl send users their own password hash and the admin-only user note via getUserConfig.
+
+    getUserConfig() returns the caller's whole cbuser row, including the stored password hash and the note field that the user interface shows only to administrators. getTableData() and getAllFieldValues() in the user management plugins also return the note to users without the admin right.
+
+    A non-administrator can read the notes administrators keep about them, and an attacker who obtains a session token can get that user's password hash and crack it offline.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-hq79-6fhx-g8p3
+  id: CPANSA-CallBackery-2026-118996
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118995
+  description: |-
+    CallBackery versions before 0.62.0 for Perl accept unintended values in form fields checked by createRxValidator.
+
+    createRxValidator() is documented to anchor the supplied pattern at both ends, but builds /^${rx}$/ without grouping the pattern. An alternation such as yes|no then accepts any value starting with yes or ending with no, and $ also accepts a value with one trailing newline.
+
+    An authenticated user can submit values the pattern was meant to reject, which an application may then write into generated configuration files.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-cxhw-v53j-7rhq
+  id: CPANSA-CallBackery-2026-118995
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118994
+  description: |-
+    CallBackery versions before 0.62.0 for Perl allow log injection via newlines in the login name.
+
+    login() writes the login name to the application log without escaping control characters. The login RPC method needs no authentication, so a name containing a newline followed by text in the log record format adds a forged record.
+
+    An unauthenticated attacker can forge log records, such as a successful administrator login from an address of their choosing.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-gr3r-64v5-rf93
+  id: CPANSA-CallBackery-2026-118994
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118992
+  description: |-
+    CallBackery versions before 0.62.0 for Perl allow OS command execution via sqlite3 shell commands in a restored configuration backup.
+
+    restoreConfigBlob() feeds the database dump in a backup to the sqlite3 command-line shell. The shell runs lines starting with a dot as its own commands, so .shell or .system in the dump runs an OS command and .load loads native code.
+
+    Anyone who can supply a backup to be restored can run arbitrary commands as the application user.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-w32m-6wp6-8542
+  id: CPANSA-CallBackery-2026-118992
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: high
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118993
+  description: |-
+    CallBackery versions before 0.62.0 for Perl allow denial of service via the request path interpolated as a regular expression under CGI, FastCGI and PSGI.
+
+    The before_dispatch hook installed by startup() removes PATH_INFO from the end of the request URI with a substitution that interpolates PATH_INFO unquoted. Under CGI, FastCGI and PSGI both values come from the request, so the client chooses both the pattern and the string it is matched against.
+
+    A short unauthenticated request with a backreference in the path backtracks exponentially and can keep a worker process busy for minutes.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-w6qp-45h2-h9fh
+  id: CPANSA-CallBackery-2026-118993
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118991
+  description: |-
+    CallBackery versions before 0.62.0 for Perl encrypt configuration backups with the padded password as the AES key.
+
+    getCrypt() pads the backup password with "x" characters and cuts it to 32 bytes to form the AES key, with no salt and no key derivation. The first block of a backup holds a 16 hex digit length field, so decrypting one block confirms a password guess at raw AES speed.
+
+    An attacker who obtains a backup can recover its password by fast offline guessing, and with it every credential the backup holds.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-8xrx-f9pw-qp4w
+  id: CPANSA-CallBackery-2026-118991
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118990
+  description: |-
+    CallBackery versions before 0.62.0 for Perl leave a world-readable dump of the configuration database in /tmp when taking a configuration backup.
+
+    getConfigBlob() has the sqlite3 shell write the dump to /tmp/cbdump<pid> and never removes it. The file takes the process umask, and a symlink planted at that predictable name is followed.
+
+    The dump holds every user's password hash and every value saved by the application's forms. A local user can read these after any backup, and may redirect the dump to a file of their choosing.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-xc26-6hhc-42vj
+  id: CPANSA-CallBackery-2026-118990
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118987
+  description: |-
+    CallBackery versions before 0.62.0 for Perl accept session cookies of any age sent in the X-Session-Cookie header.
+
+    cookieConf() rejects a cookie older than 300 seconds only when it arrives in the xsc query parameter. The same cookie sent in the X-Session-Cookie header is accepted however old it is.
+
+    A session cookie that leaks through a log, a Referer header or browser history authenticates as its user indefinitely.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-67p6-38wc-57c7
+  id: CPANSA-CallBackery-2026-118987
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-118986
+  description: |-
+    CallBackery versions before 0.62.0 for Perl allow session cookie forgery via a signing secret generated with rand().
+
+    The secret that signs session cookies is built from two calls to the built-in rand(), which is seeded with 32 bits. The secret therefore has at most 2**32 possible values, and one signed cookie is enough to test each candidate offline.
+
+    An attacker who obtains a single session cookie can recover the secret and sign cookies for any user, including an administrator.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-fr5m-676f-94fg
+  id: CPANSA-CallBackery-2026-118986
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.62.0
+  cves:
+  - CVE-2026-13576
+  description: |-
+    CallBackery versions before 0.62.0 for Perl store user passwords as unsalted HMAC-SHA1 hashes.
+
+    Passwords are hashed with hmac_sha1_sum() from Mojo::Util with no key, a single fast SHA-1 HMAC. There is no salt, so equal passwords give equal hashes, and no work factor slows down guessing.
+
+    An attacker who obtains the user table can recover passwords by fast offline guessing.
+  fixed_versions:
+  - '>=0.62.0'
+  github_security_advisory:
+  - GHSA-6v4f-gp6f-2gvj
+  id: CPANSA-CallBackery-2026-13576
+  references:
+  - https://metacpan.org/release/OETIKER/CallBackery-0.62.0/changes
+  reported: 2026-10-30
+  severity: ''
+- affected_versions:
+  - <0.60.1
+  cves:
+  - CVE-2026-118988
+  description: |-
+    CallBackery versions before 0.60.1 for Perl let unauthenticated clients read the POD of any file via path traversal in the /doc route.
+
+    Every CallBackery application mounts its documentation plugin at /doc, ahead of any session check. The route passes the requested name to Pod::Simple::Search->find without validation. find splits the name on "::" and joins the parts into a file path, so a name such as "..::..::..::etc::motd" escapes @INC.
+
+    Any file the server process can read is reachable. Only POD is rendered, but a file with a POD directive and no "=cut" is POD to the end of the file.
+  fixed_versions:
+  - '>=0.60.1'
+  github_security_advisory:
+  - GHSA-f6fq-c3r4-3jxq
+  id: CPANSA-CallBackery-2026-118988
+  references:
+  - https://github.com/oetiker/callbackery/commit/128efe804fde41bba9633fe00dc94e30f12087fb.patch
+  - https://metacpan.org/release/OETIKER/CallBackery-0.60.1/source/CHANGES
+  - http://www.openwall.com/lists/oss-security/2026/10/30/11
+  reported: 2026-10-30
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: CallBackery
+last_checked: 1793539745
+latest_version: v0.62.0
+metacpan: https://metacpan.org/pod/CallBackery
