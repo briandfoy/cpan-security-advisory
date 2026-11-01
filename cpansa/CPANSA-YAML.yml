@@ -27,7 +27,7 @@ advisories:
   reported: 2017-05-10
   severity: ~
 - affected_versions:
-  - <1.28
+  - <1.27_001
   cves:
   - CVE-2019-25777
   description: |-
@@ -37,7 +37,7 @@ advisories:
 
     A perl/glob document that sets $YAML::LoadCode or $YAML::UseCode turns on code loading, which is off by default, for every later Load() in the process. A perl/code document is then passed to a string eval, so an attacker who supplies two documents to separate Load() calls in one process can execute arbitrary Perl code.
   fixed_versions:
-  - '>=1.28'
+  - '>=1.27_001'
   github_security_advisory:
   - GHSA-38xx-2hm6-vh7q
   id: CPANSA-YAML-2019-25777
