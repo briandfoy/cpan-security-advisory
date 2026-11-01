@@ -90,7 +90,7 @@ advisories:
   - https://metacpan.org/changes/distribution/DBI
   reported: 2005-05-02
 - affected_versions:
-  - <1.643
+  - <=1.643
   cves:
   - CVE-2014-10402
   description: |
@@ -112,7 +112,7 @@ advisories:
   description: |
     An issue was discovered in the DBI module before 1.632 for Perl. DBD::File drivers can open files from folders other than those specifically passed via the f_dir attribute.
   fixed_versions:
-  - '>=1.644'
+  - '>=1.632'
   github_security_advisory:
   - GHSA-9347-cf5g-8j34
   id: CPANSA-DBI-2014-10401
@@ -220,7 +220,7 @@ advisories:
     whose per-request DSN reaches the Profile attribute, letting a client execute
     code on the broker host.'
   fixed_versions:
-  - '>=1.651'
+  - '>=1.650'
   github_security_advisory: []
   id: CPANSA-DBI-2026-14380
   references:
@@ -385,7 +385,6 @@ advisories:
   - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-c8vq-w3wr-6979
   - https://metacpan.org/release/HMBRAND/DBI-1.654/changes
   - http://www.openwall.com/lists/oss-security/2026/09/28/12
-  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-c8vq-w3wr-6979
   reported: 2026-09-28
   severity: medium
 - affected_versions:
@@ -415,12 +414,57 @@ advisories:
   - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-f4qx-mr9m-q2hq
   - https://metacpan.org/release/HMBRAND/DBI-1.654/changes
   - http://www.openwall.com/lists/oss-security/2026/09/28/13
-  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-f4qx-mr9m-q2hq
   reported: 2026-09-28
   severity: high
+- affected_versions:
+  - <1.656
+  cves:
+  - CVE-2026-108518
+  description: |-
+    DBI versions before 1.656 for Perl crash via type confusion in dbi_profile when a database handle is destroyed under a Profile Path with an {attr} element.
+
+    An {attr} element names a database handle attribute, which dbi_profile reads from the handle's inner hash. It expects the inner handle as a reference and dereferences it, but a handle that is being destroyed hands back the inner hash itself, so the dereference yields the hash's bucket array. A type check on that pointer usually fails and the call goes unprofiled. When the memory it addresses passes the check, the attribute lookup dereferences a NULL or invalid pointer and the process dies on SIGSEGV.
+
+    The Path is set by the application, by the Profile handle attribute, or by the DBI_PROFILE environment variable, so `DBI_PROFILE={ImplementorClass}` can crash an unmodified program.
+  fixed_versions:
+  - '>=1.656'
+  github_security_advisory:
+  - GHSA-7393-6f8r-fhh3
+  id: CPANSA-DBI-2026-108518
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/c2ff4df575d7af625bb4d0d1ef7539f90b22d8b2.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-7393-6f8r-fhh3
+  - https://metacpan.org/release/HMBRAND/DBI-1.656/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/20/37
+  reported: 2026-10-20
+  severity: low
+- affected_versions:
+  - <1.656
+  cves:
+  - CVE-2026-111879
+  description: |-
+    DBI versions before 1.656 for Perl hang on a later open of a DBD::DBM table because a failed open_data does not release the table's lock.
+
+    open_data creates the table's lock file and takes an exclusive flock on it for a CREATE, before the checks that can croak: a dbm_mldbm value that is not a module name, a failing tie, or a missing data file. The croak unwinds before the table object is blessed, so nothing releases the lock, and the meta data holding the open descriptor stays cached on the database handle.
+
+    The dbm_mldbm and dbm_type values come from the DSN or the connect attributes, so a caller that chooses the serializer or the storage backend can trigger the failure.
+
+    The flock has no timeout, so a later open of that table (even through a separate database handle) blocks for as long as the handle holding the stale lock lives, in the same process or any other.
+  fixed_versions:
+  - '>=1.656'
+  github_security_advisory:
+  - GHSA-8cx8-9vj9-9x7j
+  id: CPANSA-DBI-2026-111879
+  references:
+  - https://github.com/perl5-dbi/dbi/commit/99bbf2ab9d137e6f042a770bd3bbba3bc0b3a901.patch
+  - https://github.com/perl5-dbi/dbi/security/advisories/GHSA-8cx8-9vj9-9x7j
+  - https://metacpan.org/release/HMBRAND/DBI-1.656/changes
+  - http://www.openwall.com/lists/oss-security/2026/10/20/38
+  reported: 2026-10-20
+  severity: medium
 cpansa_version: 2
 distribution: DBI
-last_checked: 1789907320
-latest_version: '1.653'
+last_checked: 1793539787
+latest_version: '1.656'
 metacpan: https://metacpan.org/pod/DBI
 repo: https://github.com/perl5-dbi/dbi
