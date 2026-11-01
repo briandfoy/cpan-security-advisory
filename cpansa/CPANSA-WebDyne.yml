@@ -1,7 +1,7 @@
 ---
 advisories:
 - affected_versions:
-  - '<3.003_704'
+  - <3.003_704
   cves:
   - CVE-2026-5084
   description: WebDyne::Session versions through 2.075 for Perl generates the session
@@ -25,9 +25,104 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/05/11/3
   reported: 2026-05-11
   severity: ~
+- affected_versions:
+  - '>=3.007,<3.022'
+  cves:
+  - CVE-2026-78189
+  description: |-
+    WebDyne versions from 3.007 before 3.022 for Perl execute .psp files outside the document root via path traversal in the PSGI API route fallback.
+
+    When a request matches no file, the PSGI handler retries it as an API route through api_filename. That keeps .. segments in the request path and only checks that the joined path starts with the document root, which a request for /../private passes.
+
+    A remote attacker can run the embedded Perl in any .psp file the server can read, such as one uploaded to a directory outside the document root.
+  fixed_versions:
+  - '>=3.022'
+  github_security_advisory:
+  - GHSA-vhwh-fhm6-mq7v
+  id: CPANSA-WebDyne-2026-78189
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-3.022/changes
+  reported: 2026-10-31
+  severity: ''
+- affected_versions:
+  - '>=2.031,<3.022'
+  cves:
+  - CVE-2026-78191
+  description: |-
+    WebDyne versions from 2.031 before 3.022 for Perl execute files with .psp anywhere in the name as Perl pages.
+
+    WebDyne decides whether to run a requested file as a page by matching its name against WEBDYNE_PSP_EXT_RE, which has no end anchor.
+
+    An application that accepts uploads by checking only the final extension lets a remote attacker upload a file such as report.psp.pdf and run its embedded Perl by requesting it.
+  fixed_versions:
+  - '>=3.022'
+  github_security_advisory:
+  - GHSA-xv5f-qcmp-v8w2
+  id: CPANSA-WebDyne-2026-78191
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-3.022/changes
+  reported: 2026-10-31
+  severity: ''
+- affected_versions:
+  - '>=2.022,<3.022'
+  cves:
+  - CVE-2026-78192
+  description: |-
+    WebDyne versions from 2.022 before 3.022 for Perl disclose application source to unauthenticated clients via the viewer in the default index page.
+
+    WebDyne's wrapper scripts, such as webdyne.psgi, enable the built-in index page by default. Its source viewer returns files under the document root named in the source parameter of an HTMX request, including .psp, .pm and .pl files.
+
+    A remote attacker can read the application's Perl code, including the __PERL__ blocks of .psp pages and any credentials they hold.
+  fixed_versions:
+  - '>=3.022'
+  github_security_advisory:
+  - GHSA-hf35-9v4j-23x2
+  id: CPANSA-WebDyne-2026-78192
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-3.022/changes
+  reported: 2026-10-31
+  severity: ''
+- affected_versions:
+  - '>=2.014,<3.022'
+  cves:
+  - CVE-2026-78190
+  description: |-
+    WebDyne versions from 2.014 before 3.022 for Perl reflect request parameters unescaped into form field values, allowing cross-site scripting.
+
+    The textfield, password_field and filefield tags fill their value attribute from the request parameter of the same name. WEBDYNE_CGI_AUTOESCAPE, which controls escaping of these values, defaults to off. From 2.022, WebDyne::HTML::Tiny also replaced its entity_encode method with one that returns its input unchanged, so enabling WEBDYNE_CGI_AUTOESCAPE has no effect.
+
+    A remote attacker can inject script into any page using these tags through a crafted link.
+  fixed_versions:
+  - '>=3.022'
+  github_security_advisory:
+  - GHSA-f457-wm99-2w49
+  id: CPANSA-WebDyne-2026-78190
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-3.022/changes
+  reported: 2026-10-31
+  severity: ''
+- affected_versions:
+  - '>=2.014,<3.022'
+  cves:
+  - CVE-2026-78188
+  description: |-
+    WebDyne versions from 2.014 before 3.022 for Perl issue session cookies without the Secure, HttpOnly and SameSite attributes.
+
+    WebDyne::Session sets its session cookie with only a name, value and path.
+
+    Browsers then send the session ID over plain HTTP and with cross-site requests, and expose it to page scripts. A network attacker or an injected script can steal the session, and another site can make requests that carry it.
+  fixed_versions:
+  - '>=3.022'
+  github_security_advisory:
+  - GHSA-939g-4f3p-xc2m
+  id: CPANSA-WebDyne-2026-78188
+  references:
+  - https://metacpan.org/release/ASPEER/WebDyne-3.022/changes
+  reported: 2026-10-31
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: WebDyne
-last_checked: 1789907964
+last_checked: 1793539965
 latest_version: '3.029'
 metacpan: https://metacpan.org/pod/WebDyne
