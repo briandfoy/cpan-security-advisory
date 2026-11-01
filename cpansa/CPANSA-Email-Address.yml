@@ -24,7 +24,8 @@ advisories:
   - '>=1.909'
   github_security_advisory:
   - GHSA-c2fh-m553-m5hp
-  id: CPANSA-Email-Address-2014-01
+  id: CPANSA-Email-Address-2018-12558
+  previous_id: CPANSA-Email-Address-2014-01
   references:
   - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=901873
   - http://www.openwall.com/lists/oss-security/2018/06/19/3
