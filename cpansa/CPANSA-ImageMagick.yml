@@ -9,6 +9,7 @@ advisories:
     vulnerability in the GetList method of PerlMagick. A crafted call to the GetList
     method can trigger the use-after-free, resulting in a crash (denial of service).
   fixed_versions:
+  - '>=6.9.13-55,<7'
   - '>=7.1.2-30'
   github_security_advisory:
   - GHSA-g684-8gxh-c62w
@@ -29,6 +30,7 @@ advisories:
     list of images can trigger memory access after deallocation, resulting in a crash
     (denial of service).
   fixed_versions:
+  - '>=6.9.13-55,<7'
   - '>=7.1.2-30'
   github_security_advisory:
   - GHSA-cq4h-xmp2-xr98
