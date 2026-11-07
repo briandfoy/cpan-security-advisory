@@ -47,6 +47,42 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/08/04/34
   reported: 2026-08-04
   severity: ''
+- affected_versions:
+  - '>=0.12'
+  cves:
+  - CVE-2026-74759
+  description: |-
+    Google::Auth versions 0.12 for Perl allow server side request forgery via unvalidated credential_source URLs in AWS external account credentials.
+
+    An external_account configuration with the AWS subject token type selects Google::Auth::ExternalAccountCredentials::Aws. Its retrieve_subject_token sends requests to the imdsv2_session_token_url, url and region_url fields of credential_source without the host check that the other credential classes apply.
+
+    Any caller that builds credentials from a configuration it does not fully control issues GET and PUT requests to hosts the configuration names, including internal services and link-local metadata endpoints.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-p2f2-c96p-7p43
+  id: CPANSA-Google-Auth-2026-74759
+  references:
+  - https://metacpan.org/release/CJCOLLIER/Google-Auth-0.12/source/lib/Google/Auth/ExternalAccountCredentials/Aws.pm
+  reported: 2026-11-01
+  severity: critical
+- affected_versions:
+  - '>=0.11'
+  cves:
+  - CVE-2026-74760
+  description: |-
+    Google::Auth versions from 0.11 through 0.12 for Perl accept an authorization code from any local process because the gcloud-auth login callback does not check the OAuth state.
+
+    The gcloud-auth login and application-default login commands send a state parameter with the authorization request, then take the code from the first request to reach their loopback listener without comparing the returned state.
+
+    A local attacker can submit an authorization code for their own Google account. The CLI exchanges it and stores the refresh token as the user's credentials, so the user's tools then act as the attacker's account.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-86rg-2xqg-4p5p
+  id: CPANSA-Google-Auth-2026-74760
+  references:
+  - https://metacpan.org/release/CJCOLLIER/Google-Auth-0.12/source/bin/gcloud-auth.pl
+  reported: 2026-11-01
+  severity: high
 cpansa_version: 2
 darkpan: ~
 distribution: Google-Auth
