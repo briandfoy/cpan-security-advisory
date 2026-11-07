@@ -1,5 +1,5 @@
-# created by util/generate at Sat Nov  7 20:47:42 2026
-# https://github.com/briandfoy/cpan-security-advisory.git 78d71817f8a564d5732f8aea431dba5c68822dab
+# created by util/generate at Sat Nov  7 22:07:55 2026
+# https://github.com/briandfoy/cpan-security-advisory.git 1f41be4973b6e4716bd53fc89eb02c058ea2a836
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPAN::Audit::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261107.001';
+our $VERSION = '20261107.002';
 
 sub db {
 	{
@@ -11098,7 +11098,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120651"
@@ -11106,7 +11106,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow an infinite loop on a short request body when \$DISABLE_UPLOADS is set.\n\nWhen \$CGI::PUTDATA_UPLOAD or an upload hook is set, read_postdata_putdata takes a request body that is not a form submission. With \$CGI::DISABLE_UPLOADS set, it discards the body by reading until Content-Length bytes have arrived. Once a body shorter than its Content-Length runs out, every read returns 0, so the loop never ends.\n\nA client can keep a server process spinning with one such request.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120651",
           "references" => [
@@ -11120,7 +11120,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120644"
@@ -11128,7 +11128,7 @@ sub db {
           "description" => "CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via unvalidated path, domain and expires values.\n\nThe path, domain and expires values are written into the Set-Cookie header without checking for semicolons or control characters.\n\nAn application that sets them from request data can be made to add other cookie attributes, such as Domain or SameSite.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120644",
           "references" => [
@@ -11141,7 +11141,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            ">=4.67,<5.00"
+            ">=4.67,<5.02"
           ],
           "cves" => [
             "CVE-2026-120631"
@@ -11149,7 +11149,7 @@ sub db {
           "description" => "CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse.\n\nCGI's cookie method reads the Cookie request header through parse, which interpolates the header's expires value unescaped into the substitution pattern that removes it from the cookie string.\n\nA client can make the request die with an invalid pattern, or tie up the process with one that backtracks catastrophically.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120631",
           "references" => [
@@ -11162,7 +11162,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120634"
@@ -11170,7 +11170,7 @@ sub db {
           "description" => "CGI::Carp versions before 5.00 for Perl leak warnings across requests in persistent environments via the warningsToBrowser buffer.\n\nWarnings are held in a package-level buffer until warningsToBrowser writes them into the page as HTML comments, and the buffer is never cleared between requests. Under mod_perl, FastCGI or PSGI, warnings from one request are written into a later one.\n\nWarnings that contain one user's request data can appear in the HTML sent to another user.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120634",
           "references" => [
@@ -11183,7 +11183,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120648"
@@ -11191,7 +11191,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow HTML injection via text containing --> in comment.\n\nArguments are placed between <!-- and --> without escaping, so text containing --> closes the comment early.\n\nAn application that passes request data to comment can be made to inject HTML into the page.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120648",
           "references" => [
@@ -11204,7 +11204,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            ">=4.71,<5.00"
+            ">=4.71,<5.02"
           ],
           "cves" => [
             "CVE-2026-120646"
@@ -11212,7 +11212,7 @@ sub db {
           "description" => "CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain string dereferenced as a symbolic reference in uploadInfo.\n\nuploadInfo dereferences its argument and calls its filename method without checking that it is an upload filehandle. A plain string naming a defined global variable, such as the parameter value from ?upload=0, is treated as a symbolic reference, and the method call on it dies.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120646",
           "references" => [
@@ -11225,7 +11225,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120647"
@@ -11233,7 +11233,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow Content-Disposition parameter injection via unescaped double quotes in the header attachment filename.\n\nheader(-attachment => \$name) writes \$name into the quoted filename parameter of Content-Disposition without escaping double quotes.\n\nAn application that passes request data as the attachment name can be made to send a second filename parameter, changing the name the response is saved under.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120647",
           "references" => [
@@ -11246,7 +11246,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120645"
@@ -11254,7 +11254,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow denial of service via submitted values used as a regex for optgroup selection in scrolling_list.\n\nWhen rendering option groups, scrolling_list marks the selected options by interpolating each selected value, by default taken from the request parameters, unescaped into a substitution pattern.\n\nA client can make the request die with an invalid pattern, or tie up the process with one that backtracks heavily.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120645",
           "references" => [
@@ -11267,7 +11267,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            ">=4.62,<5.00"
+            ">=4.62,<5.02"
           ],
           "cves" => [
             "CVE-2026-120643"
@@ -11275,7 +11275,7 @@ sub db {
           "description" => "CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a raw apostrophe in URLs returned by url and self_url.\n\nBoth pass the URL through URI's canonical method, which leaves an apostrophe in the path raw and decodes the %27 that query parameter escaping produces, so an apostrophe in the request path or a parameter appears raw in the result.\n\nAn application that places the URL in a single-quoted HTML attribute or JavaScript string is open to cross-site scripting.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120643",
           "references" => [
@@ -11288,7 +11288,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120642"
@@ -11296,7 +11296,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl return request-derived values untainted under taint mode.\n\nThe upload filename, uploadInfo values, some path_info and script_name values, Accept results, and the name lists from url_param and cookie are returned without the taint flag, as is a cookie named expires from 4.67 on.\n\nThese values come from regex captures or hash keys, which Perl does not taint, so they pass -T checks unvalidated.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120642",
           "references" => [
@@ -11309,7 +11309,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120641"
@@ -11317,7 +11317,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl return upload filenames with any client-supplied path, including ../ and Windows paths.\n\nThe name returned for an uploaded file is the filename parameter of the part's Content-Disposition header, unchanged.\n\nAn application that saves the upload under this name can be made to write outside the intended directory.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120641",
           "references" => [
@@ -11330,7 +11330,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120639"
@@ -11338,7 +11338,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow HTTP header injection via entity decoding after the newline check in header and unchecked values in multipart_start and do_push.\n\nWith autoEscape off, header decodes HTML entities in extra header values after its newline check, so an encoded CR or LF reaches the response. multipart_start does not check header values for newlines, and do_push does not check the type it prints in each part.\n\nAn application that passes request data into these header values can be made to add headers or split the response.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120639",
           "references" => [
@@ -11352,7 +11352,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120637"
@@ -11360,7 +11360,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl take request parameters from the process command line arguments for an unrecognised REQUEST_METHOD.\n\nFor a REQUEST_METHOD such as OPTIONS, CGI falls through to its offline debugging mode, which is on by default, and builds the parameters and path_info from the process's command line arguments.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120637",
           "references" => [
@@ -11373,7 +11373,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120632"
@@ -11381,7 +11381,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type.\n\nWhen a POST Content-Type contains multipart/related, the boundary and start parameters are extracted with an unanchored pattern that puts .+ on either side of the boundary capture, which backtracks in cubic time on a header that does not match. No request body is needed.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120632",
           "references" => [
@@ -11394,7 +11394,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120640"
@@ -11402,7 +11402,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and XForms:Model parameters to be set from the query string or form fields.\n\nCGI stores a non-form request body under POSTDATA, PUTDATA or PATCHDATA, and an XForms body under XForms:Model, but also accepts these names from the query string, a form field or a multipart part, so an application cannot tell a client-sent value from the real body.\n\nA cross-site HTML form can post POSTDATA={\"admin\":true} to an endpoint that reads JSON from param('POSTDATA'), a request forgery that needs no CORS preflight.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120640",
           "references" => [
@@ -11415,7 +11415,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120638"
@@ -11423,7 +11423,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow open redirects via HTML entity decoding of the URL after application validation in redirect.\n\nredirect decodes HTML entities in its URL before writing the Location header, so a URL the application has already validated can change meaning. For example, /&#47;evil.example/ becomes //evil.example/ and sends the user to another host.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120638",
           "references" => [
@@ -11436,7 +11436,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120636"
@@ -11444,7 +11444,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow open redirects and script injection via URLs built from REQUEST_URI in url and start_form.\n\nurl(-absolute=>1), url(-relative=>1) and the default start_form action are built from the client-supplied REQUEST_URI without validation. The result can be protocol-relative (//evil.example), absolute-form (http://evil.example/) or contain backslashes, and url(-relative=>1) can return a javascript: URL. Links and form posts built from these URLs can go to another host.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120636",
           "references" => [
@@ -11457,7 +11457,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120633"
@@ -11465,7 +11465,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl trust the client X-Forwarded-Host header in url, self_url, virtual_host and virtual_port.\n\nThese take the host name and port from the X-Forwarded-Host request header when present, and otherwise from Host, without validating either. The URLs from url and self_url are the default redirect location and the start_html(-base=>1) base href, and the default start_form action when REQUEST_URI is not set.\n\nA client can poison shared caches, and URLs the application stores or sends, with redirects, links and scripts that point at a host it controls.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120633",
           "references" => [
@@ -11478,7 +11478,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120635"
@@ -11486,7 +11486,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow form fields to be smuggled past proxies and WAFs via multipart parsing that differs from the RFCs.\n\nThe multipart/form-data parser matches the boundary anywhere rather than at the start of a line, uses the boundary without its leading -- for some client-supplied User-Agent values, finds the Content-Disposition name and filename inside the quoted values of other parameters, and corrupts parts when the boundary nears the 4096-byte read size.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA-CGI-2026-120635",
           "references" => [
@@ -11503,7 +11503,7 @@ sub db {
         },
         {
           "affected_versions" => [
-            "<5.00"
+            "<5.02"
           ],
           "cves" => [
             "CVE-2026-120650"
@@ -11511,7 +11511,7 @@ sub db {
           "description" => "CGI versions before 5.00 for Perl allow memory, CPU and disk exhaustion via missing or unenforced request size, parameter and upload limits.\n\n\$CGI::POST_MAX defaults to no limit, and when set is not enforced for chunked multipart bodies or for the boundary line of a multipart body without a boundary= parameter. Bodies saved as PUTDATA, POSTDATA or PATCHDATA uploads are read into memory in one go, and nothing limits the number of parameters or uploads.",
           "distribution" => "CGI",
           "fixed_versions" => [
-            ">=5.00"
+            ">=5.02"
           ],
           "id" => "CPANSA--2026-120650",
           "references" => [
@@ -15489,7 +15489,7 @@ sub db {
         {
           "date" => "2014-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01901",
+          "perl_release" => "5.019010",
           "version" => "2.04"
         },
         {
@@ -15513,7 +15513,7 @@ sub db {
         {
           "date" => "2017-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02501",
+          "perl_release" => "5.025010",
           "version" => "2.17"
         },
         {
@@ -20668,7 +20668,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -21357,7 +21357,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -41877,7 +41877,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.010000",
+          "perl_release" => "5.01",
           "version" => "2.121_14"
         },
         {
@@ -42009,7 +42009,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "2.158"
         },
         {
@@ -42063,7 +42063,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.029010",
+          "perl_release" => "5.02901",
           "version" => "2.174"
         },
         {
@@ -45952,7 +45952,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.58_01"
         }
       ]
@@ -51455,7 +51455,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.000",
+          "perl_release" => 5,
           "version" => undef
         },
         {
@@ -51992,7 +51992,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.010000",
+          "perl_release" => "5.01",
           "version" => "2.18_02"
         },
         {
@@ -52040,7 +52040,7 @@ sub db {
         {
           "date" => "2012-05-26T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.017000",
+          "perl_release" => "5.017",
           "version" => "3.17"
         },
         {
@@ -52154,7 +52154,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.45"
         },
         {
@@ -53923,7 +53923,7 @@ sub db {
         {
           "date" => "2016-05-09T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.024000",
+          "perl_release" => "5.024",
           "version" => "2.12_01"
         }
       ]
@@ -64371,7 +64371,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.010000",
+          "perl_release" => "5.01",
           "version" => "0.40_1"
         },
         {
@@ -109965,7 +109965,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.000",
+          "perl_release" => 5,
           "version" => undef
         },
         {
@@ -110127,7 +110127,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "3.55"
         },
         {
@@ -110223,7 +110223,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.029010",
+          "perl_release" => "5.02901",
           "version" => "3.78"
         },
         {
@@ -110259,7 +110259,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.84"
         },
         {
@@ -119799,7 +119799,7 @@ sub db {
         {
           "date" => "2012-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.016000",
+          "perl_release" => "5.016",
           "version" => "2.31_01"
         },
         {
@@ -123292,7 +123292,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.000",
+          "perl_release" => 5,
           "version" => undef
         },
         {
@@ -123352,7 +123352,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.010000",
+          "perl_release" => "5.01",
           "version" => "1.80"
         },
         {
@@ -123382,7 +123382,7 @@ sub db {
         {
           "date" => "2010-04-12T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.012000",
+          "perl_release" => "5.012",
           "version" => "1.87"
         },
         {
@@ -126389,7 +126389,7 @@ sub db {
         {
           "date" => "2013-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019000",
+          "perl_release" => "5.019",
           "version" => "2.42"
         },
         {
@@ -126503,7 +126503,7 @@ sub db {
         {
           "date" => "2017-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02501",
+          "perl_release" => "5.025010",
           "version" => "2.62"
         },
         {
@@ -126581,7 +126581,7 @@ sub db {
         {
           "date" => "2020-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.032",
+          "perl_release" => "5.032000",
           "version" => "3.21"
         },
         {
@@ -126635,7 +126635,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "3.32"
         },
         {
@@ -127259,7 +127259,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.000",
+          "perl_release" => 5,
           "version" => undef
         },
         {
@@ -154411,7 +154411,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.010000",
+          "perl_release" => "5.01",
           "version" => "2.16"
         },
         {
@@ -154453,7 +154453,7 @@ sub db {
         {
           "date" => "2024-04-27T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.039010",
+          "perl_release" => "5.03901",
           "version" => "5.01_01"
         },
         {
@@ -154492,9 +154492,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "78d71817f8a564d5732f8aea431dba5c68822dab",
-    "date" => "Sat Nov  7 20:47:41 2026",
-    "epoch" => 1794084461,
+    "commit" => "1f41be4973b6e4716bd53fc89eb02c058ea2a836",
+    "date" => "Sat Nov  7 22:07:54 2026",
+    "epoch" => 1794089274,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
