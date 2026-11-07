@@ -140,7 +140,7 @@ advisories:
   reported: 2010-12-06
   severity: ~
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120651
   description: |-
@@ -150,7 +150,7 @@ advisories:
 
     A client can keep a server process spinning with one such request.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-hwfw-56x5-6gp9
   id: CPANSA-CGI-2026-120651
@@ -162,7 +162,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120644
   description: |-
@@ -172,7 +172,7 @@ advisories:
 
     An application that sets them from request data can be made to add other cookie attributes, such as Domain or SameSite.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-mcq5-fxjx-6f4r
   id: CPANSA-CGI-2026-120644
@@ -183,7 +183,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - '>=4.67,<5.00'
+  - '>=4.67,<5.02'
   cves:
   - CVE-2026-120631
   description: |-
@@ -193,7 +193,7 @@ advisories:
 
     A client can make the request die with an invalid pattern, or tie up the process with one that backtracks catastrophically.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-v4gh-jwmf-g38j
   id: CPANSA-CGI-2026-120631
@@ -204,7 +204,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120634
   description: |-
@@ -214,7 +214,7 @@ advisories:
 
     Warnings that contain one user's request data can appear in the HTML sent to another user.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-qqq9-5j87-rw35
   id: CPANSA-CGI-2026-120634
@@ -225,7 +225,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120648
   description: |-
@@ -235,7 +235,7 @@ advisories:
 
     An application that passes request data to comment can be made to inject HTML into the page.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-v6fq-x7rj-cvvm
   id: CPANSA-CGI-2026-120648
@@ -246,7 +246,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - '>=4.71,<5.00'
+  - '>=4.71,<5.02'
   cves:
   - CVE-2026-120646
   description: |-
@@ -254,7 +254,7 @@ advisories:
 
     uploadInfo dereferences its argument and calls its filename method without checking that it is an upload filehandle. A plain string naming a defined global variable, such as the parameter value from ?upload=0, is treated as a symbolic reference, and the method call on it dies.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-qfrv-79gg-33h6
   id: CPANSA-CGI-2026-120646
@@ -265,7 +265,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120647
   description: |-
@@ -275,7 +275,7 @@ advisories:
 
     An application that passes request data as the attachment name can be made to send a second filename parameter, changing the name the response is saved under.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-599q-wvvm-v4wp
   id: CPANSA-CGI-2026-120647
@@ -286,7 +286,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120645
   description: |-
@@ -296,7 +296,7 @@ advisories:
 
     A client can make the request die with an invalid pattern, or tie up the process with one that backtracks heavily.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-8xqm-fm8j-xv84
   id: CPANSA-CGI-2026-120645
@@ -307,7 +307,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - '>=4.62,<5.00'
+  - '>=4.62,<5.02'
   cves:
   - CVE-2026-120643
   description: |-
@@ -317,7 +317,7 @@ advisories:
 
     An application that places the URL in a single-quoted HTML attribute or JavaScript string is open to cross-site scripting.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-c4m8-3x4v-gcxr
   id: CPANSA-CGI-2026-120643
@@ -328,7 +328,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120642
   description: |-
@@ -338,7 +338,7 @@ advisories:
 
     These values come from regex captures or hash keys, which Perl does not taint, so they pass -T checks unvalidated.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-mqfc-h2mx-w8gc
   id: CPANSA-CGI-2026-120642
@@ -349,7 +349,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120641
   description: |-
@@ -359,7 +359,7 @@ advisories:
 
     An application that saves the upload under this name can be made to write outside the intended directory.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-3hqq-f8xf-6qwx
   id: CPANSA-CGI-2026-120641
@@ -370,7 +370,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120639
   description: |-
@@ -380,7 +380,7 @@ advisories:
 
     An application that passes request data into these header values can be made to add headers or split the response.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-mxvj-3jfg-j4p6
   id: CPANSA-CGI-2026-120639
@@ -392,7 +392,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120637
   description: |-
@@ -400,7 +400,7 @@ advisories:
 
     For a REQUEST_METHOD such as OPTIONS, CGI falls through to its offline debugging mode, which is on by default, and builds the parameters and path_info from the process's command line arguments.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-vf96-5xh3-hp53
   id: CPANSA-CGI-2026-120637
@@ -411,7 +411,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120632
   description: |-
@@ -419,7 +419,7 @@ advisories:
 
     When a POST Content-Type contains multipart/related, the boundary and start parameters are extracted with an unanchored pattern that puts .+ on either side of the boundary capture, which backtracks in cubic time on a header that does not match. No request body is needed.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-94q2-8552-36r5
   id: CPANSA-CGI-2026-120632
@@ -430,7 +430,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120640
   description: |-
@@ -440,7 +440,7 @@ advisories:
 
     A cross-site HTML form can post POSTDATA={"admin":true} to an endpoint that reads JSON from param('POSTDATA'), a request forgery that needs no CORS preflight.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-2xpc-hf7c-cgvh
   id: CPANSA-CGI-2026-120640
@@ -451,7 +451,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120638
   description: |-
@@ -459,7 +459,7 @@ advisories:
 
     redirect decodes HTML entities in its URL before writing the Location header, so a URL the application has already validated can change meaning. For example, /&#47;evil.example/ becomes //evil.example/ and sends the user to another host.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-33j8-q94p-w495
   id: CPANSA-CGI-2026-120638
@@ -470,7 +470,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120636
   description: |-
@@ -478,7 +478,7 @@ advisories:
 
     url(-absolute=>1), url(-relative=>1) and the default start_form action are built from the client-supplied REQUEST_URI without validation. The result can be protocol-relative (//evil.example), absolute-form (http://evil.example/) or contain backslashes, and url(-relative=>1) can return a javascript: URL. Links and form posts built from these URLs can go to another host.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-7432-xjrv-h264
   id: CPANSA-CGI-2026-120636
@@ -489,7 +489,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120633
   description: |-
@@ -499,7 +499,7 @@ advisories:
 
     A client can poison shared caches, and URLs the application stores or sends, with redirects, links and scripts that point at a host it controls.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-r9xh-qv72-jvjf
   id: CPANSA-CGI-2026-120633
@@ -510,7 +510,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120635
   description: |-
@@ -518,7 +518,7 @@ advisories:
 
     The multipart/form-data parser matches the boundary anywhere rather than at the start of a line, uses the boundary without its leading -- for some client-supplied User-Agent values, finds the Content-Disposition name and filename inside the quoted values of other parameters, and corrupts parts when the boundary nears the 4096-byte read size.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-hc7g-hfjx-mc5f
   id: CPANSA-CGI-2026-120635
@@ -533,7 +533,7 @@ advisories:
   reported: 2026-11-04
   severity: ''
 - affected_versions:
-  - <5.00
+  - <5.02
   cves:
   - CVE-2026-120650
   description: |-
@@ -541,7 +541,7 @@ advisories:
 
     $CGI::POST_MAX defaults to no limit, and when set is not enforced for chunked multipart bodies or for the boundary line of a multipart body without a boundary= parameter. Bodies saved as PUTDATA, POSTDATA or PATCHDATA uploads are read into memory in one go, and nothing limits the number of parameters or uploads.
   fixed_versions:
-  - '>=5.00'
+  - '>=5.02'
   github_security_advisory:
   - GHSA-55jf-7qg8-xpv8
   id: CPANSA--2026-120650
