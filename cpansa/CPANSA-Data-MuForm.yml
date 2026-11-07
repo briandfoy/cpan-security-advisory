@@ -21,6 +21,26 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/08/13/10
   reported: 2026-08-13
   severity: high
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-121632
+  description: |-
+    Data::MuForm versions through 0.05 for Perl render attribute values and option labels into HTML without escaping.
+
+    process_attrs writes each attribute value into the markup as is. The select, radio group and checkbox group renderers pass each option to it, so an option's value becomes an unescaped attribute. Option and option group labels are also unescaped, the group label inside a label attribute and the others in element content.
+
+    Any application whose option list is built from data rather than literals, using an options_<field_name> method, a build_options method or a DBIC model, allows attacker-influenced text in an option value or label that can embed JavaScript in rendered pages. Attribute values built from data, such as through element_attr, are affected the same way.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-7pvx-4mx6-w9xm
+  id: CPANSA-Data-MuForm-2026-121632
+  references:
+  - https://github.com/gshank/data-muform/pull/18
+  - https://metacpan.org/release/GSHANK/Data-MuForm-0.05/source/lib/Data/MuForm/Renderer/Base.pm#L202-228
+  - http://www.openwall.com/lists/oss-security/2026/11/04/4
+  reported: 2026-11-04
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Data-MuForm
