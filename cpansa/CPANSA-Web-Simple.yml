@@ -21,6 +21,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/10/24/4
   reported: 2026-10-24
   severity: ''
+- affected_versions:
+  - <0.036
+  cves:
+  - CVE-2026-114627
+  description: |-
+    Web::Simple versions before 0.036 for Perl do not escape values interpolated into double-quoted strings in HTML::Tags output.
+
+    Under use HTML::Tags or use XML::Tags, a double-quoted string literal becomes a StringThing object that holds each interpolated value as a separate part. The escaping step passes such objects through, and stringify joins their interpolated parts as is. A value passed on its own, as in <p>, $value, </p>, is entity-escaped, but the same value in "Hello $value" is not.
+
+    An attacker who controls a value that an application interpolates into a double-quoted string can inject script into the generated page.
+  fixed_versions:
+  - '>=0.036'
+  github_security_advisory:
+  - GHSA-x36f-3cwx-9h52
+  id: CPANSA-Web-Simple-2026-114627
+  references:
+  - https://github.com/p5sagit/Web-Simple/commit/01e575827fdd9ba3a08063fd414b1de465380015.patch
+  - https://metacpan.org/release/ETHER/Web-Simple-0.036/changes
+  - http://www.openwall.com/lists/oss-security/2026/11/04/5
+  reported: 2026-11-04
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Web-Simple
