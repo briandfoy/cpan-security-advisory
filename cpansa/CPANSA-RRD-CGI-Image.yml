@@ -1,0 +1,26 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-123776
+  description: |-
+    RRD::CGI::Image versions through 0.01 for Perl pass CGI query parameters containting "tz" to tzset(), , so a FIFO or device path blocks the CGI process.
+
+    The normalize_params method sends any query key matching /tz/i to tz(), which sets $ENV{TZ} to that value, with no validation. It then calls tzset(). glibc treats a TZ value starting with / or : as a file path and opens it, so a value naming a FIFO or a blocking device stalls the process inside tzset().
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-vx75-vp6j-73h2
+  id: CPANSA-RRD-CGI-Image-2026-123776
+  references:
+  - https://man7.org/linux/man-pages/man3/tzset.3.html
+  - https://rt.cpan.org/Ticket/Display.html?id=182627
+  - https://security.metacpan.org/patches/R/RRD-CGI-Image/0.01/CVE-2026-123776-r1.patch
+  reported: 2026-11-07
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: RRD-CGI-Image
+last_checked: 1794083196
+latest_version: '0.01'
+metacpan: https://metacpan.org/pod/RRD::CGI::Image
