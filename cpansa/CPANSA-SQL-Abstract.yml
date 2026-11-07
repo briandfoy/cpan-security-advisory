@@ -1,0 +1,90 @@
+---
+advisories:
+- affected_versions:
+  - <2.000003
+  cves:
+  - CVE-2026-121265
+  description: |-
+    SQL::Abstract versions before 2.000003 for Perl allow SQL injection via an arrayref column value in insert and update.
+
+    With the array_datatypes option off, which is the default, insert(), update() and values() treat an arrayref column value as literal SQL. Its first element goes into the SQL text unescaped and the rest become bind values. A JSON array, or a repeated form field decoded as an arrayref, is such a value.
+
+    An application that passes request data as column values to insert or update with the default options allows SQL injection.
+
+    Releases before 2.000003 also treat an arrayref in generate() as literal SQL, including through AUTOLOAD when allow_autoload is on, whatever array_datatypes is set to.
+  fixed_versions:
+  - '>=2.000003'
+  github_security_advisory:
+  - GHSA-929q-6qm3-gx8h
+  id: CPANSA-SQL-Abstract-2026-121265
+  references:
+  - https://metacpan.org/release/GETTY/SQL-Abstract-2.000003/changes
+  - https://metacpan.org/release/GETTY/SQL-Abstract-2.000003/diff/GETTY/SQL-Abstract-2.000001_04
+  reported: 2026-11-07
+  severity: ''
+- affected_versions:
+  - '>=1.90_01,<2.000001_04'
+  cves:
+  - CVE-2026-121009
+  description: |-
+    SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl skip the injection_guard check for function names given with -func.
+
+    injection_guard is documented to apply to every function name, but only the { -name => ... } shorthand goes through it. The explicit { -func => [ $name, ... ] } form puts $name into the SQL unchecked.
+
+    An application that relies on injection_guard to reject an untrusted function name passed with -func allows SQL injection.
+  fixed_versions:
+  - '>=2.000001_04'
+  github_security_advisory:
+  - GHSA-c656-phfm-x7g8
+  id: CPANSA-SQL-Abstract-2026-121009
+  references:
+  - https://github.com/dbsrgits/sql-abstract/commit/b6e7d991ac588b937e8943a5b28b6837ff276a51.patch
+  - https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes
+  reported: 2026-11-04
+  severity: ''
+- affected_versions:
+  - <2.000001_04
+  cves:
+  - CVE-2026-121008
+  description: |-
+    SQL::Abstract::Tree versions before 2.000001_04 for Perl allow cross-site scripting via unescaped SQL text and bind values in the html profile.
+
+    The html profile wraps keywords and placeholders in span elements and breaks lines with br elements, so its output is meant to go into a page as is. The format method does not HTML-escape the SQL text or the bind values it fills in around that markup.
+
+    An application that renders SQL formatted with the html profile, such as in a debug panel or query log, allows an attacker who controls a bind value or part of the SQL text to embed JavaScript in the page.
+  fixed_versions:
+  - '>=2.000001_04'
+  github_security_advisory:
+  - GHSA-fcg4-533h-9xx3
+  id: CPANSA-SQL-Abstract-2026-121008
+  references:
+  - https://github.com/dbsrgits/sql-abstract/commit/85a75fcde3e09da5181dee07a4eccba76ad94305.patch
+  - https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes
+  reported: 2026-11-04
+  severity: ''
+- affected_versions:
+  - '>=1.90_01,<2.000001_04'
+  cves:
+  - CVE-2026-121007
+  description: |-
+    SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl allow SQL injection via the where values of a nested statement in an identifier position.
+
+    A nested statement such as { -select => ... } in a position where plain scalars are identifiers treats its own plain scalars as identifiers too. These positions are the select list, ORDER BY, GROUP BY, RETURNING, and with the ExtraClauses plugin FROM (-as) and JOIN (to). The values of the statement's where, having and set clauses, and the rows of a -values, go into the SQL text instead of the bind list, unescaped unless quote_char is set. Subselects in a WHERE condition are not affected.
+
+    An application that passes untrusted input as a where value of such a nested statement, expecting it to be bound, allows SQL injection.
+  fixed_versions:
+  - '>=2.000001_04'
+  github_security_advisory:
+  - GHSA-24q3-fp2q-x646
+  id: CPANSA-SQL-Abstract-2026-121007
+  references:
+  - https://github.com/dbsrgits/sql-abstract/commit/79fc34e874b4edb441154eccddb04c57d5c1c90e.patch
+  - https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes
+  reported: 2026-11-04
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: SQL-Abstract
+last_checked: 1794083584
+latest_version: '2.000003'
+metacpan: https://metacpan.org/pod/SQL::Abstract
