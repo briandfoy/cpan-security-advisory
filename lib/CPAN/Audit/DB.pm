@@ -1,5 +1,5 @@
-# created by util/generate at Sun Nov  1 17:11:20 2026
-# https://github.com/briandfoy/cpan-security-advisory.git 6e2edc470b4870efeba8a91eac138ad5677d0e97
+# created by util/generate at Sat Nov  7 20:47:42 2026
+# https://github.com/briandfoy/cpan-security-advisory.git 78d71817f8a564d5732f8aea431dba5c68822dab
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPAN::Audit::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261101.010';
+our $VERSION = '20261107.001';
 
 sub db {
 	{
@@ -7040,6 +7040,14 @@ sub db {
         {
           "date" => "2026-10-30T04:28:32",
           "version" => "2.117000"
+        },
+        {
+          "date" => "2026-11-02T23:47:08",
+          "version" => "2.117001"
+        },
+        {
+          "date" => "2026-11-05T04:02:11",
+          "version" => "2.117002"
         }
       ]
     },
@@ -11087,6 +11095,435 @@ sub db {
           ],
           "reported" => "2010-12-06",
           "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120651"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow an infinite loop on a short request body when \$DISABLE_UPLOADS is set.\n\nWhen \$CGI::PUTDATA_UPLOAD or an upload hook is set, read_postdata_putdata takes a request body that is not a form submission. With \$CGI::DISABLE_UPLOADS set, it discards the body by reading until Content-Length bytes have arrived. Once a body shorter than its Content-Length runs out, every read returns 0, so the loop never ends.\n\nA client can keep a server process spinning with one such request.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120651",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/16d9f61acf8b844b7360e8d726338e3ce34dfa9f.patch",
+            "https://github.com/leejo/CGI.pm/commit/8a78305065690461ae283fa24e5ebe4ec8a22fbc.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120644"
+          ],
+          "description" => "CGI::Cookie versions before 5.00 for Perl allow cookie attribute injection via unvalidated path, domain and expires values.\n\nThe path, domain and expires values are written into the Set-Cookie header without checking for semicolons or control characters.\n\nAn application that sets them from request data can be made to add other cookie attributes, such as Domain or SameSite.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120644",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/0b3527faaa9de55f79ca7d59dd3bcfb2c5540e00.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI/Cookie.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=4.67,<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120631"
+          ],
+          "description" => "CGI::Cookie versions from 4.67 before 5.00 for Perl allow denial of service via the client cookie expires value used as a regex in parse.\n\nCGI's cookie method reads the Cookie request header through parse, which interpolates the header's expires value unescaped into the substitution pattern that removes it from the cookie string.\n\nA client can make the request die with an invalid pattern, or tie up the process with one that backtracks catastrophically.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120631",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/95e044af2ec24d99a61e99d6291580ad47aff641.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI/Cookie.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120634"
+          ],
+          "description" => "CGI::Carp versions before 5.00 for Perl leak warnings across requests in persistent environments via the warningsToBrowser buffer.\n\nWarnings are held in a package-level buffer until warningsToBrowser writes them into the page as HTML comments, and the buffer is never cleared between requests. Under mod_perl, FastCGI or PSGI, warnings from one request are written into a later one.\n\nWarnings that contain one user's request data can appear in the HTML sent to another user.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120634",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/604a83fec105f75fe06f1a75026c4c34fd5a1f61.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI/Carp.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120648"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow HTML injection via text containing --> in comment.\n\nArguments are placed between <!-- and --> without escaping, so text containing --> closes the comment early.\n\nAn application that passes request data to comment can be made to inject HTML into the page.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120648",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/6a17eb84703d84bca86b0079f5870ca9c921ffd4.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=4.71,<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120646"
+          ],
+          "description" => "CGI versions from 4.71 before 5.00 for Perl allow denial of service via a plain string dereferenced as a symbolic reference in uploadInfo.\n\nuploadInfo dereferences its argument and calls its filename method without checking that it is an upload filehandle. A plain string naming a defined global variable, such as the parameter value from ?upload=0, is treated as a symbolic reference, and the method call on it dies.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120646",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/a14a7decfdc18f2daf436d30df9b543e3f0f8da3.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120647"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow Content-Disposition parameter injection via unescaped double quotes in the header attachment filename.\n\nheader(-attachment => \$name) writes \$name into the quoted filename parameter of Content-Disposition without escaping double quotes.\n\nAn application that passes request data as the attachment name can be made to send a second filename parameter, changing the name the response is saved under.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120647",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/131280a5c5bc51b65797bd57ef0ee8da8468065b.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120645"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow denial of service via submitted values used as a regex for optgroup selection in scrolling_list.\n\nWhen rendering option groups, scrolling_list marks the selected options by interpolating each selected value, by default taken from the request parameters, unescaped into a substitution pattern.\n\nA client can make the request die with an invalid pattern, or tie up the process with one that backtracks heavily.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120645",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/824956fbb0c4eb77044ba2dc9180a30df12cb309.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=4.62,<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120643"
+          ],
+          "description" => "CGI versions from 4.62 before 5.00 for Perl allow cross-site scripting via a raw apostrophe in URLs returned by url and self_url.\n\nBoth pass the URL through URI's canonical method, which leaves an apostrophe in the path raw and decodes the %27 that query parameter escaping produces, so an apostrophe in the request path or a parameter appears raw in the result.\n\nAn application that places the URL in a single-quoted HTML attribute or JavaScript string is open to cross-site scripting.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120643",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/851430be84c4d0f350681814e1d7718b9959f2c2.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120642"
+          ],
+          "description" => "CGI versions before 5.00 for Perl return request-derived values untainted under taint mode.\n\nThe upload filename, uploadInfo values, some path_info and script_name values, Accept results, and the name lists from url_param and cookie are returned without the taint flag, as is a cookie named expires from 4.67 on.\n\nThese values come from regex captures or hash keys, which Perl does not taint, so they pass -T checks unvalidated.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120642",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/6ae50ce84073b8f68a6e3750479de70d5b8f2dcf.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120641"
+          ],
+          "description" => "CGI versions before 5.00 for Perl return upload filenames with any client-supplied path, including ../ and Windows paths.\n\nThe name returned for an uploaded file is the filename parameter of the part's Content-Disposition header, unchanged.\n\nAn application that saves the upload under this name can be made to write outside the intended directory.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120641",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/5379eb18e87b7f985613f5c4f7bae94478a4fa2f.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120639"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow HTTP header injection via entity decoding after the newline check in header and unchecked values in multipart_start and do_push.\n\nWith autoEscape off, header decodes HTML entities in extra header values after its newline check, so an encoded CR or LF reaches the response. multipart_start does not check header values for newlines, and do_push does not check the type it prints in each part.\n\nAn application that passes request data into these header values can be made to add headers or split the response.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120639",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/69955309d371c8093d11cf12e3ddef491537ffad.patch",
+            "https://github.com/leejo/CGI.pm/commit/7733c2753f4f240012097507cda2b6e87ae46db4.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120637"
+          ],
+          "description" => "CGI versions before 5.00 for Perl take request parameters from the process command line arguments for an unrecognised REQUEST_METHOD.\n\nFor a REQUEST_METHOD such as OPTIONS, CGI falls through to its offline debugging mode, which is on by default, and builds the parameters and path_info from the process's command line arguments.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120637",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/b753ff75a3bc4554c075cc37c1db605a55297029.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120632"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow CPU exhaustion via a backtracking regex on the XForms multipart/related Content-Type.\n\nWhen a POST Content-Type contains multipart/related, the boundary and start parameters are extracted with an unanchored pattern that puts .+ on either side of the boundary capture, which backtracks in cubic time on a header that does not match. No request body is needed.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120632",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/1e529c7ac8d410a51b4b04ab9d6cc00d51ef33c0.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120640"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow the POSTDATA, PUTDATA, PATCHDATA and XForms:Model parameters to be set from the query string or form fields.\n\nCGI stores a non-form request body under POSTDATA, PUTDATA or PATCHDATA, and an XForms body under XForms:Model, but also accepts these names from the query string, a form field or a multipart part, so an application cannot tell a client-sent value from the real body.\n\nA cross-site HTML form can post POSTDATA={\"admin\":true} to an endpoint that reads JSON from param('POSTDATA'), a request forgery that needs no CORS preflight.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120640",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/bc4022f553301014e522133ba1e1f4e49e3bef08.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120638"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow open redirects via HTML entity decoding of the URL after application validation in redirect.\n\nredirect decodes HTML entities in its URL before writing the Location header, so a URL the application has already validated can change meaning. For example, /&#47;evil.example/ becomes //evil.example/ and sends the user to another host.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120638",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/7733c2753f4f240012097507cda2b6e87ae46db4.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120636"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow open redirects and script injection via URLs built from REQUEST_URI in url and start_form.\n\nurl(-absolute=>1), url(-relative=>1) and the default start_form action are built from the client-supplied REQUEST_URI without validation. The result can be protocol-relative (//evil.example), absolute-form (http://evil.example/) or contain backslashes, and url(-relative=>1) can return a javascript: URL. Links and form posts built from these URLs can go to another host.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120636",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/9405ef3909ee94991a3474167aa53b9051bd8765.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120633"
+          ],
+          "description" => "CGI versions before 5.00 for Perl trust the client X-Forwarded-Host header in url, self_url, virtual_host and virtual_port.\n\nThese take the host name and port from the X-Forwarded-Host request header when present, and otherwise from Host, without validating either. The URLs from url and self_url are the default redirect location and the start_html(-base=>1) base href, and the default start_form action when REQUEST_URI is not set.\n\nA client can poison shared caches, and URLs the application stores or sends, with redirects, links and scripts that point at a host it controls.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120633",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/d76752a5e8dfd365b0fe3a0b9a7da6c054e856af.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120635"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow form fields to be smuggled past proxies and WAFs via multipart parsing that differs from the RFCs.\n\nThe multipart/form-data parser matches the boundary anywhere rather than at the start of a line, uses the boundary without its leading -- for some client-supplied User-Agent values, finds the Content-Disposition name and filename inside the quoted values of other parameters, and corrupts parts when the boundary nears the 4096-byte read size.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA-CGI-2026-120635",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/cbf04979f9974458ac223793bbd9d0b6a772aa66.patch",
+            "https://github.com/leejo/CGI.pm/commit/e0ef8f4248c6ae3025749040d8595d206b6a1b49.patch",
+            "https://github.com/leejo/CGI.pm/commit/f719fc08e8756708bcd4f1e357d5c0f8702f85dd.patch",
+            "https://github.com/leejo/CGI.pm/commit/fe9516804d59a3774e280c15dbb7072fbd0ba5f1.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes",
+            "https://www.rfc-editor.org/rfc/rfc2046#section-5.1.1"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<5.00"
+          ],
+          "cves" => [
+            "CVE-2026-120650"
+          ],
+          "description" => "CGI versions before 5.00 for Perl allow memory, CPU and disk exhaustion via missing or unenforced request size, parameter and upload limits.\n\n\$CGI::POST_MAX defaults to no limit, and when set is not enforced for chunked multipart bodies or for the boundary line of a multipart body without a boundary= parameter. Bodies saved as PUTDATA, POSTDATA or PATCHDATA uploads are read into memory in one go, and nothing limits the number of parameters or uploads.",
+          "distribution" => "CGI",
+          "fixed_versions" => [
+            ">=5.00"
+          ],
+          "id" => "CPANSA--2026-120650",
+          "references" => [
+            "https://github.com/leejo/CGI.pm/commit/17b838dc14d2b82ae6c7e76f66ec2c3f3b08038b.patch",
+            "https://github.com/leejo/CGI.pm/commit/277baeb74fde7bce975a7bd0a1f98dcf1b9b2050.patch",
+            "https://github.com/leejo/CGI.pm/commit/8940a74e53a41563f72813b45f99cceaaa4c92e8.patch",
+            "https://github.com/leejo/CGI.pm/commit/f3febefe63fe3881d8c3ae10fa83ca8ec950b959.patch",
+            "https://metacpan.org/release/LEEJO/CGI-4.72/source/lib/CGI.pm",
+            "https://metacpan.org/release/LEEJO/CGI-5.00/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
         }
       ],
       "main_module" => "CGI",
@@ -12102,6 +12539,18 @@ sub db {
         {
           "date" => "2026-05-05T09:02:50",
           "version" => "4.72"
+        },
+        {
+          "date" => "2026-11-03T12:02:05",
+          "version" => "5.00"
+        },
+        {
+          "date" => "2026-11-03T12:39:01",
+          "version" => "5.01"
+        },
+        {
+          "date" => "2026-11-03T14:22:32",
+          "version" => "5.02"
         },
         {
           "date" => "2006-01-28T00:00:00",
@@ -15040,7 +15489,7 @@ sub db {
         {
           "date" => "2014-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019010",
+          "perl_release" => "5.01901",
           "version" => "2.04"
         },
         {
@@ -17699,6 +18148,27 @@ sub db {
           ],
           "reported" => "2026-06-09",
           "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            "<0.10029"
+          ],
+          "cves" => [
+            "CVE-2026-74846"
+          ],
+          "description" => "Catalyst::Plugin::Authentication versions before 0.10029 for Perl allow timing attacks on stored passwords via eq comparisons in the legacy password verifier.\n\nCVE-2026-5091 was fixed in the realm-based verifier. The legacy verifier, used by the deprecated login method, compares clear-text passwords, crypt hashes and base64 digests with eq, so the comparison time depends on how many leading bytes match.\n\nA remote attacker can use response-time differences to guess the stored password or hash.",
+          "distribution" => "Catalyst-Plugin-Authentication",
+          "fixed_versions" => [
+            ">=0.10029"
+          ],
+          "id" => "CPANSA-Catalyst-Plugin-Authentication-2026-74846",
+          "references" => [
+            "https://github.com/perl-catalyst/Catalyst-Plugin-Authentication/commit/ba4435f1fa6b641e6c8793c88b5433afa83ceafa.patch",
+            "https://metacpan.org/release/ETHER/Catalyst-Plugin-Authentication-0.10029/changes",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5091"
+          ],
+          "reported" => "2026-11-03",
+          "severity" => "high"
         }
       ],
       "main_module" => "Catalyst::Plugin::Authentication",
@@ -17878,6 +18348,10 @@ sub db {
         {
           "date" => "2026-08-08T16:26:44",
           "version" => "0.10028"
+        },
+        {
+          "date" => "2026-11-02T20:29:59",
+          "version" => "0.10029"
         }
       ]
     },
@@ -20194,7 +20668,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.204_001"
         }
       ]
@@ -20883,7 +21357,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.204_001"
         }
       ]
@@ -41535,7 +42009,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "2.158"
         },
         {
@@ -41589,7 +42063,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02901",
+          "perl_release" => "5.029010",
           "version" => "2.174"
         },
         {
@@ -41625,7 +42099,7 @@ sub db {
         {
           "date" => "2021-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.034000",
+          "perl_release" => "5.034",
           "version" => "2.179"
         },
         {
@@ -41655,7 +42129,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "2.188"
         },
         {
@@ -42445,6 +42919,25 @@ sub db {
           ],
           "reported" => "2026-08-13",
           "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            ">0"
+          ],
+          "cves" => [
+            "CVE-2026-121632"
+          ],
+          "description" => "Data::MuForm versions through 0.05 for Perl render attribute values and option labels into HTML without escaping.\n\nprocess_attrs writes each attribute value into the markup as is. The select, radio group and checkbox group renderers pass each option to it, so an option's value becomes an unescaped attribute. Option and option group labels are also unescaped, the group label inside a label attribute and the others in element content.\n\nAny application whose option list is built from data rather than literals, using an options_<field_name> method, a build_options method or a DBIC model, allows attacker-influenced text in an option value or label that can embed JavaScript in rendered pages. Attribute values built from data, such as through element_attr, are affected the same way.",
+          "distribution" => "Data-MuForm",
+          "fixed_versions" => [],
+          "id" => "CPANSA-Data-MuForm-2026-121632",
+          "references" => [
+            "https://github.com/gshank/data-muform/pull/18",
+            "https://metacpan.org/release/GSHANK/Data-MuForm-0.05/source/lib/Data/MuForm/Renderer/Base.pm#L202-228",
+            "http://www.openwall.com/lists/oss-security/2026/11/04/4"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
         }
       ],
       "main_module" => "Data::MuForm",
@@ -45459,7 +45952,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.58_01"
         }
       ]
@@ -50962,7 +51455,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => 5,
+          "perl_release" => "5.000",
           "version" => undef
         },
         {
@@ -51004,7 +51497,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006000",
+          "perl_release" => "5.006",
           "version" => "5.45"
         },
         {
@@ -51523,7 +52016,7 @@ sub db {
         {
           "date" => "2011-05-14T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.014",
+          "perl_release" => "5.014000",
           "version" => "2.2210"
         },
         {
@@ -51661,7 +52154,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.035010",
+          "perl_release" => "5.03501",
           "version" => "3.45"
         },
         {
@@ -53382,7 +53875,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006000",
+          "perl_release" => "5.006",
           "version" => "1.0403"
         },
         {
@@ -54058,6 +54551,360 @@ sub db {
         {
           "date" => "2016-08-23T21:11:03",
           "version" => "1.162360"
+        }
+      ]
+    },
+    "Furl" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            ">0"
+          ],
+          "cves" => [
+            "CVE-2026-65059"
+          ],
+          "description" => "Furl versions through 3.15 for Perl allow memory exhaustion via unbounded decompression of HTTP responses.\n\nFurl inflates a response body sent with a gzip, x-gzip or deflate Content-Encoding and appends the output to the response string with no size limit. It does this whether or not the request asked for compression, and no option caps the decompressed size. Responses read with write_file or write_code are streamed rather than held in memory.\n\nA malicious server, or an attacker on a plain HTTP connection, can send a small compressed response that expands to exhaust the client's memory and end the process.",
+          "distribution" => "Furl",
+          "fixed_versions" => [],
+          "id" => "CPANSA-Furl-2026-65059",
+          "references" => [
+            "https://github.com/tokuhirom/Furl/pull/139",
+            "https://metacpan.org/release/SYOHEX/Furl-3.15/source/lib/Furl/ZlibStream.pm",
+            "http://www.openwall.com/lists/oss-security/2026/11/02/5"
+          ],
+          "reported" => "2026-11-02",
+          "severity" => "high"
+        }
+      ],
+      "main_module" => "Furl",
+      "versions" => [
+        {
+          "date" => "2010-10-24T08:03:24",
+          "version" => "0.01"
+        },
+        {
+          "date" => "2010-10-26T06:55:59",
+          "version" => "0.03"
+        },
+        {
+          "date" => "2010-10-26T22:44:59",
+          "version" => "0.04"
+        },
+        {
+          "date" => "2010-10-31T03:50:00",
+          "version" => "0.05"
+        },
+        {
+          "date" => "2010-11-01T05:30:54",
+          "version" => "0.06"
+        },
+        {
+          "date" => "2010-11-01T10:31:15",
+          "version" => "0.07"
+        },
+        {
+          "date" => "2010-11-02T00:37:46",
+          "version" => "0.08"
+        },
+        {
+          "date" => "2010-11-02T03:17:38",
+          "version" => "0.09"
+        },
+        {
+          "date" => "2010-11-03T01:38:31",
+          "version" => "0.10"
+        },
+        {
+          "date" => "2010-11-05T04:29:53",
+          "version" => "0.11"
+        },
+        {
+          "date" => "2010-11-11T04:14:47",
+          "version" => "0.12"
+        },
+        {
+          "date" => "2010-11-16T03:54:34",
+          "version" => "0.13"
+        },
+        {
+          "date" => "2010-11-22T09:44:27",
+          "version" => "0.14"
+        },
+        {
+          "date" => "2010-11-29T03:01:34",
+          "version" => "0.15"
+        },
+        {
+          "date" => "2010-12-02T03:34:31",
+          "version" => "0.16"
+        },
+        {
+          "date" => "2010-12-03T15:48:19",
+          "version" => "0.17"
+        },
+        {
+          "date" => "2010-12-06T12:47:51",
+          "version" => "0.18"
+        },
+        {
+          "date" => "2010-12-21T04:14:55",
+          "version" => "0.19"
+        },
+        {
+          "date" => "2010-12-21T05:08:37",
+          "version" => "0.20"
+        },
+        {
+          "date" => "2011-01-11T13:11:36",
+          "version" => "0.21"
+        },
+        {
+          "date" => "2011-01-26T03:00:58",
+          "version" => "0.22"
+        },
+        {
+          "date" => "2011-01-31T06:38:19",
+          "version" => "0.23"
+        },
+        {
+          "date" => "2011-02-08T13:16:57",
+          "version" => "0.24"
+        },
+        {
+          "date" => "2011-02-17T02:45:41",
+          "version" => "0.25"
+        },
+        {
+          "date" => "2011-02-17T09:43:49",
+          "version" => "0.26"
+        },
+        {
+          "date" => "2011-02-20T08:32:12",
+          "version" => "0.27"
+        },
+        {
+          "date" => "2011-02-23T02:25:33",
+          "version" => "0.28"
+        },
+        {
+          "date" => "2011-02-24T02:31:11",
+          "version" => "0.29"
+        },
+        {
+          "date" => "2011-02-25T11:42:07",
+          "version" => "0.30"
+        },
+        {
+          "date" => "2011-02-26T07:34:03",
+          "version" => "0.31"
+        },
+        {
+          "date" => "2011-05-30T07:15:42",
+          "version" => "0.32"
+        },
+        {
+          "date" => "2011-07-14T05:43:16",
+          "version" => "0.33"
+        },
+        {
+          "date" => "2011-07-15T09:42:19",
+          "version" => "0.34"
+        },
+        {
+          "date" => "2011-08-11T11:02:48",
+          "version" => "0.35"
+        },
+        {
+          "date" => "2011-08-24T02:56:57",
+          "version" => "0.36"
+        },
+        {
+          "date" => "2011-08-25T05:49:41",
+          "version" => "0.37"
+        },
+        {
+          "date" => "2011-09-06T01:33:32",
+          "version" => "0.38"
+        },
+        {
+          "date" => "2012-05-30T04:30:43",
+          "version" => "0.39"
+        },
+        {
+          "date" => "2012-06-04T09:24:51",
+          "version" => "0.40"
+        },
+        {
+          "date" => "2012-09-25T09:37:15",
+          "version" => "0.41"
+        },
+        {
+          "date" => "2012-10-16T03:15:16",
+          "version" => "0.42"
+        },
+        {
+          "date" => "2012-10-19T10:18:06",
+          "version" => "1.00"
+        },
+        {
+          "date" => "2013-01-04T00:23:12",
+          "version" => "1.01"
+        },
+        {
+          "date" => "2013-01-07T09:52:38",
+          "version" => "1.02"
+        },
+        {
+          "date" => "2013-01-13T03:43:26",
+          "version" => "1.03"
+        },
+        {
+          "date" => "2013-01-23T06:38:39",
+          "version" => "1.04"
+        },
+        {
+          "date" => "2013-01-23T06:50:32",
+          "version" => "2.00"
+        },
+        {
+          "date" => "2013-01-23T10:21:06",
+          "version" => "2.01"
+        },
+        {
+          "date" => "2013-02-06T08:28:39",
+          "version" => "2.02"
+        },
+        {
+          "date" => "2013-02-09T12:57:06",
+          "version" => "2.03"
+        },
+        {
+          "date" => "2013-02-12T05:31:05",
+          "version" => "2.04"
+        },
+        {
+          "date" => "2013-02-12T06:03:07",
+          "version" => "2.05"
+        },
+        {
+          "date" => "2013-02-14T10:09:00",
+          "version" => "2.06"
+        },
+        {
+          "date" => "2013-03-02T09:54:26",
+          "version" => "2.07"
+        },
+        {
+          "date" => "2013-03-06T10:48:41",
+          "version" => "2.08"
+        },
+        {
+          "date" => "2013-03-06T22:20:38",
+          "version" => "2.09"
+        },
+        {
+          "date" => "2013-03-18T09:38:26",
+          "version" => "2.10"
+        },
+        {
+          "date" => "2013-04-04T03:15:07",
+          "version" => "2.11"
+        },
+        {
+          "date" => "2013-04-15T08:42:29",
+          "version" => "2.12"
+        },
+        {
+          "date" => "2013-04-17T08:08:59",
+          "version" => "2.13"
+        },
+        {
+          "date" => "2013-04-19T02:14:59",
+          "version" => "2.14"
+        },
+        {
+          "date" => "2013-05-10T08:43:57",
+          "version" => "2.15"
+        },
+        {
+          "date" => "2013-05-22T08:04:36",
+          "version" => "2.16"
+        },
+        {
+          "date" => "2013-07-01T03:15:00",
+          "version" => "2.17"
+        },
+        {
+          "date" => "2013-08-08T07:14:51",
+          "version" => "2.18"
+        },
+        {
+          "date" => "2013-08-26T02:12:58",
+          "version" => "2.19"
+        },
+        {
+          "date" => "2013-11-13T09:42:48",
+          "version" => "3.00"
+        },
+        {
+          "date" => "2014-02-13T06:22:23",
+          "version" => "3.01"
+        },
+        {
+          "date" => "2014-03-18T20:56:47",
+          "version" => "3.02"
+        },
+        {
+          "date" => "2014-07-09T23:45:45",
+          "version" => "3.03"
+        },
+        {
+          "date" => "2014-09-22T10:10:17",
+          "version" => "3.04"
+        },
+        {
+          "date" => "2014-09-24T03:51:46",
+          "version" => "3.05"
+        },
+        {
+          "date" => "2015-02-09T23:07:49",
+          "version" => "3.06"
+        },
+        {
+          "date" => "2015-04-21T04:04:38",
+          "version" => "3.07"
+        },
+        {
+          "date" => "2015-08-06T09:34:27",
+          "version" => "3.08"
+        },
+        {
+          "date" => "2016-07-21T14:25:52",
+          "version" => "3.09"
+        },
+        {
+          "date" => "2017-04-05T16:56:13",
+          "version" => "3.10"
+        },
+        {
+          "date" => "2017-05-16T23:58:29",
+          "version" => "3.11"
+        },
+        {
+          "date" => "2017-09-13T07:01:12",
+          "version" => "3.12"
+        },
+        {
+          "date" => "2017-09-19T06:34:38",
+          "version" => "3.13"
+        },
+        {
+          "date" => "2021-05-13T05:30:54",
+          "version" => "3.14"
+        },
+        {
+          "date" => "2025-09-25T00:27:04",
+          "version" => "3.15"
         }
       ]
     },
@@ -55814,6 +56661,10 @@ sub db {
         {
           "date" => "2026-05-07T10:35:18",
           "version" => "0.50"
+        },
+        {
+          "date" => "2026-11-05T12:01:08",
+          "version" => "0.51"
         }
       ]
     },
@@ -57033,6 +57884,40 @@ sub db {
           ],
           "reported" => "2026-08-04",
           "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=0.12"
+          ],
+          "cves" => [
+            "CVE-2026-74759"
+          ],
+          "description" => "Google::Auth versions 0.12 for Perl allow server side request forgery via unvalidated credential_source URLs in AWS external account credentials.\n\nAn external_account configuration with the AWS subject token type selects Google::Auth::ExternalAccountCredentials::Aws. Its retrieve_subject_token sends requests to the imdsv2_session_token_url, url and region_url fields of credential_source without the host check that the other credential classes apply.\n\nAny caller that builds credentials from a configuration it does not fully control issues GET and PUT requests to hosts the configuration names, including internal services and link-local metadata endpoints.",
+          "distribution" => "Google-Auth",
+          "fixed_versions" => [],
+          "id" => "CPANSA-Google-Auth-2026-74759",
+          "references" => [
+            "https://metacpan.org/release/CJCOLLIER/Google-Auth-0.12/source/lib/Google/Auth/ExternalAccountCredentials/Aws.pm"
+          ],
+          "reported" => "2026-11-01",
+          "severity" => "critical"
+        },
+        {
+          "affected_versions" => [
+            ">=0.11"
+          ],
+          "cves" => [
+            "CVE-2026-74760"
+          ],
+          "description" => "Google::Auth versions from 0.11 through 0.12 for Perl accept an authorization code from any local process because the gcloud-auth login callback does not check the OAuth state.\n\nThe gcloud-auth login and application-default login commands send a state parameter with the authorization request, then take the code from the first request to reach their loopback listener without comparing the returned state.\n\nA local attacker can submit an authorization code for their own Google account. The CLI exchanges it and stores the refresh token as the user's credentials, so the user's tools then act as the attacker's account.",
+          "distribution" => "Google-Auth",
+          "fixed_versions" => [],
+          "id" => "CPANSA-Google-Auth-2026-74760",
+          "references" => [
+            "https://metacpan.org/release/CJCOLLIER/Google-Auth-0.12/source/bin/gcloud-auth.pl"
+          ],
+          "reported" => "2026-11-01",
+          "severity" => "high"
         }
       ],
       "main_module" => "Google::Auth",
@@ -59816,6 +60701,27 @@ sub db {
           ],
           "reported" => "2026-10-28",
           "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<1.24_02"
+          ],
+          "cves" => [
+            "CVE-2026-121006"
+          ],
+          "description" => "HTTP::Body versions before 1.24_02 for Perl parse the trailer in quadratic time.\n\nEverything after the last chunk in the same call to add() is parsed with HTTP::Headers, which takes time quadratic in the number of fields of one name.  For example, it takes several seconds to parse 16 KiB of \"a:\" lines.\n\nA remote attackercan exhause the CPU with a single request.\n\nHTTP::Body version 1.25 limits the size and number of lines in the trailer.",
+          "distribution" => "HTTP-Body",
+          "fixed_versions" => [
+            ">=1.24_02"
+          ],
+          "id" => "CPANSA-HTTP-Body-2026-121006",
+          "references" => [
+            "https://github.com/libwww-perl/HTTP-Body/commit/983dd4ca3b863ab513240b02c91c3114fb299389.patch",
+            "https://metacpan.org/release/GETTY/HTTP-Body-1.24_02/changes",
+            "http://www.openwall.com/lists/oss-security/2026/11/06/8"
+          ],
+          "reported" => "2026-11-06",
+          "severity" => ""
         }
       ],
       "main_module" => "HTTP::Body",
@@ -59959,6 +60865,14 @@ sub db {
         {
           "date" => "2026-10-27T17:43:03",
           "version" => "1.24_01"
+        },
+        {
+          "date" => "2026-11-03T17:05:53",
+          "version" => "1.24_02"
+        },
+        {
+          "date" => "2026-11-05T17:48:38",
+          "version" => "1.25"
         }
       ]
     },
@@ -92971,6 +93885,10 @@ sub db {
         {
           "date" => "2026-08-20T09:00:17",
           "version" => "0.008"
+        },
+        {
+          "date" => "2026-11-01T20:54:41",
+          "version" => "0.010"
         }
       ]
     },
@@ -96458,6 +97376,10 @@ sub db {
         {
           "date" => "2026-10-24T23:42:35",
           "version" => "9.53"
+        },
+        {
+          "date" => "2026-11-07T13:27:13",
+          "version" => "9.54"
         }
       ]
     },
@@ -97312,6 +98234,10 @@ sub db {
         {
           "date" => "2026-10-20T19:46:15",
           "version" => 20261020
+        },
+        {
+          "date" => "2026-11-05T14:12:46",
+          "version" => 20261105
         }
       ]
     },
@@ -109039,7 +109965,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => 5,
+          "perl_release" => "5.000",
           "version" => undef
         },
         {
@@ -109057,7 +109983,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006000",
+          "perl_release" => "5.006",
           "version" => "2.02"
         },
         {
@@ -109123,7 +110049,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01301",
+          "perl_release" => "5.013010",
           "version" => "3.37"
         },
         {
@@ -109201,7 +110127,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "3.55"
         },
         {
@@ -109297,7 +110223,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02901",
+          "perl_release" => "5.029010",
           "version" => "3.78"
         },
         {
@@ -109333,7 +110259,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.035010",
+          "perl_release" => "5.03501",
           "version" => "3.84"
         },
         {
@@ -109357,7 +110283,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "3.89"
         },
         {
@@ -113515,7 +114441,7 @@ sub db {
         {
           "date" => "2011-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.015",
+          "perl_release" => "5.015000",
           "version" => "3.15_05"
         },
         {
@@ -115028,6 +115954,36 @@ sub db {
         {
           "date" => "2021-01-06T18:05:35",
           "version" => "0.82"
+        }
+      ]
+    },
+    "RRD-CGI-Image" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            ">0"
+          ],
+          "cves" => [
+            "CVE-2026-123776"
+          ],
+          "description" => "RRD::CGI::Image versions through 0.01 for Perl pass CGI query parameters containting \"tz\" to tzset(), , so a FIFO or device path blocks the CGI process.\n\nThe normalize_params method sends any query key matching /tz/i to tz(), which sets \$ENV{TZ} to that value, with no validation. It then calls tzset(). glibc treats a TZ value starting with / or : as a file path and opens it, so a value naming a FIFO or a blocking device stalls the process inside tzset().",
+          "distribution" => "RRD-CGI-Image",
+          "fixed_versions" => [],
+          "id" => "CPANSA-RRD-CGI-Image-2026-123776",
+          "references" => [
+            "https://man7.org/linux/man-pages/man3/tzset.3.html",
+            "https://rt.cpan.org/Ticket/Display.html?id=182627",
+            "https://security.metacpan.org/patches/R/RRD-CGI-Image/0.01/CVE-2026-123776-r1.patch"
+          ],
+          "reported" => "2026-11-07",
+          "severity" => ""
+        }
+      ],
+      "main_module" => "RRD::CGI::Image",
+      "versions" => [
+        {
+          "date" => "2008-08-04T23:36:59",
+          "version" => "0.01"
         }
       ]
     },
@@ -117487,6 +118443,10 @@ sub db {
         {
           "date" => "2026-10-29T10:15:12",
           "version" => "v0.4.13"
+        },
+        {
+          "date" => "2026-11-06T17:44:56",
+          "version" => "v0.4.14"
         }
       ]
     },
@@ -117861,6 +118821,433 @@ sub db {
         {
           "date" => "2018-05-14T20:36:08",
           "version" => "1.27"
+        }
+      ]
+    },
+    "SQL-Abstract" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            "<2.000003"
+          ],
+          "cves" => [
+            "CVE-2026-121265"
+          ],
+          "description" => "SQL::Abstract versions before 2.000003 for Perl allow SQL injection via an arrayref column value in insert and update.\n\nWith the array_datatypes option off, which is the default, insert(), update() and values() treat an arrayref column value as literal SQL. Its first element goes into the SQL text unescaped and the rest become bind values. A JSON array, or a repeated form field decoded as an arrayref, is such a value.\n\nAn application that passes request data as column values to insert or update with the default options allows SQL injection.\n\nReleases before 2.000003 also treat an arrayref in generate() as literal SQL, including through AUTOLOAD when allow_autoload is on, whatever array_datatypes is set to.",
+          "distribution" => "SQL-Abstract",
+          "fixed_versions" => [
+            ">=2.000003"
+          ],
+          "id" => "CPANSA-SQL-Abstract-2026-121265",
+          "references" => [
+            "https://metacpan.org/release/GETTY/SQL-Abstract-2.000003/changes",
+            "https://metacpan.org/release/GETTY/SQL-Abstract-2.000003/diff/GETTY/SQL-Abstract-2.000001_04"
+          ],
+          "reported" => "2026-11-07",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=1.90_01,<2.000001_04"
+          ],
+          "cves" => [
+            "CVE-2026-121009"
+          ],
+          "description" => "SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl skip the injection_guard check for function names given with -func.\n\ninjection_guard is documented to apply to every function name, but only the { -name => ... } shorthand goes through it. The explicit { -func => [ \$name, ... ] } form puts \$name into the SQL unchecked.\n\nAn application that relies on injection_guard to reject an untrusted function name passed with -func allows SQL injection.",
+          "distribution" => "SQL-Abstract",
+          "fixed_versions" => [
+            ">=2.000001_04"
+          ],
+          "id" => "CPANSA-SQL-Abstract-2026-121009",
+          "references" => [
+            "https://github.com/dbsrgits/sql-abstract/commit/b6e7d991ac588b937e8943a5b28b6837ff276a51.patch",
+            "https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<2.000001_04"
+          ],
+          "cves" => [
+            "CVE-2026-121008"
+          ],
+          "description" => "SQL::Abstract::Tree versions before 2.000001_04 for Perl allow cross-site scripting via unescaped SQL text and bind values in the html profile.\n\nThe html profile wraps keywords and placeholders in span elements and breaks lines with br elements, so its output is meant to go into a page as is. The format method does not HTML-escape the SQL text or the bind values it fills in around that markup.\n\nAn application that renders SQL formatted with the html profile, such as in a debug panel or query log, allows an attacker who controls a bind value or part of the SQL text to embed JavaScript in the page.",
+          "distribution" => "SQL-Abstract",
+          "fixed_versions" => [
+            ">=2.000001_04"
+          ],
+          "id" => "CPANSA-SQL-Abstract-2026-121008",
+          "references" => [
+            "https://github.com/dbsrgits/sql-abstract/commit/85a75fcde3e09da5181dee07a4eccba76ad94305.patch",
+            "https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ">=1.90_01,<2.000001_04"
+          ],
+          "cves" => [
+            "CVE-2026-121007"
+          ],
+          "description" => "SQL::Abstract versions from 1.90_01 before 2.000001_04 for Perl allow SQL injection via the where values of a nested statement in an identifier position.\n\nA nested statement such as { -select => ... } in a position where plain scalars are identifiers treats its own plain scalars as identifiers too. These positions are the select list, ORDER BY, GROUP BY, RETURNING, and with the ExtraClauses plugin FROM (-as) and JOIN (to). The values of the statement's where, having and set clauses, and the rows of a -values, go into the SQL text instead of the bind list, unescaped unless quote_char is set. Subselects in a WHERE condition are not affected.\n\nAn application that passes untrusted input as a where value of such a nested statement, expecting it to be bound, allows SQL injection.",
+          "distribution" => "SQL-Abstract",
+          "fixed_versions" => [
+            ">=2.000001_04"
+          ],
+          "id" => "CPANSA-SQL-Abstract-2026-121007",
+          "references" => [
+            "https://github.com/dbsrgits/sql-abstract/commit/79fc34e874b4edb441154eccddb04c57d5c1c90e.patch",
+            "https://metacpan.org/release/GETTY/SQL-Abstract-2.000001_04/changes"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
+        }
+      ],
+      "main_module" => "SQL::Abstract",
+      "versions" => [
+        {
+          "date" => "2002-08-29T18:13:42",
+          "version" => "1.09"
+        },
+        {
+          "date" => "2002-09-27T18:09:33",
+          "version" => "1.10"
+        },
+        {
+          "date" => "2003-05-21T17:29:41",
+          "version" => "1.13"
+        },
+        {
+          "date" => "2003-11-04T22:31:20",
+          "version" => "1.14"
+        },
+        {
+          "date" => "2003-11-06T23:31:52",
+          "version" => "1.15"
+        },
+        {
+          "date" => "2004-08-25T21:55:43",
+          "version" => "1.17"
+        },
+        {
+          "date" => "2005-03-07T22:05:41",
+          "version" => "1.18"
+        },
+        {
+          "date" => "2005-05-10T21:18:46",
+          "version" => "1.19"
+        },
+        {
+          "date" => "2005-09-02T23:14:05",
+          "version" => "1.20"
+        },
+        {
+          "date" => "2006-03-08T01:30:25",
+          "version" => "1.21"
+        },
+        {
+          "date" => "2006-11-30T17:13:11",
+          "version" => "1.22"
+        },
+        {
+          "date" => "2008-07-08T01:21:17",
+          "version" => "1.23"
+        },
+        {
+          "date" => "2008-07-09T18:27:52",
+          "version" => "1.24"
+        },
+        {
+          "date" => "2009-02-11T13:32:33",
+          "version" => "1.49_01"
+        },
+        {
+          "date" => "2009-02-16T13:52:10",
+          "version" => "1.49_02"
+        },
+        {
+          "date" => "2009-02-17T20:01:56",
+          "version" => "1.49_03"
+        },
+        {
+          "date" => "2009-03-03T21:43:29",
+          "version" => "1.49_04"
+        },
+        {
+          "date" => "2009-03-11T16:49:58",
+          "version" => "1.50"
+        },
+        {
+          "date" => "2009-03-28T10:10:00",
+          "version" => "1.51"
+        },
+        {
+          "date" => "2009-04-28T22:19:29",
+          "version" => "1.52"
+        },
+        {
+          "date" => "2009-04-30T15:01:14",
+          "version" => "1.53"
+        },
+        {
+          "date" => "2009-05-07T17:24:19",
+          "version" => "1.54"
+        },
+        {
+          "date" => "2009-05-16T23:24:41",
+          "version" => "1.55"
+        },
+        {
+          "date" => "2009-05-30T16:31:59",
+          "version" => "1.56"
+        },
+        {
+          "date" => "2009-09-03T20:25:47",
+          "version" => "1.57"
+        },
+        {
+          "date" => "2009-09-04T15:23:02",
+          "version" => "1.58"
+        },
+        {
+          "date" => "2009-09-22T08:40:28",
+          "version" => "1.59"
+        },
+        {
+          "date" => "2009-09-22T11:03:11",
+          "version" => "1.60"
+        },
+        {
+          "date" => "2010-02-05T16:27:37",
+          "version" => "1.61"
+        },
+        {
+          "date" => "2010-03-15T11:05:55",
+          "version" => "1.62"
+        },
+        {
+          "date" => "2010-03-24T09:53:50",
+          "version" => "1.63"
+        },
+        {
+          "date" => "2010-04-11T17:02:38",
+          "version" => "1.64"
+        },
+        {
+          "date" => "2010-04-11T20:02:49",
+          "version" => "1.65"
+        },
+        {
+          "date" => "2010-04-27T02:46:45",
+          "version" => "1.66"
+        },
+        {
+          "date" => "2010-05-31T14:25:05",
+          "version" => "1.67"
+        },
+        {
+          "date" => "2010-09-07T01:14:36",
+          "version" => "1.67_01"
+        },
+        {
+          "date" => "2010-09-08T17:41:17",
+          "version" => "1.67_02"
+        },
+        {
+          "date" => "2010-09-11T17:40:01",
+          "version" => "1.67_03"
+        },
+        {
+          "date" => "2010-09-16T14:45:22",
+          "version" => "1.68"
+        },
+        {
+          "date" => "2010-10-23T02:38:29",
+          "version" => "1.69"
+        },
+        {
+          "date" => "2010-11-09T04:43:57",
+          "version" => "1.70"
+        },
+        {
+          "date" => "2010-11-09T11:16:55",
+          "version" => "1.70"
+        },
+        {
+          "date" => "2010-12-21T17:54:30",
+          "version" => "1.72"
+        },
+        {
+          "date" => "2012-04-11T08:01:29",
+          "version" => "1.72_01"
+        },
+        {
+          "date" => "2012-05-30T02:08:51",
+          "version" => "1.73_01"
+        },
+        {
+          "date" => "2012-07-10T21:23:29",
+          "version" => "1.73"
+        },
+        {
+          "date" => "2013-06-05T13:26:49",
+          "version" => "1.74"
+        },
+        {
+          "date" => "2013-12-18T09:37:10",
+          "version" => "1.74_01"
+        },
+        {
+          "date" => "2013-12-26T09:42:39",
+          "version" => "1.74_02"
+        },
+        {
+          "date" => "2013-12-27T04:51:09",
+          "version" => "1.75"
+        },
+        {
+          "date" => "2014-01-17T00:19:26",
+          "version" => "1.75_01"
+        },
+        {
+          "date" => "2014-01-17T01:03:17",
+          "version" => "1.76"
+        },
+        {
+          "date" => "2014-01-17T01:07:19",
+          "version" => "1.77"
+        },
+        {
+          "date" => "2014-01-17T02:16:48",
+          "version" => "1.99_01"
+        },
+        {
+          "date" => "2014-05-28T10:16:45",
+          "version" => "1.78"
+        },
+        {
+          "date" => "2014-07-17T12:33:13",
+          "version" => "1.78_01"
+        },
+        {
+          "date" => "2014-07-17T17:10:22",
+          "version" => "1.78_02"
+        },
+        {
+          "date" => "2014-09-05T15:19:31",
+          "version" => "1.78_03"
+        },
+        {
+          "date" => "2014-09-15T11:22:05",
+          "version" => "1.78_04"
+        },
+        {
+          "date" => "2014-09-19T16:07:27",
+          "version" => "1.78_05"
+        },
+        {
+          "date" => "2014-09-25T12:03:36",
+          "version" => "1.79"
+        },
+        {
+          "date" => "2014-10-03T19:23:21",
+          "version" => "1.79_01"
+        },
+        {
+          "date" => "2014-10-05T21:06:45",
+          "version" => "1.80"
+        },
+        {
+          "date" => "2014-10-25T11:32:38",
+          "version" => "1.81"
+        },
+        {
+          "date" => "2017-02-28T19:10:25",
+          "version" => "1.81_01"
+        },
+        {
+          "date" => "2017-03-20T17:59:52",
+          "version" => "1.82"
+        },
+        {
+          "date" => "2017-04-03T15:21:07",
+          "version" => "1.83"
+        },
+        {
+          "date" => "2017-04-03T15:30:42",
+          "version" => "1.84"
+        },
+        {
+          "date" => "2018-01-27T11:15:11",
+          "version" => "1.85"
+        },
+        {
+          "date" => "2018-07-09T16:32:08",
+          "version" => "1.86"
+        },
+        {
+          "date" => "2019-10-09T01:53:50",
+          "version" => "1.90_01"
+        },
+        {
+          "date" => "2019-10-12T18:14:53",
+          "version" => "1.90_02"
+        },
+        {
+          "date" => "2019-10-13T17:20:44",
+          "version" => "1.90_03"
+        },
+        {
+          "date" => "2020-06-02T10:37:19",
+          "version" => "1.87"
+        },
+        {
+          "date" => "2020-07-24T16:29:52",
+          "version" => "2.000000"
+        },
+        {
+          "date" => "2021-01-21T20:37:10",
+          "version" => "2.000000"
+        },
+        {
+          "date" => "2021-01-21T21:25:23",
+          "version" => "2.000000"
+        },
+        {
+          "date" => "2021-01-23T07:24:31",
+          "version" => "2.000001"
+        },
+        {
+          "date" => "2026-09-27T18:20:04",
+          "version" => "2.000001_01"
+        },
+        {
+          "date" => "2026-10-21T19:18:12",
+          "version" => "2.000001_02"
+        },
+        {
+          "date" => "2026-10-24T05:37:50",
+          "version" => "2.000001_03"
+        },
+        {
+          "date" => "2026-11-03T17:21:13",
+          "version" => "2.000001_04"
+        },
+        {
+          "date" => "2026-11-03T18:39:58",
+          "version" => "2.000001_05"
+        },
+        {
+          "date" => "2026-11-05T19:20:40",
+          "version" => "2.000002"
+        },
+        {
+          "date" => "2026-11-06T19:08:46",
+          "version" => "2.000003"
         }
       ]
     },
@@ -119482,6 +120869,18 @@ sub db {
         {
           "date" => "2026-10-31T10:26:56",
           "version" => "6.003"
+        },
+        {
+          "date" => "2026-11-04T16:06:40",
+          "version" => "7.000_001"
+        },
+        {
+          "date" => "2026-11-05T12:40:33",
+          "version" => "7.001"
+        },
+        {
+          "date" => "2026-11-06T13:54:14",
+          "version" => "7.001_001"
         }
       ]
     },
@@ -120292,6 +121691,18 @@ sub db {
         {
           "date" => "2026-10-31T10:27:07",
           "version" => "6.003"
+        },
+        {
+          "date" => "2026-11-04T16:06:52",
+          "version" => "7.000_001"
+        },
+        {
+          "date" => "2026-11-05T12:40:44",
+          "version" => "7.001"
+        },
+        {
+          "date" => "2026-11-06T13:54:26",
+          "version" => "7.001_001"
         }
       ]
     },
@@ -121881,7 +123292,7 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => 5,
+          "perl_release" => "5.000",
           "version" => undef
         },
         {
@@ -121899,7 +123310,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006000",
+          "perl_release" => "5.006",
           "version" => "1.72"
         },
         {
@@ -121971,7 +123382,7 @@ sub db {
         {
           "date" => "2010-04-12T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.012",
+          "perl_release" => "5.012000",
           "version" => "1.87"
         },
         {
@@ -122019,7 +123430,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01301",
+          "perl_release" => "5.013010",
           "version" => "1.94"
         },
         {
@@ -124924,7 +126335,7 @@ sub db {
         {
           "date" => "2011-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.015",
+          "perl_release" => "5.015000",
           "version" => "2.28"
         },
         {
@@ -124978,7 +126389,7 @@ sub db {
         {
           "date" => "2013-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019",
+          "perl_release" => "5.019000",
           "version" => "2.42"
         },
         {
@@ -125170,7 +126581,7 @@ sub db {
         {
           "date" => "2020-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.032000",
+          "perl_release" => "5.032",
           "version" => "3.21"
         },
         {
@@ -125218,13 +126629,13 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "3.31"
         },
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "3.32"
         },
         {
@@ -125248,7 +126659,7 @@ sub db {
         {
           "date" => "2025-03-21T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.041010",
+          "perl_release" => "5.04101",
           "version" => "3.36"
         },
         {
@@ -125848,13 +127259,13 @@ sub db {
         {
           "date" => "1994-10-17T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => 5,
+          "perl_release" => "5.000",
           "version" => undef
         },
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006000",
+          "perl_release" => "5.006",
           "version" => "0.01"
         },
         {
@@ -132837,6 +134248,27 @@ sub db {
           ],
           "reported" => "2026-10-24",
           "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<0.036"
+          ],
+          "cves" => [
+            "CVE-2026-114627"
+          ],
+          "description" => "Web::Simple versions before 0.036 for Perl do not escape values interpolated into double-quoted strings in HTML::Tags output.\n\nUnder use HTML::Tags or use XML::Tags, a double-quoted string literal becomes a StringThing object that holds each interpolated value as a separate part. The escaping step passes such objects through, and stringify joins their interpolated parts as is. A value passed on its own, as in <p>, \$value, </p>, is entity-escaped, but the same value in \"Hello \$value\" is not.\n\nAn attacker who controls a value that an application interpolates into a double-quoted string can inject script into the generated page.",
+          "distribution" => "Web-Simple",
+          "fixed_versions" => [
+            ">=0.036"
+          ],
+          "id" => "CPANSA-Web-Simple-2026-114627",
+          "references" => [
+            "https://github.com/p5sagit/Web-Simple/commit/01e575827fdd9ba3a08063fd414b1de465380015.patch",
+            "https://metacpan.org/release/ETHER/Web-Simple-0.036/changes",
+            "http://www.openwall.com/lists/oss-security/2026/11/04/5"
+          ],
+          "reported" => "2026-11-04",
+          "severity" => ""
         }
       ],
       "main_module" => "Web::Simple",
@@ -132984,6 +134416,10 @@ sub db {
         {
           "date" => "2026-10-23T19:49:49",
           "version" => "0.035"
+        },
+        {
+          "date" => "2026-11-03T18:20:17",
+          "version" => "0.036"
         }
       ]
     },
@@ -139596,6 +141032,10 @@ sub db {
         {
           "date" => "2026-10-31T02:56:15",
           "version" => "0.200"
+        },
+        {
+          "date" => "2026-11-04T08:19:19",
+          "version" => "0.201"
         }
       ]
     },
@@ -153019,7 +154459,7 @@ sub db {
         {
           "date" => "2024-06-09T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.04",
+          "perl_release" => "5.040000",
           "version" => "5.01_02"
         }
       ]
@@ -153052,9 +154492,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "6e2edc470b4870efeba8a91eac138ad5677d0e97",
-    "date" => "Sun Nov  1 17:11:19 2026",
-    "epoch" => 1793553079,
+    "commit" => "78d71817f8a564d5732f8aea431dba5c68822dab",
+    "date" => "Sat Nov  7 20:47:41 2026",
+    "epoch" => 1794084461,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
@@ -154451,6 +155891,7 @@ sub db {
     "CatalystX::Controller::OpenSearch" => "Search-OpenSearch-Server",
     "Chat::Controllers" => "Squatting",
     "Chat::Views" => "Squatting",
+    "Chunkstrumenter" => "SQL-Abstract",
     "Class::Struct" => "perl",
     "Class::Struct::Tie_ISA" => "perl",
     "Clipboard" => "Clipboard",
@@ -155050,6 +156491,7 @@ sub db {
     "DBIx::Class::EncodedColumn::Crypt::Eksblowfish::Bcrypt" => "DBIx-Class-EncodedColumn",
     "DBIx::Class::EncodedColumn::Crypt::OpenPGP" => "DBIx-Class-EncodedColumn",
     "DBIx::Class::EncodedColumn::Digest" => "DBIx-Class-EncodedColumn",
+    "DBIx::Class::SQLMaker::Role::SQLA2Passthrough" => "SQL-Abstract",
     "DBIx::Class::Valiant::Result::HTML::FormFields" => "Valiant",
     "DBIx::Custom" => "DBIx-Custom",
     "DBIx::Custom::Mapper" => "DBIx-Custom",
@@ -156684,6 +158126,13 @@ sub db {
     "Form::Processor::I18N" => "Form-Processor",
     "Form::Processor::I18N::en_us" => "Form-Processor",
     "Form::Processor::Model" => "Form-Processor",
+    "Furl" => "Furl",
+    "Furl::ConnectionCache" => "Furl",
+    "Furl::HTTP" => "Furl",
+    "Furl::Headers" => "Furl",
+    "Furl::Request" => "Furl",
+    "Furl::Response" => "Furl",
+    "Furl::ZlibStream" => "Furl",
     "GD" => "GD",
     "GD::Group" => "GD",
     "GD::Image" => "GD",
@@ -160186,6 +161635,7 @@ sub db {
     "RPC::XML::simple_type" => "RPC-XML",
     "RPC::XML::string" => "RPC-XML",
     "RPC::XML::struct" => "RPC-XML",
+    "RRD::CGI::Image" => "RRD-CGI-Image",
     "RT::Authen::ExternalAuth" => "RT-Authen-ExternalAuth",
     "RT::Authen::ExternalAuth::DBI" => "RT-Authen-ExternalAuth",
     "RT::Authen::ExternalAuth::DBI::Cookie" => "RT-Authen-ExternalAuth",
@@ -160607,6 +162057,15 @@ sub db {
     "SOAP::XMLSchemaApacheSOAP::Deserializer" => "SOAP-Lite",
     "SOAP::XMLSchemaSOAP1_1::Deserializer" => "SOAP-Lite",
     "SOAP::XMLSchemaSOAP1_2::Deserializer" => "SOAP-Lite",
+    "SQL::Abstract" => "SQL-Abstract",
+    "SQL::Abstract::Formatter" => "SQL-Abstract",
+    "SQL::Abstract::Parts" => "SQL-Abstract",
+    "SQL::Abstract::Plugin::BangOverrides" => "SQL-Abstract",
+    "SQL::Abstract::Plugin::ExtraClauses" => "SQL-Abstract",
+    "SQL::Abstract::Reference" => "SQL-Abstract",
+    "SQL::Abstract::Role::Plugin" => "SQL-Abstract",
+    "SQL::Abstract::Test" => "SQL-Abstract",
+    "SQL::Abstract::Tree" => "SQL-Abstract",
     "SSL_Context" => "IO-Socket-SSL",
     "SSL_HANDLE" => "IO-Socket-SSL",
     "SSL_SSL" => "IO-Socket-SSL",
