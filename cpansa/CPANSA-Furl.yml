@@ -1,0 +1,28 @@
+---
+advisories:
+- affected_versions:
+  - '>0'
+  cves:
+  - CVE-2026-65059
+  description: |-
+    Furl versions through 3.15 for Perl allow memory exhaustion via unbounded decompression of HTTP responses.
+
+    Furl inflates a response body sent with a gzip, x-gzip or deflate Content-Encoding and appends the output to the response string with no size limit. It does this whether or not the request asked for compression, and no option caps the decompressed size. Responses read with write_file or write_code are streamed rather than held in memory.
+
+    A malicious server, or an attacker on a plain HTTP connection, can send a small compressed response that expands to exhaust the client's memory and end the process.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-m2rh-hmhf-hh5g
+  id: CPANSA-Furl-2026-65059
+  references:
+  - https://github.com/tokuhirom/Furl/pull/139
+  - https://metacpan.org/release/SYOHEX/Furl-3.15/source/lib/Furl/ZlibStream.pm
+  - http://www.openwall.com/lists/oss-security/2026/11/02/5
+  reported: 2026-11-02
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Furl
+last_checked: 1794083088
+latest_version: 3.15
+metacpan: https://metacpan.org/pod/Furl
