@@ -245,3 +245,4 @@ CVE-2026-30971	ZoneMinder is a free, open source closed-circuit television softw
 CVE-2026-84316	Nginx UI is a web user interface for the Nginx web server. Prior to 2.
 CVE-2026-84317	Nginx UI is a web user interface for the Nginx web server. Prior to 2.
 CVE-2026-84318	Nginx UI is a web user interface for the Nginx web server. From 2.0.0-
+CVE-2026-114424	SEPPmail Secure Email Gateway before 15.1.1 can evaluate attacker-infl
