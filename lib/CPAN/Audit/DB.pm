@@ -1,5 +1,5 @@
-# created by util/generate at Sat Nov 14 21:34:00 2026
-# https://github.com/briandfoy/cpan-security-advisory.git d2ffedd9384fa17baab28e604566e2afd8f3cd0a
+# created by util/generate at Sat Nov 14 21:56:42 2026
+# https://github.com/briandfoy/cpan-security-advisory.git eba69efcb49f5c55aaf3b20fa72bdfa6cc7c4fc1
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPAN::Audit::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261114.001';
+our $VERSION = '20261114.003';
 
 sub db {
 	{
@@ -15497,7 +15497,7 @@ sub db {
         {
           "date" => "2014-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01901",
+          "perl_release" => "5.019010",
           "version" => "2.04"
         },
         {
@@ -20676,7 +20676,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.204_001"
         }
       ]
@@ -21369,7 +21369,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.204_001"
         }
       ]
@@ -42319,7 +42319,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "2.158"
         },
         {
@@ -45357,7 +45357,7 @@ sub db {
         {
           "date" => "2003-10-27T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.009000",
+          "perl_release" => "5.009",
           "version" => "2.008"
         },
         {
@@ -46262,7 +46262,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "2.58_01"
         }
       ]
@@ -51807,7 +51807,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "5.45"
         },
         {
@@ -51825,7 +51825,7 @@ sub db {
         {
           "date" => "2015-06-01T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.022",
+          "perl_release" => "5.022000",
           "version" => "7.04_01"
         },
         {
@@ -52350,7 +52350,7 @@ sub db {
         {
           "date" => "2012-05-26T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.017000",
+          "perl_release" => "5.017",
           "version" => "3.17"
         },
         {
@@ -52434,7 +52434,7 @@ sub db {
         {
           "date" => "2018-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.027010",
+          "perl_release" => "5.02701",
           "version" => "3.39"
         },
         {
@@ -52464,7 +52464,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.035010",
+          "perl_release" => "5.03501",
           "version" => "3.45"
         },
         {
@@ -54185,7 +54185,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "1.0403"
         },
         {
@@ -69731,14 +69731,16 @@ sub db {
         },
         {
           "affected_versions" => [
-            ""
+            ">=3.0,<4.05"
           ],
           "cves" => [
             "CVE-2026-129115"
           ],
           "description" => "JSON::XS versions from 3.0 before 4.05 for Perl read freed stack memory when a FREEZE result's serialisation grows the Perl stack under allow_tags in encode_rv.\n\nWith allow_tags, an object's FREEZE method is called in list context and each returned value is encoded through a saved Perl stack pointer. When encoding a returned value calls back into Perl, through TO_JSON under convert_blessed or another FREEZE, and that callback grows the stack, the stack is reallocated while the saved pointer still refers to the freed block.\n\nEncoding such objects reads freed memory, and encode can return undef without an error.",
           "distribution" => "JSON-XS",
-          "fixed_versions" => [],
+          "fixed_versions" => [
+            ">=4.05"
+          ],
           "id" => "CPANSA-JSON-XS-2026-129115",
           "references" => [
             "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
@@ -69748,14 +69750,16 @@ sub db {
         },
         {
           "affected_versions" => [
-            ""
+            ">=3.0,<4.05"
           ],
           "cves" => [
             "CVE-2026-129114"
           ],
           "description" => "JSON::XS versions from 3.04 before 4.05 for Perl write one byte past a heap buffer when appending a one-byte chunk in incr_parse.\n\nThe incremental buffer grows to one and a half times the length it must hold, with no room reserved for the terminating NUL. For an empty buffer and a one-byte chunk that request is one byte, which a buffer whose front was removed by earlier decodes can already have, so nothing is reallocated and the NUL lands one byte past the allocation.\n\nA peer streaming data to an incr_parse consumer, choosing how the input is split into reads, can cause a one-byte heap out-of-bounds write.",
           "distribution" => "JSON-XS",
-          "fixed_versions" => [],
+          "fixed_versions" => [
+            ">=4.05"
+          ],
           "id" => "CPANSA-JSON-XS-2026-129114",
           "references" => [
             "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
@@ -69765,14 +69769,16 @@ sub db {
         },
         {
           "affected_versions" => [
-            ""
+            ">=3.0,<4.05"
           ],
           "cves" => [
             "CVE-2026-129113"
           ],
           "description" => "JSON::XS versions from 4.0_00 before 4.05 for Perl corrupt the incremental buffer length by chopping past its end in incr_skip after a top-level number.\n\nThe incremental parser scans any run of digits, signs, dots and exponent markers as one number, but the decoder stops at the end of a valid number, so the parser keeps an offset into bytes it has not decoded. It then empties the buffer without clearing those bytes, and a later incr_parse call without new input reads them again and moves the offset past the end of the buffer. incr_skip, the documented recovery after an error, removes that many bytes and the buffer length wraps.\n\nA peer sending input such as \"1-2\" to an incr_parse consumer can make the next read of incr_text exit the process through perl's uncatchable out-of-memory path.",
           "distribution" => "JSON-XS",
-          "fixed_versions" => [],
+          "fixed_versions" => [
+            ">=4.05"
+          ],
           "id" => "CPANSA-JSON-XS-2026-129113",
           "references" => [
             "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
@@ -110604,7 +110610,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "2.02"
         },
         {
@@ -110748,7 +110754,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02101",
+          "perl_release" => "5.021010",
           "version" => "3.55"
         },
         {
@@ -110880,7 +110886,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.035010",
+          "perl_release" => "5.03501",
           "version" => "3.84"
         },
         {
@@ -115106,7 +115112,7 @@ sub db {
         {
           "date" => "2011-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.015000",
+          "perl_release" => "5.015",
           "version" => "3.15_05"
         },
         {
@@ -120476,7 +120482,7 @@ sub db {
         {
           "date" => "2012-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.016",
+          "perl_release" => "5.016000",
           "version" => "2.31_01"
         },
         {
@@ -124027,7 +124033,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "1.72"
         },
         {
@@ -124099,7 +124105,7 @@ sub db {
         {
           "date" => "2010-04-12T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.012000",
+          "perl_release" => "5.012",
           "version" => "1.87"
         },
         {
@@ -127052,7 +127058,7 @@ sub db {
         {
           "date" => "2011-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.015000",
+          "perl_release" => "5.015",
           "version" => "2.28"
         },
         {
@@ -127106,7 +127112,7 @@ sub db {
         {
           "date" => "2013-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019000",
+          "perl_release" => "5.019",
           "version" => "2.42"
         },
         {
@@ -127298,7 +127304,7 @@ sub db {
         {
           "date" => "2020-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.032",
+          "perl_release" => "5.032000",
           "version" => "3.21"
         },
         {
@@ -127352,7 +127358,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038",
+          "perl_release" => "5.038000",
           "version" => "3.32"
         },
         {
@@ -127982,7 +127988,7 @@ sub db {
         {
           "date" => "2000-03-22T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.006",
+          "perl_release" => "5.006000",
           "version" => "0.01"
         },
         {
@@ -127994,7 +128000,7 @@ sub db {
         {
           "date" => "2002-07-19T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.008000",
+          "perl_release" => "5.008",
           "version" => "0.03"
         },
         {
@@ -155148,7 +155154,7 @@ sub db {
         {
           "date" => "2002-07-19T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.008000",
+          "perl_release" => "5.008",
           "version" => "1.33"
         },
         {
@@ -155220,13 +155226,13 @@ sub db {
         {
           "date" => "2024-04-27T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.039010",
+          "perl_release" => "5.03901",
           "version" => "5.01_01"
         },
         {
           "date" => "2024-06-09T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.040000",
+          "perl_release" => "5.04",
           "version" => "5.01_02"
         }
       ]
@@ -155259,9 +155265,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "d2ffedd9384fa17baab28e604566e2afd8f3cd0a",
-    "date" => "Sat Nov 14 21:34:00 2026",
-    "epoch" => 1794692040,
+    "commit" => "eba69efcb49f5c55aaf3b20fa72bdfa6cc7c4fc1",
+    "date" => "Sat Nov 14 21:56:41 2026",
+    "epoch" => 1794693401,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
