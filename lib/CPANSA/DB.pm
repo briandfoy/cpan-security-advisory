@@ -1,5 +1,5 @@
-# created by util/generate at Sat Nov  7 22:07:55 2026
-# https://github.com/briandfoy/cpan-security-advisory.git 1f41be4973b6e4716bd53fc89eb02c058ea2a836
+# created by util/generate at Sat Nov 14 21:34:01 2026
+# https://github.com/briandfoy/cpan-security-advisory.git d2ffedd9384fa17baab28e604566e2afd8f3cd0a
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPANSA::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261107.002';
+our $VERSION = '20261114.001';
 
 sub db {
 	{
@@ -7048,6 +7048,14 @@ sub db {
         {
           "date" => "2026-11-05T04:02:11",
           "version" => "2.117002"
+        },
+        {
+          "date" => "2026-11-08T04:43:18",
+          "version" => "2.117003"
+        },
+        {
+          "date" => "2026-11-12T02:50:54",
+          "version" => "2.118000"
         }
       ]
     },
@@ -15489,7 +15497,7 @@ sub db {
         {
           "date" => "2014-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019010",
+          "perl_release" => "5.01901",
           "version" => "2.04"
         },
         {
@@ -21337,6 +21345,10 @@ sub db {
           "version" => "2.225"
         },
         {
+          "date" => "2026-11-09T14:14:54",
+          "version" => "2.226"
+        },
+        {
           "date" => "2010-07-20T00:00:00",
           "dual_lived" => 1,
           "perl_release" => "5.013003",
@@ -23229,6 +23241,14 @@ sub db {
         {
           "date" => "2023-08-07T22:47:22",
           "version" => "0.34"
+        },
+        {
+          "date" => "2026-11-08T16:06:10",
+          "version" => "0.35"
+        },
+        {
+          "date" => "2026-11-09T22:46:16",
+          "version" => "0.36"
         }
       ]
     },
@@ -24360,6 +24380,10 @@ sub db {
         {
           "date" => "2026-10-14T13:58:09",
           "version" => "4.80"
+        },
+        {
+          "date" => "2026-11-09T11:39:19",
+          "version" => "4.81"
         }
       ]
     },
@@ -39657,6 +39681,29 @@ sub db {
           ],
           "reported" => "2026-04-30",
           "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            "<1.3400"
+          ],
+          "cves" => [
+            "CVE-2015-10149"
+          ],
+          "description" => "Dancer versions before 1.3400 for Perl pass unvalidated session ids from the session cookie to the session engine.\n\nread_session_id returns the cookie value as the session id without checking its characters, and Dancer hands it to the session engine to load the session.\n\nA remote attacker may cause path traversal or injection in a session engine that uses the id in a file path, cache command or query without checking it.",
+          "distribution" => "Dancer",
+          "fixed_versions" => [
+            ">=1.3400"
+          ],
+          "id" => "CPANSA-Dancer-2015-10149",
+          "references" => [
+            "https://github.com/PerlDancer/Dancer/commit/5a68fddbaef903fd3bd58517ce585cde986716e4.patch",
+            "https://github.com/PerlDancer/Dancer/issues/1117",
+            "https://github.com/PerlDancer/Dancer/issues/1118",
+            "https://github.com/PerlDancer/Dancer/pull/1172",
+            "https://metacpan.org/release/BIGPRESH/Dancer-1.3400/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
         }
       ],
       "main_module" => "Dancer",
@@ -41569,6 +41616,269 @@ sub db {
         }
       ]
     },
+    "Data-Dump-Streamer" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            "<3.00"
+          ],
+          "cves" => [
+            "CVE-2026-126673"
+          ],
+          "description" => "Data::Dump::Streamer versions before 3.00 for Perl allow code injection via unescaped Regexp patterns in _dump_qr.\n\nA Regexp's pattern is written into a qr literal without escaping \"\$\" or \"\@\", so \"\@{[ ... ]}\" and \"\${\\ ... }\" in the pattern run as code when the dump is evaluated. An already escaped delimiter gets a second backslash, which leaves the delimiter bare and ends the qr literal early.\n\nAn attacker who supplies a pattern that an application compiles, dumps and later restores with eval or do can run arbitrary Perl code.",
+          "distribution" => "Data-Dump-Streamer",
+          "fixed_versions" => [
+            ">=3.00"
+          ],
+          "id" => "CPANSA-Data-Dump-Streamer-2026-126673",
+          "references" => [
+            "https://metacpan.org/release/YVES/Data-Dump-Streamer-3.00/source/Changes",
+            "http://www.openwall.com/lists/oss-security/2026/11/12/2"
+          ],
+          "reported" => "2026-11-12",
+          "severity" => ""
+        }
+      ],
+      "main_module" => "Data::Dump::Streamer",
+      "versions" => [
+        {
+          "date" => "2004-02-23T21:06:22",
+          "version" => "1.0"
+        },
+        {
+          "date" => "2004-02-24T13:04:32",
+          "version" => "1.0"
+        },
+        {
+          "date" => "2004-02-26T00:31:38",
+          "version" => "1.0"
+        },
+        {
+          "date" => "2004-02-28T00:29:25",
+          "version" => "1.03"
+        },
+        {
+          "date" => "2004-03-01T00:18:30",
+          "version" => "1.04"
+        },
+        {
+          "date" => "2004-03-14T23:40:26",
+          "version" => "1.05"
+        },
+        {
+          "date" => "2004-03-23T11:58:58",
+          "version" => "1.06"
+        },
+        {
+          "date" => "2004-04-30T18:29:08",
+          "version" => "1.07"
+        },
+        {
+          "date" => "2004-04-30T18:59:56",
+          "version" => "1.08"
+        },
+        {
+          "date" => "2004-05-01T11:18:17",
+          "version" => "1.09"
+        },
+        {
+          "date" => "2004-05-02T20:17:55",
+          "version" => "1.10"
+        },
+        {
+          "date" => "2005-05-23T20:40:47",
+          "version" => "1.11"
+        },
+        {
+          "date" => "2005-05-26T13:33:33",
+          "version" => "1.12"
+        },
+        {
+          "date" => "2005-06-27T22:05:43",
+          "version" => "1.14"
+        },
+        {
+          "date" => "2006-03-16T22:46:36",
+          "version" => "2.00"
+        },
+        {
+          "date" => "2006-03-18T01:28:01",
+          "version" => "2.01"
+        },
+        {
+          "date" => "2006-03-19T22:01:19",
+          "version" => "2.02"
+        },
+        {
+          "date" => "2006-04-16T15:56:46",
+          "version" => "2.03-30"
+        },
+        {
+          "date" => "2007-08-22T22:14:08",
+          "version" => "2.04-34"
+        },
+        {
+          "date" => "2007-08-22T22:29:43",
+          "version" => "2.05-36"
+        },
+        {
+          "date" => "2007-12-21T21:33:05",
+          "version" => "2.06-38"
+        },
+        {
+          "date" => "2007-12-22T00:13:22",
+          "version" => "2.07-39"
+        },
+        {
+          "date" => "2007-12-22T00:40:09",
+          "version" => "2.08-40"
+        },
+        {
+          "date" => "2009-03-24T00:31:07",
+          "version" => "2.09"
+        },
+        {
+          "date" => "2010-04-04T07:46:31",
+          "version" => "2.10"
+        },
+        {
+          "date" => "2010-04-04T17:27:40",
+          "version" => "2.11"
+        },
+        {
+          "date" => "2010-04-05T18:26:57",
+          "version" => "2.12"
+        },
+        {
+          "date" => "2010-04-05T19:17:39",
+          "version" => "2.13"
+        },
+        {
+          "date" => "2010-06-08T22:51:43",
+          "version" => "2.14"
+        },
+        {
+          "date" => "2010-06-11T08:33:34",
+          "version" => "2.15"
+        },
+        {
+          "date" => "2010-06-11T08:43:56",
+          "version" => "2.16"
+        },
+        {
+          "date" => "2010-06-11T09:13:11",
+          "version" => "2.17"
+        },
+        {
+          "date" => "2010-06-12T18:44:06",
+          "version" => "2.18"
+        },
+        {
+          "date" => "2010-06-19T18:45:42",
+          "version" => "2.19"
+        },
+        {
+          "date" => "2010-06-19T18:53:54",
+          "version" => "2.21"
+        },
+        {
+          "date" => "2010-07-12T07:10:04",
+          "version" => "2.22"
+        },
+        {
+          "date" => "2011-01-19T07:37:22",
+          "version" => "2.23"
+        },
+        {
+          "date" => "2011-01-24T08:04:41",
+          "version" => "2.24"
+        },
+        {
+          "date" => "2011-01-24T18:58:09",
+          "version" => "2.25"
+        },
+        {
+          "date" => "2011-02-01T03:15:39",
+          "version" => "2.26"
+        },
+        {
+          "date" => "2011-02-01T17:50:53",
+          "version" => "2.27"
+        },
+        {
+          "date" => "2011-02-01T22:02:43",
+          "version" => "2.28"
+        },
+        {
+          "date" => "2011-02-02T05:16:33",
+          "version" => "2.29"
+        },
+        {
+          "date" => "2011-02-02T07:40:27",
+          "version" => "2.31"
+        },
+        {
+          "date" => "2011-02-05T04:55:37",
+          "version" => "2.32"
+        },
+        {
+          "date" => "2012-04-01T15:24:08",
+          "version" => "2.33"
+        },
+        {
+          "date" => "2012-06-06T09:48:48",
+          "version" => "2.34"
+        },
+        {
+          "date" => "2013-08-07T14:23:16",
+          "version" => "2.36"
+        },
+        {
+          "date" => "2014-01-30T00:06:37",
+          "version" => "2.37"
+        },
+        {
+          "date" => "2014-05-19T21:02:12",
+          "version" => "2.37_01"
+        },
+        {
+          "date" => "2014-06-11T09:50:30",
+          "version" => "2.37_02"
+        },
+        {
+          "date" => "2014-06-12T11:03:36",
+          "version" => "2.38"
+        },
+        {
+          "date" => "2015-12-24T05:54:04",
+          "version" => "2.39"
+        },
+        {
+          "date" => "2016-08-30T08:16:59",
+          "version" => "2.40"
+        },
+        {
+          "date" => "2023-01-27T06:10:27",
+          "version" => "2.41"
+        },
+        {
+          "date" => "2023-02-21T03:08:06",
+          "version" => "2.42"
+        },
+        {
+          "date" => "2026-11-10T10:17:34",
+          "version" => "3.00"
+        },
+        {
+          "date" => "2026-11-10T15:58:04",
+          "version" => "3.001"
+        },
+        {
+          "date" => "2026-11-11T20:23:21",
+          "version" => "3.002"
+        }
+      ]
+    },
     "Data-Dumper" => {
       "advisories" => [
         {
@@ -42009,7 +42319,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "2.158"
         },
         {
@@ -42063,7 +42373,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02901",
+          "perl_release" => "5.029010",
           "version" => "2.174"
         },
         {
@@ -42099,7 +42409,7 @@ sub db {
         {
           "date" => "2021-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.034",
+          "perl_release" => "5.034000",
           "version" => "2.179"
         },
         {
@@ -42129,7 +42439,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03701",
+          "perl_release" => "5.037010",
           "version" => "2.188"
         },
         {
@@ -45047,7 +45357,7 @@ sub db {
         {
           "date" => "2003-10-27T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.009",
+          "perl_release" => "5.009000",
           "version" => "2.008"
         },
         {
@@ -51509,13 +51819,13 @@ sub db {
         {
           "date" => "2010-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013",
+          "perl_release" => "5.013000",
           "version" => "6.5601"
         },
         {
           "date" => "2015-06-01T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.022000",
+          "perl_release" => "5.022",
           "version" => "7.04_01"
         },
         {
@@ -52016,7 +52326,7 @@ sub db {
         {
           "date" => "2011-05-14T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.014000",
+          "perl_release" => "5.014",
           "version" => "2.2210"
         },
         {
@@ -52040,7 +52350,7 @@ sub db {
         {
           "date" => "2012-05-26T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.017",
+          "perl_release" => "5.017000",
           "version" => "3.17"
         },
         {
@@ -52124,7 +52434,7 @@ sub db {
         {
           "date" => "2018-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02701",
+          "perl_release" => "5.027010",
           "version" => "3.39"
         },
         {
@@ -53923,7 +54233,7 @@ sub db {
         {
           "date" => "2016-05-09T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.024",
+          "perl_release" => "5.024000",
           "version" => "2.12_01"
         }
       ]
@@ -54905,6 +55215,10 @@ sub db {
         {
           "date" => "2025-09-25T00:27:04",
           "version" => "3.15"
+        },
+        {
+          "date" => "2026-11-09T23:35:48",
+          "version" => "3.16"
         }
       ]
     },
@@ -66937,6 +67251,10 @@ sub db {
         {
           "date" => "2026-10-20T11:41:05",
           "version" => "1.040"
+        },
+        {
+          "date" => "2026-11-10T09:17:49",
+          "version" => "1.041"
         }
       ]
     },
@@ -67343,6 +67661,10 @@ sub db {
         {
           "date" => "2026-09-18T08:47:48",
           "version" => "1.005"
+        },
+        {
+          "date" => "2026-11-10T09:20:56",
+          "version" => "1.006"
         }
       ]
     },
@@ -69406,6 +69728,133 @@ sub db {
           ],
           "reported" => "2025-09-08",
           "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            ""
+          ],
+          "cves" => [
+            "CVE-2026-129115"
+          ],
+          "description" => "JSON::XS versions from 3.0 before 4.05 for Perl read freed stack memory when a FREEZE result's serialisation grows the Perl stack under allow_tags in encode_rv.\n\nWith allow_tags, an object's FREEZE method is called in list context and each returned value is encoded through a saved Perl stack pointer. When encoding a returned value calls back into Perl, through TO_JSON under convert_blessed or another FREEZE, and that callback grows the stack, the stack is reallocated while the saved pointer still refers to the freed block.\n\nEncoding such objects reads freed memory, and encode can return undef without an error.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [],
+          "id" => "CPANSA-JSON-XS-2026-129115",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ""
+          ],
+          "cves" => [
+            "CVE-2026-129114"
+          ],
+          "description" => "JSON::XS versions from 3.04 before 4.05 for Perl write one byte past a heap buffer when appending a one-byte chunk in incr_parse.\n\nThe incremental buffer grows to one and a half times the length it must hold, with no room reserved for the terminating NUL. For an empty buffer and a one-byte chunk that request is one byte, which a buffer whose front was removed by earlier decodes can already have, so nothing is reallocated and the NUL lands one byte past the allocation.\n\nA peer streaming data to an incr_parse consumer, choosing how the input is split into reads, can cause a one-byte heap out-of-bounds write.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [],
+          "id" => "CPANSA-JSON-XS-2026-129114",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            ""
+          ],
+          "cves" => [
+            "CVE-2026-129113"
+          ],
+          "description" => "JSON::XS versions from 4.0_00 before 4.05 for Perl corrupt the incremental buffer length by chopping past its end in incr_skip after a top-level number.\n\nThe incremental parser scans any run of digits, signs, dots and exponent markers as one number, but the decoder stops at the end of a valid number, so the parser keeps an offset into bytes it has not decoded. It then empties the buffer without clearing those bytes, and a later incr_parse call without new input reads them again and moves the offset past the end of the buffer. incr_skip, the documented recovery after an error, removes that many bytes and the buffer length wraps.\n\nA peer sending input such as \"1-2\" to an incr_parse consumer can make the next read of incr_text exit the process through perl's uncatchable out-of-memory path.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [],
+          "id" => "CPANSA-JSON-XS-2026-129113",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<4.05"
+          ],
+          "cves" => [
+            "CVE-2026-124541"
+          ],
+          "description" => "JSON::XS versions before 4.05 for Perl leak the decoded part of a rejected long string in decode_str.\n\nA string is decoded through a fixed-size buffer (16 KiB in 4.04), and each time the buffer fills its contents move into a new scalar. Nothing frees that scalar when the string is then rejected for a control character, an invalid escape, malformed UTF-8 or the end of the input.\n\nA process that keeps running after a failed decode retains the decoded part of each rejected string, with its size chosen by the sender. Repeated requests exhaust process memory.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [
+            ">=4.05"
+          ],
+          "id" => "CPANSA-JSON-XS-2026-124541",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<4.05"
+          ],
+          "cves" => [
+            "CVE-2026-124540"
+          ],
+          "description" => "JSON::XS versions before 4.05 for Perl allow stack exhaustion via nested tagged values under allow_tags in decode_tag.\n\nWith allow_tags, \"(\" starts a tagged value. Its tag and value are decoded recursively, and each can start another tagged value. Unlike arrays and objects, this nesting is not counted against max_depth.\n\nA run of \"(\" bytes exhausts the C stack and triggers an uncatchable segmentation fault regardless of max_depth.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [
+            ">=4.05"
+          ],
+          "id" => "CPANSA-JSON-XS-2026-124540",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<4.05"
+          ],
+          "cves" => [
+            "CVE-2026-124539"
+          ],
+          "description" => "JSON::XS versions before 4.05 for Perl leak the decoded key of an object rejected for a missing colon in decode_hv.\n\nUnless it is short plain ASCII, a quoted key is decoded into a new scalar. Nothing frees that scalar when the object is rejected for a missing ':' after the key.\n\nA process that keeps running after a failed decode retains one key per rejected document, with its size chosen by the sender. Repeated requests exhaust process memory.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [
+            ">=4.05"
+          ],
+          "id" => "CPANSA-JSON-XS-2026-124539",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<4.05"
+          ],
+          "cves" => [
+            "CVE-2026-124536"
+          ],
+          "description" => "JSON::XS versions before 4.05 for Perl allow memory exhaustion by buffering incremental input past max_size after a NUL byte in incr_parse.\n\nThe parser appends each chunk to its buffer and compares max_size with how far it has progressed, not with the buffer length. It treats a NUL byte as the end of the input, so a NUL within the first max_size bytes keeps it short of the limit. The buffer keeps growing, and incr_skip cannot remove the NUL.\n\nA peer streaming data to an incr_parse consumer can exhaust process memory regardless of max_size.",
+          "distribution" => "JSON-XS",
+          "fixed_versions" => [
+            ">=4.05"
+          ],
+          "id" => "CPANSA-JSON-XS-2026-124536",
+          "references" => [
+            "https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
         }
       ],
       "main_module" => "JSON::XS",
@@ -69649,6 +70098,10 @@ sub db {
         {
           "date" => "2025-09-08T16:00:30",
           "version" => "4.04"
+        },
+        {
+          "date" => "2026-11-13T04:28:52",
+          "version" => "4.05"
         }
       ]
     },
@@ -93889,6 +94342,18 @@ sub db {
         {
           "date" => "2026-11-01T20:54:41",
           "version" => "0.010"
+        },
+        {
+          "date" => "2026-11-11T21:41:09",
+          "version" => "0.099"
+        },
+        {
+          "date" => "2026-11-12T07:41:16",
+          "version" => "0.099001"
+        },
+        {
+          "date" => "2026-11-12T19:05:33",
+          "version" => "0.100"
         }
       ]
     },
@@ -97871,6 +98336,162 @@ sub db {
         {
           "date" => "2019-04-21T15:09:07",
           "version" => "0.17"
+        }
+      ]
+    },
+    "Monoceros" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            "<0.30"
+          ],
+          "cves" => [
+            "CVE-2026-115864"
+          ],
+          "description" => "Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory.\n\nThe request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read buffer to that size before any data arrives, so a length larger than available memory makes the worker exit with an uncatchable out of memory error before the application is called.\n\nA remote attacker can force a worker restart with each request of a few bytes.",
+          "distribution" => "Monoceros",
+          "fixed_versions" => [
+            ">=0.30"
+          ],
+          "id" => "CPANSA-Monoceros-2026-115864",
+          "references" => [
+            "https://github.com/kazeburo/Monoceros/commit/897a4a9624329fc0a4b2352d387bdac6d37848e2.patch",
+            "https://metacpan.org/release/KAZEBURO/Monoceros-0.30/changes",
+            "http://www.openwall.com/lists/oss-security/2026/11/09/32"
+          ],
+          "reported" => "2026-11-09",
+          "severity" => "high"
+        }
+      ],
+      "main_module" => "Monoceros",
+      "versions" => [
+        {
+          "date" => "2013-04-26T05:07:37",
+          "version" => "0.01"
+        },
+        {
+          "date" => "2013-05-07T07:36:45",
+          "version" => "0.02"
+        },
+        {
+          "date" => "2013-05-09T01:47:58",
+          "version" => "0.03"
+        },
+        {
+          "date" => "2013-05-09T04:30:40",
+          "version" => "0.04"
+        },
+        {
+          "date" => "2013-05-10T02:29:01",
+          "version" => "0.05"
+        },
+        {
+          "date" => "2013-05-10T06:06:56",
+          "version" => "0.06"
+        },
+        {
+          "date" => "2013-05-10T11:26:28",
+          "version" => "0.07"
+        },
+        {
+          "date" => "2013-05-13T16:50:18",
+          "version" => "0.08"
+        },
+        {
+          "date" => "2013-05-15T06:17:11",
+          "version" => "0.09"
+        },
+        {
+          "date" => "2013-05-16T05:39:04",
+          "version" => "0.10"
+        },
+        {
+          "date" => "2013-05-17T05:40:08",
+          "version" => "0.11"
+        },
+        {
+          "date" => "2013-05-20T07:26:21",
+          "version" => "0.12"
+        },
+        {
+          "date" => "2013-05-22T06:18:18",
+          "version" => "0.13"
+        },
+        {
+          "date" => "2013-05-23T02:40:27",
+          "version" => "0.14"
+        },
+        {
+          "date" => "2013-05-23T04:41:09",
+          "version" => "0.15"
+        },
+        {
+          "date" => "2013-05-28T01:08:49",
+          "version" => "0.16"
+        },
+        {
+          "date" => "2013-06-07T01:51:21",
+          "version" => "0.17"
+        },
+        {
+          "date" => "2013-06-11T06:13:12",
+          "version" => "0.18"
+        },
+        {
+          "date" => "2013-06-11T17:19:15",
+          "version" => "0.19"
+        },
+        {
+          "date" => "2013-08-28T02:40:29",
+          "version" => "0.20"
+        },
+        {
+          "date" => "2013-08-28T05:23:14",
+          "version" => "0.21"
+        },
+        {
+          "date" => "2013-08-29T02:51:29",
+          "version" => "0.22"
+        },
+        {
+          "date" => "2013-08-29T04:46:24",
+          "version" => "0.23"
+        },
+        {
+          "date" => "2013-09-02T06:40:15",
+          "version" => "0.24"
+        },
+        {
+          "date" => "2013-10-05T14:33:40",
+          "version" => "0.25"
+        },
+        {
+          "date" => "2013-10-23T01:34:13",
+          "version" => "0.26"
+        },
+        {
+          "date" => "2014-05-28T03:27:48",
+          "version" => "0.27"
+        },
+        {
+          "date" => "2021-09-22T07:52:18",
+          "version" => "0.28"
+        },
+        {
+          "date" => "2023-11-09T09:57:35",
+          "version" => "0.29"
+        },
+        {
+          "date" => "2026-04-01T08:18:50",
+          "version" => "0.29_001"
+        },
+        {
+          "date" => "2026-09-04T18:03:49",
+          "version" => "0.29_002"
+        },
+        {
+          "date" => "2026-11-09T04:34:14",
+          "version" => "0.30"
         }
       ]
     },
@@ -110025,7 +110646,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011000",
+          "perl_release" => "5.011",
           "version" => "3.3002"
         },
         {
@@ -110049,7 +110670,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013010",
+          "perl_release" => "5.01301",
           "version" => "3.37"
         },
         {
@@ -110127,7 +110748,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "3.55"
         },
         {
@@ -110223,7 +110844,7 @@ sub db {
         {
           "date" => "2019-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02901",
+          "perl_release" => "5.029010",
           "version" => "3.78"
         },
         {
@@ -110283,7 +110904,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03701",
+          "perl_release" => "5.037010",
           "version" => "3.89"
         },
         {
@@ -113262,6 +113883,50 @@ sub db {
         }
       ]
     },
+    "Plack-Middleware-CSP" => {
+      "advisories" => [
+        {
+          "affected_versions" => [
+            "<0.03"
+          ],
+          "cves" => [
+            "CVE-2026-125729"
+          ],
+          "description" => "Plack::Middleware::CSP versions before 0.03 for Perl send the Content Security Policy under the wrong header name, so browsers never enforce it.\n\nThe call method sets the policy in a response header named \"content-security-protocol\" instead of \"Content-Security-Policy\". Browsers ignore that header.\n\nAny cross-site scripting flaw in the wrapped application can run scripts the policy was meant to block.",
+          "distribution" => "Plack-Middleware-CSP",
+          "fixed_versions" => [
+            ">=0.03"
+          ],
+          "id" => "CPANSA-Plack-Middleware-CSP-2026-125729",
+          "references" => [
+            "https://github.com/pangyre/Plack-Middleware-CSP/issues/1",
+            "https://metacpan.org/release/ASHLEY/Plack-Middleware-CSP-0.03/source/CHANGES",
+            "http://www.openwall.com/lists/oss-security/2026/11/10/16"
+          ],
+          "reported" => "2026-11-10",
+          "severity" => ""
+        }
+      ],
+      "main_module" => "Plack::Middleware::CSP",
+      "versions" => [
+        {
+          "date" => "2022-06-28T17:34:53",
+          "version" => "0.01"
+        },
+        {
+          "date" => "2022-06-30T14:43:04",
+          "version" => "0.02"
+        },
+        {
+          "date" => "2026-11-10T09:23:42",
+          "version" => "0.03"
+        },
+        {
+          "date" => "2026-11-10T10:38:32",
+          "version" => "0.03"
+        }
+      ]
+    },
     "Plack-Middleware-ETag" => {
       "advisories" => [
         {
@@ -115577,6 +116242,14 @@ sub db {
         {
           "date" => "2026-11-01T13:31:23",
           "version" => "0.68"
+        },
+        {
+          "date" => "2026-11-08T19:17:54",
+          "version" => "0.69"
+        },
+        {
+          "date" => "2026-11-10T17:36:39",
+          "version" => "0.70"
         }
       ]
     },
@@ -118447,6 +119120,10 @@ sub db {
         {
           "date" => "2026-11-06T17:44:56",
           "version" => "v0.4.14"
+        },
+        {
+          "date" => "2026-11-12T16:30:21",
+          "version" => "v0.4.15"
         }
       ]
     },
@@ -120881,6 +121558,26 @@ sub db {
         {
           "date" => "2026-11-06T13:54:14",
           "version" => "7.001_001"
+        },
+        {
+          "date" => "2026-11-09T13:29:53",
+          "version" => "7.001_002"
+        },
+        {
+          "date" => "2026-11-10T10:36:54",
+          "version" => "7.001_003"
+        },
+        {
+          "date" => "2026-11-11T15:12:32",
+          "version" => "7.001_004"
+        },
+        {
+          "date" => "2026-11-11T18:30:16",
+          "version" => "7.002"
+        },
+        {
+          "date" => "2026-11-14T09:57:14",
+          "version" => "7.002_001"
         }
       ]
     },
@@ -121703,6 +122400,26 @@ sub db {
         {
           "date" => "2026-11-06T13:54:26",
           "version" => "7.001_001"
+        },
+        {
+          "date" => "2026-11-09T13:30:04",
+          "version" => "7.001_002"
+        },
+        {
+          "date" => "2026-11-10T10:37:05",
+          "version" => "7.001_003"
+        },
+        {
+          "date" => "2026-11-11T15:12:44",
+          "version" => "7.001_004"
+        },
+        {
+          "date" => "2026-11-11T18:30:28",
+          "version" => "7.002"
+        },
+        {
+          "date" => "2026-11-14T09:57:25",
+          "version" => "7.002_001"
         }
       ]
     },
@@ -123364,7 +124081,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011000",
+          "perl_release" => "5.011",
           "version" => "1.84"
         },
         {
@@ -123382,7 +124099,7 @@ sub db {
         {
           "date" => "2010-04-12T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.012",
+          "perl_release" => "5.012000",
           "version" => "1.87"
         },
         {
@@ -123430,7 +124147,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013010",
+          "perl_release" => "5.01301",
           "version" => "1.94"
         },
         {
@@ -126389,7 +127106,7 @@ sub db {
         {
           "date" => "2013-05-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019",
+          "perl_release" => "5.019000",
           "version" => "2.42"
         },
         {
@@ -126581,7 +127298,7 @@ sub db {
         {
           "date" => "2020-06-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.032000",
+          "perl_release" => "5.032",
           "version" => "3.21"
         },
         {
@@ -126629,7 +127346,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03701",
+          "perl_release" => "5.037010",
           "version" => "3.31"
         },
         {
@@ -126659,7 +127376,7 @@ sub db {
         {
           "date" => "2025-03-21T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.04101",
+          "perl_release" => "5.041010",
           "version" => "3.36"
         },
         {
@@ -134269,6 +134986,27 @@ sub db {
           ],
           "reported" => "2026-11-04",
           "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<0.037"
+          ],
+          "cves" => [
+            "CVE-2026-120212"
+          ],
+          "description" => "Web::Simple versions before 0.037 for Perl do not escape single quotes in HTML::Tags output.\n\nHTML::Tags and XML::Tags escape a plain string value by replacing only &, \", < and > with entities. A value interpolated into a single-quoted attribute, as in <a href='\$value'>, can therefore close the attribute and add new ones, such as an event handler. Double-quoted attributes are not affected.\n\nAn attacker who controls a value that an application interpolates into a single-quoted attribute can inject script into the generated page.",
+          "distribution" => "Web-Simple",
+          "fixed_versions" => [
+            ">=0.037"
+          ],
+          "id" => "CPANSA-Web-Simple-2026-120212",
+          "references" => [
+            "https://github.com/p5sagit/Web-Simple/commit/de0b7743f7015ec2c1c678dfdaa4bc6f5ccfb640.patch",
+            "https://metacpan.org/release/ETHER/Web-Simple-0.037/changes",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5090"
+          ],
+          "reported" => "2026-11-10",
+          "severity" => ""
         }
       ],
       "main_module" => "Web::Simple",
@@ -134420,6 +135158,10 @@ sub db {
         {
           "date" => "2026-11-03T18:20:17",
           "version" => "0.036"
+        },
+        {
+          "date" => "2026-11-09T21:49:21",
+          "version" => "0.037"
         }
       ]
     },
@@ -139757,6 +140499,10 @@ sub db {
         {
           "date" => "2026-07-03T09:27:18",
           "version" => "v0.910.0"
+        },
+        {
+          "date" => "2026-11-12T23:34:28",
+          "version" => "v0.910.1"
         }
       ]
     },
@@ -148250,6 +148996,27 @@ sub db {
           ],
           "reported" => "2026-11-01",
           "severity" => ""
+        },
+        {
+          "affected_versions" => [
+            "<0.43"
+          ],
+          "cves" => [
+            "CVE-2011-10042"
+          ],
+          "description" => "HTTP::Session versions before 0.43 for Perl allow memcached command injection via unfiltered session ids in HTTP::Session::Store::Memcached.\n\nThe session id from the client's cookie reaches memcached unchanged as the cache key.\n\nA CR and LF in the session id end the cache command early, and the server reads the bytes after them as further commands.",
+          "distribution" => "http-session",
+          "fixed_versions" => [
+            ">=0.43"
+          ],
+          "id" => "CPANSA-http-session-2011-10042",
+          "references" => [
+            "https://github.com/tokuhirom/http-session/commit/039345db9bc9311868019fde67b89c355114a3d3.patch",
+            "https://metacpan.org/release/TOKUHIROM/HTTP-Session-0.42/changes",
+            "http://www.openwall.com/lists/oss-security/2026/11/14/10"
+          ],
+          "reported" => "2026-11-14",
+          "severity" => ""
         }
       ],
       "main_module" => "HTTP::Session",
@@ -154453,7 +155220,7 @@ sub db {
         {
           "date" => "2024-04-27T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03901",
+          "perl_release" => "5.039010",
           "version" => "5.01_01"
         },
         {
@@ -154492,9 +155259,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "1f41be4973b6e4716bd53fc89eb02c058ea2a836",
-    "date" => "Sat Nov  7 22:07:54 2026",
-    "epoch" => 1794089274,
+    "commit" => "d2ffedd9384fa17baab28e604566e2afd8f3cd0a",
+    "date" => "Sat Nov 14 21:34:00 2026",
+    "epoch" => 1794692040,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
@@ -155028,6 +155795,7 @@ sub db {
     "App::Netdisco::DB::Result::Device" => "App-Netdisco",
     "App::Netdisco::DB::Result::DeviceBrowser" => "App-Netdisco",
     "App::Netdisco::DB::Result::DeviceIp" => "App-Netdisco",
+    "App::Netdisco::DB::Result::DeviceIpResolved" => "App-Netdisco",
     "App::Netdisco::DB::Result::DeviceModule" => "App-Netdisco",
     "App::Netdisco::DB::Result::DevicePort" => "App-Netdisco",
     "App::Netdisco::DB::Result::DevicePortLog" => "App-Netdisco",
@@ -155039,7 +155807,10 @@ sub db {
     "App::Netdisco::DB::Result::DevicePower" => "App-Netdisco",
     "App::Netdisco::DB::Result::DeviceSkip" => "App-Netdisco",
     "App::Netdisco::DB::Result::DeviceVlan" => "App-Netdisco",
+    "App::Netdisco::DB::Result::DeviceVrf" => "App-Netdisco",
     "App::Netdisco::DB::Result::Enterprise" => "App-Netdisco",
+    "App::Netdisco::DB::Result::L3Domain" => "App-Netdisco",
+    "App::Netdisco::DB::Result::L3DomainMember" => "App-Netdisco",
     "App::Netdisco::DB::Result::Log" => "App-Netdisco",
     "App::Netdisco::DB::Result::Manufacturer" => "App-Netdisco",
     "App::Netdisco::DB::Result::NetmapPositions" => "App-Netdisco",
@@ -155065,6 +155836,7 @@ sub db {
     "App::Netdisco::DB::Result::Virtual::ActiveNodeWithAge" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::ApRadioChannelPower" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::CidrIps" => "App-Netdisco",
+    "App::Netdisco::DB::Result::Virtual::CidrIpsByDomain" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::DeviceDnsMismatch" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::DeviceLinks" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::DevicePlatforms" => "App-Netdisco",
@@ -155090,6 +155862,7 @@ sub db {
     "App::Netdisco::DB::Result::Virtual::UnDirEdgesAgg" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::UndiscoveredNeighbors" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::UserRole" => "App-Netdisco",
+    "App::Netdisco::DB::Result::Virtual::VrfInconsistency" => "App-Netdisco",
     "App::Netdisco::DB::Result::Virtual::WalkJobs" => "App-Netdisco",
     "App::Netdisco::DB::ResultSet" => "App-Netdisco",
     "App::Netdisco::DB::ResultSet::AccessControlListMap" => "App-Netdisco",
@@ -155156,6 +155929,7 @@ sub db {
     "App::Netdisco::Util::FastResolver" => "App-Netdisco",
     "App::Netdisco::Util::Graph" => "App-Netdisco",
     "App::Netdisco::Util::JobAction" => "App-Netdisco",
+    "App::Netdisco::Util::L3Domain" => "App-Netdisco",
     "App::Netdisco::Util::MCE" => "App-Netdisco",
     "App::Netdisco::Util::Nbtstat" => "App-Netdisco",
     "App::Netdisco::Util::Node" => "App-Netdisco",
@@ -155173,6 +155947,7 @@ sub db {
     "App::Netdisco::Util::Snapshot" => "App-Netdisco",
     "App::Netdisco::Util::Statistics" => "App-Netdisco",
     "App::Netdisco::Util::Token" => "App-Netdisco",
+    "App::Netdisco::Util::VRF" => "App-Netdisco",
     "App::Netdisco::Util::Web" => "App-Netdisco",
     "App::Netdisco::Util::Worker" => "App-Netdisco",
     "App::Netdisco::Web" => "App-Netdisco",
@@ -155226,6 +156001,7 @@ sub db {
     "App::Netdisco::Web::Plugin::Report::HalfDuplex" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::InventoryByModelByOS" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::IpInventory" => "App-Netdisco",
+    "App::Netdisco::Web::Plugin::Report::L3Domains" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::ModuleInventory" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::Netbios" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::NodeMultiIPs" => "App-Netdisco",
@@ -155241,6 +156017,7 @@ sub db {
     "App::Netdisco::Web::Plugin::Report::SsidInventory" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::SubnetUtilization" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Report::VlanInventory" => "App-Netdisco",
+    "App::Netdisco::Web::Plugin::Report::VrfInconsistency" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Search::Device" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Search::Node" => "App-Netdisco",
     "App::Netdisco::Web::Plugin::Search::Port" => "App-Netdisco",
@@ -156791,6 +157568,8 @@ sub db {
     "Data::BytesLocker" => "Crypt-NaCl-Sodium",
     "Data::Deque::Shared" => "Data-Deque-Shared",
     "Data::DisjointSet::Shared" => "Data-DisjointSet-Shared",
+    "Data::Dump::Streamer" => "Data-Dump-Streamer",
+    "Data::Dump::Streamer::Deparser" => "Data-Dump-Streamer",
     "Data::Dumper" => "Data-Dumper",
     "Data::Entropy" => "Data-Entropy",
     "Data::Entropy::Algorithms" => "Data-Entropy",
@@ -160493,6 +161272,8 @@ sub db {
     "Mojolicious::Types" => "Mojolicious",
     "Mojolicious::Validator" => "Mojolicious",
     "Mojolicious::Validator::Validation" => "Mojolicious",
+    "Monoceros" => "Monoceros",
+    "Monoceros::Server" => "Monoceros",
     "MooseX::Attribute::FormFuChained" => "HTML-FormFu",
     "MooseX::Attribute::FormFuChained::Method::Accessor" => "HTML-FormFu",
     "MooseX::FormFuChainedAccessors" => "HTML-FormFu",
@@ -161336,6 +162117,7 @@ sub db {
     "Plack::Handler::FCGI" => "Plack",
     "Plack::Handler::Gazelle" => "Gazelle",
     "Plack::Handler::HTTP::Server::PSGI" => "Plack",
+    "Plack::Handler::Monoceros" => "Monoceros",
     "Plack::Handler::Standalone" => "Plack",
     "Plack::Handler::Starlet" => "Starlet",
     "Plack::Handler::Starman" => "Starman",
@@ -161353,6 +162135,7 @@ sub db {
     "Plack::Middleware::Auth::OIDC::ProtectedResource" => "OIDC-Lite",
     "Plack::Middleware::Bootstrap" => "Plack-Middleware-Bootstrap",
     "Plack::Middleware::BufferedStreaming" => "Plack",
+    "Plack::Middleware::CSP" => "Plack-Middleware-CSP",
     "Plack::Middleware::Chunked" => "Plack",
     "Plack::Middleware::Conditional" => "Plack",
     "Plack::Middleware::ConditionalGET" => "Plack",
@@ -161372,6 +162155,7 @@ sub db {
     "Plack::Middleware::Lint" => "Plack",
     "Plack::Middleware::Log4perl" => "Plack",
     "Plack::Middleware::LogDispatch" => "Plack",
+    "Plack::Middleware::MonocerosStatus" => "Monoceros",
     "Plack::Middleware::NullLogger" => "Plack",
     "Plack::Middleware::OAuth" => "Plack-Middleware-OAuth",
     "Plack::Middleware::OAuth::AccessToken" => "Plack-Middleware-OAuth",
