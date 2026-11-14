@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.03
+  cves:
+  - CVE-2026-125729
+  description: |-
+    Plack::Middleware::CSP versions before 0.03 for Perl send the Content Security Policy under the wrong header name, so browsers never enforce it.
+
+    The call method sets the policy in a response header named "content-security-protocol" instead of "Content-Security-Policy". Browsers ignore that header.
+
+    Any cross-site scripting flaw in the wrapped application can run scripts the policy was meant to block.
+  fixed_versions:
+  - '>=0.03'
+  github_security_advisory:
+  - GHSA-28cm-92qv-48w3
+  id: CPANSA-Plack-Middleware-CSP-2026-125729
+  references:
+  - https://github.com/pangyre/Plack-Middleware-CSP/issues/1
+  - https://metacpan.org/release/ASHLEY/Plack-Middleware-CSP-0.03/source/CHANGES
+  - http://www.openwall.com/lists/oss-security/2026/11/10/16
+  reported: 2026-11-10
+  severity: ''
+cpansa_version: 2
+darkpan: ~
+distribution: Plack-Middleware-CSP
+last_checked: 1794691518
+latest_version: '0.04'
+metacpan: https://metacpan.org/pod/Plack::Middleware::CSP
