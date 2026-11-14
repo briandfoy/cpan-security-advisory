@@ -55,6 +55,28 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/04/30/19
   reported: 2026-04-30
   severity: ~
+- affected_versions:
+  - <1.3400
+  cves:
+  - CVE-2015-10149
+  description: |-
+    Dancer versions before 1.3400 for Perl pass unvalidated session ids from the session cookie to the session engine.
+
+    read_session_id returns the cookie value as the session id without checking its characters, and Dancer hands it to the session engine to load the session.
+
+    A remote attacker may cause path traversal or injection in a session engine that uses the id in a file path, cache command or query without checking it.
+  fixed_versions:
+  - '>=1.3400'
+  github_security_advisory: []
+  id: CPANSA-Dancer-2015-10149
+  references:
+  - https://github.com/PerlDancer/Dancer/commit/5a68fddbaef903fd3bd58517ce585cde986716e4.patch
+  - https://github.com/PerlDancer/Dancer/issues/1117
+  - https://github.com/PerlDancer/Dancer/issues/1118
+  - https://github.com/PerlDancer/Dancer/pull/1172
+  - https://metacpan.org/release/BIGPRESH/Dancer-1.3400/changes
+  reported: 2026-11-14
+  severity: ''
 cpansa_version: 2
 distribution: Dancer
 last_checked: 1789907323
