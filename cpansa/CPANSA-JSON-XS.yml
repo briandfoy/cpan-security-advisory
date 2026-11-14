@@ -17,6 +17,136 @@ advisories:
   - https://security.metacpan.org/patches/J/JSON-XS/4.03/CVE-2025-40928-r1.patch
   reported: 2025-09-08
   severity: ~
+- affected_versions:
+  - ''
+  cves:
+  - CVE-2026-129115
+  description: |-
+    JSON::XS versions from 3.0 before 4.05 for Perl read freed stack memory when a FREEZE result's serialisation grows the Perl stack under allow_tags in encode_rv.
+
+    With allow_tags, an object's FREEZE method is called in list context and each returned value is encoded through a saved Perl stack pointer. When encoding a returned value calls back into Perl, through TO_JSON under convert_blessed or another FREEZE, and that callback grows the stack, the stack is reallocated while the saved pointer still refers to the freed block.
+
+    Encoding such objects reads freed memory, and encode can return undef without an error.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-w99q-7mg2-3mhx
+  id: CPANSA-JSON-XS-2026-129115
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - ''
+  cves:
+  - CVE-2026-129114
+  description: |-
+    JSON::XS versions from 3.04 before 4.05 for Perl write one byte past a heap buffer when appending a one-byte chunk in incr_parse.
+
+    The incremental buffer grows to one and a half times the length it must hold, with no room reserved for the terminating NUL. For an empty buffer and a one-byte chunk that request is one byte, which a buffer whose front was removed by earlier decodes can already have, so nothing is reallocated and the NUL lands one byte past the allocation.
+
+    A peer streaming data to an incr_parse consumer, choosing how the input is split into reads, can cause a one-byte heap out-of-bounds write.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-pmvq-m677-6p9m
+  id: CPANSA-JSON-XS-2026-129114
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - ''
+  cves:
+  - CVE-2026-129113
+  description: |-
+    JSON::XS versions from 4.0_00 before 4.05 for Perl corrupt the incremental buffer length by chopping past its end in incr_skip after a top-level number.
+
+    The incremental parser scans any run of digits, signs, dots and exponent markers as one number, but the decoder stops at the end of a valid number, so the parser keeps an offset into bytes it has not decoded. It then empties the buffer without clearing those bytes, and a later incr_parse call without new input reads them again and moves the offset past the end of the buffer. incr_skip, the documented recovery after an error, removes that many bytes and the buffer length wraps.
+
+    A peer sending input such as "1-2" to an incr_parse consumer can make the next read of incr_text exit the process through perl's uncatchable out-of-memory path.
+  fixed_versions: []
+  github_security_advisory:
+  - GHSA-4q52-849c-cv9p
+  id: CPANSA-JSON-XS-2026-129113
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - <4.05
+  cves:
+  - CVE-2026-124541
+  description: |-
+    JSON::XS versions before 4.05 for Perl leak the decoded part of a rejected long string in decode_str.
+
+    A string is decoded through a fixed-size buffer (16 KiB in 4.04), and each time the buffer fills its contents move into a new scalar. Nothing frees that scalar when the string is then rejected for a control character, an invalid escape, malformed UTF-8 or the end of the input.
+
+    A process that keeps running after a failed decode retains the decoded part of each rejected string, with its size chosen by the sender. Repeated requests exhaust process memory.
+  fixed_versions:
+  - '>=4.05'
+  github_security_advisory:
+  - GHSA-vgmh-4qpm-2xcv
+  id: CPANSA-JSON-XS-2026-124541
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - <4.05
+  cves:
+  - CVE-2026-124540
+  description: |-
+    JSON::XS versions before 4.05 for Perl allow stack exhaustion via nested tagged values under allow_tags in decode_tag.
+
+    With allow_tags, "(" starts a tagged value. Its tag and value are decoded recursively, and each can start another tagged value. Unlike arrays and objects, this nesting is not counted against max_depth.
+
+    A run of "(" bytes exhausts the C stack and triggers an uncatchable segmentation fault regardless of max_depth.
+  fixed_versions:
+  - '>=4.05'
+  github_security_advisory:
+  - GHSA-r77g-jhw3-q6vc
+  id: CPANSA-JSON-XS-2026-124540
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - <4.05
+  cves:
+  - CVE-2026-124539
+  description: |-
+    JSON::XS versions before 4.05 for Perl leak the decoded key of an object rejected for a missing colon in decode_hv.
+
+    Unless it is short plain ASCII, a quoted key is decoded into a new scalar. Nothing frees that scalar when the object is rejected for a missing ':' after the key.
+
+    A process that keeps running after a failed decode retains one key per rejected document, with its size chosen by the sender. Repeated requests exhaust process memory.
+  fixed_versions:
+  - '>=4.05'
+  github_security_advisory:
+  - GHSA-pmcq-254w-hhrg
+  id: CPANSA-JSON-XS-2026-124539
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
+- affected_versions:
+  - <4.05
+  cves:
+  - CVE-2026-124536
+  description: |-
+    JSON::XS versions before 4.05 for Perl allow memory exhaustion by buffering incremental input past max_size after a NUL byte in incr_parse.
+
+    The parser appends each chunk to its buffer and compares max_size with how far it has progressed, not with the buffer length. It treats a NUL byte as the end of the input, so a NUL within the first max_size bytes keeps it short of the limit. The buffer keeps growing, and incr_skip cannot remove the NUL.
+
+    A peer streaming data to an incr_parse consumer can exhaust process memory regardless of max_size.
+  fixed_versions:
+  - '>=4.05'
+  github_security_advisory:
+  - GHSA-jj44-v2qc-wcv3
+  id: CPANSA-JSON-XS-2026-124536
+  references:
+  - https://metacpan.org/release/MLEHMANN/JSON-XS-4.05/changes
+  reported: 2026-11-14
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: JSON-XS
