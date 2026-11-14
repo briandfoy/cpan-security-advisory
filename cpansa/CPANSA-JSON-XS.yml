@@ -18,7 +18,7 @@ advisories:
   reported: 2025-09-08
   severity: ~
 - affected_versions:
-  - ''
+  - '>=3.0,<4.05'
   cves:
   - CVE-2026-129115
   description: |-
@@ -27,7 +27,8 @@ advisories:
     With allow_tags, an object's FREEZE method is called in list context and each returned value is encoded through a saved Perl stack pointer. When encoding a returned value calls back into Perl, through TO_JSON under convert_blessed or another FREEZE, and that callback grows the stack, the stack is reallocated while the saved pointer still refers to the freed block.
 
     Encoding such objects reads freed memory, and encode can return undef without an error.
-  fixed_versions: []
+  fixed_versions:
+  - '>=4.05'
   github_security_advisory:
   - GHSA-w99q-7mg2-3mhx
   id: CPANSA-JSON-XS-2026-129115
@@ -36,7 +37,7 @@ advisories:
   reported: 2026-11-14
   severity: ''
 - affected_versions:
-  - ''
+  - '>=3.0,<4.05'
   cves:
   - CVE-2026-129114
   description: |-
@@ -45,7 +46,8 @@ advisories:
     The incremental buffer grows to one and a half times the length it must hold, with no room reserved for the terminating NUL. For an empty buffer and a one-byte chunk that request is one byte, which a buffer whose front was removed by earlier decodes can already have, so nothing is reallocated and the NUL lands one byte past the allocation.
 
     A peer streaming data to an incr_parse consumer, choosing how the input is split into reads, can cause a one-byte heap out-of-bounds write.
-  fixed_versions: []
+  fixed_versions:
+  - '>=4.05'
   github_security_advisory:
   - GHSA-pmvq-m677-6p9m
   id: CPANSA-JSON-XS-2026-129114
@@ -54,7 +56,7 @@ advisories:
   reported: 2026-11-14
   severity: ''
 - affected_versions:
-  - ''
+  - '>=3.0,<4.05'
   cves:
   - CVE-2026-129113
   description: |-
@@ -63,7 +65,8 @@ advisories:
     The incremental parser scans any run of digits, signs, dots and exponent markers as one number, but the decoder stops at the end of a valid number, so the parser keeps an offset into bytes it has not decoded. It then empties the buffer without clearing those bytes, and a later incr_parse call without new input reads them again and moves the offset past the end of the buffer. incr_skip, the documented recovery after an error, removes that many bytes and the buffer length wraps.
 
     A peer sending input such as "1-2" to an incr_parse consumer can make the next read of incr_text exit the process through perl's uncatchable out-of-memory path.
-  fixed_versions: []
+  fixed_versions:
+  - '>=4.05'
   github_security_advisory:
   - GHSA-4q52-849c-cv9p
   id: CPANSA-JSON-XS-2026-129113
