@@ -1,0 +1,29 @@
+---
+advisories:
+- affected_versions:
+  - <0.30
+  cves:
+  - CVE-2026-115864
+  description: |-
+    Monoceros versions before 0.30 for Perl allow a request declaring a large Content-Length to kill a worker by exhausting memory.
+
+    The request body is read in a loop that asks sysread for all of the remaining declared length at once. Perl grows the read buffer to that size before any data arrives, so a length larger than available memory makes the worker exit with an uncatchable out of memory error before the application is called.
+
+    A remote attacker can force a worker restart with each request of a few bytes.
+  fixed_versions:
+  - '>=0.30'
+  github_security_advisory:
+  - GHSA-m665-77qg-8m85
+  id: CPANSA-Monoceros-2026-115864
+  references:
+  - https://github.com/kazeburo/Monoceros/commit/897a4a9624329fc0a4b2352d387bdac6d37848e2.patch
+  - https://metacpan.org/release/KAZEBURO/Monoceros-0.30/changes
+  - http://www.openwall.com/lists/oss-security/2026/11/09/32
+  reported: 2026-11-09
+  severity: high
+cpansa_version: 2
+darkpan: ~
+distribution: Monoceros
+last_checked: 1794691568
+latest_version: 0.30
+metacpan: https://metacpan.org/pod/Monoceros
