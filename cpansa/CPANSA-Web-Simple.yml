@@ -42,6 +42,27 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/11/04/5
   reported: 2026-11-04
   severity: ''
+- affected_versions:
+  - <0.037
+  cves:
+  - CVE-2026-120212
+  description: |-
+    Web::Simple versions before 0.037 for Perl do not escape single quotes in HTML::Tags output.
+
+    HTML::Tags and XML::Tags escape a plain string value by replacing only &, ", < and > with entities. A value interpolated into a single-quoted attribute, as in <a href='$value'>, can therefore close the attribute and add new ones, such as an event handler. Double-quoted attributes are not affected.
+
+    An attacker who controls a value that an application interpolates into a single-quoted attribute can inject script into the generated page.
+  fixed_versions:
+  - '>=0.037'
+  github_security_advisory:
+  - GHSA-3xh6-x477-72h3
+  id: CPANSA-Web-Simple-2026-120212
+  references:
+  - https://github.com/p5sagit/Web-Simple/commit/de0b7743f7015ec2c1c678dfdaa4bc6f5ccfb640.patch
+  - https://metacpan.org/release/ETHER/Web-Simple-0.037/changes
+  - https://www.cve.org/CVERecord?id=CVE-2026-5090
+  reported: 2026-11-10
+  severity: ''
 cpansa_version: 2
 darkpan: ~
 distribution: Web-Simple
