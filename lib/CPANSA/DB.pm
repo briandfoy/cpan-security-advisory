@@ -1,5 +1,5 @@
-# created by util/generate at Sat Nov 14 21:56:42 2026
-# https://github.com/briandfoy/cpan-security-advisory.git eba69efcb49f5c55aaf3b20fa72bdfa6cc7c4fc1
+# created by util/generate at Mon Nov 23 17:20:45 2026
+# https://github.com/briandfoy/cpan-security-advisory.git 2f0298af29347a38963745b3a1388788a72571a1
 
 =encoding utf8
 
@@ -82,7 +82,7 @@ package CPANSA::DB;
 use strict;
 use warnings;
 
-our $VERSION = '20261114.003';
+our $VERSION = '20261123.001';
 
 sub db {
 	{
@@ -7056,6 +7056,22 @@ sub db {
         {
           "date" => "2026-11-12T02:50:54",
           "version" => "2.118000"
+        },
+        {
+          "date" => "2026-11-15T10:39:29",
+          "version" => "2.118001"
+        },
+        {
+          "date" => "2026-11-15T13:42:42",
+          "version" => "2.119000"
+        },
+        {
+          "date" => "2026-11-22T03:59:51",
+          "version" => "2.119001"
+        },
+        {
+          "date" => "2026-11-23T02:27:43",
+          "version" => "2.120000"
         }
       ]
     },
@@ -15497,7 +15513,7 @@ sub db {
         {
           "date" => "2014-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.019010",
+          "perl_release" => "5.01901",
           "version" => "2.04"
         },
         {
@@ -15521,7 +15537,7 @@ sub db {
         {
           "date" => "2017-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.025010",
+          "perl_release" => "5.02501",
           "version" => "2.17"
         },
         {
@@ -17297,6 +17313,10 @@ sub db {
         {
           "date" => "2026-10-30T08:22:37",
           "version" => "v0.62.0"
+        },
+        {
+          "date" => "2026-11-09T20:24:23",
+          "version" => "v0.62.1"
         }
       ]
     },
@@ -18384,6 +18404,29 @@ sub db {
             "https://metacpan.org/release/HAARG/Catalyst-Plugin-Session-0.43/source/lib/Catalyst/Plugin/Session.pm#L632"
           ],
           "reported" => "2025-07-17",
+          "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            "<0.41"
+          ],
+          "cves" => [
+            "CVE-2018-25052"
+          ],
+          "description" => "A vulnerability has been found in Catalyst-Plugin-Session up to 0.40 and classified as problematic. This vulnerability affects the function _load_sessionid of the file lib/Catalyst/Plugin/Session.pm of the component Session ID Handler. The manipulation of the argument sid leads to cross site scripting. The attack can be initiated remotely. Upgrading to version 0.41 is able to address this issue. The name of the patch is 88d1b599e1163761c9bd53bec53ba078f13e09d4. It is recommended to upgrade the affected component. VDB-216958 is the identifier assigned to this vulnerability.",
+          "distribution" => "Catalyst-Plugin-Session",
+          "fixed_versions" => [
+            ">=0.41"
+          ],
+          "id" => "CPANSA--2018-25052",
+          "references" => [
+            "https://rt.cpan.org/Ticket/Display.html?id=107902",
+            "https://vuldb.com/?id.216958",
+            "https://vuldb.com/?ctiid.216958",
+            "https://github.com/perl-catalyst/Catalyst-Plugin-Session/commit/88d1b599e1163761c9bd53bec53ba078f13e09d4",
+            "https://github.com/perl-catalyst/Catalyst-Plugin-Session/releases/tag/0.41"
+          ],
+          "reported" => undef,
           "severity" => undef
         }
       ],
@@ -20676,7 +20719,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -21369,7 +21412,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.204_001"
         }
       ]
@@ -23089,6 +23132,10 @@ sub db {
         {
           "date" => "2026-10-04T16:01:13",
           "version" => "2.168"
+        },
+        {
+          "date" => "2026-11-17T17:45:19",
+          "version" => "2.169"
         }
       ]
     },
@@ -23113,6 +23160,173 @@ sub db {
             "https://lists.fedoraproject.org/archives/list/package-announce\@lists.fedoraproject.org/message/6V3PJEQOT47ZO77263XPGS3Y3AJROI4X/"
           ],
           "reported" => "2020-04-07",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-131877"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unbounded arc length in OBJECT IDENTIFIER decoding and encoding.\n\nThe content of an OBJECT IDENTIFIER or RELATIVE-OID element is passed to unpack \"w*\" on decode, and the arcs of an OID string to pack \"w*\" on encode. Perl converts each arc to or from its decimal string in time quadratic in the arc's length, and nothing limits that length.\n\nAn attacker who controls the decoded data, or an OID string passed to encode, can exhaust CPU with a single oversized arc.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-131877",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/805a7ee7d6c01a7dd6e0479fabcaadd7f9116e70.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-131868"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via a declared element length passed unchecked to sysread in asn_read and asn_get.\n\nThe length an element declares in its BER header is passed to sysread as the read size. Perl grows the target buffer to that size before reading, so memory is allocated from the declared length, not from the data received. A 6-byte header can declare a length of up to 4GB.\n\nA single header makes the reading process allocate the declared size. Where the allocation fails, perl exits with \"Out of memory\", which eval cannot catch.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-131868",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/88bd86b5a3ce3430ebb8b78fe5307f234198bf16.patch",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126956"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unlimited recursion depth in constructed-form string decoding.\n\nAny constructed-form string element causes the decoder to recurse on the element's contents. The BER encoding controls nesting depth at four bytes per level, with no bound checked. Perl recursion is heap-allocated, so the process grows without a stack crash.\n\nAn attacker who controls the decoded data can exhaust memory with a small deeply nested constructed string.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126956",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/99a96139a322ba0a5183c7e40a8857f3550daace.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126819"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via zero-length BIT STRING content.\n\nA BIT STRING with zero content octets passes -1 to substr as the length. Perl reads a negative length as an offset from the end of the string, so the decoded value is nearly all of the input that follows the element. In the constructed form each zero-length segment copies the rest of the input again, so memory grows with the square of the input size.\n\nAn attacker who controls the decoded data can exhaust memory with a short constructed BIT STRING. The resulting value also contains bytes from adjacent input.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126819",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/a369bb1c39061d67454216a6a1d0eae11932806e.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126682"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via exponent-notation string in INTEGER encoding.\n\nThe encoder routes any value with abs >= 2**31 to i2osp without validating that it is an integer. A string in exponent notation such as \"1e8000\" passes that threshold. Math::BigInt expands it to an 8001-digit integer, and i2osp's per-octet conversion loop is quadratic in that size.\n\nAn attacker who controls encoded INTEGER values can exhaust CPU with a short exponent-notation string.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126682",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/f259213110a90f38cfd1c7e7ff6789178ce9105f.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126576"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unchecked exponent length in binary REAL decoding.\n\nBinary REAL decoding never bounds-checks the exponent length against the available content. For a minimal one-byte binary REAL, the exponent byte is read from outside the element, making the mantissa length -1. Perl reads a negative length as an offset from the end of the string, so the mantissa is nearly all of the input that follows the element. The long-form exponent path also omits the extra length octet when sizing the mantissa.\n\nAn attacker who controls the decoded data can exhaust CPU with a list of such values, as each mantissa loop iterates over the remaining input. The decoded values are also computed from bytes outside each element.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126576",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/6158dbb33cc3d248a95b4ab4948a135e18141b51.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126568"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unbounded MSG_PEEK buffer doubling in asn_recv.\n\nasn_recv peeks the socket in a loop, doubling the buffer size on each pass until a tag and length can be decoded. An inverted boolean guard (\$tb || rather than \$tb &&) prevents the need-more-data exit from firing once a tag byte has been decoded. When asn_decode_length returns no value because the length is absent or incomplete, no exit fires for that case either. MSG_PEEK leaves socket data unconsumed, so each re-peek returns at once while the buffer size doubles.\n\nA single truncated BER header sent to a process calling asn_recv doubles the peek buffer until memory is exhausted. Perl's realloc failure is fatal and not catchable with eval.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126568",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/a30eae1dc6a977716b76f79f228fa0432e28bc5a.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<0.37"
+          ],
+          "cves" => [
+            "CVE-2026-126540"
+          ],
+          "description" => "Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via quadratic bigint loop in os2ip.\n\nEvery INTEGER or ENUMERATED longer than four content octets reaches os2ip, which iterates over each content octet with \$result = (\$result * 256) + \$octet. Each multiplication operates on a bigint that grows by one octet per step, so decoding an n-octet value takes O(n^2) bigint work. Nothing limits content length before this loop runs.\n\nAn attacker who controls the decoded data can exhaust CPU with a single oversized INTEGER or ENUMERATED value.",
+          "distribution" => "Convert-ASN1",
+          "fixed_versions" => [
+            ">=0.37"
+          ],
+          "id" => "CPANSA-Convert-ASN1-2026-126540",
+          "references" => [
+            "https://github.com/cpan-authors/perl-Convert-ASN1/commit/49b362c527e0af05fca9be1e97e4a340d95afa75.patch",
+            "https://github.com/cpan-authors/perl-Convert-ASN1/issues",
+            "https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes"
+          ],
+          "reported" => "2026-11-20",
           "severity" => "high"
         }
       ],
@@ -23249,6 +23463,10 @@ sub db {
         {
           "date" => "2026-11-09T22:46:16",
           "version" => "0.36"
+        },
+        {
+          "date" => "2026-11-19T22:31:48",
+          "version" => "0.37"
         }
       ]
     },
@@ -24384,6 +24602,14 @@ sub db {
         {
           "date" => "2026-11-09T11:39:19",
           "version" => "4.81"
+        },
+        {
+          "date" => "2026-11-16T12:29:06",
+          "version" => "4.82"
+        },
+        {
+          "date" => "2026-11-23T08:49:03",
+          "version" => "4.83"
         }
       ]
     },
@@ -42187,7 +42413,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01",
+          "perl_release" => "5.010000",
           "version" => "2.121_14"
         },
         {
@@ -42319,7 +42545,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "2.158"
         },
         {
@@ -42439,7 +42665,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "2.188"
         },
         {
@@ -46262,7 +46488,7 @@ sub db {
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "2.58_01"
         }
       ]
@@ -51819,7 +52045,7 @@ sub db {
         {
           "date" => "2010-04-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.013000",
+          "perl_release" => "5.013",
           "version" => "6.5601"
         },
         {
@@ -52302,7 +52528,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01",
+          "perl_release" => "5.010000",
           "version" => "2.18_02"
         },
         {
@@ -52326,7 +52552,7 @@ sub db {
         {
           "date" => "2011-05-14T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.014",
+          "perl_release" => "5.014000",
           "version" => "2.2210"
         },
         {
@@ -52434,7 +52660,7 @@ sub db {
         {
           "date" => "2018-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.02701",
+          "perl_release" => "5.027010",
           "version" => "3.39"
         },
         {
@@ -52464,7 +52690,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.45"
         },
         {
@@ -58279,6 +58505,14 @@ sub db {
         {
           "date" => "2026-08-12T22:00:19",
           "version" => "0.12"
+        },
+        {
+          "date" => "2026-11-21T23:36:08",
+          "version" => "0.13"
+        },
+        {
+          "date" => "2026-11-22T23:37:03",
+          "version" => "0.14"
         }
       ]
     },
@@ -60157,6 +60391,10 @@ sub db {
         {
           "date" => "2026-09-19T21:42:29",
           "version" => "3.86"
+        },
+        {
+          "date" => "2026-11-18T16:20:18",
+          "version" => "3.87"
         }
       ]
     },
@@ -63152,6 +63390,42 @@ sub db {
           ],
           "reported" => "2009-08-31",
           "severity" => undef
+        },
+        {
+          "affected_versions" => [
+            ">0"
+          ],
+          "cves" => [
+            "CVE-2026-129892"
+          ],
+          "description" => "IO::Socket::SSL::PublicSuffix versions through 2.099 for Perl allow code injection via a fetched list line that closes the built-in data heredoc when update_self_from_url rewrites the module's source.\n\nThe rewrite copies the module's source down to the built-in list's heredoc and appends each fetched line below it. Nothing checks that a line looks like a domain. A line that is not a comment loses only what follows a `//` and its trailing whitespace, so a line reading END_BUILTIN_DATA is appended as it stands and ends the data block in the rewritten file. Every fetched line after it is Perl.\n\nArbitrary Perl runs in every process that loads IO::Socket::SSL, which loads this module unconditionally, until the file is reinstalled. The attacker must control the fetched list, through the cleartext default URL or a caller-supplied one, and the updater must run with write access to the installed module.",
+          "distribution" => "IO-Socket-SSL",
+          "fixed_versions" => [],
+          "id" => "CPANSA-IO-Socket-SSL-2026-129892",
+          "references" => [
+            "https://github.com/noxxi/p5-io-socket-ssl/commit/6e756466cd7005bcdb2e0e18eb140f33a2355c78.patch",
+            "https://metacpan.org/release/SULLR/IO-Socket-SSL-2.099/source/lib/IO/Socket/SSL/PublicSuffix.pm"
+          ],
+          "reported" => "2026-11-18",
+          "severity" => "critical"
+        },
+        {
+          "affected_versions" => [
+            ">0"
+          ],
+          "cves" => [
+            "CVE-2026-129891"
+          ],
+          "description" => "IO::Socket::SSL::PublicSuffix versions through 2.099 for Perl let an on-path attacker choose the installed public suffix list because update_self_from_url fetches it over cleartext HTTP with no integrity check.\n\nCalled with no argument, as the module's documentation shows, the updater fetches the list from the `http://` address in the URL constant and checks only that the request succeeded, with no signature or digest over the response. The lines that come back are written into the module's own source file as the built-in list.\n\nAn attacker on the network path when the updater runs chooses the suffix boundary the module reports to every caller on the host, and that answer persists in the installed module until it is reinstalled. Dropping one rule makes the hostname check in IO::Socket::SSL accept a wildcard certificate that spans the whole public suffix that rule named.",
+          "distribution" => "IO-Socket-SSL",
+          "fixed_versions" => [],
+          "id" => "CPANSA-IO-Socket-SSL-2026-129891",
+          "references" => [
+            "https://github.com/noxxi/p5-io-socket-ssl/commit/6e756466cd7005bcdb2e0e18eb140f33a2355c78.patch",
+            "https://metacpan.org/release/SULLR/IO-Socket-SSL-2.099/source/lib/IO/Socket/SSL/PublicSuffix.pm"
+          ],
+          "reported" => "2026-11-18",
+          "severity" => "high"
         }
       ],
       "main_module" => "IO::Socket::SSL",
@@ -64685,7 +64959,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01",
+          "perl_release" => "5.010000",
           "version" => "0.40_1"
         },
         {
@@ -70108,6 +70382,10 @@ sub db {
         {
           "date" => "2026-11-13T04:28:52",
           "version" => "4.05"
+        },
+        {
+          "date" => "2026-11-18T07:38:07",
+          "version" => "4.06"
         }
       ]
     },
@@ -89680,6 +89958,10 @@ sub db {
         {
           "date" => "2026-10-27T18:15:15",
           "version" => "5.522"
+        },
+        {
+          "date" => "2026-11-22T16:02:56",
+          "version" => "5.523"
         }
       ]
     },
@@ -100667,6 +100949,25 @@ sub db {
           ],
           "reported" => "2026-09-02",
           "severity" => "high"
+        },
+        {
+          "affected_versions" => [
+            "<1.58"
+          ],
+          "cves" => [
+            "CVE-2026-101340"
+          ],
+          "description" => "Net::DNS uses a 16-bit query ID to match responses to the corresponding requests.  In versions up to and including 1.57, the ID is obtained from Perl's built-in rand() function.  An attacker that can observe the sequence of query IDs is able to expose the internal state of the PNRG and hence predict query IDs before they are transmitted.  The victim Net::DNS instance is then exposed to forged responses injected by the attacker.  Note that the deduplication cache in 1.57 has no impact on the feasibility of this attack.",
+          "distribution" => "Net-DNS",
+          "fixed_versions" => [
+            ">=1.58"
+          ],
+          "id" => "CPANSA-Net-DNS-2026-101340",
+          "references" => [
+            "https://www.net-dns.org/downloads/CVE-2026-101340.txt"
+          ],
+          "reported" => "2026-11-20",
+          "severity" => ""
         }
       ],
       "main_module" => "Net::DNS",
@@ -102106,6 +102407,10 @@ sub db {
         {
           "date" => "2026-09-01T12:30:47",
           "version" => "1.57"
+        },
+        {
+          "date" => "2026-11-20T12:36:26",
+          "version" => "1.58"
         }
       ]
     },
@@ -110113,6 +110418,10 @@ sub db {
         {
           "date" => "2026-09-08T13:52:17",
           "version" => "0.29"
+        },
+        {
+          "date" => "2026-11-14T11:24:02",
+          "version" => "0.30"
         }
       ]
     },
@@ -110652,7 +110961,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011",
+          "perl_release" => "5.011000",
           "version" => "3.3002"
         },
         {
@@ -110676,7 +110985,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01301",
+          "perl_release" => "5.013010",
           "version" => "3.37"
         },
         {
@@ -110754,7 +111063,7 @@ sub db {
         {
           "date" => "2015-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.021010",
+          "perl_release" => "5.02101",
           "version" => "3.55"
         },
         {
@@ -110886,7 +111195,7 @@ sub db {
         {
           "date" => "2022-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.03501",
+          "perl_release" => "5.035010",
           "version" => "3.84"
         },
         {
@@ -110910,7 +111219,7 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "3.89"
         },
         {
@@ -117239,6 +117548,10 @@ sub db {
         {
           "date" => "2026-11-01T10:47:50",
           "version" => "0.40"
+        },
+        {
+          "date" => "2026-11-23T03:49:03",
+          "version" => "0.41"
         }
       ]
     },
@@ -119130,6 +119443,10 @@ sub db {
         {
           "date" => "2026-11-12T16:30:21",
           "version" => "v0.4.15"
+        },
+        {
+          "date" => "2026-11-17T16:37:49",
+          "version" => "v0.4.16"
         }
       ]
     },
@@ -121570,6 +121887,10 @@ sub db {
           "version" => "7.001_002"
         },
         {
+          "date" => "2026-11-09T16:59:07",
+          "version" => "5.012"
+        },
+        {
           "date" => "2026-11-10T10:36:54",
           "version" => "7.001_003"
         },
@@ -121584,6 +121905,10 @@ sub db {
         {
           "date" => "2026-11-14T09:57:14",
           "version" => "7.002_001"
+        },
+        {
+          "date" => "2026-11-15T13:27:58",
+          "version" => "7.003"
         }
       ]
     },
@@ -122412,6 +122737,10 @@ sub db {
           "version" => "7.001_002"
         },
         {
+          "date" => "2026-11-09T16:59:18",
+          "version" => "5.012"
+        },
+        {
           "date" => "2026-11-10T10:37:05",
           "version" => "7.001_003"
         },
@@ -122426,6 +122755,10 @@ sub db {
         {
           "date" => "2026-11-14T09:57:25",
           "version" => "7.002_001"
+        },
+        {
+          "date" => "2026-11-15T13:28:10",
+          "version" => "7.003"
         }
       ]
     },
@@ -124075,7 +124408,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01",
+          "perl_release" => "5.010000",
           "version" => "1.80"
         },
         {
@@ -124087,7 +124420,7 @@ sub db {
         {
           "date" => "2009-10-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.011",
+          "perl_release" => "5.011000",
           "version" => "1.84"
         },
         {
@@ -124105,7 +124438,7 @@ sub db {
         {
           "date" => "2010-04-12T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.012",
+          "perl_release" => "5.012000",
           "version" => "1.87"
         },
         {
@@ -124153,7 +124486,7 @@ sub db {
         {
           "date" => "2011-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01301",
+          "perl_release" => "5.013010",
           "version" => "1.94"
         },
         {
@@ -124959,6 +125292,10 @@ sub db {
         {
           "date" => "2026-10-29T21:21:48",
           "version" => "0.20"
+        },
+        {
+          "date" => "2026-11-15T21:15:42",
+          "version" => "0.21"
         }
       ]
     },
@@ -127226,7 +127563,7 @@ sub db {
         {
           "date" => "2017-02-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.025010",
+          "perl_release" => "5.02501",
           "version" => "2.62"
         },
         {
@@ -127352,13 +127689,13 @@ sub db {
         {
           "date" => "2023-03-20T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.037010",
+          "perl_release" => "5.03701",
           "version" => "3.31"
         },
         {
           "date" => "2023-07-02T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.038000",
+          "perl_release" => "5.038",
           "version" => "3.32"
         },
         {
@@ -127382,7 +127719,7 @@ sub db {
         {
           "date" => "2025-03-21T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.041010",
+          "perl_release" => "5.04101",
           "version" => "3.36"
         },
         {
@@ -150694,6 +151031,10 @@ sub db {
         {
           "date" => "2023-10-21T10:32:29",
           "version" => "2.0.13"
+        },
+        {
+          "date" => "2026-11-22T20:40:41",
+          "version" => "2.0.14"
         }
       ]
     },
@@ -154495,6 +154836,10 @@ sub db {
         {
           "date" => "2026-10-22T07:43:02",
           "version" => "5.045004"
+        },
+        {
+          "date" => "2026-11-19T11:32:12",
+          "version" => "5.045005"
         }
       ]
     },
@@ -155184,7 +155529,7 @@ sub db {
         {
           "date" => "2007-12-18T00:00:00",
           "dual_lived" => 1,
-          "perl_release" => "5.01",
+          "perl_release" => "5.010000",
           "version" => "2.16"
         },
         {
@@ -155265,9 +155610,9 @@ sub db {
     }
   },
   "meta" => {
-    "commit" => "eba69efcb49f5c55aaf3b20fa72bdfa6cc7c4fc1",
-    "date" => "Sat Nov 14 21:56:41 2026",
-    "epoch" => 1794693401,
+    "commit" => "2f0298af29347a38963745b3a1388788a72571a1",
+    "date" => "Mon Nov 23 17:20:44 2026",
+    "epoch" => 1795454444,
     "generator" => "util/generate",
     "repo" => "https://github.com/briandfoy/cpan-security-advisory.git"
   },
@@ -155937,6 +156282,7 @@ sub db {
     "App::Netdisco::Util::JobAction" => "App-Netdisco",
     "App::Netdisco::Util::L3Domain" => "App-Netdisco",
     "App::Netdisco::Util::MCE" => "App-Netdisco",
+    "App::Netdisco::Util::ManagedConfig" => "App-Netdisco",
     "App::Netdisco::Util::Nbtstat" => "App-Netdisco",
     "App::Netdisco::Util::Node" => "App-Netdisco",
     "App::Netdisco::Util::NodeMonitor" => "App-Netdisco",
@@ -155968,6 +156314,7 @@ sub db {
     "App::Netdisco::Web::Device" => "App-Netdisco",
     "App::Netdisco::Web::GenericReport" => "App-Netdisco",
     "App::Netdisco::Web::Health" => "App-Netdisco",
+    "App::Netdisco::Web::ManagedConfig" => "App-Netdisco",
     "App::Netdisco::Web::Metrics" => "App-Netdisco",
     "App::Netdisco::Web::Password" => "App-Netdisco",
     "App::Netdisco::Web::Plugin" => "App-Netdisco",
@@ -159048,6 +159395,7 @@ sub db {
     "Google::Auth::ExternalAccountCredentials" => "Google-Auth",
     "Google::Auth::ExternalAccountCredentials::Aws" => "Google-Auth",
     "Google::Auth::ExternalAccountCredentials::Pluggable" => "Google-Auth",
+    "Google::Auth::IAMCredentials" => "Google-Auth",
     "Google::Auth::IDTokens" => "Google-Auth",
     "Google::Auth::IDTokens::AggregateKeySource" => "Google-Auth",
     "Google::Auth::IDTokens::HttpKeySource" => "Google-Auth",
