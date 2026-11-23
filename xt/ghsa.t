@@ -60,6 +60,8 @@ Copyright 2022-2026, brian d foy C<< <bdfoy@cpan.org> >>
 
 use Test::More;
 
+plan skip_all => "Set GITHUB_TOKEN to run this test" unless length $ENV{'GITHUB_TOKEN'};
+
 BEGIN {
 	my $min_version = '5.028';
 	# we use attributes, which changes in v5.28 to come before the signature
