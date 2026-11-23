@@ -128,7 +128,11 @@ sub add_ignored_cve :Export_Ok() :Export_Tag("cve") ($cve, $description) {
 		warn "add_ignored_cve: could not open $file: $!";
 		return;
 		};
-	say {$fh} join "\t", $cve, substr($description, 0, 70) =~ s/\s+\z//r;
+
+	$description =~ s/\v+/ /g;
+	substr($description, 0, 70) =~ s/\s+\z//;
+
+	say {$fh} join "\t", $cve, $description;
 	close $fh or warn "Could not close $file: $? $!";
 	}
 
