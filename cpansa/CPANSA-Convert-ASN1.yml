@@ -17,6 +17,173 @@ advisories:
   - https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/6V3PJEQOT47ZO77263XPGS3Y3AJROI4X/
   reported: 2020-04-07
   severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-131877
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unbounded arc length in OBJECT IDENTIFIER decoding and encoding.
+
+    The content of an OBJECT IDENTIFIER or RELATIVE-OID element is passed to unpack "w*" on decode, and the arcs of an OID string to pack "w*" on encode. Perl converts each arc to or from its decimal string in time quadratic in the arc's length, and nothing limits that length.
+
+    An attacker who controls the decoded data, or an OID string passed to encode, can exhaust CPU with a single oversized arc.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-6ffq-r56j-3cp7
+  id: CPANSA-Convert-ASN1-2026-131877
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/805a7ee7d6c01a7dd6e0479fabcaadd7f9116e70.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-131868
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via a declared element length passed unchecked to sysread in asn_read and asn_get.
+
+    The length an element declares in its BER header is passed to sysread as the read size. Perl grows the target buffer to that size before reading, so memory is allocated from the declared length, not from the data received. A 6-byte header can declare a length of up to 4GB.
+
+    A single header makes the reading process allocate the declared size. Where the allocation fails, perl exits with "Out of memory", which eval cannot catch.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-9462-3x3w-vr66
+  id: CPANSA-Convert-ASN1-2026-131868
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/88bd86b5a3ce3430ebb8b78fe5307f234198bf16.patch
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126956
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unlimited recursion depth in constructed-form string decoding.
+
+    Any constructed-form string element causes the decoder to recurse on the element's contents. The BER encoding controls nesting depth at four bytes per level, with no bound checked. Perl recursion is heap-allocated, so the process grows without a stack crash.
+
+    An attacker who controls the decoded data can exhaust memory with a small deeply nested constructed string.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-36x8-pvcf-c55m
+  id: CPANSA-Convert-ASN1-2026-126956
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/99a96139a322ba0a5183c7e40a8857f3550daace.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126819
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via zero-length BIT STRING content.
+
+    A BIT STRING with zero content octets passes -1 to substr as the length. Perl reads a negative length as an offset from the end of the string, so the decoded value is nearly all of the input that follows the element. In the constructed form each zero-length segment copies the rest of the input again, so memory grows with the square of the input size.
+
+    An attacker who controls the decoded data can exhaust memory with a short constructed BIT STRING. The resulting value also contains bytes from adjacent input.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-2gpm-x9q7-6prr
+  id: CPANSA-Convert-ASN1-2026-126819
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/a369bb1c39061d67454216a6a1d0eae11932806e.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126682
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via exponent-notation string in INTEGER encoding.
+
+    The encoder routes any value with abs >= 2**31 to i2osp without validating that it is an integer. A string in exponent notation such as "1e8000" passes that threshold. Math::BigInt expands it to an 8001-digit integer, and i2osp's per-octet conversion loop is quadratic in that size.
+
+    An attacker who controls encoded INTEGER values can exhaust CPU with a short exponent-notation string.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-9vqq-hrf3-c9hj
+  id: CPANSA-Convert-ASN1-2026-126682
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/f259213110a90f38cfd1c7e7ff6789178ce9105f.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126576
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via unchecked exponent length in binary REAL decoding.
+
+    Binary REAL decoding never bounds-checks the exponent length against the available content. For a minimal one-byte binary REAL, the exponent byte is read from outside the element, making the mantissa length -1. Perl reads a negative length as an offset from the end of the string, so the mantissa is nearly all of the input that follows the element. The long-form exponent path also omits the extra length octet when sizing the mantissa.
+
+    An attacker who controls the decoded data can exhaust CPU with a list of such values, as each mantissa loop iterates over the remaining input. The decoded values are also computed from bytes outside each element.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-6j49-wrh8-crcc
+  id: CPANSA-Convert-ASN1-2026-126576
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/6158dbb33cc3d248a95b4ab4948a135e18141b51.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126568
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow memory exhaustion via unbounded MSG_PEEK buffer doubling in asn_recv.
+
+    asn_recv peeks the socket in a loop, doubling the buffer size on each pass until a tag and length can be decoded. An inverted boolean guard ($tb || rather than $tb &&) prevents the need-more-data exit from firing once a tag byte has been decoded. When asn_decode_length returns no value because the length is absent or incomplete, no exit fires for that case either. MSG_PEEK leaves socket data unconsumed, so each re-peek returns at once while the buffer size doubles.
+
+    A single truncated BER header sent to a process calling asn_recv doubles the peek buffer until memory is exhausted. Perl's realloc failure is fatal and not catchable with eval.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-vgrj-p28p-6383
+  id: CPANSA-Convert-ASN1-2026-126568
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/a30eae1dc6a977716b76f79f228fa0432e28bc5a.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
+- affected_versions:
+  - <0.37
+  cves:
+  - CVE-2026-126540
+  description: |-
+    Convert::ASN1 versions before 0.37 for Perl allow CPU exhaustion via quadratic bigint loop in os2ip.
+
+    Every INTEGER or ENUMERATED longer than four content octets reaches os2ip, which iterates over each content octet with $result = ($result * 256) + $octet. Each multiplication operates on a bigint that grows by one octet per step, so decoding an n-octet value takes O(n^2) bigint work. Nothing limits content length before this loop runs.
+
+    An attacker who controls the decoded data can exhaust CPU with a single oversized INTEGER or ENUMERATED value.
+  fixed_versions:
+  - '>=0.37'
+  github_security_advisory:
+  - GHSA-v88r-r6qc-4386
+  id: CPANSA-Convert-ASN1-2026-126540
+  references:
+  - https://github.com/cpan-authors/perl-Convert-ASN1/commit/49b362c527e0af05fca9be1e97e4a340d95afa75.patch
+  - https://github.com/cpan-authors/perl-Convert-ASN1/issues
+  - https://metacpan.org/release/TIMLEGGE/Convert-ASN1-0.37/changes
+  reported: 2026-11-20
+  severity: high
 cpansa_version: 2
 distribution: Convert-ASN1
 last_checked: 1793539769
