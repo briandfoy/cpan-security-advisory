@@ -170,6 +170,26 @@ advisories:
   - http://www.openwall.com/lists/oss-security/2026/09/02/1
   reported: 2026-09-02
   severity: high
+- affected_versions:
+  - <1.58
+  cves:
+  - CVE-2026-101340
+  description: Net::DNS uses a 16-bit query ID to match responses to the corresponding
+    requests.  In versions up to and including 1.57, the ID is obtained from Perl's
+    built-in rand() function.  An attacker that can observe the sequence of query
+    IDs is able to expose the internal state of the PNRG and hence predict query IDs
+    before they are transmitted.  The victim Net::DNS instance is then exposed to
+    forged responses injected by the attacker.  Note that the deduplication cache
+    in 1.57 has no impact on the feasibility of this attack.
+  fixed_versions:
+  - '>=1.58'
+  github_security_advisory:
+  - GHSA-fc2c-c7cj-qwpr
+  id: CPANSA-Net-DNS-2026-101340
+  references:
+  - https://www.net-dns.org/downloads/CVE-2026-101340.txt
+  reported: 2026-11-20
+  severity: ''
 cpansa_version: 2
 distribution: Net-DNS
 last_checked: 1793539889
