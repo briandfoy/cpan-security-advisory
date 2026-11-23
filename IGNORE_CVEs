@@ -249,3 +249,9 @@ CVE-2026-114424	SEPPmail Secure Email Gateway before 15.1.1 can evaluate attacke
 CVE-2026-125368	OmniAgent through commit 12b98c5 contains an approval bypass vulnerabi
 CVE-2026-116326	Uncaught exceptions in PostgreSQL plperl allow an object creator to ca
 CVE-2026-116320	Use after free in PostgreSQL plperl allows an object creator to execut
+CVE-2026-116001	NULL pointer dereference vulnerability in Apache Perl.
+CVE-2026-116005	Fixed-size stack buffer overflow vulnerability in Apache Perl.
+CVE-2026-116032	Stack buffer overflow vulnerability in Apache Perl.
+CVE-2026-116043	NULL pointer dereference, Out-of-bounds read vulnerability in Apache P
+CVE-2026-116772	OOB read vulnerability in Apache Perl.
+CVE-2026-116799	OOB read vulnerability in Apache Perl.
