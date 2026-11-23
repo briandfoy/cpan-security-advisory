@@ -232,6 +232,15 @@ sub add_corelist_versions ($db) {
 	return \%Dists;
 }
 
+sub __shim_releases ($item, $distribution) {
+	if( $distribution eq 'MIME-tools' ) {
+		if( $item->{'name'} =~ m/\AMIME-tools-([0-9].*)/ ) {
+			$item->{'version'} = $1;
+			}
+		}
+	return $item;
+	}
+
 sub all_releases {
 	my ($distribution) = @_;
 	my $tries = 0;
@@ -249,7 +258,11 @@ sub all_releases {
 		redo FETCH unless $tries++ > 3;
 		}
 
-	my @results = sort { $a->{date} cmp $b->{date} } @{ $content_json->{releases} };
+	my @results =
+		map { __shim_releases($_, $distribution) }
+		sort { $a->{date} cmp $b->{date} }
+		$content_json->{releases}->@*;
+
 	return unless @results;
 
 	return @results;
