@@ -1,5 +1,8 @@
 # Changes for CPANSA::DB
 
+20261123.005 2026-11-23T19:40:07Z
+	* regenerate data after special cases for MIME-tools (#452)
+
 20261101.010 2026-11-02T14:40:09Z
 	* data update for 2026-11-01
 
